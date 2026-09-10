@@ -9,7 +9,7 @@ before the 2026 NFL season kicked off.
 only, same carve-out as Draft Assistant and Kings Justice.
 
 Hosting: **its own repo `bova4389/commish-hub`, GitHub Pages**, live at
-https://bova4389.github.io/commish-hub/ once the repo exists (see Deploy). The repo is
+https://bova4389.github.io/commish-hub/ (pushed 2026-09-09). The repo is
 **public**: it carries Sleeper handles for every league, real names for 2 Mitchs 1 Cup
 (Matt's call, same as `LEAGUE.md` in Draft Assistant), and deliberately savage commentary.
 Don't re-litigate the names; don't add contact details of any kind.
@@ -122,13 +122,10 @@ buster in `hub.js`, so a fresh facts file or recap shows within a minute of the 
 
 ## Deploy
 
-Not yet pushed anywhere as of 2026-09-09. To go live:
-
-1. Create an empty public repo `bova4389/commish-hub` on GitHub (no README, no license).
-2. From this folder: `git remote add origin https://github.com/bova4389/commish-hub.git` and
-   `git push -u origin main`.
-3. Repo Settings → Pages → Source: Deploy from a branch → `main` / `/ (root)`.
-4. `.nojekyll` is already in place so Pages serves the folders as-is.
+Live since 2026-09-09 at https://bova4389.github.io/commish-hub/ — GitHub Pages from
+`main` / root, `.nojekyll` in place. Push to `main` and the site updates within a minute or
+two; the page fetches data files with a one-minute cache buster, and `?v=` on the CSS/JS must
+be bumped when those change.
 
 ## Not built yet
 
