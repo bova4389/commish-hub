@@ -1,0 +1,15 @@
+{
+  "season": 2026,
+  "note": "Hand-written weekly recaps, keyed league -> week number. Written every Tuesday from data/2026/week-NN.json; every number in a paragraph must trace to that file. Voice: Hall of Fame & Shame roast level -- punch at the decision, not the person. Real names in two_mitchs (config.json maps them), Sleeper handles everywhere else.",
+  "shape": {
+    "headline": "one line, the week in a sentence",
+    "facts": "optional array of 3-5 {k, v}; leave it out and the page builds the strip from the data",
+    "paragraphs": "array of strings, 2-3 paragraphs / ~200 words. **bold** and *italic* allowed, nothing else."
+  },
+  "leagues": {
+    "kings_justice": {},
+    "two_mitchs": {},
+    "infinity_war": {},
+    "deadpool": {}
+  }
+}

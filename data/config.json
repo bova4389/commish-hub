@@ -1,0 +1,53 @@
+{
+  "_note": "One place for every league the hub covers. The page and scripts/build_week.py both read this. Handles are Sleeper display names; a league with names:{} shows handles, a league with a handle->name map shows real names.",
+  "site": {
+    "title": "Commish Hub",
+    "season": 2026,
+    "other_league_url": "https://bova4389.github.io/the-other-league/"
+  },
+  "leagues": {
+    "kings_justice": {
+      "name": "The King's Justice",
+      "kind": "chopped",
+      "accent": "#e8b04b",
+      "ids": { "2026": "1383926066564837376", "2025": "1265134884054114304" },
+      "payouts": { "weekly_high": 25, "first": 350, "second": 150 },
+      "names": {}
+    },
+    "two_mitchs": {
+      "name": "2 Mitchs 1 Cup",
+      "kind": "h2h",
+      "accent": "#5cc8ff",
+      "ids": { "2026": "1383837552376545280" },
+      "names": {
+        "BigOleTDs21": "Andrew Evans",
+        "djbogardus72": "Jake Bogardus",
+        "avobttam": "Matt Bova",
+        "Bogeyman28": "Austin Hendrickson",
+        "JellyRoll6884": "Jack Hawkins",
+        "Mpletcher": "Mitch Pletcher",
+        "jonicarter89": "Jon Carter",
+        "CHRISMERKELDUH": "Chris Merkel",
+        "MerkDaddy36": "Nick Merkel",
+        "katiestout13": "Katie Bogardus",
+        "MJBlack": "Mitch Blackwell",
+        "cbova1222": "Chris Bova"
+      }
+    },
+    "infinity_war": {
+      "name": "Infinity War",
+      "kind": "pickem",
+      "accent": "#b48cff",
+      "ids": { "2026": "1400511807180828672" },
+      "payouts": { "weekly": 20 },
+      "names": {}
+    },
+    "deadpool": {
+      "name": "Deadpool",
+      "kind": "survivor",
+      "accent": "#ff6b6b",
+      "ids": { "2026": "1400514368084451328" },
+      "names": {}
+    }
+  }
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="theme-color" content="#0f1115" />
+<title>Commish Hub</title>
+<link rel="icon" href="data:," />
+<link rel="stylesheet" href="css/hub.css?v=20260909" />
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap top-row">
+    <div class="brand">
+      <div class="brand-name">Commish Hub</div>
+      <div class="brand-sub">Weekly recaps for every league I run</div>
+    </div>
+    <div class="pickers">
+      <label class="pick"><span>Season</span><select id="season-select"></select></label>
+      <label class="pick"><span>Week</span><select id="week-select"></select></label>
+    </div>
+  </div>
+  <nav class="wrap tabs" id="tabs" aria-label="Leagues"></nav>
+</header>
+
+<main class="wrap" id="main">
+  <div class="status" id="status">Loading&hellip;</div>
+
+  <!-- The shareable card. Everything inside this box is what "Save image" captures. -->
+  <section id="card-wrap" hidden>
+    <div class="card" id="recap-card"></div>
+    <div class="card-actions">
+      <button type="button" id="btn-save" class="btn">Save image</button>
+      <button type="button" id="btn-preview" class="btn ghost">Preview image</button>
+      <span class="hint">On a phone: Preview, then long-press the picture to save it.</span>
+    </div>
+  </section>
+
+  <!-- The evidence: the numbers the recap was written from. -->
+  <section id="evidence"></section>
+
+  <footer class="foot" id="foot"></footer>
+</main>
+
+<!-- Image preview overlay -->
+<div class="overlay" id="overlay" hidden>
+  <div class="overlay-inner">
+    <div class="overlay-bar">
+      <span>Long-press the image to save or share it</span>
+      <button type="button" class="btn ghost" id="btn-close">Close</button>
+    </div>
+    <img id="overlay-img" alt="Recap card" />
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="js/hub.js?v=20260909"></script>
+</body>
+</html>

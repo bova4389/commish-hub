@@ -1,0 +1,16 @@
+{
+  "season": 2025,
+  "note": "Hand-written recaps, keyed league -> week. Every number must trace to data/2025/week-NN.json. 2025 exists here only as a VOICE SAMPLE for The King's Justice; the other leagues had no 2025 data pulled. Shape per entry: headline (one line), facts (optional 3-5 {k,v}; omit to auto-build from the data), paragraphs (2-3, ~200 words total; **bold** allowed).",
+  "leagues": {
+    "kings_justice": {
+      "5": {
+        "headline": "AllBidness needed 28 points from a Jaguars quarterback on a Monday night. He got them.",
+        "paragraphs": [
+          "Fourteen alive going into week 5 and for most of Sunday the axe had a name on it. **AllBidness** sat dead last after the early window at 40.5, was still last after the late window at 58.5, and went into Sunday night 22.28 points behind the next-worst team with three players still to play. Trevor Lawrence, Travis Kelce, and Bhayshul Tuten. Nobody in the league chat was betting on that group.",
+          "Then Monday happened. Lawrence dropped 28.24, Kelce added 19.1, Tuten chipped in 2.1 for a 49.44-point night that carried AllBidness from the chop seat to eighth place at 118.24. That is not surviving. That is getting shot at and having the bullet hit your phone.",
+          "Which meant the axe swung the other way. **Vanquished** had every player accounted for by Sunday night at 96.14 and could only watch, and **joefanelli90** lived by 4.64 with nothing left to play either, the fantasy equivalent of a death-row pardon by fax. At the top, **nelsolson** put up 147.86 on a 100.58 projection and takes the $25 for outscoring the corpse by 51.72. Thirteen left."
+        ]
+      }
+    }
+  }
+}

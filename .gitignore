@@ -1,0 +1,7 @@
+# Cached API responses from scripts/build_week.py. Rebuilt on demand; never
+# needed by the site.
+scripts/_cache/
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db

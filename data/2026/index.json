@@ -1,0 +1,15 @@
+{
+ "season": 2026,
+ "weeks": {
+  "1": {
+   "generated": "2026-09-09T20:03:09-04:00",
+   "final": false,
+   "leagues": [
+    "deadpool",
+    "infinity_war",
+    "kings_justice",
+    "two_mitchs"
+   ]
+  }
+ }
+}
