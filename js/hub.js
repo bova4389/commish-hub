@@ -171,9 +171,24 @@
   function autoHeadline(kind, L) {
     if (kind === 'chopped' && L.chopped) return L.provisional ? `${L.chopped.handle} is in the chop seat` : `${L.chopped.handle} has been chopped`;
     if (kind === 'h2h') return L.provisional ? 'Week in progress' : `${L.high} scores the week high`;
-    if (kind === 'pickem') return L.winners && L.winners.length ? `${L.winners.length > 1 ? L.winners.length + '-way tie' : L.winners[0]} at ${L.best}/${L.weekly_pick_limit}` : 'Week in progress';
+    if (kind === 'pickem') return L.rollover ? `Tiebreaker tied: the ${money(potOf(L))} rolls over`
+      : L.winners && L.winners.length ? `${L.winners[0]} takes the ${money(potOf(L))} at ${L.best}/${L.weekly_pick_limit}` : 'Week in progress';
     if (kind === 'survivor') return L.died && L.died.length ? `${L.died.length} down, ${L.alive_after} still alive` : `Everyone survived`;
     return `Week ${state.week}`;
+  }
+
+  // Infinity War's weekly money is never split: a tie on picks goes to the Monday
+  // night total-points tiebreaker, and a tie on that rolls the pot to next week.
+  function potOf(L) { return L.pot || (L.payouts && L.payouts.weekly) || 20; }
+
+  function weeklyResult(L) {
+    const w = L.winners || [];
+    const lim = L.weekly_pick_limit || 8;
+    if (L.rollover) return `${(L.tied || []).length}-way tie at ${L.best}/${lim} and on the tiebreaker: the ${money(potOf(L))} rolls to next week`;
+    if (!w.length) return L.provisional ? 'Games still to play' : 'No winner';
+    const tb = L.tiebreak && (L.tiebreak.guesses || []).find((g) => g.handle === w[0]);
+    return `${w[0]} takes the ${money(potOf(L))} at ${L.best}/${lim}` +
+      (tb ? `, winning a ${L.tied.length}-way tie on the tiebreaker (${tb.guess} vs ${L.tiebreak.actual} in ${L.tiebreak.game})` : '');
   }
 
   function autoFacts(kind, L) {
@@ -194,18 +209,29 @@
       if (bench) out.push({ k: 'Left on bench', v: `${bench.name} · ${f2(bench.left)}` });
     } else if (kind === 'pickem') {
       const w = L.winners || [];
-      out.push({ k: `Weekly ${money(L.payouts.weekly || 20)}`, v: w.length ? (w.length > 2 ? `${w.length}-way split at ${L.best}` : `${w.join(' & ')} · ${L.best}/${L.weekly_pick_limit}`) : 'pending' });
+      out.push({ k: `Weekly ${money(potOf(L))}`, v: L.rollover ? 'Rolls over' : w.length ? `${w[0]} · ${L.best}/${L.weekly_pick_limit}` : 'pending' });
+      if (L.tiebreak && !L.provisional) {
+        const tb = (L.tiebreak.guesses || []).find((g) => g.handle === w[0]);
+        out.push({ k: `Tiebreaker · ${L.tiebreak.game}`, v: tb ? `${tb.guess} vs ${L.tiebreak.actual}` : `tied · ${L.tiebreak.actual}` });
+      }
       if (L.provisional) { out.push({ k: 'Cards in', v: `${L.entries.filter((e) => !e.no_pick).length} of ${L.entries_total}` }); return out; }
       out.push({ k: 'Upsets', v: String((L.upsets || []).length) });
       if (L.worst && L.worst.length) out.push({ k: 'Worst card', v: L.worst.slice(0, 2).join(', ') });
       if (L.leaderboard && L.leaderboard[0]) out.push({ k: 'Season leader', v: `${L.leaderboard[0].handle} · ${L.leaderboard[0].points}` });
     } else if (kind === 'survivor') {
-      out.push({ k: 'Died this week', v: String((L.died || []).length) });
+      // `died` holds every losing pick; with revives left a loss is a strike, not a death.
+      const lost = L.died || [];
+      const out_now = lost.filter((d) => d.eliminated_now).length;
+      out.push(out_now
+        ? { k: 'Eliminated', v: `${out_now} · ${lost.length - out_now} strikes` }
+        : { k: 'Strikes this week', v: `${lost.length} · 0 out` });
       out.push({ k: 'Still alive', v: `${L.alive_after} of ${L.entries_total}` });
-      const k = (L.killer_games || [])[0];
-      if (k) out.push({ k: 'Killer game', v: `${k.game}` });
-      const c = (L.consensus || [])[0];
-      if (c) out.push({ k: 'Consensus pick', v: `${c.team} ×${c.count}` });
+      const burned = (g) => Object.entries(g.picks).filter(([t]) => t !== g.winner).reduce((a, [, n]) => a + n, 0);
+      const k = (L.killer_games || []).slice().sort((a, b) => burned(b) - burned(a))[0];
+      if (k) out.push({ k: 'Killer game', v: `${k.game} · ${burned(k)}` });
+      const cons = L.consensus || [];
+      const top = cons.filter((c) => cons[0] && c.count === cons[0].count);
+      if (top.length) out.push({ k: 'Consensus pick', v: `${top.map((c) => c.team).join(' / ')} ×${top[0].count}` });
     }
     return out;
   }
@@ -308,7 +334,8 @@
         ? `<span class="chip" title="${esc(p.game)} has not kicked off">&#128274;</span>`
         : `<span class="chip ${p.outcome || ''} ${e.lonely_wins.includes(p.team) ? 'lonely' : ''}" title="${esc(p.game)}">${esc(p.team)}</span>`).join('');
       const cls = e.no_pick ? 'dim' : (L.winners.includes(e.handle) ? 'hl-good' : (L.worst.includes(e.handle) ? 'hl-bad' : ''));
-      return `<tr class="${cls}"><td>${esc(e.handle)}${L.winners.includes(e.handle) ? `<span class="pill good">${money(L.payouts.weekly || 20)}</span>` : ''}</td>` +
+      const tbg = e.tiebreaker ? (e.tiebreaker.hidden ? '<div class="sub">tiebreaker &#128274;</div>' : `<div class="sub">tiebreaker ${e.tiebreaker.guess}</div>`) : '';
+      return `<tr class="${cls}"><td>${esc(e.handle)}${L.winners.includes(e.handle) ? `<span class="pill good">${money(potOf(L))}</span>` : ''}${tbg}</td>` +
         `<td class="num"><b>${e.no_pick ? '—' : e.correct}</b><span class="muted">/${lim}</span>${e.pending ? `<div class="sub">${e.pending} pending</div>` : ''}</td>` +
         `<td><div class="picks">${chips || '<span class="muted">no picks</span>'}</div></td><td class="num">${e.season_points}</td></tr>`;
     }).join('');
@@ -320,8 +347,11 @@
     const board = L.leaderboard.map((e, i) => `<tr><td class="num">${i + 1}</td><td>${esc(e.handle)}</td><td class="num">${e.points}</td></tr>`).join('');
     const lonely = L.entries.filter((e) => e.lonely_wins.length).map((e) => `<tr><td>${esc(e.handle)}</td><td>${esc(e.lonely_wins.join(', '))}</td></tr>`).join('');
     const chalk = L.entries.filter((e) => e.chalk_losses.length).map((e) => `<tr><td>${esc(e.handle)}</td><td>${esc(e.chalk_losses.join(', '))}</td></tr>`).join('');
-    return panel('This week', L.winners.length ? (L.winners.length > 1 ? `${L.winners.length}-way tie at ${L.best}: the ${money(L.payouts.weekly || 20)} splits ${L.winners.length} ways` : `${L.winners[0]} takes the ${money(L.payouts.weekly || 20)} at ${L.best}/${lim}`) : 'Games still to play',
+    const tbRows = L.tiebreak ? L.tiebreak.guesses.map((g) => `<tr class="${L.winners.includes(g.handle) ? 'hl-good' : ''}"><td>${esc(g.handle)}</td><td class="num">${g.guess == null ? '—' : g.guess}</td><td class="num">${g.off == null ? 'no guess' : g.off}</td></tr>`).join('') : '';
+    return panel('This week', weeklyResult(L),
         tbl('<th>Entry</th><th class="num">Right</th><th>Picks (outlined = nobody else had it)</th><th class="num">Season</th>', rows)) +
+      (L.tiebreak ? panel('Tiebreaker', `Total points in ${esc(L.tiebreak.game)}: ${L.tiebreak.actual}. Closest guess wins; a tie on this rolls the pot to next week.`,
+        tbl('<th>Tied at ' + L.best + '</th><th class="num">Guess</th><th class="num">Off by</th>', tbRows)) : '') +
       panel('Upsets', 'Winners that were not favored, and how many saw it coming', ups ? tbl('<th>Game</th><th>Result</th><th class="num">Picked</th>', ups) : '<div class="empty">No upsets, or no lines for this week.</div>') +
       panel('Lonely winners', 'A correct pick nobody else made. That is how the weekly money is actually won.', lonely ? tbl('<th>Entry</th><th>Picks</th>', lonely) : '<div class="empty">Nobody went alone and got it right.</div>') +
       panel('Chalk that burned', 'Picked a 65%+ favorite that lost', chalk ? tbl('<th>Entry</th><th>Picks</th>', chalk) : '<div class="empty">None.</div>') +

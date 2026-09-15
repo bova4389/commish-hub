@@ -112,17 +112,41 @@ def get(url, cacheable=True):
     return data
 
 
+TOKEN_FILE = os.path.join(HERE, '.sleeper_token')
+
+
+def sleeper_token():
+    """Sleeper's pick'em GraphQL needs a logged-in user's token (since 2026-09).
+    Read from SLEEPER_TOKEN or scripts/.sleeper_token (gitignored). Never print it."""
+    token = os.environ.get('SLEEPER_TOKEN', '').strip()
+    if not token and os.path.exists(TOKEN_FILE):
+        with open(TOKEN_FILE, encoding='utf-8') as f:
+            token = f.read().strip()
+    if token.lower().startswith('bearer '):
+        token = token[7:].strip()
+    return token
+
+
 def gql(query, variables):
     key = 'GQL ' + query + json.dumps(variables, sort_keys=True)
     path = _cache_path(key)
     if not REFRESH and os.path.exists(path):
         with open(path, encoding='utf-8') as f:
             return json.load(f)
-    r = requests.post(GQL, json={'query': query, 'variables': variables}, timeout=60)
+    headers = {}
+    token = sleeper_token()
+    if token:
+        headers['Authorization'] = token
+    r = requests.post(GQL, json={'query': query, 'variables': variables},
+                      headers=headers, timeout=60)
     r.raise_for_status()
     body = r.json()
     if body.get('errors'):
-        raise RuntimeError('Sleeper GraphQL: ' + body['errors'][0].get('message', '?'))
+        msg = body['errors'][0].get('message', '?')
+        if msg == 'Unauthorized':
+            msg += (' (no Sleeper token found)' if not token else
+                    ' (Sleeper token rejected; it has probably expired, copy a fresh one)')
+        raise RuntimeError('Sleeper GraphQL: ' + msg)
     with open(path, 'w', encoding='utf-8') as f:
         json.dump(body['data'], f)
     return body['data']
@@ -650,6 +674,14 @@ def build_pickem(cfg, season, week, nfl):
     entries = []
     for rid, t in teams.items():
         raw = picks_of(picks_all.get(str(rid)))
+        tb_raw = (picks_all.get(str(rid)) or {}).get('tiebreaker') if isinstance(picks_all.get(str(rid)), dict) else None
+        tiebreaker = None
+        if isinstance(tb_raw, dict) and tb_raw.get('value') is not None:
+            tg = by_id.get(str(tb_raw.get('game_id')), {})
+            # Same kickoff gate as the picks: the guess is public only once its game starts.
+            pre = tg.get('state') == 'pre'
+            tiebreaker = {'type': tb_raw.get('type'), 'game_id': str(tb_raw.get('game_id')),
+                          'game': tg.get('label'), 'guess': None if pre else tb_raw.get('value'), 'hidden': pre}
         picks = []
         for gid, p in raw.items():
             if not isinstance(p, dict):
@@ -701,6 +733,7 @@ def build_pickem(cfg, season, week, nfl):
             'strikes_before': sum(1 for w in lost_weeks if w < week),
             'strikes_after': sum(1 for w in lost_weeks if w <= week),
             'eliminated_now': str(md.get('is_eliminated')).lower() == 'true',
+            'tiebreaker': tiebreaker,
         })
     for e in entries:
         # A pick nobody else made that landed. The weekly money is won by
@@ -745,11 +778,44 @@ def build_pickem(cfg, season, week, nfl):
         scored = sorted(entries, key=lambda e: (-e['correct'], e['handle'].lower()))
         best = scored[0]['correct'] if scored else 0
         final = nfl['all_final']
-        winners = [e for e in scored if e['correct'] == best and best > 0] if final else []
+        # THE WEEKLY MONEY IS NEVER SPLIT. A tie on correct picks goes to the
+        # tiebreaker guess closest to the Monday night game's total points; if
+        # the closest guesses are equally close, nobody wins and the pot rolls
+        # into next week.
+        tied = [e for e in scored if e['correct'] == best and best > 0] if final else []
+        pot_carried = 0
+        prev_path = os.path.join(ROOT, 'data', str(season), f'week-{week - 1:02d}.json')
+        if week > 1 and os.path.exists(prev_path):
+            with open(prev_path, encoding='utf-8') as f:
+                prev = (json.load(f).get('leagues') or {}).get(cfg['key']) or {}
+            if prev.get('rollover'):
+                pot_carried = prev.get('pot') or 0
+        pot = (cfg.get('payouts') or {}).get('weekly', 0) + pot_carried
+        winners, rollover, tiebreak = [], False, None
+        if len(tied) == 1:
+            winners = tied
+        elif len(tied) > 1:
+            tb_game = next((e['tiebreaker']['game_id'] for e in tied if e.get('tiebreaker')), None)
+            g = by_id.get(tb_game or '', {})
+            actual = (g.get('away_score') or 0) + (g.get('home_score') or 0) if g.get('final') else None
+            guesses = []
+            for e in tied:
+                guess = (e.get('tiebreaker') or {}).get('guess')
+                off = abs(guess - actual) if (guess is not None and actual is not None) else None
+                guesses.append({'handle': e['handle'], 'guess': guess, 'off': off})
+            guesses.sort(key=lambda x: (x['off'] is None, x['off'] if x['off'] is not None else 0, x['handle'].lower()))
+            closest = [x for x in guesses if x['off'] is not None and x['off'] == guesses[0]['off']]
+            if len(closest) == 1:
+                winners = [e for e in tied if e['handle'] == closest[0]['handle']]
+            elif actual is not None:
+                rollover = True
+            tiebreak = {'game': g.get('label'), 'actual': actual, 'guesses': guesses}
         board = sorted(entries, key=lambda e: (-e['season_points'], e['handle'].lower()))
         out.update({
             'entries': scored,
             'winners': [e['handle'] for e in winners], 'best': best,
+            'tied': [e['handle'] for e in tied], 'tiebreak': tiebreak,
+            'pot': pot, 'pot_carried': pot_carried, 'rollover': rollover,
             'worst': [e['handle'] for e in scored if not e['no_pick'] and e['correct'] == min(x['correct'] for x in scored if not x['no_pick'])] if (final and any(not e['no_pick'] for e in scored)) else [],
             'no_pick': [e['handle'] for e in scored if e['no_pick']],
             'leaderboard': [{'handle': e['handle'], 'points': e['season_points']} for e in board],
@@ -804,6 +870,7 @@ def main():
             print(f'  {key}: no league id for {season}, skipped')
             continue
         kind = cfg['kind']
+        cfg = dict(cfg, key=key)
         print(f'  {key} ({kind}) ...')
         try:
             if kind in ('chopped', 'h2h'):

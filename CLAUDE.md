@@ -20,7 +20,7 @@ Don't re-litigate the names; don't add contact details of any kind.
 |---|---|---|---|---|
 | `kings_justice` | 🪓 The King's Justice (18 teams) | chopped — lowest score each week is eliminated, no matchups | Sleeper handle | who got chopped, who *barely* lived (roast them), who took the $25 weekly high, and **how the week unfolded slot by slot** — the Monday night saviors and failures |
 | `two_mitchs` | 2 Mitchs 1 Cup (12 teams) | head-to-head | **real names** (map in `data/config.json`) | start/sit decisions, actual vs projected, points left on the bench, injuries, waivers |
-| `infinity_war` | Infinity War (Sleeper spells it "Inifnity War") | classic pick'em, 8 picks a week, $20 weekly + season prize | Sleeper handle | the games, the upsets, the bad picks, who split the $20 |
+| `infinity_war` | Infinity War (Sleeper spells it "Inifnity War") | classic pick'em, 8 picks a week, $20 weekly + season prize | Sleeper handle | the games, the upsets, the bad picks, who took the $20 (ties go to the MNF total-points tiebreaker, never split) |
 | `deadpool` | Deadpool (20 entries, 2 revives) | survivor | Sleeper handle | who died and on what, the killer game, the consensus |
 
 **The Other League is deliberately NOT here.** Its recaps live on its own site
@@ -74,7 +74,11 @@ leagues; roast his weeks on the same terms as everyone else's. Per league:
   `proj_bias`** (Sleeper's projections run hot by a different amount each week; the raw delta
   is not the story). One roast and one real compliment every week, per `LEAGUE.md` §13.
 - **Infinity War** — the $20 is won by being different *and* right: `lonely_wins` is the stat.
-  Chalk that burned, upsets and how many saw them coming, n-way ties.
+  Chalk that burned, upsets and how many saw them coming. **The weekly $20 is never split.**
+  A tie on correct picks goes to the tiebreaker (guess closest to total points in the Monday
+  night game); if that is tied too, the pot rolls to next week. The script writes `winners`
+  (0 or 1), `tied`, `tiebreak` (actual total + each tied guess), `rollover` and `pot` (which
+  carries a previous week's rolled pot forward).
 - **Deadpool** — bodies, the game that did it, whether the consensus pick got everyone killed.
   A "loss" with revives left is a strike, not a death; the card says `strikes`.
 
@@ -84,6 +88,13 @@ leagues; roast his weeks on the same terms as everyone else's. Per league:
   does not. `build_week.py` records a pre-kickoff pick only as "made" (`hidden: true`, no team),
   and the page shows a padlock. **This file is committed to a public repo — never remove the
   gate**, and don't build the live week on a Sunday morning expecting to see picks.
+- **Pick'em GraphQL needs Matt's Sleeper login token (since 2026-09-15).** Unauthenticated
+  calls now return `Unauthorized`, even for 2025 leagues that worked in testing, so Infinity War
+  and Deadpool fail while King's Justice and 2 Mitchs (REST) still build. The script reads
+  `SLEEPER_TOKEN` or `scripts/.sleeper_token` (gitignored; never print, commit or paste it in
+  chat). Matt copies it from sleeper.com → F12 → Network → a `graphql` request → the
+  `authorization` request header. It expires; a "token rejected" error means copy a fresh one.
+  Notepad saves it as `.sleeper_token.txt` unless told otherwise, which reads as "no token found".
 - **Sleeper's `outcome` on a pick is always `"win"`.** It is the pick type, not a result. Picks
   are graded in the script against ESPN finals. `points_by_leg` / `lost_leg_ids` on the roster
   are Sleeper's own grading and agree (checked on 2025 week 5: 10 losses, same ten people).
@@ -129,8 +140,10 @@ be bumped when those change.
 
 ## Not built yet
 
-- No week of 2026 has been recapped; the season starts 2026-09-10. Week 1 recaps are due
-  Tuesday 2026-09-15.
+- Week 1 of 2026 was the first real run (2026-09-15). Infinity War and Deadpool grading was
+  re-checked pick by pick against ESPN finals that day: 164 picks, 0 mismatches.
+- Sleeper's `injury` field on a starter is *today's* status, not game-day: Zay Flowers showed
+  "Out" after scoring 26.0 in week 1. Don't write "started an injured player" off it alone.
 - No automation. A GitHub Action could run `build_week.py` on Tuesday mornings like The Other
   League's bot does; the prose still has to be written by hand, so it was left manual.
 - The King's Justice history dashboard (`Kings Justice/dashboard.html`) is separate. The hub's

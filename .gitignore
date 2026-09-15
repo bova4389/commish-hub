@@ -1,6 +1,8 @@
 # Cached API responses from scripts/build_week.py. Rebuilt on demand; never
 # needed by the site.
 scripts/_cache/
+# Matt's Sleeper login token for the pick'em GraphQL. A credential: never commit.
+scripts/.sleeper_token
 __pycache__/
 *.pyc
 .DS_Store

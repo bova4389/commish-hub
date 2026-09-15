@@ -7,9 +7,45 @@
     "paragraphs": "array of strings, 2-3 paragraphs / ~200 words. **bold** and *italic* allowed, nothing else."
   },
   "leagues": {
-    "kings_justice": {},
-    "two_mitchs": {},
-    "infinity_war": {},
-    "deadpool": {}
+    "kings_justice": {
+      "1": {
+        "headline": "Puka's Bite Mark went into Monday night needing J.K. Dobbins. J.K. Dobbins had 3.6.",
+        "paragraphs": [
+          "Eighteen in, seventeen out, and the first body belongs to **NickBova**. The warning came in the very first game of the season, when Romeo Doubs posted a clean 0.0, and it never got better. By the end of the Sunday early games NickBova sat at 51.16 with exactly one player left: J.K. Dobbins, on Monday night. Projected 10.04. Delivered 3.6. Final: 54.76 on a 110.45 projection, dead last by 18.88.",
+          "The one who should be sweating is **cbova1222**. After the late window it was *cbova1222* in the chop seat at 49.64, 1.52 behind the eventual corpse, courtesy of Jordan Addison's 0.0. Sunday night and Rashee Rice's 9.9 on Monday dragged Danger Zone to 73.64, which is 32.75 under projection and 17th of 18. Nobody survived anything. The axe just found a slower target.",
+          "At the top, **Elworth** put up 159.8 on a 112.41 projection behind 35.3 from Derrick Henry and takes the $25. Honorable mention to **avobttam**, the commissioner, who led the league at 123.8 after the early games, scored 3.4 points in the entire late window, and finished second by 4.8. The Executioner, everybody."
+        ]
+      }
+    },
+    "two_mitchs": {
+      "1": {
+        "headline": "Nick Merkel dropped 174.22. Jon Carter got 39.66 from Josh Allen and still finished last.",
+        "paragraphs": [
+          "The compliment goes to **Nick Merkel**: 174.22, the best score in the league and 40.38 over projection even after Sleeper's bias. Dallas Goedert turned a 9.96 projection into 23.7 and Chris Olave added 28.2. The cruelty is who he played. **Mitch Pletcher** got 41.26 from Caleb Williams, scored 145.96, the highest losing score of the week, and is 0-1 because Jordan Addison gave him 0.0.",
+          "The roast goes to **Jon Carter**, who got the second-best quarterback game in the league (Josh Allen, 39.66) and turned it into the worst score in the league (93.56), 34.4 under projection. The trick was starting *two* zeros, Romeo Doubs and Colston Loveland. Chris Bova beat him while underperforming his own projection, which is the fantasy version of losing a race to a guy who stopped to tie his shoe.",
+          "And the only trade of the week already has two losers. **Austin Hendrickson** got Brock Purdy and benched him for Jared Goff, leaving 28.1 on the bench, but won anyway. **Jake Bogardus** got Mark Andrews, started him (8.9) over Kyle Monangai (20.4), started Kyle Pitts for a 0.0, and left 34.42 on the bench, the most in the league, in a 157.8 to 116.86 loss to Matt Bova."
+        ]
+      }
+    },
+    "infinity_war": {
+      "1": {
+        "headline": "All 18 picked the Chargers. djbogardus72 took the $20 by guessing Monday night within two points.",
+        "paragraphs": [
+          "Week 1 in one number: **18 for 18** on the Chargers, an 80% favorite, and Arizona won 26-14. Everybody also took Detroit, which survived New Orleans 31-30 and saved the entire league from a very long Monday. Four favorites went down in total, and nobody in the league picked a single one of the upsets.",
+          "So nobody won the week by being different. There was not one lonely win in the pool. **CHRISMERKELDUH**, **djbogardus72** and **NastyNate725** went 7-1 as the only three who stayed off all three of the other traps: the Rams (10 took them, San Francisco won 27-7), the Cowboys (8 took them, the Giants won 28-20) and the Titans (2 took them, the Jets won 23-10). That sent it to the tiebreaker, and Denver and Kansas City combined for 41. **djbogardus72** said 43 and takes the $20. NastyNate725 said 37. CHRISMERKELDUH said 48 and gets nothing for a perfect-except-the-Chargers week. Every 6-2 entry stepped on exactly one trap, commissioner **avobttam** and his Sunday-night Dallas pick included.",
+          "Last place is **Bustersx8** at 4-4, who managed to find the Rams, the Titans *and* the Chargers, then went solo on Green Bay as the only person in the league to pick the Packers. Minnesota won 39-22. Being different only pays when you are also right."
+        ]
+      }
+    },
+    "deadpool": {
+      "1": {
+        "headline": "Seven people rode the Chargers in survivor. Arizona handed out seven strikes.",
+        "paragraphs": [
+          "Nobody is dead yet, and that is the only good news. With two revives each, all 20 entries are still standing, but **8 of 20 burned a life in week 1**. The pick that did it was the Chargers, an 80% favorite and tied for the most popular pick in the pool with seven takers, who lost to Arizona 26-14. Strikes for **bjander110**, **Bustersx8**, **camschnick**, **CHRISMERKELDUH**, **JellyRoll6884**, **MerkDaddy36** and **NastyNate725**.",
+          "The eighth strike was a solo job. **MJBlack** went with Tennessee, a 52% coin flip that nobody else in the pool touched, and the Jets won 23-10. Going contrarian in survivor is a strategy. Going contrarian on a coin flip in week 1 is a donation.",
+          "The other half of the chalk carried everyone else. The seven on Jacksonville cruised, 34-10 over Cleveland. Pittsburgh (20-13) and Chicago (59-37) held up for their takers, and the two on Detroit, **AngryWillis** and **Kolisekj52**, sweated out a 31-30 win over New Orleans. Twelve clean, eight on one strike, zero bodies. Yet."
+        ]
+      }
+    }
   }
 }
