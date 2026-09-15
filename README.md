@@ -25,11 +25,13 @@ cumulative views, each with its own Save image button:
   season prizes (dimmed until the season is actually over).
 - **The King's Justice** — the $25 weekly high, week by week, and the season
   total.
-- **King's Justice and 2 Mitchs** — the waiver wire: spend, excess over the
-  runner-up bid, what each claim actually returned in started lineups, who keeps
-  getting outbid, spend by draft round and position, and the best and worst
-  spenders of the season. Rebuilt automatically every Wednesday at 11am ET by
-  `.github/workflows/waivers.yml`.
+- **King's Justice and 2 Mitchs** — the waiver wire. **Money wasted at auction**
+  gets its own savable grid: pay $400 for a player whose next-best bid was $150
+  and $250 of that bought nothing, tracked week by week and cumulatively. Plus
+  spend, what each claim actually returned in started lineups, who keeps getting
+  outbid, spend by the player's original draft round and by position, and the
+  season's best and worst spenders. Rebuilt automatically every Wednesday at
+  11am ET by `.github/workflows/waivers.yml`.
 
 ```bash
 python test/test_waivers.py                          # fixture test, no network

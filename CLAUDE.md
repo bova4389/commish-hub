@@ -179,9 +179,28 @@ The four metrics, defined here because they are easy to re-derive differently:
 | Metric | Is |
 |---|---|
 | **spent** | sum of WINNING bids. A failed claim costs nothing. |
-| **excess** | bid minus the runner-up bid on that same player -- money paid above what it took to win. On an uncontested claim the runner-up is $0, so the whole bid is excess. **That is the point, not a bug** ("$63 for a guy nobody else bid over $2 on"). |
-| **return** | the player's points from the claim week on, split into points actually STARTED by the winner and points merely ROSTERED. A guy you paid for and benched is still wasted money. Sleeper's own `players_points` is already scored through the league's settings. |
+| **waste** | **the headline number.** On a CONTESTED claim, the winning bid minus the runner-up bid. Bid $400 against a next-best $150 and you own the player either way, so $250 went in the bin. Tracked per week AND cumulatively, because the season figure is the one that settles an argument. |
+| **solo_spend** | spend on claims NOBODY ELSE BID ON. Kept separate and **never added to waste** — see below. |
+| **return** | the player's points from the claim week on, split into points actually STARTED by the winner and points merely ROSTERED. A guy you paid for and benched got nothing out of the money either. Sleeper's own `players_points` is already scored through the league's settings. |
 | **shut out** | failed claims: how many, how much was bid and lost, and the current run of weeks bidding with nothing to show. |
+
+**An uncontested claim wastes nothing, and this is the one definition to not
+"fix".** The first version counted the whole bid as waste when there was no
+second bidder, on the reasoning that $0 would also have won it. That is true and
+it is useless: it makes every uncontested claim 100% waste, and since most claims
+are uncontested it swamps the contested cases the metric is actually about. Waste
+needs a *runner-up* to measure against — that is the whole idea. Uncontested
+spend is reported beside it as `solo_spend` so the reader can judge it
+themselves, and `cost_per_point` is the metric that judges an uncontested bid.
+
+**`waste_rate` is waste over contested spend**, because $250 thrown away is a
+different story on $400 of contested bidding than on $4,000. It needs two
+contested wins to be reported at all, and the sharpest/loosest awards are only
+both shown when they are two different people.
+
+**A contested claim whose loser bid $0 has waste equal to the full bid**, and
+that is correct rather than a leak of the uncontested case: somebody did bid, at
+$0, so $0 is the real reference price.
 
 - **`week_transactions()` in build_week.py now keeps every losing bid, bidder and
   all.** It used to throw them away and keep only the runner-up *amount*. Sleeper
@@ -192,6 +211,11 @@ The four metrics, defined here because they are easy to re-derive differently:
   OWN draft** (`undrafted` is its own bucket) -- the "what the room paid in
   August against what it pays in October" read the owner asked for. It is not the
   NFL draft.
+- **Waste gets its own cumulative grid with its own Save image button**
+  (`sc-waste`), the same weeks-across shape as the money grids, plus a
+  claim-level **Biggest overpays** panel and a "worst of the season" line naming
+  the concrete case. Burying it as one ledger column was the first version's
+  mistake — it is the number the owner asked for, week by week *and* cumulative.
 - **`cost_per_point` is `null`, never zero, when there is nothing to judge.**
   Money spent with no started points renders as **dead**, which is a different
   statement from "cheap". The awards skip an owner under $10 of spend entirely.
