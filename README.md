@@ -27,7 +27,9 @@ cumulative views, each with its own Save image button:
   total.
 - **King's Justice and 2 Mitchs** — the waiver wire. **Money wasted at auction**
   gets its own savable grid: pay $400 for a player whose next-best bid was $150
-  and $250 of that bought nothing, tracked week by week and cumulatively. Plus
+  and $250 of that bought nothing, tracked week by week and cumulatively. An
+  uncontested claim counts in full — nobody else bidding means $0 would have won
+  him — and only a free $0 pickup is excluded. Plus
   spend, what each claim actually returned in started lineups, who keeps getting
   outbid, spend by the player's original draft round and by position, and the
   season's best and worst spenders. Rebuilt automatically every Wednesday at

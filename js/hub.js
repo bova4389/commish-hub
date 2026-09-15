@@ -747,16 +747,19 @@
   /* Money wasted at auction, week by week and cumulatively -- the same
      weeks-across / total-at-the-right shape as the money grids, and savable on
      its own. A cell is the winning bid minus the next-best bid, summed over
-     that week's contested claims; blank means they won nothing contested. */
+     that week's claims -- uncontested ones count in full, since a $0 bid would
+     have won them; blank means they won nothing, or took it at $0. */
   function wasteCard(W) {
     const weeks = (W.weeks || []).slice().sort((a, b) => a - b);
     const rows = (W.owners || []).map((o) => ({
       handle: o.handle, name: o.name,
       week: Object.fromEntries(weeks.map((w) => [w, (o.by_week[String(w)] || {}).waste || 0])),
-      total: o.waste, contested: o.contested_won, rate: o.waste_rate,
+      total: o.waste, solo: o.waste_solo, rate: o.waste_rate,
     })).sort((a, b) => b.total - a.total || a.handle.localeCompare(b.handle));
     const worst = (W.claims || []).filter((c) => c.waste > 0)
       .sort((a, b) => b.waste - a.waste).slice(0, 3);
+    const against = (c) => (c.contested ? `with the next bid at ${money(c.runner_up)}`
+      : 'and nobody else bid a cent');
     const zeros = rows.filter((r) => !r.total).length;
     const g = grid({
       weeks, rows, nameHead: 'Owner', totalHead: 'Wasted',
@@ -768,20 +771,23 @@
       },
       total: (r) => (r.total
         ? `<b class="bad">${money(r.total)}</b>` +
-          (r.rate != null ? `<div class="sub">${Math.round(r.rate * 100)}% of contested</div>` : '')
+          (r.rate != null ? `<div class="sub">${Math.round(r.rate * 100)}% of spend</div>` : '')
         : '<span class="z">$0</span>'),
       rowClass: (r) => (r.total ? '' : 'dim'),
     });
-    const dek = `The winning bid minus the next-best bid on every contested claim, added up. ` +
-      `${money(T_of(W).waste)} of ${money(T_of(W).contested_spend)} in contested bidding went in the bin -- ` +
-      `money that bought nothing, because the claim was already won at the price below. ` +
-      `Uncontested claims are excluded: there is no runner-up to have paid instead.`;
+    const T = T_of(W);
+    const dek = `The winning bid minus the next-best bid on that player, added up. ` +
+      `<b>${money(T.waste)} of ${money(T.spent)} spent</b> bought nothing -- the claim was already won at ` +
+      `the price below. An uncontested claim counts in full, because a $0 bid would have won it` +
+      (T.waste_solo ? ` (${money(T.waste_solo)} of the total came that way)` : '') + `. ` +
+      `The only thing excluded is a free $0 pickup` +
+      (T.free_claims ? `, of which there ${T.free_claims === 1 ? 'has been 1' : 'have been ' + T.free_claims}` : '') + `.`;
     const note = worst.length
       ? 'Worst of the season: ' + worst.map((c) =>
           `${esc(nameFor(c.handle))} paid ${money(c.bid)} for ${esc(c.player)} in week ${c.week} ` +
-          `with the next bid at ${money(c.runner_up)} (<b>${money(c.waste)}</b> wasted)`).join('; ') + '.'
+          `${against(c)} (<b>${money(c.waste)}</b> wasted)`).join('; ') + '.'
       : '';
-    const hid = hiddenNote(zeros, 'have wasted nothing -- no contested claim, or they won it at the next-best bid');
+    const hid = hiddenNote(zeros, 'have wasted nothing -- they won no claim, or took it at $0');
     return shareCard('sc-waste', 'Money wasted at auction', dek, gridToggle(zeros) + g,
       [note, hid].filter(Boolean).join(' '));
   }
@@ -802,22 +808,22 @@
         `<td class="num">${o.won}<span class="muted">/${o.bids}</span></td>` +
         `<td class="num ${o.win_rate != null && o.win_rate < 0.4 ? 'bad' : ''}">${o.win_rate == null ? '<span class="z">—</span>' : Math.round(o.win_rate * 100) + '%'}</td>` +
         `<td class="num ${o.waste > 0 ? 'bad' : ''}">${o.waste ? '<b>' + money(o.waste) + '</b>' : '<span class="z">$0</span>'}` +
-          `${o.waste_rate != null ? `<div class="sub">${Math.round(o.waste_rate * 100)}% of contested</div>` : ''}</td>` +
-        `<td class="num muted">${mny(o.solo_spend)}</td>` +
+          `${o.waste_rate != null ? `<div class="sub">${Math.round(o.waste_rate * 100)}% of spend</div>` : ''}</td>` +
+        `<td class="num muted">${mny(o.waste_solo)}</td>` +
         `<td class="num">${f2(o.points_started)}</td>` +
         `<td class="num ${o.cost_per_point == null ? 'bad' : ''}">${o.cost_per_point == null ? (o.spent ? 'dead' : '<span class="z">—</span>') : '$' + f2(o.cost_per_point)}</td>` +
         `<td class="num muted">${o.budget_left == null ? '—' : money(o.budget_left)}</td></tr>`;
     }).join('');
     const ledgerCard = shareCard('sc-waivers', 'Waiver spending',
       `${mny(T.spent)} across ${T.claims || 0} winning claims, ${T.failed || 0} failed. ` +
-      `<b>Wasted</b> is the winning bid minus the next-best bid on a contested claim -- bid ${mny(400)} ` +
-      `against a next-best ${mny(150)} and you own the player either way, so ${mny(250)} went in the bin. ` +
-      `<b>Solo</b> is spend on claims nobody else bid on, which wastes nothing by this measure because ` +
-      `there was no runner-up to have paid instead. ` +
+      `<b>Wasted</b> is the winning bid minus the next-best bid on that player. Bid $400 against a ` +
+      `next-best $150 and you own him either way, so $150 would have done and $250 went in the bin. ` +
+      `Nobody else bidding means the next-best bid is $0, so an uncontested claim is wasted in full -- ` +
+      `<b>Uncont.</b> is how much of the waste came that way. A free $0 pickup wastes nothing. ` +
       `<b>$/pt</b> divides spend by the points those players actually STARTED for; "dead" means money spent and nothing started.`,
       `<div class="gridwrap"><table class="grid"><thead><tr><th class="gname">Owner</th>` +
       `<th class="num">Spent</th><th class="num">Won</th><th class="num">Win%</th><th class="num">Wasted</th>` +
-      `<th class="num">Solo</th><th class="num">Pts</th><th class="num">$/pt</th>` +
+      `<th class="num">Uncont.</th><th class="num">Pts</th><th class="num">$/pt</th>` +
       `<th class="num gtotal">Left</th></tr></thead><tbody>${ledger}</tbody></table></div>`,
       `Through week ${esc(W.through_week)}. FAAB budget ${W.budget == null ? 'not set' : money(W.budget)}.`);
 
@@ -852,7 +858,8 @@
       .sort((a, b) => b.waste - a.waste).slice(0, 15).map((c) =>
         `<tr><td>${esc(c.player)} <span class="sub">${esc(c.pos)}${c.round ? ' &middot; rd ' + c.round : ' &middot; undrafted'}</span></td>` +
         `<td>${esc(nameFor(c.handle))}<div class="sub">wk ${c.week}</div></td>` +
-        `<td class="num"><b>${money(c.bid)}</b></td><td class="num muted">${money(c.runner_up)}</td>` +
+        `<td class="num"><b>${money(c.bid)}</b></td>` +
+        `<td class="num muted">${c.contested ? money(c.runner_up) : '<span class="z">none</span>'}</td>` +
         `<td class="num bad"><b>${money(c.waste)}</b></td></tr>`).join('');
 
     const shut = own.filter((o) => o.lost).sort((a, b) => b.lost_bid_total - a.lost_bid_total).map((o) =>
@@ -870,7 +877,7 @@
       panel('Spend by position', '', bucketTbl(T.by_pos || {}, 'Pos', Object.keys(T.by_pos || {}).sort((a, b) => (T.by_pos[b].spent - T.by_pos[a].spent)))),
       panel('Biggest claims', 'And what they have returned in started lineups since',
         claims ? tbl('<th>Player</th><th>Won by</th><th class="num">Bid</th><th class="num">Started pts</th>', claims) : '<div class="empty">No claims yet.</div>'),
-      overpays ? panel('Biggest overpays', 'Contested claims won by the widest margin over the next-best bid. Every dollar in the last column bought nothing.',
+      overpays ? panel('Biggest overpays', 'Claims won by the widest margin over the next-best bid. "None" means nobody else bid, so a $0 claim would have won the player. Every dollar in the last column bought nothing.',
         tbl('<th>Player</th><th>Won by</th><th class="num">Paid</th><th class="num">Next bid</th><th class="num">Wasted</th>', overpays)) : '',
       panel('Who keeps losing out', 'Failed claims, money bid and lost, and the current run of weeks bidding with nothing to show',
         shut ? tbl('<th>Owner</th><th class="num">Lost</th><th class="num">$ lost</th><th class="num">Streak</th><th>Shut out</th>', shut) : '<div class="empty">Nobody has lost a claim yet.</div>'),

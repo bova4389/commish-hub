@@ -64,10 +64,14 @@ TX = {
     3: [
         {'type': 'waiver', 'status': 'failed', 'roster_ids': [3], 'adds': {'p12': 3},
          'settings': {'waiver_bid': 5}},
-        # Uncontested: Ann pays $7 with nobody bidding against her. No runner-up
-        # exists, so this is solo_spend and contributes NOTHING to waste.
+        # Uncontested: Ann pays $7 with nobody bidding against her. The next-best
+        # bid is $0, so the WHOLE $7 is waste -- a $0 claim would have won him.
         {'type': 'waiver', 'status': 'complete', 'roster_ids': [1], 'adds': {'p14': 1},
          'settings': {'waiver_bid': 7}},
+        # A free $0 pickup. The one case that is excluded, and it falls out of
+        # the arithmetic on its own rather than needing a special case.
+        {'type': 'waiver', 'status': 'complete', 'roster_ids': [2], 'adds': {'p15': 2},
+         'settings': {'waiver_bid': 0}},
         {'type': 'free_agent', 'status': 'complete', 'roster_ids': [1], 'adds': {'p13': 1},
          'drops': {}},
     ],
@@ -89,7 +93,7 @@ MATCHUPS = {
 
 PLAYERS = {'p10': ('Ace Back', 'RB'), 'p11': ('Bud Wideout', 'WR'),
            'p12': ('Cam Tightend', 'TE'), 'p13': ('Dee Kicker', 'K'),
-           'p14': ('Eli Solo', 'RB')}
+           'p14': ('Eli Solo', 'RB'), 'p15': ('Fred Free', 'WR')}
 
 
 def fake_get(url, cacheable=True):
@@ -135,21 +139,25 @@ own = {o['handle']: o for o in L['owners']}
 claims = {(c['week'], c['player']): c for c in L['claims']}
 
 print('claims')
-eq(len(L['claims']), 3, 'three winning claims')
+eq(len(L['claims']), 4, 'four winning claims')
 eq(claims[(1, 'Ace Back')]['bid'], 40, 'Ann paid 40')
 eq(claims[(1, 'Ace Back')]['runner_up'], 12, "Cal's 12 is the runner-up")
 eq(claims[(1, 'Ace Back')]['round'], 1, 'p10 was a 1st-rounder')
 eq(claims[(2, 'Bud Wideout')]['round'], 9, 'p11 was a 9th-rounder')
 
-print('waste -- bid minus the next-best bid, contested claims only')
+print('waste -- bid minus the next-best bid, on EVERY claim')
 eq(claims[(1, 'Ace Back')]['contested'], True, 'week 1 claim was contested')
 eq(claims[(1, 'Ace Back')]['waste'], 28, '40 paid where 12 would have won it')
-eq(claims[(1, 'Ace Back')]['solo'], 0, 'a contested claim has no solo spend')
+eq(claims[(1, 'Ace Back')]['waste_solo'], 0, 'contested waste is not solo waste')
 eq(claims[(2, 'Bud Wideout')]['waste'], 21, '30 paid where 9 would have won it')
 eq(claims[(3, 'Eli Solo')]['contested'], False, 'week 3 claim was uncontested')
-eq(claims[(3, 'Eli Solo')]['waste'], 0,
-   'an uncontested claim wastes NOTHING: there is no runner-up to have paid instead')
-eq(claims[(3, 'Eli Solo')]['solo'], 7, 'the whole uncontested bid is solo spend')
+eq(claims[(3, 'Eli Solo')]['waste'], 7,
+   'an UNCONTESTED bid is wasted in full: a $0 claim would have won him')
+eq(claims[(3, 'Eli Solo')]['waste_solo'], 7, 'and all of it is solo waste')
+eq(claims[(3, 'Eli Solo')]['free'], False, 'a $7 bid is not a free pickup')
+eq(claims[(3, 'Fred Free')]['waste'], 0,
+   'THE ONE EXCLUSION: a $0 pickup wastes nothing, straight out of the arithmetic')
+eq(claims[(3, 'Fred Free')]['free'], True, 'and it is flagged as a free pickup')
 
 print('return on a claim')
 eq(claims[(1, 'Ace Back')]['points_started'], 20.0, 'Ann started p10 for 12+8')
@@ -160,14 +168,17 @@ eq(claims[(2, 'Bud Wideout')]['points_rostered'], 12.0, 'but rostered him for 5+
 
 print('owners')
 eq(own['Ann']['spent'], 47, 'Ann spent 40 + 7')
-eq(own['Ann']['waste'], 28, 'only the contested claim wastes anything')
-eq(own['Ann']['solo_spend'], 7, 'the uncontested 7 is tracked apart from waste')
+eq(own['Ann']['waste'], 35, 'Ann wasted 28 contested + the whole uncontested 7')
+eq(own['Ann']['waste_solo'], 7, 'of which 7 came from the uncontested claim')
+eq(own['Ann']['solo_spend'], 7, 'uncontested spend is still reported on its own')
 eq(own['Ann']['contested_spend'], 40, 'contested spend excludes the solo claim')
 eq(own['Ann']['contested_won'], 1, 'one contested win')
-eq(own['Ann']['waste_rate'], 0.7, '28 wasted of 40 contested')
+eq(own['Ann']['free_claims'], 0, 'Ann made no free pickups')
+eq(own['Ann']['waste_rate'], 0.745, '35 wasted of 47 spent -- denominator is TOTAL spend')
 eq(own['Ann']['by_week']['1']['waste'], 28, 'waste is bucketed per week')
-eq(own['Ann']['by_week']['3']['waste'], 0, 'the solo week wastes nothing')
-eq(own['Bob']['waste'], 21, "Bob's contested win wasted 21")
+eq(own['Ann']['by_week']['3']['waste'], 7, 'including the uncontested week')
+eq(own['Bob']['waste'], 21, "Bob's contested win wasted 21; his $0 pickup wasted nothing")
+eq(own['Bob']['free_claims'], 1, 'Bob made one free pickup')
 eq(own['Cal']['waste'], 0, 'you cannot waste money on a claim you lost')
 eq(own['Ann']['won'], 2, 'Ann won two claims')
 eq(own['Ann']['lost'], 0, 'Ann lost none')
@@ -187,15 +198,18 @@ eq(own['Ann']['shutout_streak'], 0, 'Ann is not on a cold streak')
 print('buckets')
 eq(own['Ann']['by_round']['1']['spent'], 40, 'Ann spent 40 on a 1st-rounder')
 eq(own['Ann']['by_round']['1']['waste'], 28, 'waste is bucketed by round too')
+eq(own['Ann']['by_round']['undrafted']['waste'], 7, 'the uncontested claim lands in undrafted')
 eq(own['Bob']['by_round']['9']['spent'], 30, 'Bob spent 30 on a 9th-rounder')
 eq(own['Cal']['by_round']['undrafted']['lost_bid'], 5, 'the undrafted bucket exists and holds lost bids')
 eq(L['totals']['by_round']['1']['spent'], 40, 'league spend by round')
 eq(L['totals']['by_pos']['RB']['spent'], 47, 'league spend by position covers both RBs')
 eq(L['totals']['spent'], 77, 'league spent 77 in total')
-eq(L['totals']['waste'], 49, 'league wasted 28 + 21')
-eq(L['totals']['solo_spend'], 7, 'and spent 7 uncontested')
+eq(L['totals']['waste'], 56, 'league wasted 28 + 21 + 7')
+eq(L['totals']['waste_solo'], 7, 'of which 7 was on a player nobody else bid on')
+eq(L['totals']['solo_spend'], 7, 'uncontested spend, the $0 pickup adding nothing')
 eq(L['totals']['contested_spend'], 70, 'contested spend is the other 70')
-eq(L['totals']['contested'], 2, 'two of the three winning claims were contested')
+eq(L['totals']['contested'], 2, 'two of the four winning claims were contested')
+eq(L['totals']['free_claims'], 1, 'one free $0 pickup')
 eq(L['totals']['failed'], 3, 'three failed claims')
 eq(L['budget'], 100, 'FAAB budget read off league settings')
 eq(L['weeks'], [1, 2, 3], 'three weeks of activity')
@@ -203,6 +217,8 @@ eq(L['weeks'], [1, 2, 3], 'three weeks of activity')
 print('awards')
 aw = {a['slug']: a for a in L['awards']}
 eq(aw['most_wasted']['handle'], 'Ann', 'Ann wasted the most money')
+ok('$7 of it on players nobody else bid on' in aw['most_wasted']['value'],
+   'and the award splits out the uncontested part')
 eq(aw['biggest_overpay']['handle'], 'Ann', 'and made the biggest single overpay')
 ok('$28 wasted' in aw['biggest_overpay']['value'], 'the overpay award names the amount wasted')
 eq(aw['best_value']['handle'], 'Ann', 'Ann is the best value')

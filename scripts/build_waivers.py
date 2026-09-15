@@ -21,17 +21,21 @@ Sources (all /v1, all cached in scripts/_cache):
 The four things it measures, defined here so nobody re-derives them differently:
 
   spent        sum of WINNING bids. Failed claims cost nothing.
-  waste        THE HEADLINE NUMBER. On a CONTESTED claim, the winning bid minus
-               the runner-up bid: bid $400 against a next-best $150 and you own
-               the player either way, so $250 was thrown away. It is tracked per
+  waste        THE HEADLINE NUMBER: the winning bid minus the next-best bid on
+               that player, on EVERY claim. Bid $400 against a next-best $150
+               and you own the player either way, so $250 was thrown away. On an
+               UNCONTESTED claim the next-best bid is $0, so the whole bid is
+               waste -- $100 for a player nobody else bid a cent on is $100 that
+               a $0 claim would have won (owner's call, 2026-09-15). Tracked per
                week and cumulatively, because the season figure is the one that
                settles an argument.
-  solo_spend   spend on claims NOBODY ELSE BID ON, kept separate and never added
-               to waste. There is no runner-up to have paid instead, so there is
-               no defensible amount that was "wasted" -- the whole bid could in
-               theory have been $0, which would make every uncontested claim
-               100% waste and swamp the contested cases the metric is about.
-               Reported beside waste so the reader can judge it themselves.
+
+               The only exclusion is a $0 pickup, which falls out of the
+               arithmetic on its own ($0 - $0) and is counted separately as a
+               free pickup rather than as a claim with nothing wasted.
+  waste_solo   the part of waste that came from uncontested claims, so the
+               reader can separate "paid over the odds in a bidding war" from
+               "paid for a player nobody wanted".
   return       the player's points AFTER the claim week, split into points
                actually STARTED by the winner and points merely ROSTERED. A guy
                you paid for and benched is still wasted money, so both are kept.
@@ -128,10 +132,12 @@ def build_league(key, cfg, season, through):
             weeks_seen.append(w)
         for c in tx['waivers']:
             contested = c['bidders'] > 1
+            # Waste on every claim, contested or not. A $0 pickup yields $0 and
+            # is flagged `free` so it can be counted apart from a real bid.
+            waste = c['bid'] - (c['runner_up'] or 0)
             claims.append(dict(c, week=w, round=rounds.get(str(c.get('player_id') or '')),
-                               contested=contested,
-                               waste=(c['bid'] - (c['runner_up'] or 0)) if contested else 0,
-                               solo=0 if contested else c['bid']))
+                               contested=contested, free=c['bid'] == 0, waste=waste,
+                               waste_solo=0 if contested else waste))
         for b in tx['lost_bids']:
             lost_bids.append(dict(b, week=w, round=rounds.get(str(b.get('player_id') or ''))))
         for a in tx['free_agents']:
@@ -168,7 +174,8 @@ def build_league(key, cfg, season, through):
     for rid, t in teams.items():
         owners[t['handle']] = {
             'handle': t['handle'], 'name': t['name'],
-            'spent': 0, 'waste': 0, 'solo_spend': 0, 'contested_spend': 0, 'contested_won': 0,
+            'spent': 0, 'waste': 0, 'waste_solo': 0, 'solo_spend': 0,
+            'contested_spend': 0, 'contested_won': 0, 'free_claims': 0,
             'won': 0, 'lost': 0, 'lost_bid_total': 0,
             'free_agents': 0, 'points_started': 0.0, 'points_rostered': 0.0, 'starts': 0,
             'budget_used': (t['settings'] or {}).get('waiver_budget_used'),
@@ -182,10 +189,14 @@ def build_league(key, cfg, season, through):
             continue
         o['spent'] += c['bid']
         o['waste'] += c['waste']
-        o['solo_spend'] += c['solo']
+        o['waste_solo'] += c['waste_solo']
         if c['contested']:
             o['contested_spend'] += c['bid']
             o['contested_won'] += 1
+        else:
+            o['solo_spend'] += c['bid']
+        if c['free']:
+            o['free_claims'] += 1
         o['won'] += 1
         o['points_started'] += c['points_started']
         o['points_rostered'] += c['points_rostered']
@@ -237,22 +248,24 @@ def build_league(key, cfg, season, through):
         o['points_per_dollar'] = (round(o['points_started'] / o['spent'], 2)
                                   if o['spent'] > 0 else None)
         o['budget_left'] = (budget - o['spent']) if budget is not None else None
-        # Waste as a share of contested spend: $250 thrown away on $400 of
-        # contested bidding is a different story from $250 on $4,000.
-        o['waste_rate'] = (round(o['waste'] / o['contested_spend'], 3)
-                           if o['contested_spend'] > 0 else None)
+        # Waste as a share of everything spent: $250 thrown away out of $400 is
+        # a different story from $250 out of $4,000. Denominator is total spend
+        # now that waste is measured on every claim, not just contested ones.
+        o['waste_rate'] = round(o['waste'] / o['spent'], 3) if o['spent'] > 0 else None
         for k in ('biggest_bid', 'biggest_waste', 'worst_buy'):
             c = o[k]
             if c:
                 o[k] = {f: c[f] for f in ('week', 'player', 'pos', 'bid', 'runner_up', 'waste',
-                                          'contested', 'round', 'points_started', 'starts')}
+                                          'contested', 'free', 'round', 'points_started', 'starts')}
 
     # --- league totals ---------------------------------------------------
     totals = {'spent': sum(c['bid'] for c in claims), 'claims': len(claims),
               'contested': sum(1 for c in claims if c['contested']),
               'waste': sum(c['waste'] for c in claims),
-              'solo_spend': sum(c['solo'] for c in claims),
+              'waste_solo': sum(c['waste_solo'] for c in claims),
+              'solo_spend': sum(c['bid'] for c in claims if not c['contested']),
               'contested_spend': sum(c['bid'] for c in claims if c['contested']),
+              'free_claims': sum(1 for c in claims if c['free']),
               'failed': len(lost_bids), 'budget': budget,
               'by_pos': {}, 'by_round': {}, 'by_week': {}}
     for c in claims:
@@ -307,22 +320,23 @@ def awards(owners, claims):
         w = max(wasters, key=lambda o: o['waste'])
         add('most_wasted', 'Most money wasted at auction',
             'Winning bid minus the next-best bid, added up',
-            w, f"${w['waste']} thrown away across {w['contested_won']} contested claims")
+            w, f"${w['waste']} thrown away across {w['won']} claims" +
+               (f" (${w['waste_solo']} of it on players nobody else bid on)" if w['waste_solo'] else ''))
         # Waste as a RATE, which is the fairer read: $250 thrown away is a
         # different story on $400 of contested bidding than on $4,000. Needs two
         # contested wins to mean anything, and the two ends are only reported
         # when they are actually two different people.
-        rated = [o for o in owners if o['contested_won'] >= 2 and o['waste_rate'] is not None]
+        rated = [o for o in owners if o['spent'] >= MIN_SPEND_FOR_AWARD and o['waste_rate'] is not None]
         if rated:
             sharp = min(rated, key=lambda o: o['waste_rate'])
             loose = max(rated, key=lambda o: o['waste_rate'])
             def rate(o):
-                return (f"${o['waste']} wasted on ${o['contested_spend']} of contested bids "
+                return (f"${o['waste']} wasted of ${o['spent']} spent "
                         f"({round(o['waste_rate'] * 100)}%)")
-            add('sharpest', 'Sharpest bidder', 'Least waste per dollar of contested bidding',
+            add('sharpest', 'Sharpest bidder', 'Least waste per dollar spent',
                 sharp, rate(sharp))
             if loose['handle'] != sharp['handle']:
-                add('loosest', 'Loosest bidder', 'Most waste per dollar of contested bidding',
+                add('loosest', 'Loosest bidder', 'Most waste per dollar spent',
                     loose, rate(loose))
     bidders = [o for o in owners if o['bids'] >= 3]
     if bidders:
@@ -337,10 +351,11 @@ def awards(owners, claims):
     over = [c for c in claims if c['waste'] > 0]
     if over:
         c = max(over, key=lambda x: x['waste'])
+        against = (f"with the next bid at ${c['runner_up']}" if c['contested']
+                   else 'and nobody else bid a cent')
         out.append({'slug': 'biggest_overpay', 'label': 'Biggest single overpay',
                     'dek': f"Week {c['week']}", 'handle': c['handle'], 'name': c['handle'],
-                    'value': f"${c['bid']} on {c['player']} with the next bid at "
-                             f"${c['runner_up']} -- ${c['waste']} wasted"})
+                    'value': f"${c['bid']} on {c['player']} {against} -- ${c['waste']} wasted"})
     if claims:
         top = max(claims, key=lambda c: c['bid'])
         out.append({'slug': 'biggest_bid', 'label': 'Biggest bid of the season',

@@ -200,28 +200,29 @@ The four metrics, defined here because they are easy to re-derive differently:
 | Metric | Is |
 |---|---|
 | **spent** | sum of WINNING bids. A failed claim costs nothing. |
-| **waste** | **the headline number.** On a CONTESTED claim, the winning bid minus the runner-up bid. Bid $400 against a next-best $150 and you own the player either way, so $250 went in the bin. Tracked per week AND cumulatively, because the season figure is the one that settles an argument. |
-| **solo_spend** | spend on claims NOBODY ELSE BID ON. Kept separate and **never added to waste** — see below. |
+| **waste** | **the headline number.** The winning bid minus the next-best bid on that player, on **every** claim. Bid $400 against a next-best $150 and you own the player either way, so $250 went in the bin. Tracked per week AND cumulatively, because the season figure is the one that settles an argument. |
+| **waste_solo** | the part of waste that came from **uncontested** claims, so "paid over the odds in a bidding war" can be told apart from "paid for a player nobody wanted". |
 | **return** | the player's points from the claim week on, split into points actually STARTED by the winner and points merely ROSTERED. A guy you paid for and benched got nothing out of the money either. Sleeper's own `players_points` is already scored through the league's settings. |
 | **shut out** | failed claims: how many, how much was bid and lost, and the current run of weeks bidding with nothing to show. |
 
-**An uncontested claim wastes nothing, and this is the one definition to not
-"fix".** The first version counted the whole bid as waste when there was no
-second bidder, on the reasoning that $0 would also have won it. That is true and
-it is useless: it makes every uncontested claim 100% waste, and since most claims
-are uncontested it swamps the contested cases the metric is actually about. Waste
-needs a *runner-up* to measure against — that is the whole idea. Uncontested
-spend is reported beside it as `solo_spend` so the reader can judge it
-themselves, and `cost_per_point` is the metric that judges an uncontested bid.
+**An uncontested claim is wasted IN FULL, and the only exclusion is a $0
+pickup** (owner's call, 2026-09-15). $100 for a player nobody else bid a cent on
+is $100 that a $0 claim would have won. **This reverses an earlier version of
+this file**, which counted uncontested claims as wasting nothing on the
+reasoning that there is no runner-up to measure against; the owner's position is
+that $0 *is* the runner-up, which is also what the arithmetic already said
+(`bid - (runner_up or 0)`). Do not re-litigate it back. A $0 pickup falls out on
+its own — $0 − $0 — and is counted separately as `free_claims` rather than
+special-cased.
 
-**`waste_rate` is waste over contested spend**, because $250 thrown away is a
-different story on $400 of contested bidding than on $4,000. It needs two
-contested wins to be reported at all, and the sharpest/loosest awards are only
-both shown when they are two different people.
+**`waste_rate` is waste over TOTAL spend**, not over contested spend, now that
+waste is measured on every claim. It needs $10 of spend to be reported at all,
+and the sharpest/loosest awards are only both shown when they are two different
+people.
 
-**A contested claim whose loser bid $0 has waste equal to the full bid**, and
-that is correct rather than a leak of the uncontested case: somebody did bid, at
-$0, so $0 is the real reference price.
+**A contested claim whose loser bid $0 has waste equal to the full bid**, the
+same as an uncontested one, which is the consistent answer rather than a leak:
+$0 is the real reference price either way.
 
 - **`week_transactions()` in build_week.py now keeps every losing bid, bidder and
   all.** It used to throw them away and keep only the runner-up *amount*. Sleeper
@@ -234,8 +235,9 @@ $0, so $0 is the real reference price.
   NFL draft.
 - **Waste gets its own cumulative grid with its own Save image button**
   (`sc-waste`), the same weeks-across shape as the money grids, plus a
-  claim-level **Biggest overpays** panel and a "worst of the season" line naming
-  the concrete case. Burying it as one ledger column was the first version's
+  claim-level **Biggest overpays** panel (where an uncontested row prints its
+  next bid as "none") and a "worst of the season" line naming the concrete
+  case. Burying it as one ledger column was the first version's
   mistake — it is the number the owner asked for, week by week *and* cumulative.
 - **`cost_per_point` is `null`, never zero, when there is nothing to judge.**
   Money spent with no started points renders as **dead**, which is a different
