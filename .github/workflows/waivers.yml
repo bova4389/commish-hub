@@ -1,0 +1,77 @@
+name: Waiver wire analysis
+
+# Wednesdays at 11am Eastern -- the morning after waivers clear, which is the
+# whole point of the cadence. GitHub cron is UTC and has no DST, so both offsets
+# are listed and the job no-ops on the one that is the wrong hour locally:
+#   15:00 UTC = 11am EDT (Mar-Nov)    16:00 UTC = 11am EST (Nov-Mar)
+# The guard step below drops whichever firing is not 11am in New York, so the
+# analysis lands at 11am local all season instead of drifting an hour in
+# November. Manual runs skip the guard.
+on:
+  schedule:
+    - cron: '0 15 * * 3'
+    - cron: '0 16 * * 3'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: waivers
+  cancel-in-progress: false
+
+jobs:
+  waivers:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Is it 11am in New York?
+        id: when
+        run: |
+          H=$(TZ=America/New_York date +%H)
+          if [ "${{ github.event_name }}" != "schedule" ] || [ "$H" = "11" ]; then
+            echo "go=yes" >> "$GITHUB_OUTPUT"
+          else
+            echo "go=no" >> "$GITHUB_OUTPUT"
+            echo "It is ${H}:00 in New York, not 11 -- the other cron entry handles today."
+          fi
+
+      - uses: actions/checkout@v4
+        if: steps.when.outputs.go == 'yes'
+
+      - uses: actions/setup-python@v5
+        if: steps.when.outputs.go == 'yes'
+        with:
+          python-version: '3.12'
+
+      # requests is the only dependency, and it is the only one the repo has.
+      # Nothing here is a build step for the site; see CLAUDE.md.
+      - name: Install requests
+        if: steps.when.outputs.go == 'yes'
+        run: pip install --quiet requests
+
+      # --refresh because the whole job is about this week's claims, and the
+      # on-disk cache is only ever correct for finished weeks.
+      - name: Build the waiver analysis
+        if: steps.when.outputs.go == 'yes'
+        run: python scripts/build_waivers.py --refresh
+
+      - name: Commit if anything changed
+        if: steps.when.outputs.go == 'yes'
+        run: |
+          git config user.name  'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          git add data/*/waivers.json
+          # `generated` changes on every run, so an unchanged analysis would
+          # still commit. Only ship it when a real number moved.
+          if git diff --cached --quiet; then
+            echo 'nothing changed'
+            exit 0
+          fi
+          if [ "$(git diff --cached --numstat | wc -l)" = "1" ] && \
+             [ "$(git diff --cached -U0 | grep -c '^[+-] ')" -le 2 ]; then
+            echo 'only the timestamp moved; not committing'
+            git reset
+            exit 0
+          fi
+          git commit -m 'Waiver wire analysis: automated Wednesday refresh'
+          git push

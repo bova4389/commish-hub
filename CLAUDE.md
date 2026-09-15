@@ -35,9 +35,15 @@ js/hub.js               the renderer (plain script, no modules)
 data/config.json        league ids per season, display names, accents, payouts, the OTL link
 data/<season>/index.json      which weeks have been built (Pages can't list a folder)
 data/<season>/week-NN.json    THE FACTS for one week, all four leagues  <- build_week.py
+data/<season>/season.json     the week rollup the cumulative grids read  <- build_season.py
+data/<season>/waivers.json    season-long waiver analysis  <- build_waivers.py (Wed cron)
 recaps/<season>.json    THE WORDS, hand-written, keyed league -> week
 scripts/build_week.py   pulls the week from Sleeper/ESPN, writes the facts file
+scripts/build_season.py folds every week file into season.json (run by build_week.py)
+scripts/build_waivers.py  the waiver wire analysis; Sleeper REST only, no token
 scripts/_cache/         cached API responses (gitignored)
+test/test_waivers.py    fixture test for the waiver metrics -- no network
+.github/workflows/waivers.yml   Wednesday 11am ET waiver refresh
 ```
 
 ## The Tuesday routine (how a week gets recapped)
@@ -81,6 +87,131 @@ leagues; roast his weeks on the same terms as everyone else's. Per league:
   carries a previous week's rolled pot forward).
 - **Deadpool** — bodies, the game that did it, whether the consensus pick got everyone killed.
   A "loss" with revives left is a strike, not a death; the card says `strikes`.
+
+## Season totals -- the cumulative grids
+
+Added 2026-09-15. Picking **Season totals** in the week dropdown (hash
+`#<league>/<season>/season`) swaps the weekly recap card for the cumulative
+views. It is a value in the week picker rather than a new tab on purpose: these
+are the same league, seen over the season instead of over a Sunday, and row 1 of
+the nav is the size of the *leagues*, not the count of views.
+
+Three grids, all the same shape -- **weeks across, entries down, season total in
+the last column** -- and all drawn by one `grid()` helper that takes
+`cell(row, week)` and `total(row)` callbacks. A fourth cumulative table is a few
+lines, not another copy of the sticky-column markup.
+
+| Grid | League | A cell holds |
+|---|---|---|
+| Money won | Infinity War | the weekly $20 (plus any rolled-in pot) on the week they took it |
+| Correct picks | Infinity War | that week's correct count; highlighted if it tied or set the week's best |
+| Weekly high money | King's Justice | the score that won the $25, blank on every other week |
+
+Each sits in a `.sharecard` with its **own** Save image / Preview pair, because
+these get posted to the chat on their own rather than as part of a weekly
+recap. The buttons are handled by one delegated listener on `#evidence`, so
+adding a card costs no wiring.
+
+Things in here that are decisions, not details:
+
+- **The cumulative views read `season.json`, never the week files.** A
+  `week-NN.json` is ~250 KB; eighteen of them is 4.5 MB and the page would be
+  unusable on a phone by December. `scripts/build_season.py` carries only the
+  fields these grids read -- a few KB for a whole season -- and **build_week.py
+  runs it at the end of every run**, so it cannot go stale relative to the weeks
+  on disk. It calls no API and invents nothing.
+- **The last column is sticky to the right, the name column sticky to the
+  left.** The total is the answer and the weeks are the working; without the pin
+  the one column anybody reads first is the one off the edge of a phone. That is
+  also why `.gridwrap` does NOT bleed to the card edge the way `.tbl-wrap` does:
+  `right: 0` resolves against the scrollport, so a negative margin pins the
+  total outside the card and lets the next week's column show in the gap beside
+  it. Hit and fixed the day it was built.
+- **Infinity War always carries a week-18 column, played or not**, because that
+  is where the season trophies go and seeing them coming is the point. While the
+  week is still ahead the column is amber-tinted and the trophies are dimmed --
+  they are where it stands today, never a result. `iwSeason()` unions the built
+  weeks with `last_week` for this; every per-week read tolerates a column with
+  no week behind it. The first version derived its columns from the built weeks
+  alone and the trophies silently never rendered.
+- **The trophies rank on cumulative CORRECT PICKS**, and they appear on *both*
+  Infinity War grids, because the season money IS that ranking -- showing them
+  apart would invite two different answers. $380 to first, $160 to second
+  (owner, 2026-09-14; also recorded in Bova's Picks). **A tie at the top is
+  reported and never resolved**: the pool has no season tiebreaker on record.
+  Ask and write the answer here the first time it happens.
+- **The weekly pot is never split, so money is just `pot` to `winners[0]`.**
+  `pot` already carries any rolled-over money in, and a rollover week pays
+  nobody -- do not also add `pot_carried` anywhere or a rolled week pays twice.
+- **King's Justice shows the weekly $25 only.** Its season prizes ($350 / $150)
+  are deliberately NOT on that table: the league is chopped, so first and second
+  are settled whenever the field gets down to two, not in week 18. (Owner's
+  call, 2026-09-15.)
+- **A King's Justice cell is blank unless that team won the week.** Eighteen
+  columns of everyone's score would be a heat map nobody can find themselves in.
+- **Per week / Running total is a toggle, not two tables.** Both readings of
+  "cumulative" are legitimate and the toggle is ten lines.
+- **`.sharecard.exporting` widens the card to `max-content` and unclips the
+  scroller**, which is what makes an 18-week grid come out whole instead of
+  cropped to the phone's viewport (measured: 1508px for the money grid). The
+  prose blocks keep a 760px measure inside it, because text set 1500px wide is
+  unreadable in a chat image.
+- **Sleeper keeps its own running pick total and the page cross-checks it.**
+  Ours is graded from ESPN finals. They have agreed so far; if they ever part,
+  `pickCheck()` says so on the card rather than quietly showing one of two
+  numbers.
+
+## Waiver wire analysis
+
+Added 2026-09-15. `scripts/build_waivers.py` -> `data/<season>/waivers.json`,
+rendered under **Season totals** for the two leagues that have a waiver wire
+(King's Justice and 2 Mitchs). A pick'em or survivor pool has no players to
+claim, so it gets nothing.
+
+**It runs on `.github/workflows/waivers.yml`, Wednesdays at 11am ET** -- the
+morning after waivers clear. Everything it reads is **Sleeper REST and keyless**:
+it deliberately never touches the pick'em GraphQL, so an expired Sleeper login
+can never break this job. That is the reason it is its own script rather than a
+branch of `build_week.py`.
+
+The four metrics, defined here because they are easy to re-derive differently:
+
+| Metric | Is |
+|---|---|
+| **spent** | sum of WINNING bids. A failed claim costs nothing. |
+| **excess** | bid minus the runner-up bid on that same player -- money paid above what it took to win. On an uncontested claim the runner-up is $0, so the whole bid is excess. **That is the point, not a bug** ("$63 for a guy nobody else bid over $2 on"). |
+| **return** | the player's points from the claim week on, split into points actually STARTED by the winner and points merely ROSTERED. A guy you paid for and benched is still wasted money. Sleeper's own `players_points` is already scored through the league's settings. |
+| **shut out** | failed claims: how many, how much was bid and lost, and the current run of weeks bidding with nothing to show. |
+
+- **`week_transactions()` in build_week.py now keeps every losing bid, bidder and
+  all.** It used to throw them away and keep only the runner-up *amount*. Sleeper
+  returns failed claims alongside the winning one, and they are the only record
+  of who keeps getting outbid -- the whole "who continues to lose out" half of
+  this rests on it. **Do not narrow it back.**
+- **Spend is bucketed by the acquired player's original round in THIS LEAGUE'S
+  OWN draft** (`undrafted` is its own bucket) -- the "what the room paid in
+  August against what it pays in October" read the owner asked for. It is not the
+  NFL draft.
+- **`cost_per_point` is `null`, never zero, when there is nothing to judge.**
+  Money spent with no started points renders as **dead**, which is a different
+  statement from "cheap". The awards skip an owner under $10 of spend entirely.
+- **Best and worst spenders are ranked in the script, not the page**, so the two
+  can't drift into two different answers.
+- **A claim's return stops when the player leaves the roster.** Points are only
+  counted for weeks the player is still in the winner's `players_points`, so a
+  trade or a drop ends the tally by itself.
+- **The workflow has two cron entries and a guard step.** GitHub cron is UTC with
+  no DST, so 15:00 and 16:00 UTC are both listed and whichever firing is not
+  11am in New York no-ops. Without that the analysis drifts to 10am ET in
+  November. A manual `workflow_dispatch` skips the guard.
+- **The commit step drops a run where only `generated` moved**, or every
+  Wednesday would produce a commit differing by a timestamp.
+- **`test/test_waivers.py` is a fixture test with no network** (44 assertions),
+  because Sleeper is not reachable from every environment this repo gets worked
+  in -- a Claude Code web session has a GitHub-only egress allowlist -- and these
+  are arithmetic on a shape that is easy to get subtly wrong. Run it with
+  `python test/test_waivers.py` after touching a metric, and change it in the
+  same pass.
 
 ## Things that will bite
 
@@ -144,7 +275,10 @@ be bumped when those change.
   re-checked pick by pick against ESPN finals that day: 164 picks, 0 mismatches.
 - Sleeper's `injury` field on a starter is *today's* status, not game-day: Zay Flowers showed
   "Out" after scoring 26.0 in week 1. Don't write "started an injured player" off it alone.
-- No automation. A GitHub Action could run `build_week.py` on Tuesday mornings like The Other
-  League's bot does; the prose still has to be written by hand, so it was left manual.
+- **Partly automated now.** `.github/workflows/waivers.yml` rebuilds the waiver analysis every
+  Wednesday at 11am ET. `build_week.py` is still run by hand on Tuesdays, because the pick'em
+  GraphQL needs Matt's Sleeper login token and putting it in this public repo's secrets was not
+  wanted; the prose has to be hand-written anyway. A Tuesday Action for King's Justice and
+  2 Mitchs alone (the REST leagues) would work if it is ever worth it.
 - The King's Justice history dashboard (`Kings Justice/dashboard.html`) is separate. The hub's
   KJ tab is the *weekly* view; the dashboard is four seasons of FAAB history. Link, don't merge.

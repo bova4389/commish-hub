@@ -1,0 +1,262 @@
+{
+ "season": 2026,
+ "generated": "2026-09-15T19:26:24-04:00",
+ "last_week": 18,
+ "weeks": [
+  1
+ ],
+ "final_weeks": [
+  1
+ ],
+ "leagues": {
+  "kings_justice": {
+   "entries": [
+    {
+     "handle": "AJPeak",
+     "name": "AJPeak"
+    },
+    {
+     "handle": "AllBidness",
+     "name": "AllBidness"
+    },
+    {
+     "handle": "avobttam",
+     "name": "avobttam"
+    },
+    {
+     "handle": "Bogeyman28",
+     "name": "Bogeyman28"
+    },
+    {
+     "handle": "bstanley45",
+     "name": "bstanley45"
+    },
+    {
+     "handle": "Bustersx8",
+     "name": "Bustersx8"
+    },
+    {
+     "handle": "ButtFumble06",
+     "name": "ButtFumble06"
+    },
+    {
+     "handle": "cbova1222",
+     "name": "cbova1222"
+    },
+    {
+     "handle": "CodyPowers28",
+     "name": "CodyPowers28"
+    },
+    {
+     "handle": "creckley",
+     "name": "creckley"
+    },
+    {
+     "handle": "Cubbiesftw23",
+     "name": "Cubbiesftw23"
+    },
+    {
+     "handle": "DipLipGator",
+     "name": "DipLipGator"
+    },
+    {
+     "handle": "Elworth",
+     "name": "Elworth"
+    },
+    {
+     "handle": "humrich",
+     "name": "humrich"
+    },
+    {
+     "handle": "joefanelli90",
+     "name": "joefanelli90"
+    },
+    {
+     "handle": "Mpletcher",
+     "name": "Mpletcher"
+    },
+    {
+     "handle": "nelsolson",
+     "name": "nelsolson"
+    },
+    {
+     "handle": "NickBova",
+     "name": "NickBova"
+    }
+   ],
+   "weeks": {
+    "1": {
+     "final": true,
+     "high": {
+      "handle": "Elworth",
+      "points": 159.8
+     },
+     "chopped": "NickBova",
+     "prize": 25
+    }
+   },
+   "payouts": {
+    "weekly_high": 25,
+    "first": 350,
+    "second": 150
+   },
+   "name": "The King's Justice",
+   "kind": "chopped"
+  },
+  "infinity_war": {
+   "entries": [
+    {
+     "handle": "AngryWillis",
+     "name": "AngryWillis"
+    },
+    {
+     "handle": "avobttam",
+     "name": "avobttam"
+    },
+    {
+     "handle": "bjander110",
+     "name": "bjander110"
+    },
+    {
+     "handle": "Bogeyman28",
+     "name": "Bogeyman28"
+    },
+    {
+     "handle": "Bustersx8",
+     "name": "Bustersx8"
+    },
+    {
+     "handle": "camschnick",
+     "name": "camschnick"
+    },
+    {
+     "handle": "cbova1222",
+     "name": "cbova1222"
+    },
+    {
+     "handle": "CHRISMERKELDUH",
+     "name": "CHRISMERKELDUH"
+    },
+    {
+     "handle": "Cubbiesftw23",
+     "name": "Cubbiesftw23"
+    },
+    {
+     "handle": "djbogardus72",
+     "name": "djbogardus72"
+    },
+    {
+     "handle": "katiestout13",
+     "name": "katiestout13"
+    },
+    {
+     "handle": "Kolisekj52",
+     "name": "Kolisekj52"
+    },
+    {
+     "handle": "MJBlack",
+     "name": "MJBlack"
+    },
+    {
+     "handle": "Mpletcher",
+     "name": "Mpletcher"
+    },
+    {
+     "handle": "msymons713",
+     "name": "msymons713"
+    },
+    {
+     "handle": "NastyNate725",
+     "name": "NastyNate725"
+    },
+    {
+     "handle": "NickBova",
+     "name": "NickBova"
+    },
+    {
+     "handle": "steveedwards",
+     "name": "steveedwards"
+    }
+   ],
+   "weeks": {
+    "1": {
+     "final": true,
+     "pot": 20,
+     "pot_carried": 0,
+     "rollover": false,
+     "best": 7,
+     "winners": [
+      "djbogardus72"
+     ],
+     "correct": {
+      "CHRISMERKELDUH": 7,
+      "djbogardus72": 7,
+      "NastyNate725": 7,
+      "avobttam": 6,
+      "bjander110": 6,
+      "Bogeyman28": 6,
+      "camschnick": 6,
+      "Cubbiesftw23": 6,
+      "katiestout13": 6,
+      "MJBlack": 6,
+      "Mpletcher": 6,
+      "msymons713": 6,
+      "NickBova": 6,
+      "AngryWillis": 5,
+      "cbova1222": 5,
+      "Kolisekj52": 5,
+      "steveedwards": 5,
+      "Bustersx8": 4
+     },
+     "pending": {
+      "CHRISMERKELDUH": 0,
+      "djbogardus72": 0,
+      "NastyNate725": 0,
+      "avobttam": 0,
+      "bjander110": 0,
+      "Bogeyman28": 0,
+      "camschnick": 0,
+      "Cubbiesftw23": 0,
+      "katiestout13": 0,
+      "MJBlack": 0,
+      "Mpletcher": 0,
+      "msymons713": 0,
+      "NickBova": 0,
+      "AngryWillis": 0,
+      "cbova1222": 0,
+      "Kolisekj52": 0,
+      "steveedwards": 0,
+      "Bustersx8": 0
+     }
+    }
+   },
+   "payouts": {
+    "weekly": 20,
+    "first": 380,
+    "second": 160
+   },
+   "sleeper_points": {
+    "CHRISMERKELDUH": 7.0,
+    "djbogardus72": 7.0,
+    "NastyNate725": 7.0,
+    "avobttam": 6.0,
+    "bjander110": 6.0,
+    "Bogeyman28": 6.0,
+    "camschnick": 6.0,
+    "Cubbiesftw23": 6.0,
+    "katiestout13": 6.0,
+    "MJBlack": 6.0,
+    "Mpletcher": 6.0,
+    "msymons713": 6.0,
+    "NickBova": 6.0,
+    "AngryWillis": 5.0,
+    "cbova1222": 5.0,
+    "Kolisekj52": 5.0,
+    "steveedwards": 5.0,
+    "Bustersx8": 4.0
+   },
+   "name": "Infinity War",
+   "kind": "pickem"
+  }
+ }
+}

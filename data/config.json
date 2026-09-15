@@ -39,7 +39,7 @@
       "kind": "pickem",
       "accent": "#b48cff",
       "ids": { "2026": "1400511807180828672" },
-      "payouts": { "weekly": 20 },
+      "payouts": { "weekly": 20, "first": 380, "second": 160 },
       "names": {}
     },
     "deadpool": {

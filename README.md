@@ -11,7 +11,26 @@ Static HTML and vanilla JS. The numbers are pulled from Sleeper and ESPN by
 `scripts/build_week.py`; the words are written by hand into `recaps/<season>.json`.
 
 ```bash
-python scripts/build_week.py --week 3 --refresh
+python scripts/build_week.py --week 3 --refresh      # the week's facts (+ the season rollup)
+python scripts/build_waivers.py --refresh            # the waiver analysis (Wednesdays, automated)
 ```
 
 Then open the page, pick the league, hit **Save image**, post it to the chat.
+
+Picking **Season totals** in the week dropdown instead of a week gives the
+cumulative views, each with its own Save image button:
+
+- **Infinity War** — money won week by week, and correct picks week by week,
+  with gold and silver trophies in the week-18 column for the $380 / $160
+  season prizes (dimmed until the season is actually over).
+- **The King's Justice** — the $25 weekly high, week by week, and the season
+  total.
+- **King's Justice and 2 Mitchs** — the waiver wire: spend, excess over the
+  runner-up bid, what each claim actually returned in started lineups, who keeps
+  getting outbid, spend by draft round and position, and the best and worst
+  spenders of the season. Rebuilt automatically every Wednesday at 11am ET by
+  `.github/workflows/waivers.yml`.
+
+```bash
+python test/test_waivers.py                          # fixture test, no network
+```

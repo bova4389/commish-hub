@@ -30,8 +30,9 @@
     }
   }
 
-  let CONFIG = null, INDEX = null, RECAPS = null, WEEK = null;
-  const state = { league: null, season: null, week: null };
+  let CONFIG = null, INDEX = null, RECAPS = null, WEEK = null, SEASON = null, WAIVERS = null;
+  // week is a number, or the string 'season' for the cumulative views.
+  const state = { league: null, season: null, week: null, gridMode: 'weekly' };
 
   /* ---------------------------------------------------------------- boot */
   async function boot() {
@@ -46,10 +47,28 @@
     if (!state.league || !CONFIG.leagues[state.league]) state.league = Object.keys(CONFIG.leagues)[0];
     fillSelect($('#season-select'), seasons.map((s) => [s, s]), state.season);
     $('#season-select').onchange = (e) => { state.season = +e.target.value; state.week = null; loadSeason(); };
-    $('#week-select').onchange = (e) => { state.week = +e.target.value; loadWeek(); };
+    $('#week-select').onchange = (e) => {
+      const v = e.target.value;
+      state.week = v === SEASON_VIEW ? SEASON_VIEW : +v;
+      loadWeek();
+    };
     $('#btn-save').onclick = () => exportCard('save');
     $('#btn-preview').onclick = () => exportCard('preview');
     $('#btn-close').onclick = () => { $('#overlay').hidden = true; };
+    // The season cards are rebuilt on every render, so their buttons are
+    // handled by delegation rather than wired one by one.
+    $('#evidence').addEventListener('click', (e) => {
+      const b = e.target.closest('[data-save],[data-preview],[data-gmode]');
+      if (!b) return;
+      if (b.dataset.gmode) {
+        if (b.dataset.gmode === state.gridMode) return;
+        state.gridMode = b.dataset.gmode;
+        return render();
+      }
+      const id = b.dataset.save || b.dataset.preview;
+      exportEl(document.getElementById(id), `${state.league}-${state.season}-${id}.png`,
+        b.dataset.save ? 'save' : 'preview');
+    });
     $('#overlay').onclick = (e) => { if (e.target.id === 'overlay') $('#overlay').hidden = true; };
     buildTabs();
     await loadSeason();
@@ -70,7 +89,7 @@
     const m = location.hash.replace('#', '').split('/');
     if (m[0]) state.league = m[0];
     if (m[1]) state.season = +m[1];
-    if (m[2]) state.week = +m[2];
+    if (m[2]) state.week = m[2] === SEASON_VIEW ? SEASON_VIEW : +m[2];
   }
   function writeHash() {
     const h = `#${state.league}/${state.season}/${state.week}`;
@@ -96,18 +115,26 @@
     $('#season-select').value = String(state.season);
     INDEX = await j(`data/${state.season}/index.json`, true) || { weeks: {} };
     RECAPS = await j(`recaps/${state.season}.json`, true) || { leagues: {} };
+    // Both are optional. The rollup is written by build_season.py at the end of
+    // every build_week run; waivers.json by the Wednesday cron. A season view
+    // with neither says what to run, rather than breaking the page.
+    SEASON = await j(`data/${state.season}/season.json`, true);
+    WAIVERS = await j(`data/${state.season}/waivers.json`, true);
     const weeks = Object.keys(INDEX.weeks).map(Number).sort((a, b) => a - b);
     if (!weeks.length) {
       $('#card-wrap').hidden = true; $('#evidence').innerHTML = '';
       return fail(`No weeks built for ${state.season} yet. Run: python scripts/build_week.py --week N`);
     }
-    if (!state.week || !weeks.includes(state.week)) state.week = weeks[weeks.length - 1];
-    fillSelect($('#week-select'), weeks.map((w) => [w, `Week ${w}${INDEX.weeks[w].final ? '' : ' (live)'}`]), state.week);
+    if (state.week !== SEASON_VIEW && (!state.week || !weeks.includes(state.week))) state.week = weeks[weeks.length - 1];
+    fillSelect($('#week-select'),
+      weeks.map((w) => [w, `Week ${w}${INDEX.weeks[w].final ? '' : ' (live)'}`])
+        .concat([[SEASON_VIEW, 'Season totals']]), state.week);
     await loadWeek();
   }
 
   async function loadWeek() {
     $('#status').hidden = false; $('#status').textContent = 'Loading…';
+    if (state.week === SEASON_VIEW) { writeHash(); return renderSeason(); }
     try {
       WEEK = await j(`data/${state.season}/week-${String(state.week).padStart(2, '0')}.json`);
     } catch (e) {
@@ -123,6 +150,7 @@
     const cfg = CONFIG.leagues[state.league];
     document.documentElement.style.setProperty('--accent', cfg.accent);
     document.querySelectorAll('.tab').forEach((b) => b.classList.toggle('active', b.dataset.k === state.league));
+    if (state.week === SEASON_VIEW) return renderSeason();
     const L = WEEK && WEEK.leagues[state.league];
     const status = $('#status');
     if (!L || L.error) {
@@ -381,6 +409,368 @@
       panel('Every entry', L.no_pick && L.no_pick.length ? `No pick submitted: ${esc(L.no_pick.join(', '))}` : '', tbl('<th>Entry</th><th>Pick</th><th class="num">Strikes</th><th></th>', rows));
   }
 
+
+  /* ================================================================ season
+     Everything below renders the CUMULATIVE views -- the ones reached by
+     picking "Season totals" in the week dropdown instead of a week number.
+
+     They read data/<season>/season.json (the week rollup, written by
+     scripts/build_season.py) and data/<season>/waivers.json (written by
+     scripts/build_waivers.py on the Wednesday cron). Both are optional: a
+     season with no rollup yet says so rather than breaking the page.
+
+     A grid here is `weeks across, entries down, season total in the last
+     column`, which is the shape asked for. Each one sits in a .sharecard --
+     its own Save image button, because these get posted to the chat on their
+     own, not as part of a weekly recap. */
+
+  const SEASON_VIEW = 'season';
+  const TROPHY = { 1: '\u{1F947}', 2: '\u{1F948}' };   // gold, silver
+
+  // The last week of the season, off the rollup. The Infinity War grids always
+  // carry a column for it even before it is played, because that is where the
+  // season trophies live and seeing them coming is the point.
+  function lastWeek() {
+    return (SEASON && SEASON.last_week) || 18;
+  }
+
+  // Cumulative money and picks for Infinity War, straight off the rollup.
+  // The weekly pot is never split, so a week pays its one winner the whole
+  // `pot` (which already carries any rolled-over money) and a rollover week
+  // pays nobody. Season prizes rank on TOTAL CORRECT PICKS.
+  function iwSeason(L) {
+    const last = lastWeek();
+    const built = Object.keys(L.weeks).map(Number).sort((a, b) => a - b);
+    const weeks = built.includes(last) ? built : built.concat([last]);
+    const rows = L.entries.map((e) => {
+      const money = {}, correct = {};
+      let mt = 0, ct = 0;
+      weeks.forEach((w) => {
+        const W = L.weeks[String(w)];
+        if (!W) { money[w] = 0; correct[w] = null; return; }   // the unplayed week-18 column
+        const won = W.winners.includes(e.handle) ? (W.pot || 0) : 0;
+        if (won) mt += won;
+        money[w] = won;
+        const c = W.correct[e.handle];
+        if (c != null) ct += c;
+        correct[w] = c;
+      });
+      return { handle: e.handle, name: e.name, money, correct, money_total: mt, correct_total: ct };
+    });
+    // Trophies follow cumulative correct. A tie is reported, never resolved --
+    // the pool has no season tiebreaker on record.
+    const byCorrect = [...rows].sort((a, b) => b.correct_total - a.correct_total);
+    const p = L.payouts || {};
+    const prize = { 1: p.first || 0, 2: p.second || 0 };
+    const place = {};
+    let seen = [];
+    byCorrect.forEach((r) => {
+      if (!seen.length || r.correct_total !== seen[seen.length - 1]) seen.push(r.correct_total);
+      const rank = seen.length;
+      if (rank <= 2) place[r.handle] = rank;
+    });
+    const tied = {};
+    [1, 2].forEach((rk) => {
+      const at = byCorrect.filter((r) => place[r.handle] === rk);
+      if (at.length > 1) tied[rk] = at.length;
+    });
+    // A TIED PLACE CARRIES NO MONEY. The trophy still shows -- they really are
+    // tied -- but the prize is not added to anyone's total, because who gets it
+    // is undetermined and the pool has no season tiebreaker on record. Without
+    // this, week 1 2026 (three at 7, eleven at 6) put $380 on three people and
+    // $160 on eleven, which is $2,140 of a $540 prize pool.
+    rows.forEach((r) => {
+      r.place = place[r.handle] || null;
+      r.tied_at = r.place ? (tied[r.place] || 0) : 0;
+      r.prize = r.place && !r.tied_at ? prize[r.place] || 0 : 0;
+    });
+    const final = !!(L.weeks[String(last)] || {}).final;
+    return { weeks, rows, prize, tied, final, last, payouts: p };
+  }
+
+  // King's Justice weekly high. A cell holds the winner's score for the week
+  // they won it and is blank otherwise -- that was the ask, and it also makes
+  // the table readable: 18 columns of everyone's score would be a heat map
+  // nobody can find themselves in.
+  function kjSeason(L) {
+    const weeks = Object.keys(L.weeks).map(Number).sort((a, b) => a - b);
+    const rows = L.entries.map((e) => {
+      const wins = {};
+      let total = 0, n = 0;
+      weeks.forEach((w) => {
+        const W = L.weeks[String(w)];
+        if (W.high && W.high.handle === e.handle) {
+          wins[w] = W.high.points;
+          total += W.prize || 0;
+          n += 1;
+        }
+      });
+      return { handle: e.handle, name: e.name, wins, total, n };
+    });
+    return { weeks, rows };
+  }
+
+  /* ---- the grid ------------------------------------------------------
+     One function draws all three grids. `cell(row, week)` returns the HTML for
+     a cell and `total(row)` the last column, so a new cumulative table is a
+     few lines rather than another copy of the sticky-column markup. */
+  function grid(o) {
+    const cols = o.weeks;
+    const running = state.gridMode === 'running';
+    const head = `<tr><th class="gname">${esc(o.nameHead || 'Entry')}</th>` +
+      cols.map((w) => `<th class="num${o.softWeeks && o.softWeeks.includes(w) ? ' soft' : ''}">${w}</th>`).join('') +
+      `<th class="num gtotal">${esc(o.totalHead)}</th></tr>`;
+    const body = o.rows.map((r, i) => {
+      let run = 0;
+      const cells = cols.map((w) => {
+        const c = o.cell(r, w, running ? (run += (o.step ? o.step(r, w) : 0)) : null);
+        return `<td class="num${o.softWeeks && o.softWeeks.includes(w) ? ' soft' : ''}">${c}</td>`;
+      }).join('');
+      return `<tr class="${o.rowClass ? o.rowClass(r, i) : ''}"><th class="gname" scope="row">${esc(r.name || r.handle)}` +
+        (o.rowNote ? o.rowNote(r) : '') + `</th>${cells}<td class="num gtotal">${o.total(r)}</td></tr>`;
+    }).join('');
+    return `<div class="gridwrap"><table class="grid"><thead>${head}</thead><tbody>${body}</tbody></table></div>`;
+  }
+
+  // A .sharecard is a panel with its own Save image / Preview pair. The buttons
+  // carry the target id in a data attribute and are handled by one delegated
+  // listener, so adding a card costs no wiring.
+  function shareCard(id, title, dek, body, note) {
+    return `<section class="sharecard-wrap">` +
+      `<div class="sharecard" id="${esc(id)}">` +
+        `<div class="sc-top"><span class="sc-league">${esc(CONFIG.leagues[state.league].name)}</span>` +
+        `<span class="sc-season">${esc(state.season)} season</span></div>` +
+        `<h3 class="sc-head">${esc(title)}</h3>` +
+        (dek ? `<div class="sc-dek">${dek}</div>` : '') +
+        body +
+        (note ? `<div class="sc-note">${note}</div>` : '') +
+        `<div class="sc-foot"><span>Commish Hub</span><span>${esc(seasonStamp())}</span></div>` +
+      `</div>` +
+      `<div class="card-actions"><button type="button" class="btn" data-save="${esc(id)}">Save image</button>` +
+      `<button type="button" class="btn ghost" data-preview="${esc(id)}">Preview image</button>` +
+      `<span class="hint">On a phone: Preview, then long-press the picture to save it.</span></div>` +
+      `</section>`;
+  }
+
+  function seasonStamp() {
+    const s = (SEASON && SEASON.generated) || '';
+    return s ? 'Through ' + s.replace('T', ' ').slice(0, 10) : '';
+  }
+
+  function gridToggle() {
+    return `<div class="gtoggle" role="group" aria-label="Cell values">` +
+      ['weekly', 'running'].map((m) =>
+        `<button type="button" class="gt ${state.gridMode === m ? 'on' : ''}" data-gmode="${m}">` +
+        (m === 'weekly' ? 'Per week' : 'Running total') + '</button>').join('') + '</div>';
+  }
+
+  function renderSeason() {
+    const cfg = CONFIG.leagues[state.league];
+    const status = $('#status');
+    $('#card-wrap').hidden = true;
+    const parts = [];
+
+    const S = SEASON && (SEASON.leagues || {})[state.league];
+    if (S && cfg.kind === 'pickem') parts.push(...iwCards(S));
+    else if (S && cfg.kind === 'chopped') parts.push(kjCard(S));
+
+    const W = WAIVERS && (WAIVERS.leagues || {})[state.league];
+    if (W && !W.error) parts.push(...waiverPanels(W));
+    else if (['chopped', 'h2h'].includes(cfg.kind)) {
+      parts.push(panel('Waiver wire', 'Rebuilt every Wednesday at 11am ET',
+        W && W.error ? `<div class="empty">The waiver script failed: ${esc(W.error)}</div>`
+          : '<div class="empty">No waiver analysis built yet. Run: python scripts/build_waivers.py</div>'));
+    }
+
+    if (!parts.length) {
+      $('#evidence').innerHTML = '';
+      return fail(`No season totals for ${cfg.name} yet.` +
+        (SEASON ? '' : ` Run: python scripts/build_season.py --season ${state.season}`));
+    }
+    status.hidden = true; status.classList.remove('err');
+    $('#evidence').innerHTML = parts.join('');
+    $('#foot').innerHTML = `Season totals rolled up ${esc((SEASON && SEASON.generated || '').replace('T', ' ').slice(0, 16))}` +
+      (WAIVERS ? ` &middot; waivers through week ${esc(WAIVERS.through_week)}` : '') +
+      ` &middot; <a href="${esc(CONFIG.site.other_league_url)}" target="_blank" rel="noopener">The Other League recap &rarr;</a>`;
+  }
+
+  /* ---- Infinity War: money and picks ---------------------------------- */
+  function iwCards(L) {
+    const D = iwSeason(L);
+    const last = D.last;
+    // The week-18 column is tinted while it is still ahead of us, so a trophy
+    // sitting in it never reads as a settled result.
+    const soft = D.final ? [] : [last];
+    const trophyOf = (r) => (r.place
+      ? `<span class="trophy${D.final && !r.tied_at ? '' : ' proj'}" title="${r.place === 1 ? 'First' : 'Second'} place` +
+        `${r.tied_at ? `, ${r.tied_at}-way tie` : ''}, ${money(D.prize[r.place])}">${TROPHY[r.place]}</span>`
+      : '');
+    const prizeNote = D.final
+      ? `Season prizes paid: ${money(D.prize[1])} to first, ${money(D.prize[2])} to second.`
+      : `Season prizes (${money(D.prize[1])} / ${money(D.prize[2])}) are awarded after week ${last}. The trophies below are where it stands today, not a result.`;
+    const tieNote = Object.keys(D.tied).length
+      ? ` <b>Tied for ${Object.keys(D.tied).map((k) => `${(k === '1' ? 'first' : 'second')} (${D.tied[k]}-way)`).join(' and ')}</b> ` +
+        `on correct picks, so that prize is not counted in anyone's total -- the pool has no season tiebreaker on record.`
+      : '';
+
+    // Money. Weekly pot to the one winner, plus the season prize in the week-18
+    // column, so the last column is every dollar the entry has taken.
+    const moneyRows = [...D.rows].sort((a, b) => (b.money_total + b.prize) - (a.money_total + a.prize) ||
+      b.correct_total - a.correct_total || a.handle.localeCompare(b.handle));
+    const moneyGrid = grid({
+      weeks: D.weeks, rows: moneyRows, softWeeks: soft, totalHead: 'Season $',
+      step: (r, w) => r.money[w] || 0,
+      cell: (r, w, run) => {
+        const t = w === last ? trophyOf(r) : '';
+        const won = r.money[w] || 0;
+        if (run != null) return (run ? `<span class="v">${money(run)}</span>` : '<span class="z">—</span>') + t;
+        return (won ? `<span class="v win">${money(won)}</span>` : '<span class="z">—</span>') + t;
+      },
+      total: (r) => `<b>${money(r.money_total + r.prize)}</b>` +
+        (r.prize ? `<div class="sub${D.final ? '' : ' proj'}">${money(r.money_total)} weekly + ${money(r.prize)}</div>` :
+          r.tied_at ? `<div class="sub proj">+ ${money(D.prize[r.place])}? ${r.tied_at}-way tie</div>` : ''),
+      rowClass: (r) => (r.place === 1 ? 'hl-good' : ''),
+    });
+    const rolled = D.weeks.filter((w) => (L.weeks[String(w)] || {}).rollover);
+    const moneyDek = `${money((L.payouts || {}).weekly || 20)} a week to the most correct, never split: a tie goes to the Monday-night tiebreaker and a tie on that rolls the pot forward. ` +
+      (rolled.length ? `Rolled over: week ${rolled.join(', ')}.` : '') + ' ' + prizeNote + tieNote;
+
+    // Picks correct. Same layout, same trophies -- the season money IS this
+    // ranking, so showing them apart would invite two different answers.
+    const pickRows = [...D.rows].sort((a, b) => b.correct_total - a.correct_total || a.handle.localeCompare(b.handle));
+    const pickGrid = grid({
+      weeks: D.weeks, rows: pickRows, softWeeks: soft, totalHead: 'Correct',
+      step: (r, w) => r.correct[w] || 0,
+      cell: (r, w, run) => {
+        const t = w === last ? trophyOf(r) : '';
+        const c = r.correct[w];
+        if (run != null) return (run ? `<span class="v">${run}</span>` : '<span class="z">—</span>') + t;
+        const W = L.weeks[String(w)] || {};
+        const best = W.best != null && c === W.best && c > 0;
+        return (c == null ? '<span class="z">—</span>' : `<span class="v${best ? ' win' : ''}">${c}</span>`) + t;
+      },
+      total: (r) => `<b>${r.correct_total}</b>`,
+      rowClass: (r) => (r.place === 1 ? 'hl-good' : ''),
+    });
+    const lim = 8;
+    const pickDek = `Correct picks out of ${lim} a week, graded against final scores. A highlighted cell tied or set that week's best. ` + prizeNote + tieNote;
+    const check = pickCheck(L, D);
+
+    return [
+      shareCard('sc-iw-money', 'Money won, week by week', moneyDek, gridToggle() + moneyGrid),
+      shareCard('sc-iw-picks', 'Correct picks, week by week', pickDek, gridToggle() + pickGrid, check),
+    ];
+  }
+
+  // Sleeper keeps its own running total. Ours is graded here against ESPN
+  // finals, and they have agreed so far -- but if they ever part, the page says
+  // so rather than quietly showing one of two numbers.
+  function pickCheck(L, D) {
+    const sp = L.sleeper_points || {};
+    const off = D.rows.filter((r) => sp[r.handle] != null && Math.abs(sp[r.handle] - r.correct_total) > 0.01);
+    if (!off.length) return '';
+    return `<b>Heads up:</b> Sleeper's own total disagrees for ` +
+      off.slice(0, 4).map((r) => `${esc(r.handle)} (${sp[r.handle]} vs ${r.correct_total})`).join(', ') +
+      `. The figures above are graded from final scores; Sleeper's are its own.`;
+  }
+
+  /* ---- King's Justice: the weekly high ------------------------------- */
+  function kjCard(L) {
+    const D = kjSeason(L);
+    const prize = ((L.payouts || {}).weekly_high) || 25;
+    const rows = [...D.rows].sort((a, b) => b.total - a.total || a.handle.localeCompare(b.handle));
+    const g = grid({
+      weeks: D.weeks, rows, totalHead: 'Season $',
+      step: (r, w) => (r.wins[w] != null ? prize : 0),
+      cell: (r, w, run) => {
+        if (run != null) return run ? `<span class="v">${money(run)}</span>` : '<span class="z">—</span>';
+        const p = r.wins[w];
+        return p == null ? '<span class="z">—</span>'
+          : `<span class="v win">${f2(p)}</span><div class="sub">${money(prize)}</div>`;
+      },
+      total: (r) => (r.total ? `<b>${money(r.total)}</b><div class="sub">${r.n} week${r.n === 1 ? '' : 's'}</div>` : '<span class="z">$0</span>'),
+      rowClass: (r) => (r.total ? '' : 'dim'),
+    });
+    const taken = D.rows.filter((r) => r.n).length;
+    const paid = D.rows.reduce((a, r) => a + r.total, 0);
+    const dek = `${money(prize)} to the highest score each week. A cell shows the score that won it; blank means they did not. ` +
+      `${money(paid)} paid out over ${D.weeks.length} week${D.weeks.length === 1 ? '' : 's'}, split between ${taken} team${taken === 1 ? '' : 's'}. ` +
+      `The season prizes are not on this table -- this league is chopped, so first and second are settled whenever the field gets down to two.`;
+    return shareCard('sc-kj-money', 'Weekly high money', dek, gridToggle() + g);
+  }
+
+  /* ---- waivers -------------------------------------------------------- */
+  function waiverPanels(W) {
+    const T = W.totals || {};
+    const own = W.owners || [];
+    const mny = (n) => (n ? money(n) : '<span class="z">$0</span>');
+
+    // The ledger. One row an owner, every metric the analysis defines.
+    const ledger = own.map((o) => {
+      const cls = o.spent === 0 && o.lost ? 'dim' : '';
+      return `<tr class="${cls}"><th class="gname" scope="row">${esc(o.name || o.handle)}</th>` +
+        `<td class="num"><b>${mny(o.spent)}</b></td>` +
+        `<td class="num">${o.won}<span class="muted">/${o.bids}</span></td>` +
+        `<td class="num ${o.win_rate != null && o.win_rate < 0.4 ? 'bad' : ''}">${o.win_rate == null ? '<span class="z">—</span>' : Math.round(o.win_rate * 100) + '%'}</td>` +
+        `<td class="num ${o.excess > 0 ? 'warn' : ''}">${mny(o.excess)}</td>` +
+        `<td class="num">${f2(o.points_started)}</td>` +
+        `<td class="num ${o.cost_per_point == null ? 'bad' : ''}">${o.cost_per_point == null ? (o.spent ? 'dead' : '<span class="z">—</span>') : '$' + f2(o.cost_per_point)}</td>` +
+        `<td class="num muted">${o.budget_left == null ? '—' : money(o.budget_left)}</td></tr>`;
+    }).join('');
+    const ledgerCard = shareCard('sc-waivers', 'Waiver spending',
+      `${mny(T.spent)} across ${T.claims || 0} winning claims, ${T.failed || 0} failed. ` +
+      `<b>Excess</b> is money paid above the runner-up bid -- on an uncontested claim that is the whole bid. ` +
+      `<b>$/pt</b> divides spend by the points those players actually STARTED for; "dead" means money spent and nothing started.`,
+      `<div class="gridwrap"><table class="grid"><thead><tr><th class="gname">Owner</th>` +
+      `<th class="num">Spent</th><th class="num">Won</th><th class="num">Win%</th><th class="num">Excess</th>` +
+      `<th class="num">Pts</th><th class="num">$/pt</th><th class="num gtotal">Left</th></tr></thead><tbody>${ledger}</tbody></table></div>`,
+      `Through week ${esc(W.through_week)}. FAAB budget ${W.budget == null ? 'not set' : money(W.budget)}.`);
+
+    // Best and worst, computed in the script so the page can't rank it a
+    // second, different way.
+    const aw = (W.awards || []).map((a) =>
+      `<div class="award"><div class="aw-label">${esc(a.label)}</div><div class="aw-who">${esc(a.name || a.handle)}</div>` +
+      `<div class="aw-val">${esc(a.value)}</div><div class="aw-dek">${esc(a.dek)}</div></div>`).join('');
+
+    const bucketTbl = (obj, label, order) => {
+      const keys = order || Object.keys(obj).sort((a, b) => (a === 'undrafted') - (b === 'undrafted') || (+a) - (+b));
+      const rows = keys.filter((k) => obj[k]).map((k) => {
+        const b = obj[k];
+        return `<tr><td>${esc(k === 'undrafted' ? 'Undrafted' : (label === 'Round' ? 'Round ' + k : k))}</td>` +
+          `<td class="num"><b>${mny(b.spent)}</b></td><td class="num">${b.won}</td>` +
+          `<td class="num muted">${b.won ? '$' + f2(b.spent / b.won) : '—'}</td>` +
+          `<td class="num muted">${b.lost || 0}${b.lost_bid ? ` <span class="sub">${money(b.lost_bid)}</span>` : ''}</td></tr>`;
+      }).join('');
+      return tbl(`<th>${esc(label)}</th><th class="num">Spent</th><th class="num">Won</th><th class="num">Avg</th><th class="num">Lost bids</th>`, rows);
+    };
+
+    const claims = (W.claims || []).slice(0, 20).map((c) => {
+      const waste = c.bid - c.points_started;
+      return `<tr><td>${esc(c.player)} <span class="sub">${esc(c.pos)}${c.round ? ' &middot; rd ' + c.round : ' &middot; undrafted'}</span></td>` +
+        `<td>${esc(nameFor(c.handle))}<div class="sub">wk ${c.week}</div></td>` +
+        `<td class="num"><b>${money(c.bid)}</b>${c.bidders > 1 ? `<div class="sub">next ${money(c.runner_up)}</div>` : '<div class="sub">uncontested</div>'}</td>` +
+        `<td class="num ${c.points_started > c.bid ? 'good' : (waste > 10 ? 'bad' : '')}">${f2(c.points_started)}<div class="sub">${c.starts} start${c.starts === 1 ? '' : 's'}</div></td></tr>`;
+    }).join('');
+
+    const shut = own.filter((o) => o.lost).sort((a, b) => b.lost_bid_total - a.lost_bid_total).map((o) =>
+      `<tr class="${o.shutout_streak >= 2 ? 'hl-warn' : ''}"><td>${esc(o.name || o.handle)}</td>` +
+      `<td class="num">${o.lost}</td><td class="num">${money(o.lost_bid_total)}</td>` +
+      `<td class="num">${o.shutout_streak || '—'}</td>` +
+      `<td class="muted">${o.shutout_weeks.length ? 'wk ' + o.shutout_weeks.join(', ') : '—'}</td></tr>`).join('');
+
+    return [
+      ledgerCard,
+      aw ? panel('Best and worst spenders', 'Cumulative, through week ' + esc(W.through_week), `<div class="awards">${aw}</div>`) : '',
+      panel('Spend by draft round', 'What the room paid in August against what it pays now. The round is the player\'s original pick in THIS league\'s draft; undrafted is its own bucket.',
+        bucketTbl(T.by_round || {}, 'Round')),
+      panel('Spend by position', '', bucketTbl(T.by_pos || {}, 'Pos', Object.keys(T.by_pos || {}).sort((a, b) => (T.by_pos[b].spent - T.by_pos[a].spent)))),
+      panel('Biggest claims', 'And what they have returned in started lineups since',
+        claims ? tbl('<th>Player</th><th>Won by</th><th class="num">Bid</th><th class="num">Started pts</th>', claims) : '<div class="empty">No claims yet.</div>'),
+      panel('Who keeps losing out', 'Failed claims, money bid and lost, and the current run of weeks bidding with nothing to show',
+        shut ? tbl('<th>Owner</th><th class="num">Lost</th><th class="num">$ lost</th><th class="num">Streak</th><th>Shut out</th>', shut) : '<div class="empty">Nobody has lost a claim yet.</div>'),
+    ].filter(Boolean);
+  }
+
   /* ---------------------------------------------------------------- helpers */
   function nameFor(handle) {
     const names = CONFIG.leagues[state.league].names || {};
@@ -394,15 +784,22 @@
   }
 
   /* ---------------------------------------------------------------- export */
-  async function exportCard(mode) {
-    const card = $('#recap-card');
-    const btn = $('#btn-save'), btn2 = $('#btn-preview');
-    btn.disabled = btn2.disabled = true;
+  function exportCard(mode) {
+    return exportEl($('#recap-card'), `${state.league}-${state.season}-week-${state.week}.png`, mode);
+  }
+
+  /* Render any element to a PNG. `.exporting` widens the node and unclips its
+     scrollers, which is what makes an 18-week grid come out whole instead of
+     cropped to the phone's viewport. */
+  async function exportEl(card, name, mode) {
+    if (!card) return;
+    const btns = [...document.querySelectorAll('.btn')];
+    btns.forEach((b) => { b.disabled = true; });
     card.classList.add('exporting');
     try {
-      const canvas = await html2canvas(card, { scale: 2, backgroundColor: '#0f1115', useCORS: true, logging: false });
+      const canvas = await html2canvas(card, { scale: 2, backgroundColor: '#0f1115', useCORS: true, logging: false,
+                                               windowWidth: Math.max(card.scrollWidth + 80, 900) });
       card.classList.remove('exporting');
-      const name = `${state.league}-${state.season}-week-${state.week}.png`;
       if (mode === 'preview') {
         $('#overlay-img').src = canvas.toDataURL('image/png');
         $('#overlay').hidden = false;
@@ -418,7 +815,7 @@
       card.classList.remove('exporting');
       alert('Could not render the image: ' + e.message);
     } finally {
-      btn.disabled = btn2.disabled = false;
+      btns.forEach((b) => { b.disabled = false; });
     }
   }
 

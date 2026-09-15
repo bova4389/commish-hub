@@ -53,6 +53,8 @@ from zoneinfo import ZoneInfo
 
 import requests
 
+import build_season
+
 REST = 'https://api.sleeper.app/v1'
 BASE = 'https://api.sleeper.app'
 GQL = 'https://api.sleeper.app/graphql'
@@ -495,17 +497,28 @@ def week_transactions(lid, week, teams, proj):
             for pid, rid in (t.get('adds') or {}).items():
                 sides.setdefault(teams.get(rid, {}).get('handle', str(rid)), []).append(player_info(pid, proj)['name'])
             trades.append({'sides': sides})
-    out = []
+    out, lost = [], []
     for pid, c in claims.items():
         bids = sorted(c['bids'], key=lambda b: -b['bid'])
         win = next((b for b in bids if b['won']), None)
+        others = [b for b in bids if not b['won']]
+        # Every losing bid is kept, bidder and all. Sleeper returns failed claims
+        # alongside the winning one, and they are the only record of who keeps
+        # getting outbid -- scripts/build_waivers.py is built on this.
+        for b in others:
+            lost.append({'player_id': pid, 'player': c['player'], 'pos': c['pos'], 'handle': b['handle'],
+                         'bid': b['bid'], 'won_by': win['handle'] if win else None,
+                         'won_at': win['bid'] if win else None})
         if not win:
             continue
-        others = [b['bid'] for b in bids if not b['won']]
-        out.append({'player': c['player'], 'pos': c['pos'], 'handle': win['handle'], 'bid': win['bid'],
-                    'bidders': len(bids), 'runner_up': max(others) if others else None})
+        out.append({'player_id': pid, 'player': c['player'], 'pos': c['pos'], 'handle': win['handle'],
+                    'bid': win['bid'], 'bidders': len(bids),
+                    'runner_up': max(b['bid'] for b in others) if others else None,
+                    'losers': [{'handle': b['handle'], 'bid': b['bid']} for b in others]})
     out.sort(key=lambda x: -x['bid'])
-    return {'waivers': out, 'faab_spent': sum(x['bid'] for x in out), 'free_agents': adds, 'trades': trades}
+    lost.sort(key=lambda x: -x['bid'])
+    return {'waivers': out, 'lost_bids': lost, 'faab_spent': sum(x['bid'] for x in out),
+            'free_agents': adds, 'trades': trades}
 
 
 # ---------------------------------------------------------------- Kings Justice
@@ -903,6 +916,9 @@ def main():
         json.dump(idx, f, indent=1)
     os.replace(idx_path + '.tmp', idx_path)
     print(f'wrote {os.path.relpath(path, ROOT)}')
+    # The cumulative tables read one rollup, not eighteen week files. Rebuilt
+    # here so it can never be stale relative to the weeks on disk.
+    build_season.main_for(season)
 
 
 if __name__ == '__main__':

@@ -144,3 +144,98 @@ tr.dim td { color: var(--faint); }
   .card { --pad: 28px; }
   .card-head { font-size: 28px; }
 }
+
+/* ---------- season: cumulative grids ----------
+   A .sharecard is a panel that gets screenshotted on its own, so it repeats the
+   league name and season the way the recap card does -- posted to a chat with
+   no page around it, the image has to say what it is. */
+.sharecard-wrap { margin-bottom: 22px; }
+.sharecard {
+  background: linear-gradient(160deg, #1a1e27 0%, #12151b 100%);
+  border: 1px solid var(--line); border-top: 5px solid var(--accent);
+  border-radius: var(--radius); padding: 18px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.35);
+}
+/* Widening on export is what makes an 18-week grid come out whole rather than
+   cropped to the phone viewport: the scroller is unclipped and the card grows
+   to its own content instead of the column width. */
+.sharecard.exporting { width: max-content; max-width: none; padding: 26px; }
+.sharecard.exporting .gridwrap { overflow: visible; margin: 0; padding: 0; }
+.sharecard.exporting .gtoggle { display: none; }
+/* The card grows to the grid's width, which for 18 weeks is ~1500px. Prose set
+   that wide is unreadable in a chat image, so the text blocks keep a measure. */
+.sharecard.exporting .sc-dek,
+.sharecard.exporting .sc-note { max-width: 760px; }
+.sharecard.exporting .grid th.gname,
+.sharecard.exporting .grid .gtotal { position: static; }
+.sc-top { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
+.sc-league { color: var(--accent); font-weight: 800; letter-spacing: .06em; text-transform: uppercase; font-size: 12.5px; }
+.sc-season { color: var(--muted); font-size: 12.5px; font-weight: 600; white-space: nowrap; }
+.sc-head { margin: 6px 0 8px; font-size: 21px; line-height: 1.2; font-weight: 800; letter-spacing: -0.015em; }
+.sc-dek { color: var(--muted); font-size: 12.5px; margin-bottom: 12px; }
+.sc-dek b { color: var(--warn); }
+.sc-note { color: var(--faint); font-size: 12px; margin-top: 10px; }
+.sc-note b { color: var(--warn); }
+.sc-foot { display: flex; justify-content: space-between; margin-top: 14px; padding-top: 10px; border-top: 1px solid var(--line); color: var(--faint); font-size: 11.5px; }
+
+/* The grid itself. The name column is sticky so a row stays identifiable while
+   the weeks scroll; the total column is separated by a rule, because it is the
+   answer and the weeks are the working. */
+/* No bleed to the card edge here, unlike .tbl-wrap. `right: 0` on the sticky
+   total column resolves against the scrollport, so a negative margin would pin
+   the total 18px outside the card and let the next week's column show in the
+   gap beside it. */
+.gridwrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+table.grid { border-collapse: separate; border-spacing: 0; width: auto; min-width: 100%; font-size: 13.5px; }
+table.grid th, table.grid td { padding: 6px 8px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+table.grid thead th { color: var(--muted); font-weight: 700; font-size: 11.5px; text-transform: uppercase; letter-spacing: .05em; text-align: right; }
+table.grid th.gname {
+  position: sticky; left: 0; z-index: 2; text-align: left; font-weight: 700;
+  background: #171a21; min-width: 108px; max-width: 150px;
+  overflow: hidden; text-overflow: ellipsis;
+}
+table.grid thead th.gname { background: #1e222b; }
+table.grid td.num, table.grid th.num { text-align: right; font-variant-numeric: tabular-nums; }
+/* The total is the answer and the weeks are the working, so it is pinned to the
+   right the way the name is pinned to the left. Without this the one column
+   anybody reads first is the one off the edge of a phone. */
+table.grid .gtotal {
+  position: sticky; right: 0; z-index: 2;
+  border-left: 2px solid var(--line); padding-left: 10px; background: #171a21;
+}
+table.grid thead th.gtotal { background: #1e222b; }
+table.grid tbody tr:nth-child(even) .gtotal { background: #1b1f27; }
+table.grid tbody tr.hl-good .gtotal { background: #1d2a23; }
+table.grid tbody tr:nth-child(even) td { background: rgba(255,255,255,.02); }
+table.grid tbody tr:nth-child(even) th.gname { background: #1b1f27; }
+table.grid tbody tr.hl-good th.gname { background: #1d2a23; }
+table.grid tbody tr.dim td, table.grid tbody tr.dim th { color: var(--faint); }
+table.grid .v { font-weight: 700; }
+table.grid .v.win { color: var(--good); }
+table.grid .z { color: #3d434f; }             /* an empty cell, visible but quiet */
+table.grid .sub { font-size: 10.5px; line-height: 1.25; }
+table.grid th.soft, table.grid td.soft { background: rgba(240,184,74,.05); }
+
+/* A trophy is dotted-outlined while it is only where things stand -- same
+   "this is modeled, not settled" cue the other sites use for a projection. */
+.trophy { font-size: 15px; margin-left: 3px; }
+.trophy.proj { opacity: .55; }
+.sub.proj { color: var(--warn); opacity: .8; }
+
+.gtoggle { display: inline-flex; gap: 0; margin-bottom: 10px; border: 1px solid var(--line); border-radius: 9px; overflow: hidden; }
+.gt { background: transparent; color: var(--muted); border: 0; padding: 7px 13px; font-size: 13px; font-weight: 600; cursor: pointer; }
+.gt.on { background: var(--accent); color: #111; }
+
+/* ---------- waivers: best & worst ---------- */
+.awards { display: grid; grid-template-columns: 1fr; gap: 10px; }
+.award { background: var(--panel-2); border: 1px solid var(--line); border-left: 3px solid var(--accent); border-radius: 10px; padding: 10px 12px; }
+.aw-label { color: var(--accent); font-size: 10.5px; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; }
+.aw-who { font-weight: 800; font-size: 16px; margin-top: 2px; }
+.aw-val { font-size: 13.5px; margin-top: 2px; }
+.aw-dek { color: var(--faint); font-size: 12px; margin-top: 2px; }
+
+@media (min-width: 560px) {
+  .awards { grid-template-columns: 1fr 1fr; }
+  .sharecard { padding: 22px; }
+  .sc-head { font-size: 24px; }
+}
