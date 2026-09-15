@@ -32,7 +32,11 @@
 
   let CONFIG = null, INDEX = null, RECAPS = null, WEEK = null, SEASON = null, WAIVERS = null;
   // week is a number, or the string 'season' for the cumulative views.
-  const state = { league: null, season: null, week: null, gridMode: 'weekly' };
+  // hideZero defaults ON: the money grids are sorted highest-first, so the $0
+  // rows are a block of nothing at the bottom and the shareable image is better
+  // without them. The toggle says how many it is hiding, so nobody goes missing
+  // silently.
+  const state = { league: null, season: null, week: null, gridMode: 'weekly', hideZero: true };
 
   /* ---------------------------------------------------------------- boot */
   async function boot() {
@@ -58,8 +62,12 @@
     // The season cards are rebuilt on every render, so their buttons are
     // handled by delegation rather than wired one by one.
     $('#evidence').addEventListener('click', (e) => {
-      const b = e.target.closest('[data-save],[data-preview],[data-gmode]');
+      const b = e.target.closest('[data-save],[data-preview],[data-gmode],[data-zero]');
       if (!b) return;
+      if (b.dataset.zero) {
+        state.hideZero = !state.hideZero;
+        return render();
+      }
       if (b.dataset.gmode) {
         if (b.dataset.gmode === state.gridMode) return;
         state.gridMode = b.dataset.gmode;
@@ -517,10 +525,18 @@
   function grid(o) {
     const cols = o.weeks;
     const running = state.gridMode === 'running';
+    // `isZero` marks a row as having won nothing. Never filter down to an empty
+    // table -- a grid showing no rows at all reads as broken data, not as a
+    // filter doing its job.
+    let rows = o.rows;
+    if (state.hideZero && o.isZero) {
+      const kept = rows.filter((r) => !o.isZero(r));
+      if (kept.length) rows = kept;
+    }
     const head = `<tr><th class="gname">${esc(o.nameHead || 'Entry')}</th>` +
       cols.map((w) => `<th class="num${o.softWeeks && o.softWeeks.includes(w) ? ' soft' : ''}">${w}</th>`).join('') +
       `<th class="num gtotal">${esc(o.totalHead)}</th></tr>`;
-    const body = o.rows.map((r, i) => {
+    const body = rows.map((r, i) => {
       let run = 0;
       const cells = cols.map((w) => {
         const c = o.cell(r, w, running ? (run += (o.step ? o.step(r, w) : 0)) : null);
@@ -552,16 +568,33 @@
       `</section>`;
   }
 
+  /* An export drops the controls, so the card itself has to say what is missing
+     or the image quietly claims the league is smaller than it is. */
+  function hiddenNote(zeros, why) {
+    if (!zeros || !state.hideZero) return '';
+    return `${zeros} row${zeros === 1 ? '' : 's'} hidden: they ${why}.`;
+  }
+
   function seasonStamp() {
     const s = (SEASON && SEASON.generated) || '';
     return s ? 'Through ' + s.replace('T', ' ').slice(0, 10) : '';
   }
 
-  function gridToggle() {
-    return `<div class="gtoggle" role="group" aria-label="Cell values">` +
+  /* The controls above a grid. `zeros` is how many rows carry nothing; pass it
+     and a Hide/Show $0 button appears, labelled with the count so the state of
+     the filter is never a guess. Both controls are hidden in an export. */
+  function gridToggle(zeros, unit) {
+    const modes = `<div class="gtoggle" role="group" aria-label="Cell values">` +
       ['weekly', 'running'].map((m) =>
         `<button type="button" class="gt ${state.gridMode === m ? 'on' : ''}" data-gmode="${m}">` +
         (m === 'weekly' ? 'Per week' : 'Running total') + '</button>').join('') + '</div>';
+    if (!zeros) return `<div class="gctl">${modes}</div>`;
+    const label = state.hideZero
+      ? `Show ${zeros} ${unit || '$0'} row${zeros === 1 ? '' : 's'}`
+      : `Hide ${zeros} ${unit || '$0'} row${zeros === 1 ? '' : 's'}`;
+    return `<div class="gctl">${modes}` +
+      `<button type="button" class="gt zt ${state.hideZero ? '' : 'on'}" data-zero="1" ` +
+      `aria-pressed="${state.hideZero ? 'false' : 'true'}">${esc(label)}</button></div>`;
   }
 
   function renderSeason() {
@@ -617,8 +650,14 @@
     // column, so the last column is every dollar the entry has taken.
     const moneyRows = [...D.rows].sort((a, b) => (b.money_total + b.prize) - (a.money_total + a.prize) ||
       b.correct_total - a.correct_total || a.handle.localeCompare(b.handle));
+    // A $0 row here is an entry that has taken neither a weekly pot nor a
+    // (settled) season prize. A tied trophy is not money, so it does not save a
+    // row from the filter -- the trophy is still on the grid when the rows are
+    // shown, and the tie note above says it either way.
+    const moneyZeros = moneyRows.filter((r) => !(r.money_total + r.prize)).length;
     const moneyGrid = grid({
       weeks: D.weeks, rows: moneyRows, softWeeks: soft, totalHead: 'Season $',
+      isZero: (r) => !(r.money_total + r.prize),
       step: (r, w) => r.money[w] || 0,
       cell: (r, w, run) => {
         const t = w === last ? trophyOf(r) : '';
@@ -657,7 +696,10 @@
     const check = pickCheck(L, D);
 
     return [
-      shareCard('sc-iw-money', 'Money won, week by week', moneyDek, gridToggle() + moneyGrid),
+      shareCard('sc-iw-money', 'Money won, week by week', moneyDek,
+        gridToggle(moneyZeros) + moneyGrid, hiddenNote(moneyZeros, 'have not won a dollar yet')),
+      // No filter on the picks grid: everyone has a pick count, and a 0 there
+      // would mean "submitted no card", which is worth seeing rather than hiding.
       shareCard('sc-iw-picks', 'Correct picks, week by week', pickDek, gridToggle() + pickGrid, check),
     ];
   }
@@ -679,8 +721,10 @@
     const D = kjSeason(L);
     const prize = ((L.payouts || {}).weekly_high) || 25;
     const rows = [...D.rows].sort((a, b) => b.total - a.total || a.handle.localeCompare(b.handle));
+    const zeros = rows.filter((r) => !r.total).length;
     const g = grid({
       weeks: D.weeks, rows, totalHead: 'Season $',
+      isZero: (r) => !r.total,
       step: (r, w) => (r.wins[w] != null ? prize : 0),
       cell: (r, w, run) => {
         if (run != null) return run ? `<span class="v">${money(run)}</span>` : '<span class="z">—</span>';
@@ -696,7 +740,8 @@
     const dek = `${money(prize)} to the highest score each week. A cell shows the score that won it; blank means they did not. ` +
       `${money(paid)} paid out over ${D.weeks.length} week${D.weeks.length === 1 ? '' : 's'}, split between ${taken} team${taken === 1 ? '' : 's'}. ` +
       `The season prizes are not on this table -- this league is chopped, so first and second are settled whenever the field gets down to two.`;
-    return shareCard('sc-kj-money', 'Weekly high money', dek, gridToggle() + g);
+    return shareCard('sc-kj-money', 'Weekly high money', dek, gridToggle(zeros) + g,
+      hiddenNote(zeros, 'have never taken the weekly high'));
   }
 
   /* Money wasted at auction, week by week and cumulatively -- the same
@@ -712,8 +757,10 @@
     })).sort((a, b) => b.total - a.total || a.handle.localeCompare(b.handle));
     const worst = (W.claims || []).filter((c) => c.waste > 0)
       .sort((a, b) => b.waste - a.waste).slice(0, 3);
+    const zeros = rows.filter((r) => !r.total).length;
     const g = grid({
       weeks, rows, nameHead: 'Owner', totalHead: 'Wasted',
+      isZero: (r) => !r.total,
       step: (r, w) => r.week[w] || 0,
       cell: (r, w, run) => {
         const v = run != null ? run : r.week[w];
@@ -734,7 +781,9 @@
           `${esc(nameFor(c.handle))} paid ${money(c.bid)} for ${esc(c.player)} in week ${c.week} ` +
           `with the next bid at ${money(c.runner_up)} (<b>${money(c.waste)}</b> wasted)`).join('; ') + '.'
       : '';
-    return shareCard('sc-waste', 'Money wasted at auction', dek, gridToggle() + g, note);
+    const hid = hiddenNote(zeros, 'have wasted nothing -- no contested claim, or they won it at the next-best bid');
+    return shareCard('sc-waste', 'Money wasted at auction', dek, gridToggle(zeros) + g,
+      [note, hid].filter(Boolean).join(' '));
   }
 
   function T_of(W) { return W.totals || {}; }

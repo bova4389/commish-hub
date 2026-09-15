@@ -222,9 +222,17 @@ table.grid th.soft, table.grid td.soft { background: rgba(240,184,74,.05); }
 .trophy.proj { opacity: .55; }
 .sub.proj { color: var(--warn); opacity: .8; }
 
-.gtoggle { display: inline-flex; gap: 0; margin-bottom: 10px; border: 1px solid var(--line); border-radius: 9px; overflow: hidden; }
+/* The controls above a grid. Wraps on a phone rather than shrinking the tap
+   targets; everything in here stays >=34px tall with the label's line box. */
+.gctl { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 10px; }
+.gtoggle { display: inline-flex; gap: 0; border: 1px solid var(--line); border-radius: 9px; overflow: hidden; }
 .gt { background: transparent; color: var(--muted); border: 0; padding: 7px 13px; font-size: 13px; font-weight: 600; cursor: pointer; }
 .gt.on { background: var(--accent); color: #111; }
+/* The $0 filter is its own standalone button, not a third segment of the
+   per-week/running pair -- it answers a different question and the two must not
+   look like one three-way choice. */
+.gt.zt { border: 1px solid var(--line); border-radius: 9px; }
+.gt.zt.on { background: var(--panel-2); color: var(--text); border-color: var(--muted); }
 
 /* ---------- waivers: best & worst ---------- */
 .awards { display: grid; grid-template-columns: 1fr; gap: 10px; }

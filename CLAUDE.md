@@ -151,6 +151,27 @@ Things in here that are decisions, not details:
   columns of everyone's score would be a heat map nobody can find themselves in.
 - **Per week / Running total is a toggle, not two tables.** Both readings of
   "cumulative" are legitimate and the toggle is ten lines.
+- **Every money grid is sorted highest-total-first and hides its $0 rows by
+  default.** Sorted that way the $0 rows are a block of nothing at the bottom,
+  which is dead weight in a shared image. `grid()` takes an `isZero(row)`
+  predicate; the button is labelled with the count (`Show 10 $0 rows`) so the
+  filter's state is never a guess, and it **never filters down to an empty
+  table** -- a grid with no rows reads as broken data rather than as a filter
+  working. The picks grid deliberately has no such button: a 0 there means
+  "submitted no card", which is worth seeing.
+- **A card with rows hidden says so in its own footnote.** An export drops the
+  controls (`.sharecard.exporting .gctl { display: none }`), so without
+  `hiddenNote()` a saved image would quietly claim the league is smaller than it
+  is. **A tied trophy does not save a row from the filter** -- a tie is not
+  money, and the tie note above the grid says so either way.
+- **The `$0` button is a standalone control, not a third segment of the
+  per-week/running pair.** It answers a different question, and as one
+  three-across group the two would read as one three-way choice.
+- **`#evidence`'s delegated listener matches on `[data-save],[data-preview],
+  [data-gmode],[data-zero]`.** Adding a control means adding its attribute to
+  that selector -- the first version of the `$0` button handled `data-zero`
+  inside the callback but left it out of the `closest()` call, so it silently
+  did nothing.
 - **`.sharecard.exporting` widens the card to `max-content` and unclips the
   scroller**, which is what makes an 18-week grid come out whole instead of
   cropped to the phone's viewport (measured: 1508px for the money grid). The
