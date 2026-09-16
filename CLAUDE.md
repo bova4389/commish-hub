@@ -185,9 +185,16 @@ Things in here that are decisions, not details:
 ## Waiver wire analysis
 
 Added 2026-09-15. `scripts/build_waivers.py` -> `data/<season>/waivers.json`,
-rendered under **Season totals** for the two leagues that have a waiver wire
-(King's Justice and 2 Mitchs). A pick'em or survivor pool has no players to
-claim, so it gets nothing.
+rendered under **Season totals** for **King's Justice only**.
+
+**It is opt-in, via `"waivers": true` in `data/config.json`** (owner's call,
+2026-09-16). `build_waivers.py` skips any league without the flag and
+`renderSeason()` reads the same field, so the script and the page can never
+disagree about which leagues have a wire — and adding one is a line of config,
+not a code change. King's Justice is the FAAB league the analysis is about
+($1000 budgets, 28 claims and 42 failed bids in week 1 alone); 2 Mitchs was
+included at first and its seven $0-to-$15 claims were noise sitting beside it.
+A pick'em or survivor pool has no players to claim at all.
 
 **It runs on `.github/workflows/waivers.yml`, Wednesdays at 8am ET** (owner's
 call, 2026-09-16) -- after Sleeper has processed the week's claims, so the
@@ -239,6 +246,17 @@ $0 is the real reference price either way.
   OWN draft** (`undrafted` is its own bucket) -- the "what the room paid in
   August against what it pays in October" read the owner asked for. It is not the
   NFL draft.
+- **The ROI AWARDS are end-of-season; the ROI TABLE is weekly.** `best_value`,
+  `worst_value`, `dead_money` and `biggest_bust` are withheld until
+  `played_through >= ROI_AWARD_WEEK` (18, overridable per league with
+  `roi_award_week`). A player claimed this morning has not had a chance to
+  perform, and even at mid-season a "biggest bust" is a verdict on a handful of
+  games — the owner's framing, 2026-09-16, and it is right. The money-in/
+  money-out awards (`most_wasted`, `biggest_overpay`, `outbid`, `cold_streak`,
+  `sharpest`/`loosest`) are **not** gated: they are true the day a claim clears.
+  `test_waivers.py` asserts both sides — withheld at week 3, published when the
+  same league is judged with `roi_week=3`. **A gate nobody proves opens is a
+  gate that silently never opens.**
 - **Bid-versus-points is a LOOKBACK and lives in its own panel** ("Did the money
   buy anything?"), not in the spending ledger. Spend and waste are knowable the
   morning a claim clears; whether the money bought anything cannot be known

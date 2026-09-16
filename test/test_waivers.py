@@ -247,12 +247,24 @@ ok('$7 of it on players nobody else bid on' in aw['most_wasted']['value'],
    'and the award splits out the uncontested part')
 eq(aw['biggest_overpay']['handle'], 'Ann', 'and made the biggest single overpay')
 ok('$28 wasted' in aw['biggest_overpay']['value'], 'the overpay award names the amount wasted')
-eq(aw['dead_money']['handle'], 'Bob', 'Bob spent 30 on a settled claim and started none of it')
+eq(aw.get('dead_money'), None, 'ROI awards are end-of-season; week 3 is not the end of the season')
 eq(aw['outbid']['handle'], 'Cal', 'Cal is always the runner-up')
 eq(aw['cold_streak']['handle'], 'Cal', 'Cal has the coldest hand')
 eq(aw['biggest_bid']['handle'], 'Ann', 'Ann made the biggest bid')
-eq(aw['biggest_bust']['handle'], 'Ann', 'the bust is judged only among SETTLED claims')
+eq(aw.get('biggest_bust'), None, 'and neither is a bust handed out mid-season')
 ok('pts since' in aw['biggest_bid']['value'], 'a settled biggest bid reports its return')
+ok('most_wasted' in aw and 'outbid' in aw and 'biggest_overpay' in aw,
+   'the money-in/money-out awards are NOT gated: they are true the day a claim clears')
+
+print('the ROI gate opens at season end')
+# Same league, judged as though the season ended at week 3. This is the half
+# that matters: a gate nobody proves opens is a gate that silently never opens.
+end = {a['slug']: a for a in bwv.awards(L['owners'], L['claims'], played_through=3, roi_week=3)}
+eq(end['dead_money']['handle'], 'Bob', 'Bob spent 30 on a settled claim and started none of it')
+eq(end['biggest_bust']['handle'], 'Ann', 'the bust is judged only among SETTLED claims')
+ok('Biggest bust of the season' == end['biggest_bust']['label'], 'and is labelled as a season award')
+eq(end.get('best_value'), None, 'the thin-field rule still applies at season end')
+eq(end['most_wasted']['handle'], 'Ann', 'the ungated awards are unchanged by the gate')
 
 print()
 if fails:

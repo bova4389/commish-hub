@@ -84,6 +84,14 @@ MIN_SPEND_FOR_AWARD = 10
 # he was the only owner with a measured point on the board. A comparative award
 # needs this many candidates or it is not published at all.
 MIN_FIELD_FOR_AWARD = 3
+# Return-on-investment awards -- best and worst value, dead money, biggest bust
+# -- are END-OF-SEASON awards and are withheld until the season is played out
+# (owner's call, 2026-09-16). A player claimed this morning has not had a chance
+# to perform, and even at mid-season a "biggest bust" is a verdict on a handful
+# of games. The ROI *table* still fills in every week, because watching it move
+# is the point; it is the prize-giving that waits for the final whistle. A
+# league whose season ends earlier can set `roi_award_week` in its config.
+ROI_AWARD_WEEK = 18
 
 
 def draft_rounds(lid, season):
@@ -337,14 +345,20 @@ def build_league(key, cfg, season, through):
         'totals': totals,
         'claims': sorted(claims, key=lambda c: (-c['week'], -c['bid'])),
         'lost_bids': sorted(lost_bids, key=lambda b: (-b['week'], -b['bid'])),
-        'awards': awards(owners.values(), claims),
+        'roi_award_week': cfg.get('roi_award_week', ROI_AWARD_WEEK),
+        'awards': awards(owners.values(), claims, played_through,
+                         cfg.get('roi_award_week', ROI_AWARD_WEEK)),
     }
 
 
-def awards(owners, claims):
+def awards(owners, claims, played_through=0, roi_week=ROI_AWARD_WEEK):
     """Best and worst spenders. Each one names the owner AND the number behind
-    it, so the page never has to re-derive a ranking and the two can't drift."""
+    it, so the page never has to re-derive a ranking and the two can't drift.
+
+    `played_through` gates the return-on-investment awards to the end of the
+    season; see ROI_AWARD_WEEK."""
     out = []
+    season_done = played_through >= roi_week
     spenders = [o for o in owners if o['spent'] >= MIN_SPEND_FOR_AWARD]
     valued = [o for o in spenders if o['cost_per_point'] is not None]
 
@@ -365,20 +379,23 @@ def awards(owners, claims):
         add(*best_args(lo))
         add(*worst_args(hi))
 
-    pair(valued, lambda o: o['cost_per_point'],
-         lambda o: ('best_value', 'Best value', 'Cheapest started point off the wire',
-                    o, f"${o['cost_per_point']}/pt on ${o['measured_spend']} of settled claims"),
-         lambda o: ('worst_value', 'Worst value', 'Dearest started point off the wire',
-                    o, f"${o['cost_per_point']}/pt on ${o['measured_spend']} of settled claims"))
-    # Dead money is money that HAS been given a week to return something and
-    # returned nothing. An owner whose claims are all still too new to judge has
-    # points_started None, not 0.0, and is not eligible.
-    dead = [o for o in spenders if o['measured_claims'] and not o['points_started']]
-    if dead:
-        d = max(dead, key=lambda o: o['measured_spend'])
-        add('dead_money', 'Pure dead money', 'Spent it, never started it',
-            d, f"${d['measured_spend']} across {d['measured_claims']} settled "
-               f"claim{'s' if d['measured_claims'] != 1 else ''}, 0 started points")
+    # Whether the money RETURNED anything is a season-long lookback, so none of
+    # it publishes mid-season. See ROI_AWARD_WEEK.
+    if season_done:
+        pair(valued, lambda o: o['cost_per_point'],
+             lambda o: ('best_value', 'Best value', 'Cheapest started point off the wire',
+                        o, f"${o['cost_per_point']}/pt on ${o['measured_spend']} of settled claims"),
+             lambda o: ('worst_value', 'Worst value', 'Dearest started point off the wire',
+                        o, f"${o['cost_per_point']}/pt on ${o['measured_spend']} of settled claims"))
+        # Dead money was given weeks to return something and returned nothing.
+        # An owner whose claims were never measurable has points_started None,
+        # not 0.0, and is not eligible.
+        dead = [o for o in spenders if o['measured_claims'] and not o['points_started']]
+        if dead:
+            d = max(dead, key=lambda o: o['measured_spend'])
+            add('dead_money', 'Pure dead money', 'Spent it, never started it',
+                d, f"${d['measured_spend']} across {d['measured_claims']} settled "
+                   f"claim{'s' if d['measured_claims'] != 1 else ''}, 0 started points")
     # The headline award, and the one the owner actually asked for: money handed
     # over above what the claim would have cost at the next-best bid.
     wasters = [o for o in owners if o['waste'] > 0]
@@ -428,13 +445,14 @@ def awards(owners, claims):
         out.append({'slug': 'biggest_bid', 'label': 'Biggest bid of the season',
                     'dek': f"Week {top['week']}", 'handle': top['handle'], 'name': top['handle'],
                     'value': f"${top['bid']} on {top['player']}{since}"})
-    # Only a claim that has HAD a week can be a bust. Judging one the morning it
-    # was made is how a $502 Puka Nacua claim got called the season's biggest
-    # bust on 2026-09-16, hours after it cleared.
+    # A bust is an end-of-season verdict like the rest of the ROI set. Judging
+    # one mid-week is how a $502 Puka Nacua claim was called the season's
+    # biggest bust on 2026-09-16, hours after it cleared.
     settled = [c for c in claims if c['measured_weeks'] and c['bid'] > 0]
-    if settled:
+    if season_done and settled:
         bust = max(settled, key=lambda c: c['bid'] - c['points_started'])
-        out.append({'slug': 'biggest_bust', 'label': 'Biggest bust', 'dek': f"Week {bust['week']}",
+        out.append({'slug': 'biggest_bust', 'label': 'Biggest bust of the season',
+                    'dek': f"Week {bust['week']}",
                     'handle': bust['handle'], 'name': bust['handle'],
                     'value': f"${bust['bid']} on {bust['player']} for {bust['points_started']} started pts"})
     return out
@@ -457,9 +475,13 @@ def main():
     out = {'season': season, 'generated': dt.datetime.now(ET).isoformat(timespec='seconds'),
            'leagues': {}}
     for key, cfg in config['leagues'].items():
-        # Only the roster leagues have a waiver wire; a pick'em or survivor pool
-        # has no players to claim.
-        if cfg['kind'] not in ('chopped', 'h2h'):
+        # OPT-IN, via "waivers": true in data/config.json. Only King's Justice
+        # carries it (owner's call, 2026-09-16): it is the FAAB league this
+        # analysis is about, and 2 Mitchs' seven $0-to-$15 claims were noise
+        # sitting beside it. A pick'em or survivor pool has no players to claim
+        # at all. The page reads the same flag, so adding a league is one line
+        # of config and nothing in the code.
+        if not cfg.get('waivers'):
             continue
         if only and key not in only:
             continue

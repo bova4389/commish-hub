@@ -607,12 +607,18 @@
     if (S && cfg.kind === 'pickem') parts.push(...iwCards(S));
     else if (S && cfg.kind === 'chopped') parts.push(kjCard(S));
 
+    // `waivers: true` in data/config.json is the single source of truth for
+    // which leagues get this, shared with scripts/build_waivers.py. Only King's
+    // Justice carries it, so 2 Mitchs no longer shows an empty waiver panel it
+    // will never fill.
     const W = WAIVERS && (WAIVERS.leagues || {})[state.league];
-    if (W && !W.error) parts.push(...waiverPanels(W));
-    else if (['chopped', 'h2h'].includes(cfg.kind)) {
-      parts.push(panel('Waiver wire', 'Rebuilt every Wednesday at 11am ET',
-        W && W.error ? `<div class="empty">The waiver script failed: ${esc(W.error)}</div>`
-          : '<div class="empty">No waiver analysis built yet. Run: python scripts/build_waivers.py</div>'));
+    if (cfg.waivers) {
+      if (W && !W.error) parts.push(...waiverPanels(W));
+      else {
+        parts.push(panel('Waiver wire', 'Rebuilt every Wednesday at 8am ET',
+          W && W.error ? `<div class="empty">The waiver script failed: ${esc(W.error)}</div>`
+            : '<div class="empty">No waiver analysis built yet. Run: python scripts/build_waivers.py</div>'));
+      }
     }
 
     if (!parts.length) {
@@ -803,13 +809,16 @@
   function roiPanel(W) {
     const T = T_of(W);
     const settled = T.measured_claims || 0;
+    const prize = W.roi_award_week || 18;
     if (!settled) {
       return panel('Did the money buy anything?',
         'Return on investment, in hindsight',
-        `<div class="empty">Nothing to look back on yet. A claim can only be judged once a week has ` +
-        `been played with the player on the roster, and every claim so far was made after the last ` +
-        `game${T.played_through ? ` (week ${T.played_through})` : ''}. This fills in from the week after ` +
-        `the first claims.</div>`);
+        `<div class="empty">Nothing to look back on yet. A player picked up this morning has not had ` +
+        `a chance to perform for his new team, so there is no return to measure: a claim is judged on ` +
+        `the weeks AFTER it cleared, never the week it was made. Every claim so far was made after the ` +
+        `last game played${T.played_through ? ` (week ${T.played_through})` : ''}. This table fills in ` +
+        `from the week after the first claims; the best- and worst-spender awards are handed out at the ` +
+        `end of the season (week ${prize}).</div>`);
     }
     const rows = (W.owners || []).filter((o) => o.measured_claims)
       .sort((a, b) => (b.points_per_dollar || 0) - (a.points_per_dollar || 0) ||
@@ -829,7 +838,9 @@
       `played week behind ${settled === 1 ? 'it' : 'them'} ${settled === 1 ? 'is' : 'are'} in here -- ` +
       `a claim is judged on the weeks AFTER it cleared, never the week it was made. ` +
       `<b>$/pt</b> is settled spend over points actually STARTED; "dead" means the money returned nothing. ` +
-      `Points merely rostered do not count: a player you paid for and benched bought you nothing.`,
+      `Points merely rostered do not count: a player you paid for and benched bought you nothing. ` +
+      `The best- and worst-spender <b>awards</b> are withheld until the end of the season (week ${prize}) -- ` +
+      `a verdict on a few games is not a verdict on a season.`,
       tbl('<th>Owner</th><th class="num">Settled spend</th><th class="num">Started pts</th>' +
           '<th class="num">$/pt</th><th>Best buy</th><th>Worst buy</th>', rows));
   }
