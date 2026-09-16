@@ -486,7 +486,8 @@ def week_transactions(lid, week, teams, proj):
             for pid in (t.get('adds') or {}):
                 c = claims.setdefault(pid, {'player': player_info(pid, proj)['name'],
                                             'pos': player_info(pid, proj)['pos'], 'bids': []})
-                c['bids'].append({'handle': who, 'bid': (t.get('settings') or {}).get('waiver_bid', 0),
+                c['bids'].append({'rid': rids[0] if rids else None, 'handle': who,
+                                  'bid': (t.get('settings') or {}).get('waiver_bid', 0),
                                   'won': t.get('status') == 'complete'})
         elif typ == 'free_agent' and t.get('status') == 'complete':
             for pid in (t.get('adds') or {}):
@@ -499,9 +500,27 @@ def week_transactions(lid, week, teams, proj):
             trades.append({'sides': sides})
     out, lost = [], []
     for pid, c in claims.items():
-        bids = sorted(c['bids'], key=lambda b: -b['bid'])
+        # ONE BID PER ROSTER. Sleeper returns more than one transaction for the
+        # same roster and player -- a completed claim plus a superseded record
+        # of the same bid -- so treating every transaction as its own bidder
+        # counts the winner as its own runner-up and reports $0 wasted on a
+        # claim that walked the field. Measured 2026-09-16: avobttam's $169 Joe
+        # Burrow claim came back with a $169 "losing" bid from avobttam, hiding
+        # a $158 overpay over the real runner-up at $11.
+        per = {}
+        for b in c['bids']:
+            cur = per.get(b['rid'])
+            if cur is None:
+                per[b['rid']] = dict(b)
+            elif b['won']:
+                # The record that actually processed is the price paid, even if
+                # a superseded record for the same roster bid more.
+                per[b['rid']] = dict(b)
+            elif not cur['won']:
+                cur['bid'] = max(cur['bid'], b['bid'])
+        bids = sorted(per.values(), key=lambda b: -b['bid'])
         win = next((b for b in bids if b['won']), None)
-        others = [b for b in bids if not b['won']]
+        others = [b for b in bids if not win or b['rid'] != win['rid']]
         # Every losing bid is kept, bidder and all. Sleeper returns failed claims
         # alongside the winning one, and they are the only record of who keeps
         # getting outbid -- scripts/build_waivers.py is built on this.

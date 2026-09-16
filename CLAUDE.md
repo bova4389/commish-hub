@@ -253,6 +253,22 @@ $0 is the real reference price either way.
   returns failed claims alongside the winning one, and they are the only record
   of who keeps getting outbid -- the whole "who continues to lose out" half of
   this rests on it. **Do not narrow it back.**
+- **ONE BID PER ROSTER, and this is the subtle one.** Sleeper returns *more than
+  one transaction for the same roster and player*: the completed claim plus a
+  superseded, non-complete record of the same bid. Treating every transaction as
+  its own bidder makes **the winner its own runner-up**, and the claim then
+  reports $0 wasted precisely when it walked the field. Found by the owner on
+  2026-09-16: his $169 Joe Burrow claim came back carrying a $169 "losing" bid
+  from himself, which hid a **$158 overpay** over the real runner-up at $11 and
+  crowned him *Sharpest bidder* at 0% waste. Two of 28 claims were affected and
+  league waste was understated by $158 ($696 against $854).
+  `week_transactions()` now collapses bids per `roster_id` before picking a
+  winner: the record that actually processed is the price paid, a roster that
+  never won keeps its highest bid, and `others` excludes the winning roster by
+  id rather than by "did not win". `bidders` counts rosters, not transactions.
+  **Reverting this reintroduces a silent understatement of the headline number**
+  -- `test_waivers.py` carries the exact Sleeper shape and 18 assertions fail
+  without the fix.
 - **Spend is bucketed by the acquired player's original round in THIS LEAGUE'S
   OWN draft** (`undrafted` is its own bucket) -- the "what the room paid in
   August against what it pays in October" read the owner asked for. It is not the

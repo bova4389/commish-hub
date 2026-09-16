@@ -52,6 +52,13 @@ TX = {
     1: [
         {'type': 'waiver', 'status': 'complete', 'roster_ids': [1], 'adds': {'p10': 1},
          'settings': {'waiver_bid': 40}},
+        # THE SELF-BID. Sleeper returns a second, non-complete record for the
+        # SAME roster and player alongside the completed claim. Counting it as
+        # a rival bid makes the winner its own runner-up and reports $0 wasted
+        # on a claim that walked the field -- which is what hid a $158 overpay
+        # on Joe Burrow in the live 2026-09-16 data. One bid per roster.
+        {'type': 'waiver', 'status': 'failed', 'roster_ids': [1], 'adds': {'p10': 1},
+         'settings': {'waiver_bid': 40}},
         {'type': 'waiver', 'status': 'failed', 'roster_ids': [3], 'adds': {'p10': 3},
          'settings': {'waiver_bid': 12}},
     ],
@@ -150,6 +157,15 @@ eq(claims[(1, 'Ace Back')]['bid'], 40, 'Ann paid 40')
 eq(claims[(1, 'Ace Back')]['runner_up'], 12, "Cal's 12 is the runner-up")
 eq(claims[(1, 'Ace Back')]['round'], 1, 'p10 was a 1st-rounder')
 eq(claims[(2, 'Bud Wideout')]['round'], 9, 'p11 was a 9th-rounder')
+
+print('one bid per roster -- a winner is never its own runner-up')
+eq(claims[(1, 'Ace Back')]['bidders'], 2,
+   "two ROSTERS bid, not three transactions: Ann's duplicate record is collapsed")
+eq(claims[(1, 'Ace Back')]['runner_up'], 12, "Cal's 12 is the runner-up, NOT Ann's own 40")
+ok(all(x['handle'] != 'Ann' for x in claims[(1, 'Ace Back')]['losers']),
+   'the winner does not appear among its own losing bids')
+ok(not any(b['handle'] == b['won_by'] for b in L['lost_bids']),
+   'and no phantom failed bid is recorded against the roster that won')
 
 print('waste -- bid minus the next-best bid, on EVERY claim')
 eq(claims[(1, 'Ace Back')]['contested'], True, 'week 1 claim was contested')
