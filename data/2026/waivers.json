@@ -1,6 +1,6 @@
 {
  "season": 2026,
- "generated": "2026-09-16T08:43:42-04:00",
+ "generated": "2026-09-16T15:25:32-04:00",
  "leagues": {
   "kings_justice": {
    "name": "The King's Justice",
@@ -338,15 +338,15 @@
      "handle": "avobttam",
      "name": "avobttam",
      "spent": 169,
-     "waste": 0,
+     "waste": 158,
      "waste_solo": 0,
      "solo_spend": 0,
      "contested_spend": 169,
      "contested_won": 1,
      "free_claims": 0,
      "won": 1,
-     "lost": 5,
-     "lost_bid_total": 621,
+     "lost": 3,
+     "lost_bid_total": 413,
      "free_agents": 0,
      "points_started": null,
      "points_rostered": null,
@@ -358,18 +358,18 @@
       "1": {
        "spent": 169,
        "won": 1,
-       "lost": 5,
-       "lost_bid": 621,
-       "waste": 0
+       "lost": 3,
+       "lost_bid": 413,
+       "waste": 158
       }
      },
      "by_pos": {
       "QB": {
        "spent": 169,
        "won": 1,
-       "lost": 1,
-       "lost_bid": 169,
-       "waste": 0
+       "lost": 0,
+       "lost_bid": 0,
+       "waste": 158
       },
       "WR": {
        "spent": 0,
@@ -381,8 +381,8 @@
       "RB": {
        "spent": 0,
        "won": 0,
-       "lost": 2,
-       "lost_bid": 78,
+       "lost": 1,
+       "lost_bid": 39,
        "waste": 0
       }
      },
@@ -390,9 +390,9 @@
       "3": {
        "spent": 169,
        "won": 1,
-       "lost": 1,
-       "lost_bid": 169,
-       "waste": 0
+       "lost": 0,
+       "lost_bid": 0,
+       "waste": 158
       },
       "1": {
        "spent": 0,
@@ -411,8 +411,8 @@
       "4": {
        "spent": 0,
        "won": 0,
-       "lost": 2,
-       "lost_bid": 78,
+       "lost": 1,
+       "lost_bid": 39,
        "waste": 0
       }
      },
@@ -421,8 +421,8 @@
       "player": "Joe Burrow",
       "pos": "QB",
       "bid": 169,
-      "runner_up": 169,
-      "waste": 0,
+      "runner_up": 11,
+      "waste": 158,
       "contested": true,
       "free": false,
       "round": 3,
@@ -434,8 +434,8 @@
       "player": "Joe Burrow",
       "pos": "QB",
       "bid": 169,
-      "runner_up": 169,
-      "waste": 0,
+      "runner_up": 11,
+      "waste": 158,
       "contested": true,
       "free": false,
       "round": 3,
@@ -446,12 +446,12 @@
      "best_buy": null,
      "shutout_weeks": [],
      "shutout_streak": 0,
-     "bids": 6,
-     "win_rate": 0.167,
+     "bids": 4,
+     "win_rate": 0.25,
      "cost_per_point": null,
      "points_per_dollar": null,
      "budget_left": 831,
-     "waste_rate": 0.0
+     "waste_rate": 0.935
     },
     {
      "handle": "cbova1222",
@@ -808,13 +808,13 @@
      "name": "joefanelli90",
      "spent": 20,
      "waste": 20,
-     "waste_solo": 15,
-     "solo_spend": 15,
-     "contested_spend": 5,
-     "contested_won": 1,
+     "waste_solo": 20,
+     "solo_spend": 20,
+     "contested_spend": 0,
+     "contested_won": 0,
      "free_claims": 2,
      "won": 4,
-     "lost": 5,
+     "lost": 4,
      "lost_bid_total": 105,
      "free_agents": 0,
      "points_started": null,
@@ -827,7 +827,7 @@
       "1": {
        "spent": 20,
        "won": 4,
-       "lost": 5,
+       "lost": 4,
        "lost_bid": 105,
        "waste": 20
       }
@@ -843,7 +843,7 @@
       "QB": {
        "spent": 5,
        "won": 1,
-       "lost": 1,
+       "lost": 0,
        "lost_bid": 0,
        "waste": 5
       },
@@ -866,7 +866,7 @@
       "undrafted": {
        "spent": 5,
        "won": 2,
-       "lost": 2,
+       "lost": 1,
        "lost_bid": 0,
        "waste": 5
       },
@@ -922,8 +922,8 @@
      "best_buy": null,
      "shutout_weeks": [],
      "shutout_streak": 0,
-     "bids": 9,
-     "win_rate": 0.444,
+     "bids": 8,
+     "win_rate": 0.5,
      "cost_per_point": null,
      "points_per_dollar": null,
      "budget_left": 980,
@@ -1786,15 +1786,15 @@
    "totals": {
     "spent": 1709,
     "claims": 28,
-    "contested": 10,
+    "contested": 9,
     "measured_claims": 0,
     "played_through": 1,
-    "waste": 696,
-    "waste_solo": 31,
-    "solo_spend": 31,
-    "contested_spend": 1678,
+    "waste": 854,
+    "waste_solo": 36,
+    "solo_spend": 36,
+    "contested_spend": 1673,
     "free_claims": 14,
-    "failed": 42,
+    "failed": 39,
     "budget": 1000,
     "by_pos": {
      "WR": {
@@ -1807,16 +1807,16 @@
      "RB": {
       "spent": 385,
       "won": 8,
-      "lost": 10,
-      "lost_bid": 349,
+      "lost": 9,
+      "lost_bid": 310,
       "waste": 305
      },
      "QB": {
       "spent": 174,
       "won": 2,
-      "lost": 3,
-      "lost_bid": 180,
-      "waste": 5
+      "lost": 1,
+      "lost_bid": 11,
+      "waste": 163
      },
      "TE": {
       "spent": 140,
@@ -1844,16 +1844,16 @@
      "4": {
       "spent": 308,
       "won": 1,
-      "lost": 8,
-      "lost_bid": 334,
+      "lost": 7,
+      "lost_bid": 295,
       "waste": 243
      },
      "3": {
       "spent": 169,
       "won": 1,
-      "lost": 2,
-      "lost_bid": 180,
-      "waste": 0
+      "lost": 1,
+      "lost_bid": 11,
+      "waste": 158
      },
      "6": {
       "spent": 77,
@@ -1865,7 +1865,7 @@
      "undrafted": {
       "spent": 135,
       "won": 18,
-      "lost": 7,
+      "lost": 6,
       "lost_bid": 7,
       "waste": 128
      },
@@ -1902,9 +1902,9 @@
      "1": {
       "spent": 1709,
       "won": 28,
-      "lost": 42,
-      "lost_bid": 4912,
-      "waste": 696
+      "lost": 39,
+      "lost_bid": 4704,
+      "waste": 854
      }
     }
    },
@@ -2037,7 +2037,7 @@
      "pos": "RB",
      "handle": "AllBidness",
      "bid": 308,
-     "bidders": 9,
+     "bidders": 8,
      "runner_up": 65,
      "losers": [
       {
@@ -2055,10 +2055,6 @@
       {
        "handle": "Cubbiesftw23",
        "bid": 41
-      },
-      {
-       "handle": "avobttam",
-       "bid": 39
       },
       {
        "handle": "avobttam",
@@ -2090,13 +2086,9 @@
      "pos": "QB",
      "handle": "avobttam",
      "bid": 169,
-     "bidders": 3,
-     "runner_up": 169,
+     "bidders": 2,
+     "runner_up": 11,
      "losers": [
-      {
-       "handle": "avobttam",
-       "bid": 169
-      },
       {
        "handle": "nelsolson",
        "bid": 11
@@ -2106,7 +2098,7 @@
      "round": 3,
      "contested": true,
      "free": false,
-     "waste": 0,
+     "waste": 158,
      "waste_solo": 0,
      "points_started": null,
      "points_rostered": null,
@@ -2300,20 +2292,15 @@
      "pos": "QB",
      "handle": "joefanelli90",
      "bid": 5,
-     "bidders": 2,
-     "runner_up": 0,
-     "losers": [
-      {
-       "handle": "joefanelli90",
-       "bid": 0
-      }
-     ],
+     "bidders": 1,
+     "runner_up": null,
+     "losers": [],
      "week": 1,
      "round": null,
-     "contested": true,
+     "contested": false,
      "free": false,
      "waste": 5,
-     "waste_solo": 0,
+     "waste_solo": 5,
      "points_started": null,
      "points_rostered": null,
      "starts": 0,
@@ -2752,17 +2739,6 @@
      "round": 2
     },
     {
-     "player_id": "6770",
-     "player": "Joe Burrow",
-     "pos": "QB",
-     "handle": "avobttam",
-     "bid": 169,
-     "won_by": "avobttam",
-     "won_at": 169,
-     "week": 1,
-     "round": 3
-    },
-    {
      "player_id": "12526",
      "player": "Tetairoa McMillan",
      "pos": "WR",
@@ -2928,17 +2904,6 @@
      "round": 4
     },
     {
-     "player_id": "13286",
-     "player": "Jadarian Price",
-     "pos": "RB",
-     "handle": "avobttam",
-     "bid": 39,
-     "won_by": "AllBidness",
-     "won_at": 308,
-     "week": 1,
-     "round": 4
-    },
-    {
      "player_id": "12526",
      "player": "Tetairoa McMillan",
      "pos": "WR",
@@ -3049,17 +3014,6 @@
      "round": null
     },
     {
-     "player_id": "3161",
-     "player": "Carson Wentz",
-     "pos": "QB",
-     "handle": "joefanelli90",
-     "bid": 0,
-     "won_by": "joefanelli90",
-     "won_at": 5,
-     "week": 1,
-     "round": null
-    },
-    {
      "player_id": "4177",
      "player": "Mack Hollins",
      "pos": "WR",
@@ -3118,9 +3072,9 @@
      "slug": "sharpest",
      "label": "Sharpest bidder",
      "dek": "Least waste per dollar spent",
-     "handle": "avobttam",
-     "name": "avobttam",
-     "value": "$0 wasted of $169 spent (0%)"
+     "handle": "Bustersx8",
+     "name": "Bustersx8",
+     "value": "$25 wasted of $502 spent (5%)"
     },
     {
      "slug": "loosest",
