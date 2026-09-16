@@ -90,11 +90,22 @@ leagues; roast his weeks on the same terms as everyone else's. Per league:
 
 ## Season totals -- the cumulative grids
 
-Added 2026-09-15. Picking **Season totals** in the week dropdown (hash
+Added 2026-09-15. A **Season totals** button beside the week picker (hash
 `#<league>/<season>/season`) swaps the weekly recap card for the cumulative
-views. It is a value in the week picker rather than a new tab on purpose: these
-are the same league, seen over the season instead of over a Sunday, and row 1 of
-the nav is the size of the *leagues*, not the count of views.
+views. It stays a *view* of the same league rather than a new tab, because row 1
+of the nav is the size of the *leagues*, not the count of views.
+
+**It was a dropdown option only, for one day, and that was a mistake.** The
+cumulative views existed, were deployed and were correct, and the owner reported
+not seeing them on the site at all -- because "Season totals" was the last entry
+in a `<select>` full of week numbers and nothing suggested looking there. A
+feature nobody can find is a feature that does not exist. The toggle
+(`#btn-season`, `paintViewToggle()`) is now the signpost: it reads
+**Season totals** / **Back to a week**, highlights when on, and greys the week
+picker out while it is, since a week number means nothing to a season total.
+The dropdown option is kept so existing `#.../season` links still resolve, but
+nothing depends on anybody finding it. **Do not demote this back into the
+dropdown.**
 
 Three grids, all the same shape -- **weeks across, entries down, season total in
 the last column** -- and all drawn by one `grid()` helper that takes

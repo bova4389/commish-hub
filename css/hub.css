@@ -41,6 +41,17 @@ button { font: inherit; }
   margin-top: 2px; background: var(--panel-2); color: var(--text); border: 1px solid var(--line);
   border-radius: 8px; padding: 6px 8px; font-size: 15px; min-width: 96px;
 }
+/* The season-totals toggle, sized to sit level with the two selects beside it.
+   It is the only signpost to the cumulative views and it has to look pressable
+   rather than like a label. */
+.viewtog {
+  margin-top: 2px; background: var(--panel-2); color: var(--text);
+  border: 1px solid var(--line); border-radius: 8px; padding: 6px 12px;
+  font-size: 15px; font-weight: 600; cursor: pointer; white-space: nowrap; min-height: 33px;
+}
+.viewtog.on { background: var(--accent); color: #111; border-color: var(--accent); }
+.pick select:disabled { opacity: .45; }
+
 .tabs { display: flex; gap: 6px; overflow-x: auto; padding: 0 14px 10px; scrollbar-width: none; }
 .tabs::-webkit-scrollbar { display: none; }
 .tab {

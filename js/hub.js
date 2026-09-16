@@ -56,6 +56,17 @@
       state.week = v === SEASON_VIEW ? SEASON_VIEW : +v;
       loadWeek();
     };
+    $('#btn-season').onclick = () => {
+      if (state.week === SEASON_VIEW) {
+        // Back to the most recent built week, not week 1.
+        const weeks = Object.keys((INDEX && INDEX.weeks) || {}).map(Number).sort((a, b) => a - b);
+        state.week = weeks.length ? weeks[weeks.length - 1] : null;
+      } else {
+        state.week = SEASON_VIEW;
+      }
+      $('#week-select').value = String(state.week);
+      loadWeek();
+    };
     $('#btn-save').onclick = () => exportCard('save');
     $('#btn-preview').onclick = () => exportCard('preview');
     $('#btn-close').onclick = () => { $('#overlay').hidden = true; };
@@ -80,6 +91,19 @@
     $('#overlay').onclick = (e) => { if (e.target.id === 'overlay') $('#overlay').hidden = true; };
     buildTabs();
     await loadSeason();
+  }
+
+  /* The toggle is the only signpost to the cumulative views, so it has to read
+     as on/off at a glance. The week picker greys out while it is on, because a
+     week number means nothing to a season total. */
+  function paintViewToggle() {
+    const on = state.week === SEASON_VIEW;
+    const b = $('#btn-season');
+    if (!b) return;
+    b.classList.toggle('on', on);
+    b.setAttribute('aria-pressed', on ? 'true' : 'false');
+    b.textContent = on ? 'Back to a week' : 'Season totals';
+    $('#week-select').disabled = on;
   }
 
   function fail(msg) {
@@ -142,7 +166,7 @@
 
   async function loadWeek() {
     $('#status').hidden = false; $('#status').textContent = 'Loading…';
-    if (state.week === SEASON_VIEW) { writeHash(); return renderSeason(); }
+    if (state.week === SEASON_VIEW) { writeHash(); paintViewToggle(); return renderSeason(); }
     try {
       WEEK = await j(`data/${state.season}/week-${String(state.week).padStart(2, '0')}.json`);
     } catch (e) {
@@ -155,6 +179,7 @@
   /* ---------------------------------------------------------------- render */
   function render() {
     writeHash();
+    paintViewToggle();
     const cfg = CONFIG.leagues[state.league];
     document.documentElement.style.setProperty('--accent', cfg.accent);
     document.querySelectorAll('.tab').forEach((b) => b.classList.toggle('active', b.dataset.k === state.league));

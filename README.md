@@ -17,8 +17,8 @@ python scripts/build_waivers.py --refresh            # the waiver analysis (Wedn
 
 Then open the page, pick the league, hit **Save image**, post it to the chat.
 
-Picking **Season totals** in the week dropdown instead of a week gives the
-cumulative views, each with its own Save image button:
+The **Season totals** button beside the week picker swaps the weekly recap for
+the cumulative views, each with its own Save image button:
 
 - **Infinity War** — money won week by week, and correct picks week by week,
   with gold and silver trophies in the week-18 column for the $380 / $160
