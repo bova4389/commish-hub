@@ -810,8 +810,11 @@
         `<td class="num ${o.waste > 0 ? 'bad' : ''}">${o.waste ? '<b>' + money(o.waste) + '</b>' : '<span class="z">$0</span>'}` +
           `${o.waste_rate != null ? `<div class="sub">${Math.round(o.waste_rate * 100)}% of spend</div>` : ''}</td>` +
         `<td class="num muted">${mny(o.waste_solo)}</td>` +
-        `<td class="num">${f2(o.points_started)}</td>` +
-        `<td class="num ${o.cost_per_point == null ? 'bad' : ''}">${o.cost_per_point == null ? (o.spent ? 'dead' : '<span class="z">—</span>') : '$' + f2(o.cost_per_point)}</td>` +
+        `<td class="num">${o.points_started == null ? '<span class="z">—</span>' : f2(o.points_started)}</td>` +
+        `<td class="num ${o.cost_per_point == null && o.measured_claims ? 'bad' : ''}">` +
+          `${o.cost_per_point != null ? '$' + f2(o.cost_per_point)
+            : !o.spent ? '<span class="z">—</span>'
+            : o.measured_claims ? 'dead' : '<span class="z">new</span>'}</td>` +
         `<td class="num muted">${o.budget_left == null ? '—' : money(o.budget_left)}</td></tr>`;
     }).join('');
     const ledgerCard = shareCard('sc-waivers', 'Waiver spending',
@@ -820,7 +823,9 @@
       `next-best $150 and you own him either way, so $150 would have done and $250 went in the bin. ` +
       `Nobody else bidding means the next-best bid is $0, so an uncontested claim is wasted in full -- ` +
       `<b>Uncont.</b> is how much of the waste came that way. A free $0 pickup wastes nothing. ` +
-      `<b>$/pt</b> divides spend by the points those players actually STARTED for; "dead" means money spent and nothing started.`,
+      `<b>$/pt</b> divides spend by the points those players actually STARTED for -- counting only ` +
+      `claims with a played week behind them, since a claim made this morning has had no chance to score. ` +
+      `"dead" means settled and nothing started; "new" means not judgeable yet.`,
       `<div class="gridwrap"><table class="grid"><thead><tr><th class="gname">Owner</th>` +
       `<th class="num">Spent</th><th class="num">Won</th><th class="num">Win%</th><th class="num">Wasted</th>` +
       `<th class="num">Uncont.</th><th class="num">Pts</th><th class="num">$/pt</th>` +
@@ -847,11 +852,14 @@
     };
 
     const claims = (W.claims || []).slice(0, 20).map((c) => {
-      const waste = c.bid - c.points_started;
+      const waste = c.bid - (c.points_started || 0);
       return `<tr><td>${esc(c.player)} <span class="sub">${esc(c.pos)}${c.round ? ' &middot; rd ' + c.round : ' &middot; undrafted'}</span></td>` +
         `<td>${esc(nameFor(c.handle))}<div class="sub">wk ${c.week}</div></td>` +
         `<td class="num"><b>${money(c.bid)}</b>${c.bidders > 1 ? `<div class="sub">next ${money(c.runner_up)}</div>` : '<div class="sub">uncontested</div>'}</td>` +
-        `<td class="num ${c.points_started > c.bid ? 'good' : (waste > 10 ? 'bad' : '')}">${f2(c.points_started)}<div class="sub">${c.starts} start${c.starts === 1 ? '' : 's'}</div></td></tr>`;
+        (c.measured_weeks
+          ? `<td class="num ${c.points_started > c.bid ? 'good' : (waste > 10 ? 'bad' : '')}">${f2(c.points_started)}` +
+            `<div class="sub">${c.starts} start${c.starts === 1 ? '' : 's'}</div></td></tr>`
+          : `<td class="num"><span class="z">&mdash;</span><div class="sub">too new</div></td></tr>`);
     }).join('');
 
     const overpays = (W.claims || []).filter((c) => c.waste > 0)
@@ -875,7 +883,7 @@
       panel('Spend by draft round', 'What the room paid in August against what it pays now. The round is the player\'s original pick in THIS league\'s draft; undrafted is its own bucket.',
         bucketTbl(T.by_round || {}, 'Round')),
       panel('Spend by position', '', bucketTbl(T.by_pos || {}, 'Pos', Object.keys(T.by_pos || {}).sort((a, b) => (T.by_pos[b].spent - T.by_pos[a].spent)))),
-      panel('Biggest claims', 'And what they have returned in started lineups since',
+      panel('Biggest claims', 'And what they have returned in started lineups since. "Too new" means the claim has no played week behind it yet.',
         claims ? tbl('<th>Player</th><th>Won by</th><th class="num">Bid</th><th class="num">Started pts</th>', claims) : '<div class="empty">No claims yet.</div>'),
       overpays ? panel('Biggest overpays', 'Claims won by the widest margin over the next-best bid. "None" means nobody else bid, so a $0 claim would have won the player. Every dollar in the last column bought nothing.',
         tbl('<th>Player</th><th>Won by</th><th class="num">Paid</th><th class="num">Next bid</th><th class="num">Wasted</th>', overpays)) : '',

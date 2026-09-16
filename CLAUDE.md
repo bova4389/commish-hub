@@ -208,7 +208,7 @@ The four metrics, defined here because they are easy to re-derive differently:
 | **spent** | sum of WINNING bids. A failed claim costs nothing. |
 | **waste** | **the headline number.** The winning bid minus the next-best bid on that player, on **every** claim. Bid $400 against a next-best $150 and you own the player either way, so $250 went in the bin. Tracked per week AND cumulatively, because the season figure is the one that settles an argument. |
 | **waste_solo** | the part of waste that came from **uncontested** claims, so "paid over the odds in a bidding war" can be told apart from "paid for a player nobody wanted". |
-| **return** | the player's points from the claim week on, split into points actually STARTED by the winner and points merely ROSTERED. A guy you paid for and benched got nothing out of the money either. Sleeper's own `players_points` is already scored through the league's settings. |
+| **return** | the player's points in the weeks **strictly after** the claim, split into points actually STARTED by the winner and points merely ROSTERED. A guy you paid for and benched got nothing out of the money either. Sleeper's own `players_points` is already scored through the league's settings. |
 | **shut out** | failed claims: how many, how much was bid and lost, and the current run of weeks bidding with nothing to show. |
 
 **An uncontested claim is wasted IN FULL, and the only exclusion is a $0
@@ -250,9 +250,29 @@ $0 is the real reference price either way.
   statement from "cheap". The awards skip an owner under $10 of spend entirely.
 - **Best and worst spenders are ranked in the script, not the page**, so the two
   can't drift into two different answers.
-- **A claim's return stops when the player leaves the roster.** Points are only
-  counted for weeks the player is still in the winner's `players_points`, so a
-  trade or a drop ends the tally by itself.
+- **A claim's return is measured STRICTLY AFTER its week, and is `None` until
+  there is a played week to measure.** Sleeper files a Wednesday waiver run under
+  the week whose games just finished, so a claim tagged week 1 first plays in
+  week 2. Counting from the claim's own week credits the player with a game he
+  was not on the roster for -- which always comes out 0.0, so it does not look
+  like a bug, **it looks like a bust**. The live 2026-09-16 run proved it: all 35
+  claims read 0.0 and the script called a $502 Puka Nacua claim the season's
+  biggest bust hours after it cleared. `played_through` is the last week anybody
+  actually scored (NOT the last week with a transaction, which always runs
+  further), and a claim with an empty window gets `None`, never 0.0 -- *not yet
+  measurable* and *bought nothing* are different statements and must not render
+  the same. The UI says `new` for the first and `dead` for the second.
+- **`cost_per_point` divides MEASURED spend by measured points**, so an owner
+  whose claims are all still too new reads null instead of infinitely expensive.
+- **A claim's return also stops when the player leaves the roster.** Points are
+  only counted for weeks the player is still in the winner's `players_points`, so
+  a trade or a drop ends the tally by itself.
+- **A comparative award needs `MIN_FIELD_FOR_AWARD` (3) candidates and two
+  different people at the ends**, or it is not published. With two candidates the
+  same owner can top and bottom one ranking: the live run made CodyPowers28 both
+  *Best value* and *Worst value* because he was the only owner with a measured
+  point, and crowned a *Sharpest bidder* who had wasted 56%. `pair()` in
+  `awards()` enforces both conditions; every comparative award goes through it.
 - **The workflow has two cron entries and a guard step.** GitHub cron is UTC and
   has no idea DST exists, so 8am ET is two different UTC hours: `0 12 * * 3`
   (8am EDT, Mar-Nov) and `0 13 * * 3` (8am EST, Nov-Mar). The guard runs

@@ -79,6 +79,12 @@ TX = {
 
 # Ann starts p10 in weeks 1-2 (12.0, 8.0) then drops him (absent in week 3).
 # Bob rosters p11 from week 2 but never starts him (5.0, 7.0 on the bench).
+#
+# A claim's return is measured STRICTLY AFTER its week, because Sleeper files a
+# Wednesday waiver run under the week whose games just finished. So Ann's week-1
+# claim on p10 is judged on weeks 2-3 only -- the 12.0 he scored in week 1 was
+# before she owned him and must not be credited. Weeks 1-3 have scores here, so
+# played_through is 3 and a week-3 claim has no measurable window at all.
 MATCHUPS = {
     1: [{'roster_id': 1, 'players_points': {'p10': 12.0}, 'starters': ['p10']},
         {'roster_id': 2, 'players_points': {}, 'starters': []},
@@ -159,12 +165,20 @@ eq(claims[(3, 'Fred Free')]['waste'], 0,
    'THE ONE EXCLUSION: a $0 pickup wastes nothing, straight out of the arithmetic')
 eq(claims[(3, 'Fred Free')]['free'], True, 'and it is flagged as a free pickup')
 
-print('return on a claim')
-eq(claims[(1, 'Ace Back')]['points_started'], 20.0, 'Ann started p10 for 12+8')
-eq(claims[(1, 'Ace Back')]['starts'], 2, 'two starts before the drop')
-eq(claims[(1, 'Ace Back')]['points_rostered'], 20.0, 'week 3 is not counted: off the roster')
+print('return on a claim -- measured STRICTLY AFTER the claim week')
+eq(claims[(1, 'Ace Back')]['points_started'], 8.0,
+   "only week 2 counts: week 1 was before Ann owned him, week 3 he's gone")
+eq(claims[(1, 'Ace Back')]['starts'], 1, 'one start inside the window')
+eq(claims[(1, 'Ace Back')]['points_rostered'], 8.0, 'week 3 is not counted: off the roster')
+eq(claims[(1, 'Ace Back')]['measured_weeks'], 2, 'weeks 2 and 3 were available to measure')
 eq(claims[(2, 'Bud Wideout')]['points_started'], 0.0, 'Bob never started p11')
-eq(claims[(2, 'Bud Wideout')]['points_rostered'], 12.0, 'but rostered him for 5+7')
+eq(claims[(2, 'Bud Wideout')]['points_rostered'], 7.0, 'rostered him in week 3 for 7')
+
+print('a claim too new to judge is None, never 0.0')
+eq(claims[(3, 'Eli Solo')]['measured_weeks'], 0, 'nothing has been played after week 3')
+eq(claims[(3, 'Eli Solo')]['points_started'], None,
+   'NOT 0.0 -- "no week yet" and "bought nothing" are different statements')
+eq(claims[(3, 'Eli Solo')]['points_rostered'], None, 'same for rostered points')
 
 print('owners')
 eq(own['Ann']['spent'], 47, 'Ann spent 40 + 7')
@@ -182,11 +196,16 @@ eq(own['Bob']['free_claims'], 1, 'Bob made one free pickup')
 eq(own['Cal']['waste'], 0, 'you cannot waste money on a claim you lost')
 eq(own['Ann']['won'], 2, 'Ann won two claims')
 eq(own['Ann']['lost'], 0, 'Ann lost none')
-eq(own['Ann']['cost_per_point'], 2.35, 'Ann at $2.35 a started point on 47 spent')
+eq(own['Ann']['measured_claims'], 1, 'only the week-1 claim has a played week behind it')
+eq(own['Ann']['measured_spend'], 40, 'so only that $40 is judged on value')
+eq(own['Ann']['points_started'], 8.0, 'Ann has 8 measured started points')
+eq(own['Ann']['cost_per_point'], 5.0, '$40 of settled spend over 8 points')
+eq(own['Cal']['points_started'], None, 'an owner with no measurable claim reads None')
 eq(own['Ann']['free_agents'], 1, 'Ann made one free-agent add')
 eq(own['Ann']['budget_left'], 53, 'budget left is 100 minus spend')
 eq(own['Bob']['cost_per_point'], None, 'Bob started nothing, so cost per point is null not zero')
-eq(own['Bob']['points_rostered'], 12.0, 'Bob rostered 12 points he never started')
+eq(own['Bob']['points_started'], 0.0, 'but his claim WAS measured, so 0.0 not None')
+eq(own['Bob']['points_rostered'], 7.0, 'Bob rostered 7 points he never started')
 eq(own['Cal']['spent'], 0, 'Cal never won a claim')
 eq(own['Cal']['lost'], 3, 'Cal lost three bids')
 eq(own['Cal']['lost_bid_total'], 26, 'Cal bid and lost 12+9+5')
@@ -210,25 +229,30 @@ eq(L['totals']['solo_spend'], 7, 'uncontested spend, the $0 pickup adding nothin
 eq(L['totals']['contested_spend'], 70, 'contested spend is the other 70')
 eq(L['totals']['contested'], 2, 'two of the four winning claims were contested')
 eq(L['totals']['free_claims'], 1, 'one free $0 pickup')
+eq(L['totals']['played_through'], 3, 'weeks 1-3 have scores')
+eq(L['totals']['measured_claims'], 2, 'two of the four claims are old enough to judge')
 eq(L['totals']['failed'], 3, 'three failed claims')
 eq(L['budget'], 100, 'FAAB budget read off league settings')
 eq(L['weeks'], [1, 2, 3], 'three weeks of activity')
 
-print('awards')
+print('awards -- a comparative award needs a real field')
 aw = {a['slug']: a for a in L['awards']}
+eq(aw.get('best_value'), None,
+   'only one owner has a cost per point, so Best value is not published at all')
+eq(aw.get('worst_value'), None, 'and neither is Worst value -- it would be the same person')
+eq(aw.get('sharpest'), None, 'two rated owners is under MIN_FIELD_FOR_AWARD')
+eq(aw.get('loosest'), None, 'same')
 eq(aw['most_wasted']['handle'], 'Ann', 'Ann wasted the most money')
 ok('$7 of it on players nobody else bid on' in aw['most_wasted']['value'],
    'and the award splits out the uncontested part')
 eq(aw['biggest_overpay']['handle'], 'Ann', 'and made the biggest single overpay')
 ok('$28 wasted' in aw['biggest_overpay']['value'], 'the overpay award names the amount wasted')
-eq(aw['best_value']['handle'], 'Ann', 'Ann is the best value')
-eq(aw['dead_money']['handle'], 'Bob', 'Bob is pure dead money')
+eq(aw['dead_money']['handle'], 'Bob', 'Bob spent 30 on a settled claim and started none of it')
 eq(aw['outbid']['handle'], 'Cal', 'Cal is always the runner-up')
 eq(aw['cold_streak']['handle'], 'Cal', 'Cal has the coldest hand')
 eq(aw['biggest_bid']['handle'], 'Ann', 'Ann made the biggest bid')
-eq(aw['biggest_bust']['handle'], 'Bob', 'Bob made the biggest bust')
-ok('worst_value' not in aw or aw['worst_value']['handle'] == 'Ann',
-   'worst value falls to the only priced owner')
+eq(aw['biggest_bust']['handle'], 'Ann', 'the bust is judged only among SETTLED claims')
+ok('pts since' in aw['biggest_bid']['value'], 'a settled biggest bid reports its return')
 
 print()
 if fails:

@@ -36,11 +36,22 @@ The four things it measures, defined here so nobody re-derives them differently:
   waste_solo   the part of waste that came from uncontested claims, so the
                reader can separate "paid over the odds in a bidding war" from
                "paid for a player nobody wanted".
-  return       the player's points AFTER the claim week, split into points
-               actually STARTED by the winner and points merely ROSTERED. A guy
-               you paid for and benched is still wasted money, so both are kept.
-               Points come from Sleeper's own players_points, already scored
-               through the league's settings.
+  return       the player's points in the weeks AFTER the claim, split into
+               points actually STARTED by the winner and points merely ROSTERED.
+               A guy you paid for and benched is still wasted money, so both are
+               kept. Points come from Sleeper's own players_points, already
+               scored through the league's settings.
+
+               STRICTLY AFTER, and null until there is a played week to measure.
+               Sleeper files a Wednesday waiver run under the week whose games
+               just finished, so a claim tagged week 1 first plays in week 2.
+               Counting from the claim's own week credits the player with a game
+               he was not on the roster for -- which is always 0.0, so it does
+               not look like a bug, it looks like a bust. Measured live on
+               2026-09-16: every one of 35 claims read 0.0 and the script
+               crowned a $502 Puka Nacua claim "biggest bust" the morning it was
+               made. A claim with no played week after it is `None`, never 0.0:
+               not yet measurable is not the same as bought nothing.
   shut out     failed claims: how many, how much was bid and lost, and the
                current run of weeks bidding with nothing to show for it.
 
@@ -67,6 +78,12 @@ LAST_WEEK = 18
 # A claim has to have returned something to be judged on value. Below this the
 # cost-per-point number is noise, so the awards skip the owner entirely.
 MIN_SPEND_FOR_AWARD = 10
+# A "best" is only a best against a field. With two candidates the same person
+# can come out top and bottom of the same ranking, which is what the live
+# 2026-09-16 run did: CodyPowers28 was both Best value and Worst value because
+# he was the only owner with a measured point on the board. A comparative award
+# needs this many candidates or it is not published at all.
+MIN_FIELD_FOR_AWARD = 3
 
 
 def draft_rounds(lid, season):
@@ -147,18 +164,38 @@ def build_league(key, cfg, season, through):
     # --- what each winning claim went on to return ----------------------
     by_roster = {t['handle']: rid for rid, t in teams.items()}
     pts_cache = {}
+
+    def points_for(w):
+        if w not in pts_cache:
+            pts_cache[w] = week_points(lid, w)
+        return pts_cache[w]
+
+    # The last week anybody actually scored. NOT the last week with a
+    # transaction: claims get filed on the Wednesday after a week's games, so
+    # the transaction log always runs at least as far as the played schedule and
+    # usually one week further.
+    played_through = 0
+    for w in range(1, (through or LAST_WEEK) + 1):
+        if any(any(v for v in pts.values()) for pts, _ in points_for(w).values()):
+            played_through = w
+
     for c in claims:
         rid = by_roster.get(c['handle'])
+        pid = str(c.get('player_id') or '')
+        # Strictly after the claim's week -- see the docstring.
+        window = range(c['week'] + 1, played_through + 1)
+        if not len(window):
+            c['points_started'] = c['points_rostered'] = None
+            c['starts'] = 0
+            c['measured_weeks'] = 0
+            continue
         started = rostered = 0.0
         starts = 0
-        for w in range(c['week'], (through or last_week) + 1):
-            if w not in pts_cache:
-                pts_cache[w] = week_points(lid, w)
-            got = (pts_cache[w].get(rid) if rid is not None else None)
+        for w in window:
+            got = (points_for(w).get(rid) if rid is not None else None)
             if not got:
                 continue
             pts, lineup = got
-            pid = str(c.get('player_id') or '')
             if pid not in pts:
                 continue           # off this roster by then (dropped or traded)
             rostered += pts[pid]
@@ -168,6 +205,7 @@ def build_league(key, cfg, season, through):
         c['points_started'] = round(started, 2)
         c['points_rostered'] = round(rostered, 2)
         c['starts'] = starts
+        c['measured_weeks'] = len(window)
 
     # --- per owner -------------------------------------------------------
     owners = {}
@@ -178,6 +216,7 @@ def build_league(key, cfg, season, through):
             'contested_spend': 0, 'contested_won': 0, 'free_claims': 0,
             'won': 0, 'lost': 0, 'lost_bid_total': 0,
             'free_agents': 0, 'points_started': 0.0, 'points_rostered': 0.0, 'starts': 0,
+            'measured_claims': 0, 'measured_spend': 0,
             'budget_used': (t['settings'] or {}).get('waiver_budget_used'),
             'by_week': {}, 'by_pos': {}, 'by_round': {},
             'biggest_bid': None, 'biggest_waste': None, 'worst_buy': None,
@@ -198,9 +237,12 @@ def build_league(key, cfg, season, through):
         if c['free']:
             o['free_claims'] += 1
         o['won'] += 1
-        o['points_started'] += c['points_started']
-        o['points_rostered'] += c['points_rostered']
-        o['starts'] += c['starts']
+        if c['measured_weeks']:
+            o['points_started'] += c['points_started']
+            o['points_rostered'] += c['points_rostered']
+            o['starts'] += c['starts']
+            o['measured_claims'] += 1
+            o['measured_spend'] += c['bid']
         bucket(o['by_week'], c['week'], spent=c['bid'], won=1, waste=c['waste'])
         bucket(o['by_pos'], c['pos'] or '?', spent=c['bid'], won=1, waste=c['waste'])
         bucket(o['by_round'], c['round'] or 'undrafted', spent=c['bid'], won=1, waste=c['waste'])
@@ -208,9 +250,11 @@ def build_league(key, cfg, season, through):
             o['biggest_bid'] = c
         if not o['biggest_waste'] or c['waste'] > o['biggest_waste']['waste']:
             o['biggest_waste'] = c
-        # The worst buy is the most money for the fewest started points.
-        if c['bid'] > 0 and (not o['worst_buy'] or
-                             (c['bid'] - c['points_started']) > (o['worst_buy']['bid'] - o['worst_buy']['points_started'])):
+        # The worst buy is the most money for the fewest started points, and
+        # only a claim with a played week behind it can be judged at all.
+        if c['bid'] > 0 and c['measured_weeks'] and (
+                not o['worst_buy'] or
+                (c['bid'] - c['points_started']) > (o['worst_buy']['bid'] - o['worst_buy']['points_started'])):
             o['worst_buy'] = c
     for b in lost_bids:
         o = owners.get(b['handle'])
@@ -239,14 +283,16 @@ def build_league(key, cfg, season, through):
         o['shutout_streak'] = streak
         o['bids'] = o['won'] + o['lost']
         o['win_rate'] = round(o['won'] / o['bids'], 3) if o['bids'] else None
-        o['points_started'] = round(o['points_started'], 2)
-        o['points_rostered'] = round(o['points_rostered'], 2)
-        # Cost per point is only meaningful with money spent AND points on the
-        # board; null means "not enough to judge", never zero.
-        o['cost_per_point'] = (round(o['spent'] / o['points_started'], 2)
-                               if o['spent'] > 0 and o['points_started'] > 0 else None)
-        o['points_per_dollar'] = (round(o['points_started'] / o['spent'], 2)
-                                  if o['spent'] > 0 else None)
+        # Cost per point divides MEASURED spend by the points it returned. A
+        # claim with no played week behind it is in neither number, so an owner
+        # whose claims are all too new reads null rather than infinitely
+        # expensive. `dead` in the UI means measured and returned nothing.
+        o['points_started'] = round(o['points_started'], 2) if o['measured_claims'] else None
+        o['points_rostered'] = round(o['points_rostered'], 2) if o['measured_claims'] else None
+        o['cost_per_point'] = (round(o['measured_spend'] / o['points_started'], 2)
+                               if o['measured_spend'] > 0 and (o['points_started'] or 0) > 0 else None)
+        o['points_per_dollar'] = (round(o['points_started'] / o['measured_spend'], 2)
+                                  if o['measured_spend'] > 0 and o['points_started'] else None)
         o['budget_left'] = (budget - o['spent']) if budget is not None else None
         # Waste as a share of everything spent: $250 thrown away out of $400 is
         # a different story from $250 out of $4,000. Denominator is total spend
@@ -261,6 +307,8 @@ def build_league(key, cfg, season, through):
     # --- league totals ---------------------------------------------------
     totals = {'spent': sum(c['bid'] for c in claims), 'claims': len(claims),
               'contested': sum(1 for c in claims if c['contested']),
+              'measured_claims': sum(1 for c in claims if c['measured_weeks']),
+              'played_through': played_through,
               'waste': sum(c['waste'] for c in claims),
               'waste_solo': sum(c['waste_solo'] for c in claims),
               'solo_spend': sum(c['bid'] for c in claims if not c['contested']),
@@ -301,18 +349,32 @@ def awards(owners, claims):
             out.append({'slug': slug, 'label': label, 'dek': dek,
                         'handle': o['handle'], 'name': o['name'], 'value': value})
 
-    if valued:
-        best = min(valued, key=lambda o: o['cost_per_point'])
-        worst = max(valued, key=lambda o: o['cost_per_point'])
-        add('best_value', 'Best value', 'Cheapest started point off the wire',
-            best, f"${best['cost_per_point']}/pt on ${best['spent']}")
-        add('worst_value', 'Worst value', 'Dearest started point off the wire',
-            worst, f"${worst['cost_per_point']}/pt on ${worst['spent']}")
-    dead = [o for o in spenders if o['cost_per_point'] is None]
+    def pair(field, key, best_args, worst_args):
+        """Publish the two ends of a ranking, but only against a real field and
+        only when they are two different people."""
+        if len(field) < MIN_FIELD_FOR_AWARD:
+            return
+        lo = min(field, key=key)
+        hi = max(field, key=key)
+        if lo['handle'] == hi['handle']:
+            return
+        add(*best_args(lo))
+        add(*worst_args(hi))
+
+    pair(valued, lambda o: o['cost_per_point'],
+         lambda o: ('best_value', 'Best value', 'Cheapest started point off the wire',
+                    o, f"${o['cost_per_point']}/pt on ${o['measured_spend']} of settled claims"),
+         lambda o: ('worst_value', 'Worst value', 'Dearest started point off the wire',
+                    o, f"${o['cost_per_point']}/pt on ${o['measured_spend']} of settled claims"))
+    # Dead money is money that HAS been given a week to return something and
+    # returned nothing. An owner whose claims are all still too new to judge has
+    # points_started None, not 0.0, and is not eligible.
+    dead = [o for o in spenders if o['measured_claims'] and not o['points_started']]
     if dead:
-        d = max(dead, key=lambda o: o['spent'])
+        d = max(dead, key=lambda o: o['measured_spend'])
         add('dead_money', 'Pure dead money', 'Spent it, never started it',
-            d, f"${d['spent']} for {d['points_started']} pts")
+            d, f"${d['measured_spend']} across {d['measured_claims']} settled "
+               f"claim{'s' if d['measured_claims'] != 1 else ''}, 0 started points")
     # The headline award, and the one the owner actually asked for: money handed
     # over above what the claim would have cost at the next-best bid.
     wasters = [o for o in owners if o['waste'] > 0]
@@ -327,17 +389,16 @@ def awards(owners, claims):
         # contested wins to mean anything, and the two ends are only reported
         # when they are actually two different people.
         rated = [o for o in owners if o['spent'] >= MIN_SPEND_FOR_AWARD and o['waste_rate'] is not None]
-        if rated:
-            sharp = min(rated, key=lambda o: o['waste_rate'])
-            loose = max(rated, key=lambda o: o['waste_rate'])
-            def rate(o):
-                return (f"${o['waste']} wasted of ${o['spent']} spent "
-                        f"({round(o['waste_rate'] * 100)}%)")
-            add('sharpest', 'Sharpest bidder', 'Least waste per dollar spent',
-                sharp, rate(sharp))
-            if loose['handle'] != sharp['handle']:
-                add('loosest', 'Loosest bidder', 'Most waste per dollar spent',
-                    loose, rate(loose))
+
+        def rate(o):
+            return (f"${o['waste']} wasted of ${o['spent']} spent "
+                    f"({round(o['waste_rate'] * 100)}%)")
+
+        pair(rated, lambda o: o['waste_rate'],
+             lambda o: ('sharpest', 'Sharpest bidder', 'Least waste per dollar spent',
+                        o, rate(o)),
+             lambda o: ('loosest', 'Loosest bidder', 'Most waste per dollar spent',
+                        o, rate(o)))
     bidders = [o for o in owners if o['bids'] >= 3]
     if bidders:
         lose = min(bidders, key=lambda o: (o['win_rate'], -o['bids']))
@@ -358,14 +419,20 @@ def awards(owners, claims):
                     'value': f"${c['bid']} on {c['player']} {against} -- ${c['waste']} wasted"})
     if claims:
         top = max(claims, key=lambda c: c['bid'])
+        since = (f" ({top['points_started']} pts since)" if top['measured_weeks']
+                 else ' (too new to judge)')
         out.append({'slug': 'biggest_bid', 'label': 'Biggest bid of the season',
                     'dek': f"Week {top['week']}", 'handle': top['handle'], 'name': top['handle'],
-                    'value': f"${top['bid']} on {top['player']} ({top['points_started']} pts since)"})
-        bust = max(claims, key=lambda c: c['bid'] - c['points_started'])
-        if bust['bid'] > 0:
-            out.append({'slug': 'biggest_bust', 'label': 'Biggest bust', 'dek': f"Week {bust['week']}",
-                        'handle': bust['handle'], 'name': bust['handle'],
-                        'value': f"${bust['bid']} on {bust['player']} for {bust['points_started']} started pts"})
+                    'value': f"${top['bid']} on {top['player']}{since}"})
+    # Only a claim that has HAD a week can be a bust. Judging one the morning it
+    # was made is how a $502 Puka Nacua claim got called the season's biggest
+    # bust on 2026-09-16, hours after it cleared.
+    settled = [c for c in claims if c['measured_weeks'] and c['bid'] > 0]
+    if settled:
+        bust = max(settled, key=lambda c: c['bid'] - c['points_started'])
+        out.append({'slug': 'biggest_bust', 'label': 'Biggest bust', 'dek': f"Week {bust['week']}",
+                    'handle': bust['handle'], 'name': bust['handle'],
+                    'value': f"${bust['bid']} on {bust['player']} for {bust['points_started']} started pts"})
     return out
 
 
