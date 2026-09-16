@@ -189,17 +189,12 @@ rendered under **Season totals** for the two leagues that have a waiver wire
 (King's Justice and 2 Mitchs). A pick'em or survivor pool has no players to
 claim, so it gets nothing.
 
-**It runs on `.github/workflows/waivers.yml`, Tuesdays at 8am ET** (owner's
-call, 2026-09-16; it was Wednesdays at 11am for one day), so the analysis is on
-the hub before the Tuesday recaps get written and shared.
-
-**That is before the week's waivers clear, and that is the owner's choice.**
-Sleeper processes claims Wednesday morning, so a Tuesday run is complete through
-*last* Wednesday's claims plus any free-agent moves since. Nothing is wrong or
-stale about it -- every claim that has happened is in it -- but a Tuesday
-morning's numbers will not include bids placed for the week about to start. If
-that ever matters more than having it ready for the recap, move the cron back a
-day and keep the guard as-is.
+**It runs on `.github/workflows/waivers.yml`, Wednesdays at 8am ET** (owner's
+call, 2026-09-16) -- after Sleeper has processed the week's claims, so the
+analysis on the hub includes them. **Do not move it earlier in the week:** a
+Tuesday run was tried for one commit and is complete only through *last*
+Wednesday's waivers, which is correct but omits the bids for the week about to
+start -- exactly the ones anybody reading it on a Wednesday wants to see.
 
 Everything it reads is **Sleeper REST and keyless**:
 it deliberately never touches the pick'em GraphQL, so an expired Sleeper login
@@ -259,8 +254,8 @@ $0 is the real reference price either way.
   counted for weeks the player is still in the winner's `players_points`, so a
   trade or a drop ends the tally by itself.
 - **The workflow has two cron entries and a guard step.** GitHub cron is UTC and
-  has no idea DST exists, so 8am ET is two different UTC hours: `0 12 * * 2`
-  (8am EDT, Mar-Nov) and `0 13 * * 2` (8am EST, Nov-Mar). The guard runs
+  has no idea DST exists, so 8am ET is two different UTC hours: `0 12 * * 3`
+  (8am EDT, Mar-Nov) and `0 13 * * 3` (8am EST, Nov-Mar). The guard runs
   whichever entry matches the offset in force today and skips the other, so the
   job never drifts to 7am or 9am across the time change. A manual
   `workflow_dispatch` skips the guard entirely.
@@ -269,12 +264,12 @@ $0 is the real reference price either way.
   hour-equality guard (`is it 8 in New York right now?`) was the first version
   and it has a silent failure: GitHub delays scheduled runs under load, and a
   run delayed past the hour would skip — **both** entries, so the week's
-  analysis just never happens and nothing says so. Verified against real dates
-  either side of 2026-11-01, including a one-hour-delayed run, which the new
-  guard still executes.
+  analysis just never happens and nothing says so. Verified against real
+  Wednesdays either side of 2026-11-01, including a one-hour-delayed run, which
+  the new guard still executes.
 - **The commit step rebases before pushing.** The bot pushes to `main` and a
   human may have pushed since the job started; a race should cost a rebase, not
-  a failed run and a missing Tuesday.
+  a failed run and a missing week.
 - **The commit step drops a run where only `generated` moved**, or every
   Wednesday would produce a commit differing by a timestamp.
 - **`test/test_waivers.py` is a fixture test with no network** (44 assertions),

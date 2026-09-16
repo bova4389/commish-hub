@@ -1,7 +1,7 @@
 name: Waiver wire analysis
 
-# Tuesdays at 8am Eastern, so the analysis is on the hub before the Tuesday
-# recaps get written and shared.
+# Wednesdays at 8am Eastern -- after Sleeper has processed the week's waiver
+# claims, so the analysis on the hub includes them.
 #
 # GitHub cron is UTC and has no idea DST exists, so 8am ET is two different UTC
 # hours depending on the month. Both are listed:
@@ -14,8 +14,8 @@ name: Waiver wire analysis
 # it does under load -- and the failure would be silent.
 on:
   schedule:
-    - cron: '0 12 * * 2'   # 8am EDT
-    - cron: '0 13 * * 2'   # 8am EST
+    - cron: '0 12 * * 3'   # 8am EDT
+    - cron: '0 13 * * 3'   # 8am EST
   workflow_dispatch:
 
 permissions:
@@ -37,9 +37,9 @@ jobs:
           GO=no
           if [ '${{ github.event_name }}' != 'schedule' ]; then
             GO=yes                                        # manual run, always go
-          elif [ "$FIRED" = '0 12 * * 2' ] && [ "$ZONE" = 'EDT' ]; then
+          elif [ "$FIRED" = '0 12 * * 3' ] && [ "$ZONE" = 'EDT' ]; then
             GO=yes
-          elif [ "$FIRED" = '0 13 * * 2' ] && [ "$ZONE" = 'EST' ]; then
+          elif [ "$FIRED" = '0 13 * * 3' ] && [ "$ZONE" = 'EST' ]; then
             GO=yes
           fi
           echo "go=$GO" >> "$GITHUB_OUTPUT"
@@ -84,7 +84,7 @@ jobs:
             git reset
             exit 0
           fi
-          git commit -m 'Waiver wire analysis: automated Tuesday refresh'
+          git commit -m 'Waiver wire analysis: automated Wednesday refresh'
           # The bot pushes to main, and a human may have pushed since the job
           # started. Rebase rather than fail the run on a race.
           git pull --rebase --autostash origin "${GITHUB_REF_NAME}"
