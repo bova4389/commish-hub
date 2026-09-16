@@ -103,6 +103,24 @@ button { font: inherit; }
 .panel h3 { margin: 0 0 4px; font-size: 16px; letter-spacing: -0.01em; }
 .panel .dek { color: var(--muted); font-size: 12.5px; margin-bottom: 10px; }
 .panel .empty { color: var(--faint); font-style: italic; font-size: 14px; }
+/* Save image / Preview on every panel. Hidden in the export, and the header and
+   footer that only the export carries (.ex-only) are hidden on the page. */
+.panel-actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
+.btn.sm { padding: 8px 14px; font-size: 13px; min-height: 36px; }
+.ex-only { display: none !important; }
+.panel.exporting { max-width: none; padding: 26px; border-top: 5px solid var(--accent);
+  background: linear-gradient(160deg, #1a1e27 0%, #12151b 100%); border-radius: 18px; margin: 0; }
+.panel.exporting .ex-only { display: flex !important; }
+.panel.exporting .sc-top { margin-bottom: 6px; }
+.panel.exporting h3 { font-size: 21px; margin-bottom: 6px; }
+.panel.exporting .panel-actions { display: none; }
+.panel.exporting .tbl-wrap,
+.panel.exporting .gridwrap { overflow: visible; margin: 0; padding: 0; }
+.panel.exporting .grid th.gname,
+.panel.exporting .grid .gtotal { position: static; }
+.panel.exporting .dek,
+.panel.exporting .empty { max-width: 680px; }
+.panel .prov { color: var(--warn); font-weight: 700; }
 .tbl-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 0 -16px; padding: 0 16px; }
 table { border-collapse: collapse; width: 100%; font-size: 14px; }
 th, td { padding: 7px 8px; text-align: left; border-bottom: 1px solid var(--line); white-space: nowrap; vertical-align: top; }

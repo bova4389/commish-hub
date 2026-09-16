@@ -85,7 +85,8 @@
         return render();
       }
       const id = b.dataset.save || b.dataset.preview;
-      exportEl(document.getElementById(id), `${state.league}-${state.season}-${id}.png`,
+      const when = state.week === SEASON_VIEW ? 'season' : 'week-' + state.week;
+      exportEl(document.getElementById(id), `${state.league}-${state.season}-${when}-${id.replace(/^(sc|p)-/, '')}.png`,
         b.dataset.save ? 'save' : 'preview');
     });
     $('#overlay').onclick = (e) => { if (e.target.id === 'overlay') $('#overlay').hidden = true; };
@@ -179,6 +180,7 @@
   /* ---------------------------------------------------------------- render */
   function render() {
     writeHash();
+    PANEL_IDS = {};
     paintViewToggle();
     const cfg = CONFIG.leagues[state.league];
     document.documentElement.style.setProperty('--accent', cfg.accent);
@@ -642,7 +644,8 @@
       else {
         parts.push(panel('Waiver wire', 'Rebuilt every Wednesday at 8am ET',
           W && W.error ? `<div class="empty">The waiver script failed: ${esc(W.error)}</div>`
-            : '<div class="empty">No waiver analysis built yet. Run: python scripts/build_waivers.py</div>'));
+            : '<div class="empty">No waiver analysis built yet. Run: python scripts/build_waivers.py</div>',
+          { share: false }));
       }
     }
 
@@ -967,8 +970,38 @@
     const names = CONFIG.leagues[state.league].names || {};
     return names[handle] || handle;
   }
-  function panel(title, dek, body) {
-    return `<div class="panel"><h3>${title}</h3>${dek ? `<div class="dek">${dek}</div>` : ''}${body}</div>`;
+  /* Every panel is shareable on its own. On the page it looks like a plain
+     panel; the league/week header and the footer are `.ex-only`, so they show
+     up only in the exported image, which gets posted to a chat with no page
+     around it and has to say what it is. Pass `{ share: false }` for a panel
+     that is a message rather than numbers (an unbuilt-data notice). */
+  function panel(title, dek, body, opt) {
+    const share = !(opt && opt.share === false);
+    const id = share ? panelId(title) : '';
+    const where = state.week === SEASON_VIEW ? `${esc(state.season)} season` : `Week ${esc(state.week)} &middot; ${esc(state.season)}`;
+    return `<div class="panel"${id ? ` id="${id}"` : ''}>` +
+      (share ? `<div class="sc-top ex-only"><span class="sc-league">${esc(CONFIG.leagues[state.league].name)}</span>` +
+        `<span class="sc-season">${where}</span></div>` : '') +
+      `<h3>${title}</h3>${dek ? `<div class="dek">${dek}</div>` : ''}${body}` +
+      (share ? `<div class="sc-foot ex-only"><span>Commish Hub</span><span>${panelStamp()}</span></div>` +
+        `<div class="panel-actions"><button type="button" class="btn sm" data-save="${id}">Save image</button>` +
+        `<button type="button" class="btn ghost sm" data-preview="${id}">Preview image</button></div>` : '') +
+      `</div>`;
+  }
+  // Ids come from the title so the saved file name says what it is. `PANEL_IDS`
+  // is reset on every render; a repeated title gets -2, -3.
+  let PANEL_IDS = {};
+  function panelId(title) {
+    const slug = String(title).replace(/<[^>]*>/g, '').replace(/&[a-z#0-9]+;/gi, ' ')
+      .toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '') || 'panel';
+    PANEL_IDS[slug] = (PANEL_IDS[slug] || 0) + 1;
+    return 'p-' + slug + (PANEL_IDS[slug] > 1 ? '-' + PANEL_IDS[slug] : '');
+  }
+  function panelStamp() {
+    if (state.week === SEASON_VIEW) return esc(seasonStamp());
+    if (!WEEK) return '';
+    return (WEEK.all_final ? '' : '<span class="prov">PROVISIONAL &middot; games still to play</span> &middot; ') +
+      'Pulled ' + esc(WEEK.generated.replace('T', ' ').slice(0, 10));
   }
   function tbl(head, rows) {
     return rows ? `<div class="tbl-wrap"><table><thead><tr>${head}</tr></thead><tbody>${rows}</tbody></table></div>` : '<div class="empty">Nothing here.</div>';
@@ -979,6 +1012,22 @@
     return exportEl($('#recap-card'), `${state.league}-${state.season}-week-${state.week}.png`, mode);
   }
 
+  /* A panel exports at the recap card's 720px, or wider when a table in it is
+     wider than that, so a wide table comes out whole instead of cropped. It is
+     measured rather than set to max-content, because max-content would lay a
+     wrapping row of pick chips or a long dek out on one enormous line. */
+  function fitPanel(card) {
+    if (!card.classList.contains('panel')) return;
+    card.style.width = '720px';   // measure at the export width, not the page's
+    const widest = Math.max(0, ...[...card.querySelectorAll('table')].map((t) => t.scrollWidth));
+    const pad = parseFloat(getComputedStyle(card).paddingLeft) || 0;
+    card.style.width = Math.max(720, Math.ceil(widest + pad * 2 + 2)) + 'px';
+  }
+  function unfitPanel(card) {
+    card.classList.remove('exporting');
+    if (card.classList.contains('panel')) card.style.width = '';
+  }
+
   /* Render any element to a PNG. `.exporting` widens the node and unclips its
      scrollers, which is what makes an 18-week grid come out whole instead of
      cropped to the phone's viewport. */
@@ -987,10 +1036,11 @@
     const btns = [...document.querySelectorAll('.btn')];
     btns.forEach((b) => { b.disabled = true; });
     card.classList.add('exporting');
+    fitPanel(card);
     try {
       const canvas = await html2canvas(card, { scale: 2, backgroundColor: '#0f1115', useCORS: true, logging: false,
                                                windowWidth: Math.max(card.scrollWidth + 80, 900) });
-      card.classList.remove('exporting');
+      unfitPanel(card);
       if (mode === 'preview') {
         $('#overlay-img').src = canvas.toDataURL('image/png');
         $('#overlay').hidden = false;
@@ -1003,7 +1053,7 @@
         }, 'image/png');
       }
     } catch (e) {
-      card.classList.remove('exporting');
+      unfitPanel(card);
       alert('Could not render the image: ' + e.message);
     } finally {
       btns.forEach((b) => { b.disabled = false; });

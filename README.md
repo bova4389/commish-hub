@@ -16,6 +16,8 @@ python scripts/build_waivers.py --refresh            # the waiver analysis (Wedn
 ```
 
 Then open the page, pick the league, hit **Save image**, post it to the chat.
+Every table under the recap has its own **Save image** button too, and the
+saved picture carries the league and week so it makes sense on its own.
 
 The **Season totals** button beside the week picker swaps the weekly recap for
 the cumulative views, each with its own Save image button:

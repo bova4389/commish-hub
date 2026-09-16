@@ -88,6 +88,27 @@ leagues; roast his weeks on the same terms as everyone else's. Per league:
 - **Deadpool** — bodies, the game that did it, whether the consensus pick got everyone killed.
   A "loss" with revives left is a strike, not a death; the card says `strikes`.
 
+## Every table saves as an image
+
+Added 2026-09-16 at the owner's request: **every panel on the page has its own Save image /
+Preview image pair**, not just the recap card and the season grids, because any one of them
+may be the thing worth posting to a league chat. `panel()` does it, so a new panel is
+shareable without doing anything.
+
+- **On the page a panel looks unchanged.** The league/week header and the footer are
+  `.ex-only` and appear only in the exported image -- an image posted to a chat has no page
+  around it and has to say which league and week it is. The buttons are hidden in the export.
+- **A panel exports at 720px, widened to its widest table** (`fitPanel()`), so a wide table
+  comes out whole instead of cropped to a phone's viewport. It is measured rather than set to
+  `max-content`, which would lay a wrapping row of pick chips or a long dek out on one line.
+- **Ids come from the title** (`p-lonely-winners`), so the saved file is named
+  `<league>-<season>-week-1-lonely-winners.png` or `...-season-waste.png`. `PANEL_IDS` resets
+  on every render and a repeated title gets `-2`.
+- **`{ share: false }`** on a panel that is a message rather than numbers (the "no waiver
+  analysis built yet" notice). Nobody posts that.
+- The weekly footer carries **PROVISIONAL** when the week is not all final, same as the
+  recap card, so a mid-week image cannot pass for a result.
+
 ## Season totals -- the cumulative grids
 
 Added 2026-09-15. A **Season totals** button beside the week picker (hash
