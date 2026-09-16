@@ -341,6 +341,11 @@ $0 is the real reference price either way.
   analysis just never happens and nothing says so. Verified against real
   Wednesdays either side of 2026-11-01, including a one-hour-delayed run, which
   the new guard still executes.
+- **Action majors are pinned to the Node 24 releases** (`checkout@v5`,
+  `setup-python@v6`). The v4/v5 pair still worked but every run printed a Node 20
+  deprecation warning, and GitHub's force-onto-Node-24 fallback is temporary --
+  left alone it becomes a broken Wednesday with nobody watching. Bumped
+  2026-09-16 after the owner flagged the warning.
 - **The commit step rebases before pushing.** The bot pushes to `main` and a
   human may have pushed since the job started; a race should cost a rebase, not
   a failed run and a missing week.

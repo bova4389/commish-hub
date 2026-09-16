@@ -46,10 +46,10 @@ jobs:
           echo "Eastern is currently $ZONE; this run came from '$FIRED'; go=$GO"
           echo "Eastern clock: $(TZ=America/New_York date)"
 
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         if: steps.when.outputs.go == 'yes'
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         if: steps.when.outputs.go == 'yes'
         with:
           python-version: '3.12'
