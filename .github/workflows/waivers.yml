@@ -1,16 +1,21 @@
 name: Waiver wire analysis
 
-# Wednesdays at 11am Eastern -- the morning after waivers clear, which is the
-# whole point of the cadence. GitHub cron is UTC and has no DST, so both offsets
-# are listed and the job no-ops on the one that is the wrong hour locally:
-#   15:00 UTC = 11am EDT (Mar-Nov)    16:00 UTC = 11am EST (Nov-Mar)
-# The guard step below drops whichever firing is not 11am in New York, so the
-# analysis lands at 11am local all season instead of drifting an hour in
-# November. Manual runs skip the guard.
+# Tuesdays at 8am Eastern, so the analysis is on the hub before the Tuesday
+# recaps get written and shared.
+#
+# GitHub cron is UTC and has no idea DST exists, so 8am ET is two different UTC
+# hours depending on the month. Both are listed:
+#   12:00 UTC = 8am EDT (Mar-Nov)     13:00 UTC = 8am EST (Nov-Mar)
+# and the guard below runs whichever entry matches the offset in force today,
+# skipping the other. `github.event.schedule` hands the job the exact cron
+# string that fired it, which is what makes this work: a delayed run still knows
+# which entry it was. A guard that instead compared the CURRENT Eastern hour to
+# 8 would skip BOTH entries on a morning GitHub ran the job an hour late, which
+# it does under load -- and the failure would be silent.
 on:
   schedule:
-    - cron: '0 15 * * 3'
-    - cron: '0 16 * * 3'
+    - cron: '0 12 * * 2'   # 8am EDT
+    - cron: '0 13 * * 2'   # 8am EST
   workflow_dispatch:
 
 permissions:
@@ -24,16 +29,22 @@ jobs:
   waivers:
     runs-on: ubuntu-latest
     steps:
-      - name: Is it 11am in New York?
+      - name: Is this the entry that means 8am Eastern today?
         id: when
         run: |
-          H=$(TZ=America/New_York date +%H)
-          if [ "${{ github.event_name }}" != "schedule" ] || [ "$H" = "11" ]; then
-            echo "go=yes" >> "$GITHUB_OUTPUT"
-          else
-            echo "go=no" >> "$GITHUB_OUTPUT"
-            echo "It is ${H}:00 in New York, not 11 -- the other cron entry handles today."
+          ZONE=$(TZ=America/New_York date +%Z)
+          FIRED='${{ github.event.schedule }}'
+          GO=no
+          if [ '${{ github.event_name }}' != 'schedule' ]; then
+            GO=yes                                        # manual run, always go
+          elif [ "$FIRED" = '0 12 * * 2' ] && [ "$ZONE" = 'EDT' ]; then
+            GO=yes
+          elif [ "$FIRED" = '0 13 * * 2' ] && [ "$ZONE" = 'EST' ]; then
+            GO=yes
           fi
+          echo "go=$GO" >> "$GITHUB_OUTPUT"
+          echo "Eastern is currently $ZONE; this run came from '$FIRED'; go=$GO"
+          echo "Eastern clock: $(TZ=America/New_York date)"
 
       - uses: actions/checkout@v4
         if: steps.when.outputs.go == 'yes'
@@ -49,7 +60,7 @@ jobs:
         if: steps.when.outputs.go == 'yes'
         run: pip install --quiet requests
 
-      # --refresh because the whole job is about this week's claims, and the
+      # --refresh because the whole job is about the latest claims, and the
       # on-disk cache is only ever correct for finished weeks.
       - name: Build the waiver analysis
         if: steps.when.outputs.go == 'yes'
@@ -73,5 +84,8 @@ jobs:
             git reset
             exit 0
           fi
-          git commit -m 'Waiver wire analysis: automated Wednesday refresh'
-          git push
+          git commit -m 'Waiver wire analysis: automated Tuesday refresh'
+          # The bot pushes to main, and a human may have pushed since the job
+          # started. Rebase rather than fail the run on a race.
+          git pull --rebase --autostash origin "${GITHUB_REF_NAME}"
+          git push origin "HEAD:${GITHUB_REF_NAME}"

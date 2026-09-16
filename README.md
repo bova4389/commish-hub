@@ -32,8 +32,10 @@ cumulative views, each with its own Save image button:
   him — and only a free $0 pickup is excluded. Plus
   spend, what each claim actually returned in started lineups, who keeps getting
   outbid, spend by the player's original draft round and by position, and the
-  season's best and worst spenders. Rebuilt automatically every Wednesday at
-  11am ET by `.github/workflows/waivers.yml`.
+  season's best and worst spenders. **Rebuilt automatically every Tuesday at
+  8am ET** by `.github/workflows/waivers.yml`, so it is on the hub before the
+  recaps go out. (Sleeper clears claims on Wednesdays, so a Tuesday run covers
+  everything up to and including last week's waivers.)
 
 ```bash
 python test/test_waivers.py                          # fixture test, no network
