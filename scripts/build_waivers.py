@@ -219,7 +219,7 @@ def build_league(key, cfg, season, through):
             'measured_claims': 0, 'measured_spend': 0,
             'budget_used': (t['settings'] or {}).get('waiver_budget_used'),
             'by_week': {}, 'by_pos': {}, 'by_round': {},
-            'biggest_bid': None, 'biggest_waste': None, 'worst_buy': None,
+            'biggest_bid': None, 'biggest_waste': None, 'worst_buy': None, 'best_buy': None,
             'shutout_weeks': [], 'shutout_streak': 0,
         }
     for c in claims:
@@ -250,12 +250,16 @@ def build_league(key, cfg, season, through):
             o['biggest_bid'] = c
         if not o['biggest_waste'] or c['waste'] > o['biggest_waste']['waste']:
             o['biggest_waste'] = c
-        # The worst buy is the most money for the fewest started points, and
-        # only a claim with a played week behind it can be judged at all.
-        if c['bid'] > 0 and c['measured_weeks'] and (
-                not o['worst_buy'] or
-                (c['bid'] - c['points_started']) > (o['worst_buy']['bid'] - o['worst_buy']['points_started'])):
-            o['worst_buy'] = c
+        # Best and worst buy are both lookbacks: only a claim with a played week
+        # behind it can be judged at all. Worst is the most money for the fewest
+        # started points; best is the most started points for the money.
+        if c['bid'] > 0 and c['measured_weeks']:
+            if (not o['worst_buy'] or
+                    (c['bid'] - c['points_started']) > (o['worst_buy']['bid'] - o['worst_buy']['points_started'])):
+                o['worst_buy'] = c
+            if (not o['best_buy'] or
+                    (c['points_started'] - c['bid']) > (o['best_buy']['points_started'] - o['best_buy']['bid'])):
+                o['best_buy'] = c
     for b in lost_bids:
         o = owners.get(b['handle'])
         if not o:
@@ -298,7 +302,7 @@ def build_league(key, cfg, season, through):
         # a different story from $250 out of $4,000. Denominator is total spend
         # now that waste is measured on every claim, not just contested ones.
         o['waste_rate'] = round(o['waste'] / o['spent'], 3) if o['spent'] > 0 else None
-        for k in ('biggest_bid', 'biggest_waste', 'worst_buy'):
+        for k in ('biggest_bid', 'biggest_waste', 'worst_buy', 'best_buy'):
             c = o[k]
             if c:
                 o[k] = {f: c[f] for f in ('week', 'player', 'pos', 'bid', 'runner_up', 'waste',

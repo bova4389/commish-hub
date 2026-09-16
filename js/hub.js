@@ -794,6 +794,46 @@
 
   function T_of(W) { return W.totals || {}; }
 
+  /* Return on investment -- did the money buy anything. This is a LOOKBACK and
+     nothing else: a claim can only be judged once a week has been played with
+     the player on the roster, so through week 1 there is nothing here by
+     definition. The panel says that in a sentence rather than rendering a table
+     of dashes, which is what it did when these two columns lived in the
+     spending ledger and read "dead" down every row. */
+  function roiPanel(W) {
+    const T = T_of(W);
+    const settled = T.measured_claims || 0;
+    if (!settled) {
+      return panel('Did the money buy anything?',
+        'Return on investment, in hindsight',
+        `<div class="empty">Nothing to look back on yet. A claim can only be judged once a week has ` +
+        `been played with the player on the roster, and every claim so far was made after the last ` +
+        `game${T.played_through ? ` (week ${T.played_through})` : ''}. This fills in from the week after ` +
+        `the first claims.</div>`);
+    }
+    const rows = (W.owners || []).filter((o) => o.measured_claims)
+      .sort((a, b) => (b.points_per_dollar || 0) - (a.points_per_dollar || 0) ||
+                      (b.points_started || 0) - (a.points_started || 0))
+      .map((o) => {
+        const buy = (c, cls) => (c ? `<span class="${cls}">${esc(c.player)}</span> ` +
+          `<span class="sub">${money(c.bid)} → ${f2(c.points_started)}</span>` : '<span class="z">—</span>');
+        return `<tr><td>${esc(o.name || o.handle)}</td>` +
+          `<td class="num">${money(o.measured_spend)}<div class="sub">${o.measured_claims} claim${o.measured_claims === 1 ? '' : 's'}</div></td>` +
+          `<td class="num">${f2(o.points_started)}<div class="sub">${o.starts} start${o.starts === 1 ? '' : 's'}</div></td>` +
+          `<td class="num ${o.cost_per_point == null ? 'bad' : ''}">` +
+            `${o.cost_per_point == null ? 'dead' : '$' + f2(o.cost_per_point)}</td>` +
+          `<td>${buy(o.best_buy, 'good')}</td><td>${buy(o.worst_buy, 'bad')}</td></tr>`;
+      }).join('');
+    return panel('Did the money buy anything?',
+      `Return on investment, in hindsight. Only the ${settled} claim${settled === 1 ? '' : 's'} with a ` +
+      `played week behind ${settled === 1 ? 'it' : 'them'} ${settled === 1 ? 'is' : 'are'} in here -- ` +
+      `a claim is judged on the weeks AFTER it cleared, never the week it was made. ` +
+      `<b>$/pt</b> is settled spend over points actually STARTED; "dead" means the money returned nothing. ` +
+      `Points merely rostered do not count: a player you paid for and benched bought you nothing.`,
+      tbl('<th>Owner</th><th class="num">Settled spend</th><th class="num">Started pts</th>' +
+          '<th class="num">$/pt</th><th>Best buy</th><th>Worst buy</th>', rows));
+  }
+
   /* ---- waivers -------------------------------------------------------- */
   function waiverPanels(W) {
     const T = W.totals || {};
@@ -810,12 +850,7 @@
         `<td class="num ${o.waste > 0 ? 'bad' : ''}">${o.waste ? '<b>' + money(o.waste) + '</b>' : '<span class="z">$0</span>'}` +
           `${o.waste_rate != null ? `<div class="sub">${Math.round(o.waste_rate * 100)}% of spend</div>` : ''}</td>` +
         `<td class="num muted">${mny(o.waste_solo)}</td>` +
-        `<td class="num">${o.points_started == null ? '<span class="z">—</span>' : f2(o.points_started)}</td>` +
-        `<td class="num ${o.cost_per_point == null && o.measured_claims ? 'bad' : ''}">` +
-          `${o.cost_per_point != null ? '$' + f2(o.cost_per_point)
-            : !o.spent ? '<span class="z">—</span>'
-            : o.measured_claims ? 'dead' : '<span class="z">new</span>'}</td>` +
-        `<td class="num muted">${o.budget_left == null ? '—' : money(o.budget_left)}</td></tr>`;
+        `<td class="num gtotal muted">${o.budget_left == null ? '—' : money(o.budget_left)}</td></tr>`;
     }).join('');
     const ledgerCard = shareCard('sc-waivers', 'Waiver spending',
       `${mny(T.spent)} across ${T.claims || 0} winning claims, ${T.failed || 0} failed. ` +
@@ -823,13 +858,11 @@
       `next-best $150 and you own him either way, so $150 would have done and $250 went in the bin. ` +
       `Nobody else bidding means the next-best bid is $0, so an uncontested claim is wasted in full -- ` +
       `<b>Uncont.</b> is how much of the waste came that way. A free $0 pickup wastes nothing. ` +
-      `<b>$/pt</b> divides spend by the points those players actually STARTED for -- counting only ` +
-      `claims with a played week behind them, since a claim made this morning has had no chance to score. ` +
-      `"dead" means settled and nothing started; "new" means not judgeable yet.`,
+      `Whether the money bought anything is a separate question and a separate panel below -- it ` +
+      `can only be answered in hindsight.`,
       `<div class="gridwrap"><table class="grid"><thead><tr><th class="gname">Owner</th>` +
       `<th class="num">Spent</th><th class="num">Won</th><th class="num">Win%</th><th class="num">Wasted</th>` +
-      `<th class="num">Uncont.</th><th class="num">Pts</th><th class="num">$/pt</th>` +
-      `<th class="num gtotal">Left</th></tr></thead><tbody>${ledger}</tbody></table></div>`,
+      `<th class="num">Uncont.</th><th class="num gtotal">Left</th></tr></thead><tbody>${ledger}</tbody></table></div>`,
       `Through week ${esc(W.through_week)}. FAAB budget ${W.budget == null ? 'not set' : money(W.budget)}.`);
 
     // Best and worst, computed in the script so the page can't rank it a
@@ -879,6 +912,7 @@
     return [
       ledgerCard,
       wasteCard(W),
+      roiPanel(W),
       aw ? panel('Best and worst spenders', 'Cumulative, through week ' + esc(W.through_week), `<div class="awards">${aw}</div>`) : '',
       panel('Spend by draft round', 'What the room paid in August against what it pays now. The round is the player\'s original pick in THIS league\'s draft; undrafted is its own bucket.',
         bucketTbl(T.by_round || {}, 'Round')),

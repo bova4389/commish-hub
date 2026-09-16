@@ -239,6 +239,15 @@ $0 is the real reference price either way.
   OWN draft** (`undrafted` is its own bucket) -- the "what the room paid in
   August against what it pays in October" read the owner asked for. It is not the
   NFL draft.
+- **Bid-versus-points is a LOOKBACK and lives in its own panel** ("Did the money
+  buy anything?"), not in the spending ledger. Spend and waste are knowable the
+  morning a claim clears; whether the money bought anything cannot be known
+  until weeks have been played. Mixing them put two columns of `new` / `dead`
+  down every row of the ledger and invited exactly the misreading the window bug
+  caused. With no settled claims the panel prints one sentence saying so rather
+  than a table of dashes, and it fills in on its own from the week after the
+  first claims. `best_buy` sits opposite `worst_buy` there, because "did anybody
+  actually hit" is half the lookback and had no home before.
 - **Waste gets its own cumulative grid with its own Save image button**
   (`sc-waste`), the same weeks-across shape as the money grids, plus a
   claim-level **Biggest overpays** panel (where an uncontested row prints its
