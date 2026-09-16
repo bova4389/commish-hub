@@ -1,6 +1,6 @@
 {
  "season": 2026,
- "generated": "2026-09-16T08:25:40-04:00",
+ "generated": "2026-09-16T08:43:42-04:00",
  "leagues": {
   "kings_justice": {
    "name": "The King's Justice",
@@ -40,9 +40,11 @@
      "lost": 2,
      "lost_bid_total": 199,
      "free_agents": 0,
-     "points_started": 0.0,
-     "points_rostered": 3.8,
+     "points_started": null,
+     "points_rostered": null,
      "starts": 0,
+     "measured_claims": 0,
+     "measured_spend": 0,
      "budget_used": 502,
      "by_week": {
       "1": {
@@ -102,7 +104,7 @@
       "contested": true,
       "free": false,
       "round": 1,
-      "points_started": 0.0,
+      "points_started": null,
       "starts": 0
      },
      "biggest_waste": {
@@ -115,28 +117,17 @@
       "contested": true,
       "free": false,
       "round": 1,
-      "points_started": 0.0,
+      "points_started": null,
       "starts": 0
      },
-     "worst_buy": {
-      "week": 1,
-      "player": "Puka Nacua",
-      "pos": "WR",
-      "bid": 502,
-      "runner_up": 477,
-      "waste": 25,
-      "contested": true,
-      "free": false,
-      "round": 1,
-      "points_started": 0.0,
-      "starts": 0
-     },
+     "worst_buy": null,
+     "best_buy": null,
      "shutout_weeks": [],
      "shutout_streak": 0,
      "bids": 5,
      "win_rate": 0.6,
      "cost_per_point": null,
-     "points_per_dollar": 0.0,
+     "points_per_dollar": null,
      "budget_left": 498,
      "waste_rate": 0.05
     },
@@ -154,9 +145,11 @@
      "lost": 0,
      "lost_bid_total": 0,
      "free_agents": 0,
-     "points_started": 0.0,
-     "points_rostered": 3.2,
+     "points_started": null,
+     "points_rostered": null,
      "starts": 0,
+     "measured_claims": 0,
+     "measured_spend": 0,
      "budget_used": 463,
      "by_week": {
       "1": {
@@ -202,7 +195,7 @@
       "contested": true,
       "free": false,
       "round": 2,
-      "points_started": 0.0,
+      "points_started": null,
       "starts": 0
      },
      "biggest_waste": {
@@ -215,28 +208,17 @@
       "contested": true,
       "free": false,
       "round": 2,
-      "points_started": 0.0,
+      "points_started": null,
       "starts": 0
      },
-     "worst_buy": {
-      "week": 1,
-      "player": "Tetairoa McMillan",
-      "pos": "WR",
-      "bid": 401,
-      "runner_up": 199,
-      "waste": 202,
-      "contested": true,
-      "free": false,
-      "round": 2,
-      "points_started": 0.0,
-      "starts": 0
-     },
+     "worst_buy": null,
+     "best_buy": null,
      "shutout_weeks": [],
      "shutout_streak": 0,
      "bids": 7,
      "win_rate": 1.0,
      "cost_per_point": null,
-     "points_per_dollar": 0.0,
+     "points_per_dollar": null,
      "budget_left": 537,
      "waste_rate": 0.559
     },
@@ -254,9 +236,11 @@
      "lost": 1,
      "lost_bid_total": 436,
      "free_agents": 0,
-     "points_started": 0.0,
-     "points_rostered": 4.8,
+     "points_started": null,
+     "points_rostered": null,
      "starts": 0,
+     "measured_claims": 0,
+     "measured_spend": 0,
      "budget_used": 308,
      "by_week": {
       "1": {
@@ -323,7 +307,7 @@
       "contested": true,
       "free": false,
       "round": 4,
-      "points_started": 0.0,
+      "points_started": null,
       "starts": 0
      },
      "biggest_waste": {
@@ -336,28 +320,17 @@
       "contested": true,
       "free": false,
       "round": 4,
-      "points_started": 0.0,
+      "points_started": null,
       "starts": 0
      },
-     "worst_buy": {
-      "week": 1,
-      "player": "Jadarian Price",
-      "pos": "RB",
-      "bid": 308,
-      "runner_up": 65,
-      "waste": 243,
-      "contested": true,
-      "free": false,
-      "round": 4,
-      "points_started": 0.0,
-      "starts": 0
-     },
+     "worst_buy": null,
+     "best_buy": null,
      "shutout_weeks": [],
      "shutout_streak": 0,
      "bids": 3,
      "win_rate": 0.667,
      "cost_per_point": null,
-     "points_per_dollar": 0.0,
+     "points_per_dollar": null,
      "budget_left": 692,
      "waste_rate": 0.789
     },
@@ -375,9 +348,11 @@
      "lost": 5,
      "lost_bid_total": 621,
      "free_agents": 0,
-     "points_started": 0.0,
-     "points_rostered": 0.0,
+     "points_started": null,
+     "points_rostered": null,
      "starts": 0,
+     "measured_claims": 0,
+     "measured_spend": 0,
      "budget_used": 169,
      "by_week": {
       "1": {
@@ -451,7 +426,7 @@
       "contested": true,
       "free": false,
       "round": 3,
-      "points_started": 0.0,
+      "points_started": null,
       "starts": 0
      },
      "biggest_waste": {
@@ -464,28 +439,17 @@
       "contested": true,
       "free": false,
       "round": 3,
-      "points_started": 0.0,
+      "points_started": null,
       "starts": 0
      },
-     "worst_buy": {
-      "week": 1,
-      "player": "Joe Burrow",
-      "pos": "QB",
-      "bid": 169,
-      "runner_up": 169,
-      "waste": 0,
-      "contested": true,
-      "free": false,
-      "round": 3,
-      "points_started": 0.0,
-      "starts": 0
-     },
+     "worst_buy": null,
+     "best_buy": null,
      "shutout_weeks": [],
      "shutout_streak": 0,
      "bids": 6,
      "win_rate": 0.167,
      "cost_per_point": null,
-     "points_per_dollar": 0.0,
+     "points_per_dollar": null,
      "budget_left": 831,
      "waste_rate": 0.0
     },
@@ -503,9 +467,11 @@
      "lost": 3,
      "lost_bid_total": 604,
      "free_agents": 0,
-     "points_started": 0.0,
-     "points_rostered": 0.0,
+     "points_started": null,
+     "points_rostered": null,
      "starts": 0,
+     "measured_claims": 0,
+     "measured_spend": 0,
      "budget_used": 122,
      "by_week": {
       "1": {
@@ -586,7 +552,7 @@
       "contested": true,
       "free": false,
       "round": 6,
-      "points_started": 0.0,
+      "points_started": null,
       "starts": 0
      },
      "biggest_waste": {
@@ -599,28 +565,17 @@
       "contested": true,
       "free": false,
       "round": 6,
-      "points_started": 0.0,
+      "points_started": null,
       "starts": 0
      },
-     "worst_buy": {
-      "week": 1,
-      "player": "George Kittle",
-      "pos": "TE",
-      "bid": 77,
-      "runner_up": 40,
-      "waste": 37,
-      "contested": true,
-      "free": false,
-      "round": 6,
-      "points_started": 0.0,
-      "starts": 0
-     },
+     "worst_buy": null,
+     "best_buy": null,
      "shutout_weeks": [],
      "shutout_streak": 0,
      "bids": 5,
      "win_rate": 0.4,
      "cost_per_point": null,
-     "points_per_dollar": 0.0,
+     "points_per_dollar": null,
      "budget_left": 878,
      "waste_rate": 0.336
     },
@@ -638,9 +593,11 @@
      "lost": 2,
      "lost_bid_total": 499,
      "free_agents": 0,
-     "points_started": 9.2,
-     "points_rostered": 9.2,
-     "starts": 1,
+     "points_started": null,
+     "points_rostered": null,
+     "starts": 0,
+     "measured_claims": 0,
+     "measured_spend": 0,
      "budget_used": 63,
      "by_week": {
       "1": {
@@ -700,8 +657,8 @@
       "contested": true,
       "free": false,
       "round": null,
-      "points_started": 9.2,
-      "starts": 1
+      "points_started": null,
+      "starts": 0
      },
      "biggest_waste": {
       "week": 1,
@@ -713,28 +670,17 @@
       "contested": true,
       "free": false,
       "round": null,
-      "points_started": 9.2,
-      "starts": 1
+      "points_started": null,
+      "starts": 0
      },
-     "worst_buy": {
-      "week": 1,
-      "player": "Michael Mayer",
-      "pos": "TE",
-      "bid": 63,
-      "runner_up": 2,
-      "waste": 61,
-      "contested": true,
-      "free": false,
-      "round": null,
-      "points_started": 9.2,
-      "starts": 1
-     },
+     "worst_buy": null,
+     "best_buy": null,
      "shutout_weeks": [],
      "shutout_streak": 0,
      "bids": 3,
      "win_rate": 0.333,
-     "cost_per_point": 6.85,
-     "points_per_dollar": 0.15,
+     "cost_per_point": null,
+     "points_per_dollar": null,
      "budget_left": 937,
      "waste_rate": 0.968
     },
@@ -752,9 +698,11 @@
      "lost": 3,
      "lost_bid_total": 290,
      "free_agents": 2,
-     "points_started": 0.0,
-     "points_rostered": 0.0,
+     "points_started": null,
+     "points_rostered": null,
      "starts": 0,
+     "measured_claims": 0,
+     "measured_spend": 0,
      "budget_used": 57,
      "by_week": {
       "1": {
@@ -828,7 +776,7 @@
       "contested": true,
       "free": false,
       "round": 5,
-      "points_started": 0.0,
+      "points_started": null,
       "starts": 0
      },
      "biggest_waste": {
@@ -841,28 +789,17 @@
       "contested": true,
       "free": false,
       "round": 5,
-      "points_started": 0.0,
+      "points_started": null,
       "starts": 0
      },
-     "worst_buy": {
-      "week": 1,
-      "player": "J.K. Dobbins",
-      "pos": "RB",
-      "bid": 57,
-      "runner_up": 15,
-      "waste": 42,
-      "contested": true,
-      "free": false,
-      "round": 5,
-      "points_started": 0.0,
-      "starts": 0
-     },
+     "worst_buy": null,
+     "best_buy": null,
      "shutout_weeks": [],
      "shutout_streak": 0,
      "bids": 5,
      "win_rate": 0.4,
      "cost_per_point": null,
-     "points_per_dollar": 0.0,
+     "points_per_dollar": null,
      "budget_left": 943,
      "waste_rate": 0.737
     },
@@ -880,9 +817,11 @@
      "lost": 5,
      "lost_bid_total": 105,
      "free_agents": 0,
-     "points_started": 0.0,
-     "points_rostered": 0.0,
+     "points_started": null,
+     "points_rostered": null,
      "starts": 0,
+     "measured_claims": 0,
+     "measured_spend": 0,
      "budget_used": 20,
      "by_week": {
       "1": {
@@ -963,7 +902,7 @@
       "contested": false,
       "free": false,
       "round": 8,
-      "points_started": 0.0,
+      "points_started": null,
       "starts": 0
      },
      "biggest_waste": {
@@ -976,28 +915,17 @@
       "contested": false,
       "free": false,
       "round": 8,
-      "points_started": 0.0,
+      "points_started": null,
       "starts": 0
      },
-     "worst_buy": {
-      "week": 1,
-      "player": "Chris Rodriguez",
-      "pos": "RB",
-      "bid": 15,
-      "runner_up": null,
-      "waste": 15,
-      "contested": false,
-      "free": false,
-      "round": 8,
-      "points_started": 0.0,
-      "starts": 0
-     },
+     "worst_buy": null,
+     "best_buy": null,
      "shutout_weeks": [],
      "shutout_streak": 0,
      "bids": 9,
      "win_rate": 0.444,
      "cost_per_point": null,
-     "points_per_dollar": 0.0,
+     "points_per_dollar": null,
      "budget_left": 980,
      "waste_rate": 1.0
     },
@@ -1015,9 +943,11 @@
      "lost": 2,
      "lost_bid_total": 57,
      "free_agents": 0,
-     "points_started": 2.9,
-     "points_rostered": 2.9,
-     "starts": 1,
+     "points_started": null,
+     "points_rostered": null,
+     "starts": 0,
+     "measured_claims": 0,
+     "measured_spend": 0,
      "budget_used": 5,
      "by_week": {
       "1": {
@@ -1077,8 +1007,8 @@
       "contested": false,
       "free": false,
       "round": null,
-      "points_started": 2.9,
-      "starts": 1
+      "points_started": null,
+      "starts": 0
      },
      "biggest_waste": {
       "week": 1,
@@ -1090,28 +1020,17 @@
       "contested": false,
       "free": false,
       "round": null,
-      "points_started": 2.9,
-      "starts": 1
+      "points_started": null,
+      "starts": 0
      },
-     "worst_buy": {
-      "week": 1,
-      "player": "Chris Brooks",
-      "pos": "RB",
-      "bid": 5,
-      "runner_up": null,
-      "waste": 5,
-      "contested": false,
-      "free": false,
-      "round": null,
-      "points_started": 2.9,
-      "starts": 1
-     },
+     "worst_buy": null,
+     "best_buy": null,
      "shutout_weeks": [],
      "shutout_streak": 0,
      "bids": 3,
      "win_rate": 0.333,
-     "cost_per_point": 1.72,
-     "points_per_dollar": 0.58,
+     "cost_per_point": null,
+     "points_per_dollar": null,
      "budget_left": 995,
      "waste_rate": 1.0
     },
@@ -1129,9 +1048,11 @@
      "lost": 2,
      "lost_bid_total": 358,
      "free_agents": 0,
-     "points_started": 0.0,
-     "points_rostered": 3.8,
+     "points_started": null,
+     "points_rostered": null,
      "starts": 0,
+     "measured_claims": 0,
+     "measured_spend": 0,
      "budget_used": 0,
      "by_week": {
       "1": {
@@ -1191,7 +1112,7 @@
       "contested": false,
       "free": true,
       "round": null,
-      "points_started": 0.0,
+      "points_started": null,
       "starts": 0
      },
      "biggest_waste": {
@@ -1204,10 +1125,11 @@
       "contested": false,
       "free": true,
       "round": null,
-      "points_started": 0.0,
+      "points_started": null,
       "starts": 0
      },
      "worst_buy": null,
+     "best_buy": null,
      "shutout_weeks": [],
      "shutout_streak": 0,
      "bids": 3,
@@ -1231,9 +1153,11 @@
      "lost": 0,
      "lost_bid_total": 0,
      "free_agents": 0,
-     "points_started": 0.0,
-     "points_rostered": 0.0,
+     "points_started": null,
+     "points_rostered": null,
      "starts": 0,
+     "measured_claims": 0,
+     "measured_spend": 0,
      "budget_used": 0,
      "by_week": {},
      "by_pos": {},
@@ -1241,6 +1165,7 @@
      "biggest_bid": null,
      "biggest_waste": null,
      "worst_buy": null,
+     "best_buy": null,
      "shutout_weeks": [],
      "shutout_streak": 0,
      "bids": 0,
@@ -1264,9 +1189,11 @@
      "lost": 5,
      "lost_bid_total": 641,
      "free_agents": 0,
-     "points_started": 0.0,
-     "points_rostered": 16.4,
+     "points_started": null,
+     "points_rostered": null,
      "starts": 0,
+     "measured_claims": 0,
+     "measured_spend": 0,
      "budget_used": 0,
      "by_week": {
       "1": {
@@ -1333,7 +1260,7 @@
       "contested": false,
       "free": true,
       "round": null,
-      "points_started": 0.0,
+      "points_started": null,
       "starts": 0
      },
      "biggest_waste": {
@@ -1346,10 +1273,11 @@
       "contested": false,
       "free": true,
       "round": null,
-      "points_started": 0.0,
+      "points_started": null,
       "starts": 0
      },
      "worst_buy": null,
+     "best_buy": null,
      "shutout_weeks": [],
      "shutout_streak": 0,
      "bids": 6,
@@ -1373,9 +1301,11 @@
      "lost": 2,
      "lost_bid_total": 200,
      "free_agents": 0,
-     "points_started": 0.0,
-     "points_rostered": 0.0,
+     "points_started": null,
+     "points_rostered": null,
      "starts": 0,
+     "measured_claims": 0,
+     "measured_spend": 0,
      "budget_used": 0,
      "by_week": {
       "1": {
@@ -1421,6 +1351,7 @@
      "biggest_bid": null,
      "biggest_waste": null,
      "worst_buy": null,
+     "best_buy": null,
      "shutout_weeks": [
       1
      ],
@@ -1446,9 +1377,11 @@
      "lost": 0,
      "lost_bid_total": 0,
      "free_agents": 0,
-     "points_started": 0.0,
-     "points_rostered": 0.0,
+     "points_started": null,
+     "points_rostered": null,
      "starts": 0,
+     "measured_claims": 0,
+     "measured_spend": 0,
      "budget_used": 0,
      "by_week": {},
      "by_pos": {},
@@ -1456,6 +1389,7 @@
      "biggest_bid": null,
      "biggest_waste": null,
      "worst_buy": null,
+     "best_buy": null,
      "shutout_weeks": [],
      "shutout_streak": 0,
      "bids": 0,
@@ -1479,9 +1413,11 @@
      "lost": 2,
      "lost_bid_total": 326,
      "free_agents": 0,
-     "points_started": 0.0,
-     "points_rostered": 0.0,
+     "points_started": null,
+     "points_rostered": null,
      "starts": 0,
+     "measured_claims": 0,
+     "measured_spend": 0,
      "budget_used": 0,
      "by_week": {
       "1": {
@@ -1520,6 +1456,7 @@
      "biggest_bid": null,
      "biggest_waste": null,
      "worst_buy": null,
+     "best_buy": null,
      "shutout_weeks": [
       1
      ],
@@ -1545,9 +1482,11 @@
      "lost": 4,
      "lost_bid_total": 342,
      "free_agents": 0,
-     "points_started": 0.0,
-     "points_rostered": 0.0,
+     "points_started": null,
+     "points_rostered": null,
      "starts": 0,
+     "measured_claims": 0,
+     "measured_spend": 0,
      "budget_used": 0,
      "by_week": {
       "1": {
@@ -1600,6 +1539,7 @@
      "biggest_bid": null,
      "biggest_waste": null,
      "worst_buy": null,
+     "best_buy": null,
      "shutout_weeks": [
       1
      ],
@@ -1625,9 +1565,11 @@
      "lost": 4,
      "lost_bid_total": 234,
      "free_agents": 0,
-     "points_started": 0.0,
-     "points_rostered": 0.0,
-     "starts": 1,
+     "points_started": null,
+     "points_rostered": null,
+     "starts": 0,
+     "measured_claims": 0,
+     "measured_spend": 0,
      "budget_used": 0,
      "by_week": {
       "1": {
@@ -1715,8 +1657,8 @@
       "contested": false,
       "free": true,
       "round": null,
-      "points_started": 0.0,
-      "starts": 1
+      "points_started": null,
+      "starts": 0
      },
      "biggest_waste": {
       "week": 1,
@@ -1728,10 +1670,11 @@
       "contested": false,
       "free": true,
       "round": null,
-      "points_started": 0.0,
-      "starts": 1
+      "points_started": null,
+      "starts": 0
      },
      "worst_buy": null,
+     "best_buy": null,
      "shutout_weeks": [],
      "shutout_streak": 0,
      "bids": 5,
@@ -1755,9 +1698,11 @@
      "lost": 0,
      "lost_bid_total": 0,
      "free_agents": 0,
-     "points_started": 0.0,
-     "points_rostered": 2.9,
+     "points_started": null,
+     "points_rostered": null,
      "starts": 0,
+     "measured_claims": 0,
+     "measured_spend": 0,
      "budget_used": 0,
      "by_week": {
       "1": {
@@ -1810,7 +1755,7 @@
       "contested": false,
       "free": true,
       "round": null,
-      "points_started": 0.0,
+      "points_started": null,
       "starts": 0
      },
      "biggest_waste": {
@@ -1823,10 +1768,11 @@
       "contested": false,
       "free": true,
       "round": null,
-      "points_started": 0.0,
+      "points_started": null,
       "starts": 0
      },
      "worst_buy": null,
+     "best_buy": null,
      "shutout_weeks": [],
      "shutout_streak": 0,
      "bids": 2,
@@ -1841,6 +1787,8 @@
     "spent": 1709,
     "claims": 28,
     "contested": 10,
+    "measured_claims": 0,
+    "played_through": 1,
     "waste": 696,
     "waste_solo": 31,
     "solo_spend": 31,
@@ -2017,9 +1965,10 @@
      "free": false,
      "waste": 25,
      "waste_solo": 0,
-     "points_started": 0.0,
-     "points_rostered": 0.0,
-     "starts": 0
+     "points_started": null,
+     "points_rostered": null,
+     "starts": 0,
+     "measured_weeks": 0
     },
     {
      "player_id": "12526",
@@ -2077,9 +2026,10 @@
      "free": false,
      "waste": 202,
      "waste_solo": 0,
-     "points_started": 0.0,
-     "points_rostered": 0.0,
-     "starts": 0
+     "points_started": null,
+     "points_rostered": null,
+     "starts": 0,
+     "measured_weeks": 0
     },
     {
      "player_id": "13286",
@@ -2129,9 +2079,10 @@
      "free": false,
      "waste": 243,
      "waste_solo": 0,
-     "points_started": 0.0,
-     "points_rostered": 0.0,
-     "starts": 0
+     "points_started": null,
+     "points_rostered": null,
+     "starts": 0,
+     "measured_weeks": 0
     },
     {
      "player_id": "6770",
@@ -2157,9 +2108,10 @@
      "free": false,
      "waste": 0,
      "waste_solo": 0,
-     "points_started": 0.0,
-     "points_rostered": 0.0,
-     "starts": 0
+     "points_started": null,
+     "points_rostered": null,
+     "starts": 0,
+     "measured_weeks": 0
     },
     {
      "player_id": "4217",
@@ -2185,9 +2137,10 @@
      "free": false,
      "waste": 37,
      "waste_solo": 0,
-     "points_started": 0.0,
-     "points_rostered": 0.0,
-     "starts": 0
+     "points_started": null,
+     "points_rostered": null,
+     "starts": 0,
+     "measured_weeks": 0
     },
     {
      "player_id": "9482",
@@ -2209,9 +2162,10 @@
      "free": false,
      "waste": 61,
      "waste_solo": 0,
-     "points_started": 9.2,
-     "points_rostered": 9.2,
-     "starts": 1
+     "points_started": null,
+     "points_rostered": null,
+     "starts": 0,
+     "measured_weeks": 0
     },
     {
      "player_id": "6806",
@@ -2233,9 +2187,10 @@
      "free": false,
      "waste": 42,
      "waste_solo": 0,
-     "points_started": 0.0,
-     "points_rostered": 0.0,
-     "starts": 0
+     "points_started": null,
+     "points_rostered": null,
+     "starts": 0,
+     "measured_weeks": 0
     },
     {
      "player_id": "4177",
@@ -2265,9 +2220,10 @@
      "free": false,
      "waste": 46,
      "waste_solo": 0,
-     "points_started": 0.0,
-     "points_rostered": 0.0,
-     "starts": 0
+     "points_started": null,
+     "points_rostered": null,
+     "starts": 0,
+     "measured_weeks": 0
     },
     {
      "player_id": "8121",
@@ -2293,9 +2249,10 @@
      "free": false,
      "waste": 4,
      "waste_solo": 0,
-     "points_started": 0.0,
-     "points_rostered": 0.0,
-     "starts": 0
+     "points_started": null,
+     "points_rostered": null,
+     "starts": 0,
+     "measured_weeks": 0
     },
     {
      "player_id": "10219",
@@ -2312,9 +2269,10 @@
      "free": false,
      "waste": 15,
      "waste_solo": 15,
-     "points_started": 0.0,
-     "points_rostered": 0.0,
-     "starts": 0
+     "points_started": null,
+     "points_rostered": null,
+     "starts": 0,
+     "measured_weeks": 0
     },
     {
      "player_id": "3286",
@@ -2331,9 +2289,10 @@
      "free": false,
      "waste": 10,
      "waste_solo": 10,
-     "points_started": 0.0,
-     "points_rostered": 0.0,
-     "starts": 0
+     "points_started": null,
+     "points_rostered": null,
+     "starts": 0,
+     "measured_weeks": 0
     },
     {
      "player_id": "3161",
@@ -2355,9 +2314,10 @@
      "free": false,
      "waste": 5,
      "waste_solo": 0,
-     "points_started": 0.0,
-     "points_rostered": 0.0,
-     "starts": 0
+     "points_started": null,
+     "points_rostered": null,
+     "starts": 0,
+     "measured_weeks": 0
     },
     {
      "player_id": "11370",
@@ -2374,9 +2334,10 @@
      "free": false,
      "waste": 5,
      "waste_solo": 5,
-     "points_started": 2.9,
-     "points_rostered": 2.9,
-     "starts": 1
+     "points_started": null,
+     "points_rostered": null,
+     "starts": 0,
+     "measured_weeks": 0
     },
     {
      "player_id": "3634",
@@ -2393,9 +2354,10 @@
      "free": false,
      "waste": 1,
      "waste_solo": 1,
-     "points_started": 0.0,
-     "points_rostered": 0.0,
-     "starts": 0
+     "points_started": null,
+     "points_rostered": null,
+     "starts": 0,
+     "measured_weeks": 0
     },
     {
      "player_id": "13411",
@@ -2412,9 +2374,10 @@
      "free": true,
      "waste": 0,
      "waste_solo": 0,
-     "points_started": 0.0,
-     "points_rostered": 0.0,
-     "starts": 0
+     "points_started": null,
+     "points_rostered": null,
+     "starts": 0,
+     "measured_weeks": 0
     },
     {
      "player_id": "9502",
@@ -2431,9 +2394,10 @@
      "free": true,
      "waste": 0,
      "waste_solo": 0,
-     "points_started": 0.0,
-     "points_rostered": 0.0,
-     "starts": 0
+     "points_started": null,
+     "points_rostered": null,
+     "starts": 0,
+     "measured_weeks": 0
     },
     {
      "player_id": "11237",
@@ -2450,9 +2414,10 @@
      "free": true,
      "waste": 0,
      "waste_solo": 0,
-     "points_started": 0.0,
-     "points_rostered": 0.0,
-     "starts": 0
+     "points_started": null,
+     "points_rostered": null,
+     "starts": 0,
+     "measured_weeks": 0
     },
     {
      "player_id": "4981",
@@ -2469,9 +2434,10 @@
      "free": true,
      "waste": 0,
      "waste_solo": 0,
-     "points_started": 0.0,
-     "points_rostered": 0.0,
-     "starts": 1
+     "points_started": null,
+     "points_rostered": null,
+     "starts": 0,
+     "measured_weeks": 0
     },
     {
      "player_id": "13338",
@@ -2488,9 +2454,10 @@
      "free": true,
      "waste": 0,
      "waste_solo": 0,
-     "points_started": 0.0,
-     "points_rostered": 0.0,
-     "starts": 0
+     "points_started": null,
+     "points_rostered": null,
+     "starts": 0,
+     "measured_weeks": 0
     },
     {
      "player_id": "9479",
@@ -2507,9 +2474,10 @@
      "free": true,
      "waste": 0,
      "waste_solo": 0,
-     "points_started": 0.0,
-     "points_rostered": 3.8,
-     "starts": 0
+     "points_started": null,
+     "points_rostered": null,
+     "starts": 0,
+     "measured_weeks": 0
     },
     {
      "player_id": "8800",
@@ -2526,9 +2494,10 @@
      "free": true,
      "waste": 0,
      "waste_solo": 0,
-     "points_started": 0.0,
-     "points_rostered": 0.0,
-     "starts": 0
+     "points_started": null,
+     "points_rostered": null,
+     "starts": 0,
+     "measured_weeks": 0
     },
     {
      "player_id": "12048",
@@ -2545,9 +2514,10 @@
      "free": true,
      "waste": 0,
      "waste_solo": 0,
-     "points_started": 0.0,
-     "points_rostered": 2.9,
-     "starts": 0
+     "points_started": null,
+     "points_rostered": null,
+     "starts": 0,
+     "measured_weeks": 0
     },
     {
      "player_id": "2505",
@@ -2564,9 +2534,10 @@
      "free": true,
      "waste": 0,
      "waste_solo": 0,
-     "points_started": 0.0,
-     "points_rostered": 4.8,
-     "starts": 0
+     "points_started": null,
+     "points_rostered": null,
+     "starts": 0,
+     "measured_weeks": 0
     },
     {
      "player_id": "12502",
@@ -2583,9 +2554,10 @@
      "free": true,
      "waste": 0,
      "waste_solo": 0,
-     "points_started": 0.0,
-     "points_rostered": 0.0,
-     "starts": 0
+     "points_started": null,
+     "points_rostered": null,
+     "starts": 0,
+     "measured_weeks": 0
     },
     {
      "player_id": "6149",
@@ -2602,9 +2574,10 @@
      "free": true,
      "waste": 0,
      "waste_solo": 0,
-     "points_started": 0.0,
-     "points_rostered": 0.0,
-     "starts": 0
+     "points_started": null,
+     "points_rostered": null,
+     "starts": 0,
+     "measured_weeks": 0
     },
     {
      "player_id": "10226",
@@ -2621,9 +2594,10 @@
      "free": true,
      "waste": 0,
      "waste_solo": 0,
-     "points_started": 0.0,
-     "points_rostered": 3.2,
-     "starts": 0
+     "points_started": null,
+     "points_rostered": null,
+     "starts": 0,
+     "measured_weeks": 0
     },
     {
      "player_id": "5995",
@@ -2640,9 +2614,10 @@
      "free": true,
      "waste": 0,
      "waste_solo": 0,
-     "points_started": 0.0,
-     "points_rostered": 3.8,
-     "starts": 0
+     "points_started": null,
+     "points_rostered": null,
+     "starts": 0,
+     "measured_weeks": 0
     },
     {
      "player_id": "13301",
@@ -2659,9 +2634,10 @@
      "free": true,
      "waste": 0,
      "waste_solo": 0,
-     "points_started": 0.0,
-     "points_rostered": 16.4,
-     "starts": 0
+     "points_started": null,
+     "points_rostered": null,
+     "starts": 0,
+     "measured_weeks": 0
     }
    ],
    "lost_bids": [
@@ -3128,31 +3104,8 @@
      "round": null
     }
    ],
+   "roi_award_week": 18,
    "awards": [
-    {
-     "slug": "best_value",
-     "label": "Best value",
-     "dek": "Cheapest started point off the wire",
-     "handle": "CodyPowers28",
-     "name": "CodyPowers28",
-     "value": "$6.85/pt on $63"
-    },
-    {
-     "slug": "worst_value",
-     "label": "Worst value",
-     "dek": "Dearest started point off the wire",
-     "handle": "CodyPowers28",
-     "name": "CodyPowers28",
-     "value": "$6.85/pt on $63"
-    },
-    {
-     "slug": "dead_money",
-     "label": "Pure dead money",
-     "dek": "Spent it, never started it",
-     "handle": "Bustersx8",
-     "name": "Bustersx8",
-     "value": "$502 for 0.0 pts"
-    },
     {
      "slug": "most_wasted",
      "label": "Most money wasted at auction",
@@ -3199,1077 +3152,7 @@
      "dek": "Week 1",
      "handle": "Bustersx8",
      "name": "Bustersx8",
-     "value": "$502 on Puka Nacua (0.0 pts since)"
-    },
-    {
-     "slug": "biggest_bust",
-     "label": "Biggest bust",
-     "dek": "Week 1",
-     "handle": "Bustersx8",
-     "name": "Bustersx8",
-     "value": "$502 on Puka Nacua for 0.0 started pts"
-    }
-   ]
-  },
-  "two_mitchs": {
-   "name": "2 Mitchs 1 Cup",
-   "league_id": "1383837552376545280",
-   "budget": 100,
-   "weeks": [
-    1
-   ],
-   "through_week": 1,
-   "drafted_rounds": [
-    1,
-    2,
-    3,
-    4,
-    5,
-    6,
-    7,
-    8,
-    9,
-    10,
-    11,
-    12,
-    13,
-    14
-   ],
-   "owners": [
-    {
-     "handle": "cbova1222",
-     "name": "Chris Bova",
-     "spent": 27,
-     "waste": 15,
-     "waste_solo": 12,
-     "solo_spend": 12,
-     "contested_spend": 15,
-     "contested_won": 1,
-     "free_claims": 0,
-     "won": 2,
-     "lost": 0,
-     "lost_bid_total": 0,
-     "free_agents": 0,
-     "points_started": 0.0,
-     "points_rostered": 0.0,
-     "starts": 0,
-     "budget_used": 27,
-     "by_week": {
-      "1": {
-       "spent": 27,
-       "won": 2,
-       "lost": 0,
-       "lost_bid": 0,
-       "waste": 15
-      }
-     },
-     "by_pos": {
-      "WR": {
-       "spent": 27,
-       "won": 2,
-       "lost": 0,
-       "lost_bid": 0,
-       "waste": 15
-      }
-     },
-     "by_round": {
-      "undrafted": {
-       "spent": 27,
-       "won": 2,
-       "lost": 0,
-       "lost_bid": 0,
-       "waste": 15
-      }
-     },
-     "biggest_bid": {
-      "week": 1,
-      "player": "Caleb Douglas",
-      "pos": "WR",
-      "bid": 15,
-      "runner_up": 12,
-      "waste": 3,
-      "contested": true,
-      "free": false,
-      "round": null,
-      "points_started": 0.0,
-      "starts": 0
-     },
-     "biggest_waste": {
-      "week": 1,
-      "player": "Dontayvion Wicks",
-      "pos": "WR",
-      "bid": 12,
-      "runner_up": null,
-      "waste": 12,
-      "contested": false,
-      "free": false,
-      "round": null,
-      "points_started": 0.0,
-      "starts": 0
-     },
-     "worst_buy": {
-      "week": 1,
-      "player": "Caleb Douglas",
-      "pos": "WR",
-      "bid": 15,
-      "runner_up": 12,
-      "waste": 3,
-      "contested": true,
-      "free": false,
-      "round": null,
-      "points_started": 0.0,
-      "starts": 0
-     },
-     "shutout_weeks": [],
-     "shutout_streak": 0,
-     "bids": 2,
-     "win_rate": 1.0,
-     "cost_per_point": null,
-     "points_per_dollar": 0.0,
-     "budget_left": 73,
-     "waste_rate": 0.556
-    },
-    {
-     "handle": "CHRISMERKELDUH",
-     "name": "Chris Merkel",
-     "spent": 3,
-     "waste": 3,
-     "waste_solo": 3,
-     "solo_spend": 3,
-     "contested_spend": 0,
-     "contested_won": 0,
-     "free_claims": 0,
-     "won": 1,
-     "lost": 1,
-     "lost_bid_total": 12,
-     "free_agents": 2,
-     "points_started": 0.0,
-     "points_rostered": 0.0,
-     "starts": 0,
-     "budget_used": 3,
-     "by_week": {
-      "1": {
-       "spent": 3,
-       "won": 1,
-       "lost": 1,
-       "lost_bid": 12,
-       "waste": 3
-      }
-     },
-     "by_pos": {
-      "RB": {
-       "spent": 3,
-       "won": 1,
-       "lost": 0,
-       "lost_bid": 0,
-       "waste": 3
-      },
-      "WR": {
-       "spent": 0,
-       "won": 0,
-       "lost": 1,
-       "lost_bid": 12,
-       "waste": 0
-      }
-     },
-     "by_round": {
-      "undrafted": {
-       "spent": 3,
-       "won": 1,
-       "lost": 1,
-       "lost_bid": 12,
-       "waste": 3
-      }
-     },
-     "biggest_bid": {
-      "week": 1,
-      "player": "Raheim Sanders",
-      "pos": "RB",
-      "bid": 3,
-      "runner_up": null,
-      "waste": 3,
-      "contested": false,
-      "free": false,
-      "round": null,
-      "points_started": 0.0,
-      "starts": 0
-     },
-     "biggest_waste": {
-      "week": 1,
-      "player": "Raheim Sanders",
-      "pos": "RB",
-      "bid": 3,
-      "runner_up": null,
-      "waste": 3,
-      "contested": false,
-      "free": false,
-      "round": null,
-      "points_started": 0.0,
-      "starts": 0
-     },
-     "worst_buy": {
-      "week": 1,
-      "player": "Raheim Sanders",
-      "pos": "RB",
-      "bid": 3,
-      "runner_up": null,
-      "waste": 3,
-      "contested": false,
-      "free": false,
-      "round": null,
-      "points_started": 0.0,
-      "starts": 0
-     },
-     "shutout_weeks": [],
-     "shutout_streak": 0,
-     "bids": 2,
-     "win_rate": 0.5,
-     "cost_per_point": null,
-     "points_per_dollar": 0.0,
-     "budget_left": 97,
-     "waste_rate": 1.0
-    },
-    {
-     "handle": "Bogeyman28",
-     "name": "Austin Hendrickson",
-     "spent": 2,
-     "waste": 2,
-     "waste_solo": 0,
-     "solo_spend": 0,
-     "contested_spend": 2,
-     "contested_won": 1,
-     "free_claims": 0,
-     "won": 1,
-     "lost": 1,
-     "lost_bid_total": 2,
-     "free_agents": 1,
-     "points_started": 0.0,
-     "points_rostered": 0.0,
-     "starts": 0,
-     "budget_used": 2,
-     "by_week": {
-      "1": {
-       "spent": 2,
-       "won": 1,
-       "lost": 1,
-       "lost_bid": 2,
-       "waste": 2
-      }
-     },
-     "by_pos": {
-      "TE": {
-       "spent": 2,
-       "won": 1,
-       "lost": 0,
-       "lost_bid": 0,
-       "waste": 2
-      },
-      "WR": {
-       "spent": 0,
-       "won": 0,
-       "lost": 1,
-       "lost_bid": 2,
-       "waste": 0
-      }
-     },
-     "by_round": {
-      "undrafted": {
-       "spent": 2,
-       "won": 1,
-       "lost": 1,
-       "lost_bid": 2,
-       "waste": 2
-      }
-     },
-     "biggest_bid": {
-      "week": 1,
-      "player": "Juwan Johnson",
-      "pos": "TE",
-      "bid": 2,
-      "runner_up": 0,
-      "waste": 2,
-      "contested": true,
-      "free": false,
-      "round": null,
-      "points_started": 0.0,
-      "starts": 0
-     },
-     "biggest_waste": {
-      "week": 1,
-      "player": "Juwan Johnson",
-      "pos": "TE",
-      "bid": 2,
-      "runner_up": 0,
-      "waste": 2,
-      "contested": true,
-      "free": false,
-      "round": null,
-      "points_started": 0.0,
-      "starts": 0
-     },
-     "worst_buy": {
-      "week": 1,
-      "player": "Juwan Johnson",
-      "pos": "TE",
-      "bid": 2,
-      "runner_up": 0,
-      "waste": 2,
-      "contested": true,
-      "free": false,
-      "round": null,
-      "points_started": 0.0,
-      "starts": 0
-     },
-     "shutout_weeks": [],
-     "shutout_streak": 0,
-     "bids": 2,
-     "win_rate": 0.5,
-     "cost_per_point": null,
-     "points_per_dollar": 0.0,
-     "budget_left": 98,
-     "waste_rate": 1.0
-    },
-    {
-     "handle": "avobttam",
-     "name": "Matt Bova",
-     "spent": 0,
-     "waste": 0,
-     "waste_solo": 0,
-     "solo_spend": 0,
-     "contested_spend": 0,
-     "contested_won": 0,
-     "free_claims": 0,
-     "won": 0,
-     "lost": 0,
-     "lost_bid_total": 0,
-     "free_agents": 2,
-     "points_started": 0.0,
-     "points_rostered": 0.0,
-     "starts": 0,
-     "budget_used": 0,
-     "by_week": {},
-     "by_pos": {},
-     "by_round": {},
-     "biggest_bid": null,
-     "biggest_waste": null,
-     "worst_buy": null,
-     "shutout_weeks": [],
-     "shutout_streak": 0,
-     "bids": 0,
-     "win_rate": null,
-     "cost_per_point": null,
-     "points_per_dollar": null,
-     "budget_left": 100,
-     "waste_rate": null
-    },
-    {
-     "handle": "BigOleTDs21",
-     "name": "Andrew Evans",
-     "spent": 0,
-     "waste": 0,
-     "waste_solo": 0,
-     "solo_spend": 0,
-     "contested_spend": 0,
-     "contested_won": 0,
-     "free_claims": 0,
-     "won": 0,
-     "lost": 0,
-     "lost_bid_total": 0,
-     "free_agents": 1,
-     "points_started": 0.0,
-     "points_rostered": 0.0,
-     "starts": 0,
-     "budget_used": 0,
-     "by_week": {},
-     "by_pos": {},
-     "by_round": {},
-     "biggest_bid": null,
-     "biggest_waste": null,
-     "worst_buy": null,
-     "shutout_weeks": [],
-     "shutout_streak": 0,
-     "bids": 0,
-     "win_rate": null,
-     "cost_per_point": null,
-     "points_per_dollar": null,
-     "budget_left": 100,
-     "waste_rate": null
-    },
-    {
-     "handle": "djbogardus72",
-     "name": "Jake Bogardus",
-     "spent": 0,
-     "waste": 0,
-     "waste_solo": 0,
-     "solo_spend": 0,
-     "contested_spend": 0,
-     "contested_won": 0,
-     "free_claims": 1,
-     "won": 1,
-     "lost": 1,
-     "lost_bid_total": 8,
-     "free_agents": 2,
-     "points_started": 0.0,
-     "points_rostered": 0.0,
-     "starts": 0,
-     "budget_used": 0,
-     "by_week": {
-      "1": {
-       "spent": 0,
-       "won": 1,
-       "lost": 1,
-       "lost_bid": 8,
-       "waste": 0
-      }
-     },
-     "by_pos": {
-      "WR": {
-       "spent": 0,
-       "won": 1,
-       "lost": 1,
-       "lost_bid": 8,
-       "waste": 0
-      }
-     },
-     "by_round": {
-      "undrafted": {
-       "spent": 0,
-       "won": 1,
-       "lost": 1,
-       "lost_bid": 8,
-       "waste": 0
-      }
-     },
-     "biggest_bid": {
-      "week": 1,
-      "player": "Kendrick Bourne",
-      "pos": "WR",
-      "bid": 0,
-      "runner_up": null,
-      "waste": 0,
-      "contested": false,
-      "free": true,
-      "round": null,
-      "points_started": 0.0,
-      "starts": 0
-     },
-     "biggest_waste": {
-      "week": 1,
-      "player": "Kendrick Bourne",
-      "pos": "WR",
-      "bid": 0,
-      "runner_up": null,
-      "waste": 0,
-      "contested": false,
-      "free": true,
-      "round": null,
-      "points_started": 0.0,
-      "starts": 0
-     },
-     "worst_buy": null,
-     "shutout_weeks": [],
-     "shutout_streak": 0,
-     "bids": 2,
-     "win_rate": 0.5,
-     "cost_per_point": null,
-     "points_per_dollar": null,
-     "budget_left": 100,
-     "waste_rate": null
-    },
-    {
-     "handle": "JellyRoll6884",
-     "name": "Jack Hawkins",
-     "spent": 0,
-     "waste": 0,
-     "waste_solo": 0,
-     "solo_spend": 0,
-     "contested_spend": 0,
-     "contested_won": 0,
-     "free_claims": 0,
-     "won": 0,
-     "lost": 0,
-     "lost_bid_total": 0,
-     "free_agents": 0,
-     "points_started": 0.0,
-     "points_rostered": 0.0,
-     "starts": 0,
-     "budget_used": 0,
-     "by_week": {},
-     "by_pos": {},
-     "by_round": {},
-     "biggest_bid": null,
-     "biggest_waste": null,
-     "worst_buy": null,
-     "shutout_weeks": [],
-     "shutout_streak": 0,
-     "bids": 0,
-     "win_rate": null,
-     "cost_per_point": null,
-     "points_per_dollar": null,
-     "budget_left": 100,
-     "waste_rate": null
-    },
-    {
-     "handle": "jonicarter89",
-     "name": "Jon Carter",
-     "spent": 0,
-     "waste": 0,
-     "waste_solo": 0,
-     "solo_spend": 0,
-     "contested_spend": 0,
-     "contested_won": 0,
-     "free_claims": 0,
-     "won": 0,
-     "lost": 1,
-     "lost_bid_total": 0,
-     "free_agents": 1,
-     "points_started": 0.0,
-     "points_rostered": 0.0,
-     "starts": 0,
-     "budget_used": 0,
-     "by_week": {
-      "1": {
-       "spent": 0,
-       "won": 0,
-       "lost": 1,
-       "lost_bid": 0,
-       "waste": 0
-      }
-     },
-     "by_pos": {
-      "TE": {
-       "spent": 0,
-       "won": 0,
-       "lost": 1,
-       "lost_bid": 0,
-       "waste": 0
-      }
-     },
-     "by_round": {
-      "undrafted": {
-       "spent": 0,
-       "won": 0,
-       "lost": 1,
-       "lost_bid": 0,
-       "waste": 0
-      }
-     },
-     "biggest_bid": null,
-     "biggest_waste": null,
-     "worst_buy": null,
-     "shutout_weeks": [
-      1
-     ],
-     "shutout_streak": 1,
-     "bids": 1,
-     "win_rate": 0.0,
-     "cost_per_point": null,
-     "points_per_dollar": null,
-     "budget_left": 100,
-     "waste_rate": null
-    },
-    {
-     "handle": "katiestout13",
-     "name": "Katie Bogardus",
-     "spent": 0,
-     "waste": 0,
-     "waste_solo": 0,
-     "solo_spend": 0,
-     "contested_spend": 0,
-     "contested_won": 0,
-     "free_claims": 0,
-     "won": 0,
-     "lost": 0,
-     "lost_bid_total": 0,
-     "free_agents": 1,
-     "points_started": 0.0,
-     "points_rostered": 0.0,
-     "starts": 0,
-     "budget_used": 0,
-     "by_week": {},
-     "by_pos": {},
-     "by_round": {},
-     "biggest_bid": null,
-     "biggest_waste": null,
-     "worst_buy": null,
-     "shutout_weeks": [],
-     "shutout_streak": 0,
-     "bids": 0,
-     "win_rate": null,
-     "cost_per_point": null,
-     "points_per_dollar": null,
-     "budget_left": 100,
-     "waste_rate": null
-    },
-    {
-     "handle": "MerkDaddy36",
-     "name": "Nick Merkel",
-     "spent": 0,
-     "waste": 0,
-     "waste_solo": 0,
-     "solo_spend": 0,
-     "contested_spend": 0,
-     "contested_won": 0,
-     "free_claims": 0,
-     "won": 0,
-     "lost": 0,
-     "lost_bid_total": 0,
-     "free_agents": 4,
-     "points_started": 0.0,
-     "points_rostered": 0.0,
-     "starts": 0,
-     "budget_used": 0,
-     "by_week": {},
-     "by_pos": {},
-     "by_round": {},
-     "biggest_bid": null,
-     "biggest_waste": null,
-     "worst_buy": null,
-     "shutout_weeks": [],
-     "shutout_streak": 0,
-     "bids": 0,
-     "win_rate": null,
-     "cost_per_point": null,
-     "points_per_dollar": null,
-     "budget_left": 100,
-     "waste_rate": null
-    },
-    {
-     "handle": "MJBlack",
-     "name": "Mitch Blackwell",
-     "spent": 0,
-     "waste": 0,
-     "waste_solo": 0,
-     "solo_spend": 0,
-     "contested_spend": 0,
-     "contested_won": 0,
-     "free_claims": 0,
-     "won": 0,
-     "lost": 0,
-     "lost_bid_total": 0,
-     "free_agents": 4,
-     "points_started": 0.0,
-     "points_rostered": 0.0,
-     "starts": 0,
-     "budget_used": 0,
-     "by_week": {},
-     "by_pos": {},
-     "by_round": {},
-     "biggest_bid": null,
-     "biggest_waste": null,
-     "worst_buy": null,
-     "shutout_weeks": [],
-     "shutout_streak": 0,
-     "bids": 0,
-     "win_rate": null,
-     "cost_per_point": null,
-     "points_per_dollar": null,
-     "budget_left": 100,
-     "waste_rate": null
-    },
-    {
-     "handle": "Mpletcher",
-     "name": "Mitch Pletcher",
-     "spent": 0,
-     "waste": 0,
-     "waste_solo": 0,
-     "solo_spend": 0,
-     "contested_spend": 0,
-     "contested_won": 0,
-     "free_claims": 2,
-     "won": 2,
-     "lost": 0,
-     "lost_bid_total": 0,
-     "free_agents": 1,
-     "points_started": 0.0,
-     "points_rostered": 0.0,
-     "starts": 0,
-     "budget_used": 0,
-     "by_week": {
-      "1": {
-       "spent": 0,
-       "won": 2,
-       "lost": 0,
-       "lost_bid": 0,
-       "waste": 0
-      }
-     },
-     "by_pos": {
-      "WR": {
-       "spent": 0,
-       "won": 1,
-       "lost": 0,
-       "lost_bid": 0,
-       "waste": 0
-      },
-      "TE": {
-       "spent": 0,
-       "won": 1,
-       "lost": 0,
-       "lost_bid": 0,
-       "waste": 0
-      }
-     },
-     "by_round": {
-      "undrafted": {
-       "spent": 0,
-       "won": 1,
-       "lost": 0,
-       "lost_bid": 0,
-       "waste": 0
-      },
-      "12": {
-       "spent": 0,
-       "won": 1,
-       "lost": 0,
-       "lost_bid": 0,
-       "waste": 0
-      }
-     },
-     "biggest_bid": {
-      "week": 1,
-      "player": "Mack Hollins",
-      "pos": "WR",
-      "bid": 0,
-      "runner_up": null,
-      "waste": 0,
-      "contested": false,
-      "free": true,
-      "round": null,
-      "points_started": 0.0,
-      "starts": 0
-     },
-     "biggest_waste": {
-      "week": 1,
-      "player": "Mack Hollins",
-      "pos": "WR",
-      "bid": 0,
-      "runner_up": null,
-      "waste": 0,
-      "contested": false,
-      "free": true,
-      "round": null,
-      "points_started": 0.0,
-      "starts": 0
-     },
-     "worst_buy": null,
-     "shutout_weeks": [],
-     "shutout_streak": 0,
-     "bids": 2,
-     "win_rate": 1.0,
-     "cost_per_point": null,
-     "points_per_dollar": null,
-     "budget_left": 100,
-     "waste_rate": null
-    }
-   ],
-   "totals": {
-    "spent": 32,
-    "claims": 7,
-    "contested": 2,
-    "waste": 20,
-    "waste_solo": 15,
-    "solo_spend": 15,
-    "contested_spend": 17,
-    "free_claims": 3,
-    "failed": 4,
-    "budget": 100,
-    "by_pos": {
-     "WR": {
-      "spent": 27,
-      "won": 4,
-      "lost": 3,
-      "lost_bid": 22,
-      "waste": 15
-     },
-     "RB": {
-      "spent": 3,
-      "won": 1,
-      "lost": 0,
-      "lost_bid": 0,
-      "waste": 3
-     },
-     "TE": {
-      "spent": 2,
-      "won": 2,
-      "lost": 1,
-      "lost_bid": 0,
-      "waste": 2
-     }
-    },
-    "by_round": {
-     "undrafted": {
-      "spent": 32,
-      "won": 6,
-      "lost": 4,
-      "lost_bid": 22,
-      "waste": 20
-     },
-     "12": {
-      "spent": 0,
-      "won": 1,
-      "lost": 0,
-      "lost_bid": 0,
-      "waste": 0
-     }
-    },
-    "by_week": {
-     "1": {
-      "spent": 32,
-      "won": 7,
-      "lost": 4,
-      "lost_bid": 22,
-      "waste": 20
-     }
-    }
-   },
-   "claims": [
-    {
-     "player_id": "13296",
-     "player": "Caleb Douglas",
-     "pos": "WR",
-     "handle": "cbova1222",
-     "bid": 15,
-     "bidders": 4,
-     "runner_up": 12,
-     "losers": [
-      {
-       "handle": "CHRISMERKELDUH",
-       "bid": 12
-      },
-      {
-       "handle": "djbogardus72",
-       "bid": 8
-      },
-      {
-       "handle": "Bogeyman28",
-       "bid": 2
-      }
-     ],
-     "week": 1,
-     "round": null,
-     "contested": true,
-     "free": false,
-     "waste": 3,
-     "waste_solo": 0,
-     "points_started": 0.0,
-     "points_rostered": 0.0,
-     "starts": 0
-    },
-    {
-     "player_id": "9486",
-     "player": "Dontayvion Wicks",
-     "pos": "WR",
-     "handle": "cbova1222",
-     "bid": 12,
-     "bidders": 1,
-     "runner_up": null,
-     "losers": [],
-     "week": 1,
-     "round": null,
-     "contested": false,
-     "free": false,
-     "waste": 12,
-     "waste_solo": 12,
-     "points_started": 0.0,
-     "points_rostered": 0.0,
-     "starts": 0
-    },
-    {
-     "player_id": "12472",
-     "player": "Raheim Sanders",
-     "pos": "RB",
-     "handle": "CHRISMERKELDUH",
-     "bid": 3,
-     "bidders": 1,
-     "runner_up": null,
-     "losers": [],
-     "week": 1,
-     "round": null,
-     "contested": false,
-     "free": false,
-     "waste": 3,
-     "waste_solo": 3,
-     "points_started": 0.0,
-     "points_rostered": 0.0,
-     "starts": 0
-    },
-    {
-     "player_id": "7002",
-     "player": "Juwan Johnson",
-     "pos": "TE",
-     "handle": "Bogeyman28",
-     "bid": 2,
-     "bidders": 2,
-     "runner_up": 0,
-     "losers": [
-      {
-       "handle": "jonicarter89",
-       "bid": 0
-      }
-     ],
-     "week": 1,
-     "round": null,
-     "contested": true,
-     "free": false,
-     "waste": 2,
-     "waste_solo": 0,
-     "points_started": 0.0,
-     "points_rostered": 0.0,
-     "starts": 0
-    },
-    {
-     "player_id": "4177",
-     "player": "Mack Hollins",
-     "pos": "WR",
-     "handle": "Mpletcher",
-     "bid": 0,
-     "bidders": 1,
-     "runner_up": null,
-     "losers": [],
-     "week": 1,
-     "round": null,
-     "contested": false,
-     "free": true,
-     "waste": 0,
-     "waste_solo": 0,
-     "points_started": 0.0,
-     "points_rostered": 0.0,
-     "starts": 0
-    },
-    {
-     "player_id": "3214",
-     "player": "Hunter Henry",
-     "pos": "TE",
-     "handle": "Mpletcher",
-     "bid": 0,
-     "bidders": 1,
-     "runner_up": null,
-     "losers": [],
-     "week": 1,
-     "round": 12,
-     "contested": false,
-     "free": true,
-     "waste": 0,
-     "waste_solo": 0,
-     "points_started": 0.0,
-     "points_rostered": 0.0,
-     "starts": 0
-    },
-    {
-     "player_id": "4454",
-     "player": "Kendrick Bourne",
-     "pos": "WR",
-     "handle": "djbogardus72",
-     "bid": 0,
-     "bidders": 1,
-     "runner_up": null,
-     "losers": [],
-     "week": 1,
-     "round": null,
-     "contested": false,
-     "free": true,
-     "waste": 0,
-     "waste_solo": 0,
-     "points_started": 0.0,
-     "points_rostered": 0.0,
-     "starts": 0
-    }
-   ],
-   "lost_bids": [
-    {
-     "player_id": "13296",
-     "player": "Caleb Douglas",
-     "pos": "WR",
-     "handle": "CHRISMERKELDUH",
-     "bid": 12,
-     "won_by": "cbova1222",
-     "won_at": 15,
-     "week": 1,
-     "round": null
-    },
-    {
-     "player_id": "13296",
-     "player": "Caleb Douglas",
-     "pos": "WR",
-     "handle": "djbogardus72",
-     "bid": 8,
-     "won_by": "cbova1222",
-     "won_at": 15,
-     "week": 1,
-     "round": null
-    },
-    {
-     "player_id": "13296",
-     "player": "Caleb Douglas",
-     "pos": "WR",
-     "handle": "Bogeyman28",
-     "bid": 2,
-     "won_by": "cbova1222",
-     "won_at": 15,
-     "week": 1,
-     "round": null
-    },
-    {
-     "player_id": "7002",
-     "player": "Juwan Johnson",
-     "pos": "TE",
-     "handle": "jonicarter89",
-     "bid": 0,
-     "won_by": "Bogeyman28",
-     "won_at": 2,
-     "week": 1,
-     "round": null
-    }
-   ],
-   "awards": [
-    {
-     "slug": "dead_money",
-     "label": "Pure dead money",
-     "dek": "Spent it, never started it",
-     "handle": "cbova1222",
-     "name": "Chris Bova",
-     "value": "$27 for 0.0 pts"
-    },
-    {
-     "slug": "most_wasted",
-     "label": "Most money wasted at auction",
-     "dek": "Winning bid minus the next-best bid, added up",
-     "handle": "cbova1222",
-     "name": "Chris Bova",
-     "value": "$15 thrown away across 2 claims ($12 of it on players nobody else bid on)"
-    },
-    {
-     "slug": "sharpest",
-     "label": "Sharpest bidder",
-     "dek": "Least waste per dollar spent",
-     "handle": "cbova1222",
-     "name": "Chris Bova",
-     "value": "$15 wasted of $27 spent (56%)"
-    },
-    {
-     "slug": "biggest_overpay",
-     "label": "Biggest single overpay",
-     "dek": "Week 1",
-     "handle": "cbova1222",
-     "name": "cbova1222",
-     "value": "$12 on Dontayvion Wicks and nobody else bid a cent -- $12 wasted"
-    },
-    {
-     "slug": "biggest_bid",
-     "label": "Biggest bid of the season",
-     "dek": "Week 1",
-     "handle": "cbova1222",
-     "name": "cbova1222",
-     "value": "$15 on Caleb Douglas (0.0 pts since)"
-    },
-    {
-     "slug": "biggest_bust",
-     "label": "Biggest bust",
-     "dek": "Week 1",
-     "handle": "cbova1222",
-     "name": "cbova1222",
-     "value": "$15 on Caleb Douglas for 0.0 started pts"
+     "value": "$502 on Puka Nacua (too new to judge)"
     }
    ]
   }
