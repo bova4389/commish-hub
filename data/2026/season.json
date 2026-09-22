@@ -1,12 +1,14 @@
 {
  "season": 2026,
- "generated": "2026-09-15T19:26:24-04:00",
+ "generated": "2026-09-22T16:59:46-04:00",
  "last_week": 18,
  "weeks": [
-  1
+  1,
+  2
  ],
  "final_weeks": [
-  1
+  1,
+  2
  ],
  "leagues": {
   "kings_justice": {
@@ -92,6 +94,15 @@
       "points": 159.8
      },
      "chopped": "NickBova",
+     "prize": 25
+    },
+    "2": {
+     "final": true,
+     "high": {
+      "handle": "bstanley45",
+      "points": 167.48
+     },
+     "chopped": "Mpletcher",
      "prize": 25
     }
    },
