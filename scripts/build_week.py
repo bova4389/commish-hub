@@ -21,7 +21,7 @@ Data sources (all keyless):
   Sleeper          /schedule/nfl/regular/<season>  game_id -> home/away (date only,
                    no kickoff time -- that comes from ESPN)
   ESPN scoreboard  kickoff times, final scores, game status
-  Bova's Picks     ../NFL Pickems/data/odds/history/*.json -- pre-kickoff win
+  Bova's Picks     ../bovas-picks/data/odds/history/*.json -- pre-kickoff win
                    probabilities, used to call an upset an upset. Optional; if the
                    folder is missing every game is simply unrated.
 
@@ -63,7 +63,7 @@ ESPN = 'https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard'
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 CACHE = os.path.join(HERE, '_cache')
-ODDS_DIR = os.path.join(os.path.dirname(ROOT), 'NFL Pickems', 'data', 'odds', 'history')
+ODDS_DIR = os.path.join(os.path.dirname(ROOT), 'bovas-picks', 'data', 'odds', 'history')
 ET = ZoneInfo('America/New_York')
 
 # ESPN -> Sleeper team codes. Only the ones that differ.

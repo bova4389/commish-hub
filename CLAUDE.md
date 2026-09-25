@@ -406,7 +406,7 @@ $0 is the real reference price either way.
   code. A player with no game that week has `slot: null` and is listed under `no_game`.
 - **Kickoff slots are distinct kickoff times**, labeled in Eastern ("Sun 4:25 PM"). Two Monday
   games are two slots — which is the point.
-- **Odds** come from Bova's Picks' snapshots at `../NFL Pickems/data/odds/history/`, last
+- **Odds** come from Bova's Picks' snapshots at `../bovas-picks/data/odds/history/`, last
   snapshot before kickoff. If that folder is missing, nothing breaks; games just have no
   favorite and no upset flag. 2025 has no odds, which is why the 2025 sample shows none.
 - **ESPN spells Washington `WSH`**; everything here uses Sleeper's `WAS`. Sleeper spells
@@ -446,5 +446,5 @@ be bumped when those change.
   GraphQL needs Matt's Sleeper login token and putting it in this public repo's secrets was not
   wanted; the prose has to be hand-written anyway. A Tuesday Action for King's Justice and
   2 Mitchs alone (the REST leagues) would work if it is ever worth it.
-- The King's Justice history dashboard (`Kings Justice/dashboard.html`) is separate. The hub's
+- The King's Justice history dashboard (`../kings-justice/dashboard.html`, private repo `bova4389/kings-justice`) is separate. The hub's
   KJ tab is the *weekly* view; the dashboard is four seasons of FAAB history. Link, don't merge.
