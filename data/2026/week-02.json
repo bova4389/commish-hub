@@ -1,7 +1,7 @@
 {
  "season": 2026,
  "week": 2,
- "generated": "2026-09-25T17:14:40-04:00",
+ "generated": "2026-09-26T10:12:24-04:00",
  "all_final": true,
  "nfl": {
   "games": [
@@ -654,7 +654,7 @@
        "pts": 1.1,
        "proj": 13.61,
        "slot": 5,
-       "injury": "Questionable"
+       "injury": null
       }
      ],
      "no_game": [],
@@ -883,7 +883,7 @@
        "pts": 0.8,
        "proj": 20.19,
        "slot": 5,
-       "injury": "Out"
+       "injury": "IR"
       }
      ],
      "no_game": [],
@@ -922,7 +922,7 @@
        "pts": 0.0,
        "proj": 0.0,
        "slot": 5,
-       "injury": "Out"
+       "injury": "Doubtful"
       }
      ],
      "no_game": [],
@@ -1120,6 +1120,218 @@
    "transactions": {
     "waivers": [
      {
+      "player_id": "12527",
+      "player": "Ashton Jeanty",
+      "pos": "RB",
+      "handle": "CodyPowers28",
+      "bid": 525,
+      "bidders": 10,
+      "runner_up": 456,
+      "losers": [
+       {
+        "handle": "AJPeak",
+        "bid": 456
+       },
+       {
+        "handle": "AllBidness",
+        "bid": 412
+       },
+       {
+        "handle": "humrich",
+        "bid": 361
+       },
+       {
+        "handle": "DipLipGator",
+        "bid": 271
+       },
+       {
+        "handle": "ButtFumble06",
+        "bid": 263
+       },
+       {
+        "handle": "Cubbiesftw23",
+        "bid": 250
+       },
+       {
+        "handle": "cbova1222",
+        "bid": 204
+       },
+       {
+        "handle": "avobttam",
+        "bid": 201
+       },
+       {
+        "handle": "nelsolson",
+        "bid": 153
+       }
+      ]
+     },
+     {
+      "player_id": "7569",
+      "player": "Nico Collins",
+      "pos": "WR",
+      "handle": "joefanelli90",
+      "bid": 211,
+      "bidders": 9,
+      "runner_up": 175,
+      "losers": [
+       {
+        "handle": "Cubbiesftw23",
+        "bid": 175
+       },
+       {
+        "handle": "avobttam",
+        "bid": 165
+       },
+       {
+        "handle": "CodyPowers28",
+        "bid": 132
+       },
+       {
+        "handle": "ButtFumble06",
+        "bid": 107
+       },
+       {
+        "handle": "Bogeyman28",
+        "bid": 99
+       },
+       {
+        "handle": "cbova1222",
+        "bid": 51
+       },
+       {
+        "handle": "nelsolson",
+        "bid": 11
+       },
+       {
+        "handle": "Elworth",
+        "bid": 3
+       }
+      ]
+     },
+     {
+      "player_id": "8134",
+      "player": "Khalil Shakir",
+      "pos": "WR",
+      "handle": "cbova1222",
+      "bid": 155,
+      "bidders": 2,
+      "runner_up": 13,
+      "losers": [
+       {
+        "handle": "ButtFumble06",
+        "bid": 13
+       }
+      ]
+     },
+     {
+      "player_id": "13345",
+      "player": "Jonah Coleman",
+      "pos": "RB",
+      "handle": "cbova1222",
+      "bid": 103,
+      "bidders": 4,
+      "runner_up": 56,
+      "losers": [
+       {
+        "handle": "joefanelli90",
+        "bid": 56
+       },
+       {
+        "handle": "Bogeyman28",
+        "bid": 52
+       },
+       {
+        "handle": "ButtFumble06",
+        "bid": 16
+       }
+      ]
+     },
+     {
+      "player_id": "11610",
+      "player": "Malik Washington",
+      "pos": "WR",
+      "handle": "humrich",
+      "bid": 53,
+      "bidders": 2,
+      "runner_up": 6,
+      "losers": [
+       {
+        "handle": "joefanelli90",
+        "bid": 6
+       }
+      ]
+     },
+     {
+      "player_id": "11631",
+      "player": "Brian Thomas",
+      "pos": "WR",
+      "handle": "Bogeyman28",
+      "bid": 51,
+      "bidders": 3,
+      "runner_up": 45,
+      "losers": [
+       {
+        "handle": "Cubbiesftw23",
+        "bid": 45
+       },
+       {
+        "handle": "Elworth",
+        "bid": 27
+       }
+      ]
+     },
+     {
+      "player_id": "12517",
+      "player": "Colston Loveland",
+      "pos": "TE",
+      "handle": "Cubbiesftw23",
+      "bid": 30,
+      "bidders": 2,
+      "runner_up": 10,
+      "losers": [
+       {
+        "handle": "nelsolson",
+        "bid": 10
+       }
+      ]
+     },
+     {
+      "player_id": "3214",
+      "player": "Hunter Henry",
+      "pos": "TE",
+      "handle": "joefanelli90",
+      "bid": 25,
+      "bidders": 2,
+      "runner_up": 0,
+      "losers": [
+       {
+        "handle": "AJPeak",
+        "bid": 0
+       }
+      ]
+     },
+     {
+      "player_id": "1166",
+      "player": "Kirk Cousins",
+      "pos": "QB",
+      "handle": "joefanelli90",
+      "bid": 21,
+      "bidders": 1,
+      "runner_up": null,
+      "losers": []
+     },
+     {
+      "player_id": "10218",
+      "player": "Xavier Hutchinson",
+      "pos": "WR",
+      "handle": "DipLipGator",
+      "bid": 11,
+      "bidders": 1,
+      "runner_up": null,
+      "losers": []
+     },
+     {
       "player_id": "4454",
       "player": "Kendrick Bourne",
       "pos": "WR",
@@ -1221,6 +1433,231 @@
     ],
     "lost_bids": [
      {
+      "player_id": "12527",
+      "player": "Ashton Jeanty",
+      "pos": "RB",
+      "handle": "AJPeak",
+      "bid": 456,
+      "won_by": "CodyPowers28",
+      "won_at": 525
+     },
+     {
+      "player_id": "12527",
+      "player": "Ashton Jeanty",
+      "pos": "RB",
+      "handle": "AllBidness",
+      "bid": 412,
+      "won_by": "CodyPowers28",
+      "won_at": 525
+     },
+     {
+      "player_id": "12527",
+      "player": "Ashton Jeanty",
+      "pos": "RB",
+      "handle": "humrich",
+      "bid": 361,
+      "won_by": "CodyPowers28",
+      "won_at": 525
+     },
+     {
+      "player_id": "12527",
+      "player": "Ashton Jeanty",
+      "pos": "RB",
+      "handle": "DipLipGator",
+      "bid": 271,
+      "won_by": "CodyPowers28",
+      "won_at": 525
+     },
+     {
+      "player_id": "12527",
+      "player": "Ashton Jeanty",
+      "pos": "RB",
+      "handle": "ButtFumble06",
+      "bid": 263,
+      "won_by": "CodyPowers28",
+      "won_at": 525
+     },
+     {
+      "player_id": "12527",
+      "player": "Ashton Jeanty",
+      "pos": "RB",
+      "handle": "Cubbiesftw23",
+      "bid": 250,
+      "won_by": "CodyPowers28",
+      "won_at": 525
+     },
+     {
+      "player_id": "12527",
+      "player": "Ashton Jeanty",
+      "pos": "RB",
+      "handle": "cbova1222",
+      "bid": 204,
+      "won_by": "CodyPowers28",
+      "won_at": 525
+     },
+     {
+      "player_id": "12527",
+      "player": "Ashton Jeanty",
+      "pos": "RB",
+      "handle": "avobttam",
+      "bid": 201,
+      "won_by": "CodyPowers28",
+      "won_at": 525
+     },
+     {
+      "player_id": "7569",
+      "player": "Nico Collins",
+      "pos": "WR",
+      "handle": "Cubbiesftw23",
+      "bid": 175,
+      "won_by": "joefanelli90",
+      "won_at": 211
+     },
+     {
+      "player_id": "7569",
+      "player": "Nico Collins",
+      "pos": "WR",
+      "handle": "avobttam",
+      "bid": 165,
+      "won_by": "joefanelli90",
+      "won_at": 211
+     },
+     {
+      "player_id": "12527",
+      "player": "Ashton Jeanty",
+      "pos": "RB",
+      "handle": "nelsolson",
+      "bid": 153,
+      "won_by": "CodyPowers28",
+      "won_at": 525
+     },
+     {
+      "player_id": "7569",
+      "player": "Nico Collins",
+      "pos": "WR",
+      "handle": "CodyPowers28",
+      "bid": 132,
+      "won_by": "joefanelli90",
+      "won_at": 211
+     },
+     {
+      "player_id": "7569",
+      "player": "Nico Collins",
+      "pos": "WR",
+      "handle": "ButtFumble06",
+      "bid": 107,
+      "won_by": "joefanelli90",
+      "won_at": 211
+     },
+     {
+      "player_id": "7569",
+      "player": "Nico Collins",
+      "pos": "WR",
+      "handle": "Bogeyman28",
+      "bid": 99,
+      "won_by": "joefanelli90",
+      "won_at": 211
+     },
+     {
+      "player_id": "13345",
+      "player": "Jonah Coleman",
+      "pos": "RB",
+      "handle": "joefanelli90",
+      "bid": 56,
+      "won_by": "cbova1222",
+      "won_at": 103
+     },
+     {
+      "player_id": "13345",
+      "player": "Jonah Coleman",
+      "pos": "RB",
+      "handle": "Bogeyman28",
+      "bid": 52,
+      "won_by": "cbova1222",
+      "won_at": 103
+     },
+     {
+      "player_id": "7569",
+      "player": "Nico Collins",
+      "pos": "WR",
+      "handle": "cbova1222",
+      "bid": 51,
+      "won_by": "joefanelli90",
+      "won_at": 211
+     },
+     {
+      "player_id": "11631",
+      "player": "Brian Thomas",
+      "pos": "WR",
+      "handle": "Cubbiesftw23",
+      "bid": 45,
+      "won_by": "Bogeyman28",
+      "won_at": 51
+     },
+     {
+      "player_id": "11631",
+      "player": "Brian Thomas",
+      "pos": "WR",
+      "handle": "Elworth",
+      "bid": 27,
+      "won_by": "Bogeyman28",
+      "won_at": 51
+     },
+     {
+      "player_id": "13345",
+      "player": "Jonah Coleman",
+      "pos": "RB",
+      "handle": "ButtFumble06",
+      "bid": 16,
+      "won_by": "cbova1222",
+      "won_at": 103
+     },
+     {
+      "player_id": "8134",
+      "player": "Khalil Shakir",
+      "pos": "WR",
+      "handle": "ButtFumble06",
+      "bid": 13,
+      "won_by": "cbova1222",
+      "won_at": 155
+     },
+     {
+      "player_id": "7569",
+      "player": "Nico Collins",
+      "pos": "WR",
+      "handle": "nelsolson",
+      "bid": 11,
+      "won_by": "joefanelli90",
+      "won_at": 211
+     },
+     {
+      "player_id": "12517",
+      "player": "Colston Loveland",
+      "pos": "TE",
+      "handle": "nelsolson",
+      "bid": 10,
+      "won_by": "Cubbiesftw23",
+      "won_at": 30
+     },
+     {
+      "player_id": "11610",
+      "player": "Malik Washington",
+      "pos": "WR",
+      "handle": "joefanelli90",
+      "bid": 6,
+      "won_by": "humrich",
+      "won_at": 53
+     },
+     {
+      "player_id": "7569",
+      "player": "Nico Collins",
+      "pos": "WR",
+      "handle": "Elworth",
+      "bid": 3,
+      "won_by": "joefanelli90",
+      "won_at": 211
+     },
+     {
       "player_id": "4454",
       "player": "Kendrick Bourne",
       "pos": "WR",
@@ -1228,6 +1665,24 @@
       "bid": 2,
       "won_by": "CodyPowers28",
       "won_at": 5
+     },
+     {
+      "player_id": "3214",
+      "player": "Hunter Henry",
+      "pos": "TE",
+      "handle": "AJPeak",
+      "bid": 0,
+      "won_by": "joefanelli90",
+      "won_at": 25
+     },
+     {
+      "player_id": "5854",
+      "player": "Drew Lock",
+      "pos": "QB",
+      "handle": "joefanelli90",
+      "bid": 0,
+      "won_by": null,
+      "won_at": null
      },
      {
       "player_id": "4454",
@@ -1239,7 +1694,7 @@
       "won_at": 5
      }
     ],
-    "faab_spent": 14,
+    "faab_spent": 1199,
     "free_agents": [],
     "trades": []
    }
@@ -1311,7 +1766,7 @@
         "pts": 1.1,
         "proj": 13.61,
         "slot": 5,
-        "injury": "Questionable"
+        "injury": null
        },
        {
         "pid": "8146",
@@ -1372,7 +1827,7 @@
         "team": "DEN",
         "pts": 14.8,
         "proj": 7.22,
-        "injury": null
+        "injury": "Out"
        },
        {
         "pid": "6797",
@@ -1408,7 +1863,7 @@
         "team": "CAR",
         "pts": 2.1,
         "proj": 6.79,
-        "injury": "Questionable"
+        "injury": "IR"
        },
        {
         "pid": "13276",
@@ -1448,7 +1903,7 @@
       "roster_id": 8,
       "handle": "CHRISMERKELDUH",
       "name": "Chris Merkel",
-      "team_name": "Gonna be, gonna be Golden",
+      "team_name": "The PRICE is Wrong, Bob",
       "matchup_id": 1,
       "points": 69.2,
       "proj": 100.64,
@@ -1482,7 +1937,7 @@
         "pts": 5.0,
         "proj": 11.77,
         "slot": 3,
-        "injury": "Questionable"
+        "injury": null
        },
        {
         "pid": "8112",
@@ -1597,7 +2052,7 @@
         "team": "LAR",
         "pts": 0.0,
         "proj": 0.0,
-        "injury": "Out"
+        "injury": "Doubtful"
        },
        {
         "pid": "9502",
@@ -1727,7 +2182,7 @@
         "pts": 10.5,
         "proj": 14.03,
         "slot": 1,
-        "injury": "Questionable"
+        "injury": null
        }
       ],
       "bench": [
@@ -1774,7 +2229,7 @@
         "team": "LV",
         "pts": 0.0,
         "proj": 0.0,
-        "injury": "Out"
+        "injury": "Questionable"
        }
       ],
       "bench_points": 43.28,
@@ -1880,7 +2335,7 @@
         "pts": 3.6,
         "proj": 12.88,
         "slot": 2,
-        "injury": "Questionable"
+        "injury": null
        },
        {
         "pid": "8121",
@@ -2058,7 +2513,7 @@
         "pts": 9.7,
         "proj": 11.56,
         "slot": 1,
-        "injury": null
+        "injury": "Questionable"
        }
       ],
       "bench": [
@@ -2069,7 +2524,7 @@
         "team": "NYJ",
         "pts": 12.3,
         "proj": 7.73,
-        "injury": null
+        "injury": "Questionable"
        },
        {
         "pid": "4037",
@@ -2096,7 +2551,7 @@
         "team": "NYG",
         "pts": 0.8,
         "proj": 21.06,
-        "injury": "Out"
+        "injury": "IR"
        },
        {
         "pid": "11618",
@@ -2151,7 +2606,7 @@
         "pts": 6.4,
         "proj": 11.06,
         "slot": 1,
-        "injury": "Questionable"
+        "injury": "Out"
        },
        {
         "pid": "8150",
@@ -2211,7 +2666,7 @@
         "pts": 14.6,
         "proj": 12.9,
         "slot": 1,
-        "injury": null
+        "injury": "Questionable"
        },
        {
         "pid": "13346",
@@ -2268,7 +2723,7 @@
         "team": "PIT",
         "pts": 0.0,
         "proj": 0.0,
-        "injury": "Out"
+        "injury": "Questionable"
        }
       ],
       "bench_points": 48.08,
@@ -2282,7 +2737,9 @@
        "slot": "QB"
       },
       "zeros": [],
-      "injured_starters": [],
+      "injured_starters": [
+       "Rico Dowdle (Out)"
+      ],
       "record": "0-2",
       "delta_net": 5.21
      },
@@ -2381,7 +2838,7 @@
         "pts": 3.9,
         "proj": 8.83,
         "slot": 3,
-        "injury": "Questionable"
+        "injury": "Out"
        },
        {
         "pid": "8134",
@@ -2429,7 +2886,7 @@
         "team": "DEN",
         "pts": 0.0,
         "proj": 0.0,
-        "injury": "Out"
+        "injury": null
        },
        {
         "pid": "13269",
@@ -2453,7 +2910,8 @@
       },
       "zeros": [],
       "injured_starters": [
-       "Jayden Daniels (Out)"
+       "Jayden Daniels (Out)",
+       "Caleb Douglas (Out)"
       ],
       "record": "2-0",
       "delta_net": 3.43
@@ -2496,7 +2954,7 @@
         "pts": 3.0,
         "proj": 16.62,
         "slot": 1,
-        "injury": "Questionable"
+        "injury": null
        },
        {
         "pid": "8144",
@@ -2516,7 +2974,7 @@
         "pts": -0.1,
         "proj": 13.14,
         "slot": 0,
-        "injury": "Out"
+        "injury": "Questionable"
        },
        {
         "pid": "5022",
@@ -2526,7 +2984,7 @@
         "pts": 1.4,
         "proj": 10.17,
         "slot": 1,
-        "injury": "Questionable"
+        "injury": "Doubtful"
        },
        {
         "pid": "7588",
@@ -2618,7 +3076,7 @@
       },
       "zeros": [],
       "injured_starters": [
-       "DJ Moore (Out)"
+       "Dallas Goedert (Doubtful)"
       ],
       "record": "1-1",
       "delta_net": -49.1
@@ -2776,7 +3234,7 @@
         "team": "MIN",
         "pts": 0.0,
         "proj": 0.0,
-        "injury": "Out"
+        "injury": null
        },
        {
         "pid": "8408",
@@ -3030,7 +3488,7 @@
         "pts": 27.7,
         "proj": 14.73,
         "slot": 1,
-        "injury": null
+        "injury": "Questionable"
        },
        {
         "pid": "11610",
@@ -3136,7 +3594,7 @@
         "team": "BAL",
         "pts": 0.0,
         "proj": 0.0,
-        "injury": "Out"
+        "injury": "Questionable"
        }
       ],
       "bench_points": 47.38,
@@ -3174,7 +3632,7 @@
         "pts": 8.72,
         "proj": 21.98,
         "slot": 1,
-        "injury": "Out"
+        "injury": "Doubtful"
        },
        {
         "pid": "5892",
@@ -3274,7 +3732,7 @@
         "team": "TEN",
         "pts": 9.0,
         "proj": 7.67,
-        "injury": null
+        "injury": "Questionable"
        },
        {
         "pid": "6130",
@@ -3316,7 +3774,7 @@
       },
       "zeros": [],
       "injured_starters": [
-       "Caleb Williams (Out)",
+       "Caleb Williams (Doubtful)",
        "Jayden Reed (Out)"
       ],
       "record": "0-2",
@@ -3589,9 +4047,130 @@
     }
    ],
    "transactions": {
-    "waivers": [],
-    "lost_bids": [],
-    "faab_spent": 0,
+    "waivers": [
+     {
+      "player_id": "11435",
+      "player": "Emanuel Wilson",
+      "pos": "RB",
+      "handle": "CHRISMERKELDUH",
+      "bid": 31,
+      "bidders": 2,
+      "runner_up": 22,
+      "losers": [
+       {
+        "handle": "avobttam",
+        "bid": 22
+       }
+      ]
+     },
+     {
+      "player_id": "9228",
+      "player": "Bryce Young",
+      "pos": "QB",
+      "handle": "BigOleTDs21",
+      "bid": 16,
+      "bidders": 3,
+      "runner_up": 12,
+      "losers": [
+       {
+        "handle": "avobttam",
+        "bid": 12
+       },
+       {
+        "handle": "katiestout13",
+        "bid": 5
+       }
+      ]
+     },
+     {
+      "player_id": "5001",
+      "player": "Dalton Schultz",
+      "pos": "TE",
+      "handle": "katiestout13",
+      "bid": 15,
+      "bidders": 2,
+      "runner_up": 11,
+      "losers": [
+       {
+        "handle": "jonicarter89",
+        "bid": 11
+       }
+      ]
+     },
+     {
+      "player_id": "7571",
+      "player": "Rashod Bateman",
+      "pos": "WR",
+      "handle": "Bogeyman28",
+      "bid": 2,
+      "bidders": 2,
+      "runner_up": 0,
+      "losers": [
+       {
+        "handle": "Mpletcher",
+        "bid": 0
+       }
+      ]
+     },
+     {
+      "player_id": "11637",
+      "player": "Keon Coleman",
+      "pos": "WR",
+      "handle": "Mpletcher",
+      "bid": 0,
+      "bidders": 1,
+      "runner_up": null,
+      "losers": []
+     }
+    ],
+    "lost_bids": [
+     {
+      "player_id": "11435",
+      "player": "Emanuel Wilson",
+      "pos": "RB",
+      "handle": "avobttam",
+      "bid": 22,
+      "won_by": "CHRISMERKELDUH",
+      "won_at": 31
+     },
+     {
+      "player_id": "9228",
+      "player": "Bryce Young",
+      "pos": "QB",
+      "handle": "avobttam",
+      "bid": 12,
+      "won_by": "BigOleTDs21",
+      "won_at": 16
+     },
+     {
+      "player_id": "5001",
+      "player": "Dalton Schultz",
+      "pos": "TE",
+      "handle": "jonicarter89",
+      "bid": 11,
+      "won_by": "katiestout13",
+      "won_at": 15
+     },
+     {
+      "player_id": "9228",
+      "player": "Bryce Young",
+      "pos": "QB",
+      "handle": "katiestout13",
+      "bid": 5,
+      "won_by": "BigOleTDs21",
+      "won_at": 16
+     },
+     {
+      "player_id": "7571",
+      "player": "Rashod Bateman",
+      "pos": "WR",
+      "handle": "Mpletcher",
+      "bid": 0,
+      "won_by": "Bogeyman28",
+      "won_at": 2
+     }
+    ],
+    "faab_spent": 64,
     "free_agents": [
      {
       "handle": "djbogardus72",
@@ -3644,1389 +4223,30 @@
       ]
      }
     ],
-    "trades": []
+    "trades": [
+     {
+      "sides": {
+       "Mpletcher": [
+        "Xavier Worthy",
+        "Jacory Croskey-Merritt"
+       ],
+       "MerkDaddy36": [
+        "A.J. Brown"
+       ]
+      }
+     },
+     {
+      "sides": {
+       "djbogardus72": [
+        "Brian Thomas"
+       ],
+       "Bogeyman28": [
+        "Jonah Coleman"
+       ]
+      }
+     }
+    ]
    }
-  },
-  "poop": {
-   "league_id": "1392226517005635584",
-   "league_name": "Poop 2026",
-   "provisional": false,
-   "kind": "survivor",
-   "entries_total": 31,
-   "weekly_pick_limit": 1,
-   "revives_allowed": 2,
-   "payouts": {},
-   "field": [
-    {
-     "game_id": "202610233",
-     "game": "CLE @ TB",
-     "winner": "CLE",
-     "upset": true,
-     "fav": "TB",
-     "fav_prob": 0.782,
-     "picks": {
-      "TB": 6
-     }
-    },
-    {
-     "game_id": "202610203",
-     "game": "NO @ BAL",
-     "winner": "NO",
-     "upset": true,
-     "fav": "BAL",
-     "fav_prob": 0.772,
-     "picks": {
-      "BAL": 4
-     }
-    },
-    {
-     "game_id": "202610224",
-     "game": "GB @ NYJ",
-     "winner": "GB",
-     "upset": false,
-     "fav": "GB",
-     "fav_prob": 0.618,
-     "picks": {
-      "GB": 2
-     }
-    },
-    {
-     "game_id": "202610229",
-     "game": "LV @ LAC",
-     "winner": "LV",
-     "upset": true,
-     "fav": "LAC",
-     "fav_prob": 0.729,
-     "picks": {
-      "LAC": 1
-     }
-    },
-    {
-     "game_id": "202610231",
-     "game": "MIA @ SF",
-     "winner": "SF",
-     "upset": false,
-     "fav": "SF",
-     "fav_prob": 0.875,
-     "picks": {
-      "SF": 13
-     }
-    },
-    {
-     "game_id": "202610209",
-     "game": "WAS @ DAL",
-     "winner": "DAL",
-     "upset": false,
-     "fav": "DAL",
-     "fav_prob": 0.652,
-     "picks": {
-      "DAL": 1
-     }
-    },
-    {
-     "game_id": "202610216",
-     "game": "IND @ KC",
-     "winner": "KC",
-     "upset": false,
-     "fav": "KC",
-     "fav_prob": 0.707,
-     "picks": {
-      "KC": 1
-     }
-    },
-    {
-     "game_id": "202610232",
-     "game": "NYG @ LAR",
-     "winner": "LAR",
-     "upset": false,
-     "fav": "LAR",
-     "fav_prob": 0.727,
-     "picks": {
-      "LAR": 1
-     }
-    }
-   ],
-   "entries": [
-    {
-     "roster_id": 26,
-     "handle": "aelliott2214",
-     "name": "aelliott2214",
-     "picks": [
-      {
-       "game_id": "202610231",
-       "team": "SF",
-       "opp": "MIA",
-       "game": "MIA @ SF",
-       "outcome": "win",
-       "prob": 0.875,
-       "hidden": false,
-       "score": "MIA 13-35 SF",
-       "slot_label": "Sun 4:25 PM"
-      }
-     ],
-     "no_pick": false,
-     "correct": 1,
-     "wrong": 0,
-     "pending": 0,
-     "week_points": 1.0,
-     "season_points": 2.0,
-     "lost_this_week": false,
-     "strikes_before": 0,
-     "strikes_after": 0,
-     "eliminated_now": false,
-     "tiebreaker": null,
-     "hidden": 0,
-     "lonely_wins": [],
-     "upset_wins": [],
-     "chalk_losses": []
-    },
-    {
-     "roster_id": 7,
-     "handle": "albuchan",
-     "name": "albuchan",
-     "picks": [
-      {
-       "game_id": "202610231",
-       "team": "SF",
-       "opp": "MIA",
-       "game": "MIA @ SF",
-       "outcome": "win",
-       "prob": 0.875,
-       "hidden": false,
-       "score": "MIA 13-35 SF",
-       "slot_label": "Sun 4:25 PM"
-      }
-     ],
-     "no_pick": false,
-     "correct": 1,
-     "wrong": 0,
-     "pending": 0,
-     "week_points": 1.0,
-     "season_points": 2.0,
-     "lost_this_week": false,
-     "strikes_before": 0,
-     "strikes_after": 0,
-     "eliminated_now": false,
-     "tiebreaker": null,
-     "hidden": 0,
-     "lonely_wins": [],
-     "upset_wins": [],
-     "chalk_losses": []
-    },
-    {
-     "roster_id": 30,
-     "handle": "CarlosDangers",
-     "name": "CarlosDangers",
-     "picks": [
-      {
-       "game_id": "202610231",
-       "team": "SF",
-       "opp": "MIA",
-       "game": "MIA @ SF",
-       "outcome": "win",
-       "prob": 0.875,
-       "hidden": false,
-       "score": "MIA 13-35 SF",
-       "slot_label": "Sun 4:25 PM"
-      }
-     ],
-     "no_pick": false,
-     "correct": 1,
-     "wrong": 0,
-     "pending": 0,
-     "week_points": 1.0,
-     "season_points": 2.0,
-     "lost_this_week": false,
-     "strikes_before": 0,
-     "strikes_after": 0,
-     "eliminated_now": false,
-     "tiebreaker": null,
-     "hidden": 0,
-     "lonely_wins": [],
-     "upset_wins": [],
-     "chalk_losses": []
-    },
-    {
-     "roster_id": 25,
-     "handle": "DunkinDutchman45",
-     "name": "DunkinDutchman45",
-     "picks": [
-      {
-       "game_id": "202610231",
-       "team": "SF",
-       "opp": "MIA",
-       "game": "MIA @ SF",
-       "outcome": "win",
-       "prob": 0.875,
-       "hidden": false,
-       "score": "MIA 13-35 SF",
-       "slot_label": "Sun 4:25 PM"
-      }
-     ],
-     "no_pick": false,
-     "correct": 1,
-     "wrong": 0,
-     "pending": 0,
-     "week_points": 1.0,
-     "season_points": 2.0,
-     "lost_this_week": false,
-     "strikes_before": 0,
-     "strikes_after": 0,
-     "eliminated_now": false,
-     "tiebreaker": null,
-     "hidden": 0,
-     "lonely_wins": [],
-     "upset_wins": [],
-     "chalk_losses": []
-    },
-    {
-     "roster_id": 22,
-     "handle": "Intipach",
-     "name": "Intipach",
-     "picks": [
-      {
-       "game_id": "202610209",
-       "team": "DAL",
-       "opp": "WAS",
-       "game": "WAS @ DAL",
-       "outcome": "win",
-       "prob": 0.652,
-       "hidden": false,
-       "score": "WAS 20-37 DAL",
-       "slot_label": "Sun 4:25 PM"
-      }
-     ],
-     "no_pick": false,
-     "correct": 1,
-     "wrong": 0,
-     "pending": 0,
-     "week_points": 1.0,
-     "season_points": 2.0,
-     "lost_this_week": false,
-     "strikes_before": 0,
-     "strikes_after": 0,
-     "eliminated_now": false,
-     "tiebreaker": null,
-     "hidden": 0,
-     "lonely_wins": [
-      "DAL"
-     ],
-     "upset_wins": [],
-     "chalk_losses": []
-    },
-    {
-     "roster_id": 24,
-     "handle": "Isabelle312",
-     "name": "Isabelle312",
-     "picks": [
-      {
-       "game_id": "202610216",
-       "team": "KC",
-       "opp": "IND",
-       "game": "IND @ KC",
-       "outcome": "win",
-       "prob": 0.707,
-       "hidden": false,
-       "score": "IND 30-33 KC",
-       "slot_label": "Sun 8:20 PM"
-      }
-     ],
-     "no_pick": false,
-     "correct": 1,
-     "wrong": 0,
-     "pending": 0,
-     "week_points": 1.0,
-     "season_points": 2.0,
-     "lost_this_week": false,
-     "strikes_before": 0,
-     "strikes_after": 0,
-     "eliminated_now": false,
-     "tiebreaker": null,
-     "hidden": 0,
-     "lonely_wins": [
-      "KC"
-     ],
-     "upset_wins": [],
-     "chalk_losses": []
-    },
-    {
-     "roster_id": 19,
-     "handle": "jj833041",
-     "name": "jj833041",
-     "picks": [
-      {
-       "game_id": "202610224",
-       "team": "GB",
-       "opp": "NYJ",
-       "game": "GB @ NYJ",
-       "outcome": "win",
-       "prob": 0.618,
-       "hidden": false,
-       "score": "GB 20-17 NYJ",
-       "slot_label": "Sun 1:00 PM"
-      }
-     ],
-     "no_pick": false,
-     "correct": 1,
-     "wrong": 0,
-     "pending": 0,
-     "week_points": 1.0,
-     "season_points": 2.0,
-     "lost_this_week": false,
-     "strikes_before": 0,
-     "strikes_after": 0,
-     "eliminated_now": false,
-     "tiebreaker": null,
-     "hidden": 0,
-     "lonely_wins": [],
-     "upset_wins": [],
-     "chalk_losses": []
-    },
-    {
-     "roster_id": 27,
-     "handle": "JohnDaveyNATTYCHAMP",
-     "name": "JohnDaveyNATTYCHAMP",
-     "picks": [
-      {
-       "game_id": "202610231",
-       "team": "SF",
-       "opp": "MIA",
-       "game": "MIA @ SF",
-       "outcome": "win",
-       "prob": 0.875,
-       "hidden": false,
-       "score": "MIA 13-35 SF",
-       "slot_label": "Sun 4:25 PM"
-      }
-     ],
-     "no_pick": false,
-     "correct": 1,
-     "wrong": 0,
-     "pending": 0,
-     "week_points": 1.0,
-     "season_points": 2.0,
-     "lost_this_week": false,
-     "strikes_before": 0,
-     "strikes_after": 0,
-     "eliminated_now": false,
-     "tiebreaker": null,
-     "hidden": 0,
-     "lonely_wins": [],
-     "upset_wins": [],
-     "chalk_losses": []
-    },
-    {
-     "roster_id": 14,
-     "handle": "markymark317",
-     "name": "markymark317",
-     "picks": [
-      {
-       "game_id": "202610231",
-       "team": "SF",
-       "opp": "MIA",
-       "game": "MIA @ SF",
-       "outcome": "win",
-       "prob": 0.875,
-       "hidden": false,
-       "score": "MIA 13-35 SF",
-       "slot_label": "Sun 4:25 PM"
-      }
-     ],
-     "no_pick": false,
-     "correct": 1,
-     "wrong": 0,
-     "pending": 0,
-     "week_points": 1.0,
-     "season_points": 2.0,
-     "lost_this_week": false,
-     "strikes_before": 0,
-     "strikes_after": 0,
-     "eliminated_now": false,
-     "tiebreaker": null,
-     "hidden": 0,
-     "lonely_wins": [],
-     "upset_wins": [],
-     "chalk_losses": []
-    },
-    {
-     "roster_id": 16,
-     "handle": "sydguthrie",
-     "name": "sydguthrie",
-     "picks": [
-      {
-       "game_id": "202610224",
-       "team": "GB",
-       "opp": "NYJ",
-       "game": "GB @ NYJ",
-       "outcome": "win",
-       "prob": 0.618,
-       "hidden": false,
-       "score": "GB 20-17 NYJ",
-       "slot_label": "Sun 1:00 PM"
-      }
-     ],
-     "no_pick": false,
-     "correct": 1,
-     "wrong": 0,
-     "pending": 0,
-     "week_points": 1.0,
-     "season_points": 2.0,
-     "lost_this_week": false,
-     "strikes_before": 0,
-     "strikes_after": 0,
-     "eliminated_now": false,
-     "tiebreaker": null,
-     "hidden": 0,
-     "lonely_wins": [],
-     "upset_wins": [],
-     "chalk_losses": []
-    },
-    {
-     "roster_id": 23,
-     "handle": "AFrange",
-     "name": "AFrange",
-     "picks": [
-      {
-       "game_id": "202610203",
-       "team": "BAL",
-       "opp": "NO",
-       "game": "NO @ BAL",
-       "outcome": "loss",
-       "prob": 0.772,
-       "hidden": false,
-       "score": "NO 24-17 BAL",
-       "slot_label": "Sun 1:00 PM"
-      }
-     ],
-     "no_pick": false,
-     "correct": 0,
-     "wrong": 1,
-     "pending": 0,
-     "week_points": 0.0,
-     "season_points": 1.0,
-     "lost_this_week": true,
-     "strikes_before": 0,
-     "strikes_after": 1,
-     "eliminated_now": false,
-     "tiebreaker": null,
-     "hidden": 0,
-     "lonely_wins": [],
-     "upset_wins": [],
-     "chalk_losses": [
-      "BAL"
-     ]
-    },
-    {
-     "roster_id": 2,
-     "handle": "AJPeak",
-     "name": "AJPeak",
-     "picks": [
-      {
-       "game_id": "202610233",
-       "team": "TB",
-       "opp": "CLE",
-       "game": "CLE @ TB",
-       "outcome": "loss",
-       "prob": 0.782,
-       "hidden": false,
-       "score": "CLE 23-19 TB",
-       "slot_label": "Sun 1:00 PM"
-      }
-     ],
-     "no_pick": false,
-     "correct": 0,
-     "wrong": 1,
-     "pending": 0,
-     "week_points": 0.0,
-     "season_points": 1.0,
-     "lost_this_week": true,
-     "strikes_before": 0,
-     "strikes_after": 1,
-     "eliminated_now": false,
-     "tiebreaker": null,
-     "hidden": 0,
-     "lonely_wins": [],
-     "upset_wins": [],
-     "chalk_losses": [
-      "TB"
-     ]
-    },
-    {
-     "roster_id": 5,
-     "handle": "avobttam",
-     "name": "avobttam",
-     "picks": [
-      {
-       "game_id": "202610231",
-       "team": "SF",
-       "opp": "MIA",
-       "game": "MIA @ SF",
-       "outcome": "win",
-       "prob": 0.875,
-       "hidden": false,
-       "score": "MIA 13-35 SF",
-       "slot_label": "Sun 4:25 PM"
-      }
-     ],
-     "no_pick": false,
-     "correct": 1,
-     "wrong": 0,
-     "pending": 0,
-     "week_points": 1.0,
-     "season_points": 1.0,
-     "lost_this_week": false,
-     "strikes_before": 1,
-     "strikes_after": 1,
-     "eliminated_now": false,
-     "tiebreaker": null,
-     "hidden": 0,
-     "lonely_wins": [],
-     "upset_wins": [],
-     "chalk_losses": []
-    },
-    {
-     "roster_id": 31,
-     "handle": "cbova1222",
-     "name": "cbova1222",
-     "picks": [
-      {
-       "game_id": "202610203",
-       "team": "BAL",
-       "opp": "NO",
-       "game": "NO @ BAL",
-       "outcome": "loss",
-       "prob": 0.772,
-       "hidden": false,
-       "score": "NO 24-17 BAL",
-       "slot_label": "Sun 1:00 PM"
-      }
-     ],
-     "no_pick": false,
-     "correct": 0,
-     "wrong": 1,
-     "pending": 0,
-     "week_points": 0.0,
-     "season_points": 1.0,
-     "lost_this_week": true,
-     "strikes_before": 0,
-     "strikes_after": 1,
-     "eliminated_now": false,
-     "tiebreaker": null,
-     "hidden": 0,
-     "lonely_wins": [],
-     "upset_wins": [],
-     "chalk_losses": [
-      "BAL"
-     ]
-    },
-    {
-     "roster_id": 8,
-     "handle": "creckley",
-     "name": "creckley",
-     "picks": [
-      {
-       "game_id": "202610232",
-       "team": "LAR",
-       "opp": "NYG",
-       "game": "NYG @ LAR",
-       "outcome": "win",
-       "prob": 0.727,
-       "hidden": false,
-       "score": "NYG 6-28 LAR",
-       "slot_label": "Mon 8:15 PM"
-      }
-     ],
-     "no_pick": false,
-     "correct": 1,
-     "wrong": 0,
-     "pending": 0,
-     "week_points": 1.0,
-     "season_points": 1.0,
-     "lost_this_week": false,
-     "strikes_before": 1,
-     "strikes_after": 1,
-     "eliminated_now": false,
-     "tiebreaker": null,
-     "hidden": 0,
-     "lonely_wins": [
-      "LAR"
-     ],
-     "upset_wins": [],
-     "chalk_losses": []
-    },
-    {
-     "roster_id": 13,
-     "handle": "domfan",
-     "name": "domfan",
-     "picks": [
-      {
-       "game_id": "202610233",
-       "team": "TB",
-       "opp": "CLE",
-       "game": "CLE @ TB",
-       "outcome": "loss",
-       "prob": 0.782,
-       "hidden": false,
-       "score": "CLE 23-19 TB",
-       "slot_label": "Sun 1:00 PM"
-      }
-     ],
-     "no_pick": false,
-     "correct": 0,
-     "wrong": 1,
-     "pending": 0,
-     "week_points": 0.0,
-     "season_points": 1.0,
-     "lost_this_week": true,
-     "strikes_before": 0,
-     "strikes_after": 1,
-     "eliminated_now": false,
-     "tiebreaker": null,
-     "hidden": 0,
-     "lonely_wins": [],
-     "upset_wins": [],
-     "chalk_losses": [
-      "TB"
-     ]
-    },
-    {
-     "roster_id": 4,
-     "handle": "Elworth",
-     "name": "Elworth",
-     "picks": [
-      {
-       "game_id": "202610231",
-       "team": "SF",
-       "opp": "MIA",
-       "game": "MIA @ SF",
-       "outcome": "win",
-       "prob": 0.875,
-       "hidden": false,
-       "score": "MIA 13-35 SF",
-       "slot_label": "Sun 4:25 PM"
-      }
-     ],
-     "no_pick": false,
-     "correct": 1,
-     "wrong": 0,
-     "pending": 0,
-     "week_points": 1.0,
-     "season_points": 1.0,
-     "lost_this_week": false,
-     "strikes_before": 1,
-     "strikes_after": 1,
-     "eliminated_now": false,
-     "tiebreaker": null,
-     "hidden": 0,
-     "lonely_wins": [],
-     "upset_wins": [],
-     "chalk_losses": []
-    },
-    {
-     "roster_id": 18,
-     "handle": "glizzygladiator25",
-     "name": "glizzygladiator25",
-     "picks": [
-      {
-       "game_id": "202610231",
-       "team": "SF",
-       "opp": "MIA",
-       "game": "MIA @ SF",
-       "outcome": "win",
-       "prob": 0.875,
-       "hidden": false,
-       "score": "MIA 13-35 SF",
-       "slot_label": "Sun 4:25 PM"
-      }
-     ],
-     "no_pick": false,
-     "correct": 1,
-     "wrong": 0,
-     "pending": 0,
-     "week_points": 1.0,
-     "season_points": 1.0,
-     "lost_this_week": false,
-     "strikes_before": 1,
-     "strikes_after": 1,
-     "eliminated_now": false,
-     "tiebreaker": null,
-     "hidden": 0,
-     "lonely_wins": [],
-     "upset_wins": [],
-     "chalk_losses": []
-    },
-    {
-     "roster_id": 1,
-     "handle": "joefanelli90",
-     "name": "joefanelli90",
-     "picks": [
-      {
-       "game_id": "202610231",
-       "team": "SF",
-       "opp": "MIA",
-       "game": "MIA @ SF",
-       "outcome": "win",
-       "prob": 0.875,
-       "hidden": false,
-       "score": "MIA 13-35 SF",
-       "slot_label": "Sun 4:25 PM"
-      }
-     ],
-     "no_pick": false,
-     "correct": 1,
-     "wrong": 0,
-     "pending": 0,
-     "week_points": 1.0,
-     "season_points": 1.0,
-     "lost_this_week": false,
-     "strikes_before": 1,
-     "strikes_after": 1,
-     "eliminated_now": false,
-     "tiebreaker": null,
-     "hidden": 0,
-     "lonely_wins": [],
-     "upset_wins": [],
-     "chalk_losses": []
-    },
-    {
-     "roster_id": 9,
-     "handle": "KyliePeacock",
-     "name": "KyliePeacock",
-     "picks": [
-      {
-       "game_id": "202610231",
-       "team": "SF",
-       "opp": "MIA",
-       "game": "MIA @ SF",
-       "outcome": "win",
-       "prob": 0.875,
-       "hidden": false,
-       "score": "MIA 13-35 SF",
-       "slot_label": "Sun 4:25 PM"
-      }
-     ],
-     "no_pick": false,
-     "correct": 1,
-     "wrong": 0,
-     "pending": 0,
-     "week_points": 1.0,
-     "season_points": 1.0,
-     "lost_this_week": false,
-     "strikes_before": 1,
-     "strikes_after": 1,
-     "eliminated_now": false,
-     "tiebreaker": null,
-     "hidden": 0,
-     "lonely_wins": [],
-     "upset_wins": [],
-     "chalk_losses": []
-    },
-    {
-     "roster_id": 11,
-     "handle": "leftypapa",
-     "name": "leftypapa",
-     "picks": [
-      {
-       "game_id": "202610233",
-       "team": "TB",
-       "opp": "CLE",
-       "game": "CLE @ TB",
-       "outcome": "loss",
-       "prob": 0.782,
-       "hidden": false,
-       "score": "CLE 23-19 TB",
-       "slot_label": "Sun 1:00 PM"
-      }
-     ],
-     "no_pick": false,
-     "correct": 0,
-     "wrong": 1,
-     "pending": 0,
-     "week_points": 0.0,
-     "season_points": 1.0,
-     "lost_this_week": true,
-     "strikes_before": 0,
-     "strikes_after": 1,
-     "eliminated_now": false,
-     "tiebreaker": null,
-     "hidden": 0,
-     "lonely_wins": [],
-     "upset_wins": [],
-     "chalk_losses": [
-      "TB"
-     ]
-    },
-    {
-     "roster_id": 15,
-     "handle": "lisaseidl",
-     "name": "lisaseidl",
-     "picks": [
-      {
-       "game_id": "202610233",
-       "team": "TB",
-       "opp": "CLE",
-       "game": "CLE @ TB",
-       "outcome": "loss",
-       "prob": 0.782,
-       "hidden": false,
-       "score": "CLE 23-19 TB",
-       "slot_label": "Sun 1:00 PM"
-      }
-     ],
-     "no_pick": false,
-     "correct": 0,
-     "wrong": 1,
-     "pending": 0,
-     "week_points": 0.0,
-     "season_points": 1.0,
-     "lost_this_week": true,
-     "strikes_before": 0,
-     "strikes_after": 1,
-     "eliminated_now": false,
-     "tiebreaker": null,
-     "hidden": 0,
-     "lonely_wins": [],
-     "upset_wins": [],
-     "chalk_losses": [
-      "TB"
-     ]
-    },
-    {
-     "roster_id": 29,
-     "handle": "MichaelSeidl",
-     "name": "MichaelSeidl",
-     "picks": [
-      {
-       "game_id": "202610233",
-       "team": "TB",
-       "opp": "CLE",
-       "game": "CLE @ TB",
-       "outcome": "loss",
-       "prob": 0.782,
-       "hidden": false,
-       "score": "CLE 23-19 TB",
-       "slot_label": "Sun 1:00 PM"
-      }
-     ],
-     "no_pick": false,
-     "correct": 0,
-     "wrong": 1,
-     "pending": 0,
-     "week_points": 0.0,
-     "season_points": 1.0,
-     "lost_this_week": true,
-     "strikes_before": 0,
-     "strikes_after": 1,
-     "eliminated_now": false,
-     "tiebreaker": null,
-     "hidden": 0,
-     "lonely_wins": [],
-     "upset_wins": [],
-     "chalk_losses": [
-      "TB"
-     ]
-    },
-    {
-     "roster_id": 28,
-     "handle": "NickBova",
-     "name": "NickBova",
-     "picks": [
-      {
-       "game_id": "202610203",
-       "team": "BAL",
-       "opp": "NO",
-       "game": "NO @ BAL",
-       "outcome": "loss",
-       "prob": 0.772,
-       "hidden": false,
-       "score": "NO 24-17 BAL",
-       "slot_label": "Sun 1:00 PM"
-      }
-     ],
-     "no_pick": false,
-     "correct": 0,
-     "wrong": 1,
-     "pending": 0,
-     "week_points": 0.0,
-     "season_points": 1.0,
-     "lost_this_week": true,
-     "strikes_before": 0,
-     "strikes_after": 1,
-     "eliminated_now": false,
-     "tiebreaker": null,
-     "hidden": 0,
-     "lonely_wins": [],
-     "upset_wins": [],
-     "chalk_losses": [
-      "BAL"
-     ]
-    },
-    {
-     "roster_id": 3,
-     "handle": "Perko87",
-     "name": "Perko87",
-     "picks": [
-      {
-       "game_id": "202610203",
-       "team": "BAL",
-       "opp": "NO",
-       "game": "NO @ BAL",
-       "outcome": "loss",
-       "prob": 0.772,
-       "hidden": false,
-       "score": "NO 24-17 BAL",
-       "slot_label": "Sun 1:00 PM"
-      }
-     ],
-     "no_pick": false,
-     "correct": 0,
-     "wrong": 1,
-     "pending": 0,
-     "week_points": 0.0,
-     "season_points": 1.0,
-     "lost_this_week": true,
-     "strikes_before": 0,
-     "strikes_after": 1,
-     "eliminated_now": false,
-     "tiebreaker": null,
-     "hidden": 0,
-     "lonely_wins": [],
-     "upset_wins": [],
-     "chalk_losses": [
-      "BAL"
-     ]
-    },
-    {
-     "roster_id": 21,
-     "handle": "stuto",
-     "name": "stuto",
-     "picks": [
-      {
-       "game_id": "202610231",
-       "team": "SF",
-       "opp": "MIA",
-       "game": "MIA @ SF",
-       "outcome": "win",
-       "prob": 0.875,
-       "hidden": false,
-       "score": "MIA 13-35 SF",
-       "slot_label": "Sun 4:25 PM"
-      }
-     ],
-     "no_pick": false,
-     "correct": 1,
-     "wrong": 0,
-     "pending": 0,
-     "week_points": 1.0,
-     "season_points": 1.0,
-     "lost_this_week": false,
-     "strikes_before": 1,
-     "strikes_after": 1,
-     "eliminated_now": false,
-     "tiebreaker": null,
-     "hidden": 0,
-     "lonely_wins": [],
-     "upset_wins": [],
-     "chalk_losses": []
-    },
-    {
-     "roster_id": 20,
-     "handle": "vcaval",
-     "name": "vcaval",
-     "picks": [
-      {
-       "game_id": "202610229",
-       "team": "LAC",
-       "opp": "LV",
-       "game": "LV @ LAC",
-       "outcome": "loss",
-       "prob": 0.729,
-       "hidden": false,
-       "score": "LV 26-14 LAC",
-       "slot_label": "Sun 4:05 PM"
-      }
-     ],
-     "no_pick": false,
-     "correct": 0,
-     "wrong": 1,
-     "pending": 0,
-     "week_points": 0.0,
-     "season_points": 1.0,
-     "lost_this_week": true,
-     "strikes_before": 0,
-     "strikes_after": 1,
-     "eliminated_now": false,
-     "tiebreaker": null,
-     "hidden": 0,
-     "lonely_wins": [],
-     "upset_wins": [],
-     "chalk_losses": [
-      "LAC"
-     ]
-    },
-    {
-     "roster_id": 17,
-     "handle": "Yungmulletgoat",
-     "name": "Yungmulletgoat",
-     "picks": [
-      {
-       "game_id": "202610231",
-       "team": "SF",
-       "opp": "MIA",
-       "game": "MIA @ SF",
-       "outcome": "win",
-       "prob": 0.875,
-       "hidden": false,
-       "score": "MIA 13-35 SF",
-       "slot_label": "Sun 4:25 PM"
-      }
-     ],
-     "no_pick": false,
-     "correct": 1,
-     "wrong": 0,
-     "pending": 0,
-     "week_points": 1.0,
-     "season_points": 1.0,
-     "lost_this_week": false,
-     "strikes_before": 1,
-     "strikes_after": 1,
-     "eliminated_now": false,
-     "tiebreaker": null,
-     "hidden": 0,
-     "lonely_wins": [],
-     "upset_wins": [],
-     "chalk_losses": []
-    },
-    {
-     "roster_id": 10,
-     "handle": "CBrown59",
-     "name": "CBrown59",
-     "picks": [],
-     "no_pick": true,
-     "correct": 0,
-     "wrong": 0,
-     "pending": 0,
-     "week_points": 0.0,
-     "season_points": 0.0,
-     "lost_this_week": true,
-     "strikes_before": 1,
-     "strikes_after": 2,
-     "eliminated_now": false,
-     "tiebreaker": null,
-     "hidden": 0,
-     "lonely_wins": [],
-     "upset_wins": [],
-     "chalk_losses": []
-    },
-    {
-     "roster_id": 12,
-     "handle": "SaraWuite",
-     "name": "SaraWuite",
-     "picks": [
-      {
-       "game_id": "202610233",
-       "team": "TB",
-       "opp": "CLE",
-       "game": "CLE @ TB",
-       "outcome": "loss",
-       "prob": 0.782,
-       "hidden": false,
-       "score": "CLE 23-19 TB",
-       "slot_label": "Sun 1:00 PM"
-      }
-     ],
-     "no_pick": false,
-     "correct": 0,
-     "wrong": 1,
-     "pending": 0,
-     "week_points": 0.0,
-     "season_points": 0.0,
-     "lost_this_week": true,
-     "strikes_before": 1,
-     "strikes_after": 2,
-     "eliminated_now": false,
-     "tiebreaker": null,
-     "hidden": 0,
-     "lonely_wins": [],
-     "upset_wins": [],
-     "chalk_losses": [
-      "TB"
-     ]
-    },
-    {
-     "roster_id": 6,
-     "handle": "TonyGuazu",
-     "name": "TonyGuazu",
-     "picks": [],
-     "no_pick": true,
-     "correct": 0,
-     "wrong": 0,
-     "pending": 0,
-     "week_points": 0.0,
-     "season_points": 0.0,
-     "lost_this_week": true,
-     "strikes_before": 1,
-     "strikes_after": 2,
-     "eliminated_now": false,
-     "tiebreaker": null,
-     "hidden": 0,
-     "lonely_wins": [],
-     "upset_wins": [],
-     "chalk_losses": []
-    }
-   ],
-   "died": [
-    {
-     "handle": "AJPeak",
-     "pick": {
-      "game_id": "202610233",
-      "team": "TB",
-      "opp": "CLE",
-      "game": "CLE @ TB",
-      "outcome": "loss",
-      "prob": 0.782,
-      "hidden": false,
-      "score": "CLE 23-19 TB",
-      "slot_label": "Sun 1:00 PM"
-     },
-     "strikes_after": 1,
-     "eliminated_now": false
-    },
-    {
-     "handle": "Perko87",
-     "pick": {
-      "game_id": "202610203",
-      "team": "BAL",
-      "opp": "NO",
-      "game": "NO @ BAL",
-      "outcome": "loss",
-      "prob": 0.772,
-      "hidden": false,
-      "score": "NO 24-17 BAL",
-      "slot_label": "Sun 1:00 PM"
-     },
-     "strikes_after": 1,
-     "eliminated_now": false
-    },
-    {
-     "handle": "leftypapa",
-     "pick": {
-      "game_id": "202610233",
-      "team": "TB",
-      "opp": "CLE",
-      "game": "CLE @ TB",
-      "outcome": "loss",
-      "prob": 0.782,
-      "hidden": false,
-      "score": "CLE 23-19 TB",
-      "slot_label": "Sun 1:00 PM"
-     },
-     "strikes_after": 1,
-     "eliminated_now": false
-    },
-    {
-     "handle": "SaraWuite",
-     "pick": {
-      "game_id": "202610233",
-      "team": "TB",
-      "opp": "CLE",
-      "game": "CLE @ TB",
-      "outcome": "loss",
-      "prob": 0.782,
-      "hidden": false,
-      "score": "CLE 23-19 TB",
-      "slot_label": "Sun 1:00 PM"
-     },
-     "strikes_after": 2,
-     "eliminated_now": false
-    },
-    {
-     "handle": "domfan",
-     "pick": {
-      "game_id": "202610233",
-      "team": "TB",
-      "opp": "CLE",
-      "game": "CLE @ TB",
-      "outcome": "loss",
-      "prob": 0.782,
-      "hidden": false,
-      "score": "CLE 23-19 TB",
-      "slot_label": "Sun 1:00 PM"
-     },
-     "strikes_after": 1,
-     "eliminated_now": false
-    },
-    {
-     "handle": "lisaseidl",
-     "pick": {
-      "game_id": "202610233",
-      "team": "TB",
-      "opp": "CLE",
-      "game": "CLE @ TB",
-      "outcome": "loss",
-      "prob": 0.782,
-      "hidden": false,
-      "score": "CLE 23-19 TB",
-      "slot_label": "Sun 1:00 PM"
-     },
-     "strikes_after": 1,
-     "eliminated_now": false
-    },
-    {
-     "handle": "vcaval",
-     "pick": {
-      "game_id": "202610229",
-      "team": "LAC",
-      "opp": "LV",
-      "game": "LV @ LAC",
-      "outcome": "loss",
-      "prob": 0.729,
-      "hidden": false,
-      "score": "LV 26-14 LAC",
-      "slot_label": "Sun 4:05 PM"
-     },
-     "strikes_after": 1,
-     "eliminated_now": false
-    },
-    {
-     "handle": "AFrange",
-     "pick": {
-      "game_id": "202610203",
-      "team": "BAL",
-      "opp": "NO",
-      "game": "NO @ BAL",
-      "outcome": "loss",
-      "prob": 0.772,
-      "hidden": false,
-      "score": "NO 24-17 BAL",
-      "slot_label": "Sun 1:00 PM"
-     },
-     "strikes_after": 1,
-     "eliminated_now": false
-    },
-    {
-     "handle": "NickBova",
-     "pick": {
-      "game_id": "202610203",
-      "team": "BAL",
-      "opp": "NO",
-      "game": "NO @ BAL",
-      "outcome": "loss",
-      "prob": 0.772,
-      "hidden": false,
-      "score": "NO 24-17 BAL",
-      "slot_label": "Sun 1:00 PM"
-     },
-     "strikes_after": 1,
-     "eliminated_now": false
-    },
-    {
-     "handle": "MichaelSeidl",
-     "pick": {
-      "game_id": "202610233",
-      "team": "TB",
-      "opp": "CLE",
-      "game": "CLE @ TB",
-      "outcome": "loss",
-      "prob": 0.782,
-      "hidden": false,
-      "score": "CLE 23-19 TB",
-      "slot_label": "Sun 1:00 PM"
-     },
-     "strikes_after": 1,
-     "eliminated_now": false
-    },
-    {
-     "handle": "cbova1222",
-     "pick": {
-      "game_id": "202610203",
-      "team": "BAL",
-      "opp": "NO",
-      "game": "NO @ BAL",
-      "outcome": "loss",
-      "prob": 0.772,
-      "hidden": false,
-      "score": "NO 24-17 BAL",
-      "slot_label": "Sun 1:00 PM"
-     },
-     "strikes_after": 1,
-     "eliminated_now": false
-    }
-   ],
-   "no_pick": [
-    "TonyGuazu",
-    "CBrown59"
-   ],
-   "alive_after": 31,
-   "consensus": [
-    {
-     "team": "SF",
-     "count": 13
-    },
-    {
-     "team": "TB",
-     "count": 6
-    },
-    {
-     "team": "BAL",
-     "count": 4
-    },
-    {
-     "team": "GB",
-     "count": 2
-    },
-    {
-     "team": "LAR",
-     "count": 1
-    },
-    {
-     "team": "LAC",
-     "count": 1
-    },
-    {
-     "team": "DAL",
-     "count": 1
-    },
-    {
-     "team": "KC",
-     "count": 1
-    }
-   ],
-   "killer_games": [
-    {
-     "game_id": "202610233",
-     "game": "CLE @ TB",
-     "winner": "CLE",
-     "upset": true,
-     "fav": "TB",
-     "fav_prob": 0.782,
-     "picks": {
-      "TB": 6
-     }
-    },
-    {
-     "game_id": "202610203",
-     "game": "NO @ BAL",
-     "winner": "NO",
-     "upset": true,
-     "fav": "BAL",
-     "fav_prob": 0.772,
-     "picks": {
-      "BAL": 4
-     }
-    },
-    {
-     "game_id": "202610229",
-     "game": "LV @ LAC",
-     "winner": "LV",
-     "upset": true,
-     "fav": "LAC",
-     "fav_prob": 0.729,
-     "picks": {
-      "LAC": 1
-     }
-    }
-   ]
   },
   "infinity_war": {
    "league_id": "1400511807180828672",
@@ -8405,6 +7625,1387 @@
      "fav_prob": 0.782,
      "picks": {
       "TB": 10
+     }
+    }
+   ]
+  },
+  "poop": {
+   "league_id": "1392226517005635584",
+   "league_name": "Poop 2026",
+   "provisional": false,
+   "kind": "survivor",
+   "entries_total": 31,
+   "weekly_pick_limit": 1,
+   "revives_allowed": 2,
+   "payouts": {},
+   "field": [
+    {
+     "game_id": "202610233",
+     "game": "CLE @ TB",
+     "winner": "CLE",
+     "upset": true,
+     "fav": "TB",
+     "fav_prob": 0.782,
+     "picks": {
+      "TB": 6
+     }
+    },
+    {
+     "game_id": "202610203",
+     "game": "NO @ BAL",
+     "winner": "NO",
+     "upset": true,
+     "fav": "BAL",
+     "fav_prob": 0.772,
+     "picks": {
+      "BAL": 4
+     }
+    },
+    {
+     "game_id": "202610224",
+     "game": "GB @ NYJ",
+     "winner": "GB",
+     "upset": false,
+     "fav": "GB",
+     "fav_prob": 0.618,
+     "picks": {
+      "GB": 2
+     }
+    },
+    {
+     "game_id": "202610229",
+     "game": "LV @ LAC",
+     "winner": "LV",
+     "upset": true,
+     "fav": "LAC",
+     "fav_prob": 0.729,
+     "picks": {
+      "LAC": 1
+     }
+    },
+    {
+     "game_id": "202610231",
+     "game": "MIA @ SF",
+     "winner": "SF",
+     "upset": false,
+     "fav": "SF",
+     "fav_prob": 0.875,
+     "picks": {
+      "SF": 13
+     }
+    },
+    {
+     "game_id": "202610209",
+     "game": "WAS @ DAL",
+     "winner": "DAL",
+     "upset": false,
+     "fav": "DAL",
+     "fav_prob": 0.652,
+     "picks": {
+      "DAL": 1
+     }
+    },
+    {
+     "game_id": "202610216",
+     "game": "IND @ KC",
+     "winner": "KC",
+     "upset": false,
+     "fav": "KC",
+     "fav_prob": 0.707,
+     "picks": {
+      "KC": 1
+     }
+    },
+    {
+     "game_id": "202610232",
+     "game": "NYG @ LAR",
+     "winner": "LAR",
+     "upset": false,
+     "fav": "LAR",
+     "fav_prob": 0.727,
+     "picks": {
+      "LAR": 1
+     }
+    }
+   ],
+   "entries": [
+    {
+     "roster_id": 26,
+     "handle": "aelliott2214",
+     "name": "aelliott2214",
+     "picks": [
+      {
+       "game_id": "202610231",
+       "team": "SF",
+       "opp": "MIA",
+       "game": "MIA @ SF",
+       "outcome": "win",
+       "prob": 0.875,
+       "hidden": false,
+       "score": "MIA 13-35 SF",
+       "slot_label": "Sun 4:25 PM"
+      }
+     ],
+     "no_pick": false,
+     "correct": 1,
+     "wrong": 0,
+     "pending": 0,
+     "week_points": 1.0,
+     "season_points": 2.0,
+     "lost_this_week": false,
+     "strikes_before": 0,
+     "strikes_after": 0,
+     "eliminated_now": false,
+     "tiebreaker": null,
+     "hidden": 0,
+     "lonely_wins": [],
+     "upset_wins": [],
+     "chalk_losses": []
+    },
+    {
+     "roster_id": 7,
+     "handle": "albuchan",
+     "name": "albuchan",
+     "picks": [
+      {
+       "game_id": "202610231",
+       "team": "SF",
+       "opp": "MIA",
+       "game": "MIA @ SF",
+       "outcome": "win",
+       "prob": 0.875,
+       "hidden": false,
+       "score": "MIA 13-35 SF",
+       "slot_label": "Sun 4:25 PM"
+      }
+     ],
+     "no_pick": false,
+     "correct": 1,
+     "wrong": 0,
+     "pending": 0,
+     "week_points": 1.0,
+     "season_points": 2.0,
+     "lost_this_week": false,
+     "strikes_before": 0,
+     "strikes_after": 0,
+     "eliminated_now": false,
+     "tiebreaker": null,
+     "hidden": 0,
+     "lonely_wins": [],
+     "upset_wins": [],
+     "chalk_losses": []
+    },
+    {
+     "roster_id": 30,
+     "handle": "CarlosDangers",
+     "name": "CarlosDangers",
+     "picks": [
+      {
+       "game_id": "202610231",
+       "team": "SF",
+       "opp": "MIA",
+       "game": "MIA @ SF",
+       "outcome": "win",
+       "prob": 0.875,
+       "hidden": false,
+       "score": "MIA 13-35 SF",
+       "slot_label": "Sun 4:25 PM"
+      }
+     ],
+     "no_pick": false,
+     "correct": 1,
+     "wrong": 0,
+     "pending": 0,
+     "week_points": 1.0,
+     "season_points": 2.0,
+     "lost_this_week": false,
+     "strikes_before": 0,
+     "strikes_after": 0,
+     "eliminated_now": false,
+     "tiebreaker": null,
+     "hidden": 0,
+     "lonely_wins": [],
+     "upset_wins": [],
+     "chalk_losses": []
+    },
+    {
+     "roster_id": 25,
+     "handle": "DunkinDutchman45",
+     "name": "DunkinDutchman45",
+     "picks": [
+      {
+       "game_id": "202610231",
+       "team": "SF",
+       "opp": "MIA",
+       "game": "MIA @ SF",
+       "outcome": "win",
+       "prob": 0.875,
+       "hidden": false,
+       "score": "MIA 13-35 SF",
+       "slot_label": "Sun 4:25 PM"
+      }
+     ],
+     "no_pick": false,
+     "correct": 1,
+     "wrong": 0,
+     "pending": 0,
+     "week_points": 1.0,
+     "season_points": 2.0,
+     "lost_this_week": false,
+     "strikes_before": 0,
+     "strikes_after": 0,
+     "eliminated_now": false,
+     "tiebreaker": null,
+     "hidden": 0,
+     "lonely_wins": [],
+     "upset_wins": [],
+     "chalk_losses": []
+    },
+    {
+     "roster_id": 22,
+     "handle": "Intipach",
+     "name": "Intipach",
+     "picks": [
+      {
+       "game_id": "202610209",
+       "team": "DAL",
+       "opp": "WAS",
+       "game": "WAS @ DAL",
+       "outcome": "win",
+       "prob": 0.652,
+       "hidden": false,
+       "score": "WAS 20-37 DAL",
+       "slot_label": "Sun 4:25 PM"
+      }
+     ],
+     "no_pick": false,
+     "correct": 1,
+     "wrong": 0,
+     "pending": 0,
+     "week_points": 1.0,
+     "season_points": 2.0,
+     "lost_this_week": false,
+     "strikes_before": 0,
+     "strikes_after": 0,
+     "eliminated_now": false,
+     "tiebreaker": null,
+     "hidden": 0,
+     "lonely_wins": [
+      "DAL"
+     ],
+     "upset_wins": [],
+     "chalk_losses": []
+    },
+    {
+     "roster_id": 24,
+     "handle": "Isabelle312",
+     "name": "Isabelle312",
+     "picks": [
+      {
+       "game_id": "202610216",
+       "team": "KC",
+       "opp": "IND",
+       "game": "IND @ KC",
+       "outcome": "win",
+       "prob": 0.707,
+       "hidden": false,
+       "score": "IND 30-33 KC",
+       "slot_label": "Sun 8:20 PM"
+      }
+     ],
+     "no_pick": false,
+     "correct": 1,
+     "wrong": 0,
+     "pending": 0,
+     "week_points": 1.0,
+     "season_points": 2.0,
+     "lost_this_week": false,
+     "strikes_before": 0,
+     "strikes_after": 0,
+     "eliminated_now": false,
+     "tiebreaker": null,
+     "hidden": 0,
+     "lonely_wins": [
+      "KC"
+     ],
+     "upset_wins": [],
+     "chalk_losses": []
+    },
+    {
+     "roster_id": 19,
+     "handle": "jj833041",
+     "name": "jj833041",
+     "picks": [
+      {
+       "game_id": "202610224",
+       "team": "GB",
+       "opp": "NYJ",
+       "game": "GB @ NYJ",
+       "outcome": "win",
+       "prob": 0.618,
+       "hidden": false,
+       "score": "GB 20-17 NYJ",
+       "slot_label": "Sun 1:00 PM"
+      }
+     ],
+     "no_pick": false,
+     "correct": 1,
+     "wrong": 0,
+     "pending": 0,
+     "week_points": 1.0,
+     "season_points": 2.0,
+     "lost_this_week": false,
+     "strikes_before": 0,
+     "strikes_after": 0,
+     "eliminated_now": false,
+     "tiebreaker": null,
+     "hidden": 0,
+     "lonely_wins": [],
+     "upset_wins": [],
+     "chalk_losses": []
+    },
+    {
+     "roster_id": 27,
+     "handle": "JohnDaveyNATTYCHAMP",
+     "name": "JohnDaveyNATTYCHAMP",
+     "picks": [
+      {
+       "game_id": "202610231",
+       "team": "SF",
+       "opp": "MIA",
+       "game": "MIA @ SF",
+       "outcome": "win",
+       "prob": 0.875,
+       "hidden": false,
+       "score": "MIA 13-35 SF",
+       "slot_label": "Sun 4:25 PM"
+      }
+     ],
+     "no_pick": false,
+     "correct": 1,
+     "wrong": 0,
+     "pending": 0,
+     "week_points": 1.0,
+     "season_points": 2.0,
+     "lost_this_week": false,
+     "strikes_before": 0,
+     "strikes_after": 0,
+     "eliminated_now": false,
+     "tiebreaker": null,
+     "hidden": 0,
+     "lonely_wins": [],
+     "upset_wins": [],
+     "chalk_losses": []
+    },
+    {
+     "roster_id": 14,
+     "handle": "markymark317",
+     "name": "markymark317",
+     "picks": [
+      {
+       "game_id": "202610231",
+       "team": "SF",
+       "opp": "MIA",
+       "game": "MIA @ SF",
+       "outcome": "win",
+       "prob": 0.875,
+       "hidden": false,
+       "score": "MIA 13-35 SF",
+       "slot_label": "Sun 4:25 PM"
+      }
+     ],
+     "no_pick": false,
+     "correct": 1,
+     "wrong": 0,
+     "pending": 0,
+     "week_points": 1.0,
+     "season_points": 2.0,
+     "lost_this_week": false,
+     "strikes_before": 0,
+     "strikes_after": 0,
+     "eliminated_now": false,
+     "tiebreaker": null,
+     "hidden": 0,
+     "lonely_wins": [],
+     "upset_wins": [],
+     "chalk_losses": []
+    },
+    {
+     "roster_id": 16,
+     "handle": "sydguthrie",
+     "name": "sydguthrie",
+     "picks": [
+      {
+       "game_id": "202610224",
+       "team": "GB",
+       "opp": "NYJ",
+       "game": "GB @ NYJ",
+       "outcome": "win",
+       "prob": 0.618,
+       "hidden": false,
+       "score": "GB 20-17 NYJ",
+       "slot_label": "Sun 1:00 PM"
+      }
+     ],
+     "no_pick": false,
+     "correct": 1,
+     "wrong": 0,
+     "pending": 0,
+     "week_points": 1.0,
+     "season_points": 2.0,
+     "lost_this_week": false,
+     "strikes_before": 0,
+     "strikes_after": 0,
+     "eliminated_now": false,
+     "tiebreaker": null,
+     "hidden": 0,
+     "lonely_wins": [],
+     "upset_wins": [],
+     "chalk_losses": []
+    },
+    {
+     "roster_id": 23,
+     "handle": "AFrange",
+     "name": "AFrange",
+     "picks": [
+      {
+       "game_id": "202610203",
+       "team": "BAL",
+       "opp": "NO",
+       "game": "NO @ BAL",
+       "outcome": "loss",
+       "prob": 0.772,
+       "hidden": false,
+       "score": "NO 24-17 BAL",
+       "slot_label": "Sun 1:00 PM"
+      }
+     ],
+     "no_pick": false,
+     "correct": 0,
+     "wrong": 1,
+     "pending": 0,
+     "week_points": 0.0,
+     "season_points": 1.0,
+     "lost_this_week": true,
+     "strikes_before": 0,
+     "strikes_after": 1,
+     "eliminated_now": false,
+     "tiebreaker": null,
+     "hidden": 0,
+     "lonely_wins": [],
+     "upset_wins": [],
+     "chalk_losses": [
+      "BAL"
+     ]
+    },
+    {
+     "roster_id": 2,
+     "handle": "AJPeak",
+     "name": "AJPeak",
+     "picks": [
+      {
+       "game_id": "202610233",
+       "team": "TB",
+       "opp": "CLE",
+       "game": "CLE @ TB",
+       "outcome": "loss",
+       "prob": 0.782,
+       "hidden": false,
+       "score": "CLE 23-19 TB",
+       "slot_label": "Sun 1:00 PM"
+      }
+     ],
+     "no_pick": false,
+     "correct": 0,
+     "wrong": 1,
+     "pending": 0,
+     "week_points": 0.0,
+     "season_points": 1.0,
+     "lost_this_week": true,
+     "strikes_before": 0,
+     "strikes_after": 1,
+     "eliminated_now": false,
+     "tiebreaker": null,
+     "hidden": 0,
+     "lonely_wins": [],
+     "upset_wins": [],
+     "chalk_losses": [
+      "TB"
+     ]
+    },
+    {
+     "roster_id": 5,
+     "handle": "avobttam",
+     "name": "avobttam",
+     "picks": [
+      {
+       "game_id": "202610231",
+       "team": "SF",
+       "opp": "MIA",
+       "game": "MIA @ SF",
+       "outcome": "win",
+       "prob": 0.875,
+       "hidden": false,
+       "score": "MIA 13-35 SF",
+       "slot_label": "Sun 4:25 PM"
+      }
+     ],
+     "no_pick": false,
+     "correct": 1,
+     "wrong": 0,
+     "pending": 0,
+     "week_points": 1.0,
+     "season_points": 1.0,
+     "lost_this_week": false,
+     "strikes_before": 1,
+     "strikes_after": 1,
+     "eliminated_now": false,
+     "tiebreaker": null,
+     "hidden": 0,
+     "lonely_wins": [],
+     "upset_wins": [],
+     "chalk_losses": []
+    },
+    {
+     "roster_id": 31,
+     "handle": "cbova1222",
+     "name": "cbova1222",
+     "picks": [
+      {
+       "game_id": "202610203",
+       "team": "BAL",
+       "opp": "NO",
+       "game": "NO @ BAL",
+       "outcome": "loss",
+       "prob": 0.772,
+       "hidden": false,
+       "score": "NO 24-17 BAL",
+       "slot_label": "Sun 1:00 PM"
+      }
+     ],
+     "no_pick": false,
+     "correct": 0,
+     "wrong": 1,
+     "pending": 0,
+     "week_points": 0.0,
+     "season_points": 1.0,
+     "lost_this_week": true,
+     "strikes_before": 0,
+     "strikes_after": 1,
+     "eliminated_now": false,
+     "tiebreaker": null,
+     "hidden": 0,
+     "lonely_wins": [],
+     "upset_wins": [],
+     "chalk_losses": [
+      "BAL"
+     ]
+    },
+    {
+     "roster_id": 8,
+     "handle": "creckley",
+     "name": "creckley",
+     "picks": [
+      {
+       "game_id": "202610232",
+       "team": "LAR",
+       "opp": "NYG",
+       "game": "NYG @ LAR",
+       "outcome": "win",
+       "prob": 0.727,
+       "hidden": false,
+       "score": "NYG 6-28 LAR",
+       "slot_label": "Mon 8:15 PM"
+      }
+     ],
+     "no_pick": false,
+     "correct": 1,
+     "wrong": 0,
+     "pending": 0,
+     "week_points": 1.0,
+     "season_points": 1.0,
+     "lost_this_week": false,
+     "strikes_before": 1,
+     "strikes_after": 1,
+     "eliminated_now": false,
+     "tiebreaker": null,
+     "hidden": 0,
+     "lonely_wins": [
+      "LAR"
+     ],
+     "upset_wins": [],
+     "chalk_losses": []
+    },
+    {
+     "roster_id": 13,
+     "handle": "domfan",
+     "name": "domfan",
+     "picks": [
+      {
+       "game_id": "202610233",
+       "team": "TB",
+       "opp": "CLE",
+       "game": "CLE @ TB",
+       "outcome": "loss",
+       "prob": 0.782,
+       "hidden": false,
+       "score": "CLE 23-19 TB",
+       "slot_label": "Sun 1:00 PM"
+      }
+     ],
+     "no_pick": false,
+     "correct": 0,
+     "wrong": 1,
+     "pending": 0,
+     "week_points": 0.0,
+     "season_points": 1.0,
+     "lost_this_week": true,
+     "strikes_before": 0,
+     "strikes_after": 1,
+     "eliminated_now": false,
+     "tiebreaker": null,
+     "hidden": 0,
+     "lonely_wins": [],
+     "upset_wins": [],
+     "chalk_losses": [
+      "TB"
+     ]
+    },
+    {
+     "roster_id": 4,
+     "handle": "Elworth",
+     "name": "Elworth",
+     "picks": [
+      {
+       "game_id": "202610231",
+       "team": "SF",
+       "opp": "MIA",
+       "game": "MIA @ SF",
+       "outcome": "win",
+       "prob": 0.875,
+       "hidden": false,
+       "score": "MIA 13-35 SF",
+       "slot_label": "Sun 4:25 PM"
+      }
+     ],
+     "no_pick": false,
+     "correct": 1,
+     "wrong": 0,
+     "pending": 0,
+     "week_points": 1.0,
+     "season_points": 1.0,
+     "lost_this_week": false,
+     "strikes_before": 1,
+     "strikes_after": 1,
+     "eliminated_now": false,
+     "tiebreaker": null,
+     "hidden": 0,
+     "lonely_wins": [],
+     "upset_wins": [],
+     "chalk_losses": []
+    },
+    {
+     "roster_id": 18,
+     "handle": "glizzygladiator25",
+     "name": "glizzygladiator25",
+     "picks": [
+      {
+       "game_id": "202610231",
+       "team": "SF",
+       "opp": "MIA",
+       "game": "MIA @ SF",
+       "outcome": "win",
+       "prob": 0.875,
+       "hidden": false,
+       "score": "MIA 13-35 SF",
+       "slot_label": "Sun 4:25 PM"
+      }
+     ],
+     "no_pick": false,
+     "correct": 1,
+     "wrong": 0,
+     "pending": 0,
+     "week_points": 1.0,
+     "season_points": 1.0,
+     "lost_this_week": false,
+     "strikes_before": 1,
+     "strikes_after": 1,
+     "eliminated_now": false,
+     "tiebreaker": null,
+     "hidden": 0,
+     "lonely_wins": [],
+     "upset_wins": [],
+     "chalk_losses": []
+    },
+    {
+     "roster_id": 1,
+     "handle": "joefanelli90",
+     "name": "joefanelli90",
+     "picks": [
+      {
+       "game_id": "202610231",
+       "team": "SF",
+       "opp": "MIA",
+       "game": "MIA @ SF",
+       "outcome": "win",
+       "prob": 0.875,
+       "hidden": false,
+       "score": "MIA 13-35 SF",
+       "slot_label": "Sun 4:25 PM"
+      }
+     ],
+     "no_pick": false,
+     "correct": 1,
+     "wrong": 0,
+     "pending": 0,
+     "week_points": 1.0,
+     "season_points": 1.0,
+     "lost_this_week": false,
+     "strikes_before": 1,
+     "strikes_after": 1,
+     "eliminated_now": false,
+     "tiebreaker": null,
+     "hidden": 0,
+     "lonely_wins": [],
+     "upset_wins": [],
+     "chalk_losses": []
+    },
+    {
+     "roster_id": 9,
+     "handle": "KyliePeacock",
+     "name": "KyliePeacock",
+     "picks": [
+      {
+       "game_id": "202610231",
+       "team": "SF",
+       "opp": "MIA",
+       "game": "MIA @ SF",
+       "outcome": "win",
+       "prob": 0.875,
+       "hidden": false,
+       "score": "MIA 13-35 SF",
+       "slot_label": "Sun 4:25 PM"
+      }
+     ],
+     "no_pick": false,
+     "correct": 1,
+     "wrong": 0,
+     "pending": 0,
+     "week_points": 1.0,
+     "season_points": 1.0,
+     "lost_this_week": false,
+     "strikes_before": 1,
+     "strikes_after": 1,
+     "eliminated_now": false,
+     "tiebreaker": null,
+     "hidden": 0,
+     "lonely_wins": [],
+     "upset_wins": [],
+     "chalk_losses": []
+    },
+    {
+     "roster_id": 11,
+     "handle": "leftypapa",
+     "name": "leftypapa",
+     "picks": [
+      {
+       "game_id": "202610233",
+       "team": "TB",
+       "opp": "CLE",
+       "game": "CLE @ TB",
+       "outcome": "loss",
+       "prob": 0.782,
+       "hidden": false,
+       "score": "CLE 23-19 TB",
+       "slot_label": "Sun 1:00 PM"
+      }
+     ],
+     "no_pick": false,
+     "correct": 0,
+     "wrong": 1,
+     "pending": 0,
+     "week_points": 0.0,
+     "season_points": 1.0,
+     "lost_this_week": true,
+     "strikes_before": 0,
+     "strikes_after": 1,
+     "eliminated_now": false,
+     "tiebreaker": null,
+     "hidden": 0,
+     "lonely_wins": [],
+     "upset_wins": [],
+     "chalk_losses": [
+      "TB"
+     ]
+    },
+    {
+     "roster_id": 15,
+     "handle": "lisaseidl",
+     "name": "lisaseidl",
+     "picks": [
+      {
+       "game_id": "202610233",
+       "team": "TB",
+       "opp": "CLE",
+       "game": "CLE @ TB",
+       "outcome": "loss",
+       "prob": 0.782,
+       "hidden": false,
+       "score": "CLE 23-19 TB",
+       "slot_label": "Sun 1:00 PM"
+      }
+     ],
+     "no_pick": false,
+     "correct": 0,
+     "wrong": 1,
+     "pending": 0,
+     "week_points": 0.0,
+     "season_points": 1.0,
+     "lost_this_week": true,
+     "strikes_before": 0,
+     "strikes_after": 1,
+     "eliminated_now": false,
+     "tiebreaker": null,
+     "hidden": 0,
+     "lonely_wins": [],
+     "upset_wins": [],
+     "chalk_losses": [
+      "TB"
+     ]
+    },
+    {
+     "roster_id": 29,
+     "handle": "MichaelSeidl",
+     "name": "MichaelSeidl",
+     "picks": [
+      {
+       "game_id": "202610233",
+       "team": "TB",
+       "opp": "CLE",
+       "game": "CLE @ TB",
+       "outcome": "loss",
+       "prob": 0.782,
+       "hidden": false,
+       "score": "CLE 23-19 TB",
+       "slot_label": "Sun 1:00 PM"
+      }
+     ],
+     "no_pick": false,
+     "correct": 0,
+     "wrong": 1,
+     "pending": 0,
+     "week_points": 0.0,
+     "season_points": 1.0,
+     "lost_this_week": true,
+     "strikes_before": 0,
+     "strikes_after": 1,
+     "eliminated_now": false,
+     "tiebreaker": null,
+     "hidden": 0,
+     "lonely_wins": [],
+     "upset_wins": [],
+     "chalk_losses": [
+      "TB"
+     ]
+    },
+    {
+     "roster_id": 28,
+     "handle": "NickBova",
+     "name": "NickBova",
+     "picks": [
+      {
+       "game_id": "202610203",
+       "team": "BAL",
+       "opp": "NO",
+       "game": "NO @ BAL",
+       "outcome": "loss",
+       "prob": 0.772,
+       "hidden": false,
+       "score": "NO 24-17 BAL",
+       "slot_label": "Sun 1:00 PM"
+      }
+     ],
+     "no_pick": false,
+     "correct": 0,
+     "wrong": 1,
+     "pending": 0,
+     "week_points": 0.0,
+     "season_points": 1.0,
+     "lost_this_week": true,
+     "strikes_before": 0,
+     "strikes_after": 1,
+     "eliminated_now": false,
+     "tiebreaker": null,
+     "hidden": 0,
+     "lonely_wins": [],
+     "upset_wins": [],
+     "chalk_losses": [
+      "BAL"
+     ]
+    },
+    {
+     "roster_id": 3,
+     "handle": "Perko87",
+     "name": "Perko87",
+     "picks": [
+      {
+       "game_id": "202610203",
+       "team": "BAL",
+       "opp": "NO",
+       "game": "NO @ BAL",
+       "outcome": "loss",
+       "prob": 0.772,
+       "hidden": false,
+       "score": "NO 24-17 BAL",
+       "slot_label": "Sun 1:00 PM"
+      }
+     ],
+     "no_pick": false,
+     "correct": 0,
+     "wrong": 1,
+     "pending": 0,
+     "week_points": 0.0,
+     "season_points": 1.0,
+     "lost_this_week": true,
+     "strikes_before": 0,
+     "strikes_after": 1,
+     "eliminated_now": false,
+     "tiebreaker": null,
+     "hidden": 0,
+     "lonely_wins": [],
+     "upset_wins": [],
+     "chalk_losses": [
+      "BAL"
+     ]
+    },
+    {
+     "roster_id": 21,
+     "handle": "stuto",
+     "name": "stuto",
+     "picks": [
+      {
+       "game_id": "202610231",
+       "team": "SF",
+       "opp": "MIA",
+       "game": "MIA @ SF",
+       "outcome": "win",
+       "prob": 0.875,
+       "hidden": false,
+       "score": "MIA 13-35 SF",
+       "slot_label": "Sun 4:25 PM"
+      }
+     ],
+     "no_pick": false,
+     "correct": 1,
+     "wrong": 0,
+     "pending": 0,
+     "week_points": 1.0,
+     "season_points": 1.0,
+     "lost_this_week": false,
+     "strikes_before": 1,
+     "strikes_after": 1,
+     "eliminated_now": false,
+     "tiebreaker": null,
+     "hidden": 0,
+     "lonely_wins": [],
+     "upset_wins": [],
+     "chalk_losses": []
+    },
+    {
+     "roster_id": 20,
+     "handle": "vcaval",
+     "name": "vcaval",
+     "picks": [
+      {
+       "game_id": "202610229",
+       "team": "LAC",
+       "opp": "LV",
+       "game": "LV @ LAC",
+       "outcome": "loss",
+       "prob": 0.729,
+       "hidden": false,
+       "score": "LV 26-14 LAC",
+       "slot_label": "Sun 4:05 PM"
+      }
+     ],
+     "no_pick": false,
+     "correct": 0,
+     "wrong": 1,
+     "pending": 0,
+     "week_points": 0.0,
+     "season_points": 1.0,
+     "lost_this_week": true,
+     "strikes_before": 0,
+     "strikes_after": 1,
+     "eliminated_now": false,
+     "tiebreaker": null,
+     "hidden": 0,
+     "lonely_wins": [],
+     "upset_wins": [],
+     "chalk_losses": [
+      "LAC"
+     ]
+    },
+    {
+     "roster_id": 17,
+     "handle": "Yungmulletgoat",
+     "name": "Yungmulletgoat",
+     "picks": [
+      {
+       "game_id": "202610231",
+       "team": "SF",
+       "opp": "MIA",
+       "game": "MIA @ SF",
+       "outcome": "win",
+       "prob": 0.875,
+       "hidden": false,
+       "score": "MIA 13-35 SF",
+       "slot_label": "Sun 4:25 PM"
+      }
+     ],
+     "no_pick": false,
+     "correct": 1,
+     "wrong": 0,
+     "pending": 0,
+     "week_points": 1.0,
+     "season_points": 1.0,
+     "lost_this_week": false,
+     "strikes_before": 1,
+     "strikes_after": 1,
+     "eliminated_now": false,
+     "tiebreaker": null,
+     "hidden": 0,
+     "lonely_wins": [],
+     "upset_wins": [],
+     "chalk_losses": []
+    },
+    {
+     "roster_id": 10,
+     "handle": "CBrown59",
+     "name": "CBrown59",
+     "picks": [],
+     "no_pick": true,
+     "correct": 0,
+     "wrong": 0,
+     "pending": 0,
+     "week_points": 0.0,
+     "season_points": 0.0,
+     "lost_this_week": true,
+     "strikes_before": 1,
+     "strikes_after": 2,
+     "eliminated_now": false,
+     "tiebreaker": null,
+     "hidden": 0,
+     "lonely_wins": [],
+     "upset_wins": [],
+     "chalk_losses": []
+    },
+    {
+     "roster_id": 12,
+     "handle": "SaraWuite",
+     "name": "SaraWuite",
+     "picks": [
+      {
+       "game_id": "202610233",
+       "team": "TB",
+       "opp": "CLE",
+       "game": "CLE @ TB",
+       "outcome": "loss",
+       "prob": 0.782,
+       "hidden": false,
+       "score": "CLE 23-19 TB",
+       "slot_label": "Sun 1:00 PM"
+      }
+     ],
+     "no_pick": false,
+     "correct": 0,
+     "wrong": 1,
+     "pending": 0,
+     "week_points": 0.0,
+     "season_points": 0.0,
+     "lost_this_week": true,
+     "strikes_before": 1,
+     "strikes_after": 2,
+     "eliminated_now": false,
+     "tiebreaker": null,
+     "hidden": 0,
+     "lonely_wins": [],
+     "upset_wins": [],
+     "chalk_losses": [
+      "TB"
+     ]
+    },
+    {
+     "roster_id": 6,
+     "handle": "TonyGuazu",
+     "name": "TonyGuazu",
+     "picks": [],
+     "no_pick": true,
+     "correct": 0,
+     "wrong": 0,
+     "pending": 0,
+     "week_points": 0.0,
+     "season_points": 0.0,
+     "lost_this_week": true,
+     "strikes_before": 1,
+     "strikes_after": 2,
+     "eliminated_now": false,
+     "tiebreaker": null,
+     "hidden": 0,
+     "lonely_wins": [],
+     "upset_wins": [],
+     "chalk_losses": []
+    }
+   ],
+   "died": [
+    {
+     "handle": "AJPeak",
+     "pick": {
+      "game_id": "202610233",
+      "team": "TB",
+      "opp": "CLE",
+      "game": "CLE @ TB",
+      "outcome": "loss",
+      "prob": 0.782,
+      "hidden": false,
+      "score": "CLE 23-19 TB",
+      "slot_label": "Sun 1:00 PM"
+     },
+     "strikes_after": 1,
+     "eliminated_now": false
+    },
+    {
+     "handle": "Perko87",
+     "pick": {
+      "game_id": "202610203",
+      "team": "BAL",
+      "opp": "NO",
+      "game": "NO @ BAL",
+      "outcome": "loss",
+      "prob": 0.772,
+      "hidden": false,
+      "score": "NO 24-17 BAL",
+      "slot_label": "Sun 1:00 PM"
+     },
+     "strikes_after": 1,
+     "eliminated_now": false
+    },
+    {
+     "handle": "leftypapa",
+     "pick": {
+      "game_id": "202610233",
+      "team": "TB",
+      "opp": "CLE",
+      "game": "CLE @ TB",
+      "outcome": "loss",
+      "prob": 0.782,
+      "hidden": false,
+      "score": "CLE 23-19 TB",
+      "slot_label": "Sun 1:00 PM"
+     },
+     "strikes_after": 1,
+     "eliminated_now": false
+    },
+    {
+     "handle": "SaraWuite",
+     "pick": {
+      "game_id": "202610233",
+      "team": "TB",
+      "opp": "CLE",
+      "game": "CLE @ TB",
+      "outcome": "loss",
+      "prob": 0.782,
+      "hidden": false,
+      "score": "CLE 23-19 TB",
+      "slot_label": "Sun 1:00 PM"
+     },
+     "strikes_after": 2,
+     "eliminated_now": false
+    },
+    {
+     "handle": "domfan",
+     "pick": {
+      "game_id": "202610233",
+      "team": "TB",
+      "opp": "CLE",
+      "game": "CLE @ TB",
+      "outcome": "loss",
+      "prob": 0.782,
+      "hidden": false,
+      "score": "CLE 23-19 TB",
+      "slot_label": "Sun 1:00 PM"
+     },
+     "strikes_after": 1,
+     "eliminated_now": false
+    },
+    {
+     "handle": "lisaseidl",
+     "pick": {
+      "game_id": "202610233",
+      "team": "TB",
+      "opp": "CLE",
+      "game": "CLE @ TB",
+      "outcome": "loss",
+      "prob": 0.782,
+      "hidden": false,
+      "score": "CLE 23-19 TB",
+      "slot_label": "Sun 1:00 PM"
+     },
+     "strikes_after": 1,
+     "eliminated_now": false
+    },
+    {
+     "handle": "vcaval",
+     "pick": {
+      "game_id": "202610229",
+      "team": "LAC",
+      "opp": "LV",
+      "game": "LV @ LAC",
+      "outcome": "loss",
+      "prob": 0.729,
+      "hidden": false,
+      "score": "LV 26-14 LAC",
+      "slot_label": "Sun 4:05 PM"
+     },
+     "strikes_after": 1,
+     "eliminated_now": false
+    },
+    {
+     "handle": "AFrange",
+     "pick": {
+      "game_id": "202610203",
+      "team": "BAL",
+      "opp": "NO",
+      "game": "NO @ BAL",
+      "outcome": "loss",
+      "prob": 0.772,
+      "hidden": false,
+      "score": "NO 24-17 BAL",
+      "slot_label": "Sun 1:00 PM"
+     },
+     "strikes_after": 1,
+     "eliminated_now": false
+    },
+    {
+     "handle": "NickBova",
+     "pick": {
+      "game_id": "202610203",
+      "team": "BAL",
+      "opp": "NO",
+      "game": "NO @ BAL",
+      "outcome": "loss",
+      "prob": 0.772,
+      "hidden": false,
+      "score": "NO 24-17 BAL",
+      "slot_label": "Sun 1:00 PM"
+     },
+     "strikes_after": 1,
+     "eliminated_now": false
+    },
+    {
+     "handle": "MichaelSeidl",
+     "pick": {
+      "game_id": "202610233",
+      "team": "TB",
+      "opp": "CLE",
+      "game": "CLE @ TB",
+      "outcome": "loss",
+      "prob": 0.782,
+      "hidden": false,
+      "score": "CLE 23-19 TB",
+      "slot_label": "Sun 1:00 PM"
+     },
+     "strikes_after": 1,
+     "eliminated_now": false
+    },
+    {
+     "handle": "cbova1222",
+     "pick": {
+      "game_id": "202610203",
+      "team": "BAL",
+      "opp": "NO",
+      "game": "NO @ BAL",
+      "outcome": "loss",
+      "prob": 0.772,
+      "hidden": false,
+      "score": "NO 24-17 BAL",
+      "slot_label": "Sun 1:00 PM"
+     },
+     "strikes_after": 1,
+     "eliminated_now": false
+    }
+   ],
+   "no_pick": [
+    "TonyGuazu",
+    "CBrown59"
+   ],
+   "alive_after": 31,
+   "consensus": [
+    {
+     "team": "SF",
+     "count": 13
+    },
+    {
+     "team": "TB",
+     "count": 6
+    },
+    {
+     "team": "BAL",
+     "count": 4
+    },
+    {
+     "team": "GB",
+     "count": 2
+    },
+    {
+     "team": "LAR",
+     "count": 1
+    },
+    {
+     "team": "LAC",
+     "count": 1
+    },
+    {
+     "team": "DAL",
+     "count": 1
+    },
+    {
+     "team": "KC",
+     "count": 1
+    }
+   ],
+   "killer_games": [
+    {
+     "game_id": "202610233",
+     "game": "CLE @ TB",
+     "winner": "CLE",
+     "upset": true,
+     "fav": "TB",
+     "fav_prob": 0.782,
+     "picks": {
+      "TB": 6
+     }
+    },
+    {
+     "game_id": "202610203",
+     "game": "NO @ BAL",
+     "winner": "NO",
+     "upset": true,
+     "fav": "BAL",
+     "fav_prob": 0.772,
+     "picks": {
+      "BAL": 4
+     }
+    },
+    {
+     "game_id": "202610229",
+     "game": "LV @ LAC",
+     "winner": "LV",
+     "upset": true,
+     "fav": "LAC",
+     "fav_prob": 0.729,
+     "picks": {
+      "LAC": 1
      }
     }
    ]
