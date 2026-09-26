@@ -7,3 +7,5 @@ __pycache__/
 *.pyc
 .DS_Store
 Thumbs.db
+# Local preview config for Claude Code sessions opened in this folder.
+.claude/

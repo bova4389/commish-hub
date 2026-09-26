@@ -14,7 +14,7 @@ https://bova4389.github.io/commish-hub/ (pushed 2026-09-09). The repo is
 (Matt's call, same as `LEAGUE.md` in Draft Assistant), and deliberately savage commentary.
 Don't re-litigate the names; don't add contact details of any kind.
 
-## The four leagues
+## The five leagues
 
 | Key | League (as named in Sleeper) | Kind | Names shown | What the recap is about |
 |---|---|---|---|---|
@@ -22,6 +22,10 @@ Don't re-litigate the names; don't add contact details of any kind.
 | `two_mitchs` | 2 Mitchs 1 Cup (12 teams) | head-to-head | **real names** (map in `data/config.json`) | start/sit decisions, actual vs projected, points left on the bench, injuries, waivers |
 | `infinity_war` | Infinity War (Sleeper spells it "Inifnity War") | classic pick'em, 8 picks a week, $20 weekly + season prize | Sleeper handle | the games, the upsets, the bad picks, who took the $20 (ties go to the MNF total-points tiebreaker, never split) |
 | `deadpool` | Deadpool (20 entries, 2 revives) | survivor | Sleeper handle | who died and on what, the killer game, the consensus |
+| `poop` | Poop 2026 (31 entries, 2 revives) | survivor, same terms as Deadpool | Sleeper handle | same as Deadpool |
+
+Poop was added 2026-09-25, with weeks 1 and 2 built back. Bova's Picks also analyzes it (as
+its `sleeper` pool); the hub only recaps it.
 
 **The Other League is deliberately NOT here.** Its recaps live on its own site
 (`Sleeper FF/The Other League/`); the hub only links out. Don't mirror them in.
@@ -34,27 +38,32 @@ css/hub.css             one stylesheet, dark, mobile first; --accent is set per 
 js/hub.js               the renderer (plain script, no modules)
 data/config.json        league ids per season, display names, accents, payouts, the OTL link
 data/<season>/index.json      which weeks have been built (Pages can't list a folder)
-data/<season>/week-NN.json    THE FACTS for one week, all four leagues  <- build_week.py
+data/<season>/week-NN.json    THE FACTS for one week, every league  <- build_week.py
 data/<season>/season.json     the week rollup the cumulative grids read  <- build_season.py
 data/<season>/waivers.json    season-long waiver analysis  <- build_waivers.py (Wed cron)
 recaps/<season>.json    THE WORDS, hand-written, keyed league -> week
 scripts/build_week.py   pulls the week from Sleeper/ESPN, writes the facts file
 scripts/build_season.py folds every week file into season.json (run by build_week.py)
 scripts/build_waivers.py  the waiver wire analysis; Sleeper REST only, no token
+scripts/token_check.py  days left on the Sleeper token; never prints it
 scripts/_cache/         cached API responses (gitignored)
 test/test_waivers.py    fixture test for the waiver metrics -- no network
-.github/workflows/waivers.yml   Wednesday 11am ET waiver refresh
+.github/workflows/waivers.yml   Wednesday 8am ET waiver refresh
+.github/workflows/tuesday.yml   Tuesday 5am ET facts build, every league
 ```
 
 ## The Tuesday routine (how a week gets recapped)
 
-1. **Pull the facts.** Always `--refresh` for the live week — the cache is only for finished weeks.
+1. **Pull the facts.** `.github/workflows/tuesday.yml` does this at 5am ET and commits it, so
+   normally just `git pull`. By hand, always `--refresh` for the live week — the cache is only
+   for finished weeks. `--week latest` picks the week the Action would; `--only a,b` rebuilds
+   some leagues and keeps the rest of an existing week file.
    ```bash
    python scripts/build_week.py --week N --refresh
    ```
    It prints whether the NFL week is final. If it isn't, the file is marked `provisional`, the
    card says so, and no chop/winner is treated as confirmed.
-2. **Read `data/2026/week-NN.json`** and write four entries into `recaps/2026.json`
+2. **Read `data/2026/week-NN.json`** and write one entry per league into `recaps/2026.json`
    (`leagues.<key>.<week>`): `headline`, optional `facts` (3–5 `{k, v}`; omit to auto-build from
    the data), `paragraphs` (2–3, ~200 words). Every number must trace to the facts file.
 3. **Check it in the browser** (`commish-hub` in the workspace `.claude/launch.json`, port 8799),
@@ -85,7 +94,7 @@ leagues; roast his weeks on the same terms as everyone else's. Per league:
   night game); if that is tied too, the pot rolls to next week. The script writes `winners`
   (0 or 1), `tied`, `tiebreak` (actual total + each tied guess), `rollover` and `pot` (which
   carries a previous week's rolled pot forward).
-- **Deadpool** — bodies, the game that did it, whether the consensus pick got everyone killed.
+- **Deadpool and Poop** — bodies, the game that did it, whether the consensus pick got everyone killed.
   A "loss" with revives left is a strike, not a death; the card says `strikes`.
 
 ## Every table saves as an image
@@ -392,6 +401,14 @@ $0 is the real reference price either way.
   chat). Matt copies it from sleeper.com → F12 → Network → a `graphql` request → the
   `authorization` request header. It expires; a "token rejected" error means copy a fresh one.
   Notepad saves it as `.sleeper_token.txt` unless told otherwise, which reads as "no token found".
+- **Sleeper tokens last a year, and the token is now also a repo secret.** A token's `exp` is one
+  year after its `iat`, so the one that broke on 2026-09-21 was simply a year-old login. On
+  2026-09-25 Matt signed in fresh (good to 2027-09-22) and stored it as the `SLEEPER_TOKEN`
+  Actions secret here **and** in `bova4389/bovas-picks`, reversing the earlier "not in secrets"
+  call so the build runs without his PC. `tuesday.yml` runs `token_check.py` first: it opens
+  an issue 30 days before expiry (with the two `gh secret set` commands) and fails the run
+  once it has expired. **Never add a trigger to that workflow that runs on pull requests**: the
+  secret is his whole Sleeper account, not just the pick'em.
 - **Sleeper's `outcome` on a pick is always `"win"`.** It is the pick type, not a result. Picks
   are graded in the script against ESPN finals. `points_by_leg` / `lost_leg_ids` on the roster
   are Sleeper's own grading and agree (checked on 2025 week 5: 10 losses, same ten people).
@@ -441,10 +458,11 @@ be bumped when those change.
   re-checked pick by pick against ESPN finals that day: 164 picks, 0 mismatches.
 - Sleeper's `injury` field on a starter is *today's* status, not game-day: Zay Flowers showed
   "Out" after scoring 26.0 in week 1. Don't write "started an injured player" off it alone.
-- **Partly automated now.** `.github/workflows/waivers.yml` rebuilds the waiver analysis every
-  Wednesday at 11am ET. `build_week.py` is still run by hand on Tuesdays, because the pick'em
-  GraphQL needs Matt's Sleeper login token and putting it in this public repo's secrets was not
-  wanted; the prose has to be hand-written anyway. A Tuesday Action for King's Justice and
-  2 Mitchs alone (the REST leagues) would work if it is ever worth it.
+- **The facts are automated; the words are not.** `tuesday.yml` builds every league at 5am ET
+  Tuesday with the `SLEEPER_TOKEN` secret, with `--strict` so a failing league writes nothing
+  and fails the run rather than overwriting a good week with an error. The local
+  `tuesday-league-recaps` task writes the prose at 6am and skips its own build when this has
+  already committed the week. If the PC is off, the cards still show the numbers with
+  "Recap not written yet".
 - The King's Justice history dashboard (`../kings-justice/dashboard.html`, private repo `bova4389/kings-justice`) is separate. The hub's
   KJ tab is the *weekly* view; the dashboard is four seasons of FAAB history. Link, don't merge.

@@ -1,7 +1,7 @@
 {
  "season": 2026,
  "week": 1,
- "generated": "2026-09-15T17:17:00-04:00",
+ "generated": "2026-09-25T17:14:10-04:00",
  "all_final": true,
  "nfl": {
   "games": [
@@ -7150,6 +7150,1401 @@
      "fav_prob": 0.8,
      "picks": {
       "LAC": 7
+     }
+    }
+   ]
+  },
+  "poop": {
+   "league_id": "1392226517005635584",
+   "league_name": "Poop 2026",
+   "provisional": false,
+   "kind": "survivor",
+   "entries_total": 31,
+   "weekly_pick_limit": 1,
+   "revives_allowed": 2,
+   "payouts": {},
+   "field": [
+    {
+     "game_id": "202610130",
+     "game": "NE @ SEA",
+     "winner": "SEA",
+     "upset": false,
+     "fav": "SEA",
+     "fav_prob": 0.614,
+     "picks": {
+      "SEA": 1
+     }
+    },
+    {
+     "game_id": "202610115",
+     "game": "CLE @ JAX",
+     "winner": "JAX",
+     "upset": false,
+     "fav": "JAX",
+     "fav_prob": 0.777,
+     "picks": {
+      "JAX": 7
+     }
+    },
+    {
+     "game_id": "202610107",
+     "game": "TB @ CIN",
+     "winner": "CIN",
+     "upset": false,
+     "fav": "CIN",
+     "fav_prob": 0.649,
+     "picks": {
+      "CIN": 2
+     }
+    },
+    {
+     "game_id": "202610128",
+     "game": "ATL @ PIT",
+     "winner": "PIT",
+     "upset": false,
+     "fav": "PIT",
+     "fav_prob": 0.708,
+     "picks": {
+      "PIT": 4
+     }
+    },
+    {
+     "game_id": "202610105",
+     "game": "CHI @ CAR",
+     "winner": "CHI",
+     "upset": false,
+     "fav": "CHI",
+     "fav_prob": 0.608,
+     "picks": {
+      "CHI": 2
+     }
+    },
+    {
+     "game_id": "202610111",
+     "game": "NO @ DET",
+     "winner": "DET",
+     "upset": false,
+     "fav": "DET",
+     "fav_prob": 0.734,
+     "picks": {
+      "DET": 2
+     }
+    },
+    {
+     "game_id": "202610114",
+     "game": "BAL @ IND",
+     "winner": "BAL",
+     "upset": false,
+     "fav": "BAL",
+     "fav_prob": 0.606,
+     "picks": {
+      "BAL": 1
+     }
+    },
+    {
+     "game_id": "202610129",
+     "game": "ARI @ LAC",
+     "winner": "ARI",
+     "upset": true,
+     "fav": "LAC",
+     "fav_prob": 0.8,
+     "picks": {
+      "LAC": 11
+     }
+    },
+    {
+     "game_id": "202610125",
+     "game": "MIA @ LV",
+     "winner": "LV",
+     "upset": false,
+     "fav": "LV",
+     "fav_prob": 0.597,
+     "picks": {
+      "LV": 1
+     }
+    }
+   ],
+   "entries": [
+    {
+     "roster_id": 26,
+     "handle": "aelliott2214",
+     "name": "aelliott2214",
+     "picks": [
+      {
+       "game_id": "202610114",
+       "team": "BAL",
+       "opp": "IND",
+       "game": "BAL @ IND",
+       "outcome": "win",
+       "prob": 0.606,
+       "hidden": false,
+       "score": "BAL 41-23 IND",
+       "slot_label": "Sun 1:00 PM"
+      }
+     ],
+     "no_pick": false,
+     "correct": 1,
+     "wrong": 0,
+     "pending": 0,
+     "week_points": 1.0,
+     "season_points": 1.0,
+     "lost_this_week": false,
+     "strikes_before": 0,
+     "strikes_after": 0,
+     "eliminated_now": false,
+     "tiebreaker": null,
+     "hidden": 0,
+     "lonely_wins": [
+      "BAL"
+     ],
+     "upset_wins": [],
+     "chalk_losses": []
+    },
+    {
+     "roster_id": 23,
+     "handle": "AFrange",
+     "name": "AFrange",
+     "picks": [
+      {
+       "game_id": "202610115",
+       "team": "JAX",
+       "opp": "CLE",
+       "game": "CLE @ JAX",
+       "outcome": "win",
+       "prob": 0.777,
+       "hidden": false,
+       "score": "CLE 10-34 JAX",
+       "slot_label": "Sun 1:00 PM"
+      }
+     ],
+     "no_pick": false,
+     "correct": 1,
+     "wrong": 0,
+     "pending": 0,
+     "week_points": 1.0,
+     "season_points": 1.0,
+     "lost_this_week": false,
+     "strikes_before": 0,
+     "strikes_after": 0,
+     "eliminated_now": false,
+     "tiebreaker": null,
+     "hidden": 0,
+     "lonely_wins": [],
+     "upset_wins": [],
+     "chalk_losses": []
+    },
+    {
+     "roster_id": 2,
+     "handle": "AJPeak",
+     "name": "AJPeak",
+     "picks": [
+      {
+       "game_id": "202610115",
+       "team": "JAX",
+       "opp": "CLE",
+       "game": "CLE @ JAX",
+       "outcome": "win",
+       "prob": 0.777,
+       "hidden": false,
+       "score": "CLE 10-34 JAX",
+       "slot_label": "Sun 1:00 PM"
+      }
+     ],
+     "no_pick": false,
+     "correct": 1,
+     "wrong": 0,
+     "pending": 0,
+     "week_points": 1.0,
+     "season_points": 1.0,
+     "lost_this_week": false,
+     "strikes_before": 0,
+     "strikes_after": 0,
+     "eliminated_now": false,
+     "tiebreaker": null,
+     "hidden": 0,
+     "lonely_wins": [],
+     "upset_wins": [],
+     "chalk_losses": []
+    },
+    {
+     "roster_id": 7,
+     "handle": "albuchan",
+     "name": "albuchan",
+     "picks": [
+      {
+       "game_id": "202610115",
+       "team": "JAX",
+       "opp": "CLE",
+       "game": "CLE @ JAX",
+       "outcome": "win",
+       "prob": 0.777,
+       "hidden": false,
+       "score": "CLE 10-34 JAX",
+       "slot_label": "Sun 1:00 PM"
+      }
+     ],
+     "no_pick": false,
+     "correct": 1,
+     "wrong": 0,
+     "pending": 0,
+     "week_points": 1.0,
+     "season_points": 1.0,
+     "lost_this_week": false,
+     "strikes_before": 0,
+     "strikes_after": 0,
+     "eliminated_now": false,
+     "tiebreaker": null,
+     "hidden": 0,
+     "lonely_wins": [],
+     "upset_wins": [],
+     "chalk_losses": []
+    },
+    {
+     "roster_id": 30,
+     "handle": "CarlosDangers",
+     "name": "CarlosDangers",
+     "picks": [
+      {
+       "game_id": "202610128",
+       "team": "PIT",
+       "opp": "ATL",
+       "game": "ATL @ PIT",
+       "outcome": "win",
+       "prob": 0.708,
+       "hidden": false,
+       "score": "ATL 13-20 PIT",
+       "slot_label": "Sun 1:00 PM"
+      }
+     ],
+     "no_pick": false,
+     "correct": 1,
+     "wrong": 0,
+     "pending": 0,
+     "week_points": 1.0,
+     "season_points": 1.0,
+     "lost_this_week": false,
+     "strikes_before": 0,
+     "strikes_after": 0,
+     "eliminated_now": false,
+     "tiebreaker": null,
+     "hidden": 0,
+     "lonely_wins": [],
+     "upset_wins": [],
+     "chalk_losses": []
+    },
+    {
+     "roster_id": 31,
+     "handle": "cbova1222",
+     "name": "cbova1222",
+     "picks": [
+      {
+       "game_id": "202610128",
+       "team": "PIT",
+       "opp": "ATL",
+       "game": "ATL @ PIT",
+       "outcome": "win",
+       "prob": 0.708,
+       "hidden": false,
+       "score": "ATL 13-20 PIT",
+       "slot_label": "Sun 1:00 PM"
+      }
+     ],
+     "no_pick": false,
+     "correct": 1,
+     "wrong": 0,
+     "pending": 0,
+     "week_points": 1.0,
+     "season_points": 1.0,
+     "lost_this_week": false,
+     "strikes_before": 0,
+     "strikes_after": 0,
+     "eliminated_now": false,
+     "tiebreaker": null,
+     "hidden": 0,
+     "lonely_wins": [],
+     "upset_wins": [],
+     "chalk_losses": []
+    },
+    {
+     "roster_id": 13,
+     "handle": "domfan",
+     "name": "domfan",
+     "picks": [
+      {
+       "game_id": "202610130",
+       "team": "SEA",
+       "opp": "NE",
+       "game": "NE @ SEA",
+       "outcome": "win",
+       "prob": 0.614,
+       "hidden": false,
+       "score": "NE 10-13 SEA",
+       "slot_label": "Wed 8:20 PM"
+      }
+     ],
+     "no_pick": false,
+     "correct": 1,
+     "wrong": 0,
+     "pending": 0,
+     "week_points": 1.0,
+     "season_points": 1.0,
+     "lost_this_week": false,
+     "strikes_before": 0,
+     "strikes_after": 0,
+     "eliminated_now": false,
+     "tiebreaker": null,
+     "hidden": 0,
+     "lonely_wins": [
+      "SEA"
+     ],
+     "upset_wins": [],
+     "chalk_losses": []
+    },
+    {
+     "roster_id": 25,
+     "handle": "DunkinDutchman45",
+     "name": "DunkinDutchman45",
+     "picks": [
+      {
+       "game_id": "202610125",
+       "team": "LV",
+       "opp": "MIA",
+       "game": "MIA @ LV",
+       "outcome": "win",
+       "prob": 0.597,
+       "hidden": false,
+       "score": "MIA 13-27 LV",
+       "slot_label": "Sun 4:25 PM"
+      }
+     ],
+     "no_pick": false,
+     "correct": 1,
+     "wrong": 0,
+     "pending": 0,
+     "week_points": 1.0,
+     "season_points": 1.0,
+     "lost_this_week": false,
+     "strikes_before": 0,
+     "strikes_after": 0,
+     "eliminated_now": false,
+     "tiebreaker": null,
+     "hidden": 0,
+     "lonely_wins": [
+      "LV"
+     ],
+     "upset_wins": [],
+     "chalk_losses": []
+    },
+    {
+     "roster_id": 22,
+     "handle": "Intipach",
+     "name": "Intipach",
+     "picks": [
+      {
+       "game_id": "202610107",
+       "team": "CIN",
+       "opp": "TB",
+       "game": "TB @ CIN",
+       "outcome": "win",
+       "prob": 0.649,
+       "hidden": false,
+       "score": "TB 27-33 CIN",
+       "slot_label": "Sun 1:00 PM"
+      }
+     ],
+     "no_pick": false,
+     "correct": 1,
+     "wrong": 0,
+     "pending": 0,
+     "week_points": 1.0,
+     "season_points": 1.0,
+     "lost_this_week": false,
+     "strikes_before": 0,
+     "strikes_after": 0,
+     "eliminated_now": false,
+     "tiebreaker": null,
+     "hidden": 0,
+     "lonely_wins": [],
+     "upset_wins": [],
+     "chalk_losses": []
+    },
+    {
+     "roster_id": 24,
+     "handle": "Isabelle312",
+     "name": "Isabelle312",
+     "picks": [
+      {
+       "game_id": "202610105",
+       "team": "CHI",
+       "opp": "CAR",
+       "game": "CHI @ CAR",
+       "outcome": "win",
+       "prob": 0.608,
+       "hidden": false,
+       "score": "CHI 59-37 CAR",
+       "slot_label": "Sun 1:00 PM"
+      }
+     ],
+     "no_pick": false,
+     "correct": 1,
+     "wrong": 0,
+     "pending": 0,
+     "week_points": 1.0,
+     "season_points": 1.0,
+     "lost_this_week": false,
+     "strikes_before": 0,
+     "strikes_after": 0,
+     "eliminated_now": false,
+     "tiebreaker": null,
+     "hidden": 0,
+     "lonely_wins": [],
+     "upset_wins": [],
+     "chalk_losses": []
+    },
+    {
+     "roster_id": 19,
+     "handle": "jj833041",
+     "name": "jj833041",
+     "picks": [
+      {
+       "game_id": "202610115",
+       "team": "JAX",
+       "opp": "CLE",
+       "game": "CLE @ JAX",
+       "outcome": "win",
+       "prob": 0.777,
+       "hidden": false,
+       "score": "CLE 10-34 JAX",
+       "slot_label": "Sun 1:00 PM"
+      }
+     ],
+     "no_pick": false,
+     "correct": 1,
+     "wrong": 0,
+     "pending": 0,
+     "week_points": 1.0,
+     "season_points": 1.0,
+     "lost_this_week": false,
+     "strikes_before": 0,
+     "strikes_after": 0,
+     "eliminated_now": false,
+     "tiebreaker": null,
+     "hidden": 0,
+     "lonely_wins": [],
+     "upset_wins": [],
+     "chalk_losses": []
+    },
+    {
+     "roster_id": 27,
+     "handle": "JohnDaveyNATTYCHAMP",
+     "name": "JohnDaveyNATTYCHAMP",
+     "picks": [
+      {
+       "game_id": "202610115",
+       "team": "JAX",
+       "opp": "CLE",
+       "game": "CLE @ JAX",
+       "outcome": "win",
+       "prob": 0.777,
+       "hidden": false,
+       "score": "CLE 10-34 JAX",
+       "slot_label": "Sun 1:00 PM"
+      }
+     ],
+     "no_pick": false,
+     "correct": 1,
+     "wrong": 0,
+     "pending": 0,
+     "week_points": 1.0,
+     "season_points": 1.0,
+     "lost_this_week": false,
+     "strikes_before": 0,
+     "strikes_after": 0,
+     "eliminated_now": false,
+     "tiebreaker": null,
+     "hidden": 0,
+     "lonely_wins": [],
+     "upset_wins": [],
+     "chalk_losses": []
+    },
+    {
+     "roster_id": 11,
+     "handle": "leftypapa",
+     "name": "leftypapa",
+     "picks": [
+      {
+       "game_id": "202610128",
+       "team": "PIT",
+       "opp": "ATL",
+       "game": "ATL @ PIT",
+       "outcome": "win",
+       "prob": 0.708,
+       "hidden": false,
+       "score": "ATL 13-20 PIT",
+       "slot_label": "Sun 1:00 PM"
+      }
+     ],
+     "no_pick": false,
+     "correct": 1,
+     "wrong": 0,
+     "pending": 0,
+     "week_points": 1.0,
+     "season_points": 1.0,
+     "lost_this_week": false,
+     "strikes_before": 0,
+     "strikes_after": 0,
+     "eliminated_now": false,
+     "tiebreaker": null,
+     "hidden": 0,
+     "lonely_wins": [],
+     "upset_wins": [],
+     "chalk_losses": []
+    },
+    {
+     "roster_id": 15,
+     "handle": "lisaseidl",
+     "name": "lisaseidl",
+     "picks": [
+      {
+       "game_id": "202610115",
+       "team": "JAX",
+       "opp": "CLE",
+       "game": "CLE @ JAX",
+       "outcome": "win",
+       "prob": 0.777,
+       "hidden": false,
+       "score": "CLE 10-34 JAX",
+       "slot_label": "Sun 1:00 PM"
+      }
+     ],
+     "no_pick": false,
+     "correct": 1,
+     "wrong": 0,
+     "pending": 0,
+     "week_points": 1.0,
+     "season_points": 1.0,
+     "lost_this_week": false,
+     "strikes_before": 0,
+     "strikes_after": 0,
+     "eliminated_now": false,
+     "tiebreaker": null,
+     "hidden": 0,
+     "lonely_wins": [],
+     "upset_wins": [],
+     "chalk_losses": []
+    },
+    {
+     "roster_id": 14,
+     "handle": "markymark317",
+     "name": "markymark317",
+     "picks": [
+      {
+       "game_id": "202610115",
+       "team": "JAX",
+       "opp": "CLE",
+       "game": "CLE @ JAX",
+       "outcome": "win",
+       "prob": 0.777,
+       "hidden": false,
+       "score": "CLE 10-34 JAX",
+       "slot_label": "Sun 1:00 PM"
+      }
+     ],
+     "no_pick": false,
+     "correct": 1,
+     "wrong": 0,
+     "pending": 0,
+     "week_points": 1.0,
+     "season_points": 1.0,
+     "lost_this_week": false,
+     "strikes_before": 0,
+     "strikes_after": 0,
+     "eliminated_now": false,
+     "tiebreaker": null,
+     "hidden": 0,
+     "lonely_wins": [],
+     "upset_wins": [],
+     "chalk_losses": []
+    },
+    {
+     "roster_id": 29,
+     "handle": "MichaelSeidl",
+     "name": "MichaelSeidl",
+     "picks": [
+      {
+       "game_id": "202610128",
+       "team": "PIT",
+       "opp": "ATL",
+       "game": "ATL @ PIT",
+       "outcome": "win",
+       "prob": 0.708,
+       "hidden": false,
+       "score": "ATL 13-20 PIT",
+       "slot_label": "Sun 1:00 PM"
+      }
+     ],
+     "no_pick": false,
+     "correct": 1,
+     "wrong": 0,
+     "pending": 0,
+     "week_points": 1.0,
+     "season_points": 1.0,
+     "lost_this_week": false,
+     "strikes_before": 0,
+     "strikes_after": 0,
+     "eliminated_now": false,
+     "tiebreaker": null,
+     "hidden": 0,
+     "lonely_wins": [],
+     "upset_wins": [],
+     "chalk_losses": []
+    },
+    {
+     "roster_id": 28,
+     "handle": "NickBova",
+     "name": "NickBova",
+     "picks": [
+      {
+       "game_id": "202610111",
+       "team": "DET",
+       "opp": "NO",
+       "game": "NO @ DET",
+       "outcome": "win",
+       "prob": 0.734,
+       "hidden": false,
+       "score": "NO 30-31 DET",
+       "slot_label": "Sun 1:00 PM"
+      }
+     ],
+     "no_pick": false,
+     "correct": 1,
+     "wrong": 0,
+     "pending": 0,
+     "week_points": 1.0,
+     "season_points": 1.0,
+     "lost_this_week": false,
+     "strikes_before": 0,
+     "strikes_after": 0,
+     "eliminated_now": false,
+     "tiebreaker": null,
+     "hidden": 0,
+     "lonely_wins": [],
+     "upset_wins": [],
+     "chalk_losses": []
+    },
+    {
+     "roster_id": 3,
+     "handle": "Perko87",
+     "name": "Perko87",
+     "picks": [
+      {
+       "game_id": "202610107",
+       "team": "CIN",
+       "opp": "TB",
+       "game": "TB @ CIN",
+       "outcome": "win",
+       "prob": 0.649,
+       "hidden": false,
+       "score": "TB 27-33 CIN",
+       "slot_label": "Sun 1:00 PM"
+      }
+     ],
+     "no_pick": false,
+     "correct": 1,
+     "wrong": 0,
+     "pending": 0,
+     "week_points": 1.0,
+     "season_points": 1.0,
+     "lost_this_week": false,
+     "strikes_before": 0,
+     "strikes_after": 0,
+     "eliminated_now": false,
+     "tiebreaker": null,
+     "hidden": 0,
+     "lonely_wins": [],
+     "upset_wins": [],
+     "chalk_losses": []
+    },
+    {
+     "roster_id": 16,
+     "handle": "sydguthrie",
+     "name": "sydguthrie",
+     "picks": [
+      {
+       "game_id": "202610105",
+       "team": "CHI",
+       "opp": "CAR",
+       "game": "CHI @ CAR",
+       "outcome": "win",
+       "prob": 0.608,
+       "hidden": false,
+       "score": "CHI 59-37 CAR",
+       "slot_label": "Sun 1:00 PM"
+      }
+     ],
+     "no_pick": false,
+     "correct": 1,
+     "wrong": 0,
+     "pending": 0,
+     "week_points": 1.0,
+     "season_points": 1.0,
+     "lost_this_week": false,
+     "strikes_before": 0,
+     "strikes_after": 0,
+     "eliminated_now": false,
+     "tiebreaker": null,
+     "hidden": 0,
+     "lonely_wins": [],
+     "upset_wins": [],
+     "chalk_losses": []
+    },
+    {
+     "roster_id": 20,
+     "handle": "vcaval",
+     "name": "vcaval",
+     "picks": [
+      {
+       "game_id": "202610111",
+       "team": "DET",
+       "opp": "NO",
+       "game": "NO @ DET",
+       "outcome": "win",
+       "prob": 0.734,
+       "hidden": false,
+       "score": "NO 30-31 DET",
+       "slot_label": "Sun 1:00 PM"
+      }
+     ],
+     "no_pick": false,
+     "correct": 1,
+     "wrong": 0,
+     "pending": 0,
+     "week_points": 1.0,
+     "season_points": 1.0,
+     "lost_this_week": false,
+     "strikes_before": 0,
+     "strikes_after": 0,
+     "eliminated_now": false,
+     "tiebreaker": null,
+     "hidden": 0,
+     "lonely_wins": [],
+     "upset_wins": [],
+     "chalk_losses": []
+    },
+    {
+     "roster_id": 5,
+     "handle": "avobttam",
+     "name": "avobttam",
+     "picks": [
+      {
+       "game_id": "202610129",
+       "team": "LAC",
+       "opp": "ARI",
+       "game": "ARI @ LAC",
+       "outcome": "loss",
+       "prob": 0.8,
+       "hidden": false,
+       "score": "ARI 26-14 LAC",
+       "slot_label": "Sun 4:25 PM"
+      }
+     ],
+     "no_pick": false,
+     "correct": 0,
+     "wrong": 1,
+     "pending": 0,
+     "week_points": 0.0,
+     "season_points": 0.0,
+     "lost_this_week": true,
+     "strikes_before": 0,
+     "strikes_after": 1,
+     "eliminated_now": false,
+     "tiebreaker": null,
+     "hidden": 0,
+     "lonely_wins": [],
+     "upset_wins": [],
+     "chalk_losses": [
+      "LAC"
+     ]
+    },
+    {
+     "roster_id": 10,
+     "handle": "CBrown59",
+     "name": "CBrown59",
+     "picks": [
+      {
+       "game_id": "202610129",
+       "team": "LAC",
+       "opp": "ARI",
+       "game": "ARI @ LAC",
+       "outcome": "loss",
+       "prob": 0.8,
+       "hidden": false,
+       "score": "ARI 26-14 LAC",
+       "slot_label": "Sun 4:25 PM"
+      }
+     ],
+     "no_pick": false,
+     "correct": 0,
+     "wrong": 1,
+     "pending": 0,
+     "week_points": 0.0,
+     "season_points": 0.0,
+     "lost_this_week": true,
+     "strikes_before": 0,
+     "strikes_after": 1,
+     "eliminated_now": false,
+     "tiebreaker": null,
+     "hidden": 0,
+     "lonely_wins": [],
+     "upset_wins": [],
+     "chalk_losses": [
+      "LAC"
+     ]
+    },
+    {
+     "roster_id": 8,
+     "handle": "creckley",
+     "name": "creckley",
+     "picks": [
+      {
+       "game_id": "202610129",
+       "team": "LAC",
+       "opp": "ARI",
+       "game": "ARI @ LAC",
+       "outcome": "loss",
+       "prob": 0.8,
+       "hidden": false,
+       "score": "ARI 26-14 LAC",
+       "slot_label": "Sun 4:25 PM"
+      }
+     ],
+     "no_pick": false,
+     "correct": 0,
+     "wrong": 1,
+     "pending": 0,
+     "week_points": 0.0,
+     "season_points": 0.0,
+     "lost_this_week": true,
+     "strikes_before": 0,
+     "strikes_after": 1,
+     "eliminated_now": false,
+     "tiebreaker": null,
+     "hidden": 0,
+     "lonely_wins": [],
+     "upset_wins": [],
+     "chalk_losses": [
+      "LAC"
+     ]
+    },
+    {
+     "roster_id": 4,
+     "handle": "Elworth",
+     "name": "Elworth",
+     "picks": [
+      {
+       "game_id": "202610129",
+       "team": "LAC",
+       "opp": "ARI",
+       "game": "ARI @ LAC",
+       "outcome": "loss",
+       "prob": 0.8,
+       "hidden": false,
+       "score": "ARI 26-14 LAC",
+       "slot_label": "Sun 4:25 PM"
+      }
+     ],
+     "no_pick": false,
+     "correct": 0,
+     "wrong": 1,
+     "pending": 0,
+     "week_points": 0.0,
+     "season_points": 0.0,
+     "lost_this_week": true,
+     "strikes_before": 0,
+     "strikes_after": 1,
+     "eliminated_now": false,
+     "tiebreaker": null,
+     "hidden": 0,
+     "lonely_wins": [],
+     "upset_wins": [],
+     "chalk_losses": [
+      "LAC"
+     ]
+    },
+    {
+     "roster_id": 18,
+     "handle": "glizzygladiator25",
+     "name": "glizzygladiator25",
+     "picks": [
+      {
+       "game_id": "202610129",
+       "team": "LAC",
+       "opp": "ARI",
+       "game": "ARI @ LAC",
+       "outcome": "loss",
+       "prob": 0.8,
+       "hidden": false,
+       "score": "ARI 26-14 LAC",
+       "slot_label": "Sun 4:25 PM"
+      }
+     ],
+     "no_pick": false,
+     "correct": 0,
+     "wrong": 1,
+     "pending": 0,
+     "week_points": 0.0,
+     "season_points": 0.0,
+     "lost_this_week": true,
+     "strikes_before": 0,
+     "strikes_after": 1,
+     "eliminated_now": false,
+     "tiebreaker": null,
+     "hidden": 0,
+     "lonely_wins": [],
+     "upset_wins": [],
+     "chalk_losses": [
+      "LAC"
+     ]
+    },
+    {
+     "roster_id": 1,
+     "handle": "joefanelli90",
+     "name": "joefanelli90",
+     "picks": [
+      {
+       "game_id": "202610129",
+       "team": "LAC",
+       "opp": "ARI",
+       "game": "ARI @ LAC",
+       "outcome": "loss",
+       "prob": 0.8,
+       "hidden": false,
+       "score": "ARI 26-14 LAC",
+       "slot_label": "Sun 4:25 PM"
+      }
+     ],
+     "no_pick": false,
+     "correct": 0,
+     "wrong": 1,
+     "pending": 0,
+     "week_points": 0.0,
+     "season_points": 0.0,
+     "lost_this_week": true,
+     "strikes_before": 0,
+     "strikes_after": 1,
+     "eliminated_now": false,
+     "tiebreaker": null,
+     "hidden": 0,
+     "lonely_wins": [],
+     "upset_wins": [],
+     "chalk_losses": [
+      "LAC"
+     ]
+    },
+    {
+     "roster_id": 9,
+     "handle": "KyliePeacock",
+     "name": "KyliePeacock",
+     "picks": [
+      {
+       "game_id": "202610129",
+       "team": "LAC",
+       "opp": "ARI",
+       "game": "ARI @ LAC",
+       "outcome": "loss",
+       "prob": 0.8,
+       "hidden": false,
+       "score": "ARI 26-14 LAC",
+       "slot_label": "Sun 4:25 PM"
+      }
+     ],
+     "no_pick": false,
+     "correct": 0,
+     "wrong": 1,
+     "pending": 0,
+     "week_points": 0.0,
+     "season_points": 0.0,
+     "lost_this_week": true,
+     "strikes_before": 0,
+     "strikes_after": 1,
+     "eliminated_now": false,
+     "tiebreaker": null,
+     "hidden": 0,
+     "lonely_wins": [],
+     "upset_wins": [],
+     "chalk_losses": [
+      "LAC"
+     ]
+    },
+    {
+     "roster_id": 12,
+     "handle": "SaraWuite",
+     "name": "SaraWuite",
+     "picks": [
+      {
+       "game_id": "202610129",
+       "team": "LAC",
+       "opp": "ARI",
+       "game": "ARI @ LAC",
+       "outcome": "loss",
+       "prob": 0.8,
+       "hidden": false,
+       "score": "ARI 26-14 LAC",
+       "slot_label": "Sun 4:25 PM"
+      }
+     ],
+     "no_pick": false,
+     "correct": 0,
+     "wrong": 1,
+     "pending": 0,
+     "week_points": 0.0,
+     "season_points": 0.0,
+     "lost_this_week": true,
+     "strikes_before": 0,
+     "strikes_after": 1,
+     "eliminated_now": false,
+     "tiebreaker": null,
+     "hidden": 0,
+     "lonely_wins": [],
+     "upset_wins": [],
+     "chalk_losses": [
+      "LAC"
+     ]
+    },
+    {
+     "roster_id": 21,
+     "handle": "stuto",
+     "name": "stuto",
+     "picks": [
+      {
+       "game_id": "202610129",
+       "team": "LAC",
+       "opp": "ARI",
+       "game": "ARI @ LAC",
+       "outcome": "loss",
+       "prob": 0.8,
+       "hidden": false,
+       "score": "ARI 26-14 LAC",
+       "slot_label": "Sun 4:25 PM"
+      }
+     ],
+     "no_pick": false,
+     "correct": 0,
+     "wrong": 1,
+     "pending": 0,
+     "week_points": 0.0,
+     "season_points": 0.0,
+     "lost_this_week": true,
+     "strikes_before": 0,
+     "strikes_after": 1,
+     "eliminated_now": false,
+     "tiebreaker": null,
+     "hidden": 0,
+     "lonely_wins": [],
+     "upset_wins": [],
+     "chalk_losses": [
+      "LAC"
+     ]
+    },
+    {
+     "roster_id": 6,
+     "handle": "TonyGuazu",
+     "name": "TonyGuazu",
+     "picks": [
+      {
+       "game_id": "202610129",
+       "team": "LAC",
+       "opp": "ARI",
+       "game": "ARI @ LAC",
+       "outcome": "loss",
+       "prob": 0.8,
+       "hidden": false,
+       "score": "ARI 26-14 LAC",
+       "slot_label": "Sun 4:25 PM"
+      }
+     ],
+     "no_pick": false,
+     "correct": 0,
+     "wrong": 1,
+     "pending": 0,
+     "week_points": 0.0,
+     "season_points": 0.0,
+     "lost_this_week": true,
+     "strikes_before": 0,
+     "strikes_after": 1,
+     "eliminated_now": false,
+     "tiebreaker": null,
+     "hidden": 0,
+     "lonely_wins": [],
+     "upset_wins": [],
+     "chalk_losses": [
+      "LAC"
+     ]
+    },
+    {
+     "roster_id": 17,
+     "handle": "Yungmulletgoat",
+     "name": "Yungmulletgoat",
+     "picks": [
+      {
+       "game_id": "202610129",
+       "team": "LAC",
+       "opp": "ARI",
+       "game": "ARI @ LAC",
+       "outcome": "loss",
+       "prob": 0.8,
+       "hidden": false,
+       "score": "ARI 26-14 LAC",
+       "slot_label": "Sun 4:25 PM"
+      }
+     ],
+     "no_pick": false,
+     "correct": 0,
+     "wrong": 1,
+     "pending": 0,
+     "week_points": 0.0,
+     "season_points": 0.0,
+     "lost_this_week": true,
+     "strikes_before": 0,
+     "strikes_after": 1,
+     "eliminated_now": false,
+     "tiebreaker": null,
+     "hidden": 0,
+     "lonely_wins": [],
+     "upset_wins": [],
+     "chalk_losses": [
+      "LAC"
+     ]
+    }
+   ],
+   "died": [
+    {
+     "handle": "joefanelli90",
+     "pick": {
+      "game_id": "202610129",
+      "team": "LAC",
+      "opp": "ARI",
+      "game": "ARI @ LAC",
+      "outcome": "loss",
+      "prob": 0.8,
+      "hidden": false,
+      "score": "ARI 26-14 LAC",
+      "slot_label": "Sun 4:25 PM"
+     },
+     "strikes_after": 1,
+     "eliminated_now": false
+    },
+    {
+     "handle": "Elworth",
+     "pick": {
+      "game_id": "202610129",
+      "team": "LAC",
+      "opp": "ARI",
+      "game": "ARI @ LAC",
+      "outcome": "loss",
+      "prob": 0.8,
+      "hidden": false,
+      "score": "ARI 26-14 LAC",
+      "slot_label": "Sun 4:25 PM"
+     },
+     "strikes_after": 1,
+     "eliminated_now": false
+    },
+    {
+     "handle": "avobttam",
+     "pick": {
+      "game_id": "202610129",
+      "team": "LAC",
+      "opp": "ARI",
+      "game": "ARI @ LAC",
+      "outcome": "loss",
+      "prob": 0.8,
+      "hidden": false,
+      "score": "ARI 26-14 LAC",
+      "slot_label": "Sun 4:25 PM"
+     },
+     "strikes_after": 1,
+     "eliminated_now": false
+    },
+    {
+     "handle": "TonyGuazu",
+     "pick": {
+      "game_id": "202610129",
+      "team": "LAC",
+      "opp": "ARI",
+      "game": "ARI @ LAC",
+      "outcome": "loss",
+      "prob": 0.8,
+      "hidden": false,
+      "score": "ARI 26-14 LAC",
+      "slot_label": "Sun 4:25 PM"
+     },
+     "strikes_after": 1,
+     "eliminated_now": false
+    },
+    {
+     "handle": "creckley",
+     "pick": {
+      "game_id": "202610129",
+      "team": "LAC",
+      "opp": "ARI",
+      "game": "ARI @ LAC",
+      "outcome": "loss",
+      "prob": 0.8,
+      "hidden": false,
+      "score": "ARI 26-14 LAC",
+      "slot_label": "Sun 4:25 PM"
+     },
+     "strikes_after": 1,
+     "eliminated_now": false
+    },
+    {
+     "handle": "KyliePeacock",
+     "pick": {
+      "game_id": "202610129",
+      "team": "LAC",
+      "opp": "ARI",
+      "game": "ARI @ LAC",
+      "outcome": "loss",
+      "prob": 0.8,
+      "hidden": false,
+      "score": "ARI 26-14 LAC",
+      "slot_label": "Sun 4:25 PM"
+     },
+     "strikes_after": 1,
+     "eliminated_now": false
+    },
+    {
+     "handle": "CBrown59",
+     "pick": {
+      "game_id": "202610129",
+      "team": "LAC",
+      "opp": "ARI",
+      "game": "ARI @ LAC",
+      "outcome": "loss",
+      "prob": 0.8,
+      "hidden": false,
+      "score": "ARI 26-14 LAC",
+      "slot_label": "Sun 4:25 PM"
+     },
+     "strikes_after": 1,
+     "eliminated_now": false
+    },
+    {
+     "handle": "SaraWuite",
+     "pick": {
+      "game_id": "202610129",
+      "team": "LAC",
+      "opp": "ARI",
+      "game": "ARI @ LAC",
+      "outcome": "loss",
+      "prob": 0.8,
+      "hidden": false,
+      "score": "ARI 26-14 LAC",
+      "slot_label": "Sun 4:25 PM"
+     },
+     "strikes_after": 1,
+     "eliminated_now": false
+    },
+    {
+     "handle": "Yungmulletgoat",
+     "pick": {
+      "game_id": "202610129",
+      "team": "LAC",
+      "opp": "ARI",
+      "game": "ARI @ LAC",
+      "outcome": "loss",
+      "prob": 0.8,
+      "hidden": false,
+      "score": "ARI 26-14 LAC",
+      "slot_label": "Sun 4:25 PM"
+     },
+     "strikes_after": 1,
+     "eliminated_now": false
+    },
+    {
+     "handle": "glizzygladiator25",
+     "pick": {
+      "game_id": "202610129",
+      "team": "LAC",
+      "opp": "ARI",
+      "game": "ARI @ LAC",
+      "outcome": "loss",
+      "prob": 0.8,
+      "hidden": false,
+      "score": "ARI 26-14 LAC",
+      "slot_label": "Sun 4:25 PM"
+     },
+     "strikes_after": 1,
+     "eliminated_now": false
+    },
+    {
+     "handle": "stuto",
+     "pick": {
+      "game_id": "202610129",
+      "team": "LAC",
+      "opp": "ARI",
+      "game": "ARI @ LAC",
+      "outcome": "loss",
+      "prob": 0.8,
+      "hidden": false,
+      "score": "ARI 26-14 LAC",
+      "slot_label": "Sun 4:25 PM"
+     },
+     "strikes_after": 1,
+     "eliminated_now": false
+    }
+   ],
+   "no_pick": [],
+   "alive_after": 31,
+   "consensus": [
+    {
+     "team": "LAC",
+     "count": 11
+    },
+    {
+     "team": "JAX",
+     "count": 7
+    },
+    {
+     "team": "PIT",
+     "count": 4
+    },
+    {
+     "team": "CIN",
+     "count": 2
+    },
+    {
+     "team": "CHI",
+     "count": 2
+    },
+    {
+     "team": "DET",
+     "count": 2
+    },
+    {
+     "team": "SEA",
+     "count": 1
+    },
+    {
+     "team": "LV",
+     "count": 1
+    },
+    {
+     "team": "BAL",
+     "count": 1
+    }
+   ],
+   "killer_games": [
+    {
+     "game_id": "202610129",
+     "game": "ARI @ LAC",
+     "winner": "ARI",
+     "upset": true,
+     "fav": "LAC",
+     "fav_prob": 0.8,
+     "picks": {
+      "LAC": 11
      }
     }
    ]

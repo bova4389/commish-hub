@@ -1,0 +1,121 @@
+name: Tuesday facts build
+
+# Tuesdays at 5am Eastern: pull the week just played for every league in
+# data/config.json and commit the facts file, so the hub has the numbers
+# whether or not Matt's PC is on. The prose is still written by the local
+# Tuesday task at 6am, which finds this commit and skips its own build.
+#
+# The pick'em leagues (Infinity War, Deadpool, Poop) need Matt's Sleeper login
+# token, stored as the SLEEPER_TOKEN repo secret. It lasts about a year; the
+# first step opens an issue 30 days before it expires and fails the run once
+# it has.
+#
+# Same DST handling as waivers.yml: two cron entries, one guard keyed on the
+# entry that fired (see the comment there for why not on the current hour).
+#   09:00 UTC = 5am EDT (Mar-Nov)     10:00 UTC = 5am EST (Nov-Mar)
+on:
+  schedule:
+    - cron: '0 9 * * 2'    # 5am EDT
+    - cron: '0 10 * * 2'   # 5am EST
+  workflow_dispatch:
+    inputs:
+      week:
+        description: "Week number, or 'latest'"
+        default: latest
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: facts
+  cancel-in-progress: false
+
+jobs:
+  facts:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Is this the entry that means 5am Eastern today?
+        id: when
+        run: |
+          ZONE=$(TZ=America/New_York date +%Z)
+          FIRED='${{ github.event.schedule }}'
+          GO=no
+          if [ '${{ github.event_name }}' != 'schedule' ]; then
+            GO=yes
+          elif [ "$FIRED" = '0 9 * * 2' ] && [ "$ZONE" = 'EDT' ]; then
+            GO=yes
+          elif [ "$FIRED" = '0 10 * * 2' ] && [ "$ZONE" = 'EST' ]; then
+            GO=yes
+          fi
+          echo "go=$GO" >> "$GITHUB_OUTPUT"
+          echo "Eastern is currently $ZONE; this run came from '$FIRED'; go=$GO"
+
+      - uses: actions/checkout@v5
+        if: steps.when.outputs.go == 'yes'
+
+      # Odds snapshots live in Bova's Picks (public). Without them every game
+      # is unrated and no upset is called.
+      - uses: actions/checkout@v5
+        if: steps.when.outputs.go == 'yes'
+        with:
+          repository: bova4389/bovas-picks
+          path: _bovas-picks
+          sparse-checkout: data/odds/history
+
+      - uses: actions/setup-python@v6
+        if: steps.when.outputs.go == 'yes'
+        with:
+          python-version: '3.12'
+
+      - name: Install requests
+        if: steps.when.outputs.go == 'yes'
+        run: pip install --quiet requests
+
+      - name: Check the Sleeper token
+        id: token
+        if: steps.when.outputs.go == 'yes'
+        env:
+          SLEEPER_TOKEN: ${{ secrets.SLEEPER_TOKEN }}
+        run: python scripts/token_check.py
+
+      - name: Warn 30 days before it expires
+        if: steps.when.outputs.go == 'yes' && always() && steps.token.outputs.days_left != '' && fromJSON(steps.token.outputs.days_left) < 30
+        env:
+          GH_TOKEN: ${{ github.token }}
+          EXPIRES: ${{ steps.token.outputs.expires }}
+        run: |
+          TITLE="Sleeper token expires $EXPIRES"
+          if gh issue list --state open --search "in:title \"$TITLE\"" --json number --jq '.[].number' | grep -q .; then
+            echo 'issue already open'
+            exit 0
+          fi
+          gh issue create --title "$TITLE" --body "The SLEEPER_TOKEN secret expires on $EXPIRES. Sign out of sleeper.com and back in, copy the token, save it as scripts/.sleeper_token, then run:
+
+          gh secret set SLEEPER_TOKEN --repo bova4389/commish-hub < scripts/.sleeper_token
+          gh secret set SLEEPER_TOKEN --repo bova4389/bovas-picks < scripts/.sleeper_token
+
+          Close this issue once both are done."
+
+      # --strict: if any league fails, write nothing and fail the run, so a
+      # rerun can never overwrite a good week with an error.
+      - name: Build the week
+        if: steps.when.outputs.go == 'yes'
+        env:
+          SLEEPER_TOKEN: ${{ secrets.SLEEPER_TOKEN }}
+          ODDS_DIR: ${{ github.workspace }}/_bovas-picks/data/odds/history
+        run: python scripts/build_week.py --week "${{ inputs.week || 'latest' }}" --refresh --strict
+
+      - name: Commit if anything changed
+        if: steps.when.outputs.go == 'yes'
+        run: |
+          git config user.name  'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          git add data/*/week-*.json data/*/index.json data/*/season.json
+          if git diff --cached --quiet; then
+            echo 'nothing changed'
+            exit 0
+          fi
+          git commit -m 'Facts: automated Tuesday build'
+          git pull --rebase --autostash origin "${GITHUB_REF_NAME}"
+          git push origin "HEAD:${GITHUB_REF_NAME}"

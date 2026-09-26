@@ -63,7 +63,9 @@ ESPN = 'https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard'
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 CACHE = os.path.join(HERE, '_cache')
-ODDS_DIR = os.path.join(os.path.dirname(ROOT), 'bovas-picks', 'data', 'odds', 'history')
+# The Tuesday Action checks Bova's Picks out beside this repo's workspace and
+# points ODDS_DIR at it, since a runner has no sibling folder.
+ODDS_DIR = os.environ.get('ODDS_DIR') or os.path.join(os.path.dirname(ROOT), 'bovas-picks', 'data', 'odds', 'history')
 ET = ZoneInfo('America/New_York')
 
 # ESPN -> Sleeper team codes. Only the ones that differ.
@@ -857,13 +859,32 @@ def build_pickem(cfg, season, week, nfl):
 
 
 # ---------------------------------------------------------------- main
+def latest_week(season):
+    """The week the Tuesday Action should build: Sleeper's current week, or the
+    one before it if the current week has not kicked off yet. Sleeper rolls its
+    week over midweek, and this way the answer is the same either side of that."""
+    state = requests.get(f'{REST}/state/nfl', timeout=30).json()
+    week = int(state['week'])
+    if str(state.get('season')) != str(season) or state.get('season_type') != 'regular':
+        sys.exit(f"Sleeper says {state.get('season')} {state.get('season_type')}; "
+                 f'not building a {season} regular-season week')
+    nfl = nfl_week(season, week)
+    if not nfl['started'] and week > 1:
+        week -= 1
+        nfl = nfl_week(season, week)
+    return week, nfl
+
+
 def main():
     global REFRESH
     ap = argparse.ArgumentParser()
-    ap.add_argument('--week', type=int, required=True)
+    ap.add_argument('--week', required=True,
+                    help="a week number, or 'latest' for the last week that has kicked off")
     ap.add_argument('--season', type=int)
     ap.add_argument('--only', help='comma list of league keys')
     ap.add_argument('--refresh', action='store_true', help='ignore every cached response')
+    ap.add_argument('--strict', action='store_true',
+                    help='write nothing and exit 1 if any league fails (the Action uses this)')
     ap.add_argument('--override', action='append', default=[],
                     help='key=league_id, to point a league at a different Sleeper id (testing)')
     args = ap.parse_args()
@@ -872,14 +893,17 @@ def main():
     with open(os.path.join(ROOT, 'data', 'config.json'), encoding='utf-8') as f:
         config = json.load(f)
     season = args.season or config['site']['season']
-    week = args.week
+    if args.week == 'latest':
+        week, nfl = latest_week(season)
+    else:
+        week, nfl = int(args.week), None
     only = set(args.only.split(',')) if args.only else None
     for ov in args.override:
         k, v = ov.split('=', 1)
         config['leagues'][k].setdefault('ids', {})[str(season)] = v
 
     print(f'NFL {season} week {week}')
-    nfl = nfl_week(season, week)
+    nfl = nfl or nfl_week(season, week)
     print(f"  {len(nfl['games'])} games, {len(nfl['slots'])} kickoff slots, "
           f"{'all final' if nfl['all_final'] else 'NOT final'}")
 
@@ -894,6 +918,13 @@ def main():
                 'slots': nfl['slots']},
         'leagues': {},
     }
+    season_dir = os.path.join(ROOT, 'data', str(season))
+    path = os.path.join(season_dir, f'week-{week:02d}.json')
+    # --only rebuilds some leagues and keeps the rest of an existing week file,
+    # so adding a league to a finished week does not wipe the other four.
+    if only and os.path.exists(path):
+        with open(path, encoding='utf-8') as f:
+            out['leagues'] = {k: v for k, v in json.load(f).get('leagues', {}).items() if k not in only}
     builders = {'chopped': build_chopped, 'h2h': build_h2h, 'pickem': build_pickem, 'survivor': build_pickem}
     for key, cfg in config['leagues'].items():
         if only and key not in only:
@@ -915,9 +946,11 @@ def main():
             print(f'    FAILED: {e}', file=sys.stderr)
             out['leagues'][key] = {'error': str(e)}
 
-    season_dir = os.path.join(ROOT, 'data', str(season))
+    failed = sorted(k for k, v in out['leagues'].items() if 'error' in v)
+    if failed and args.strict:
+        # A rerun must never overwrite a good week with an error, so write nothing.
+        sys.exit(f"failed: {', '.join(failed)}; nothing written")
     os.makedirs(season_dir, exist_ok=True)
-    path = os.path.join(season_dir, f'week-{week:02d}.json')
     tmp = path + '.tmp'
     with open(tmp, 'w', encoding='utf-8') as f:
         json.dump(out, f, indent=1)

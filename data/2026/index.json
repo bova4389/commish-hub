@@ -2,20 +2,24 @@
  "season": 2026,
  "weeks": {
   "1": {
-   "generated": "2026-09-15T17:17:00-04:00",
+   "generated": "2026-09-25T17:14:10-04:00",
    "final": true,
    "leagues": [
     "deadpool",
     "infinity_war",
     "kings_justice",
+    "poop",
     "two_mitchs"
    ]
   },
   "2": {
-   "generated": "2026-09-22T16:59:43-04:00",
+   "generated": "2026-09-25T17:14:40-04:00",
    "final": true,
    "leagues": [
+    "deadpool",
+    "infinity_war",
     "kings_justice",
+    "poop",
     "two_mitchs"
    ]
   }
