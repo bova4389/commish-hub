@@ -460,6 +460,7 @@
      own, not as part of a weekly recap. */
 
   const SEASON_VIEW = 'season';
+  const PICKS_IN_IMAGE = 6;   // rows in the saved picks image, plus ties
   const TROPHY = { 1: '\u{1F947}', 2: '\u{1F948}' };   // gold, silver
 
   // The last week of the season, off the rollup. The Infinity War grids always
@@ -680,37 +681,45 @@
         `on correct picks, so that prize is not counted in anyone's total -- the pool has no season tiebreaker on record.`
       : '';
 
-    // Money. Weekly pot to the one winner, plus the season prize in the week-18
-    // column, so the last column is every dollar the entry has taken.
-    const moneyRows = [...D.rows].sort((a, b) => (b.money_total + b.prize) - (a.money_total + a.prize) ||
+    // Money. Until week 18 is final this is the weekly $20s ONLY: no trophies,
+    // no season prize in the totals and no empty week-18 column (owner's call,
+    // 2026-09-29 -- the projected prize read as money already paid). Once the
+    // last week is final the prize lands in its column and the total is every
+    // dollar the entry has taken. The picks grid below still shows the standing.
+    const paid = (r) => r.money_total + (D.final ? r.prize : 0);
+    const moneyWeeks = D.final ? D.weeks : D.weeks.filter((w) => L.weeks[String(w)]);
+    const moneyRows = [...D.rows].sort((a, b) => paid(b) - paid(a) ||
       b.correct_total - a.correct_total || a.handle.localeCompare(b.handle));
     // A $0 row here is an entry that has taken neither a weekly pot nor a
     // (settled) season prize. A tied trophy is not money, so it does not save a
-    // row from the filter -- the trophy is still on the grid when the rows are
-    // shown, and the tie note above says it either way.
-    const moneyZeros = moneyRows.filter((r) => !(r.money_total + r.prize)).length;
+    // row from the filter.
+    const moneyZeros = moneyRows.filter((r) => !paid(r)).length;
     const moneyGrid = grid({
-      weeks: D.weeks, rows: moneyRows, softWeeks: soft, totalHead: 'Season $',
-      isZero: (r) => !(r.money_total + r.prize),
+      weeks: moneyWeeks, rows: moneyRows, totalHead: 'Season $',
+      isZero: (r) => !paid(r),
       step: (r, w) => r.money[w] || 0,
       cell: (r, w, run) => {
-        const t = w === last ? trophyOf(r) : '';
+        const t = D.final && w === last ? trophyOf(r) : '';
         const won = r.money[w] || 0;
         if (run != null) return (run ? `<span class="v">${money(run)}</span>` : '<span class="z">—</span>') + t;
         return (won ? `<span class="v win">${money(won)}</span>` : '<span class="z">—</span>') + t;
       },
-      total: (r) => `<b>${money(r.money_total + r.prize)}</b>` +
-        (r.prize ? `<div class="sub${D.final ? '' : ' proj'}">${money(r.money_total)} weekly + ${money(r.prize)}</div>` :
-          r.tied_at ? `<div class="sub proj">+ ${money(D.prize[r.place])}? ${r.tied_at}-way tie</div>` : ''),
-      rowClass: (r) => (r.place === 1 ? 'hl-good' : ''),
+      total: (r) => `<b>${money(paid(r))}</b>` +
+        (D.final && r.prize ? `<div class="sub">${money(r.money_total)} weekly + ${money(r.prize)}</div>` : ''),
+      rowClass: (r) => (D.final && r.place === 1 ? 'hl-good' : ''),
     });
     const rolled = D.weeks.filter((w) => (L.weeks[String(w)] || {}).rollover);
     const moneyDek = `${money((L.payouts || {}).weekly || 20)} a week to the most correct, never split: a tie goes to the Monday-night tiebreaker and a tie on that rolls the pot forward. ` +
-      (rolled.length ? `Rolled over: week ${rolled.join(', ')}.` : '') + ' ' + prizeNote + tieNote;
+      (rolled.length ? `Rolled over: week ${rolled.join(', ')}.` : '') + (D.final ? ' ' + prizeNote + tieNote : '');
 
     // Picks correct. Same layout, same trophies -- the season money IS this
     // ranking, so showing them apart would invite two different answers.
     const pickRows = [...D.rows].sort((a, b) => b.correct_total - a.correct_total || a.handle.localeCompare(b.handle));
+    // The saved image carries the top PICKS_IN_IMAGE and anyone tied with the
+    // last of them; the page keeps everyone (owner, 2026-09-29). Cutting inside
+    // a tie would pick arbitrarily between entries on the same number.
+    const cut = pickRows.length > PICKS_IN_IMAGE ? pickRows[PICKS_IN_IMAGE - 1].correct_total : null;
+    const inImage = cut == null ? pickRows.length : pickRows.filter((r) => r.correct_total >= cut).length;
     const pickGrid = grid({
       weeks: D.weeks, rows: pickRows, softWeeks: soft, totalHead: 'Correct',
       step: (r, w) => r.correct[w] || 0,
@@ -723,8 +732,13 @@
         return (c == null ? '<span class="z">—</span>' : `<span class="v${best ? ' win' : ''}">${c}</span>`) + t;
       },
       total: (r) => `<b>${r.correct_total}</b>`,
-      rowClass: (r) => (r.place === 1 ? 'hl-good' : ''),
+      rowClass: (r) => [r.place === 1 ? 'hl-good' : '', cut != null && r.correct_total < cut ? 'ex-cut' : '']
+        .filter(Boolean).join(' '),
     });
+    const topNote = inImage < pickRows.length
+      ? `<span class="ex-only">Top ${PICKS_IN_IMAGE}${inImage > PICKS_IN_IMAGE ? ' and ties' : ''}: ` +
+        `${inImage} of ${pickRows.length} entries. Everyone is on the Commish Hub.</span>`
+      : '';
     const lim = 8;
     const pickDek = `Correct picks out of ${lim} a week, graded against final scores. A highlighted cell tied or set that week's best. ` + prizeNote + tieNote;
     const check = pickCheck(L, D);
@@ -734,7 +748,8 @@
         gridToggle(moneyZeros) + moneyGrid, hiddenNote(moneyZeros, 'have not won a dollar yet')),
       // No filter on the picks grid: everyone has a pick count, and a 0 there
       // would mean "submitted no card", which is worth seeing rather than hiding.
-      shareCard('sc-iw-picks', 'Correct picks, week by week', pickDek, gridToggle() + pickGrid, check),
+      shareCard('sc-iw-picks', 'Correct picks, week by week', pickDek, gridToggle() + pickGrid,
+        [check, topNote].filter(Boolean).join(' ')),
     ];
   }
 

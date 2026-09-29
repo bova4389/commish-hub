@@ -144,7 +144,7 @@ lines, not another copy of the sticky-column markup.
 
 | Grid | League | A cell holds |
 |---|---|---|
-| Money won | Infinity War | the weekly $20 (plus any rolled-in pot) on the week they took it |
+| Money won | Infinity War | the weekly $20 (plus any rolled-in pot) on the week they took it; the season prizes only once week 18 is final |
 | Correct picks | Infinity War | that week's correct count; highlighted if it tied or set the week's best |
 | Weekly high money | King's Justice | the score that won the $25, blank on every other week |
 
@@ -168,16 +168,26 @@ Things in here that are decisions, not details:
   `right: 0` resolves against the scrollport, so a negative margin pins the
   total outside the card and lets the next week's column show in the gap beside
   it. Hit and fixed the day it was built.
-- **Infinity War always carries a week-18 column, played or not**, because that
+- **The money grid shows the weekly $20s ONLY until week 18 is final** (owner's
+  call, 2026-09-29): no trophies, no season prize in the totals, no week-18
+  column. A projected $380 sitting in someone's "Season $" read as money already
+  paid. When the last week is final the prize lands in its column and the total
+  becomes every dollar taken. `paid()` in `iwCards()` is the switch.
+- **The picks grid still carries a week-18 column, played or not**, because that
   is where the season trophies go and seeing them coming is the point. While the
   week is still ahead the column is amber-tinted and the trophies are dimmed --
   they are where it stands today, never a result. `iwSeason()` unions the built
   weeks with `last_week` for this; every per-week read tolerates a column with
   no week behind it. The first version derived its columns from the built weeks
   alone and the trophies silently never rendered.
-- **The trophies rank on cumulative CORRECT PICKS**, and they appear on *both*
-  Infinity War grids, because the season money IS that ranking -- showing them
-  apart would invite two different answers. $380 to first, $160 to second
+- **The trophies rank on cumulative CORRECT PICKS**, shown on the picks grid all
+  season and on the money grid once week 18 is final -- the season money IS that
+  ranking, so the money grid adopts it only when it is a result.
+- **The saved picks image carries the top 6 and anyone tied with sixth**
+  (`PICKS_IN_IMAGE`, owner 2026-09-29); the page keeps every entry. Rows below the
+  cut get `ex-cut`, hidden only under `.sharecard.exporting`, and an `.ex-only`
+  footnote says "Top 6 and ties: N of M entries" so the image never passes for
+  the whole pool. Cutting inside a tie would pick arbitrarily, so ties stay. $380 to first, $160 to second
   (owner, 2026-09-14; also recorded in Bova's Picks). **A tie at the top is
   reported and never resolved**: the pool has no season tiebreaker on record.
   Ask and write the answer here the first time it happens.

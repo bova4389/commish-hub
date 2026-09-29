@@ -191,6 +191,9 @@ tr.dim td { color: var(--faint); }
 .sharecard.exporting { width: max-content; max-width: none; padding: 26px; }
 .sharecard.exporting .gridwrap { overflow: visible; margin: 0; padding: 0; }
 .sharecard.exporting .gtoggle { display: none; }
+/* The picks image keeps only the top rows (PICKS_IN_IMAGE in hub.js) and says so. */
+.sharecard.exporting tr.ex-cut { display: none; }
+.sharecard.exporting .ex-only { display: inline !important; }
 /* The card grows to the grid's width, which for 18 weeks is ~1500px. Prose set
    that wide is unreadable in a chat image, so the text blocks keep a measure. */
 .sharecard.exporting .sc-dek,
