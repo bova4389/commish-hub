@@ -117,6 +117,17 @@ shareable without doing anything.
   analysis built yet" notice). Nobody posts that.
 - The weekly footer carries **PROVISIONAL** when the week is not all final, same as the
   recap card, so a mid-week image cannot pass for a result.
+- **On a phone, Save image opens the share sheet** (owner, 2026-09-29): Save Image is one
+  tap and so is posting straight to the Sleeper app. The old path -- a download that lands in
+  Files behind an "Open in..." bar, or a long-press on a preview that some mobile browsers
+  only *select* -- was too many taps. `canShareFile()` gates it to a coarse pointer plus
+  `navigator.canShare({files})`, so a desktop still downloads. Drawing the card can outlast
+  the tap, and the browser then refuses the share; the overlay opens with a **Share** button
+  instead, which is a fresh tap. The preview is a blob URL, not a data URL, for the same
+  long-press reason.
+- **No control above a grid appears in an image**: `.sharecard.exporting .gctl` is hidden
+  whole. It hid only `.gtoggle` at first, so every money image carried a "Show 14 $0 rows"
+  button.
 
 ## Season totals -- the cumulative grids
 

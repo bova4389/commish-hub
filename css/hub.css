@@ -164,6 +164,7 @@ tr.dim td { color: var(--faint); }
 .overlay { position: fixed; inset: 0; background: rgba(0,0,0,.85); z-index: 50; overflow: auto; padding: 14px; }
 .overlay-inner { max-width: 760px; margin: 0 auto; }
 .overlay-bar { display: flex; justify-content: space-between; align-items: center; color: var(--muted); font-size: 13px; margin-bottom: 10px; gap: 10px; }
+.overlay-btns { display: flex; gap: 8px; flex: none; }
 .overlay img { width: 100%; height: auto; border-radius: 12px; display: block; }
 
 .foot { color: var(--faint); font-size: 12px; padding: 24px 0 40px; }
@@ -190,7 +191,8 @@ tr.dim td { color: var(--faint); }
    to its own content instead of the column width. */
 .sharecard.exporting { width: max-content; max-width: none; padding: 26px; }
 .sharecard.exporting .gridwrap { overflow: visible; margin: 0; padding: 0; }
-.sharecard.exporting .gtoggle { display: none; }
+/* Every control above a grid, the $0 button included, stays out of the image. */
+.sharecard.exporting .gctl { display: none; }
 /* The picks image keeps only the top rows (PICKS_IN_IMAGE in hub.js) and says so. */
 .sharecard.exporting tr.ex-cut { display: none; }
 .sharecard.exporting .ex-only { display: inline !important; }

@@ -6,7 +6,7 @@
 <meta name="theme-color" content="#0f1115" />
 <title>Commish Hub</title>
 <link rel="icon" href="data:," />
-<link rel="stylesheet" href="css/hub.css?v=20260929" />
+<link rel="stylesheet" href="css/hub.css?v=20260929b" />
 </head>
 <body>
 
@@ -36,7 +36,7 @@
     <div class="card-actions">
       <button type="button" id="btn-save" class="btn">Save image</button>
       <button type="button" id="btn-preview" class="btn ghost">Preview image</button>
-      <span class="hint">On a phone: Preview, then long-press the picture to save it.</span>
+      <span class="hint">On a phone: Save image opens the share sheet. Tap Save Image, or send it straight to Sleeper.</span>
     </div>
   </section>
 
@@ -50,14 +50,17 @@
 <div class="overlay" id="overlay" hidden>
   <div class="overlay-inner">
     <div class="overlay-bar">
-      <span>Long-press the image to save or share it</span>
-      <button type="button" class="btn ghost" id="btn-close">Close</button>
+      <span id="overlay-msg">Long-press the image to save or share it</span>
+      <span class="overlay-btns">
+        <button type="button" class="btn" id="btn-share" hidden>Share</button>
+        <button type="button" class="btn ghost" id="btn-close">Close</button>
+      </span>
     </div>
     <img id="overlay-img" alt="Recap card" />
   </div>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-<script src="js/hub.js?v=20260929"></script>
+<script src="js/hub.js?v=20260929b"></script>
 </body>
 </html>

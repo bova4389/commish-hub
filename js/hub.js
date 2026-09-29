@@ -592,7 +592,7 @@
       `</div>` +
       `<div class="card-actions"><button type="button" class="btn" data-save="${esc(id)}">Save image</button>` +
       `<button type="button" class="btn ghost" data-preview="${esc(id)}">Preview image</button>` +
-      `<span class="hint">On a phone: Preview, then long-press the picture to save it.</span></div>` +
+      `<span class="hint">On a phone: Save image opens the share sheet. Tap Save Image, or send it straight to Sleeper.</span></div>` +
       `</section>`;
   }
 
@@ -1056,23 +1056,59 @@
       const canvas = await html2canvas(card, { scale: 2, backgroundColor: '#0f1115', useCORS: true, logging: false,
                                                windowWidth: Math.max(card.scrollWidth + 80, 900) });
       unfitPanel(card);
-      if (mode === 'preview') {
-        $('#overlay-img').src = canvas.toDataURL('image/png');
-        $('#overlay').hidden = false;
-      } else {
-        canvas.toBlob((blob) => {
-          const url = URL.createObjectURL(blob);
-          const a = document.createElement('a');
-          a.href = url; a.download = name; document.body.appendChild(a); a.click(); a.remove();
-          setTimeout(() => URL.revokeObjectURL(url), 5000);
-        }, 'image/png');
+      const blob = await new Promise((resolve) => canvas.toBlob(resolve, 'image/png'));
+      const file = new File([blob], name, { type: 'image/png' });
+      if (mode === 'preview') return showOverlay(blob, file);
+      // On a phone, Save opens the share sheet: Save Image is one tap, and so is
+      // sending it straight to the Sleeper app. A download on a phone lands in
+      // Files behind an "Open in..." bar, and a long-press on the preview did
+      // not offer Save in every browser (owner, 2026-09-29).
+      if (canShareFile(file)) {
+        try {
+          await navigator.share({ files: [file] });
+        } catch (err) {
+          // Drawing the card can outlast the tap that asked for it, and the
+          // browser then refuses the share. One more tap on the overlay's Share
+          // button is a fresh one. AbortError is just the sheet being closed.
+          if (err.name !== 'AbortError') showOverlay(blob, file);
+        }
+        return;
       }
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = name; document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(() => URL.revokeObjectURL(url), 5000);
     } catch (e) {
       unfitPanel(card);
       alert('Could not render the image: ' + e.message);
     } finally {
       btns.forEach((b) => { b.disabled = false; });
     }
+  }
+
+  // A phone that can hand a PNG to the share sheet. Coarse pointer only: a
+  // desktop browser that supports file sharing should still just download.
+  function canShareFile(file) {
+    return !!(navigator.canShare && matchMedia('(pointer: coarse)').matches &&
+      navigator.canShare({ files: [file] }));
+  }
+
+  // The preview, as a blob URL rather than a data URL: a long-press on a blob
+  // image offers Save in more mobile browsers. With a share sheet available the
+  // overlay also carries a Share button, which is the reliable path.
+  let overlayUrl = null;
+  function showOverlay(blob, file) {
+    if (overlayUrl) URL.revokeObjectURL(overlayUrl);
+    overlayUrl = URL.createObjectURL(blob);
+    $('#overlay-img').src = overlayUrl;
+    const share = canShareFile(file);
+    const btn = $('#btn-share');
+    btn.hidden = !share;
+    btn.onclick = () => navigator.share({ files: [file] }).catch(() => {});
+    $('#overlay-msg').textContent = share
+      ? 'Tap Share, then Save Image, or send it straight to Sleeper'
+      : 'Long-press the image to save or share it';
+    $('#overlay').hidden = false;
   }
 
   window.addEventListener('hashchange', () => {
