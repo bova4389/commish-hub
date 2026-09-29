@@ -194,6 +194,9 @@ Things in here that are decisions, not details:
 - **The trophies rank on cumulative CORRECT PICKS**, shown on the picks grid all
   season and on the money grid once week 18 is final -- the season money IS that
   ranking, so the money grid adopts it only when it is a result.
+- **The picks card opens with what is at stake**: a strip reading 1st place $380, 2nd place
+  $160, paid after week 18 (owner, 2026-09-29), off `payouts` in config. It sits above the
+  grid controls, so it is in the saved image too.
 - **The saved picks image carries the top 6 and anyone tied with sixth**
   (`PICKS_IN_IMAGE`, owner 2026-09-29); the page keeps every entry. Rows below the
   cut get `ex-cut`, hidden only under `.sharecard.exporting`, and an `.ex-only`

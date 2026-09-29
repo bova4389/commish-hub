@@ -748,7 +748,15 @@
         gridToggle(moneyZeros) + moneyGrid, hiddenNote(moneyZeros, 'have not won a dollar yet')),
       // No filter on the picks grid: everyone has a pick count, and a 0 there
       // would mean "submitted no card", which is worth seeing rather than hiding.
-      shareCard('sc-iw-picks', 'Correct picks, week by week', pickDek, gridToggle() + pickGrid,
+      // What the season ranking is worth, big enough to read in a chat image
+      // (owner, 2026-09-29). It sits above the controls, so it survives export.
+      shareCard('sc-iw-picks', 'Correct picks, week by week', pickDek,
+        `<div class="stakes">` + [1, 2].map((k) =>
+          `<div class="stake"><span class="stake-medal">${TROPHY[k]}</span>` +
+          `<span class="stake-place">${k === 1 ? '1st' : '2nd'} place</span>` +
+          `<b class="stake-amt">${money(D.prize[k])}</b></div>`).join('') +
+        `<div class="stake stake-when">Paid after week ${last}</div></div>` +
+        gridToggle() + pickGrid,
         [check, topNote].filter(Boolean).join(' ')),
     ];
   }
