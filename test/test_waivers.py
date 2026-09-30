@@ -48,6 +48,9 @@ DRAFT_PICKS = [
 #         Cal loses a $9 bid on p11 too, so it IS contested. Keep it simple:
 #         Cal bids $9 and loses, so runner-up is $9 and excess is $21.
 # Week 3: Cal bids $5 on p12 and loses to nobody winning (all claims failed).
+OUTBID = 'This player was claimed by another owner.'
+TOO_MANY = 'Unfortunately, your roster will have too many players after this transaction.'
+
 TX = {
     1: [
         {'type': 'waiver', 'status': 'complete', 'roster_ids': [1], 'adds': {'p10': 1},
@@ -66,7 +69,19 @@ TX = {
         {'type': 'waiver', 'status': 'complete', 'roster_ids': [2], 'adds': {'p11': 2},
          'settings': {'waiver_bid': 30}},
         {'type': 'waiver', 'status': 'failed', 'roster_ids': [3], 'adds': {'p11': 3},
-         'settings': {'waiver_bid': 9}},
+         'settings': {'waiver_bid': 9}, 'metadata': {'notes': OUTBID}},
+        # INVALID, NOT OUTBID. Ann bid MORE than the winner but the claim failed
+        # because she had no valid drop. It must vanish as though never made:
+        # counted, it was the runner-up and Bob's waste went NEGATIVE (the live
+        # 2026-09-30 run: an invalid $54 against a $16 win read -$38).
+        {'type': 'waiver', 'status': 'failed', 'roster_ids': [1], 'adds': {'p11': 1},
+         'settings': {'waiver_bid': 50}, 'metadata': {'notes': TOO_MANY}},
+        # Same reason on a player nobody won: not a lost bid, not a shut-out week.
+        {'type': 'waiver', 'status': 'failed', 'roster_ids': [2], 'adds': {'p12': 2},
+         'settings': {'waiver_bid': 3}, 'metadata': {'notes': TOO_MANY}},
+        # No note at all, and above the price paid: cannot have lost on price.
+        {'type': 'waiver', 'status': 'failed', 'roster_ids': [3], 'adds': {'p11': 3},
+         'settings': {'waiver_bid': 45}},
     ],
     3: [
         {'type': 'waiver', 'status': 'failed', 'roster_ids': [3], 'adds': {'p12': 3},
@@ -167,6 +182,16 @@ ok(all(x['handle'] != 'Ann' for x in claims[(1, 'Ace Back')]['losers']),
 ok(not any(b['handle'] == b['won_by'] for b in L['lost_bids']),
    'and no phantom failed bid is recorded against the roster that won')
 
+print('a claim that failed for any reason but a higher bid never happened')
+eq(claims[(2, 'Bud Wideout')]['runner_up'], 9,
+   "Ann's invalid $50 is not the runner-up; Cal's real $9 is")
+eq(claims[(2, 'Bud Wideout')]['bidders'], 2, 'the invalid claim is not counted as a bidder')
+ok(all(x['handle'] != 'Ann' for x in claims[(2, 'Bud Wideout')]['losers']),
+   'and Ann is not among the losing bids on p11')
+ok(all(c['waste'] >= 0 for c in L['claims']), 'no claim ever wastes less than $0')
+ok(not any(b['bid'] in (50, 45, 3) for b in L['lost_bids']),
+   'none of the invalid bids is recorded as a lost bid')
+
 print('waste -- bid minus the next-best bid, on EVERY claim')
 eq(claims[(1, 'Ace Back')]['contested'], True, 'week 1 claim was contested')
 eq(claims[(1, 'Ace Back')]['waste'], 28, '40 paid where 12 would have won it')
@@ -209,9 +234,11 @@ eq(own['Ann']['by_week']['1']['waste'], 28, 'waste is bucketed per week')
 eq(own['Ann']['by_week']['3']['waste'], 7, 'including the uncontested week')
 eq(own['Bob']['waste'], 21, "Bob's contested win wasted 21; his $0 pickup wasted nothing")
 eq(own['Bob']['free_claims'], 1, 'Bob made one free pickup')
+eq(own['Bob']['lost'], 0, "Bob's invalid claim on p12 is not a loss")
+eq(own['Bob']['shutout_weeks'], [], 'and does not make week 2 a shut-out week for him')
 eq(own['Cal']['waste'], 0, 'you cannot waste money on a claim you lost')
 eq(own['Ann']['won'], 2, 'Ann won two claims')
-eq(own['Ann']['lost'], 0, 'Ann lost none')
+eq(own['Ann']['lost'], 0, 'Ann lost none -- her invalid $50 claim is not a loss')
 eq(own['Ann']['measured_claims'], 1, 'only the week-1 claim has a played week behind it')
 eq(own['Ann']['measured_spend'], 40, 'so only that $40 is judged on value')
 eq(own['Ann']['points_started'], 8.0, 'Ann has 8 measured started points')

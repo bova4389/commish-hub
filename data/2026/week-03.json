@@ -1193,15 +1193,6 @@
     ],
     "lost_bids": [
      {
-      "player_id": "6130",
-      "player": "Devin Singletary",
-      "pos": "RB",
-      "handle": "joefanelli90",
-      "bid": 0,
-      "won_by": null,
-      "won_at": null
-     },
-     {
       "player_id": "11435",
       "player": "Emanuel Wilson",
       "pos": "RB",

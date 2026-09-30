@@ -323,6 +323,16 @@ $0 is the real reference price either way.
   **Reverting this reintroduces a silent understatement of the headline number**
   -- `test_waivers.py` carries the exact Sleeper shape and 18 assertions fail
   without the fix.
+- **A claim that failed for any reason but a higher bid never happened** (owner's call,
+  2026-09-30). Sleeper also fails claims for "your roster will have too many players after
+  this transaction" (no valid drop) and for lack of budget; those are not a rival bid, not a
+  lost bid and not a shut-out week. `outbid()` in build_week.py keeps a failed claim only
+  when Sleeper's note says "This player was claimed by another owner" -- an allowlist, so an
+  unseen reason is dropped rather than counted -- and `week_transactions()` also drops any
+  losing bid above the price paid *before* the one-bid-per-roster collapse. Found live: an
+  invalid $54 avobttam claim stood as runner-up to nelsolson's $16 Rachaad White win, read
+  as **-$38 wasted**, and crowned him Sharpest bidder at -238%. Fixed: 7 invalid claims out
+  of the lost bids, league waste $1,454 -> $1,516, and `test_waivers.py` carries the case.
 - **Spend is bucketed by the acquired player's original round in THIS LEAGUE'S
   OWN draft** (`undrafted` is its own bucket) -- the "what the room paid in
   August against what it pays in October" read the owner asked for. It is not the

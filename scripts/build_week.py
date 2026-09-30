@@ -475,6 +475,26 @@ def optimal_total(starters, bench, slot_list):
     return round(total, 2)
 
 
+OUTBID_NOTE = 'claimed by another owner'
+
+
+def outbid(t):
+    """A failed waiver claim that genuinely LOST TO A HIGHER BID.
+
+    Sleeper fails a claim for other reasons too -- "your roster will have too
+    many players after this transaction" (no valid drop), or not enough budget --
+    and those are ignored ENTIRELY, as though the claim was never made (owner's
+    call, 2026-09-30). They are not a rival bid, not a lost bid and not a shut
+    out. Counting them let an invalid $54 claim stand as the "runner-up" to a
+    $16 win, which came out as -$38 wasted and a Sharpest bidder award.
+
+    Allowlisted on Sleeper's own note, so a failure reason nobody has seen yet
+    is dropped rather than counted. A record with no note at all is kept, but
+    week_transactions() still drops any losing bid above the price paid."""
+    note = str((t.get('metadata') or {}).get('notes') or '')
+    return not note or OUTBID_NOTE in note
+
+
 def week_transactions(lid, week, teams, proj):
     """Waiver / FAAB / trade activity for the week, names resolved."""
     raw = get(f'{REST}/league/{lid}/transactions/{week}')
@@ -485,6 +505,8 @@ def week_transactions(lid, week, teams, proj):
         rids = t.get('roster_ids') or []
         who = teams.get(rids[0], {}).get('handle', '?') if rids else '?'
         if typ == 'waiver':
+            if t.get('status') != 'complete' and not outbid(t):
+                continue
             for pid in (t.get('adds') or {}):
                 c = claims.setdefault(pid, {'player': player_info(pid, proj)['name'],
                                             'pos': player_info(pid, proj)['pos'], 'bids': []})
@@ -509,6 +531,13 @@ def week_transactions(lid, week, teams, proj):
         # claim that walked the field. Measured 2026-09-16: avobttam's $169 Joe
         # Burrow claim came back with a $169 "losing" bid from avobttam, hiding
         # a $158 overpay over the real runner-up at $11.
+        # A losing bid ABOVE the price paid cannot have lost on price, so it
+        # failed for some other reason even if Sleeper gave no note. Dropped
+        # BEFORE the per-roster collapse below, or a roster's invalid high bid
+        # would replace its real lower one: a winner's waste is never < $0.
+        paid = [b['bid'] for b in c['bids'] if b['won']]
+        if paid:
+            c['bids'] = [b for b in c['bids'] if b['won'] or b['bid'] <= max(paid)]
         per = {}
         for b in c['bids']:
             cur = per.get(b['rid'])
