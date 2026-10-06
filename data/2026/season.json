@@ -1,16 +1,18 @@
 {
  "season": 2026,
- "generated": "2026-09-29T11:22:36-04:00",
+ "generated": "2026-10-06T08:14:51-04:00",
  "last_week": 18,
  "weeks": [
   1,
   2,
-  3
+  3,
+  4
  ],
  "final_weeks": [
   1,
   2,
-  3
+  3,
+  4
  ],
  "leagues": {
   "kings_justice": {
@@ -114,6 +116,15 @@
       "points": 133.16
      },
      "chopped": "AJPeak",
+     "prize": 25
+    },
+    "4": {
+     "final": true,
+     "high": {
+      "handle": "nelsolson",
+      "points": 159.28
+     },
+     "chopped": "Elworth",
      "prize": 25
     }
    },
@@ -350,6 +361,56 @@
       "NickBova": 0,
       "steveedwards": 0
      }
+    },
+    "4": {
+     "final": true,
+     "pot": 20,
+     "pot_carried": 0,
+     "rollover": false,
+     "best": 7,
+     "winners": [
+      "NickBova"
+     ],
+     "correct": {
+      "camschnick": 7,
+      "NickBova": 7,
+      "AngryWillis": 6,
+      "Bustersx8": 6,
+      "cbova1222": 6,
+      "Cubbiesftw23": 6,
+      "djbogardus72": 6,
+      "katiestout13": 6,
+      "Kolisekj52": 6,
+      "Mpletcher": 6,
+      "NastyNate725": 6,
+      "bjander110": 5,
+      "Bogeyman28": 5,
+      "CHRISMERKELDUH": 5,
+      "msymons713": 5,
+      "steveedwards": 5,
+      "avobttam": 4,
+      "MJBlack": 4
+     },
+     "pending": {
+      "camschnick": 0,
+      "NickBova": 0,
+      "AngryWillis": 0,
+      "Bustersx8": 0,
+      "cbova1222": 0,
+      "Cubbiesftw23": 0,
+      "djbogardus72": 0,
+      "katiestout13": 0,
+      "Kolisekj52": 0,
+      "Mpletcher": 0,
+      "NastyNate725": 0,
+      "bjander110": 0,
+      "Bogeyman28": 0,
+      "CHRISMERKELDUH": 0,
+      "msymons713": 0,
+      "steveedwards": 0,
+      "avobttam": 0,
+      "MJBlack": 0
+     }
     }
    },
    "payouts": {
@@ -358,24 +419,24 @@
     "second": 160
    },
    "sleeper_points": {
-    "CHRISMERKELDUH": 18.0,
-    "bjander110": 17.0,
-    "djbogardus72": 17.0,
-    "Bogeyman28": 16.0,
-    "camschnick": 16.0,
-    "cbova1222": 16.0,
-    "Cubbiesftw23": 16.0,
-    "NastyNate725": 16.0,
-    "katiestout13": 15.0,
-    "Mpletcher": 15.0,
-    "msymons713": 15.0,
-    "AngryWillis": 14.0,
-    "avobttam": 14.0,
-    "Bustersx8": 14.0,
-    "Kolisekj52": 14.0,
-    "MJBlack": 14.0,
-    "NickBova": 13.0,
-    "steveedwards": 12.0
+    "camschnick": 23.0,
+    "CHRISMERKELDUH": 23.0,
+    "djbogardus72": 23.0,
+    "bjander110": 22.0,
+    "cbova1222": 22.0,
+    "Cubbiesftw23": 22.0,
+    "NastyNate725": 22.0,
+    "Bogeyman28": 21.0,
+    "katiestout13": 21.0,
+    "Mpletcher": 21.0,
+    "AngryWillis": 20.0,
+    "Bustersx8": 20.0,
+    "Kolisekj52": 20.0,
+    "msymons713": 20.0,
+    "NickBova": 20.0,
+    "avobttam": 18.0,
+    "MJBlack": 18.0,
+    "steveedwards": 17.0
    },
    "name": "Infinity War",
    "kind": "pickem"
