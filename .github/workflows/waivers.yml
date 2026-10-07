@@ -89,3 +89,26 @@ jobs:
           # started. Rebase rather than fail the run on a race.
           git pull --rebase --autostash origin "${GITHUB_REF_NAME}"
           git push origin "HEAD:${GITHUB_REF_NAME}"
+
+      # King's Justice re-run. Sleeper posts the chop on Tuesday afternoon,
+      # after the 5am facts build, so Tuesday's file always has the chop as
+      # unconfirmed. Rebuilding the week now confirms it on the Death Recap and
+      # adds the claims Sleeper filed under that week this morning. It runs
+      # after the waiver commit so a failure here can never cost the analysis;
+      # --strict writes nothing on failure, and build_week.py writes nothing at
+      # all when the league came out unchanged.
+      - name: Rebuild King's Justice facts
+        if: steps.when.outputs.go == 'yes'
+        run: python scripts/build_week.py --week latest --only kings_justice --refresh --strict
+
+      - name: Commit the King's Justice facts if they changed
+        if: steps.when.outputs.go == 'yes'
+        run: |
+          git add data/*/week-*.json data/*/index.json data/*/season.json
+          if git diff --cached --quiet; then
+            echo 'nothing changed'
+            exit 0
+          fi
+          git commit -m "Facts: King's Justice Wednesday re-run"
+          git pull --rebase --autostash origin "${GITHUB_REF_NAME}"
+          git push origin "HEAD:${GITHUB_REF_NAME}"

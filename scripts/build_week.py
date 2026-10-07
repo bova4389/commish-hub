@@ -590,10 +590,12 @@ def build_chopped(cfg, season, week, nfl, proj):
 
     n_slots = len(nfl['slots'])
     rows = []
+    entries = {}
     for e in matchups:
         t = teams.get(e['roster_id'])
         if not t or not alive_before(t):
             continue
+        entries[t['roster_id']] = e
         starters = starter_rows(e, proj, calc, nfl['team_slot'], n_slots)
         pts = round(e.get('points') or 0.0, 2)
         running = []
@@ -644,6 +646,139 @@ def build_chopped(cfg, season, week, nfl, proj):
         'top_starters': [{'handle': h, **{k: s[k] for k in ('name', 'pos', 'team', 'pts', 'slot')}} for h, s in top],
         'dud_starters': [{'handle': h, **{k: s[k] for k in ('name', 'pos', 'team', 'pts', 'slot')}} for h, s in duds],
         'transactions': week_transactions(lid, week, teams, proj),
+        'death': None if provisional or not low else death_recap(
+            cfg, season, week, lid, league, teams, rows, entries, proj, calc, slot_list),
+    }
+
+
+def ordinal(n):
+    return f"{n}{'th' if 10 <= n % 100 <= 20 else {1: 'st', 2: 'nd', 3: 'rd'}.get(n % 10, 'th')}"
+
+
+def load_history(cfg):
+    """Finished seasons, exported by kings-justice/export_hub_history.py. Optional:
+    without it the Death Recap still covers this season."""
+    rel = cfg.get('history')
+    path = os.path.join(ROOT, rel) if rel else None
+    if not path or not os.path.exists(path):
+        return {'seasons': {}, 'managers': {}}
+    with open(path, encoding='utf-8') as f:
+        return json.load(f)
+
+
+def death_recap(cfg, season, week, lid, league, teams, rows, entries, proj, calc, slot_list):
+    """The Death Recap: who died this week, their career, this season week by
+    week, their budget, and whose fault it was. Built only once every game is
+    final. The page writes both the image and the copy-paste text from this, so
+    the two can never disagree; the words are templated there, not here.
+
+    The dead team is the roster Sleeper chopped if it has posted the chop, and
+    otherwise the lowest score among teams alive going in, which is the league
+    rule (it has matched Sleeper on every chop since 2023). `confirmed` says
+    which. In the final week, with two teams left, the lower score is not a
+    death but second place, and `kind` says 'runner_up'."""
+    dead = next((r for r in rows if r['chopped']), rows[-1])
+    others = [r for r in rows if r['roster_id'] != dead['roster_id']]
+    survivor = min(others, key=lambda r: r['points']) if others else None
+    margin = round(survivor['points'] - dead['points'], 2) if survivor else None
+    final_week = len(rows) == 2
+    payouts = cfg.get('payouts') or {}
+    t = teams[dead['roster_id']]
+
+    # --- the lineup that died, and whose fault it was
+    e = entries[dead['roster_id']]
+    starters = dead['starters']
+    bench = bench_rows(e, proj, calc)
+    swap = best_swap(starters, bench, slot_list)
+    no_game = [s for s in starters if s['slot'] is None]
+    busts = sorted([s for s in starters if s['proj'] is not None and s['pts'] < s['proj']],
+                   key=lambda s: s['pts'] - s['proj'])
+    zeros = [s for s in starters if s['slot'] is not None and s['pts'] <= 0]
+    if swap and margin is not None and swap['gain'] > margin:
+        # out_proj 0 means Sleeper already had the starter ruled out at lock.
+        out_proj = next((s['proj'] for s in starters if s['name'] == swap['out']), None)
+        blame = {'kind': 'start_sit', **swap, 'out_proj': out_proj}
+    elif no_game:
+        blame = {'kind': 'no_game', 'players': [s['name'] for s in no_game]}
+    elif busts:
+        b = busts[0]
+        blame = {'kind': 'bust', 'name': b['name'], 'pos': b['pos'], 'pts': b['pts'], 'proj': b['proj'],
+                 'short': round(b['proj'] - b['pts'], 2)}
+    else:
+        blame = {'kind': 'none'}
+    keep = ('name', 'pos', 'team', 'pts', 'proj')
+
+    # --- this season, week by week, ranked among the teams alive each week
+    def alive_in(rid, w):
+        # Chopped rosters keep appearing at 0.0 in every later week; only the
+        # teams alive going into week w are ranked.
+        if rid not in teams:
+            return False
+        out = teams[rid]['settings'].get('eliminated') or 0
+        return out == 0 or out >= w
+
+    weeks, highs = [], []
+    for w in range(1, week + 1):
+        m = entries.values() if w == week else (get(f'{REST}/league/{lid}/matchups/{w}') or [])
+        alive = sorted([x for x in m if alive_in(x['roster_id'], w)], key=lambda x: -(x.get('points') or 0))
+        me = next((i for i, x in enumerate(alive) if x['roster_id'] == dead['roster_id']), None)
+        if me is None:
+            continue
+        pts = round(alive[me].get('points') or 0.0, 2)
+        weeks.append({'week': w, 'points': pts, 'rank': me + 1, 'alive': len(alive)})
+        if me == 0:
+            highs.append(w)
+
+    # --- the budget: what they spent, what they died holding, the biggest buy
+    budget = (league.get('settings') or {}).get('waiver_budget') or 0
+    used = t['settings'].get('waiver_budget_used') or 0
+    buys = []
+    for w in range(1, week + 1):
+        for x in get(f'{REST}/league/{lid}/transactions/{w}') or []:
+            if x.get('type') == 'waiver' and x.get('status') == 'complete' and \
+                    dead['roster_id'] in (x.get('roster_ids') or []):
+                for pid in (x.get('adds') or {}):
+                    buys.append({'week': w, 'player': player_info(pid, proj)['name'],
+                                 'bid': (x.get('settings') or {}).get('waiver_bid', 0)})
+    buys.sort(key=lambda b: -b['bid'])
+
+    # --- career: finished seasons from the history export, plus this one
+    hist = load_history(cfg)
+    career = [dict(s) for s in (hist['managers'].get(t['user_id']) or {}).get('seasons', [])
+              if s['season'] != season]
+    teams_total = len(teams)
+    place = 2 if final_week else len(rows)
+    career.append({'season': season, 'place': place, 'teams': teams_total, 'team_name': t['team_name'],
+                   'chopped_week': week, 'place_prize': payouts.get('second', 0) if final_week else 0,
+                   'weekly_highs': highs, 'weekly_prize': len(highs) * (payouts.get('weekly_high') or 0),
+                   'current': True})
+    career.sort(key=lambda s: s['season'])
+    earned = sum(s['place_prize'] + s['weekly_prize'] for s in career)
+
+    return {
+        'kind': 'runner_up' if final_week else 'death',
+        # A final has no chop transaction to wait for: the lower score is 2nd by rule.
+        'confirmed': bool(dead['chopped']) or final_week,
+        'handle': dead['handle'], 'name': dead['name'], 'team_name': dead['team_name'],
+        'points': dead['points'], 'proj': dead['proj'], 'place': place, 'teams': teams_total,
+        'ordinal': ordinal(place),
+        'survivor': None if not survivor else {'handle': survivor['handle'], 'points': survivor['points']},
+        'margin': margin,
+        'champion': survivor['handle'] if final_week and survivor else None,
+        'lineup': [{k: s[k] for k in keep} for s in starters],
+        'bench': [{k: b[k] for k in keep} for b in sorted(bench, key=lambda b: -b['pts'])],
+        'blame': blame,
+        'busts': [{k: s[k] for k in keep} for s in busts[:3]],
+        'zeros': [s['name'] for s in zeros],
+        'optimal': optimal_total(starters, bench, slot_list),
+        'season_weeks': weeks,
+        'faab': {'budget': budget, 'spent': used, 'left': budget - used, 'claims_won': len(buys),
+                 'biggest': buys[0] if buys else None},
+        'career': career,
+        'lifetime': {'earned': earned, 'seasons': len(career),
+                     'cashes': sum(1 for s in career if s['place_prize']),
+                     'weekly_highs': sum(len(s['weekly_highs']) for s in career),
+                     'best_place': min(s['place'] for s in career)},
     }
 
 
@@ -979,6 +1114,15 @@ def main():
     if failed and args.strict:
         # A rerun must never overwrite a good week with an error, so write nothing.
         sys.exit(f"failed: {', '.join(failed)}; nothing written")
+    # An --only rebuild that changed nothing writes nothing. The Wednesday
+    # King's Justice re-run in waivers.yml relies on this: without it, every
+    # Wednesday would commit three files differing only by a timestamp.
+    if only and os.path.exists(path):
+        with open(path, encoding='utf-8') as f:
+            before = json.load(f).get('leagues', {})
+        if all(json.loads(json.dumps(out['leagues'][k])) == before.get(k) for k in only if k in out['leagues']):
+            print(f'{os.path.relpath(path, ROOT)}: {", ".join(sorted(only))} unchanged; nothing written')
+            return
     os.makedirs(season_dir, exist_ok=True)
     tmp = path + '.tmp'
     with open(tmp, 'w', encoding='utf-8') as f:

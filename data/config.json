@@ -13,6 +13,7 @@
       "ids": { "2026": "1383926066564837376", "2025": "1265134884054114304" },
       "payouts": { "weekly_high": 25, "first": 350, "second": 150 },
       "waivers": true,
+      "history": "data/history/kings_justice.json",
       "names": {}
     },
     "two_mitchs": {

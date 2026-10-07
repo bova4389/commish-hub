@@ -144,6 +144,29 @@ tr.dim td { color: var(--faint); }
 .story li:last-child { border-bottom: 0; }
 .story .when { color: var(--muted); font-size: 12.5px; font-weight: 600; padding-top: 2px; }
 
+/* Kings Justice Death Recap */
+.panel.death { border-top: 3px solid var(--bad); }
+.dr-lead { font-size: 19px; font-weight: 800; letter-spacing: -0.01em; }
+.dr-how { color: var(--muted); font-size: 14px; margin-top: 2px; }
+.dr-note { color: var(--warn); font-size: 12.5px; font-weight: 600; margin-top: 6px; }
+.dr-epitaph { margin: 12px 0 0; padding: 8px 12px; border-left: 3px solid var(--accent); color: var(--text); font-style: italic; font-size: 14.5px; }
+.dr-h { margin: 18px 0 8px; font-size: 11px; font-weight: 800; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; }
+.dr-earn { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+.dr-earn b { font-size: 30px; color: var(--good); font-variant-numeric: tabular-nums; }
+.dr-earn span { color: var(--muted); font-size: 13px; }
+.dr-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.dr-chip { flex: 0 0 auto; min-width: 74px; background: var(--panel-2); border: 1px solid var(--line); border-radius: 9px; padding: 6px 8px; }
+.dr-chip .k { color: var(--muted); font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; }
+.dr-chip .v { font-weight: 800; font-size: 15px; font-variant-numeric: tabular-nums; }
+.dr-chip .r { color: var(--muted); font-size: 11.5px; }
+.dr-chip.hi { border-color: var(--good); }
+.dr-chip.hi .v { color: var(--good); }
+.dr-chip.dead { border-color: var(--bad); background: rgba(255,107,107,.10); }
+.dr-chip.dead .v { color: var(--bad); }
+.dr-p { font-size: 14.5px; line-height: 1.5; margin-top: 8px; }
+.panel.exporting .dr-p,
+.panel.exporting .dr-how { max-width: 680px; }
+
 /* matchup cards */
 .match { border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; margin-bottom: 10px; background: var(--panel-2); }
 .match .row { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }

@@ -73,8 +73,9 @@
     // The season cards are rebuilt on every render, so their buttons are
     // handled by delegation rather than wired one by one.
     $('#evidence').addEventListener('click', (e) => {
-      const b = e.target.closest('[data-save],[data-preview],[data-gmode],[data-zero]');
+      const b = e.target.closest('[data-save],[data-preview],[data-gmode],[data-zero],[data-copy]');
       if (!b) return;
+      if (b.dataset.copy) return copyText(DEATH_TEXT, b);
       if (b.dataset.zero) {
         state.hideZero = !state.hideZero;
         return render();
@@ -345,7 +346,8 @@
     const waivers = (tx.waivers || []).slice(0, 8).map((w) => `<tr><td>${esc(w.player)} <span class="sub">${esc(w.pos)}</span></td><td>${esc(w.handle)}</td><td class="num"><b>${money(w.bid)}</b></td>` +
       `<td class="num muted">${w.bidders > 1 ? `${w.bidders} bids · next ${money(w.runner_up)}` : 'uncontested'}</td></tr>`).join('');
 
-    return panel('Scoreboard', `${L.alive_before} alive going in · median ${f2(L.median)} · spread ${f2(L.spread)}`,
+    return (L.death ? deathPanel(L.death) : '') +
+      panel('Scoreboard', `${L.alive_before} alive going in · median ${f2(L.median)} · spread ${f2(L.spread)}`,
         tbl('<th class="num">#</th><th>Team</th><th class="num">Pts</th><th class="num">Proj</th><th class="num">+/-</th>', rows)) +
       panel('How the week unfolded', 'Who sat in the chop seat after each kickoff window',
         story ? `<ul class="story">${story}</ul>` : '<div class="empty">No games played yet.</div>') +
@@ -356,6 +358,139 @@
       panel('Worst starters', 'Players who actually had a game', tbl('<th>Player</th><th>Team</th><th class="num">Pts</th>', duds)) +
       panel('Waiver wire', tx.faab_spent ? `${money(tx.faab_spent)} changed hands across ${(tx.waivers || []).length} winning claims` : 'No money moved',
         waivers ? tbl('<th>Player</th><th>Won by</th><th class="num">Bid</th><th class="num">Auction</th>', waivers) : '<div class="empty">No waiver claims this week.</div>');
+  }
+
+  /* ---------------------------------------------------------------- Kings Justice: Death Recap
+     Who died this week, their career, this season week by week, their budget
+     and whose fault it was. `death` is built by build_week.py once every game
+     is final. The image (deathPanel) and the group-chat text (deathText) are
+     both written here from the same sentences, so they can never disagree.
+     The optional epitaph is one hand-written line, `recaps/<season>.json`
+     leagues.kings_justice.<week>.epitaph, added by the Tuesday recap task. */
+  const RANK = (n) => n + (n % 100 >= 11 && n % 100 <= 13 ? 'th' : ({ 1: 'st', 2: 'nd', 3: 'rd' }[n % 10] || 'th'));
+  const plural = (n, one, many) => `${n} ${n === 1 ? one : (many || one + 's')}`;
+  // $1,000 rather than $1000. Local to the Death Recap so no other saved image changes.
+  const cash = (n) => '$' + Math.round(+n || 0).toLocaleString('en-US');
+  let DEATH_TEXT = '';
+
+  function deathEpitaph() {
+    const r = ((RECAPS.leagues || {})[state.league] || {})[String(state.week)];
+    return (r && r.epitaph) || '';
+  }
+
+  function careerLine(s) {
+    if (s.place === 1) return `${s.season}: Champion`;
+    const out = s.place === 2 ? 'lost the final' : `chopped wk ${s.chopped_week}`;
+    return `${s.season}: ${RANK(s.place)} of ${s.teams} (${out})`;
+  }
+
+  // Everything the card says in words, once. Both renderers use these.
+  function deathLines(D) {
+    const runnerUp = D.kind === 'runner_up';
+    const lead = runnerUp
+      ? `${D.handle} finishes 2nd and takes the $150. ${D.champion} is the champion.`
+      : D.confirmed ? `${D.handle} has been chopped.` : `${D.handle} is going to be chopped.`;
+    const how = `${f2(D.points)} points, ${RANK(D.place)} of ${D.teams}` +
+      (D.survivor ? `, ${f2(D.margin)} behind ${D.survivor.handle}.` : '.');
+    const L = D.lifetime;
+    const earnSub = [plural(L.weekly_highs, 'weekly high'),
+      L.cashes ? plural(L.cashes, 'top-two finish', 'top-two finishes') : 'never finished top two',
+      `best finish ${L.best_place === 1 ? 'champion' : RANK(L.best_place)}`,
+      plural(L.seasons, 'season')].join(' · ');
+    const F = D.faab;
+    const budget = !F.budget ? '' : F.spent === 0
+      ? `Spent $0 of ${cash(F.budget)} on waivers. Goes out holding every dollar.`
+      : `Spent ${cash(F.spent)} of ${cash(F.budget)} on ${plural(F.claims_won, 'claim')}` +
+        (F.biggest ? `. Biggest buy: ${F.biggest.player}, ${cash(F.biggest.bid)} in week ${F.biggest.week}` : '') +
+        `. Goes out holding ${cash(F.left)}.`;
+    const B = D.blame;
+    const by = D.margin != null ? ` ${D.handle} ${runnerUp ? 'lost the final' : 'died'} by ${f2(D.margin)}.` : '';
+    let blame;
+    if (B.kind === 'start_sit') {
+      blame = `${D.handle} started ${B.out} at ${B.slot}` + (B.out_proj === 0 ? ', projected for 0.0 before kickoff,' : '') +
+        ` and got ${f2(B.out_pts)}, while ${B.in} scored ${f2(B.in_pts)} on the bench. That one swap was worth ${f2(B.gain)}.` + by;
+    } else if (B.kind === 'no_game') {
+      blame = `${D.handle} started ${B.players.join(' and ')} with no game this week.` + by;
+    } else if (B.kind === 'bust') {
+      blame = `${B.name} was projected for ${f2(B.proj)} and scored ${f2(B.pts)}, ${f2(B.short)} short.` + by;
+    } else {
+      blame = `No single lineup move would have saved ${D.handle}.` + by;
+    }
+    const left = D.optimal - D.points;
+    const bench = left > 0.005 ? `The best lineup on that roster scored ${f2(D.optimal)}: ${f2(left)} left on the bench.` : '';
+    return { lead, how, earnSub, budget, blame, bench };
+  }
+
+  function deathPanel(D) {
+    const X = deathLines(D);
+    const ep = deathEpitaph();
+    const career = D.career.map((s) => {
+      const won = s.place_prize + s.weekly_prize;
+      const fin = s.place === 1 ? '<span class="pill good">CHAMPION</span>' : `${RANK(s.place)} of ${s.teams}`;
+      return `<tr class="${s.current ? 'hl-bad' : ''}"><td>${s.season}</td><td>${fin}<div class="sub">${esc(s.team_name)}</div></td>` +
+        `<td class="num">${s.place <= 2 ? (s.place === 1 ? '—' : 'Final') : 'Wk ' + s.chopped_week}</td>` +
+        `<td class="num ${won ? 'good' : 'muted'}">${cash(won)}</td></tr>`;
+    }).join('');
+    const chips = D.season_weeks.map((w) => {
+      const last = w.week === D.season_weeks[D.season_weeks.length - 1].week;
+      return `<div class="dr-chip ${w.rank === 1 ? 'hi' : last ? 'dead' : ''}"><div class="k">Wk ${w.week}</div>` +
+        `<div class="v">${f2(w.points)}</div><div class="r">${RANK(w.rank)} of ${w.alive}</div></div>`;
+    }).join('');
+    const body =
+      `<div class="dr-lead">${esc(X.lead)}</div><div class="dr-how">${esc(X.how)}</div>` +
+      (D.confirmed ? '' : `<div class="dr-note">Sleeper hasn't posted the chop yet. Lowest score goes by league rule.</div>`) +
+      (ep ? `<blockquote class="dr-epitaph">${md(ep)}</blockquote>` : '') +
+      `<h4 class="dr-h">Career in review</h4>` +
+      tbl('<th>Season</th><th>Finish</th><th class="num">Out</th><th class="num">Won</th>', career) +
+      `<h4 class="dr-h">Lifetime earnings</h4><div class="dr-earn"><b>${cash(D.lifetime.earned)}</b><span>${esc(X.earnSub)}</span></div>` +
+      `<h4 class="dr-h">This season</h4><div class="dr-chips">${chips}</div>` +
+      (X.budget ? `<div class="dr-p">${esc(X.budget)}</div>` : '') +
+      `<h4 class="dr-h">${D.kind === 'runner_up' ? 'How the final was lost' : 'Cause of death'}</h4><div class="dr-p">${esc(X.blame)}</div>` +
+      (X.bench ? `<div class="dr-p muted">${esc(X.bench)}</div>` : '');
+    DEATH_TEXT = deathText(D, X, ep);
+    const title = D.kind === 'runner_up' ? `Runner-up Recap: ${esc(D.handle)}` : `Death Recap: ${esc(D.handle)}`;
+    return panel(title, '', body, { actions: `<button type="button" class="btn ghost sm" data-copy="death">Copy text</button>` })
+      .replace('class="panel"', 'class="panel death"');
+  }
+
+  // The group-chat version: plain text, short lines, survives any chat app.
+  function deathText(D, X, ep) {
+    const cfg = CONFIG.leagues[state.league];
+    const head = D.kind === 'runner_up' ? 'RUNNER-UP RECAP' : 'DEATH RECAP';
+    const weeks = D.season_weeks.map((w, i) =>
+      `Wk ${w.week}: ${f2(w.points)} (${RANK(w.rank)} of ${w.alive})` +
+      (w.rank === 1 ? ' 💵' : i === D.season_weeks.length - 1 ? ' 🪓' : ''));
+    const out = [
+      `🪓 ${cfg.name.toUpperCase()} · WEEK ${state.week} ${head} 🪓`, '',
+      X.lead, X.how,
+    ];
+    if (!D.confirmed) out.push('(Sleeper hasn\'t posted the chop yet.)');
+    if (ep) out.push('', ep.replace(/\*\*?/g, ''));
+    out.push('', '📜 CAREER IN REVIEW', ...D.career.map(careerLine),
+      '', `💰 LIFETIME EARNINGS: ${cash(D.lifetime.earned)}`, X.earnSub,
+      '', `📉 THIS SEASON`, ...weeks);
+    if (X.budget) out.push(`💸 ${X.budget}`);
+    out.push('', D.kind === 'runner_up' ? '🔪 HOW THE FINAL WAS LOST' : '🔪 CAUSE OF DEATH', X.blame);
+    if (X.bench) out.push(X.bench);
+    return out.join('\n');
+  }
+
+  async function copyText(text, btn) {
+    try {
+      await navigator.clipboard.writeText(text);
+    } catch (e) {
+      // Older mobile browsers, or a page opened over plain http: the textarea
+      // route still works there.
+      const ta = document.createElement('textarea');
+      ta.value = text; ta.setAttribute('readonly', ''); ta.style.position = 'fixed'; ta.style.opacity = '0';
+      document.body.appendChild(ta); ta.select();
+      const ok = document.execCommand('copy');
+      ta.remove();
+      if (!ok) return alert('Could not copy. Long-press and copy from here:\n\n' + text);
+    }
+    const was = btn.textContent;
+    btn.textContent = 'Copied';
+    setTimeout(() => { btn.textContent = was; }, 1500);
   }
 
   /* ---------------------------------------------------------------- evidence: 2 Mitchs */
@@ -1008,7 +1143,8 @@
       `<h3>${title}</h3>${dek ? `<div class="dek">${dek}</div>` : ''}${body}` +
       (share ? `<div class="sc-foot ex-only"><span>Commish Hub</span><span>${panelStamp()}</span></div>` +
         `<div class="panel-actions"><button type="button" class="btn sm" data-save="${id}">Save image</button>` +
-        `<button type="button" class="btn ghost sm" data-preview="${id}">Preview image</button></div>` : '') +
+        `<button type="button" class="btn ghost sm" data-preview="${id}">Preview image</button>` +
+        ((opt && opt.actions) || '') + `</div>` : '') +
       `</div>`;
   }
   // Ids come from the title so the saved file name says what it is. `PANEL_IDS`

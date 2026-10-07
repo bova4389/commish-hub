@@ -4,7 +4,8 @@
   "shape": {
     "headline": "one line, the week in a sentence",
     "facts": "optional array of 3-5 {k, v}; leave it out and the page builds the strip from the data",
-    "paragraphs": "array of strings, 2-3 paragraphs / ~200 words. **bold** and *italic* allowed, nothing else."
+    "paragraphs": "array of strings, 2-3 paragraphs / ~200 words. **bold** and *italic* allowed, nothing else.",
+    "epitaph": "kings_justice only, optional: one roast line under 25 words about the team that died, shown on the Death Recap card and in its copy-paste text"
   },
   "leagues": {
     "kings_justice": {
@@ -34,6 +35,7 @@
       },
       "4": {
         "headline": "Elworth was finished at 89.52 before Sunday night and needed one Monday collapse out of three. Atlanta and New Orleans scored 69 and nobody collapsed.",
+        "epitaph": "Elworth died with all $1,000 unspent and 23.6 points on the bench, starting a receiver projected for zero.",
         "paragraphs": [
           "Fifteen in, fourteen out, and the fourth body belongs to **Elworth**. Dalton Kincaid scored 1.7 in the 1:00 games, Ladd McConkey scored 0.0 at 4:25, and Elworth was out of players at 89.52 on a 102.58 projection before Sunday night kicked off. Then came the wait. Three teams went into Monday night below him, all with players in Atlanta's 45-24 win in New Orleans. **AllBidness** sat at 85.7 and needed 3.82 from Chris Olave. Commissioner **avobttam** sat at 86.3 and needed 3.22 from Tyler Shough and Devaughn Vele. **creckley** sat at 86.88 and needed 2.64 from Drake London. Olave scored 19.6, Shough and Vele scored 35.34 between them, and London scored 14.6. Not one of them came close.",
           "The survivor who should be embarrassed is **humrich**: 91.26 on a 97.44 projection, alive by 1.74, a margin smaller than the 2.0 Saquon Barkley gave him. Kyren Williams scored 36.7, the third-best start in the league, and humrich still finished 14th of 15. Earlier in the day **creckley** held the chop seat after the 1:00 and 4:05 games at 31.08 and 32.88, and **DipLipGator** was in it after the 4:25 games at 52.5 with two players left, 0.22 behind Bogeyman28.",
