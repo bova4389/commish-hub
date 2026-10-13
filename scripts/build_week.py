@@ -841,8 +841,26 @@ def build_h2h(cfg, season, week, nfl, proj):
                    key=lambda x: (x[1]['pts'] - x[1]['proj']))[:8]
     standings = sorted(sides.values(), key=lambda s: (-teams[s['roster_id']]['settings'].get('wins', 0),
                                                        -teams[s['roster_id']]['settings'].get('fpts', 0)))
+    outlook = None
+    if cfg.get('outlook') and nfl['all_final']:
+        # Power rankings + playoff odds (scripts/outlook.py). Final weeks only:
+        # a provisional score would rank teams on games not yet played.
+        import outlook as OL
+        prev_path = os.path.join(ROOT, 'data', str(season), f'week-{week - 1:02d}.json')
+        prev = None
+        if os.path.exists(prev_path):
+            with open(prev_path, encoding='utf-8') as f:
+                prev = ((json.load(f).get('leagues') or {}).get(cfg['key']) or {}).get('outlook')
+        # A failure here must never cost the week: --strict would then write
+        # nothing for all five leagues. The page simply shows no outlook panels.
+        try:
+            outlook = OL.build_outlook(cfg, season, week, league, teams, calc, slot_list, prev=prev)
+            OL.report(cfg['key'], outlook)
+        except Exception as e:
+            print(f'    outlook FAILED (week still written without it): {e}', file=sys.stderr)
     return {
         'league_id': lid, 'league_name': league.get('name'), 'provisional': not nfl['all_final'],
+        'outlook': outlook,
         'proj_bias': bias, 'roster_positions': slot_list,
         'matchups': games,
         'high': max(sides.values(), key=lambda s: s['points'])['handle'] if sides else None,

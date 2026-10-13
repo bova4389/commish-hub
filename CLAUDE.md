@@ -45,6 +45,7 @@ data/history/kings_justice.json  KJ career history, finished seasons  <- ../king
 recaps/<season>.json    THE WORDS, hand-written, keyed league -> week
 scripts/build_week.py   pulls the week from Sleeper/ESPN, writes the facts file
 scripts/build_season.py folds every week file into season.json (run by build_week.py)
+scripts/outlook.py      power rankings + playoff/title odds for h2h leagues with "outlook": true (run by build_week.py)
 scripts/build_waivers.py  the waiver wire analysis; Sleeper REST only, no token
 scripts/token_check.py  days left on the Sleeper token; never prints it
 scripts/_cache/         cached API responses (gitignored)
@@ -473,6 +474,35 @@ $0 is the real reference price either way.
   are arithmetic on a shape that is easy to get subtly wrong. Run it with
   `python test/test_waivers.py` after touching a metric, and change it in the
   same pass.
+
+## Power rankings and playoff odds (2 Mitchs, since 2026-10-12)
+
+`scripts/outlook.py` adds `leagues.<key>.outlook` to the week file for every h2h league with
+`"outlook": true` in `data/config.json` (only `two_mitchs` today). `build_week.py` calls it for
+**final weeks only**, so the 5am Action produces it with everything else. The page draws a
+**Power rankings** and a **Playoff odds** panel under Standings, and adds "Power #1" and "Title
+favorite" to the card facts. The `2-mitchs-1-cup` Tuesday task copies the same numbers into
+`LEAGUE.md`, so the two never disagree.
+
+- **Power rankings use results only:** all-play win % 50%, points per game 30%, last three weeks'
+  PPG 20%, as z-scores. `luck` = actual wins minus all-play rate × games. `prev_rank` is the same
+  calculation through the previous week.
+- **Odds are a Monte Carlo** (10,000 seasons, about 10 seconds): current rosters, Sleeper's
+  projection for every remaining week rescored with the league's scoring, best lineup *by
+  projection*, empty slots streamed at 80% of the best free agent, real schedule to week 14, top
+  6 on wins then points, real bracket (wk 15: 3v6, 4v5; wk 16: 1 and 2 enter; wk 17 final).
+  Every game gets a random swing; **without it every team is 0% or 100%**.
+- **Calibration gate:** simulated team weekly scores must swing 25-28% (sd/mean). `odds.in_band`
+  false means the page shows "held back" instead of the table, and the recaps say so.
+  `TEAM_CV` is 0.17: 0.16 read 24.8% at the low end, 0.18 read 28.2% at the top.
+- **The seed is season×100+week**, so a rerun on the same Sleeper data gives the same numbers.
+  Sleeper's projections do move during the week, so a Tuesday-afternoon rerun can differ by a
+  point or so from the 5am build. The bot's file wins (see the Tuesday routine).
+- **Weeks 1-4 carry power rankings only** (`odds: null` with `odds_note`). A past week's odds
+  can't be rebuilt honestly: Sleeper only serves today's rosters and projections. To backfill or
+  repair a week's power rankings without touching its other facts:
+  `python scripts/outlook.py --week N --no-odds`. Without `--no-odds` it rewrites the odds too.
+- Odds aren't simulated once week 14 is final (`odds_note` says so); the bracket is set by then.
 
 ## Things that will bite
 

@@ -271,6 +271,10 @@
       if (lo) out.push({ k: 'Week low', v: `${lo.name} · ${f2(lo.points)}` });
       if (close) out.push({ k: 'Closest game', v: `${close.winner.name} by ${f2(close.margin)}` });
       if (bench) out.push({ k: 'Left on bench', v: `${bench.name} · ${f2(bench.left)}` });
+      const O = L.outlook;
+      if (O && O.power && O.power[0]) out.push({ k: 'Power #1', v: `${O.power[0].name} · ${O.power[0].record}` });
+      const fav = O && O.odds && O.odds.in_band && [...O.odds.teams].sort((a, b) => b.title - a.title)[0];
+      if (fav) out.push({ k: 'Title favorite', v: `${fav.name} · ${fav.title.toFixed(1)}%` });
     } else if (kind === 'pickem') {
       const w = L.winners || [];
       out.push({ k: `Weekly ${money(potOf(L))}`, v: L.rollover ? 'Rolls over' : w.length ? `${w[0]} · ${L.best}/${L.weekly_pick_limit}` : 'pending' });
@@ -521,7 +525,42 @@
       panel('Underperformers', 'Players who had a game and did not show up', tbl('<th>Player</th><th>Manager</th><th class="num">Proj</th><th class="num">Actual</th>', perf(L.under, 'bad'))) +
       panel('Points left on the bench', 'Optimal lineup minus what was actually started', tbl('<th>Manager</th><th class="num">Left</th><th>Best single swap</th>', bench)) +
       panel('Standings', 'As of now', tbl('<th class="num">#</th><th>Manager</th><th class="num">W-L</th><th class="num">PF</th>', stand)) +
+      outlookPanels(L.outlook) +
       panel('Moves', tx.faab_spent ? `${money(tx.faab_spent)} in FAAB` : '', (moves ? tbl('<th>Player</th><th>Manager</th><th class="num">Cost</th><th></th>', moves) : '') + trades || '<div class="empty">No moves this week.</div>');
+  }
+
+  /* Power rankings + playoff odds, from scripts/outlook.py. Only leagues with
+     "outlook": true in config.json carry the block, and only on final weeks. */
+  function outlookPanels(O) {
+    if (!O) return '';
+    const one = (n) => (Math.round((+n || 0) * 10) / 10).toFixed(1);
+    const pct = (n) => `${one(n)}%`;
+    const signed = (n) => `${n > 0 ? '+' : n < 0 ? '−' : ''}${one(Math.abs(n))}`;
+    const move = (prev, now) => {
+      if (prev == null) return '';
+      const d = prev - now;
+      return d ? ` <span class="sub ${d > 0 ? 'good' : 'bad'}">${d > 0 ? '▲' : '▼'}${Math.abs(d)}</span>` : ' <span class="sub">–</span>';
+    };
+    const power = O.power.map((p) => `<tr><td class="num">${p.rank}</td><td>${esc(p.name)}${move(p.prev_rank, p.rank)}</td>` +
+      `<td class="num">${esc(p.record)}</td><td class="num">${esc(p.allplay)}</td><td class="num">${one(p.ppg)}</td>` +
+      `<td class="num muted">${one(p.last3)}</td><td class="num ${p.luck >= 1 ? 'good' : p.luck <= -1 ? 'bad' : 'muted'}">${signed(p.luck)}</td></tr>`).join('');
+    let out = panel('Power rankings',
+      `Through week ${O.through_week}. Blends the all-play record (every team vs. all eleven others, every week) 50%, points per game 30% and the last three weeks 20%. Luck = actual wins minus what the all-play rate says you'd have.`,
+      tbl('<th class="num">#</th><th>Manager</th><th class="num">W-L</th><th class="num">All-play</th><th class="num">PPG</th><th class="num">Last 3</th><th class="num">Luck</th>', power));
+    const od = O.odds;
+    if (!od) return out + (O.odds_note ? panel('Playoff odds', esc(O.odds_note), '', { share: false }) : '');
+    if (!od.in_band) {
+      return out + panel('Playoff odds', `Held back this week: the model's calibration came out ${one(od.calibration[0])}–${one(od.calibration[1])}% against a 25–28% target, so its odds would be over- or under-confident.`, '', { share: false });
+    }
+    const delta = (prev, now) => prev == null ? '' : ` <span class="sub ${now - prev >= 0.05 ? 'good' : now - prev <= -0.05 ? 'bad' : ''}">${signed(now - prev)}</span>`;
+    // Playoffs and Title sit next to the name so a phone shows them without scrolling.
+    const odds = od.teams.map((t) => `<tr><td>${esc(t.name)}</td>` +
+      `<td class="num"><b>${pct(t.playoff)}</b>${delta(t.prev_playoff, t.playoff)}</td>` +
+      `<td class="num">${pct(t.title)}${delta(t.prev_title, t.title)}</td><td class="num muted">${pct(t.bye)}</td>` +
+      `<td class="num">${esc(t.record)}</td><td class="num muted">${esc(t.proj_record)}</td></tr>`).join('');
+    return out + panel('Playoff odds',
+      `${od.sims.toLocaleString()} simulated seasons. Each team starts its best lineup by Sleeper's projection for every remaining week, current rosters, byes and injuries included. Each game gets a realistic random swing around those projections; without it every game would go to the higher projection and every team would be 0% or 100%. Top 6 make it on wins, then points. Bye = a top-2 seed.`,
+      tbl('<th>Manager</th><th class="num">Playoffs</th><th class="num">Title</th><th class="num">Bye</th><th class="num">W-L</th><th class="num">Proj W-L</th>', odds));
   }
 
   /* ---------------------------------------------------------------- evidence: Infinity War */

@@ -3758,6 +3758,174 @@
       }
      }
     ]
+   },
+   "outlook": {
+    "through_week": 1,
+    "power": [
+     {
+      "rank": 1,
+      "prev_rank": null,
+      "name": "Nick Merkel",
+      "handle": "MerkDaddy36",
+      "record": "1-0",
+      "allplay": "11-0",
+      "allplay_pct": 100.0,
+      "ppg": 174.22,
+      "last3": 174.22,
+      "luck": 0.0,
+      "score": 1.654
+     },
+     {
+      "rank": 2,
+      "prev_rank": null,
+      "name": "Andrew Evans",
+      "handle": "BigOleTDs21",
+      "record": "1-0",
+      "allplay": "10-1",
+      "allplay_pct": 90.9,
+      "ppg": 160.62,
+      "last3": 160.62,
+      "luck": 0.1,
+      "score": 1.232
+     },
+     {
+      "rank": 3,
+      "prev_rank": null,
+      "name": "Matt Bova",
+      "handle": "avobttam",
+      "record": "1-0",
+      "allplay": "9-2",
+      "allplay_pct": 81.8,
+      "ppg": 157.8,
+      "last3": 157.8,
+      "luck": 0.2,
+      "score": 1.029
+     },
+     {
+      "rank": 4,
+      "prev_rank": null,
+      "name": "Mitch Blackwell",
+      "handle": "MJBlack",
+      "record": "1-0",
+      "allplay": "8-3",
+      "allplay_pct": 72.7,
+      "ppg": 148.32,
+      "last3": 148.32,
+      "luck": 0.3,
+      "score": 0.691
+     },
+     {
+      "rank": 5,
+      "prev_rank": null,
+      "name": "Mitch Pletcher",
+      "handle": "Mpletcher",
+      "record": "0-1",
+      "allplay": "7-4",
+      "allplay_pct": 63.6,
+      "ppg": 145.96,
+      "last3": 145.96,
+      "luck": -0.6,
+      "score": 0.498
+     },
+     {
+      "rank": 6,
+      "prev_rank": null,
+      "name": "Austin Hendrickson",
+      "handle": "Bogeyman28",
+      "record": "1-0",
+      "allplay": "6-5",
+      "allplay_pct": 54.5,
+      "ppg": 133.74,
+      "last3": 133.74,
+      "luck": 0.5,
+      "score": 0.104
+     },
+     {
+      "rank": 7,
+      "prev_rank": null,
+      "name": "Chris Bova",
+      "handle": "cbova1222",
+      "record": "1-0",
+      "allplay": "5-6",
+      "allplay_pct": 45.5,
+      "ppg": 124.66,
+      "last3": 124.66,
+      "luck": 0.5,
+      "score": -0.227
+     },
+     {
+      "rank": 8,
+      "prev_rank": null,
+      "name": "Jack Hawkins",
+      "handle": "JellyRoll6884",
+      "record": "0-1",
+      "allplay": "4-7",
+      "allplay_pct": 36.4,
+      "ppg": 124.06,
+      "last3": 124.06,
+      "luck": -0.4,
+      "score": -0.384
+     },
+     {
+      "rank": 9,
+      "prev_rank": null,
+      "name": "Jake Bogardus",
+      "handle": "djbogardus72",
+      "record": "0-1",
+      "allplay": "3-8",
+      "allplay_pct": 27.3,
+      "ppg": 116.86,
+      "last3": 116.86,
+      "luck": -0.3,
+      "score": -0.676
+     },
+     {
+      "rank": 10,
+      "prev_rank": null,
+      "name": "Katie Bogardus",
+      "handle": "katiestout13",
+      "record": "0-1",
+      "allplay": "2-9",
+      "allplay_pct": 18.2,
+      "ppg": 103.9,
+      "last3": 103.9,
+      "luck": -0.2,
+      "score": -1.085
+     },
+     {
+      "rank": 11,
+      "prev_rank": null,
+      "name": "Chris Merkel",
+      "handle": "CHRISMERKELDUH",
+      "record": "0-1",
+      "allplay": "1-10",
+      "allplay_pct": 9.1,
+      "ppg": 102.86,
+      "last3": 102.86,
+      "luck": -0.1,
+      "score": -1.251
+     },
+     {
+      "rank": 12,
+      "prev_rank": null,
+      "name": "Jon Carter",
+      "handle": "jonicarter89",
+      "record": "0-1",
+      "allplay": "0-11",
+      "allplay_pct": 0.0,
+      "ppg": 93.56,
+      "last3": 93.56,
+      "luck": 0.0,
+      "score": -1.586
+     }
+    ],
+    "power_weights": {
+     "allplay_pct": 0.5,
+     "ppg": 0.3,
+     "last3": 0.2
+    },
+    "odds": null,
+    "odds_note": "Odds start in week 5, the first week they were run live."
    }
   },
   "infinity_war": {

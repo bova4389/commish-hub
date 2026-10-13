@@ -19,6 +19,7 @@
     "two_mitchs": {
       "name": "2 Mitchs 1 Cup",
       "kind": "h2h",
+      "outlook": true,
       "accent": "#5cc8ff",
       "ids": { "2026": "1383837552376545280" },
       "names": {
