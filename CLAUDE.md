@@ -90,6 +90,10 @@ leagues; roast his weeks on the same terms as everyone else's. Per league:
 - **2 Mitchs** — bench points, zeros started, injured starters, proj-vs-actual **net of
   `proj_bias`** (Sleeper's projections run hot by a different amount each week; the raw delta
   is not the story). One roast and one real compliment every week, per `LEAGUE.md` §13.
+  **Since week 6 (10/17/2026) this league has its own voice:** the Commish written as Kenny
+  Powers. Abrasive, arrogant, vulgar, first person. That overrides the house register above for
+  2 Mitchs only. The rules and hard limits are under "The Commish voice" in
+  `../2-mitchs-1-cup/LEAGUE.md` §13. Read them before writing the card.
 - **Infinity War** — the $20 is won by being different *and* right: `lonely_wins` is the stat.
   Chalk that burned, upsets and how many saw them coming. **The weekly $20 is never split.**
   A tie on correct picks goes to the tiebreaker (guess closest to total points in the Monday
