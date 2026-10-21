@@ -67,7 +67,8 @@ test/test_waivers.py    fixture test for the waiver metrics -- no network
    card says so, and no chop/winner is treated as confirmed.
 2. **Read `data/2026/week-NN.json`** and write one entry per league into `recaps/2026.json`
    (`leagues.<key>.<week>`): `headline`, optional `facts` (3–5 `{k, v}`; omit to auto-build from
-   the data), `paragraphs` (2–3, ~200 words). Every number must trace to the facts file.
+   the data), `paragraphs` (2–3, **about 300 words in all, 350 at most**; see below). Every number must
+   trace to the facts file.
 3. **Check it in the browser** (`commish-hub` in the workspace `.claude/launch.json`, port 8799),
    phone width, every tab.
 4. Commit and push. Pages serves it. Open the tab, **Save image** (or **Preview image** and
@@ -76,6 +77,16 @@ test/test_waivers.py    fixture test for the waiver metrics -- no network
 The card is what gets screenshotted, so **it has to stand alone**: league name, week, headline,
 facts strip, paragraphs, provisional flag. Everything under it is evidence for the writer and
 for anyone who wants to argue.
+
+**The saved recap card is shaped like an iPhone screen** (owner, 2026-10-21): 393 × 852
+points, saved at 3× (1179 × 2556), so it fills the phone top to bottom with no scrolling. The
+card had saved at 720px wide, which a phone shrinks to about 55%, so the body text read at
+about 8.5pt. `fitPhone()` in hub.js tries text sizes from 21px down and keeps the largest one
+where the whole card fits, so a short week comes out big and a long one smaller. **Below 11px it
+stops shrinking** and the image runs taller instead (the owner's choice over "always fit at any
+size"). That is why the prose has a **soft word budget: about 300 words, 350 at most.** Week 6
+King's Justice, at 405 words, lands right at the floor. Only the recap card does this; panels
+and season grids still save wide, because a table needs the width.
 
 ## Voice
 

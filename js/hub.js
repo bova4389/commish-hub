@@ -1210,6 +1210,25 @@
     return exportEl($('#recap-card'), `${state.league}-${state.season}-week-${state.week}.png`, mode);
   }
 
+  /* The recap card saves in the shape of an iPhone screen. Try text sizes from
+     the largest down and keep the first one where the whole card fits the
+     852-point frame. Below PHONE_FS_MIN the text would be unreadable on a phone,
+     so a recap that still doesn't fit runs taller and scrolls a little instead
+     (owner, 2026-10-21). The soft word budget for the prose keeps that rare. */
+  const PHONE_H = 852, PHONE_FS_MAX = 21, PHONE_FS_MIN = 11;
+  function fitPhone(card) {
+    if (card.id !== 'recap-card') return;
+    card.classList.add('phone');
+    for (let fs = PHONE_FS_MAX; fs >= PHONE_FS_MIN; fs -= 0.25) {
+      card.style.setProperty('--fs', fs + 'px');
+      if (card.scrollHeight <= PHONE_H) return;
+    }
+  }
+  function unfitPhone(card) {
+    card.classList.remove('phone');
+    card.style.removeProperty('--fs');
+  }
+
   /* A panel exports at the recap card's 720px, or wider when a table in it is
      wider than that, so a wide table comes out whole instead of cropped. It is
      measured rather than set to max-content, because max-content would lay a
@@ -1223,6 +1242,7 @@
   }
   function unfitPanel(card) {
     card.classList.remove('exporting');
+    unfitPhone(card);
     if (card.classList.contains('panel')) card.style.width = '';
   }
 
@@ -1235,8 +1255,10 @@
     btns.forEach((b) => { b.disabled = true; });
     card.classList.add('exporting');
     fitPanel(card);
+    fitPhone(card);
     try {
-      const canvas = await html2canvas(card, { scale: 2, backgroundColor: '#0f1115', useCORS: true, logging: false,
+      // 3x on the phone-shaped recap is the iPhone's own resolution (1179 wide).
+      const canvas = await html2canvas(card, { scale: card.classList.contains('phone') ? 3 : 2, backgroundColor: '#0f1115', useCORS: true, logging: false,
                                                windowWidth: Math.max(card.scrollWidth + 80, 900) });
       unfitPanel(card);
       const blob = await new Promise((resolve) => canvas.toBlob(resolve, 'image/png'));

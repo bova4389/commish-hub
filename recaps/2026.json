@@ -4,7 +4,7 @@
   "shape": {
     "headline": "one line, the week in a sentence",
     "facts": "optional array of 3-5 {k, v}; leave it out and the page builds the strip from the data",
-    "paragraphs": "array of strings, 2-3 paragraphs / ~200 words. **bold** and *italic* allowed, nothing else.",
+    "paragraphs": "array of strings, 2-3 paragraphs, about 300 words in all and 350 at most (the saved image fits one phone screen and shrinks the text to make long ones fit). **bold** and *italic* allowed, nothing else.",
     "epitaph": "kings_justice only, optional: one roast line under 25 words about the team that died, shown on the Death Recap card and in its copy-paste text"
   },
   "leagues": {

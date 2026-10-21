@@ -74,6 +74,25 @@ button { font: inherit; }
   box-shadow: 0 10px 30px rgba(0,0,0,.35);
 }
 .card.exporting { width: 720px; max-width: none; border-radius: 18px; }
+/* The saved recap is shaped like an iPhone screen (393 x 852 points), so it fills
+   the phone top to bottom when opened. Every size is in em off --fs, which
+   fitPhone() in hub.js sets to the largest size that fits the frame: a short week
+   comes out big, a long one smaller, and below the floor it runs taller instead. */
+.card.exporting.phone {
+  width: 393px; min-height: 852px; box-sizing: border-box; border-radius: 0;
+  border-width: 0; border-top-width: 6px; padding: 26px 20px 18px;
+  display: flex; flex-direction: column; font-size: var(--fs, 15px);
+}
+.card.phone .card-league, .card.phone .card-week { font-size: .78em; }
+.card.phone .card-head { font-size: 1.5em; margin: .45em 0 .7em; }
+.card.phone .card-facts { display: grid; grid-template-columns: 1fr 1fr; gap: .5em; margin-bottom: .9em; }
+.card.phone .fact { padding: .5em .65em; }
+.card.phone .fact .k { font-size: .68em; }
+.card.phone .fact .v { font-size: .95em; }
+.card.phone .card-body p { font-size: 1em; line-height: 1.5; margin-bottom: .75em; }
+.card.phone .card-body p:last-child { margin-bottom: 0; }
+.card.phone .card-foot { font-size: .72em; margin-top: auto; padding-top: .8em; }
+.card.phone .card-body { margin-bottom: 1.1em; }
 .card-top { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
 .card-league { color: var(--accent); font-weight: 800; letter-spacing: .06em; text-transform: uppercase; font-size: 12.5px; }
 .card-week { color: var(--muted); font-size: 12.5px; font-weight: 600; white-space: nowrap; }
