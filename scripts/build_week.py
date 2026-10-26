@@ -475,6 +475,37 @@ def optimal_total(starters, bench, slot_list):
     return round(total, 2)
 
 
+def primetime_slots(slots):
+    """Slot indices for Sunday night and Monday (or later) kickoffs."""
+    out = set()
+    for s in slots:
+        t = dt.datetime.fromisoformat(s['kickoff']).astimezone(ET)
+        if (t.weekday() == 6 and t.hour >= 19) or t.weekday() in (0, 1):
+            out.add(s['i'])
+    return out
+
+
+def lock_in(entry, bench, slot_list, team_slot, prime):
+    """A team that left a starting slot EMPTY while a bench player who could
+    fill it played Sunday or Monday night. In a chopped league that is the
+    smart move when you are already clear of the chop line: an empty slot
+    can't score negative, so the week's score is locked. Never a bad manager.
+    Returns None unless both halves are true."""
+    raw = [str(x) if x else '0' for x in (entry.get('starters') or [])]
+    raw += ['0'] * (len(slot_list) - len(raw))
+    empty = [slot_list[i] for i, pid in enumerate(raw[:len(slot_list)]) if pid == '0']
+    if not empty:
+        return None
+    benched = []
+    for b in bench:
+        slot = team_slot.get(b['team']) if b.get('team') else None
+        if slot in prime and any(b['pos'] in SLOT_ELIGIBILITY.get(e, []) for e in empty):
+            benched.append({'name': b['name'], 'pos': b['pos'], 'team': b['team'], 'slot': slot, 'pts': b['pts']})
+    if not benched:
+        return None
+    return {'empty_slots': empty, 'benched': benched}
+
+
 OUTBID_NOTE = 'claimed by another owner'
 
 
@@ -589,6 +620,7 @@ def build_chopped(cfg, season, week, nfl, proj):
         return e == 0 or e >= week
 
     n_slots = len(nfl['slots'])
+    prime = primetime_slots(nfl['slots'])
     rows = []
     entries = {}
     for e in matchups:
@@ -609,11 +641,22 @@ def build_chopped(cfg, season, week, nfl, proj):
             'starters': starters,
             'last_slot_players': [s for s in starters if s['slot'] is not None and s['slot'] == n_slots - 1],
             'no_game': [s['name'] for s in starters if s['slot'] is None],
+            'lock_in': lock_in(e, bench_rows(e, proj, calc), slot_list, nfl['team_slot'], prime),
             'chopped': t['roster_id'] in chopped_now or (t['settings'].get('eliminated') == week),
         })
     rows.sort(key=lambda r: -r['points'])
     for i, r in enumerate(rows):
         r['rank'] = i + 1
+    # How far clear of the chop each lock-in was. A team that locked in and
+    # still died is not a lock-in, it's a mistake, so it loses the flag.
+    if rows:
+        low_pts = rows[-1]['points']
+        for r in rows:
+            if r['lock_in']:
+                if r is rows[-1]:
+                    r['lock_in'] = None
+                else:
+                    r['lock_in']['margin'] = round(r['points'] - low_pts, 2)
     provisional = not nfl['all_final']
     low = rows[-1] if rows else None
     high = rows[0] if rows else None
@@ -642,7 +685,7 @@ def build_chopped(cfg, season, week, nfl, proj):
         'spread': round(high['points'] - low['points'], 2) if high and low else 0,
         'chop_seat': seat,
         'scoreboard': [{k: r[k] for k in ('rank', 'roster_id', 'handle', 'name', 'team_name', 'points', 'proj',
-                                          'running', 'left_after', 'last_slot_players', 'no_game', 'chopped')} for r in rows],
+                                          'running', 'left_after', 'last_slot_players', 'no_game', 'lock_in', 'chopped')} for r in rows],
         'top_starters': [{'handle': h, **{k: s[k] for k in ('name', 'pos', 'team', 'pts', 'slot')}} for h, s in top],
         'dud_starters': [{'handle': h, **{k: s[k] for k in ('name', 'pos', 'team', 'pts', 'slot')}} for h, s in duds],
         'transactions': week_transactions(lid, week, teams, proj),

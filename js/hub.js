@@ -311,7 +311,8 @@
     const rows = board.map((r) => {
       const cls = r.chopped || r.rank === board.length ? 'hl-bad' : r.rank === 1 ? 'hl-good' : (r.rank === board.length - 1 ? 'hl-warn' : '');
       const pills = (r.rank === 1 ? `<span class="pill good">${money(L.payouts.weekly_high || 25)}</span>` : '') +
-        (r.rank === board.length ? `<span class="pill bad">${L.provisional ? 'CHOP SEAT' : 'CHOPPED'}</span>` : '');
+        (r.rank === board.length ? `<span class="pill bad">${L.provisional ? 'CHOP SEAT' : 'CHOPPED'}</span>` : '') +
+        (r.lock_in ? `<span class="pill good">LOCKED IN</span>` : '');
       return `<tr class="${cls}"><td class="num">${r.rank}</td><td>${esc(r.handle)}${pills}<div class="sub">${esc(r.team_name)}</div></td>` +
         `<td class="num"><b>${f2(r.points)}</b></td><td class="num muted">${f2(r.proj)}</td><td class="num ${r.points - r.proj >= 0 ? 'good' : 'bad'}">${(r.points - r.proj >= 0 ? '+' : '') + f2(r.points - r.proj)}</td></tr>`;
     }).join('');
@@ -338,7 +339,9 @@
     const pen = last - 1;
     const watch = [...board].sort((a, b) => a.running[pen] - b.running[pen]).slice(0, 5).map((r) => {
       const gained = r.points - r.running[pen];
-      const players = r.last_slot_players.map((p) => `${esc(p.name)} ${f2(p.pts)}`).join(', ');
+      // A lock-in sat its late players on purpose; say so rather than "nobody playing".
+      const locked = r.lock_in ? `<span class="good">locked in</span> <span class="sub">benched ${r.lock_in.benched.map((p) => esc(p.name)).join(', ')}</span>` : '';
+      const players = r.last_slot_players.map((p) => `${esc(p.name)} ${f2(p.pts)}`).join(', ') || locked;
       return `<tr class="${r.rank === board.length ? 'hl-bad' : ''}"><td>${esc(r.handle)}</td><td class="num">${f2(r.running[pen])}</td>` +
         `<td>${players || '<span class="muted">nobody playing</span>'}</td><td class="num ${gained > 0 ? 'good' : 'muted'}">${gained > 0 ? '+' + f2(gained) : '—'}</td><td class="num"><b>${f2(r.points)}</b></td></tr>`;
     }).join('');

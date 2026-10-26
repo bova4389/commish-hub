@@ -98,6 +98,18 @@ leagues; roast his weeks on the same terms as everyone else's. Per league:
   high gets a genuine compliment and a reminder that it paid $25. Use the chop-seat timeline:
   who was lowest after each window, how many players they had left, what Monday did. The
   script gives every alive team's running total per kickoff slot and the last-slot players.
+  **A lock-in is a smart move, never a roast** (owner, 10/26/2026). A team already clear of
+  the chop line can leave a starting slot empty instead of playing someone on Sunday or
+  Monday night, because an empty slot can't score negative and drag them under. That looks
+  like a lazy manager ("nobody left to play", second from the bottom) and is the opposite:
+  it guarantees the team survives. `scoreboard[].lock_in` flags it (empty slots + the benched
+  late-game players who could have filled them + `margin` over the chopped team), and the
+  page shows a LOCKED IN pill. When it's set, **give that team credit for locking it in**.
+  Don't call them the worst manager of the week, and don't give them the "barely lived"
+  roast even if they finish second from the bottom. A team that locked in and still got
+  chopped loses the flag, and that one is fair game. First case: week 7, 2026, when
+  joefanelli90 left RB and TE empty and benched Goedert, Javonte Williams and Dameon Pierce
+  for Monday night, sitting 5.30 clear of a DipLipGator with nobody left to play.
 - **2 Mitchs** — bench points, zeros started, injured starters, proj-vs-actual **net of
   `proj_bias`** (Sleeper's projections run hot by a different amount each week; the raw delta
   is not the story). One roast and one real compliment every week, per `LEAGUE.md` §13.
