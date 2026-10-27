@@ -252,6 +252,19 @@ tr.dim td { color: var(--faint); }
 .sharecard.exporting .sc-note { max-width: 760px; }
 .sharecard.exporting .grid th.gname,
 .sharecard.exporting .grid .gtotal { position: static; }
+/* The compact season money list (Team | Total | Weeks won). It is the card meant
+   for the chat, so it saves phone-narrow and the week chips wrap instead of
+   widening the image the way the weeks-across grids do. */
+.sharecard.compact.exporting { width: 440px; }
+table.mlist { width: 100%; border-collapse: collapse; font-size: 14.5px; }
+table.mlist th, table.mlist td { padding: 7px 6px; border-bottom: 1px solid var(--line); vertical-align: top; text-align: left; }
+table.mlist thead th { color: var(--muted); font-size: 11.5px; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; }
+table.mlist .ml-name { font-weight: 700; }
+table.mlist .ml-total { text-align: right; font-weight: 800; color: var(--good); white-space: nowrap; font-variant-numeric: tabular-nums; }
+table.mlist thead .ml-total { color: var(--muted); }
+table.mlist .ml-weeks { line-height: 1.9; white-space: normal; }
+table.mlist .ml-name { overflow-wrap: anywhere; }
+table.mlist .ml-weeks .chip { white-space: nowrap; }
 .sc-top { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
 .sc-league { color: var(--accent); font-weight: 800; letter-spacing: .06em; text-transform: uppercase; font-size: 12.5px; }
 .sc-season { color: var(--muted); font-size: 12.5px; font-weight: 600; white-space: nowrap; }

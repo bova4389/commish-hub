@@ -756,9 +756,9 @@
   // A .sharecard is a panel with its own Save image / Preview pair. The buttons
   // carry the target id in a data attribute and are handled by one delegated
   // listener, so adding a card costs no wiring.
-  function shareCard(id, title, dek, body, note) {
+  function shareCard(id, title, dek, body, note, mod) {
     return `<section class="sharecard-wrap">` +
-      `<div class="sharecard" id="${esc(id)}">` +
+      `<div class="sharecard${mod ? ' ' + mod : ''}" id="${esc(id)}">` +
         `<div class="sc-top"><span class="sc-league">${esc(CONFIG.leagues[state.league].name)}</span>` +
         `<span class="sc-season">${esc(state.season)} season</span></div>` +
         `<h3 class="sc-head">${esc(title)}</h3>` +
@@ -837,6 +837,31 @@
     $('#foot').innerHTML = `Season totals rolled up ${esc((SEASON && SEASON.generated || '').replace('T', ' ').slice(0, 16))}` +
       (WAIVERS ? ` &middot; waivers through week ${esc(WAIVERS.through_week)}` : '') +
       ` &middot; <a href="${esc(CONFIG.site.other_league_url)}" target="_blank" rel="noopener">The Other League recap &rarr;</a>`;
+  }
+
+  /* ---- the compact money list ---------------------------------------
+     Team, season total, and the weeks they won -- three columns whatever week
+     it is. The weeks-across grids get too wide for a saved image by midseason,
+     so this is the card meant for the chat (owner, 2026-10-27); the grids stay
+     below it for reading on the page. Only teams that have won money are
+     listed, and the note counts the rest so the image never passes for the
+     whole league. `rows` are { name, total, wins: [{ label, title }] }. */
+  function moneyList(rows) {
+    const won = rows.filter((r) => r.total > 0)
+      .sort((a, b) => b.total - a.total || b.wins.length - a.wins.length || a.name.localeCompare(b.name));
+    if (!won.length) return '<div class="empty">Nobody has won a dollar yet.</div>';
+    const body = won.map((r) =>
+      `<tr><th class="ml-name" scope="row">${esc(r.name)}</th>` +
+      `<td class="ml-total">${money(r.total)}</td>` +
+      `<td class="ml-weeks">${r.wins.map((x) =>
+        `<span class="chip win"${x.title ? ` title="${esc(x.title)}"` : ''}>${x.label}</span>`).join(' ')}</td></tr>`).join('');
+    return `<table class="mlist"><thead><tr><th class="ml-name">Team</th><th class="ml-total">Total</th>` +
+      `<th class="ml-weeks">Weeks won</th></tr></thead><tbody>${body}</tbody></table>`;
+  }
+
+  function moneyListNote(rows, why) {
+    const n = rows.filter((r) => !(r.total > 0)).length;
+    return n ? `${n} other${n === 1 ? '' : 's'} ${why}.` : '';
   }
 
   /* ---- Infinity War: money and picks ---------------------------------- */
@@ -920,7 +945,24 @@
     const pickDek = `Correct picks out of ${lim} a week, graded against final scores. A highlighted cell tied or set that week's best. ` + prizeNote + tieNote;
     const check = pickCheck(L, D);
 
+    // The compact list: the saved image for the chat. A rolled-over pot shows
+    // its amount on the chip; a settled season prize gets its trophy.
+    const weekly = (L.payouts || {}).weekly || 20;
+    const listRows = D.rows.map((r) => ({
+      name: r.name || r.handle,
+      total: paid(r),
+      wins: moneyWeeks.filter((w) => r.money[w]).map((w) => ({
+        label: `Wk ${w}` + (r.money[w] !== weekly ? ` ${money(r.money[w])}` : ''),
+        title: `Week ${w}: ${money(r.money[w])}`,
+      })).concat(D.final && r.prize
+        ? [{ label: `${TROPHY[r.place]} ${money(r.prize)}`, title: `${r.place === 1 ? 'First' : 'Second'} place` }] : []),
+    }));
+    const listDek = `${money(weekly)} a week to the most correct, never split.` +
+      (D.final ? ' Season prizes included.' : ` Season prizes (${money(D.prize[1])} / ${money(D.prize[2])}) are paid after week ${last}.`);
+
     return [
+      shareCard('sc-iw-season-money', 'Season money', listDek, moneyList(listRows),
+        moneyListNote(listRows, 'have not won a dollar yet'), 'compact'),
       shareCard('sc-iw-money', 'Money won, week by week', moneyDek,
         gridToggle(moneyZeros) + moneyGrid, hiddenNote(moneyZeros, 'have not won a dollar yet')),
       // No filter on the picks grid: everyone has a pick count, and a 0 there
@@ -974,8 +1016,18 @@
     const dek = `${money(prize)} to the highest score each week. A cell shows the score that won it; blank means they did not. ` +
       `${money(paid)} paid out over ${D.weeks.length} week${D.weeks.length === 1 ? '' : 's'}, split between ${taken} team${taken === 1 ? '' : 's'}. ` +
       `The season prizes are not on this table -- this league is chopped, so first and second are settled whenever the field gets down to two.`;
-    return shareCard('sc-kj-money', 'Weekly high money', dek, gridToggle(zeros) + g,
-      hiddenNote(zeros, 'have never taken the weekly high'));
+    // The compact list: the saved image for the chat.
+    const listRows = D.rows.map((r) => ({
+      name: r.name || r.handle,
+      total: r.total,
+      wins: D.weeks.filter((w) => r.wins[w] != null)
+        .map((w) => ({ label: `Wk ${w}`, title: `Week ${w}: ${f2(r.wins[w])}` })),
+    }));
+    return shareCard('sc-kj-season-money', 'Season money',
+      `${money(prize)} to the highest score each week. ${money(paid)} paid out over ${D.weeks.length} week${D.weeks.length === 1 ? '' : 's'}.`,
+      moneyList(listRows), moneyListNote(listRows, 'have never taken the weekly high'), 'compact') +
+      shareCard('sc-kj-money', 'Weekly high money', dek, gridToggle(zeros) + g,
+        hiddenNote(zeros, 'have never taken the weekly high'));
   }
 
   /* Money wasted at auction, week by week and cumulatively -- the same
