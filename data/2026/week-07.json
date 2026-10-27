@@ -1,7 +1,7 @@
 {
  "season": 2026,
  "week": 7,
- "generated": "2026-10-27T06:09:03-04:00",
+ "generated": "2026-10-27T11:08:14-04:00",
  "all_final": true,
  "nfl": {
   "games": [
@@ -178,7 +178,7 @@
     "slot": 4,
     "slot_label": "Sun 4:25 PM",
     "fav": "DET",
-    "fav_prob": 0.629,
+    "fav_prob": 0.635,
     "upset": false
    },
    {
@@ -210,7 +210,7 @@
     "slot": 5,
     "slot_label": "Sun 8:20 PM",
     "fav": "SEA",
-    "fav_prob": 0.576,
+    "fav_prob": 0.575,
     "upset": false
    },
    {
@@ -226,7 +226,7 @@
     "slot": 6,
     "slot_label": "Mon 8:15 PM",
     "fav": "DAL",
-    "fav_prob": 0.661,
+    "fav_prob": 0.667,
     "upset": false
    }
   ],
@@ -312,7 +312,7 @@
     "handle": "DipLipGator",
     "team_name": "DipLipGator",
     "points": 83.72,
-    "confirmed": false
+    "confirmed": true
    },
    "high": {
     "handle": "avobttam",
@@ -835,7 +835,7 @@
      "last_slot_players": [],
      "no_game": [],
      "lock_in": null,
-     "chopped": false
+     "chopped": true
     }
    ],
    "top_starters": [
@@ -1148,7 +1148,7 @@
    },
    "death": {
     "kind": "death",
-    "confirmed": false,
+    "confirmed": true,
     "handle": "DipLipGator",
     "name": "DipLipGator",
     "team_name": "DipLipGator",
@@ -1230,30 +1230,9 @@
       "proj": 14.76
      },
      {
-      "name": "Ladd McConkey",
-      "pos": "WR",
-      "team": "LAC",
-      "pts": 0.0,
-      "proj": 0.0
-     },
-     {
-      "name": "Bhayshul Tuten",
-      "pos": "RB",
-      "team": "JAX",
-      "pts": 0.0,
-      "proj": 0.0
-     },
-     {
       "name": "Emeka Egbuka",
       "pos": "WR",
       "team": "TB",
-      "pts": 0.0,
-      "proj": 0.0
-     },
-     {
-      "name": "DJ Moore",
-      "pos": "WR",
-      "team": "BUF",
       "pts": 0.0,
       "proj": 0.0
      }
@@ -1553,18 +1532,18 @@
        "handle": "avobttam",
        "record": "6-1",
        "proj_record": "10.7-3.3",
-       "proj_pf": 2085.9,
+       "proj_pf": 2084.3,
        "playoff": 99.7,
-       "bye": 83.7,
-       "final": 47.3,
-       "title": 24.6,
+       "bye": 84.0,
+       "final": 47.7,
+       "title": 24.9,
        "seed_pct": [
-        60.5,
-        23.2,
-        9.3,
-        3.9,
-        2.1,
-        0.7
+        61.1,
+        22.9,
+        9.4,
+        3.8,
+        1.9,
+        0.6
        ],
        "prev_playoff": 99.8,
        "prev_title": 26.4
@@ -1574,18 +1553,18 @@
        "handle": "BigOleTDs21",
        "record": "5-2",
        "proj_record": "9.4-4.6",
-       "proj_pf": 1978.5,
-       "playoff": 96.3,
-       "bye": 52.0,
-       "final": 42.2,
-       "title": 23.8,
+       "proj_pf": 1978.4,
+       "playoff": 96.2,
+       "bye": 51.0,
+       "final": 42.0,
+       "title": 23.7,
        "seed_pct": [
-        20.2,
-        31.9,
-        21.2,
-        12.5,
+        19.6,
+        31.5,
+        21.9,
+        12.8,
         6.8,
-        3.7
+        3.8
        ],
        "prev_playoff": 93.0,
        "prev_title": 24.3
@@ -1595,18 +1574,18 @@
        "handle": "MJBlack",
        "record": "6-1",
        "proj_record": "9.6-4.4",
-       "proj_pf": 1808.7,
-       "playoff": 95.8,
-       "bye": 43.8,
+       "proj_pf": 1811.5,
+       "playoff": 95.9,
+       "bye": 45.0,
        "final": 25.4,
-       "title": 9.6,
+       "title": 9.5,
        "seed_pct": [
-        16.8,
-        27.0,
-        24.0,
-        15.3,
-        7.9,
-        4.7
+        16.9,
+        28.1,
+        23.8,
+        14.7,
+        8.1,
+        4.4
        ],
        "prev_playoff": 86.9,
        "prev_title": 6.9
@@ -1615,19 +1594,19 @@
        "name": "Nick Merkel",
        "handle": "MerkDaddy36",
        "record": "3-4",
-       "proj_record": "7.4-6.6",
-       "proj_pf": 1956.4,
-       "playoff": 73.6,
-       "bye": 7.2,
-       "final": 26.9,
-       "title": 14.9,
+       "proj_record": "7.3-6.7",
+       "proj_pf": 1952.3,
+       "playoff": 73.1,
+       "bye": 6.8,
+       "final": 26.6,
+       "title": 14.7,
        "seed_pct": [
-        1.0,
-        6.2,
-        15.1,
+        0.9,
+        5.9,
+        14.5,
         19.0,
-        17.9,
-        14.5
+        18.6,
+        14.2
        ],
        "prev_playoff": 77.1,
        "prev_title": 15.0
@@ -1637,18 +1616,18 @@
        "handle": "Bogeyman28",
        "record": "3-4",
        "proj_record": "7.3-6.7",
-       "proj_pf": 1905.4,
-       "playoff": 69.8,
-       "bye": 6.2,
-       "final": 23.6,
+       "proj_pf": 1905.0,
+       "playoff": 69.7,
+       "bye": 6.0,
+       "final": 23.2,
        "title": 12.2,
        "seed_pct": [
         0.6,
-        5.6,
-        13.6,
+        5.4,
+        13.8,
         18.2,
-        17.9,
-        14.0
+        17.3,
+        14.3
        ],
        "prev_playoff": 60.2,
        "prev_title": 10.4
@@ -1658,18 +1637,18 @@
        "handle": "JellyRoll6884",
        "record": "3-4",
        "proj_record": "6.6-7.4",
-       "proj_pf": 1863.3,
-       "playoff": 50.0,
-       "bye": 4.1,
-       "final": 12.3,
-       "title": 5.4,
+       "proj_pf": 1864.3,
+       "playoff": 50.6,
+       "bye": 4.3,
+       "final": 12.4,
+       "title": 5.5,
        "seed_pct": [
         0.7,
-        3.4,
-        6.8,
-        10.1,
-        14.0,
-        15.1
+        3.6,
+        6.9,
+        10.3,
+        13.8,
+        15.3
        ],
        "prev_playoff": 40.7,
        "prev_title": 4.2
@@ -1679,18 +1658,18 @@
        "handle": "jonicarter89",
        "record": "3-4",
        "proj_record": "6.4-7.6",
-       "proj_pf": 1646.0,
-       "playoff": 32.7,
+       "proj_pf": 1646.3,
+       "playoff": 33.0,
        "bye": 0.9,
-       "final": 5.6,
-       "title": 2.3,
+       "final": 5.8,
+       "title": 2.4,
        "seed_pct": [
         0.0,
-        0.8,
-        3.4,
+        0.9,
+        3.3,
         6.9,
-        9.7,
-        11.8
+        9.8,
+        12.1
        ],
        "prev_playoff": 25.7,
        "prev_title": 2.2
@@ -1700,18 +1679,18 @@
        "handle": "CHRISMERKELDUH",
        "record": "3-4",
        "proj_record": "6.3-7.7",
-       "proj_pf": 1641.0,
-       "playoff": 28.3,
-       "bye": 0.8,
-       "final": 6.9,
-       "title": 3.0,
+       "proj_pf": 1641.1,
+       "playoff": 28.1,
+       "bye": 0.7,
+       "final": 6.6,
+       "title": 3.1,
        "seed_pct": [
         0.1,
-        0.7,
-        2.3,
-        5.0,
-        8.4,
-        11.8
+        0.6,
+        2.1,
+        5.1,
+        8.7,
+        11.4
        ],
        "prev_playoff": 47.1,
        "prev_title": 5.0
@@ -1720,19 +1699,19 @@
        "name": "Chris Bova",
        "handle": "cbova1222",
        "record": "3-4",
-       "proj_record": "5.9-8.1",
-       "proj_pf": 1628.9,
-       "playoff": 21.0,
+       "proj_record": "5.8-8.2",
+       "proj_pf": 1626.1,
+       "playoff": 20.8,
        "bye": 0.4,
-       "final": 3.6,
-       "title": 1.5,
+       "final": 3.7,
+       "title": 1.6,
        "seed_pct": [
         0.0,
         0.4,
         1.9,
         3.8,
-        5.9,
-        9.0
+        5.6,
+        9.1
        ],
        "prev_playoff": 30.2,
        "prev_title": 2.2
@@ -1742,18 +1721,18 @@
        "handle": "katiestout13",
        "record": "3-4",
        "proj_record": "5.6-8.4",
-       "proj_pf": 1644.2,
-       "playoff": 17.6,
-       "bye": 0.5,
-       "final": 3.1,
-       "title": 1.3,
+       "proj_pf": 1643.9,
+       "playoff": 17.9,
+       "bye": 0.4,
+       "final": 3.3,
+       "title": 1.2,
        "seed_pct": [
         0.0,
         0.4,
         1.5,
-        2.8,
-        5.0,
-        7.8
+        3.0,
+        5.2,
+        7.9
        ],
        "prev_playoff": 12.4,
        "prev_title": 1.1
@@ -1763,14 +1742,14 @@
        "handle": "djbogardus72",
        "record": "3-4",
        "proj_record": "5.6-8.4",
-       "proj_pf": 1574.6,
-       "playoff": 14.2,
+       "proj_pf": 1574.7,
+       "playoff": 14.1,
        "bye": 0.4,
        "final": 3.1,
        "title": 1.2,
        "seed_pct": [
         0.0,
-        0.4,
+        0.3,
         0.9,
         2.3,
         4.1,
@@ -1784,7 +1763,7 @@
        "handle": "Mpletcher",
        "record": "1-6",
        "proj_record": "3.4-10.6",
-       "proj_pf": 1495.8,
+       "proj_pf": 1496.4,
        "playoff": 0.9,
        "bye": 0.0,
        "final": 0.1,
@@ -1794,7 +1773,7 @@
         0.0,
         0.0,
         0.1,
-        0.2,
+        0.3,
         0.6
        ],
        "prev_playoff": 3.8,
@@ -3083,7 +3062,7 @@
         "pts": 11.8,
         "proj": 5.97,
         "slot": 6,
-        "injury": null
+        "injury": "Questionable"
        },
        {
         "pid": "12489",
@@ -3594,7 +3573,7 @@
       "roster_id": 3,
       "handle": "Bogeyman28",
       "name": "Austin Hendrickson",
-      "team_name": "Bogeyman28",
+      "team_name": "Bogeyman ",
       "matchup_id": 6,
       "points": 132.12,
       "proj": 136.05,
@@ -4439,7 +4418,7 @@
      "winner": "DET",
      "upset": false,
      "fav": "DET",
-     "fav_prob": 0.629,
+     "fav_prob": 0.635,
      "picks": {
       "DET": 7,
       "GB": 2
@@ -4451,7 +4430,7 @@
      "winner": "SEA",
      "upset": false,
      "fav": "SEA",
-     "fav_prob": 0.576,
+     "fav_prob": 0.575,
      "picks": {
       "SEA": 3,
       "KC": 4
@@ -4463,7 +4442,7 @@
      "winner": "DAL",
      "upset": false,
      "fav": "DAL",
-     "fav_prob": 0.661,
+     "fav_prob": 0.667,
      "picks": {
       "DAL": 12
      }
@@ -4558,7 +4537,7 @@
        "opp": "PHI",
        "game": "DAL @ PHI",
        "outcome": "win",
-       "prob": 0.661,
+       "prob": 0.667,
        "hidden": false,
        "score": "DAL 38-21 PHI",
        "slot_label": "Mon 8:15 PM"
@@ -4666,7 +4645,7 @@
        "opp": "KC",
        "game": "KC @ SEA",
        "outcome": "win",
-       "prob": 0.576,
+       "prob": 0.575,
        "hidden": false,
        "score": "KC 3-20 SEA",
        "slot_label": "Sun 8:20 PM"
@@ -4677,7 +4656,7 @@
        "opp": "PHI",
        "game": "DAL @ PHI",
        "outcome": "win",
-       "prob": 0.661,
+       "prob": 0.667,
        "hidden": false,
        "score": "DAL 38-21 PHI",
        "slot_label": "Mon 8:15 PM"
@@ -4796,7 +4775,7 @@
        "opp": "PHI",
        "game": "DAL @ PHI",
        "outcome": "win",
-       "prob": 0.661,
+       "prob": 0.667,
        "hidden": false,
        "score": "DAL 38-21 PHI",
        "slot_label": "Mon 8:15 PM"
@@ -4904,7 +4883,7 @@
        "opp": "GB",
        "game": "GB @ DET",
        "outcome": "win",
-       "prob": 0.629,
+       "prob": 0.635,
        "hidden": false,
        "score": "GB 17-20 DET",
        "slot_label": "Sun 4:25 PM"
@@ -4915,7 +4894,7 @@
        "opp": "PHI",
        "game": "DAL @ PHI",
        "outcome": "win",
-       "prob": 0.661,
+       "prob": 0.667,
        "hidden": false,
        "score": "DAL 38-21 PHI",
        "slot_label": "Mon 8:15 PM"
@@ -5034,7 +5013,7 @@
        "opp": "PHI",
        "game": "DAL @ PHI",
        "outcome": "win",
-       "prob": 0.661,
+       "prob": 0.667,
        "hidden": false,
        "score": "DAL 38-21 PHI",
        "slot_label": "Mon 8:15 PM"
@@ -5131,7 +5110,7 @@
        "opp": "GB",
        "game": "GB @ DET",
        "outcome": "win",
-       "prob": 0.629,
+       "prob": 0.635,
        "hidden": false,
        "score": "GB 17-20 DET",
        "slot_label": "Sun 4:25 PM"
@@ -5153,7 +5132,7 @@
        "opp": "PHI",
        "game": "DAL @ PHI",
        "outcome": "win",
-       "prob": 0.661,
+       "prob": 0.667,
        "hidden": false,
        "score": "DAL 38-21 PHI",
        "slot_label": "Mon 8:15 PM"
@@ -5250,7 +5229,7 @@
        "opp": "GB",
        "game": "GB @ DET",
        "outcome": "win",
-       "prob": 0.629,
+       "prob": 0.635,
        "hidden": false,
        "score": "GB 17-20 DET",
        "slot_label": "Sun 4:25 PM"
@@ -5272,7 +5251,7 @@
        "opp": "PHI",
        "game": "DAL @ PHI",
        "outcome": "win",
-       "prob": 0.661,
+       "prob": 0.667,
        "hidden": false,
        "score": "DAL 38-21 PHI",
        "slot_label": "Mon 8:15 PM"
@@ -5325,7 +5304,7 @@
        "opp": "GB",
        "game": "GB @ DET",
        "outcome": "win",
-       "prob": 0.629,
+       "prob": 0.635,
        "hidden": false,
        "score": "GB 17-20 DET",
        "slot_label": "Sun 4:25 PM"
@@ -5347,7 +5326,7 @@
        "opp": "KC",
        "game": "KC @ SEA",
        "outcome": "win",
-       "prob": 0.576,
+       "prob": 0.575,
        "hidden": false,
        "score": "KC 3-20 SEA",
        "slot_label": "Sun 8:20 PM"
@@ -5358,7 +5337,7 @@
        "opp": "PHI",
        "game": "DAL @ PHI",
        "outcome": "win",
-       "prob": 0.661,
+       "prob": 0.667,
        "hidden": false,
        "score": "DAL 38-21 PHI",
        "slot_label": "Mon 8:15 PM"
@@ -5468,7 +5447,7 @@
        "opp": "GB",
        "game": "GB @ DET",
        "outcome": "win",
-       "prob": 0.629,
+       "prob": 0.635,
        "hidden": false,
        "score": "GB 17-20 DET",
        "slot_label": "Sun 4:25 PM"
@@ -5586,7 +5565,7 @@
        "opp": "PHI",
        "game": "DAL @ PHI",
        "outcome": "win",
-       "prob": 0.661,
+       "prob": 0.667,
        "hidden": false,
        "score": "DAL 38-21 PHI",
        "slot_label": "Mon 8:15 PM"
@@ -5709,7 +5688,7 @@
        "opp": "PHI",
        "game": "DAL @ PHI",
        "outcome": "win",
-       "prob": 0.661,
+       "prob": 0.667,
        "hidden": false,
        "score": "DAL 38-21 PHI",
        "slot_label": "Mon 8:15 PM"
@@ -5821,7 +5800,7 @@
        "opp": "SEA",
        "game": "KC @ SEA",
        "outcome": "loss",
-       "prob": 0.424,
+       "prob": 0.425,
        "hidden": false,
        "score": "KC 3-20 SEA",
        "slot_label": "Sun 8:20 PM"
@@ -5940,7 +5919,7 @@
        "opp": "GB",
        "game": "GB @ DET",
        "outcome": "win",
-       "prob": 0.629,
+       "prob": 0.635,
        "hidden": false,
        "score": "GB 17-20 DET",
        "slot_label": "Sun 4:25 PM"
@@ -6152,7 +6131,7 @@
        "opp": "DET",
        "game": "GB @ DET",
        "outcome": "loss",
-       "prob": 0.371,
+       "prob": 0.365,
        "hidden": false,
        "score": "GB 17-20 DET",
        "slot_label": "Sun 4:25 PM"
@@ -6174,7 +6153,7 @@
        "opp": "KC",
        "game": "KC @ SEA",
        "outcome": "win",
-       "prob": 0.576,
+       "prob": 0.575,
        "hidden": false,
        "score": "KC 3-20 SEA",
        "slot_label": "Sun 8:20 PM"
@@ -6227,7 +6206,7 @@
        "opp": "GB",
        "game": "GB @ DET",
        "outcome": "win",
-       "prob": 0.629,
+       "prob": 0.635,
        "hidden": false,
        "score": "GB 17-20 DET",
        "slot_label": "Sun 4:25 PM"
@@ -6249,7 +6228,7 @@
        "opp": "SEA",
        "game": "KC @ SEA",
        "outcome": "loss",
-       "prob": 0.424,
+       "prob": 0.425,
        "hidden": false,
        "score": "KC 3-20 SEA",
        "slot_label": "Sun 8:20 PM"
@@ -6260,7 +6239,7 @@
        "opp": "PHI",
        "game": "DAL @ PHI",
        "outcome": "win",
-       "prob": 0.661,
+       "prob": 0.667,
        "hidden": false,
        "score": "DAL 38-21 PHI",
        "slot_label": "Mon 8:15 PM"
@@ -6310,7 +6289,7 @@
        "opp": "DET",
        "game": "GB @ DET",
        "outcome": "loss",
-       "prob": 0.371,
+       "prob": 0.365,
        "hidden": false,
        "score": "GB 17-20 DET",
        "slot_label": "Sun 4:25 PM"
@@ -6332,7 +6311,7 @@
        "opp": "SEA",
        "game": "KC @ SEA",
        "outcome": "loss",
-       "prob": 0.424,
+       "prob": 0.425,
        "hidden": false,
        "score": "KC 3-20 SEA",
        "slot_label": "Sun 8:20 PM"
@@ -6343,7 +6322,7 @@
        "opp": "PHI",
        "game": "DAL @ PHI",
        "outcome": "win",
-       "prob": 0.661,
+       "prob": 0.667,
        "hidden": false,
        "score": "DAL 38-21 PHI",
        "slot_label": "Mon 8:15 PM"
@@ -6459,7 +6438,7 @@
        "opp": "SEA",
        "game": "KC @ SEA",
        "outcome": "loss",
-       "prob": 0.424,
+       "prob": 0.425,
        "hidden": false,
        "score": "KC 3-20 SEA",
        "slot_label": "Sun 8:20 PM"
@@ -7151,7 +7130,7 @@
      "winner": "DAL",
      "upset": false,
      "fav": "DAL",
-     "fav_prob": 0.661,
+     "fav_prob": 0.667,
      "picks": {
       "DAL": 2
      }
@@ -7202,7 +7181,7 @@
        "opp": "PHI",
        "game": "DAL @ PHI",
        "outcome": "win",
-       "prob": 0.661,
+       "prob": 0.667,
        "hidden": false,
        "score": "DAL 38-21 PHI",
        "slot_label": "Mon 8:15 PM"
@@ -7435,7 +7414,7 @@
        "opp": "PHI",
        "game": "DAL @ PHI",
        "outcome": "win",
-       "prob": 0.661,
+       "prob": 0.667,
        "hidden": false,
        "score": "DAL 38-21 PHI",
        "slot_label": "Mon 8:15 PM"
