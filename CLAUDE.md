@@ -110,6 +110,18 @@ leagues; roast his weeks on the same terms as everyone else's. Per league:
   chopped loses the flag, and that one is fair game. First case: week 7, 2026, when
   joefanelli90 left RB and TE empty and benched Goedert, Javonte Williams and Dameon Pierce
   for Monday night, sitting 5.30 clear of a DipLipGator with nobody left to play.
+  **Since week 6 (10/21/2026) King's Justice is also written in the Commish's Kenny Powers
+  voice**: the same voice and hard limits as 2 Mitchs (`../2-mitchs-1-cup/LEAGUE.md` §13), and
+  the same narrator as the kings-justice dashboard's Weekly Recap ("Recap voice" in
+  `../kings-justice/README.md`). The Commish is `avobttam`, The Executioner. His own team gets
+  its own lines: chopped means rigged, the $25 means greatness, barely surviving was "by
+  design". Count rings only from finished seasons (one so far, 2024). The KJ beats above all
+  still apply inside the voice. The scraper-by gets it worse than the corpse, the chop-seat
+  timeline stays, and a lock-in still gets real credit, delivered like it physically hurts.
+  When the Commish is the weekly high, he gloats instead of complimenting someone. The
+  **epitaph** is the exception: it stays in the house register (punch the decision, handle
+  only). Week 7 shipped in the house voice because this rule wasn't written down yet, and was
+  rewritten the same day (owner, 10/27/2026).
 - **2 Mitchs** — bench points, zeros started, injured starters, proj-vs-actual **net of
   `proj_bias`** (Sleeper's projections run hot by a different amount each week; the raw delta
   is not the story). One roast and one real compliment every week, per `LEAGUE.md` §13.
