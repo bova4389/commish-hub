@@ -1,7 +1,7 @@
 {
  "season": 2026,
  "week": 8,
- "generated": "2026-11-03T07:57:21-05:00",
+ "generated": "2026-11-03T12:40:33-05:00",
  "all_final": true,
  "nfl": {
   "games": [
@@ -34,7 +34,7 @@
     "slot": 1,
     "slot_label": "Sun 1:00 PM",
     "fav": "DAL",
-    "fav_prob": 0.731,
+    "fav_prob": 0.732,
     "upset": true
    },
    {
@@ -50,7 +50,7 @@
     "slot": 1,
     "slot_label": "Sun 1:00 PM",
     "fav": "TB",
-    "fav_prob": 0.555,
+    "fav_prob": 0.54,
     "upset": false
    },
    {
@@ -66,7 +66,7 @@
     "slot": 1,
     "slot_label": "Sun 1:00 PM",
     "fav": "BUF",
-    "fav_prob": 0.609,
+    "fav_prob": 0.61,
     "upset": false
    },
    {
@@ -114,7 +114,7 @@
     "slot": 1,
     "slot_label": "Sun 1:00 PM",
     "fav": "NYJ",
-    "fav_prob": 0.525,
+    "fav_prob": 0.526,
     "upset": true
    },
    {
@@ -146,7 +146,7 @@
     "slot": 1,
     "slot_label": "Sun 1:00 PM",
     "fav": "CIN",
-    "fav_prob": 0.845,
+    "fav_prob": 0.85,
     "upset": false
    },
    {
@@ -162,7 +162,7 @@
     "slot": 2,
     "slot_label": "Sun 4:05 PM",
     "fav": "LAR",
-    "fav_prob": 0.713,
+    "fav_prob": 0.722,
     "upset": false
    },
    {
@@ -178,7 +178,7 @@
     "slot": 3,
     "slot_label": "Sun 4:25 PM",
     "fav": "KC",
-    "fav_prob": 0.521,
+    "fav_prob": 0.504,
     "upset": true
    },
    {
@@ -194,7 +194,7 @@
     "slot": 3,
     "slot_label": "Sun 4:25 PM",
     "fav": "NE",
-    "fav_prob": 0.738,
+    "fav_prob": 0.752,
     "upset": false
    },
    {
@@ -210,7 +210,7 @@
     "slot": 4,
     "slot_label": "Sun 8:20 PM",
     "fav": "WAS",
-    "fav_prob": 0.696,
+    "fav_prob": 0.694,
     "upset": false
    },
    {
@@ -226,7 +226,7 @@
     "slot": 5,
     "slot_label": "Mon 8:15 PM",
     "fav": "SEA",
-    "fav_prob": 0.608,
+    "fav_prob": 0.615,
     "upset": true
    }
   ],
@@ -290,6 +290,1063 @@
   ]
  },
  "leagues": {
+  "kings_justice": {
+   "league_id": "1383926066564837376",
+   "league_name": "\ud83e\ude93 The King's Justice",
+   "provisional": false,
+   "alive_before": 11,
+   "alive_after": 10,
+   "payouts": {
+    "weekly_high": 25,
+    "first": 350,
+    "second": 150
+   },
+   "chopped": {
+    "handle": "creckley",
+    "team_name": "creckley",
+    "points": 82.3,
+    "confirmed": true
+   },
+   "high": {
+    "handle": "avobttam",
+    "team_name": "The Executioner",
+    "points": 173.88
+   },
+   "survivor": {
+    "handle": "bstanley45",
+    "points": 82.48,
+    "margin": 0.18
+   },
+   "median": 125.86,
+   "spread": 91.58,
+   "chop_seat": [
+    {
+     "slot": 0,
+     "label": "Thu 8:15 PM",
+     "handle": "cbova1222",
+     "points": 0,
+     "left": 8,
+     "next_handle": "joefanelli90",
+     "margin": 0
+    },
+    {
+     "slot": 1,
+     "label": "Sun 1:00 PM",
+     "handle": "nelsolson",
+     "points": 43.7,
+     "left": 4,
+     "next_handle": "bstanley45",
+     "margin": 0.2
+    },
+    {
+     "slot": 2,
+     "label": "Sun 4:05 PM",
+     "handle": "bstanley45",
+     "points": 54.18,
+     "left": 2,
+     "next_handle": "nelsolson",
+     "margin": 2.12
+    },
+    {
+     "slot": 3,
+     "label": "Sun 4:25 PM",
+     "handle": "nelsolson",
+     "points": 56.3,
+     "left": 3,
+     "next_handle": "creckley",
+     "margin": 26.0
+    },
+    {
+     "slot": 4,
+     "label": "Sun 8:20 PM",
+     "handle": "nelsolson",
+     "points": 70.3,
+     "left": 2,
+     "next_handle": "creckley",
+     "margin": 12.0
+    },
+    {
+     "slot": 5,
+     "label": "Mon 8:15 PM",
+     "handle": "creckley",
+     "points": 82.3,
+     "left": 0,
+     "next_handle": "bstanley45",
+     "margin": 0.18
+    }
+   ],
+   "scoreboard": [
+    {
+     "rank": 1,
+     "roster_id": 1,
+     "handle": "avobttam",
+     "name": "avobttam",
+     "team_name": "The Executioner",
+     "points": 173.88,
+     "proj": 126.31,
+     "running": [
+      9.6,
+      139.08,
+      139.08,
+      145.98,
+      145.98,
+      173.88
+     ],
+     "left_after": [
+      7,
+      2,
+      2,
+      1,
+      1,
+      0
+     ],
+     "last_slot_players": [
+      {
+       "pid": "6790",
+       "name": "D'Andre Swift",
+       "pos": "RB",
+       "team": "CHI",
+       "pts": 27.9,
+       "proj": 14.69,
+       "slot": 5,
+       "injury": null
+      }
+     ],
+     "no_game": [],
+     "lock_in": null,
+     "chopped": false
+    },
+    {
+     "rank": 2,
+     "roster_id": 3,
+     "handle": "cbova1222",
+     "name": "cbova1222",
+     "team_name": "Danger Zone",
+     "points": 150.94,
+     "proj": 111.51,
+     "running": [
+      0,
+      117.74,
+      117.74,
+      150.94,
+      150.94,
+      150.94
+     ],
+     "left_after": [
+      8,
+      2,
+      2,
+      0,
+      0,
+      0
+     ],
+     "last_slot_players": [],
+     "no_game": [],
+     "lock_in": null,
+     "chopped": false
+    },
+    {
+     "rank": 3,
+     "roster_id": 18,
+     "handle": "joefanelli90",
+     "name": "joefanelli90",
+     "team_name": "Indiana Joe",
+     "points": 148.78,
+     "proj": 120.44,
+     "running": [
+      0,
+      141.58,
+      141.58,
+      141.58,
+      148.78,
+      148.78
+     ],
+     "left_after": [
+      8,
+      1,
+      1,
+      1,
+      0,
+      0
+     ],
+     "last_slot_players": [],
+     "no_game": [],
+     "lock_in": null,
+     "chopped": false
+    },
+    {
+     "rank": 4,
+     "roster_id": 5,
+     "handle": "CodyPowers28",
+     "name": "CodyPowers28",
+     "team_name": "Taco Corp",
+     "points": 139.26,
+     "proj": 100.92,
+     "running": [
+      0,
+      102.86,
+      116.16,
+      116.16,
+      126.56,
+      139.26
+     ],
+     "left_after": [
+      8,
+      3,
+      2,
+      2,
+      1,
+      0
+     ],
+     "last_slot_players": [
+      {
+       "pid": "11620",
+       "name": "Rome Odunze",
+       "pos": "WR",
+       "team": "CHI",
+       "pts": 12.7,
+       "proj": 10.03,
+       "slot": 5,
+       "injury": null
+      }
+     ],
+     "no_game": [],
+     "lock_in": null,
+     "chopped": false
+    },
+    {
+     "rank": 5,
+     "roster_id": 14,
+     "handle": "AllBidness",
+     "name": "AllBidness",
+     "team_name": "AllBidness",
+     "points": 137.0,
+     "proj": 111.76,
+     "running": [
+      17.3,
+      107.3,
+      107.3,
+      107.3,
+      107.3,
+      137.0
+     ],
+     "left_after": [
+      7,
+      2,
+      2,
+      2,
+      2,
+      0
+     ],
+     "last_slot_players": [
+      {
+       "pid": "9488",
+       "name": "Jaxon Smith-Njigba",
+       "pos": "WR",
+       "team": "SEA",
+       "pts": 23.8,
+       "proj": 25.26,
+       "slot": 5,
+       "injury": null
+      },
+      {
+       "pid": "9753",
+       "name": "Zach Charbonnet",
+       "pos": "RB",
+       "team": "SEA",
+       "pts": 5.9,
+       "proj": 8.09,
+       "slot": 5,
+       "injury": null
+      }
+     ],
+     "no_game": [],
+     "lock_in": null,
+     "chopped": false
+    },
+    {
+     "rank": 6,
+     "roster_id": 6,
+     "handle": "Bustersx8",
+     "name": "Bustersx8",
+     "team_name": "Bustersx8",
+     "points": 125.86,
+     "proj": 131.79,
+     "running": [
+      29.1,
+      74.4,
+      99.4,
+      125.86,
+      125.86,
+      125.86
+     ],
+     "left_after": [
+      6,
+      2,
+      1,
+      0,
+      0,
+      0
+     ],
+     "last_slot_players": [],
+     "no_game": [],
+     "lock_in": null,
+     "chopped": false
+    },
+    {
+     "rank": 7,
+     "roster_id": 4,
+     "handle": "ButtFumble06",
+     "name": "ButtFumble06",
+     "team_name": "ButtFumble06",
+     "points": 123.72,
+     "proj": 132.7,
+     "running": [
+      27.52,
+      78.12,
+      78.12,
+      110.92,
+      123.72,
+      123.72
+     ],
+     "left_after": [
+      7,
+      3,
+      3,
+      1,
+      0,
+      0
+     ],
+     "last_slot_players": [],
+     "no_game": [],
+     "lock_in": null,
+     "chopped": false
+    },
+    {
+     "rank": 8,
+     "roster_id": 11,
+     "handle": "humrich",
+     "name": "humrich",
+     "team_name": "humrich",
+     "points": 109.4,
+     "proj": 123.2,
+     "running": [
+      0,
+      72.1,
+      85.0,
+      97.0,
+      109.4,
+      109.4
+     ],
+     "left_after": [
+      8,
+      3,
+      2,
+      1,
+      0,
+      0
+     ],
+     "last_slot_players": [],
+     "no_game": [],
+     "lock_in": null,
+     "chopped": false
+    },
+    {
+     "rank": 9,
+     "roster_id": 7,
+     "handle": "nelsolson",
+     "name": "nelsolson",
+     "team_name": "Participant Banner",
+     "points": 100.4,
+     "proj": 115.87,
+     "running": [
+      24.9,
+      43.7,
+      56.3,
+      56.3,
+      70.3,
+      100.4
+     ],
+     "left_after": [
+      7,
+      4,
+      3,
+      3,
+      2,
+      0
+     ],
+     "last_slot_players": [
+      {
+       "pid": "12519",
+       "name": "Luther Burden III",
+       "pos": "WR",
+       "team": "CHI",
+       "pts": 18.6,
+       "proj": 12.42,
+       "slot": 5,
+       "injury": null
+      },
+      {
+       "pid": "12517",
+       "name": "Colston Loveland",
+       "pos": "TE",
+       "team": "CHI",
+       "pts": 11.5,
+       "proj": 9.73,
+       "slot": 5,
+       "injury": null
+      }
+     ],
+     "no_game": [],
+     "lock_in": null,
+     "chopped": false
+    },
+    {
+     "rank": 10,
+     "roster_id": 10,
+     "handle": "bstanley45",
+     "name": "bstanley45",
+     "team_name": "bstanley45",
+     "points": 82.48,
+     "proj": 113.87,
+     "running": [
+      23.2,
+      43.9,
+      54.18,
+      82.48,
+      82.48,
+      82.48
+     ],
+     "left_after": [
+      7,
+      3,
+      2,
+      0,
+      0,
+      0
+     ],
+     "last_slot_players": [],
+     "no_game": [],
+     "lock_in": null,
+     "chopped": false
+    },
+    {
+     "rank": 11,
+     "roster_id": 8,
+     "handle": "creckley",
+     "name": "creckley",
+     "team_name": "creckley",
+     "points": 82.3,
+     "proj": 110.36,
+     "running": [
+      20.9,
+      77.6,
+      82.3,
+      82.3,
+      82.3,
+      82.3
+     ],
+     "left_after": [
+      7,
+      1,
+      0,
+      0,
+      0,
+      0
+     ],
+     "last_slot_players": [],
+     "no_game": [],
+     "lock_in": null,
+     "chopped": true
+    }
+   ],
+   "top_starters": [
+    {
+     "handle": "avobttam",
+     "name": "Joe Burrow",
+     "pos": "QB",
+     "team": "CIN",
+     "pts": 49.48,
+     "slot": 1
+    },
+    {
+     "handle": "avobttam",
+     "name": "Tee Higgins",
+     "pos": "WR",
+     "team": "CIN",
+     "pts": 37.5,
+     "slot": 1
+    },
+    {
+     "handle": "AllBidness",
+     "name": "Tyler Allgeier",
+     "pos": "RB",
+     "team": "ARI",
+     "pts": 36.1,
+     "slot": 1
+    },
+    {
+     "handle": "joefanelli90",
+     "name": "Kirk Cousins",
+     "pos": "QB",
+     "team": "LV",
+     "pts": 34.18,
+     "slot": 1
+    },
+    {
+     "handle": "joefanelli90",
+     "name": "Ja'Marr Chase",
+     "pos": "WR",
+     "team": "CIN",
+     "pts": 31.1,
+     "slot": 1
+    },
+    {
+     "handle": "CodyPowers28",
+     "name": "Josh Allen",
+     "pos": "QB",
+     "team": "BUF",
+     "pts": 30.56,
+     "slot": 1
+    },
+    {
+     "handle": "CodyPowers28",
+     "name": "Bhayshul Tuten",
+     "pos": "RB",
+     "team": "JAX",
+     "pts": 29.9,
+     "slot": 1
+    },
+    {
+     "handle": "cbova1222",
+     "name": "Tony Pollard",
+     "pos": "RB",
+     "team": "TEN",
+     "pts": 28.7,
+     "slot": 1
+    }
+   ],
+   "dud_starters": [
+    {
+     "handle": "nelsolson",
+     "name": "Lamar Jackson",
+     "pos": "QB",
+     "team": "BAL",
+     "pts": 0.0,
+     "slot": 1
+    },
+    {
+     "handle": "bstanley45",
+     "name": "Tre Tucker",
+     "pos": "WR",
+     "team": "LV",
+     "pts": 0.0,
+     "slot": 1
+    },
+    {
+     "handle": "creckley",
+     "name": "Zay Flowers",
+     "pos": "WR",
+     "team": "BAL",
+     "pts": 0.0,
+     "slot": 1
+    },
+    {
+     "handle": "Bustersx8",
+     "name": "DK Metcalf",
+     "pos": "WR",
+     "team": "PIT",
+     "pts": 1.4,
+     "slot": 1
+    },
+    {
+     "handle": "creckley",
+     "name": "Drake London",
+     "pos": "WR",
+     "team": "ATL",
+     "pts": 1.8,
+     "slot": 1
+    },
+    {
+     "handle": "ButtFumble06",
+     "name": "Jordan Mason",
+     "pos": "RB",
+     "team": "MIN",
+     "pts": 2.0,
+     "slot": 1
+    },
+    {
+     "handle": "AllBidness",
+     "name": "Jeremiyah Love",
+     "pos": "RB",
+     "team": "ARI",
+     "pts": 2.3,
+     "slot": 1
+    },
+    {
+     "handle": "ButtFumble06",
+     "name": "Parker Washington",
+     "pos": "WR",
+     "team": "JAX",
+     "pts": 3.6,
+     "slot": 1
+    }
+   ],
+   "transactions": {
+    "waivers": [
+     {
+      "player_id": "5859",
+      "player": "A.J. Brown",
+      "pos": "WR",
+      "handle": "CodyPowers28",
+      "bid": 31,
+      "bidders": 7,
+      "runner_up": 16,
+      "losers": [
+       {
+        "handle": "nelsolson",
+        "bid": 16
+       },
+       {
+        "handle": "creckley",
+        "bid": 7
+       },
+       {
+        "handle": "bstanley45",
+        "bid": 4
+       },
+       {
+        "handle": "ButtFumble06",
+        "bid": 0
+       },
+       {
+        "handle": "cbova1222",
+        "bid": 0
+       },
+       {
+        "handle": "AllBidness",
+        "bid": 0
+       }
+      ]
+     },
+     {
+      "player_id": "8134",
+      "player": "Khalil Shakir",
+      "pos": "WR",
+      "handle": "creckley",
+      "bid": 7,
+      "bidders": 1,
+      "runner_up": null,
+      "losers": []
+     },
+     {
+      "player_id": "9756",
+      "player": "Jordan Addison",
+      "pos": "WR",
+      "handle": "creckley",
+      "bid": 6,
+      "bidders": 1,
+      "runner_up": null,
+      "losers": []
+     },
+     {
+      "player_id": "12499",
+      "player": "Elic Ayomanor",
+      "pos": "WR",
+      "handle": "bstanley45",
+      "bid": 3,
+      "bidders": 1,
+      "runner_up": null,
+      "losers": []
+     },
+     {
+      "player_id": "9501",
+      "player": "DeMario Douglas",
+      "pos": "WR",
+      "handle": "bstanley45",
+      "bid": 3,
+      "bidders": 1,
+      "runner_up": null,
+      "losers": []
+     },
+     {
+      "player_id": "5947",
+      "player": "Jakobi Meyers",
+      "pos": "WR",
+      "handle": "nelsolson",
+      "bid": 1,
+      "bidders": 1,
+      "runner_up": null,
+      "losers": []
+     },
+     {
+      "player_id": "11729",
+      "player": "Sione Vaki",
+      "pos": "RB",
+      "handle": "ButtFumble06",
+      "bid": 0,
+      "bidders": 1,
+      "runner_up": null,
+      "losers": []
+     },
+     {
+      "player_id": "6806",
+      "player": "J.K. Dobbins",
+      "pos": "RB",
+      "handle": "Bustersx8",
+      "bid": 0,
+      "bidders": 1,
+      "runner_up": null,
+      "losers": []
+     },
+     {
+      "player_id": "6804",
+      "player": "Jordan Love",
+      "pos": "QB",
+      "handle": "ButtFumble06",
+      "bid": 0,
+      "bidders": 1,
+      "runner_up": null,
+      "losers": []
+     },
+     {
+      "player_id": "11624",
+      "player": "Xavier Worthy",
+      "pos": "WR",
+      "handle": "AllBidness",
+      "bid": 0,
+      "bidders": 1,
+      "runner_up": null,
+      "losers": []
+     },
+     {
+      "player_id": "13301",
+      "player": "Antonio Williams",
+      "pos": "WR",
+      "handle": "CodyPowers28",
+      "bid": 0,
+      "bidders": 1,
+      "runner_up": null,
+      "losers": []
+     }
+    ],
+    "lost_bids": [
+     {
+      "player_id": "5859",
+      "player": "A.J. Brown",
+      "pos": "WR",
+      "handle": "nelsolson",
+      "bid": 16,
+      "won_by": "CodyPowers28",
+      "won_at": 31
+     },
+     {
+      "player_id": "5859",
+      "player": "A.J. Brown",
+      "pos": "WR",
+      "handle": "creckley",
+      "bid": 7,
+      "won_by": "CodyPowers28",
+      "won_at": 31
+     },
+     {
+      "player_id": "5859",
+      "player": "A.J. Brown",
+      "pos": "WR",
+      "handle": "bstanley45",
+      "bid": 4,
+      "won_by": "CodyPowers28",
+      "won_at": 31
+     },
+     {
+      "player_id": "5859",
+      "player": "A.J. Brown",
+      "pos": "WR",
+      "handle": "ButtFumble06",
+      "bid": 0,
+      "won_by": "CodyPowers28",
+      "won_at": 31
+     },
+     {
+      "player_id": "5859",
+      "player": "A.J. Brown",
+      "pos": "WR",
+      "handle": "cbova1222",
+      "bid": 0,
+      "won_by": "CodyPowers28",
+      "won_at": 31
+     },
+     {
+      "player_id": "5859",
+      "player": "A.J. Brown",
+      "pos": "WR",
+      "handle": "AllBidness",
+      "bid": 0,
+      "won_by": "CodyPowers28",
+      "won_at": 31
+     }
+    ],
+    "faab_spent": 51,
+    "free_agents": [],
+    "trades": []
+   },
+   "death": {
+    "kind": "death",
+    "confirmed": true,
+    "handle": "creckley",
+    "name": "creckley",
+    "team_name": "creckley",
+    "points": 82.3,
+    "proj": 110.36,
+    "place": 11,
+    "teams": 18,
+    "ordinal": "11th",
+    "survivor": {
+     "handle": "bstanley45",
+     "points": 82.48
+    },
+    "margin": 0.18,
+    "champion": null,
+    "lineup": [
+     {
+      "name": "Trevor Lawrence",
+      "pos": "QB",
+      "team": "JAX",
+      "pts": 25.4,
+      "proj": 22.82
+     },
+     {
+      "name": "Omarion Hampton",
+      "pos": "RB",
+      "team": "LAC",
+      "pts": 4.7,
+      "proj": 10.27
+     },
+     {
+      "name": "Rico Dowdle",
+      "pos": "RB",
+      "team": "PIT",
+      "pts": 11.6,
+      "proj": 8.67
+     },
+     {
+      "name": "Drake London",
+      "pos": "WR",
+      "team": "ATL",
+      "pts": 1.8,
+      "proj": 16.46
+     },
+     {
+      "name": "Zay Flowers",
+      "pos": "WR",
+      "team": "BAL",
+      "pts": 0.0,
+      "proj": 18.48
+     },
+     {
+      "name": "Sam LaPorta",
+      "pos": "TE",
+      "team": "DET",
+      "pts": 6.5,
+      "proj": 10.71
+     },
+     {
+      "name": "Khalil Shakir",
+      "pos": "WR",
+      "team": "BUF",
+      "pts": 11.4,
+      "proj": 9.22
+     },
+     {
+      "name": "Matthew Golden",
+      "pos": "WR",
+      "team": "GB",
+      "pts": 20.9,
+      "proj": 13.73
+     }
+    ],
+    "bench": [
+     {
+      "name": "Patrick Mahomes",
+      "pos": "QB",
+      "team": "KC",
+      "pts": 31.44,
+      "proj": 20.36
+     },
+     {
+      "name": "Jordan Addison",
+      "pos": "WR",
+      "team": "MIN",
+      "pts": 11.6,
+      "proj": 9.61
+     },
+     {
+      "name": "Courtland Sutton",
+      "pos": "WR",
+      "team": "DEN",
+      "pts": 9.3,
+      "proj": 7.9
+     },
+     {
+      "name": "RJ Harvey",
+      "pos": "RB",
+      "team": "DEN",
+      "pts": 0.0,
+      "proj": 0.0
+     }
+    ],
+    "blame": {
+     "kind": "start_sit",
+     "gain": 11.6,
+     "in": "Jordan Addison",
+     "in_pts": 11.6,
+     "out": "Zay Flowers",
+     "out_pts": 0.0,
+     "slot": "WR",
+     "out_proj": 18.48
+    },
+    "busts": [
+     {
+      "name": "Zay Flowers",
+      "pos": "WR",
+      "team": "BAL",
+      "pts": 0.0,
+      "proj": 18.48
+     },
+     {
+      "name": "Drake London",
+      "pos": "WR",
+      "team": "ATL",
+      "pts": 1.8,
+      "proj": 16.46
+     },
+     {
+      "name": "Omarion Hampton",
+      "pos": "RB",
+      "team": "LAC",
+      "pts": 4.7,
+      "proj": 10.27
+     }
+    ],
+    "zeros": [
+     "Zay Flowers"
+    ],
+    "optimal": 107.44,
+    "season_weeks": [
+     {
+      "week": 1,
+      "points": 113.9,
+      "rank": 8,
+      "alive": 18
+     },
+     {
+      "week": 2,
+      "points": 65.66,
+      "rank": 16,
+      "alive": 17
+     },
+     {
+      "week": 3,
+      "points": 105.18,
+      "rank": 10,
+      "alive": 16
+     },
+     {
+      "week": 4,
+      "points": 101.48,
+      "rank": 12,
+      "alive": 15
+     },
+     {
+      "week": 5,
+      "points": 97.14,
+      "rank": 10,
+      "alive": 14
+     },
+     {
+      "week": 6,
+      "points": 113.34,
+      "rank": 5,
+      "alive": 13
+     },
+     {
+      "week": 7,
+      "points": 102.1,
+      "rank": 8,
+      "alive": 12
+     },
+     {
+      "week": 8,
+      "points": 82.3,
+      "rank": 11,
+      "alive": 11
+     }
+    ],
+    "faab": {
+     "budget": 1000,
+     "spent": 341,
+     "left": 659,
+     "claims_won": 13,
+     "biggest": {
+      "week": 6,
+      "player": "Zay Flowers",
+      "bid": 317
+     }
+    },
+    "career": [
+     {
+      "season": 2023,
+      "place": 11,
+      "teams": 18,
+      "team_name": "Recking Crew",
+      "chopped_week": 8,
+      "place_prize": 0,
+      "weekly_highs": [
+       5
+      ],
+      "weekly_prize": 25
+     },
+     {
+      "season": 2024,
+      "place": 15,
+      "teams": 18,
+      "team_name": "Recking Crew",
+      "chopped_week": 4,
+      "place_prize": 0,
+      "weekly_highs": [],
+      "weekly_prize": 0
+     },
+     {
+      "season": 2025,
+      "place": 10,
+      "teams": 18,
+      "team_name": "Team creckley",
+      "chopped_week": 9,
+      "place_prize": 0,
+      "weekly_highs": [],
+      "weekly_prize": 0
+     },
+     {
+      "season": 2026,
+      "place": 11,
+      "teams": 18,
+      "team_name": "creckley",
+      "chopped_week": 8,
+      "place_prize": 0,
+      "weekly_highs": [],
+      "weekly_prize": 0,
+      "current": true
+     }
+    ],
+    "lifetime": {
+     "earned": 25,
+     "seasons": 4,
+     "cashes": 0,
+     "weekly_highs": 1,
+     "best_place": 10
+    }
+   }
+  },
   "two_mitchs": {
    "league_id": "1383837552376545280",
    "league_name": "2 Mitchs 1 Cup",
@@ -473,16 +1530,16 @@
        "handle": "avobttam",
        "record": "7-1",
        "proj_record": "11.1-2.9",
-       "proj_pf": 2069.8,
-       "playoff": 100.0,
-       "bye": 90.8,
-       "final": 50.3,
-       "title": 27.1,
+       "proj_pf": 2067.7,
+       "playoff": 99.9,
+       "bye": 90.9,
+       "final": 50.2,
+       "title": 27.2,
        "seed_pct": [
-        72.1,
-        18.8,
-        6.5,
-        1.9,
+        71.9,
+        19.0,
+        6.6,
+        1.8,
         0.6,
         0.1
        ],
@@ -494,18 +1551,18 @@
        "handle": "MJBlack",
        "record": "7-1",
        "proj_record": "10.2-3.8",
-       "proj_pf": 1796.2,
-       "playoff": 99.1,
-       "bye": 64.1,
-       "final": 29.1,
-       "title": 10.1,
+       "proj_pf": 1795.8,
+       "playoff": 99.0,
+       "bye": 65.2,
+       "final": 29.5,
+       "title": 9.8,
        "seed_pct": [
-        20.1,
-        44.0,
-        21.0,
-        8.7,
-        3.6,
-        1.7
+        20.6,
+        44.6,
+        19.8,
+        8.6,
+        3.9,
+        1.4
        ],
        "prev_playoff": 95.9,
        "prev_title": 9.5
@@ -514,19 +1571,19 @@
        "name": "Andrew Evans",
        "handle": "BigOleTDs21",
        "record": "5-3",
-       "proj_record": "8.8-5.2",
-       "proj_pf": 1943.7,
+       "proj_record": "8.7-5.3",
+       "proj_pf": 1944.6,
        "playoff": 94.2,
-       "bye": 30.7,
-       "final": 37.6,
-       "title": 21.7,
+       "bye": 29.9,
+       "final": 37.9,
+       "title": 21.8,
        "seed_pct": [
-        7.0,
-        23.7,
-        29.7,
-        17.5,
-        10.2,
-        6.0
+        6.5,
+        23.3,
+        30.0,
+        17.8,
+        10.3,
+        6.2
        ],
        "prev_playoff": 96.2,
        "prev_title": 23.7
@@ -535,19 +1592,19 @@
        "name": "Austin Hendrickson",
        "handle": "Bogeyman28",
        "record": "3-5",
-       "proj_record": "7.2-6.8",
-       "proj_pf": 1962.0,
-       "playoff": 70.4,
-       "bye": 3.4,
-       "final": 24.5,
-       "title": 12.7,
+       "proj_record": "7.1-6.9",
+       "proj_pf": 1952.6,
+       "playoff": 68.5,
+       "bye": 3.2,
+       "final": 24.4,
+       "title": 12.5,
        "seed_pct": [
         0.1,
-        3.3,
-        13.5,
-        19.6,
+        3.2,
+        12.9,
+        19.3,
         18.3,
-        15.5
+        14.9
        ],
        "prev_playoff": 69.7,
        "prev_title": 12.2
@@ -556,19 +1613,19 @@
        "name": "Nick Merkel",
        "handle": "MerkDaddy36",
        "record": "3-5",
-       "proj_record": "7.0-7.0",
-       "proj_pf": 1951.0,
-       "playoff": 65.7,
+       "proj_record": "6.9-7.1",
+       "proj_pf": 1944.0,
+       "playoff": 64.3,
        "bye": 2.6,
-       "final": 23.8,
+       "final": 22.5,
        "title": 13.0,
        "seed_pct": [
-        0.1,
-        2.5,
-        10.2,
-        17.2,
-        19.1,
-        16.5
+        0.0,
+        2.6,
+        9.9,
+        17.3,
+        18.2,
+        16.4
        ],
        "prev_playoff": 73.1,
        "prev_title": 14.7
@@ -577,19 +1634,19 @@
        "name": "Jack Hawkins",
        "handle": "JellyRoll6884",
        "record": "4-4",
-       "proj_record": "7.1-6.9",
-       "proj_pf": 1894.7,
-       "playoff": 63.6,
-       "bye": 5.7,
-       "final": 15.5,
-       "title": 6.7,
+       "proj_record": "7.0-7.0",
+       "proj_pf": 1891.3,
+       "playoff": 61.3,
+       "bye": 5.3,
+       "final": 15.3,
+       "title": 6.6,
        "seed_pct": [
-        0.6,
-        5.1,
-        10.2,
-        13.9,
-        16.6,
-        17.2
+        0.7,
+        4.6,
+        10.6,
+        12.8,
+        16.5,
+        16.1
        ],
        "prev_playoff": 50.6,
        "prev_title": 5.5
@@ -599,18 +1656,18 @@
        "handle": "jonicarter89",
        "record": "4-4",
        "proj_record": "6.9-7.1",
-       "proj_pf": 1648.5,
-       "playoff": 43.9,
-       "bye": 1.6,
-       "final": 6.3,
+       "proj_pf": 1651.0,
+       "playoff": 45.7,
+       "bye": 1.7,
+       "final": 6.8,
        "title": 2.7,
        "seed_pct": [
-        0.1,
-        1.5,
-        4.9,
-        10.3,
-        12.6,
-        14.5
+        0.0,
+        1.6,
+        5.3,
+        11.1,
+        13.0,
+        14.7
        ],
        "prev_playoff": 33.0,
        "prev_title": 2.4
@@ -619,19 +1676,19 @@
        "name": "Chris Merkel",
        "handle": "CHRISMERKELDUH",
        "record": "4-4",
-       "proj_record": "6.4-7.6",
-       "proj_pf": 1597.5,
-       "playoff": 27.9,
-       "bye": 0.5,
-       "final": 6.9,
-       "title": 3.2,
+       "proj_record": "6.5-7.5",
+       "proj_pf": 1604.5,
+       "playoff": 30.2,
+       "bye": 0.6,
+       "final": 7.1,
+       "title": 3.3,
        "seed_pct": [
         0.0,
-        0.5,
-        2.1,
-        5.2,
-        8.3,
-        11.8
+        0.6,
+        2.9,
+        5.6,
+        8.6,
+        12.6
        ],
        "prev_playoff": 28.1,
        "prev_title": 3.1
@@ -640,19 +1697,19 @@
        "name": "Chris Bova",
        "handle": "cbova1222",
        "record": "4-4",
-       "proj_record": "6.2-7.8",
-       "proj_pf": 1596.7,
-       "playoff": 21.9,
+       "proj_record": "6.1-7.9",
+       "proj_pf": 1595.1,
+       "playoff": 21.7,
        "bye": 0.5,
-       "final": 3.2,
+       "final": 3.1,
        "title": 1.4,
        "seed_pct": [
         0.0,
         0.5,
-        1.4,
-        4.0,
-        6.7,
-        9.4
+        1.5,
+        3.7,
+        6.6,
+        9.5
        ],
        "prev_playoff": 20.8,
        "prev_title": 1.6
@@ -661,19 +1718,19 @@
        "name": "Katie Bogardus",
        "handle": "katiestout13",
        "record": "3-5",
-       "proj_record": "5.1-8.9",
-       "proj_pf": 1643.3,
-       "playoff": 8.7,
+       "proj_record": "5.2-8.8",
+       "proj_pf": 1644.1,
+       "playoff": 9.9,
        "bye": 0.1,
-       "final": 1.8,
-       "title": 0.9,
+       "final": 2.2,
+       "title": 1.1,
        "seed_pct": [
         0.0,
         0.1,
-        0.4,
-        1.1,
-        2.4,
-        4.7
+        0.5,
+        1.3,
+        2.6,
+        5.3
        ],
        "prev_playoff": 17.9,
        "prev_title": 1.2
@@ -682,19 +1739,19 @@
        "name": "Jake Bogardus",
        "handle": "djbogardus72",
        "record": "3-5",
-       "proj_record": "4.8-9.2",
-       "proj_pf": 1523.9,
-       "playoff": 4.2,
+       "proj_record": "4.9-9.1",
+       "proj_pf": 1525.0,
+       "playoff": 4.9,
        "bye": 0.0,
-       "final": 0.9,
-       "title": 0.4,
+       "final": 1.1,
+       "title": 0.5,
        "seed_pct": [
         0.0,
         0.0,
         0.2,
-        0.5,
-        1.2,
-        2.3
+        0.6,
+        1.4,
+        2.6
        ],
        "prev_playoff": 14.1,
        "prev_title": 1.2
@@ -704,10 +1761,10 @@
        "handle": "Mpletcher",
        "record": "1-7",
        "proj_record": "3.3-10.7",
-       "proj_pf": 1507.1,
+       "proj_pf": 1509.9,
        "playoff": 0.4,
        "bye": 0.0,
-       "final": 0.1,
+       "final": 0.0,
        "title": 0.0,
        "seed_pct": [
         0.0,
@@ -715,7 +1772,7 @@
         0.0,
         0.0,
         0.1,
-        0.3
+        0.2
        ],
        "prev_playoff": 0.9,
        "prev_title": 0.0
@@ -3208,7 +4265,7 @@
      "winner": "CIN",
      "upset": false,
      "fav": "CIN",
-     "fav_prob": 0.845,
+     "fav_prob": 0.85,
      "picks": {
       "CIN": 18
      }
@@ -3219,7 +4276,7 @@
      "winner": "ARI",
      "upset": true,
      "fav": "DAL",
-     "fav_prob": 0.731,
+     "fav_prob": 0.732,
      "picks": {
       "DAL": 17
      }
@@ -3264,7 +4321,7 @@
      "winner": "BUF",
      "upset": false,
      "fav": "BUF",
-     "fav_prob": 0.609,
+     "fav_prob": 0.61,
      "picks": {
       "BUF": 10
      }
@@ -3275,7 +4332,7 @@
      "winner": "LV",
      "upset": true,
      "fav": "NYJ",
-     "fav_prob": 0.525,
+     "fav_prob": 0.526,
      "picks": {
       "LV": 6
      }
@@ -3286,7 +4343,7 @@
      "winner": "TB",
      "upset": false,
      "fav": "TB",
-     "fav_prob": 0.555,
+     "fav_prob": 0.54,
      "picks": {
       "TB": 1
      }
@@ -3297,7 +4354,7 @@
      "winner": "LAR",
      "upset": false,
      "fav": "LAR",
-     "fav_prob": 0.713,
+     "fav_prob": 0.722,
      "picks": {
       "LAR": 16
      }
@@ -3308,7 +4365,7 @@
      "winner": "NE",
      "upset": false,
      "fav": "NE",
-     "fav_prob": 0.738,
+     "fav_prob": 0.752,
      "picks": {
       "NE": 17
      }
@@ -3319,7 +4376,7 @@
      "winner": "DEN",
      "upset": true,
      "fav": "KC",
-     "fav_prob": 0.521,
+     "fav_prob": 0.504,
      "picks": {
       "KC": 3,
       "DEN": 1
@@ -3331,7 +4388,7 @@
      "winner": "WAS",
      "upset": false,
      "fav": "WAS",
-     "fav_prob": 0.696,
+     "fav_prob": 0.694,
      "picks": {
       "PHI": 1,
       "WAS": 10
@@ -3343,7 +4400,7 @@
      "winner": "CHI",
      "upset": true,
      "fav": "SEA",
-     "fav_prob": 0.608,
+     "fav_prob": 0.615,
      "picks": {
       "SEA": 5,
       "CHI": 1
@@ -3373,7 +4430,7 @@
        "opp": "TEN",
        "game": "TEN @ CIN",
        "outcome": "win",
-       "prob": 0.845,
+       "prob": 0.85,
        "hidden": false,
        "score": "TEN 36-43 CIN",
        "slot_label": "Sun 1:00 PM"
@@ -3384,7 +4441,7 @@
        "opp": "ARI",
        "game": "ARI @ DAL",
        "outcome": "loss",
-       "prob": 0.731,
+       "prob": 0.732,
        "hidden": false,
        "score": "ARI 33-30 DAL",
        "slot_label": "Sun 1:00 PM"
@@ -3428,7 +4485,7 @@
        "opp": "LAC",
        "game": "LAC @ LAR",
        "outcome": "win",
-       "prob": 0.713,
+       "prob": 0.722,
        "hidden": false,
        "score": "LAC 9-24 LAR",
        "slot_label": "Sun 4:05 PM"
@@ -3439,7 +4496,7 @@
        "opp": "MIA",
        "game": "NE @ MIA",
        "outcome": "win",
-       "prob": 0.738,
+       "prob": 0.752,
        "hidden": false,
        "score": "NE 24-19 MIA",
        "slot_label": "Sun 4:25 PM"
@@ -3480,7 +4537,7 @@
        "opp": "TEN",
        "game": "TEN @ CIN",
        "outcome": "win",
-       "prob": 0.845,
+       "prob": 0.85,
        "hidden": false,
        "score": "TEN 36-43 CIN",
        "slot_label": "Sun 1:00 PM"
@@ -3491,7 +4548,7 @@
        "opp": "ARI",
        "game": "ARI @ DAL",
        "outcome": "loss",
-       "prob": 0.731,
+       "prob": 0.732,
        "hidden": false,
        "score": "ARI 33-30 DAL",
        "slot_label": "Sun 1:00 PM"
@@ -3513,7 +4570,7 @@
        "opp": "NYJ",
        "game": "LV @ NYJ",
        "outcome": "win",
-       "prob": 0.475,
+       "prob": 0.474,
        "hidden": false,
        "score": "LV 38-33 NYJ",
        "slot_label": "Sun 1:00 PM"
@@ -3524,7 +4581,7 @@
        "opp": "ATL",
        "game": "ATL @ TB",
        "outcome": "win",
-       "prob": 0.555,
+       "prob": 0.54,
        "hidden": false,
        "score": "ATL 0-16 TB",
        "slot_label": "Sun 1:00 PM"
@@ -3535,7 +4592,7 @@
        "opp": "LAC",
        "game": "LAC @ LAR",
        "outcome": "win",
-       "prob": 0.713,
+       "prob": 0.722,
        "hidden": false,
        "score": "LAC 9-24 LAR",
        "slot_label": "Sun 4:05 PM"
@@ -3546,7 +4603,7 @@
        "opp": "MIA",
        "game": "NE @ MIA",
        "outcome": "win",
-       "prob": 0.738,
+       "prob": 0.752,
        "hidden": false,
        "score": "NE 24-19 MIA",
        "slot_label": "Sun 4:25 PM"
@@ -3557,7 +4614,7 @@
        "opp": "PHI",
        "game": "PHI @ WAS",
        "outcome": "win",
-       "prob": 0.696,
+       "prob": 0.694,
        "hidden": false,
        "score": "PHI 10-27 WAS",
        "slot_label": "Sun 8:20 PM"
@@ -3602,7 +4659,7 @@
        "opp": "BAL",
        "game": "BAL @ BUF",
        "outcome": "win",
-       "prob": 0.609,
+       "prob": 0.61,
        "hidden": false,
        "score": "BAL 10-36 BUF",
        "slot_label": "Sun 1:00 PM"
@@ -3613,7 +4670,7 @@
        "opp": "TEN",
        "game": "TEN @ CIN",
        "outcome": "win",
-       "prob": 0.845,
+       "prob": 0.85,
        "hidden": false,
        "score": "TEN 36-43 CIN",
        "slot_label": "Sun 1:00 PM"
@@ -3624,7 +4681,7 @@
        "opp": "ARI",
        "game": "ARI @ DAL",
        "outcome": "loss",
-       "prob": 0.731,
+       "prob": 0.732,
        "hidden": false,
        "score": "ARI 33-30 DAL",
        "slot_label": "Sun 1:00 PM"
@@ -3657,7 +4714,7 @@
        "opp": "LAC",
        "game": "LAC @ LAR",
        "outcome": "win",
-       "prob": 0.713,
+       "prob": 0.722,
        "hidden": false,
        "score": "LAC 9-24 LAR",
        "slot_label": "Sun 4:05 PM"
@@ -3668,7 +4725,7 @@
        "opp": "MIA",
        "game": "NE @ MIA",
        "outcome": "win",
-       "prob": 0.738,
+       "prob": 0.752,
        "hidden": false,
        "score": "NE 24-19 MIA",
        "slot_label": "Sun 4:25 PM"
@@ -3679,7 +4736,7 @@
        "opp": "PHI",
        "game": "PHI @ WAS",
        "outcome": "win",
-       "prob": 0.696,
+       "prob": 0.694,
        "hidden": false,
        "score": "PHI 10-27 WAS",
        "slot_label": "Sun 8:20 PM"
@@ -3720,7 +4777,7 @@
        "opp": "BAL",
        "game": "BAL @ BUF",
        "outcome": "win",
-       "prob": 0.609,
+       "prob": 0.61,
        "hidden": false,
        "score": "BAL 10-36 BUF",
        "slot_label": "Sun 1:00 PM"
@@ -3731,7 +4788,7 @@
        "opp": "TEN",
        "game": "TEN @ CIN",
        "outcome": "win",
-       "prob": 0.845,
+       "prob": 0.85,
        "hidden": false,
        "score": "TEN 36-43 CIN",
        "slot_label": "Sun 1:00 PM"
@@ -3742,7 +4799,7 @@
        "opp": "ARI",
        "game": "ARI @ DAL",
        "outcome": "loss",
-       "prob": 0.731,
+       "prob": 0.732,
        "hidden": false,
        "score": "ARI 33-30 DAL",
        "slot_label": "Sun 1:00 PM"
@@ -3775,7 +4832,7 @@
        "opp": "LAC",
        "game": "LAC @ LAR",
        "outcome": "win",
-       "prob": 0.713,
+       "prob": 0.722,
        "hidden": false,
        "score": "LAC 9-24 LAR",
        "slot_label": "Sun 4:05 PM"
@@ -3786,7 +4843,7 @@
        "opp": "MIA",
        "game": "NE @ MIA",
        "outcome": "win",
-       "prob": 0.738,
+       "prob": 0.752,
        "hidden": false,
        "score": "NE 24-19 MIA",
        "slot_label": "Sun 4:25 PM"
@@ -3797,7 +4854,7 @@
        "opp": "PHI",
        "game": "PHI @ WAS",
        "outcome": "win",
-       "prob": 0.696,
+       "prob": 0.694,
        "hidden": false,
        "score": "PHI 10-27 WAS",
        "slot_label": "Sun 8:20 PM"
@@ -3849,7 +4906,7 @@
        "opp": "TEN",
        "game": "TEN @ CIN",
        "outcome": "win",
-       "prob": 0.845,
+       "prob": 0.85,
        "hidden": false,
        "score": "TEN 36-43 CIN",
        "slot_label": "Sun 1:00 PM"
@@ -3860,7 +4917,7 @@
        "opp": "ARI",
        "game": "ARI @ DAL",
        "outcome": "loss",
-       "prob": 0.731,
+       "prob": 0.732,
        "hidden": false,
        "score": "ARI 33-30 DAL",
        "slot_label": "Sun 1:00 PM"
@@ -3882,7 +4939,7 @@
        "opp": "NYJ",
        "game": "LV @ NYJ",
        "outcome": "win",
-       "prob": 0.475,
+       "prob": 0.474,
        "hidden": false,
        "score": "LV 38-33 NYJ",
        "slot_label": "Sun 1:00 PM"
@@ -3904,7 +4961,7 @@
        "opp": "LAC",
        "game": "LAC @ LAR",
        "outcome": "win",
-       "prob": 0.713,
+       "prob": 0.722,
        "hidden": false,
        "score": "LAC 9-24 LAR",
        "slot_label": "Sun 4:05 PM"
@@ -3915,7 +4972,7 @@
        "opp": "MIA",
        "game": "NE @ MIA",
        "outcome": "win",
-       "prob": 0.738,
+       "prob": 0.752,
        "hidden": false,
        "score": "NE 24-19 MIA",
        "slot_label": "Sun 4:25 PM"
@@ -3969,7 +5026,7 @@
        "opp": "BAL",
        "game": "BAL @ BUF",
        "outcome": "win",
-       "prob": 0.609,
+       "prob": 0.61,
        "hidden": false,
        "score": "BAL 10-36 BUF",
        "slot_label": "Sun 1:00 PM"
@@ -3980,7 +5037,7 @@
        "opp": "TEN",
        "game": "TEN @ CIN",
        "outcome": "win",
-       "prob": 0.845,
+       "prob": 0.85,
        "hidden": false,
        "score": "TEN 36-43 CIN",
        "slot_label": "Sun 1:00 PM"
@@ -3991,7 +5048,7 @@
        "opp": "ARI",
        "game": "ARI @ DAL",
        "outcome": "loss",
-       "prob": 0.731,
+       "prob": 0.732,
        "hidden": false,
        "score": "ARI 33-30 DAL",
        "slot_label": "Sun 1:00 PM"
@@ -4024,7 +5081,7 @@
        "opp": "LAC",
        "game": "LAC @ LAR",
        "outcome": "win",
-       "prob": 0.713,
+       "prob": 0.722,
        "hidden": false,
        "score": "LAC 9-24 LAR",
        "slot_label": "Sun 4:05 PM"
@@ -4035,7 +5092,7 @@
        "opp": "PHI",
        "game": "PHI @ WAS",
        "outcome": "win",
-       "prob": 0.696,
+       "prob": 0.694,
        "hidden": false,
        "score": "PHI 10-27 WAS",
        "slot_label": "Sun 8:20 PM"
@@ -4076,7 +5133,7 @@
        "opp": "BAL",
        "game": "BAL @ BUF",
        "outcome": "win",
-       "prob": 0.609,
+       "prob": 0.61,
        "hidden": false,
        "score": "BAL 10-36 BUF",
        "slot_label": "Sun 1:00 PM"
@@ -4087,7 +5144,7 @@
        "opp": "TEN",
        "game": "TEN @ CIN",
        "outcome": "win",
-       "prob": 0.845,
+       "prob": 0.85,
        "hidden": false,
        "score": "TEN 36-43 CIN",
        "slot_label": "Sun 1:00 PM"
@@ -4098,7 +5155,7 @@
        "opp": "ARI",
        "game": "ARI @ DAL",
        "outcome": "loss",
-       "prob": 0.731,
+       "prob": 0.732,
        "hidden": false,
        "score": "ARI 33-30 DAL",
        "slot_label": "Sun 1:00 PM"
@@ -4131,7 +5188,7 @@
        "opp": "LAC",
        "game": "LAC @ LAR",
        "outcome": "win",
-       "prob": 0.713,
+       "prob": 0.722,
        "hidden": false,
        "score": "LAC 9-24 LAR",
        "slot_label": "Sun 4:05 PM"
@@ -4142,7 +5199,7 @@
        "opp": "MIA",
        "game": "NE @ MIA",
        "outcome": "win",
-       "prob": 0.738,
+       "prob": 0.752,
        "hidden": false,
        "score": "NE 24-19 MIA",
        "slot_label": "Sun 4:25 PM"
@@ -4153,7 +5210,7 @@
        "opp": "PHI",
        "game": "PHI @ WAS",
        "outcome": "win",
-       "prob": 0.696,
+       "prob": 0.694,
        "hidden": false,
        "score": "PHI 10-27 WAS",
        "slot_label": "Sun 8:20 PM"
@@ -4205,7 +5262,7 @@
        "opp": "BAL",
        "game": "BAL @ BUF",
        "outcome": "win",
-       "prob": 0.609,
+       "prob": 0.61,
        "hidden": false,
        "score": "BAL 10-36 BUF",
        "slot_label": "Sun 1:00 PM"
@@ -4216,7 +5273,7 @@
        "opp": "TEN",
        "game": "TEN @ CIN",
        "outcome": "win",
-       "prob": 0.845,
+       "prob": 0.85,
        "hidden": false,
        "score": "TEN 36-43 CIN",
        "slot_label": "Sun 1:00 PM"
@@ -4227,7 +5284,7 @@
        "opp": "ARI",
        "game": "ARI @ DAL",
        "outcome": "loss",
-       "prob": 0.731,
+       "prob": 0.732,
        "hidden": false,
        "score": "ARI 33-30 DAL",
        "slot_label": "Sun 1:00 PM"
@@ -4249,7 +5306,7 @@
        "opp": "LAC",
        "game": "LAC @ LAR",
        "outcome": "win",
-       "prob": 0.713,
+       "prob": 0.722,
        "hidden": false,
        "score": "LAC 9-24 LAR",
        "slot_label": "Sun 4:05 PM"
@@ -4260,7 +5317,7 @@
        "opp": "MIA",
        "game": "NE @ MIA",
        "outcome": "win",
-       "prob": 0.738,
+       "prob": 0.752,
        "hidden": false,
        "score": "NE 24-19 MIA",
        "slot_label": "Sun 4:25 PM"
@@ -4271,7 +5328,7 @@
        "opp": "PHI",
        "game": "PHI @ WAS",
        "outcome": "win",
-       "prob": 0.696,
+       "prob": 0.694,
        "hidden": false,
        "score": "PHI 10-27 WAS",
        "slot_label": "Sun 8:20 PM"
@@ -4312,7 +5369,7 @@
        "opp": "TEN",
        "game": "TEN @ CIN",
        "outcome": "win",
-       "prob": 0.845,
+       "prob": 0.85,
        "hidden": false,
        "score": "TEN 36-43 CIN",
        "slot_label": "Sun 1:00 PM"
@@ -4323,7 +5380,7 @@
        "opp": "ARI",
        "game": "ARI @ DAL",
        "outcome": "loss",
-       "prob": 0.731,
+       "prob": 0.732,
        "hidden": false,
        "score": "ARI 33-30 DAL",
        "slot_label": "Sun 1:00 PM"
@@ -4367,7 +5424,7 @@
        "opp": "LAC",
        "game": "LAC @ LAR",
        "outcome": "win",
-       "prob": 0.713,
+       "prob": 0.722,
        "hidden": false,
        "score": "LAC 9-24 LAR",
        "slot_label": "Sun 4:05 PM"
@@ -4378,7 +5435,7 @@
        "opp": "MIA",
        "game": "NE @ MIA",
        "outcome": "win",
-       "prob": 0.738,
+       "prob": 0.752,
        "hidden": false,
        "score": "NE 24-19 MIA",
        "slot_label": "Sun 4:25 PM"
@@ -4389,7 +5446,7 @@
        "opp": "WAS",
        "game": "PHI @ WAS",
        "outcome": "loss",
-       "prob": 0.304,
+       "prob": 0.306,
        "hidden": false,
        "score": "PHI 10-27 WAS",
        "slot_label": "Sun 8:20 PM"
@@ -4430,7 +5487,7 @@
        "opp": "TEN",
        "game": "TEN @ CIN",
        "outcome": "win",
-       "prob": 0.845,
+       "prob": 0.85,
        "hidden": false,
        "score": "TEN 36-43 CIN",
        "slot_label": "Sun 1:00 PM"
@@ -4441,7 +5498,7 @@
        "opp": "ARI",
        "game": "ARI @ DAL",
        "outcome": "loss",
-       "prob": 0.731,
+       "prob": 0.732,
        "hidden": false,
        "score": "ARI 33-30 DAL",
        "slot_label": "Sun 1:00 PM"
@@ -4485,7 +5542,7 @@
        "opp": "MIA",
        "game": "NE @ MIA",
        "outcome": "win",
-       "prob": 0.738,
+       "prob": 0.752,
        "hidden": false,
        "score": "NE 24-19 MIA",
        "slot_label": "Sun 4:25 PM"
@@ -4496,7 +5553,7 @@
        "opp": "PHI",
        "game": "PHI @ WAS",
        "outcome": "win",
-       "prob": 0.696,
+       "prob": 0.694,
        "hidden": false,
        "score": "PHI 10-27 WAS",
        "slot_label": "Sun 8:20 PM"
@@ -4507,7 +5564,7 @@
        "opp": "CHI",
        "game": "CHI @ SEA",
        "outcome": "loss",
-       "prob": 0.608,
+       "prob": 0.615,
        "hidden": false,
        "score": "CHI 34-17 SEA",
        "slot_label": "Mon 8:15 PM"
@@ -4548,7 +5605,7 @@
        "opp": "BAL",
        "game": "BAL @ BUF",
        "outcome": "win",
-       "prob": 0.609,
+       "prob": 0.61,
        "hidden": false,
        "score": "BAL 10-36 BUF",
        "slot_label": "Sun 1:00 PM"
@@ -4559,7 +5616,7 @@
        "opp": "TEN",
        "game": "TEN @ CIN",
        "outcome": "win",
-       "prob": 0.845,
+       "prob": 0.85,
        "hidden": false,
        "score": "TEN 36-43 CIN",
        "slot_label": "Sun 1:00 PM"
@@ -4592,7 +5649,7 @@
        "opp": "LAC",
        "game": "LAC @ LAR",
        "outcome": "win",
-       "prob": 0.713,
+       "prob": 0.722,
        "hidden": false,
        "score": "LAC 9-24 LAR",
        "slot_label": "Sun 4:05 PM"
@@ -4603,7 +5660,7 @@
        "opp": "DEN",
        "game": "KC @ DEN",
        "outcome": "loss",
-       "prob": 0.521,
+       "prob": 0.504,
        "hidden": false,
        "score": "KC 24-28 DEN",
        "slot_label": "Sun 4:25 PM"
@@ -4614,7 +5671,7 @@
        "opp": "MIA",
        "game": "NE @ MIA",
        "outcome": "win",
-       "prob": 0.738,
+       "prob": 0.752,
        "hidden": false,
        "score": "NE 24-19 MIA",
        "slot_label": "Sun 4:25 PM"
@@ -4625,7 +5682,7 @@
        "opp": "CHI",
        "game": "CHI @ SEA",
        "outcome": "loss",
-       "prob": 0.608,
+       "prob": 0.615,
        "hidden": false,
        "score": "CHI 34-17 SEA",
        "slot_label": "Mon 8:15 PM"
@@ -4664,7 +5721,7 @@
        "opp": "BAL",
        "game": "BAL @ BUF",
        "outcome": "win",
-       "prob": 0.609,
+       "prob": 0.61,
        "hidden": false,
        "score": "BAL 10-36 BUF",
        "slot_label": "Sun 1:00 PM"
@@ -4675,7 +5732,7 @@
        "opp": "TEN",
        "game": "TEN @ CIN",
        "outcome": "win",
-       "prob": 0.845,
+       "prob": 0.85,
        "hidden": false,
        "score": "TEN 36-43 CIN",
        "slot_label": "Sun 1:00 PM"
@@ -4686,7 +5743,7 @@
        "opp": "ARI",
        "game": "ARI @ DAL",
        "outcome": "loss",
-       "prob": 0.731,
+       "prob": 0.732,
        "hidden": false,
        "score": "ARI 33-30 DAL",
        "slot_label": "Sun 1:00 PM"
@@ -4708,7 +5765,7 @@
        "opp": "LAC",
        "game": "LAC @ LAR",
        "outcome": "win",
-       "prob": 0.713,
+       "prob": 0.722,
        "hidden": false,
        "score": "LAC 9-24 LAR",
        "slot_label": "Sun 4:05 PM"
@@ -4719,7 +5776,7 @@
        "opp": "MIA",
        "game": "NE @ MIA",
        "outcome": "win",
-       "prob": 0.738,
+       "prob": 0.752,
        "hidden": false,
        "score": "NE 24-19 MIA",
        "slot_label": "Sun 4:25 PM"
@@ -4730,7 +5787,7 @@
        "opp": "PHI",
        "game": "PHI @ WAS",
        "outcome": "win",
-       "prob": 0.696,
+       "prob": 0.694,
        "hidden": false,
        "score": "PHI 10-27 WAS",
        "slot_label": "Sun 8:20 PM"
@@ -4741,7 +5798,7 @@
        "opp": "CHI",
        "game": "CHI @ SEA",
        "outcome": "loss",
-       "prob": 0.608,
+       "prob": 0.615,
        "hidden": false,
        "score": "CHI 34-17 SEA",
        "slot_label": "Mon 8:15 PM"
@@ -4782,7 +5839,7 @@
        "opp": "TEN",
        "game": "TEN @ CIN",
        "outcome": "win",
-       "prob": 0.845,
+       "prob": 0.85,
        "hidden": false,
        "score": "TEN 36-43 CIN",
        "slot_label": "Sun 1:00 PM"
@@ -4793,7 +5850,7 @@
        "opp": "ARI",
        "game": "ARI @ DAL",
        "outcome": "loss",
-       "prob": 0.731,
+       "prob": 0.732,
        "hidden": false,
        "score": "ARI 33-30 DAL",
        "slot_label": "Sun 1:00 PM"
@@ -4815,7 +5872,7 @@
        "opp": "NYJ",
        "game": "LV @ NYJ",
        "outcome": "win",
-       "prob": 0.475,
+       "prob": 0.474,
        "hidden": false,
        "score": "LV 38-33 NYJ",
        "slot_label": "Sun 1:00 PM"
@@ -4826,7 +5883,7 @@
        "opp": "LAC",
        "game": "LAC @ LAR",
        "outcome": "win",
-       "prob": 0.713,
+       "prob": 0.722,
        "hidden": false,
        "score": "LAC 9-24 LAR",
        "slot_label": "Sun 4:05 PM"
@@ -4837,7 +5894,7 @@
        "opp": "DEN",
        "game": "KC @ DEN",
        "outcome": "loss",
-       "prob": 0.521,
+       "prob": 0.504,
        "hidden": false,
        "score": "KC 24-28 DEN",
        "slot_label": "Sun 4:25 PM"
@@ -4848,7 +5905,7 @@
        "opp": "MIA",
        "game": "NE @ MIA",
        "outcome": "win",
-       "prob": 0.738,
+       "prob": 0.752,
        "hidden": false,
        "score": "NE 24-19 MIA",
        "slot_label": "Sun 4:25 PM"
@@ -4859,7 +5916,7 @@
        "opp": "PHI",
        "game": "PHI @ WAS",
        "outcome": "win",
-       "prob": 0.696,
+       "prob": 0.694,
        "hidden": false,
        "score": "PHI 10-27 WAS",
        "slot_label": "Sun 8:20 PM"
@@ -4913,7 +5970,7 @@
        "opp": "BAL",
        "game": "BAL @ BUF",
        "outcome": "win",
-       "prob": 0.609,
+       "prob": 0.61,
        "hidden": false,
        "score": "BAL 10-36 BUF",
        "slot_label": "Sun 1:00 PM"
@@ -4924,7 +5981,7 @@
        "opp": "TEN",
        "game": "TEN @ CIN",
        "outcome": "win",
-       "prob": 0.845,
+       "prob": 0.85,
        "hidden": false,
        "score": "TEN 36-43 CIN",
        "slot_label": "Sun 1:00 PM"
@@ -4935,7 +5992,7 @@
        "opp": "ARI",
        "game": "ARI @ DAL",
        "outcome": "loss",
-       "prob": 0.731,
+       "prob": 0.732,
        "hidden": false,
        "score": "ARI 33-30 DAL",
        "slot_label": "Sun 1:00 PM"
@@ -4957,7 +6014,7 @@
        "opp": "LAC",
        "game": "LAC @ LAR",
        "outcome": "win",
-       "prob": 0.713,
+       "prob": 0.722,
        "hidden": false,
        "score": "LAC 9-24 LAR",
        "slot_label": "Sun 4:05 PM"
@@ -4968,7 +6025,7 @@
        "opp": "MIA",
        "game": "NE @ MIA",
        "outcome": "win",
-       "prob": 0.738,
+       "prob": 0.752,
        "hidden": false,
        "score": "NE 24-19 MIA",
        "slot_label": "Sun 4:25 PM"
@@ -4979,7 +6036,7 @@
        "opp": "CHI",
        "game": "CHI @ SEA",
        "outcome": "loss",
-       "prob": 0.608,
+       "prob": 0.615,
        "hidden": false,
        "score": "CHI 34-17 SEA",
        "slot_label": "Mon 8:15 PM"
@@ -5020,7 +6077,7 @@
        "opp": "TEN",
        "game": "TEN @ CIN",
        "outcome": "win",
-       "prob": 0.845,
+       "prob": 0.85,
        "hidden": false,
        "score": "TEN 36-43 CIN",
        "slot_label": "Sun 1:00 PM"
@@ -5042,7 +6099,7 @@
        "opp": "ARI",
        "game": "ARI @ DAL",
        "outcome": "loss",
-       "prob": 0.731,
+       "prob": 0.732,
        "hidden": false,
        "score": "ARI 33-30 DAL",
        "slot_label": "Sun 1:00 PM"
@@ -5064,7 +6121,7 @@
        "opp": "NYJ",
        "game": "LV @ NYJ",
        "outcome": "win",
-       "prob": 0.475,
+       "prob": 0.474,
        "hidden": false,
        "score": "LV 38-33 NYJ",
        "slot_label": "Sun 1:00 PM"
@@ -5075,7 +6132,7 @@
        "opp": "LAC",
        "game": "LAC @ LAR",
        "outcome": "win",
-       "prob": 0.713,
+       "prob": 0.722,
        "hidden": false,
        "score": "LAC 9-24 LAR",
        "slot_label": "Sun 4:05 PM"
@@ -5086,7 +6143,7 @@
        "opp": "KC",
        "game": "KC @ DEN",
        "outcome": "win",
-       "prob": 0.479,
+       "prob": 0.496,
        "hidden": false,
        "score": "KC 24-28 DEN",
        "slot_label": "Sun 4:25 PM"
@@ -5097,7 +6154,7 @@
        "opp": "MIA",
        "game": "NE @ MIA",
        "outcome": "win",
-       "prob": 0.738,
+       "prob": 0.752,
        "hidden": false,
        "score": "NE 24-19 MIA",
        "slot_label": "Sun 4:25 PM"
@@ -5137,7 +6194,7 @@
        "opp": "BAL",
        "game": "BAL @ BUF",
        "outcome": "win",
-       "prob": 0.609,
+       "prob": 0.61,
        "hidden": false,
        "score": "BAL 10-36 BUF",
        "slot_label": "Sun 1:00 PM"
@@ -5148,7 +6205,7 @@
        "opp": "TEN",
        "game": "TEN @ CIN",
        "outcome": "win",
-       "prob": 0.845,
+       "prob": 0.85,
        "hidden": false,
        "score": "TEN 36-43 CIN",
        "slot_label": "Sun 1:00 PM"
@@ -5159,7 +6216,7 @@
        "opp": "ARI",
        "game": "ARI @ DAL",
        "outcome": "loss",
-       "prob": 0.731,
+       "prob": 0.732,
        "hidden": false,
        "score": "ARI 33-30 DAL",
        "slot_label": "Sun 1:00 PM"
@@ -5181,7 +6238,7 @@
        "opp": "LAC",
        "game": "LAC @ LAR",
        "outcome": "win",
-       "prob": 0.713,
+       "prob": 0.722,
        "hidden": false,
        "score": "LAC 9-24 LAR",
        "slot_label": "Sun 4:05 PM"
@@ -5192,7 +6249,7 @@
        "opp": "MIA",
        "game": "NE @ MIA",
        "outcome": "win",
-       "prob": 0.738,
+       "prob": 0.752,
        "hidden": false,
        "score": "NE 24-19 MIA",
        "slot_label": "Sun 4:25 PM"
@@ -5203,7 +6260,7 @@
        "opp": "SEA",
        "game": "CHI @ SEA",
        "outcome": "win",
-       "prob": 0.392,
+       "prob": 0.385,
        "hidden": false,
        "score": "CHI 34-17 SEA",
        "slot_label": "Mon 8:15 PM"
@@ -5259,7 +6316,7 @@
        "opp": "BAL",
        "game": "BAL @ BUF",
        "outcome": "win",
-       "prob": 0.609,
+       "prob": 0.61,
        "hidden": false,
        "score": "BAL 10-36 BUF",
        "slot_label": "Sun 1:00 PM"
@@ -5270,7 +6327,7 @@
        "opp": "TEN",
        "game": "TEN @ CIN",
        "outcome": "win",
-       "prob": 0.845,
+       "prob": 0.85,
        "hidden": false,
        "score": "TEN 36-43 CIN",
        "slot_label": "Sun 1:00 PM"
@@ -5281,7 +6338,7 @@
        "opp": "ARI",
        "game": "ARI @ DAL",
        "outcome": "loss",
-       "prob": 0.731,
+       "prob": 0.732,
        "hidden": false,
        "score": "ARI 33-30 DAL",
        "slot_label": "Sun 1:00 PM"
@@ -5303,7 +6360,7 @@
        "opp": "NYJ",
        "game": "LV @ NYJ",
        "outcome": "win",
-       "prob": 0.475,
+       "prob": 0.474,
        "hidden": false,
        "score": "LV 38-33 NYJ",
        "slot_label": "Sun 1:00 PM"
@@ -5314,7 +6371,7 @@
        "opp": "MIA",
        "game": "NE @ MIA",
        "outcome": "win",
-       "prob": 0.738,
+       "prob": 0.752,
        "hidden": false,
        "score": "NE 24-19 MIA",
        "slot_label": "Sun 4:25 PM"
@@ -5325,7 +6382,7 @@
        "opp": "PHI",
        "game": "PHI @ WAS",
        "outcome": "win",
-       "prob": 0.696,
+       "prob": 0.694,
        "hidden": false,
        "score": "PHI 10-27 WAS",
        "slot_label": "Sun 8:20 PM"
@@ -5368,7 +6425,7 @@
        "opp": "TEN",
        "game": "TEN @ CIN",
        "outcome": "win",
-       "prob": 0.845,
+       "prob": 0.85,
        "hidden": false,
        "score": "TEN 36-43 CIN",
        "slot_label": "Sun 1:00 PM"
@@ -5379,7 +6436,7 @@
        "opp": "ARI",
        "game": "ARI @ DAL",
        "outcome": "loss",
-       "prob": 0.731,
+       "prob": 0.732,
        "hidden": false,
        "score": "ARI 33-30 DAL",
        "slot_label": "Sun 1:00 PM"
@@ -5401,7 +6458,7 @@
        "opp": "NYJ",
        "game": "LV @ NYJ",
        "outcome": "win",
-       "prob": 0.475,
+       "prob": 0.474,
        "hidden": false,
        "score": "LV 38-33 NYJ",
        "slot_label": "Sun 1:00 PM"
@@ -5412,7 +6469,7 @@
        "opp": "LAC",
        "game": "LAC @ LAR",
        "outcome": "win",
-       "prob": 0.713,
+       "prob": 0.722,
        "hidden": false,
        "score": "LAC 9-24 LAR",
        "slot_label": "Sun 4:05 PM"
@@ -5423,7 +6480,7 @@
        "opp": "DEN",
        "game": "KC @ DEN",
        "outcome": "loss",
-       "prob": 0.521,
+       "prob": 0.504,
        "hidden": false,
        "score": "KC 24-28 DEN",
        "slot_label": "Sun 4:25 PM"
@@ -5434,7 +6491,7 @@
        "opp": "MIA",
        "game": "NE @ MIA",
        "outcome": "win",
-       "prob": 0.738,
+       "prob": 0.752,
        "hidden": false,
        "score": "NE 24-19 MIA",
        "slot_label": "Sun 4:25 PM"
@@ -5445,7 +6502,7 @@
        "opp": "CHI",
        "game": "CHI @ SEA",
        "outcome": "loss",
-       "prob": 0.608,
+       "prob": 0.615,
        "hidden": false,
        "score": "CHI 34-17 SEA",
        "slot_label": "Mon 8:15 PM"
@@ -5618,7 +6675,7 @@
      "winner": "ARI",
      "upset": true,
      "fav": "DAL",
-     "fav_prob": 0.731,
+     "fav_prob": 0.732,
      "picks": {
       "DAL": 17
      }
@@ -5629,7 +6686,7 @@
      "winner": "LV",
      "upset": true,
      "fav": "NYJ",
-     "fav_prob": 0.525,
+     "fav_prob": 0.526,
      "picks": {
       "LV": 6
      }
@@ -5640,7 +6697,7 @@
      "winner": "DEN",
      "upset": true,
      "fav": "KC",
-     "fav_prob": 0.521,
+     "fav_prob": 0.504,
      "picks": {
       "KC": 3,
       "DEN": 1
@@ -5652,7 +6709,7 @@
      "winner": "CHI",
      "upset": true,
      "fav": "SEA",
-     "fav_prob": 0.608,
+     "fav_prob": 0.615,
      "picks": {
       "SEA": 5,
       "CHI": 1
@@ -5676,7 +6733,7 @@
      "winner": "CIN",
      "upset": false,
      "fav": "CIN",
-     "fav_prob": 0.845,
+     "fav_prob": 0.85,
      "picks": {
       "CIN": 1
      }
@@ -5698,7 +6755,7 @@
      "winner": "NE",
      "upset": false,
      "fav": "NE",
-     "fav_prob": 0.738,
+     "fav_prob": 0.752,
      "picks": {
       "NE": 1
      }
@@ -5709,7 +6766,7 @@
      "winner": "WAS",
      "upset": false,
      "fav": "WAS",
-     "fav_prob": 0.696,
+     "fav_prob": 0.694,
      "picks": {
       "WAS": 1
      }
@@ -5762,7 +6819,7 @@
        "opp": "PHI",
        "game": "PHI @ WAS",
        "outcome": "win",
-       "prob": 0.696,
+       "prob": 0.694,
        "hidden": false,
        "score": "PHI 10-27 WAS",
        "slot_label": "Sun 8:20 PM"
@@ -5797,7 +6854,7 @@
        "opp": "MIA",
        "game": "NE @ MIA",
        "outcome": "win",
-       "prob": 0.738,
+       "prob": 0.752,
        "hidden": false,
        "score": "NE 24-19 MIA",
        "slot_label": "Sun 4:25 PM"
@@ -5832,7 +6889,7 @@
        "opp": "TEN",
        "game": "TEN @ CIN",
        "outcome": "win",
-       "prob": 0.845,
+       "prob": 0.85,
        "hidden": false,
        "score": "TEN 36-43 CIN",
        "slot_label": "Sun 1:00 PM"
@@ -5896,7 +6953,7 @@
      "winner": "CIN",
      "upset": false,
      "fav": "CIN",
-     "fav_prob": 0.845,
+     "fav_prob": 0.85,
      "picks": {
       "CIN": 5
      }
@@ -5918,7 +6975,7 @@
      "winner": "ARI",
      "upset": true,
      "fav": "DAL",
-     "fav_prob": 0.731,
+     "fav_prob": 0.732,
      "picks": {
       "DAL": 1
      }
@@ -5929,7 +6986,7 @@
      "winner": "LAR",
      "upset": false,
      "fav": "LAR",
-     "fav_prob": 0.713,
+     "fav_prob": 0.722,
      "picks": {
       "LAR": 1
      }
@@ -5940,7 +6997,7 @@
      "winner": "NE",
      "upset": false,
      "fav": "NE",
-     "fav_prob": 0.738,
+     "fav_prob": 0.752,
      "picks": {
       "NE": 3
      }
@@ -5958,7 +7015,7 @@
        "opp": "LAC",
        "game": "LAC @ LAR",
        "outcome": "win",
-       "prob": 0.713,
+       "prob": 0.722,
        "hidden": false,
        "score": "LAC 9-24 LAR",
        "slot_label": "Sun 4:05 PM"
@@ -6092,7 +7149,7 @@
        "opp": "TEN",
        "game": "TEN @ CIN",
        "outcome": "win",
-       "prob": 0.845,
+       "prob": 0.85,
        "hidden": false,
        "score": "TEN 36-43 CIN",
        "slot_label": "Sun 1:00 PM"
@@ -6158,7 +7215,7 @@
        "opp": "MIA",
        "game": "NE @ MIA",
        "outcome": "win",
-       "prob": 0.738,
+       "prob": 0.752,
        "hidden": false,
        "score": "NE 24-19 MIA",
        "slot_label": "Sun 4:25 PM"
@@ -6191,7 +7248,7 @@
        "opp": "TEN",
        "game": "TEN @ CIN",
        "outcome": "win",
-       "prob": 0.845,
+       "prob": 0.85,
        "hidden": false,
        "score": "TEN 36-43 CIN",
        "slot_label": "Sun 1:00 PM"
@@ -6257,7 +7314,7 @@
        "opp": "MIA",
        "game": "NE @ MIA",
        "outcome": "win",
-       "prob": 0.738,
+       "prob": 0.752,
        "hidden": false,
        "score": "NE 24-19 MIA",
        "slot_label": "Sun 4:25 PM"
@@ -6290,7 +7347,7 @@
        "opp": "TEN",
        "game": "TEN @ CIN",
        "outcome": "win",
-       "prob": 0.845,
+       "prob": 0.85,
        "hidden": false,
        "score": "TEN 36-43 CIN",
        "slot_label": "Sun 1:00 PM"
@@ -6323,7 +7380,7 @@
        "opp": "TEN",
        "game": "TEN @ CIN",
        "outcome": "win",
-       "prob": 0.845,
+       "prob": 0.85,
        "hidden": false,
        "score": "TEN 36-43 CIN",
        "slot_label": "Sun 1:00 PM"
@@ -6356,7 +7413,7 @@
        "opp": "TEN",
        "game": "TEN @ CIN",
        "outcome": "win",
-       "prob": 0.845,
+       "prob": 0.85,
        "hidden": false,
        "score": "TEN 36-43 CIN",
        "slot_label": "Sun 1:00 PM"
@@ -6389,7 +7446,7 @@
        "opp": "MIA",
        "game": "NE @ MIA",
        "outcome": "win",
-       "prob": 0.738,
+       "prob": 0.752,
        "hidden": false,
        "score": "NE 24-19 MIA",
        "slot_label": "Sun 4:25 PM"
@@ -6422,7 +7479,7 @@
        "opp": "ARI",
        "game": "ARI @ DAL",
        "outcome": "loss",
-       "prob": 0.731,
+       "prob": 0.732,
        "hidden": false,
        "score": "ARI 33-30 DAL",
        "slot_label": "Sun 1:00 PM"
@@ -6456,7 +7513,7 @@
       "opp": "ARI",
       "game": "ARI @ DAL",
       "outcome": "loss",
-      "prob": 0.731,
+      "prob": 0.732,
       "hidden": false,
       "score": "ARI 33-30 DAL",
       "slot_label": "Sun 1:00 PM"
@@ -6496,1069 +7553,12 @@
      "winner": "ARI",
      "upset": true,
      "fav": "DAL",
-     "fav_prob": 0.731,
+     "fav_prob": 0.732,
      "picks": {
       "DAL": 1
      }
     }
    ]
-  },
-  "kings_justice": {
-   "league_id": "1383926066564837376",
-   "league_name": "\ud83e\ude93 The King's Justice",
-   "provisional": false,
-   "alive_before": 11,
-   "alive_after": 10,
-   "payouts": {
-    "weekly_high": 25,
-    "first": 350,
-    "second": 150
-   },
-   "chopped": {
-    "handle": "creckley",
-    "team_name": "creckley",
-    "points": 82.3,
-    "confirmed": true
-   },
-   "high": {
-    "handle": "avobttam",
-    "team_name": "The Executioner",
-    "points": 173.88
-   },
-   "survivor": {
-    "handle": "bstanley45",
-    "points": 82.48,
-    "margin": 0.18
-   },
-   "median": 125.86,
-   "spread": 91.58,
-   "chop_seat": [
-    {
-     "slot": 0,
-     "label": "Thu 8:15 PM",
-     "handle": "cbova1222",
-     "points": 0,
-     "left": 8,
-     "next_handle": "joefanelli90",
-     "margin": 0
-    },
-    {
-     "slot": 1,
-     "label": "Sun 1:00 PM",
-     "handle": "nelsolson",
-     "points": 43.7,
-     "left": 4,
-     "next_handle": "bstanley45",
-     "margin": 0.2
-    },
-    {
-     "slot": 2,
-     "label": "Sun 4:05 PM",
-     "handle": "bstanley45",
-     "points": 54.18,
-     "left": 2,
-     "next_handle": "nelsolson",
-     "margin": 2.12
-    },
-    {
-     "slot": 3,
-     "label": "Sun 4:25 PM",
-     "handle": "nelsolson",
-     "points": 56.3,
-     "left": 3,
-     "next_handle": "creckley",
-     "margin": 26.0
-    },
-    {
-     "slot": 4,
-     "label": "Sun 8:20 PM",
-     "handle": "nelsolson",
-     "points": 70.3,
-     "left": 2,
-     "next_handle": "creckley",
-     "margin": 12.0
-    },
-    {
-     "slot": 5,
-     "label": "Mon 8:15 PM",
-     "handle": "creckley",
-     "points": 82.3,
-     "left": 0,
-     "next_handle": "bstanley45",
-     "margin": 0.18
-    }
-   ],
-   "scoreboard": [
-    {
-     "rank": 1,
-     "roster_id": 1,
-     "handle": "avobttam",
-     "name": "avobttam",
-     "team_name": "The Executioner",
-     "points": 173.88,
-     "proj": 126.31,
-     "running": [
-      9.6,
-      139.08,
-      139.08,
-      145.98,
-      145.98,
-      173.88
-     ],
-     "left_after": [
-      7,
-      2,
-      2,
-      1,
-      1,
-      0
-     ],
-     "last_slot_players": [
-      {
-       "pid": "6790",
-       "name": "D'Andre Swift",
-       "pos": "RB",
-       "team": "CHI",
-       "pts": 27.9,
-       "proj": 14.69,
-       "slot": 5,
-       "injury": null
-      }
-     ],
-     "no_game": [],
-     "lock_in": null,
-     "chopped": false
-    },
-    {
-     "rank": 2,
-     "roster_id": 3,
-     "handle": "cbova1222",
-     "name": "cbova1222",
-     "team_name": "Danger Zone",
-     "points": 150.94,
-     "proj": 111.51,
-     "running": [
-      0,
-      117.74,
-      117.74,
-      150.94,
-      150.94,
-      150.94
-     ],
-     "left_after": [
-      8,
-      2,
-      2,
-      0,
-      0,
-      0
-     ],
-     "last_slot_players": [],
-     "no_game": [],
-     "lock_in": null,
-     "chopped": false
-    },
-    {
-     "rank": 3,
-     "roster_id": 18,
-     "handle": "joefanelli90",
-     "name": "joefanelli90",
-     "team_name": "Indiana Joe",
-     "points": 148.78,
-     "proj": 120.44,
-     "running": [
-      0,
-      141.58,
-      141.58,
-      141.58,
-      148.78,
-      148.78
-     ],
-     "left_after": [
-      8,
-      1,
-      1,
-      1,
-      0,
-      0
-     ],
-     "last_slot_players": [],
-     "no_game": [],
-     "lock_in": null,
-     "chopped": false
-    },
-    {
-     "rank": 4,
-     "roster_id": 5,
-     "handle": "CodyPowers28",
-     "name": "CodyPowers28",
-     "team_name": "Taco Corp",
-     "points": 139.26,
-     "proj": 100.92,
-     "running": [
-      0,
-      102.86,
-      116.16,
-      116.16,
-      126.56,
-      139.26
-     ],
-     "left_after": [
-      8,
-      3,
-      2,
-      2,
-      1,
-      0
-     ],
-     "last_slot_players": [
-      {
-       "pid": "11620",
-       "name": "Rome Odunze",
-       "pos": "WR",
-       "team": "CHI",
-       "pts": 12.7,
-       "proj": 10.03,
-       "slot": 5,
-       "injury": null
-      }
-     ],
-     "no_game": [],
-     "lock_in": null,
-     "chopped": false
-    },
-    {
-     "rank": 5,
-     "roster_id": 14,
-     "handle": "AllBidness",
-     "name": "AllBidness",
-     "team_name": "AllBidness",
-     "points": 137.0,
-     "proj": 111.76,
-     "running": [
-      17.3,
-      107.3,
-      107.3,
-      107.3,
-      107.3,
-      137.0
-     ],
-     "left_after": [
-      7,
-      2,
-      2,
-      2,
-      2,
-      0
-     ],
-     "last_slot_players": [
-      {
-       "pid": "9488",
-       "name": "Jaxon Smith-Njigba",
-       "pos": "WR",
-       "team": "SEA",
-       "pts": 23.8,
-       "proj": 25.26,
-       "slot": 5,
-       "injury": null
-      },
-      {
-       "pid": "9753",
-       "name": "Zach Charbonnet",
-       "pos": "RB",
-       "team": "SEA",
-       "pts": 5.9,
-       "proj": 8.09,
-       "slot": 5,
-       "injury": null
-      }
-     ],
-     "no_game": [],
-     "lock_in": null,
-     "chopped": false
-    },
-    {
-     "rank": 6,
-     "roster_id": 6,
-     "handle": "Bustersx8",
-     "name": "Bustersx8",
-     "team_name": "Bustersx8",
-     "points": 125.86,
-     "proj": 131.79,
-     "running": [
-      29.1,
-      74.4,
-      99.4,
-      125.86,
-      125.86,
-      125.86
-     ],
-     "left_after": [
-      6,
-      2,
-      1,
-      0,
-      0,
-      0
-     ],
-     "last_slot_players": [],
-     "no_game": [],
-     "lock_in": null,
-     "chopped": false
-    },
-    {
-     "rank": 7,
-     "roster_id": 4,
-     "handle": "ButtFumble06",
-     "name": "ButtFumble06",
-     "team_name": "ButtFumble06",
-     "points": 123.72,
-     "proj": 132.7,
-     "running": [
-      27.52,
-      78.12,
-      78.12,
-      110.92,
-      123.72,
-      123.72
-     ],
-     "left_after": [
-      7,
-      3,
-      3,
-      1,
-      0,
-      0
-     ],
-     "last_slot_players": [],
-     "no_game": [],
-     "lock_in": null,
-     "chopped": false
-    },
-    {
-     "rank": 8,
-     "roster_id": 11,
-     "handle": "humrich",
-     "name": "humrich",
-     "team_name": "humrich",
-     "points": 109.4,
-     "proj": 123.2,
-     "running": [
-      0,
-      72.1,
-      85.0,
-      97.0,
-      109.4,
-      109.4
-     ],
-     "left_after": [
-      8,
-      3,
-      2,
-      1,
-      0,
-      0
-     ],
-     "last_slot_players": [],
-     "no_game": [],
-     "lock_in": null,
-     "chopped": false
-    },
-    {
-     "rank": 9,
-     "roster_id": 7,
-     "handle": "nelsolson",
-     "name": "nelsolson",
-     "team_name": "Participant Banner",
-     "points": 100.4,
-     "proj": 115.87,
-     "running": [
-      24.9,
-      43.7,
-      56.3,
-      56.3,
-      70.3,
-      100.4
-     ],
-     "left_after": [
-      7,
-      4,
-      3,
-      3,
-      2,
-      0
-     ],
-     "last_slot_players": [
-      {
-       "pid": "12519",
-       "name": "Luther Burden III",
-       "pos": "WR",
-       "team": "CHI",
-       "pts": 18.6,
-       "proj": 12.42,
-       "slot": 5,
-       "injury": null
-      },
-      {
-       "pid": "12517",
-       "name": "Colston Loveland",
-       "pos": "TE",
-       "team": "CHI",
-       "pts": 11.5,
-       "proj": 9.73,
-       "slot": 5,
-       "injury": null
-      }
-     ],
-     "no_game": [],
-     "lock_in": null,
-     "chopped": false
-    },
-    {
-     "rank": 10,
-     "roster_id": 10,
-     "handle": "bstanley45",
-     "name": "bstanley45",
-     "team_name": "bstanley45",
-     "points": 82.48,
-     "proj": 113.87,
-     "running": [
-      23.2,
-      43.9,
-      54.18,
-      82.48,
-      82.48,
-      82.48
-     ],
-     "left_after": [
-      7,
-      3,
-      2,
-      0,
-      0,
-      0
-     ],
-     "last_slot_players": [],
-     "no_game": [],
-     "lock_in": null,
-     "chopped": false
-    },
-    {
-     "rank": 11,
-     "roster_id": 8,
-     "handle": "creckley",
-     "name": "creckley",
-     "team_name": "creckley",
-     "points": 82.3,
-     "proj": 110.36,
-     "running": [
-      20.9,
-      77.6,
-      82.3,
-      82.3,
-      82.3,
-      82.3
-     ],
-     "left_after": [
-      7,
-      1,
-      0,
-      0,
-      0,
-      0
-     ],
-     "last_slot_players": [],
-     "no_game": [],
-     "lock_in": null,
-     "chopped": true
-    }
-   ],
-   "top_starters": [
-    {
-     "handle": "avobttam",
-     "name": "Joe Burrow",
-     "pos": "QB",
-     "team": "CIN",
-     "pts": 49.48,
-     "slot": 1
-    },
-    {
-     "handle": "avobttam",
-     "name": "Tee Higgins",
-     "pos": "WR",
-     "team": "CIN",
-     "pts": 37.5,
-     "slot": 1
-    },
-    {
-     "handle": "AllBidness",
-     "name": "Tyler Allgeier",
-     "pos": "RB",
-     "team": "ARI",
-     "pts": 36.1,
-     "slot": 1
-    },
-    {
-     "handle": "joefanelli90",
-     "name": "Kirk Cousins",
-     "pos": "QB",
-     "team": "LV",
-     "pts": 34.18,
-     "slot": 1
-    },
-    {
-     "handle": "joefanelli90",
-     "name": "Ja'Marr Chase",
-     "pos": "WR",
-     "team": "CIN",
-     "pts": 31.1,
-     "slot": 1
-    },
-    {
-     "handle": "CodyPowers28",
-     "name": "Josh Allen",
-     "pos": "QB",
-     "team": "BUF",
-     "pts": 30.56,
-     "slot": 1
-    },
-    {
-     "handle": "CodyPowers28",
-     "name": "Bhayshul Tuten",
-     "pos": "RB",
-     "team": "JAX",
-     "pts": 29.9,
-     "slot": 1
-    },
-    {
-     "handle": "cbova1222",
-     "name": "Tony Pollard",
-     "pos": "RB",
-     "team": "TEN",
-     "pts": 28.7,
-     "slot": 1
-    }
-   ],
-   "dud_starters": [
-    {
-     "handle": "nelsolson",
-     "name": "Lamar Jackson",
-     "pos": "QB",
-     "team": "BAL",
-     "pts": 0.0,
-     "slot": 1
-    },
-    {
-     "handle": "bstanley45",
-     "name": "Tre Tucker",
-     "pos": "WR",
-     "team": "LV",
-     "pts": 0.0,
-     "slot": 1
-    },
-    {
-     "handle": "creckley",
-     "name": "Zay Flowers",
-     "pos": "WR",
-     "team": "BAL",
-     "pts": 0.0,
-     "slot": 1
-    },
-    {
-     "handle": "Bustersx8",
-     "name": "DK Metcalf",
-     "pos": "WR",
-     "team": "PIT",
-     "pts": 1.4,
-     "slot": 1
-    },
-    {
-     "handle": "creckley",
-     "name": "Drake London",
-     "pos": "WR",
-     "team": "ATL",
-     "pts": 1.8,
-     "slot": 1
-    },
-    {
-     "handle": "ButtFumble06",
-     "name": "Jordan Mason",
-     "pos": "RB",
-     "team": "MIN",
-     "pts": 2.0,
-     "slot": 1
-    },
-    {
-     "handle": "AllBidness",
-     "name": "Jeremiyah Love",
-     "pos": "RB",
-     "team": "ARI",
-     "pts": 2.3,
-     "slot": 1
-    },
-    {
-     "handle": "ButtFumble06",
-     "name": "Parker Washington",
-     "pos": "WR",
-     "team": "JAX",
-     "pts": 3.6,
-     "slot": 1
-    }
-   ],
-   "transactions": {
-    "waivers": [
-     {
-      "player_id": "5859",
-      "player": "A.J. Brown",
-      "pos": "WR",
-      "handle": "CodyPowers28",
-      "bid": 31,
-      "bidders": 7,
-      "runner_up": 16,
-      "losers": [
-       {
-        "handle": "nelsolson",
-        "bid": 16
-       },
-       {
-        "handle": "creckley",
-        "bid": 7
-       },
-       {
-        "handle": "bstanley45",
-        "bid": 4
-       },
-       {
-        "handle": "ButtFumble06",
-        "bid": 0
-       },
-       {
-        "handle": "cbova1222",
-        "bid": 0
-       },
-       {
-        "handle": "AllBidness",
-        "bid": 0
-       }
-      ]
-     },
-     {
-      "player_id": "8134",
-      "player": "Khalil Shakir",
-      "pos": "WR",
-      "handle": "creckley",
-      "bid": 7,
-      "bidders": 1,
-      "runner_up": null,
-      "losers": []
-     },
-     {
-      "player_id": "9756",
-      "player": "Jordan Addison",
-      "pos": "WR",
-      "handle": "creckley",
-      "bid": 6,
-      "bidders": 1,
-      "runner_up": null,
-      "losers": []
-     },
-     {
-      "player_id": "12499",
-      "player": "Elic Ayomanor",
-      "pos": "WR",
-      "handle": "bstanley45",
-      "bid": 3,
-      "bidders": 1,
-      "runner_up": null,
-      "losers": []
-     },
-     {
-      "player_id": "9501",
-      "player": "DeMario Douglas",
-      "pos": "WR",
-      "handle": "bstanley45",
-      "bid": 3,
-      "bidders": 1,
-      "runner_up": null,
-      "losers": []
-     },
-     {
-      "player_id": "5947",
-      "player": "Jakobi Meyers",
-      "pos": "WR",
-      "handle": "nelsolson",
-      "bid": 1,
-      "bidders": 1,
-      "runner_up": null,
-      "losers": []
-     },
-     {
-      "player_id": "11729",
-      "player": "Sione Vaki",
-      "pos": "RB",
-      "handle": "ButtFumble06",
-      "bid": 0,
-      "bidders": 1,
-      "runner_up": null,
-      "losers": []
-     },
-     {
-      "player_id": "6806",
-      "player": "J.K. Dobbins",
-      "pos": "RB",
-      "handle": "Bustersx8",
-      "bid": 0,
-      "bidders": 1,
-      "runner_up": null,
-      "losers": []
-     },
-     {
-      "player_id": "6804",
-      "player": "Jordan Love",
-      "pos": "QB",
-      "handle": "ButtFumble06",
-      "bid": 0,
-      "bidders": 1,
-      "runner_up": null,
-      "losers": []
-     },
-     {
-      "player_id": "11624",
-      "player": "Xavier Worthy",
-      "pos": "WR",
-      "handle": "AllBidness",
-      "bid": 0,
-      "bidders": 1,
-      "runner_up": null,
-      "losers": []
-     },
-     {
-      "player_id": "13301",
-      "player": "Antonio Williams",
-      "pos": "WR",
-      "handle": "CodyPowers28",
-      "bid": 0,
-      "bidders": 1,
-      "runner_up": null,
-      "losers": []
-     }
-    ],
-    "lost_bids": [
-     {
-      "player_id": "5859",
-      "player": "A.J. Brown",
-      "pos": "WR",
-      "handle": "nelsolson",
-      "bid": 16,
-      "won_by": "CodyPowers28",
-      "won_at": 31
-     },
-     {
-      "player_id": "5859",
-      "player": "A.J. Brown",
-      "pos": "WR",
-      "handle": "creckley",
-      "bid": 7,
-      "won_by": "CodyPowers28",
-      "won_at": 31
-     },
-     {
-      "player_id": "5859",
-      "player": "A.J. Brown",
-      "pos": "WR",
-      "handle": "bstanley45",
-      "bid": 4,
-      "won_by": "CodyPowers28",
-      "won_at": 31
-     },
-     {
-      "player_id": "5859",
-      "player": "A.J. Brown",
-      "pos": "WR",
-      "handle": "ButtFumble06",
-      "bid": 0,
-      "won_by": "CodyPowers28",
-      "won_at": 31
-     },
-     {
-      "player_id": "5859",
-      "player": "A.J. Brown",
-      "pos": "WR",
-      "handle": "cbova1222",
-      "bid": 0,
-      "won_by": "CodyPowers28",
-      "won_at": 31
-     },
-     {
-      "player_id": "5859",
-      "player": "A.J. Brown",
-      "pos": "WR",
-      "handle": "AllBidness",
-      "bid": 0,
-      "won_by": "CodyPowers28",
-      "won_at": 31
-     }
-    ],
-    "faab_spent": 51,
-    "free_agents": [],
-    "trades": []
-   },
-   "death": {
-    "kind": "death",
-    "confirmed": true,
-    "handle": "creckley",
-    "name": "creckley",
-    "team_name": "creckley",
-    "points": 82.3,
-    "proj": 110.36,
-    "place": 11,
-    "teams": 18,
-    "ordinal": "11th",
-    "survivor": {
-     "handle": "bstanley45",
-     "points": 82.48
-    },
-    "margin": 0.18,
-    "champion": null,
-    "lineup": [
-     {
-      "name": "Trevor Lawrence",
-      "pos": "QB",
-      "team": "JAX",
-      "pts": 25.4,
-      "proj": 22.82
-     },
-     {
-      "name": "Omarion Hampton",
-      "pos": "RB",
-      "team": "LAC",
-      "pts": 4.7,
-      "proj": 10.27
-     },
-     {
-      "name": "Rico Dowdle",
-      "pos": "RB",
-      "team": "PIT",
-      "pts": 11.6,
-      "proj": 8.67
-     },
-     {
-      "name": "Drake London",
-      "pos": "WR",
-      "team": "ATL",
-      "pts": 1.8,
-      "proj": 16.46
-     },
-     {
-      "name": "Zay Flowers",
-      "pos": "WR",
-      "team": "BAL",
-      "pts": 0.0,
-      "proj": 18.48
-     },
-     {
-      "name": "Sam LaPorta",
-      "pos": "TE",
-      "team": "DET",
-      "pts": 6.5,
-      "proj": 10.71
-     },
-     {
-      "name": "Khalil Shakir",
-      "pos": "WR",
-      "team": "BUF",
-      "pts": 11.4,
-      "proj": 9.22
-     },
-     {
-      "name": "Matthew Golden",
-      "pos": "WR",
-      "team": "GB",
-      "pts": 20.9,
-      "proj": 13.73
-     }
-    ],
-    "bench": [
-     {
-      "name": "Patrick Mahomes",
-      "pos": "QB",
-      "team": "KC",
-      "pts": 31.44,
-      "proj": 20.36
-     },
-     {
-      "name": "Jordan Addison",
-      "pos": "WR",
-      "team": "MIN",
-      "pts": 11.6,
-      "proj": 9.61
-     },
-     {
-      "name": "Courtland Sutton",
-      "pos": "WR",
-      "team": "DEN",
-      "pts": 9.3,
-      "proj": 7.9
-     },
-     {
-      "name": "RJ Harvey",
-      "pos": "RB",
-      "team": "DEN",
-      "pts": 0.0,
-      "proj": 0.0
-     }
-    ],
-    "blame": {
-     "kind": "start_sit",
-     "gain": 11.6,
-     "in": "Jordan Addison",
-     "in_pts": 11.6,
-     "out": "Zay Flowers",
-     "out_pts": 0.0,
-     "slot": "WR",
-     "out_proj": 18.48
-    },
-    "busts": [
-     {
-      "name": "Zay Flowers",
-      "pos": "WR",
-      "team": "BAL",
-      "pts": 0.0,
-      "proj": 18.48
-     },
-     {
-      "name": "Drake London",
-      "pos": "WR",
-      "team": "ATL",
-      "pts": 1.8,
-      "proj": 16.46
-     },
-     {
-      "name": "Omarion Hampton",
-      "pos": "RB",
-      "team": "LAC",
-      "pts": 4.7,
-      "proj": 10.27
-     }
-    ],
-    "zeros": [
-     "Zay Flowers"
-    ],
-    "optimal": 107.44,
-    "season_weeks": [
-     {
-      "week": 1,
-      "points": 113.9,
-      "rank": 8,
-      "alive": 18
-     },
-     {
-      "week": 2,
-      "points": 65.66,
-      "rank": 16,
-      "alive": 17
-     },
-     {
-      "week": 3,
-      "points": 105.18,
-      "rank": 10,
-      "alive": 16
-     },
-     {
-      "week": 4,
-      "points": 101.48,
-      "rank": 12,
-      "alive": 15
-     },
-     {
-      "week": 5,
-      "points": 97.14,
-      "rank": 10,
-      "alive": 14
-     },
-     {
-      "week": 6,
-      "points": 113.34,
-      "rank": 5,
-      "alive": 13
-     },
-     {
-      "week": 7,
-      "points": 102.1,
-      "rank": 8,
-      "alive": 12
-     },
-     {
-      "week": 8,
-      "points": 82.3,
-      "rank": 11,
-      "alive": 11
-     }
-    ],
-    "faab": {
-     "budget": 1000,
-     "spent": 341,
-     "left": 659,
-     "claims_won": 13,
-     "biggest": {
-      "week": 6,
-      "player": "Zay Flowers",
-      "bid": 317
-     }
-    },
-    "career": [
-     {
-      "season": 2023,
-      "place": 11,
-      "teams": 18,
-      "team_name": "Recking Crew",
-      "chopped_week": 8,
-      "place_prize": 0,
-      "weekly_highs": [
-       5
-      ],
-      "weekly_prize": 25
-     },
-     {
-      "season": 2024,
-      "place": 15,
-      "teams": 18,
-      "team_name": "Recking Crew",
-      "chopped_week": 4,
-      "place_prize": 0,
-      "weekly_highs": [],
-      "weekly_prize": 0
-     },
-     {
-      "season": 2025,
-      "place": 10,
-      "teams": 18,
-      "team_name": "Team creckley",
-      "chopped_week": 9,
-      "place_prize": 0,
-      "weekly_highs": [],
-      "weekly_prize": 0
-     },
-     {
-      "season": 2026,
-      "place": 11,
-      "teams": 18,
-      "team_name": "creckley",
-      "chopped_week": 8,
-      "place_prize": 0,
-      "weekly_highs": [],
-      "weekly_prize": 0,
-      "current": true
-     }
-    ],
-    "lifetime": {
-     "earned": 25,
-     "seasons": 4,
-     "cashes": 0,
-     "weekly_highs": 1,
-     "best_place": 10
-    }
-   }
   }
  }
 }
