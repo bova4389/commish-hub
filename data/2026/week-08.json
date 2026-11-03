@@ -1,0 +1,7571 @@
+{
+ "season": 2026,
+ "week": 8,
+ "generated": "2026-11-03T06:08:15-05:00",
+ "all_final": true,
+ "nfl": {
+  "games": [
+   {
+    "game_id": "202610812",
+    "label": "CAR @ GB",
+    "away": "CAR",
+    "home": "GB",
+    "away_score": 19,
+    "home_score": 27,
+    "winner": "GB",
+    "final": true,
+    "kickoff": "2026-10-30T00:15:00+00:00",
+    "slot": 0,
+    "slot_label": "Thu 8:15 PM",
+    "fav": "GB",
+    "fav_prob": 0.633,
+    "upset": false
+   },
+   {
+    "game_id": "202610809",
+    "label": "ARI @ DAL",
+    "away": "ARI",
+    "home": "DAL",
+    "away_score": 33,
+    "home_score": 30,
+    "winner": "ARI",
+    "final": true,
+    "kickoff": "2026-11-01T18:00:00+00:00",
+    "slot": 1,
+    "slot_label": "Sun 1:00 PM",
+    "fav": "DAL",
+    "fav_prob": 0.731,
+    "upset": true
+   },
+   {
+    "game_id": "202610833",
+    "label": "ATL @ TB",
+    "away": "ATL",
+    "home": "TB",
+    "away_score": 0,
+    "home_score": 16,
+    "winner": "TB",
+    "final": true,
+    "kickoff": "2026-11-01T18:00:00+00:00",
+    "slot": 1,
+    "slot_label": "Sun 1:00 PM",
+    "fav": "TB",
+    "fav_prob": 0.555,
+    "upset": false
+   },
+   {
+    "game_id": "202610804",
+    "label": "BAL @ BUF",
+    "away": "BAL",
+    "home": "BUF",
+    "away_score": 10,
+    "home_score": 36,
+    "winner": "BUF",
+    "final": true,
+    "kickoff": "2026-11-01T18:00:00+00:00",
+    "slot": 1,
+    "slot_label": "Sun 1:00 PM",
+    "fav": "BUF",
+    "fav_prob": 0.609,
+    "upset": false
+   },
+   {
+    "game_id": "202610828",
+    "label": "CLE @ PIT",
+    "away": "CLE",
+    "home": "PIT",
+    "away_score": 6,
+    "home_score": 27,
+    "winner": "PIT",
+    "final": true,
+    "kickoff": "2026-11-01T18:00:00+00:00",
+    "slot": 1,
+    "slot_label": "Sun 1:00 PM",
+    "fav": "PIT",
+    "fav_prob": 0.633,
+    "upset": false
+   },
+   {
+    "game_id": "202610815",
+    "label": "IND @ JAX",
+    "away": "IND",
+    "home": "JAX",
+    "away_score": 7,
+    "home_score": 42,
+    "winner": "JAX",
+    "final": true,
+    "kickoff": "2026-11-01T18:00:00+00:00",
+    "slot": 1,
+    "slot_label": "Sun 1:00 PM",
+    "fav": "JAX",
+    "fav_prob": 0.798,
+    "upset": false
+   },
+   {
+    "game_id": "202610824",
+    "label": "LV @ NYJ",
+    "away": "LV",
+    "home": "NYJ",
+    "away_score": 38,
+    "home_score": 33,
+    "winner": "LV",
+    "final": true,
+    "kickoff": "2026-11-01T18:00:00+00:00",
+    "slot": 1,
+    "slot_label": "Sun 1:00 PM",
+    "fav": "NYJ",
+    "fav_prob": 0.525,
+    "upset": true
+   },
+   {
+    "game_id": "202610811",
+    "label": "MIN @ DET",
+    "away": "MIN",
+    "home": "DET",
+    "away_score": 15,
+    "home_score": 19,
+    "winner": "DET",
+    "final": true,
+    "kickoff": "2026-11-01T18:00:00+00:00",
+    "slot": 1,
+    "slot_label": "Sun 1:00 PM",
+    "fav": "DET",
+    "fav_prob": 0.615,
+    "upset": false
+   },
+   {
+    "game_id": "202610807",
+    "label": "TEN @ CIN",
+    "away": "TEN",
+    "home": "CIN",
+    "away_score": 36,
+    "home_score": 43,
+    "winner": "CIN",
+    "final": true,
+    "kickoff": "2026-11-01T18:00:00+00:00",
+    "slot": 1,
+    "slot_label": "Sun 1:00 PM",
+    "fav": "CIN",
+    "fav_prob": 0.845,
+    "upset": false
+   },
+   {
+    "game_id": "202610832",
+    "label": "LAC @ LAR",
+    "away": "LAC",
+    "home": "LAR",
+    "away_score": 9,
+    "home_score": 24,
+    "winner": "LAR",
+    "final": true,
+    "kickoff": "2026-11-01T21:05:00+00:00",
+    "slot": 2,
+    "slot_label": "Sun 4:05 PM",
+    "fav": "LAR",
+    "fav_prob": 0.713,
+    "upset": false
+   },
+   {
+    "game_id": "202610810",
+    "label": "KC @ DEN",
+    "away": "KC",
+    "home": "DEN",
+    "away_score": 24,
+    "home_score": 28,
+    "winner": "DEN",
+    "final": true,
+    "kickoff": "2026-11-01T21:25:00+00:00",
+    "slot": 3,
+    "slot_label": "Sun 4:25 PM",
+    "fav": "KC",
+    "fav_prob": 0.521,
+    "upset": true
+   },
+   {
+    "game_id": "202610819",
+    "label": "NE @ MIA",
+    "away": "NE",
+    "home": "MIA",
+    "away_score": 24,
+    "home_score": 19,
+    "winner": "NE",
+    "final": true,
+    "kickoff": "2026-11-01T21:25:00+00:00",
+    "slot": 3,
+    "slot_label": "Sun 4:25 PM",
+    "fav": "NE",
+    "fav_prob": 0.738,
+    "upset": false
+   },
+   {
+    "game_id": "202610835",
+    "label": "PHI @ WAS",
+    "away": "PHI",
+    "home": "WAS",
+    "away_score": 10,
+    "home_score": 27,
+    "winner": "WAS",
+    "final": true,
+    "kickoff": "2026-11-02T01:20:00+00:00",
+    "slot": 4,
+    "slot_label": "Sun 8:20 PM",
+    "fav": "WAS",
+    "fav_prob": 0.696,
+    "upset": false
+   },
+   {
+    "game_id": "202610830",
+    "label": "CHI @ SEA",
+    "away": "CHI",
+    "home": "SEA",
+    "away_score": 34,
+    "home_score": 17,
+    "winner": "CHI",
+    "final": true,
+    "kickoff": "2026-11-03T01:15:00+00:00",
+    "slot": 5,
+    "slot_label": "Mon 8:15 PM",
+    "fav": "SEA",
+    "fav_prob": 0.608,
+    "upset": true
+   }
+  ],
+  "slots": [
+   {
+    "i": 0,
+    "kickoff": "2026-10-30T00:15:00+00:00",
+    "label": "Thu 8:15 PM",
+    "games": [
+     "CAR@GB"
+    ]
+   },
+   {
+    "i": 1,
+    "kickoff": "2026-11-01T18:00:00+00:00",
+    "label": "Sun 1:00 PM",
+    "games": [
+     "BAL@BUF",
+     "TEN@CIN",
+     "ARI@DAL",
+     "MIN@DET",
+     "LV@NYJ",
+     "CLE@PIT",
+     "ATL@TB",
+     "IND@JAX"
+    ]
+   },
+   {
+    "i": 2,
+    "kickoff": "2026-11-01T21:05:00+00:00",
+    "label": "Sun 4:05 PM",
+    "games": [
+     "LAC@LAR"
+    ]
+   },
+   {
+    "i": 3,
+    "kickoff": "2026-11-01T21:25:00+00:00",
+    "label": "Sun 4:25 PM",
+    "games": [
+     "KC@DEN",
+     "NE@MIA"
+    ]
+   },
+   {
+    "i": 4,
+    "kickoff": "2026-11-02T01:20:00+00:00",
+    "label": "Sun 8:20 PM",
+    "games": [
+     "PHI@WAS"
+    ]
+   },
+   {
+    "i": 5,
+    "kickoff": "2026-11-03T01:15:00+00:00",
+    "label": "Mon 8:15 PM",
+    "games": [
+     "CHI@SEA"
+    ]
+   }
+  ]
+ },
+ "leagues": {
+  "kings_justice": {
+   "league_id": "1383926066564837376",
+   "league_name": "\ud83e\ude93 The King's Justice",
+   "provisional": false,
+   "alive_before": 11,
+   "alive_after": 10,
+   "payouts": {
+    "weekly_high": 25,
+    "first": 350,
+    "second": 150
+   },
+   "chopped": {
+    "handle": "creckley",
+    "team_name": "creckley",
+    "points": 82.3,
+    "confirmed": false
+   },
+   "high": {
+    "handle": "avobttam",
+    "team_name": "The Executioner",
+    "points": 173.88
+   },
+   "survivor": {
+    "handle": "bstanley45",
+    "points": 82.48,
+    "margin": 0.18
+   },
+   "median": 125.86,
+   "spread": 91.58,
+   "chop_seat": [
+    {
+     "slot": 0,
+     "label": "Thu 8:15 PM",
+     "handle": "cbova1222",
+     "points": 0,
+     "left": 8,
+     "next_handle": "joefanelli90",
+     "margin": 0
+    },
+    {
+     "slot": 1,
+     "label": "Sun 1:00 PM",
+     "handle": "nelsolson",
+     "points": 43.7,
+     "left": 4,
+     "next_handle": "bstanley45",
+     "margin": 0.2
+    },
+    {
+     "slot": 2,
+     "label": "Sun 4:05 PM",
+     "handle": "bstanley45",
+     "points": 54.18,
+     "left": 2,
+     "next_handle": "nelsolson",
+     "margin": 2.12
+    },
+    {
+     "slot": 3,
+     "label": "Sun 4:25 PM",
+     "handle": "nelsolson",
+     "points": 56.3,
+     "left": 3,
+     "next_handle": "creckley",
+     "margin": 26.0
+    },
+    {
+     "slot": 4,
+     "label": "Sun 8:20 PM",
+     "handle": "nelsolson",
+     "points": 70.3,
+     "left": 2,
+     "next_handle": "creckley",
+     "margin": 12.0
+    },
+    {
+     "slot": 5,
+     "label": "Mon 8:15 PM",
+     "handle": "creckley",
+     "points": 82.3,
+     "left": 0,
+     "next_handle": "bstanley45",
+     "margin": 0.18
+    }
+   ],
+   "scoreboard": [
+    {
+     "rank": 1,
+     "roster_id": 1,
+     "handle": "avobttam",
+     "name": "avobttam",
+     "team_name": "The Executioner",
+     "points": 173.88,
+     "proj": 126.31,
+     "running": [
+      9.6,
+      139.08,
+      139.08,
+      145.98,
+      145.98,
+      173.88
+     ],
+     "left_after": [
+      7,
+      2,
+      2,
+      1,
+      1,
+      0
+     ],
+     "last_slot_players": [
+      {
+       "pid": "6790",
+       "name": "D'Andre Swift",
+       "pos": "RB",
+       "team": "CHI",
+       "pts": 27.9,
+       "proj": 14.69,
+       "slot": 5,
+       "injury": null
+      }
+     ],
+     "no_game": [],
+     "lock_in": null,
+     "chopped": false
+    },
+    {
+     "rank": 2,
+     "roster_id": 3,
+     "handle": "cbova1222",
+     "name": "cbova1222",
+     "team_name": "Danger Zone",
+     "points": 150.94,
+     "proj": 111.51,
+     "running": [
+      0,
+      117.74,
+      117.74,
+      150.94,
+      150.94,
+      150.94
+     ],
+     "left_after": [
+      8,
+      2,
+      2,
+      0,
+      0,
+      0
+     ],
+     "last_slot_players": [],
+     "no_game": [],
+     "lock_in": null,
+     "chopped": false
+    },
+    {
+     "rank": 3,
+     "roster_id": 18,
+     "handle": "joefanelli90",
+     "name": "joefanelli90",
+     "team_name": "Indiana Joe",
+     "points": 148.78,
+     "proj": 120.44,
+     "running": [
+      0,
+      141.58,
+      141.58,
+      141.58,
+      148.78,
+      148.78
+     ],
+     "left_after": [
+      8,
+      1,
+      1,
+      1,
+      0,
+      0
+     ],
+     "last_slot_players": [],
+     "no_game": [],
+     "lock_in": null,
+     "chopped": false
+    },
+    {
+     "rank": 4,
+     "roster_id": 5,
+     "handle": "CodyPowers28",
+     "name": "CodyPowers28",
+     "team_name": "Taco Corp",
+     "points": 139.26,
+     "proj": 100.92,
+     "running": [
+      0,
+      102.86,
+      116.16,
+      116.16,
+      126.56,
+      139.26
+     ],
+     "left_after": [
+      8,
+      3,
+      2,
+      2,
+      1,
+      0
+     ],
+     "last_slot_players": [
+      {
+       "pid": "11620",
+       "name": "Rome Odunze",
+       "pos": "WR",
+       "team": "CHI",
+       "pts": 12.7,
+       "proj": 10.03,
+       "slot": 5,
+       "injury": null
+      }
+     ],
+     "no_game": [],
+     "lock_in": null,
+     "chopped": false
+    },
+    {
+     "rank": 5,
+     "roster_id": 14,
+     "handle": "AllBidness",
+     "name": "AllBidness",
+     "team_name": "AllBidness",
+     "points": 137.0,
+     "proj": 111.76,
+     "running": [
+      17.3,
+      107.3,
+      107.3,
+      107.3,
+      107.3,
+      137.0
+     ],
+     "left_after": [
+      7,
+      2,
+      2,
+      2,
+      2,
+      0
+     ],
+     "last_slot_players": [
+      {
+       "pid": "9488",
+       "name": "Jaxon Smith-Njigba",
+       "pos": "WR",
+       "team": "SEA",
+       "pts": 23.8,
+       "proj": 25.26,
+       "slot": 5,
+       "injury": null
+      },
+      {
+       "pid": "9753",
+       "name": "Zach Charbonnet",
+       "pos": "RB",
+       "team": "SEA",
+       "pts": 5.9,
+       "proj": 8.09,
+       "slot": 5,
+       "injury": null
+      }
+     ],
+     "no_game": [],
+     "lock_in": null,
+     "chopped": false
+    },
+    {
+     "rank": 6,
+     "roster_id": 6,
+     "handle": "Bustersx8",
+     "name": "Bustersx8",
+     "team_name": "Bustersx8",
+     "points": 125.86,
+     "proj": 131.79,
+     "running": [
+      29.1,
+      74.4,
+      99.4,
+      125.86,
+      125.86,
+      125.86
+     ],
+     "left_after": [
+      6,
+      2,
+      1,
+      0,
+      0,
+      0
+     ],
+     "last_slot_players": [],
+     "no_game": [],
+     "lock_in": null,
+     "chopped": false
+    },
+    {
+     "rank": 7,
+     "roster_id": 4,
+     "handle": "ButtFumble06",
+     "name": "ButtFumble06",
+     "team_name": "ButtFumble06",
+     "points": 123.72,
+     "proj": 132.7,
+     "running": [
+      27.52,
+      78.12,
+      78.12,
+      110.92,
+      123.72,
+      123.72
+     ],
+     "left_after": [
+      7,
+      3,
+      3,
+      1,
+      0,
+      0
+     ],
+     "last_slot_players": [],
+     "no_game": [],
+     "lock_in": null,
+     "chopped": false
+    },
+    {
+     "rank": 8,
+     "roster_id": 11,
+     "handle": "humrich",
+     "name": "humrich",
+     "team_name": "humrich",
+     "points": 109.4,
+     "proj": 123.2,
+     "running": [
+      0,
+      72.1,
+      85.0,
+      97.0,
+      109.4,
+      109.4
+     ],
+     "left_after": [
+      8,
+      3,
+      2,
+      1,
+      0,
+      0
+     ],
+     "last_slot_players": [],
+     "no_game": [],
+     "lock_in": null,
+     "chopped": false
+    },
+    {
+     "rank": 9,
+     "roster_id": 7,
+     "handle": "nelsolson",
+     "name": "nelsolson",
+     "team_name": "Participant Banner",
+     "points": 100.4,
+     "proj": 115.87,
+     "running": [
+      24.9,
+      43.7,
+      56.3,
+      56.3,
+      70.3,
+      100.4
+     ],
+     "left_after": [
+      7,
+      4,
+      3,
+      3,
+      2,
+      0
+     ],
+     "last_slot_players": [
+      {
+       "pid": "12519",
+       "name": "Luther Burden III",
+       "pos": "WR",
+       "team": "CHI",
+       "pts": 18.6,
+       "proj": 12.42,
+       "slot": 5,
+       "injury": null
+      },
+      {
+       "pid": "12517",
+       "name": "Colston Loveland",
+       "pos": "TE",
+       "team": "CHI",
+       "pts": 11.5,
+       "proj": 9.73,
+       "slot": 5,
+       "injury": null
+      }
+     ],
+     "no_game": [],
+     "lock_in": null,
+     "chopped": false
+    },
+    {
+     "rank": 10,
+     "roster_id": 10,
+     "handle": "bstanley45",
+     "name": "bstanley45",
+     "team_name": "bstanley45",
+     "points": 82.48,
+     "proj": 113.87,
+     "running": [
+      23.2,
+      43.9,
+      54.18,
+      82.48,
+      82.48,
+      82.48
+     ],
+     "left_after": [
+      7,
+      3,
+      2,
+      0,
+      0,
+      0
+     ],
+     "last_slot_players": [],
+     "no_game": [],
+     "lock_in": null,
+     "chopped": false
+    },
+    {
+     "rank": 11,
+     "roster_id": 8,
+     "handle": "creckley",
+     "name": "creckley",
+     "team_name": "creckley",
+     "points": 82.3,
+     "proj": 110.36,
+     "running": [
+      20.9,
+      77.6,
+      82.3,
+      82.3,
+      82.3,
+      82.3
+     ],
+     "left_after": [
+      7,
+      1,
+      0,
+      0,
+      0,
+      0
+     ],
+     "last_slot_players": [],
+     "no_game": [],
+     "lock_in": null,
+     "chopped": false
+    }
+   ],
+   "top_starters": [
+    {
+     "handle": "avobttam",
+     "name": "Joe Burrow",
+     "pos": "QB",
+     "team": "CIN",
+     "pts": 49.48,
+     "slot": 1
+    },
+    {
+     "handle": "avobttam",
+     "name": "Tee Higgins",
+     "pos": "WR",
+     "team": "CIN",
+     "pts": 37.5,
+     "slot": 1
+    },
+    {
+     "handle": "AllBidness",
+     "name": "Tyler Allgeier",
+     "pos": "RB",
+     "team": "ARI",
+     "pts": 36.1,
+     "slot": 1
+    },
+    {
+     "handle": "joefanelli90",
+     "name": "Kirk Cousins",
+     "pos": "QB",
+     "team": "LV",
+     "pts": 34.18,
+     "slot": 1
+    },
+    {
+     "handle": "joefanelli90",
+     "name": "Ja'Marr Chase",
+     "pos": "WR",
+     "team": "CIN",
+     "pts": 31.1,
+     "slot": 1
+    },
+    {
+     "handle": "CodyPowers28",
+     "name": "Josh Allen",
+     "pos": "QB",
+     "team": "BUF",
+     "pts": 30.56,
+     "slot": 1
+    },
+    {
+     "handle": "CodyPowers28",
+     "name": "Bhayshul Tuten",
+     "pos": "RB",
+     "team": "JAX",
+     "pts": 29.9,
+     "slot": 1
+    },
+    {
+     "handle": "cbova1222",
+     "name": "Tony Pollard",
+     "pos": "RB",
+     "team": "TEN",
+     "pts": 28.7,
+     "slot": 1
+    }
+   ],
+   "dud_starters": [
+    {
+     "handle": "nelsolson",
+     "name": "Lamar Jackson",
+     "pos": "QB",
+     "team": "BAL",
+     "pts": 0.0,
+     "slot": 1
+    },
+    {
+     "handle": "bstanley45",
+     "name": "Tre Tucker",
+     "pos": "WR",
+     "team": "LV",
+     "pts": 0.0,
+     "slot": 1
+    },
+    {
+     "handle": "creckley",
+     "name": "Zay Flowers",
+     "pos": "WR",
+     "team": "BAL",
+     "pts": 0.0,
+     "slot": 1
+    },
+    {
+     "handle": "Bustersx8",
+     "name": "DK Metcalf",
+     "pos": "WR",
+     "team": "PIT",
+     "pts": 1.4,
+     "slot": 1
+    },
+    {
+     "handle": "creckley",
+     "name": "Drake London",
+     "pos": "WR",
+     "team": "ATL",
+     "pts": 1.8,
+     "slot": 1
+    },
+    {
+     "handle": "ButtFumble06",
+     "name": "Jordan Mason",
+     "pos": "RB",
+     "team": "MIN",
+     "pts": 2.0,
+     "slot": 1
+    },
+    {
+     "handle": "AllBidness",
+     "name": "Jeremiyah Love",
+     "pos": "RB",
+     "team": "ARI",
+     "pts": 2.3,
+     "slot": 1
+    },
+    {
+     "handle": "ButtFumble06",
+     "name": "Parker Washington",
+     "pos": "WR",
+     "team": "JAX",
+     "pts": 3.6,
+     "slot": 1
+    }
+   ],
+   "transactions": {
+    "waivers": [
+     {
+      "player_id": "5859",
+      "player": "A.J. Brown",
+      "pos": "WR",
+      "handle": "CodyPowers28",
+      "bid": 31,
+      "bidders": 7,
+      "runner_up": 16,
+      "losers": [
+       {
+        "handle": "nelsolson",
+        "bid": 16
+       },
+       {
+        "handle": "creckley",
+        "bid": 7
+       },
+       {
+        "handle": "bstanley45",
+        "bid": 4
+       },
+       {
+        "handle": "ButtFumble06",
+        "bid": 0
+       },
+       {
+        "handle": "cbova1222",
+        "bid": 0
+       },
+       {
+        "handle": "AllBidness",
+        "bid": 0
+       }
+      ]
+     },
+     {
+      "player_id": "8134",
+      "player": "Khalil Shakir",
+      "pos": "WR",
+      "handle": "creckley",
+      "bid": 7,
+      "bidders": 1,
+      "runner_up": null,
+      "losers": []
+     },
+     {
+      "player_id": "9756",
+      "player": "Jordan Addison",
+      "pos": "WR",
+      "handle": "creckley",
+      "bid": 6,
+      "bidders": 1,
+      "runner_up": null,
+      "losers": []
+     },
+     {
+      "player_id": "12499",
+      "player": "Elic Ayomanor",
+      "pos": "WR",
+      "handle": "bstanley45",
+      "bid": 3,
+      "bidders": 1,
+      "runner_up": null,
+      "losers": []
+     },
+     {
+      "player_id": "9501",
+      "player": "DeMario Douglas",
+      "pos": "WR",
+      "handle": "bstanley45",
+      "bid": 3,
+      "bidders": 1,
+      "runner_up": null,
+      "losers": []
+     },
+     {
+      "player_id": "5947",
+      "player": "Jakobi Meyers",
+      "pos": "WR",
+      "handle": "nelsolson",
+      "bid": 1,
+      "bidders": 1,
+      "runner_up": null,
+      "losers": []
+     },
+     {
+      "player_id": "11729",
+      "player": "Sione Vaki",
+      "pos": "RB",
+      "handle": "ButtFumble06",
+      "bid": 0,
+      "bidders": 1,
+      "runner_up": null,
+      "losers": []
+     },
+     {
+      "player_id": "6806",
+      "player": "J.K. Dobbins",
+      "pos": "RB",
+      "handle": "Bustersx8",
+      "bid": 0,
+      "bidders": 1,
+      "runner_up": null,
+      "losers": []
+     },
+     {
+      "player_id": "6804",
+      "player": "Jordan Love",
+      "pos": "QB",
+      "handle": "ButtFumble06",
+      "bid": 0,
+      "bidders": 1,
+      "runner_up": null,
+      "losers": []
+     },
+     {
+      "player_id": "11624",
+      "player": "Xavier Worthy",
+      "pos": "WR",
+      "handle": "AllBidness",
+      "bid": 0,
+      "bidders": 1,
+      "runner_up": null,
+      "losers": []
+     },
+     {
+      "player_id": "13301",
+      "player": "Antonio Williams",
+      "pos": "WR",
+      "handle": "CodyPowers28",
+      "bid": 0,
+      "bidders": 1,
+      "runner_up": null,
+      "losers": []
+     }
+    ],
+    "lost_bids": [
+     {
+      "player_id": "5859",
+      "player": "A.J. Brown",
+      "pos": "WR",
+      "handle": "nelsolson",
+      "bid": 16,
+      "won_by": "CodyPowers28",
+      "won_at": 31
+     },
+     {
+      "player_id": "5859",
+      "player": "A.J. Brown",
+      "pos": "WR",
+      "handle": "creckley",
+      "bid": 7,
+      "won_by": "CodyPowers28",
+      "won_at": 31
+     },
+     {
+      "player_id": "5859",
+      "player": "A.J. Brown",
+      "pos": "WR",
+      "handle": "bstanley45",
+      "bid": 4,
+      "won_by": "CodyPowers28",
+      "won_at": 31
+     },
+     {
+      "player_id": "5859",
+      "player": "A.J. Brown",
+      "pos": "WR",
+      "handle": "ButtFumble06",
+      "bid": 0,
+      "won_by": "CodyPowers28",
+      "won_at": 31
+     },
+     {
+      "player_id": "5859",
+      "player": "A.J. Brown",
+      "pos": "WR",
+      "handle": "cbova1222",
+      "bid": 0,
+      "won_by": "CodyPowers28",
+      "won_at": 31
+     },
+     {
+      "player_id": "5859",
+      "player": "A.J. Brown",
+      "pos": "WR",
+      "handle": "AllBidness",
+      "bid": 0,
+      "won_by": "CodyPowers28",
+      "won_at": 31
+     }
+    ],
+    "faab_spent": 51,
+    "free_agents": [],
+    "trades": []
+   },
+   "death": {
+    "kind": "death",
+    "confirmed": false,
+    "handle": "creckley",
+    "name": "creckley",
+    "team_name": "creckley",
+    "points": 82.3,
+    "proj": 110.36,
+    "place": 11,
+    "teams": 18,
+    "ordinal": "11th",
+    "survivor": {
+     "handle": "bstanley45",
+     "points": 82.48
+    },
+    "margin": 0.18,
+    "champion": null,
+    "lineup": [
+     {
+      "name": "Trevor Lawrence",
+      "pos": "QB",
+      "team": "JAX",
+      "pts": 25.4,
+      "proj": 22.82
+     },
+     {
+      "name": "Omarion Hampton",
+      "pos": "RB",
+      "team": "LAC",
+      "pts": 4.7,
+      "proj": 10.27
+     },
+     {
+      "name": "Rico Dowdle",
+      "pos": "RB",
+      "team": "PIT",
+      "pts": 11.6,
+      "proj": 8.67
+     },
+     {
+      "name": "Drake London",
+      "pos": "WR",
+      "team": "ATL",
+      "pts": 1.8,
+      "proj": 16.46
+     },
+     {
+      "name": "Zay Flowers",
+      "pos": "WR",
+      "team": "BAL",
+      "pts": 0.0,
+      "proj": 18.48
+     },
+     {
+      "name": "Sam LaPorta",
+      "pos": "TE",
+      "team": "DET",
+      "pts": 6.5,
+      "proj": 10.71
+     },
+     {
+      "name": "Khalil Shakir",
+      "pos": "WR",
+      "team": "BUF",
+      "pts": 11.4,
+      "proj": 9.22
+     },
+     {
+      "name": "Matthew Golden",
+      "pos": "WR",
+      "team": "GB",
+      "pts": 20.9,
+      "proj": 13.73
+     }
+    ],
+    "bench": [
+     {
+      "name": "Patrick Mahomes",
+      "pos": "QB",
+      "team": "KC",
+      "pts": 31.44,
+      "proj": 20.36
+     },
+     {
+      "name": "Jordan Addison",
+      "pos": "WR",
+      "team": "MIN",
+      "pts": 11.6,
+      "proj": 9.61
+     },
+     {
+      "name": "Courtland Sutton",
+      "pos": "WR",
+      "team": "DEN",
+      "pts": 9.3,
+      "proj": 7.9
+     },
+     {
+      "name": "RJ Harvey",
+      "pos": "RB",
+      "team": "DEN",
+      "pts": 0.0,
+      "proj": 0.0
+     },
+     {
+      "name": "David Montgomery",
+      "pos": "RB",
+      "team": "HOU",
+      "pts": 0.0,
+      "proj": 0.0
+     }
+    ],
+    "blame": {
+     "kind": "start_sit",
+     "gain": 11.6,
+     "in": "Jordan Addison",
+     "in_pts": 11.6,
+     "out": "Zay Flowers",
+     "out_pts": 0.0,
+     "slot": "WR",
+     "out_proj": 18.48
+    },
+    "busts": [
+     {
+      "name": "Zay Flowers",
+      "pos": "WR",
+      "team": "BAL",
+      "pts": 0.0,
+      "proj": 18.48
+     },
+     {
+      "name": "Drake London",
+      "pos": "WR",
+      "team": "ATL",
+      "pts": 1.8,
+      "proj": 16.46
+     },
+     {
+      "name": "Omarion Hampton",
+      "pos": "RB",
+      "team": "LAC",
+      "pts": 4.7,
+      "proj": 10.27
+     }
+    ],
+    "zeros": [
+     "Zay Flowers"
+    ],
+    "optimal": 107.44,
+    "season_weeks": [
+     {
+      "week": 1,
+      "points": 113.9,
+      "rank": 8,
+      "alive": 18
+     },
+     {
+      "week": 2,
+      "points": 65.66,
+      "rank": 16,
+      "alive": 17
+     },
+     {
+      "week": 3,
+      "points": 105.18,
+      "rank": 10,
+      "alive": 16
+     },
+     {
+      "week": 4,
+      "points": 101.48,
+      "rank": 12,
+      "alive": 15
+     },
+     {
+      "week": 5,
+      "points": 97.14,
+      "rank": 10,
+      "alive": 14
+     },
+     {
+      "week": 6,
+      "points": 113.34,
+      "rank": 5,
+      "alive": 13
+     },
+     {
+      "week": 7,
+      "points": 102.1,
+      "rank": 8,
+      "alive": 12
+     },
+     {
+      "week": 8,
+      "points": 82.3,
+      "rank": 11,
+      "alive": 11
+     }
+    ],
+    "faab": {
+     "budget": 1000,
+     "spent": 341,
+     "left": 659,
+     "claims_won": 13,
+     "biggest": {
+      "week": 6,
+      "player": "Zay Flowers",
+      "bid": 317
+     }
+    },
+    "career": [
+     {
+      "season": 2023,
+      "place": 11,
+      "teams": 18,
+      "team_name": "Recking Crew",
+      "chopped_week": 8,
+      "place_prize": 0,
+      "weekly_highs": [
+       5
+      ],
+      "weekly_prize": 25
+     },
+     {
+      "season": 2024,
+      "place": 15,
+      "teams": 18,
+      "team_name": "Recking Crew",
+      "chopped_week": 4,
+      "place_prize": 0,
+      "weekly_highs": [],
+      "weekly_prize": 0
+     },
+     {
+      "season": 2025,
+      "place": 10,
+      "teams": 18,
+      "team_name": "Team creckley",
+      "chopped_week": 9,
+      "place_prize": 0,
+      "weekly_highs": [],
+      "weekly_prize": 0
+     },
+     {
+      "season": 2026,
+      "place": 11,
+      "teams": 18,
+      "team_name": "creckley",
+      "chopped_week": 8,
+      "place_prize": 0,
+      "weekly_highs": [],
+      "weekly_prize": 0,
+      "current": true
+     }
+    ],
+    "lifetime": {
+     "earned": 25,
+     "seasons": 4,
+     "cashes": 0,
+     "weekly_highs": 1,
+     "best_place": 10
+    }
+   }
+  },
+  "two_mitchs": {
+   "league_id": "1383837552376545280",
+   "league_name": "2 Mitchs 1 Cup",
+   "provisional": false,
+   "outlook": {
+    "through_week": 8,
+    "power": [
+     {
+      "rank": 1,
+      "prev_rank": 1,
+      "name": "Matt Bova",
+      "handle": "avobttam",
+      "record": "7-1",
+      "allplay": "73-15",
+      "allplay_pct": 83.0,
+      "ppg": 153.23,
+      "last3": 136.1,
+      "luck": 0.4,
+      "score": 1.669
+     },
+     {
+      "rank": 2,
+      "prev_rank": 3,
+      "name": "Nick Merkel",
+      "handle": "MerkDaddy36",
+      "record": "3-5",
+      "allplay": "61-27",
+      "allplay_pct": 69.3,
+      "ppg": 134.97,
+      "last3": 134.26,
+      "luck": -2.5,
+      "score": 0.906
+     },
+     {
+      "rank": 3,
+      "prev_rank": 4,
+      "name": "Jack Hawkins",
+      "handle": "JellyRoll6884",
+      "record": "4-4",
+      "allplay": "54-34",
+      "allplay_pct": 61.4,
+      "ppg": 136.22,
+      "last3": 142.95,
+      "luck": -0.9,
+      "score": 0.84
+     },
+     {
+      "rank": 4,
+      "prev_rank": 2,
+      "name": "Andrew Evans",
+      "handle": "BigOleTDs21",
+      "record": "5-3",
+      "allplay": "61-27",
+      "allplay_pct": 69.3,
+      "ppg": 138.54,
+      "last3": 124.38,
+      "luck": -0.5,
+      "score": 0.836
+     },
+     {
+      "rank": 5,
+      "prev_rank": 5,
+      "name": "Austin Hendrickson",
+      "handle": "Bogeyman28",
+      "record": "3-5",
+      "allplay": "52-36",
+      "allplay_pct": 59.1,
+      "ppg": 136.4,
+      "last3": 130.94,
+      "luck": -1.7,
+      "score": 0.61
+     },
+     {
+      "rank": 6,
+      "prev_rank": 6,
+      "name": "Mitch Blackwell",
+      "handle": "MJBlack",
+      "record": "7-1",
+      "allplay": "51-37",
+      "allplay_pct": 58.0,
+      "ppg": 130.7,
+      "last3": 130.4,
+      "luck": 2.4,
+      "score": 0.457
+     },
+     {
+      "rank": 7,
+      "prev_rank": 7,
+      "name": "Jon Carter",
+      "handle": "jonicarter89",
+      "record": "4-4",
+      "allplay": "36-52",
+      "allplay_pct": 40.9,
+      "ppg": 114.97,
+      "last3": 128.55,
+      "luck": 0.7,
+      "score": -0.349
+     },
+     {
+      "rank": 8,
+      "prev_rank": 8,
+      "name": "Katie Bogardus",
+      "handle": "katiestout13",
+      "record": "3-5",
+      "allplay": "36-52",
+      "allplay_pct": 40.9,
+      "ppg": 115.61,
+      "last3": 114.62,
+      "luck": -0.3,
+      "score": -0.536
+     },
+     {
+      "rank": 9,
+      "prev_rank": 10,
+      "name": "Chris Bova",
+      "handle": "cbova1222",
+      "record": "4-4",
+      "allplay": "33-55",
+      "allplay_pct": 37.5,
+      "ppg": 114.69,
+      "last3": 107.89,
+      "luck": 1.0,
+      "score": -0.743
+     },
+     {
+      "rank": 10,
+      "prev_rank": 9,
+      "name": "Chris Merkel",
+      "handle": "CHRISMERKELDUH",
+      "record": "4-4",
+      "allplay": "29-59",
+      "allplay_pct": 33.0,
+      "ppg": 113.66,
+      "last3": 111.77,
+      "luck": 1.4,
+      "score": -0.831
+     },
+     {
+      "rank": 11,
+      "prev_rank": 12,
+      "name": "Mitch Pletcher",
+      "handle": "Mpletcher",
+      "record": "1-7",
+      "allplay": "20-68",
+      "allplay_pct": 22.7,
+      "ppg": 102.79,
+      "last3": 106.46,
+      "luck": -0.8,
+      "score": -1.404
+     },
+     {
+      "rank": 12,
+      "prev_rank": 11,
+      "name": "Jake Bogardus",
+      "handle": "djbogardus72",
+      "record": "3-5",
+      "allplay": "22-66",
+      "allplay_pct": 25.0,
+      "ppg": 105.57,
+      "last3": 94.74,
+      "luck": 1.0,
+      "score": -1.454
+     }
+    ],
+    "power_weights": {
+     "allplay_pct": 0.5,
+     "ppg": 0.3,
+     "last3": 0.2
+    },
+    "odds": {
+     "sims": 10000,
+     "team_cv": 0.17,
+     "calibration": [
+      25.6,
+      29.6
+     ],
+     "in_band": false,
+     "teams": [
+      {
+       "name": "Matt Bova",
+       "handle": "avobttam",
+       "record": "7-1",
+       "proj_record": "11.1-2.9",
+       "proj_pf": 2069.8,
+       "playoff": 100.0,
+       "bye": 90.8,
+       "final": 50.3,
+       "title": 27.1,
+       "seed_pct": [
+        72.1,
+        18.8,
+        6.5,
+        1.9,
+        0.6,
+        0.1
+       ],
+       "prev_playoff": 99.7,
+       "prev_title": 24.9
+      },
+      {
+       "name": "Mitch Blackwell",
+       "handle": "MJBlack",
+       "record": "7-1",
+       "proj_record": "10.2-3.8",
+       "proj_pf": 1796.2,
+       "playoff": 99.1,
+       "bye": 64.1,
+       "final": 29.1,
+       "title": 10.1,
+       "seed_pct": [
+        20.1,
+        44.0,
+        21.0,
+        8.7,
+        3.6,
+        1.7
+       ],
+       "prev_playoff": 95.9,
+       "prev_title": 9.5
+      },
+      {
+       "name": "Andrew Evans",
+       "handle": "BigOleTDs21",
+       "record": "5-3",
+       "proj_record": "8.8-5.2",
+       "proj_pf": 1943.7,
+       "playoff": 94.2,
+       "bye": 30.7,
+       "final": 37.6,
+       "title": 21.7,
+       "seed_pct": [
+        7.0,
+        23.7,
+        29.7,
+        17.5,
+        10.2,
+        6.0
+       ],
+       "prev_playoff": 96.2,
+       "prev_title": 23.7
+      },
+      {
+       "name": "Austin Hendrickson",
+       "handle": "Bogeyman28",
+       "record": "3-5",
+       "proj_record": "7.2-6.8",
+       "proj_pf": 1962.0,
+       "playoff": 70.4,
+       "bye": 3.4,
+       "final": 24.5,
+       "title": 12.7,
+       "seed_pct": [
+        0.1,
+        3.3,
+        13.5,
+        19.6,
+        18.3,
+        15.5
+       ],
+       "prev_playoff": 69.7,
+       "prev_title": 12.2
+      },
+      {
+       "name": "Nick Merkel",
+       "handle": "MerkDaddy36",
+       "record": "3-5",
+       "proj_record": "7.0-7.0",
+       "proj_pf": 1951.0,
+       "playoff": 65.7,
+       "bye": 2.6,
+       "final": 23.8,
+       "title": 13.0,
+       "seed_pct": [
+        0.1,
+        2.5,
+        10.2,
+        17.2,
+        19.1,
+        16.5
+       ],
+       "prev_playoff": 73.1,
+       "prev_title": 14.7
+      },
+      {
+       "name": "Jack Hawkins",
+       "handle": "JellyRoll6884",
+       "record": "4-4",
+       "proj_record": "7.1-6.9",
+       "proj_pf": 1894.7,
+       "playoff": 63.6,
+       "bye": 5.7,
+       "final": 15.5,
+       "title": 6.7,
+       "seed_pct": [
+        0.6,
+        5.1,
+        10.2,
+        13.9,
+        16.6,
+        17.2
+       ],
+       "prev_playoff": 50.6,
+       "prev_title": 5.5
+      },
+      {
+       "name": "Jon Carter",
+       "handle": "jonicarter89",
+       "record": "4-4",
+       "proj_record": "6.9-7.1",
+       "proj_pf": 1648.5,
+       "playoff": 43.9,
+       "bye": 1.6,
+       "final": 6.3,
+       "title": 2.7,
+       "seed_pct": [
+        0.1,
+        1.5,
+        4.9,
+        10.3,
+        12.6,
+        14.5
+       ],
+       "prev_playoff": 33.0,
+       "prev_title": 2.4
+      },
+      {
+       "name": "Chris Merkel",
+       "handle": "CHRISMERKELDUH",
+       "record": "4-4",
+       "proj_record": "6.4-7.6",
+       "proj_pf": 1597.5,
+       "playoff": 27.9,
+       "bye": 0.5,
+       "final": 6.9,
+       "title": 3.2,
+       "seed_pct": [
+        0.0,
+        0.5,
+        2.1,
+        5.2,
+        8.3,
+        11.8
+       ],
+       "prev_playoff": 28.1,
+       "prev_title": 3.1
+      },
+      {
+       "name": "Chris Bova",
+       "handle": "cbova1222",
+       "record": "4-4",
+       "proj_record": "6.2-7.8",
+       "proj_pf": 1596.7,
+       "playoff": 21.9,
+       "bye": 0.5,
+       "final": 3.2,
+       "title": 1.4,
+       "seed_pct": [
+        0.0,
+        0.5,
+        1.4,
+        4.0,
+        6.7,
+        9.4
+       ],
+       "prev_playoff": 20.8,
+       "prev_title": 1.6
+      },
+      {
+       "name": "Katie Bogardus",
+       "handle": "katiestout13",
+       "record": "3-5",
+       "proj_record": "5.1-8.9",
+       "proj_pf": 1643.3,
+       "playoff": 8.7,
+       "bye": 0.1,
+       "final": 1.8,
+       "title": 0.9,
+       "seed_pct": [
+        0.0,
+        0.1,
+        0.4,
+        1.1,
+        2.4,
+        4.7
+       ],
+       "prev_playoff": 17.9,
+       "prev_title": 1.2
+      },
+      {
+       "name": "Jake Bogardus",
+       "handle": "djbogardus72",
+       "record": "3-5",
+       "proj_record": "4.8-9.2",
+       "proj_pf": 1523.9,
+       "playoff": 4.2,
+       "bye": 0.0,
+       "final": 0.9,
+       "title": 0.4,
+       "seed_pct": [
+        0.0,
+        0.0,
+        0.2,
+        0.5,
+        1.2,
+        2.3
+       ],
+       "prev_playoff": 14.1,
+       "prev_title": 1.2
+      },
+      {
+       "name": "Mitch Pletcher",
+       "handle": "Mpletcher",
+       "record": "1-7",
+       "proj_record": "3.3-10.7",
+       "proj_pf": 1507.1,
+       "playoff": 0.4,
+       "bye": 0.0,
+       "final": 0.1,
+       "title": 0.0,
+       "seed_pct": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.1,
+        0.3
+       ],
+       "prev_playoff": 0.9,
+       "prev_title": 0.0
+      }
+     ]
+    }
+   },
+   "proj_bias": -1.85,
+   "roster_positions": [
+    "QB",
+    "RB",
+    "RB",
+    "WR",
+    "WR",
+    "TE",
+    "FLEX",
+    "WRRB_FLEX",
+    "WRRB_FLEX"
+   ],
+   "matchups": [
+    {
+     "matchup_id": 1,
+     "winner": {
+      "roster_id": 8,
+      "handle": "CHRISMERKELDUH",
+      "name": "Chris Merkel",
+      "team_name": "The PRICE is Wrong, Bob",
+      "matchup_id": 1,
+      "points": 110.7,
+      "proj": 117.03,
+      "delta": -6.33,
+      "starters": [
+       {
+        "pid": "4881",
+        "name": "Lamar Jackson",
+        "pos": "QB",
+        "team": "BAL",
+        "pts": 0.0,
+        "proj": 23.47,
+        "slot": 1,
+        "injury": "Out"
+       },
+       {
+        "pid": "13286",
+        "name": "Jadarian Price",
+        "pos": "RB",
+        "team": "SEA",
+        "pts": 5.7,
+        "proj": 5.02,
+        "slot": 5,
+        "injury": null
+       },
+       {
+        "pid": "8132",
+        "name": "Tyler Allgeier",
+        "pos": "RB",
+        "team": "ARI",
+        "pts": 36.1,
+        "proj": 8.34,
+        "slot": 1,
+        "injury": null
+       },
+       {
+        "pid": "13150",
+        "name": "Darius Cooper",
+        "pos": "WR",
+        "team": "PHI",
+        "pts": 3.9,
+        "proj": 7.95,
+        "slot": 4,
+        "injury": null
+       },
+       {
+        "pid": "8112",
+        "name": "Drake London",
+        "pos": "WR",
+        "team": "ATL",
+        "pts": 1.8,
+        "proj": 16.46,
+        "slot": 1,
+        "injury": "Questionable"
+       },
+       {
+        "pid": "9484",
+        "name": "Tucker Kraft",
+        "pos": "TE",
+        "team": "GB",
+        "pts": 17.3,
+        "proj": 10.88,
+        "slot": 0,
+        "injury": null
+       },
+       {
+        "pid": "8110",
+        "name": "Jake Ferguson",
+        "pos": "TE",
+        "team": "DAL",
+        "pts": 0.0,
+        "proj": 9.17,
+        "slot": 1,
+        "injury": "Out"
+       },
+       {
+        "pid": "12501",
+        "name": "Matthew Golden",
+        "pos": "WR",
+        "team": "GB",
+        "pts": 20.9,
+        "proj": 13.73,
+        "slot": 0,
+        "injury": null
+       },
+       {
+        "pid": "9493",
+        "name": "Puka Nacua",
+        "pos": "WR",
+        "team": "LAR",
+        "pts": 25.0,
+        "proj": 22.01,
+        "slot": 2,
+        "injury": null
+       }
+      ],
+      "bench": [
+       {
+        "pid": "11435",
+        "name": "Emanuel Wilson",
+        "pos": "RB",
+        "team": "SEA",
+        "pts": 0.0,
+        "proj": 6.66,
+        "injury": null
+       },
+       {
+        "pid": "11834",
+        "name": "Devaughn Vele",
+        "pos": "WR",
+        "team": "NO",
+        "pts": 0.0,
+        "proj": 0.0,
+        "injury": null
+       },
+       {
+        "pid": "13279",
+        "name": "Carnell Tate",
+        "pos": "WR",
+        "team": "TEN",
+        "pts": 0.0,
+        "proj": 0.0,
+        "injury": "Out"
+       },
+       {
+        "pid": "13281",
+        "name": "Jordyn Tyson",
+        "pos": "WR",
+        "team": "NO",
+        "pts": 0.0,
+        "proj": 0.0,
+        "injury": "IR"
+       },
+       {
+        "pid": "7543",
+        "name": "Travis Etienne Jr.",
+        "pos": "RB",
+        "team": "NO",
+        "pts": 0.0,
+        "proj": 0.0,
+        "injury": "IR"
+       },
+       {
+        "pid": "9502",
+        "name": "Tank Dell",
+        "pos": "WR",
+        "team": "HOU",
+        "pts": 0.0,
+        "proj": 0.0,
+        "injury": null
+       },
+       {
+        "pid": "9758",
+        "name": "C.J. Stroud",
+        "pos": "QB",
+        "team": "HOU",
+        "pts": 0.0,
+        "proj": 0.0,
+        "injury": null
+       }
+      ],
+      "bench_points": 0.0,
+      "left_on_bench": 0.0,
+      "best_swap": null,
+      "zeros": [
+       "Lamar Jackson",
+       "Jake Ferguson"
+      ],
+      "injured_starters": [
+       "Lamar Jackson (Out)",
+       "Jake Ferguson (Out)"
+      ],
+      "record": "4-4",
+      "delta_net": -4.48
+     },
+     "loser": {
+      "roster_id": 2,
+      "handle": "Mpletcher",
+      "name": "Mitch Pletcher",
+      "team_name": "Mpletcher",
+      "matchup_id": 1,
+      "points": 101.18,
+      "proj": 108.52,
+      "delta": -7.34,
+      "starters": [
+       {
+        "pid": "421",
+        "name": "Matthew Stafford",
+        "pos": "QB",
+        "team": "LAR",
+        "pts": 11.28,
+        "proj": 19.61,
+        "slot": 2,
+        "injury": "Questionable"
+       },
+       {
+        "pid": "4663",
+        "name": "Austin Ekeler",
+        "pos": "RB",
+        "team": "WAS",
+        "pts": 5.6,
+        "proj": 5.66,
+        "slot": 4,
+        "injury": null
+       },
+       {
+        "pid": "5850",
+        "name": "Josh Jacobs",
+        "pos": "RB",
+        "team": "GB",
+        "pts": 23.2,
+        "proj": 16.03,
+        "slot": 0,
+        "injury": null
+       },
+       {
+        "pid": "13274",
+        "name": "Germie Bernard",
+        "pos": "WR",
+        "team": "PIT",
+        "pts": 8.0,
+        "proj": 9.89,
+        "slot": 1,
+        "injury": null
+       },
+       {
+        "pid": "7547",
+        "name": "Amon-Ra St. Brown",
+        "pos": "WR",
+        "team": "DET",
+        "pts": 12.6,
+        "proj": 16.71,
+        "slot": 1,
+        "injury": "Questionable"
+       },
+       {
+        "pid": "3214",
+        "name": "Hunter Henry",
+        "pos": "TE",
+        "team": "NE",
+        "pts": 6.0,
+        "proj": 11.12,
+        "slot": 3,
+        "injury": "Out"
+       },
+       {
+        "pid": "10236",
+        "name": "Dalton Kincaid",
+        "pos": "TE",
+        "team": "BUF",
+        "pts": 18.6,
+        "proj": 10.46,
+        "slot": 1,
+        "injury": null
+       },
+       {
+        "pid": "11624",
+        "name": "Xavier Worthy",
+        "pos": "WR",
+        "team": "KC",
+        "pts": 4.3,
+        "proj": 9.43,
+        "slot": 3,
+        "injury": null
+       },
+       {
+        "pid": "9756",
+        "name": "Jordan Addison",
+        "pos": "WR",
+        "team": "MIN",
+        "pts": 11.6,
+        "proj": 9.61,
+        "slot": 1,
+        "injury": null
+       }
+      ],
+      "bench": [
+       {
+        "pid": "11560",
+        "name": "Caleb Williams",
+        "pos": "QB",
+        "team": "CHI",
+        "pts": 15.98,
+        "proj": 18.23,
+        "injury": null
+       },
+       {
+        "pid": "11783",
+        "name": "Ryan Flournoy",
+        "pos": "WR",
+        "team": "DAL",
+        "pts": 13.1,
+        "proj": 9.2,
+        "injury": null
+       },
+       {
+        "pid": "12481",
+        "name": "Cam Skattebo",
+        "pos": "RB",
+        "team": "NYG",
+        "pts": 0.0,
+        "proj": 0.0,
+        "injury": "Questionable"
+       },
+       {
+        "pid": "12533",
+        "name": "Jacory Croskey-Merritt",
+        "pos": "RB",
+        "team": "WAS",
+        "pts": 0.0,
+        "proj": 0.0,
+        "injury": "IR"
+       },
+       {
+        "pid": "5892",
+        "name": "David Montgomery",
+        "pos": "RB",
+        "team": "HOU",
+        "pts": 0.0,
+        "proj": 0.0,
+        "injury": "Out"
+       },
+       {
+        "pid": "9757",
+        "name": "Kendre Miller",
+        "pos": "RB",
+        "team": "NO",
+        "pts": 0.0,
+        "proj": 0.0,
+        "injury": null
+       }
+      ],
+      "bench_points": 29.08,
+      "left_on_bench": 13.5,
+      "best_swap": {
+       "gain": 8.8,
+       "in": "Ryan Flournoy",
+       "in_pts": 13.1,
+       "out": "Xavier Worthy",
+       "out_pts": 4.3,
+       "slot": "WRRB_FLEX"
+      },
+      "zeros": [],
+      "injured_starters": [
+       "Hunter Henry (Out)"
+      ],
+      "record": "1-7",
+      "delta_net": -5.49
+     },
+     "margin": 9.52,
+     "tags": []
+    },
+    {
+     "matchup_id": 2,
+     "winner": {
+      "roster_id": 9,
+      "handle": "MJBlack",
+      "name": "Mitch Blackwell",
+      "team_name": "Oh Mitchard",
+      "matchup_id": 2,
+      "points": 131.76,
+      "proj": 129.14,
+      "delta": 2.62,
+      "starters": [
+       {
+        "pid": "11564",
+        "name": "Drake Maye",
+        "pos": "QB",
+        "team": "NE",
+        "pts": 26.46,
+        "proj": 24.34,
+        "slot": 3,
+        "injury": null
+       },
+       {
+        "pid": "9224",
+        "name": "Chase Brown",
+        "pos": "RB",
+        "team": "CIN",
+        "pts": 16.1,
+        "proj": 17.99,
+        "slot": 1,
+        "injury": null
+       },
+       {
+        "pid": "12527",
+        "name": "Ashton Jeanty",
+        "pos": "RB",
+        "team": "LV",
+        "pts": 10.3,
+        "proj": 15.88,
+        "slot": 1,
+        "injury": null
+       },
+       {
+        "pid": "9997",
+        "name": "Zay Flowers",
+        "pos": "WR",
+        "team": "BAL",
+        "pts": 0.0,
+        "proj": 18.48,
+        "slot": 1,
+        "injury": null
+       },
+       {
+        "pid": "11610",
+        "name": "Malik Washington",
+        "pos": "WR",
+        "team": "MIA",
+        "pts": 15.0,
+        "proj": 9.14,
+        "slot": 3,
+        "injury": null
+       },
+       {
+        "pid": "12506",
+        "name": "Harold Fannin Jr.",
+        "pos": "TE",
+        "team": "CLE",
+        "pts": 23.4,
+        "proj": 10.63,
+        "slot": 1,
+        "injury": null
+       },
+       {
+        "pid": "1479",
+        "name": "Keenan Allen",
+        "pos": "WR",
+        "team": "IND",
+        "pts": 13.7,
+        "proj": 9.28,
+        "slot": 1,
+        "injury": null
+       },
+       {
+        "pid": "8136",
+        "name": "Rachaad White",
+        "pos": "RB",
+        "team": "WAS",
+        "pts": 14.0,
+        "proj": 10.85,
+        "slot": 4,
+        "injury": null
+       },
+       {
+        "pid": "2449",
+        "name": "Stefon Diggs",
+        "pos": "WR",
+        "team": "WAS",
+        "pts": 12.8,
+        "proj": 12.55,
+        "slot": 4,
+        "injury": null
+       }
+      ],
+      "bench": [
+       {
+        "pid": "9753",
+        "name": "Zach Charbonnet",
+        "pos": "RB",
+        "team": "SEA",
+        "pts": 5.9,
+        "proj": 8.09,
+        "injury": null
+       },
+       {
+        "pid": "12545",
+        "name": "Tyler Shough",
+        "pos": "QB",
+        "team": "NO",
+        "pts": 0.0,
+        "proj": 0.0,
+        "injury": null
+       },
+       {
+        "pid": "4035",
+        "name": "Alvin Kamara",
+        "pos": "RB",
+        "team": "NO",
+        "pts": 0.0,
+        "proj": 0.0,
+        "injury": null
+       },
+       {
+        "pid": "5872",
+        "name": "Deebo Samuel Sr.",
+        "pos": "WR",
+        "team": "SF",
+        "pts": 0.0,
+        "proj": 0.0,
+        "injury": "Out"
+       },
+       {
+        "pid": "7525",
+        "name": "DeVonta Smith",
+        "pos": "WR",
+        "team": "PHI",
+        "pts": 0.0,
+        "proj": 0.0,
+        "injury": "Out"
+       },
+       {
+        "pid": "8142",
+        "name": "Alec Pierce",
+        "pos": "WR",
+        "team": "IND",
+        "pts": 0.0,
+        "proj": 0.0,
+        "injury": "IR"
+       }
+      ],
+      "bench_points": 5.9,
+      "left_on_bench": 5.9,
+      "best_swap": null,
+      "zeros": [
+       "Zay Flowers"
+      ],
+      "injured_starters": [],
+      "record": "7-1",
+      "delta_net": 4.47
+     },
+     "loser": {
+      "roster_id": 11,
+      "handle": "BigOleTDs21",
+      "name": "Andrew Evans",
+      "team_name": "I Frowed Up",
+      "matchup_id": 2,
+      "points": 116.8,
+      "proj": 140.1,
+      "delta": -23.3,
+      "starters": [
+       {
+        "pid": "5849",
+        "name": "Kyler Murray",
+        "pos": "QB",
+        "team": "MIN",
+        "pts": 24.9,
+        "proj": 19.45,
+        "slot": 1,
+        "injury": "Questionable"
+       },
+       {
+        "pid": "9221",
+        "name": "Jahmyr Gibbs",
+        "pos": "RB",
+        "team": "DET",
+        "pts": 24.8,
+        "proj": 23.41,
+        "slot": 1,
+        "injury": null
+       },
+       {
+        "pid": "3198",
+        "name": "Derrick Henry",
+        "pos": "RB",
+        "team": "BAL",
+        "pts": 14.0,
+        "proj": 16.17,
+        "slot": 1,
+        "injury": null
+       },
+       {
+        "pid": "9487",
+        "name": "Parker Washington",
+        "pos": "WR",
+        "team": "JAX",
+        "pts": 3.6,
+        "proj": 14.93,
+        "slot": 1,
+        "injury": null
+       },
+       {
+        "pid": "10213",
+        "name": "Tre Tucker",
+        "pos": "WR",
+        "team": "LV",
+        "pts": 0.0,
+        "proj": 11.14,
+        "slot": 1,
+        "injury": null
+       },
+       {
+        "pid": "8130",
+        "name": "Trey McBride",
+        "pos": "TE",
+        "team": "ARI",
+        "pts": 20.2,
+        "proj": 18.53,
+        "slot": 1,
+        "injury": null
+       },
+       {
+        "pid": "6790",
+        "name": "D'Andre Swift",
+        "pos": "RB",
+        "team": "CHI",
+        "pts": 27.9,
+        "proj": 14.69,
+        "slot": 5,
+        "injury": null
+       },
+       {
+        "pid": "13276",
+        "name": "Omar Cooper Jr.",
+        "pos": "WR",
+        "team": "NYJ",
+        "pts": 0.0,
+        "proj": 10.66,
+        "slot": 1,
+        "injury": null
+       },
+       {
+        "pid": "5846",
+        "name": "DK Metcalf",
+        "pos": "WR",
+        "team": "PIT",
+        "pts": 1.4,
+        "proj": 11.12,
+        "slot": 1,
+        "injury": null
+       }
+      ],
+      "bench": [
+       {
+        "pid": "7526",
+        "name": "Jaylen Waddle",
+        "pos": "WR",
+        "team": "DEN",
+        "pts": 14.9,
+        "proj": 11.59,
+        "injury": null
+       },
+       {
+        "pid": "9228",
+        "name": "Bryce Young",
+        "pos": "QB",
+        "team": "CAR",
+        "pts": 13.36,
+        "proj": 20.66,
+        "injury": null
+       },
+       {
+        "pid": "9500",
+        "name": "Josh Downs",
+        "pos": "WR",
+        "team": "IND",
+        "pts": 12.3,
+        "proj": 9.82,
+        "injury": null
+       },
+       {
+        "pid": "11581",
+        "name": "MarShawn Lloyd",
+        "pos": "RB",
+        "team": "GB",
+        "pts": 2.6,
+        "proj": 6.61,
+        "injury": null
+       },
+       {
+        "pid": "8408",
+        "name": "Jordan Mason",
+        "pos": "RB",
+        "team": "MIN",
+        "pts": 2.0,
+        "proj": 10.94,
+        "injury": null
+       },
+       {
+        "pid": "12483",
+        "name": "Jack Bech",
+        "pos": "WR",
+        "team": "LV",
+        "pts": 0.0,
+        "proj": 3.12,
+        "injury": null
+       }
+      ],
+      "bench_points": 45.16,
+      "left_on_bench": 28.4,
+      "best_swap": {
+       "gain": 14.9,
+       "in": "Jaylen Waddle",
+       "in_pts": 14.9,
+       "out": "Tre Tucker",
+       "out_pts": 0.0,
+       "slot": "WR"
+      },
+      "zeros": [
+       "Tre Tucker",
+       "Omar Cooper Jr."
+      ],
+      "injured_starters": [],
+      "record": "5-3",
+      "delta_net": -21.45
+     },
+     "margin": 14.96,
+     "tags": [
+      "UPSET"
+     ]
+    },
+    {
+     "matchup_id": 3,
+     "winner": {
+      "roster_id": 10,
+      "handle": "cbova1222",
+      "name": "Chris Bova",
+      "team_name": "Titsburg Feelers",
+      "matchup_id": 3,
+      "points": 116.48,
+      "proj": 99.82,
+      "delta": 16.66,
+      "starters": [
+       {
+        "pid": "1166",
+        "name": "Kirk Cousins",
+        "pos": "QB",
+        "team": "LV",
+        "pts": 34.18,
+        "proj": 20.33,
+        "slot": 1,
+        "injury": null
+       },
+       {
+        "pid": "11647",
+        "name": "Kimani Vidal",
+        "pos": "RB",
+        "team": "LAC",
+        "pts": 5.0,
+        "proj": 6.97,
+        "slot": 2,
+        "injury": null
+       },
+       {
+        "pid": "8122",
+        "name": "Zonovan Knight",
+        "pos": "RB",
+        "team": "ARI",
+        "pts": 0.8,
+        "proj": 0.0,
+        "slot": 1,
+        "injury": "Out"
+       },
+       {
+        "pid": "6794",
+        "name": "Justin Jefferson",
+        "pos": "WR",
+        "team": "MIN",
+        "pts": 14.3,
+        "proj": 17.73,
+        "slot": 1,
+        "injury": null
+       },
+       {
+        "pid": "6801",
+        "name": "Tee Higgins",
+        "pos": "WR",
+        "team": "CIN",
+        "pts": 37.5,
+        "proj": 15.96,
+        "slot": 1,
+        "injury": null
+       },
+       {
+        "pid": "3271",
+        "name": "Tyler Higbee",
+        "pos": "TE",
+        "team": "LAR",
+        "pts": 2.4,
+        "proj": 9.87,
+        "slot": 2,
+        "injury": null
+       },
+       {
+        "pid": "10859",
+        "name": "Sam LaPorta",
+        "pos": "TE",
+        "team": "DET",
+        "pts": 6.5,
+        "proj": 10.71,
+        "slot": 1,
+        "injury": null
+       },
+       {
+        "pid": "5947",
+        "name": "Jakobi Meyers",
+        "pos": "WR",
+        "team": "JAX",
+        "pts": 4.4,
+        "proj": 9.03,
+        "slot": 1,
+        "injury": "Questionable"
+       },
+       {
+        "pid": "8134",
+        "name": "Khalil Shakir",
+        "pos": "WR",
+        "team": "BUF",
+        "pts": 11.4,
+        "proj": 9.22,
+        "slot": 1,
+        "injury": null
+       }
+      ],
+      "bench": [
+       {
+        "pid": "11566",
+        "name": "Jayden Daniels",
+        "pos": "QB",
+        "team": "WAS",
+        "pts": 16.98,
+        "proj": 20.41,
+        "injury": null
+       },
+       {
+        "pid": "12489",
+        "name": "RJ Harvey",
+        "pos": "RB",
+        "team": "DEN",
+        "pts": 0.0,
+        "proj": 0.0,
+        "injury": "IR"
+       },
+       {
+        "pid": "12718",
+        "name": "Konata Mumpfield",
+        "pos": "WR",
+        "team": "LAR",
+        "pts": 0.0,
+        "proj": 4.51,
+        "injury": null
+       },
+       {
+        "pid": "2133",
+        "name": "Davante Adams",
+        "pos": "WR",
+        "team": "LAR",
+        "pts": 0.0,
+        "proj": 0.0,
+        "injury": "IR"
+       },
+       {
+        "pid": "6130",
+        "name": "Devin Singletary",
+        "pos": "RB",
+        "team": "NYG",
+        "pts": 0.0,
+        "proj": 0.0,
+        "injury": null
+       },
+       {
+        "pid": "8155",
+        "name": "Breece Hall",
+        "pos": "RB",
+        "team": "NYJ",
+        "pts": 0.0,
+        "proj": 0.0,
+        "injury": "Out"
+       },
+       {
+        "pid": "9226",
+        "name": "De'Von Achane",
+        "pos": "RB",
+        "team": "MIA",
+        "pts": 0.0,
+        "proj": 0.0,
+        "injury": "IR"
+       }
+      ],
+      "bench_points": 16.98,
+      "left_on_bench": 0.0,
+      "best_swap": null,
+      "zeros": [],
+      "injured_starters": [
+       "Zonovan Knight (Out)"
+      ],
+      "record": "4-4",
+      "delta_net": 18.51
+     },
+     "loser": {
+      "roster_id": 6,
+      "handle": "katiestout13",
+      "name": "Katie Bogardus",
+      "team_name": "Mrs. BoKnows ",
+      "matchup_id": 3,
+      "points": 115.0,
+      "proj": 121.79,
+      "delta": -6.79,
+      "starters": [
+       {
+        "pid": "7523",
+        "name": "Trevor Lawrence",
+        "pos": "QB",
+        "team": "JAX",
+        "pts": 25.4,
+        "proj": 23.33,
+        "slot": 1,
+        "injury": null
+       },
+       {
+        "pid": "11586",
+        "name": "Blake Corum",
+        "pos": "RB",
+        "team": "LAR",
+        "pts": 13.3,
+        "proj": 7.65,
+        "slot": 2,
+        "injury": null
+       },
+       {
+        "pid": "12512",
+        "name": "Quinshon Judkins",
+        "pos": "RB",
+        "team": "CLE",
+        "pts": 6.9,
+        "proj": 10.75,
+        "slot": 1,
+        "injury": null
+       },
+       {
+        "pid": "6786",
+        "name": "CeeDee Lamb",
+        "pos": "WR",
+        "team": "DAL",
+        "pts": 12.8,
+        "proj": 22.15,
+        "slot": 1,
+        "injury": null
+       },
+       {
+        "pid": "12526",
+        "name": "Tetairoa McMillan",
+        "pos": "WR",
+        "team": "CAR",
+        "pts": 11.8,
+        "proj": 14.8,
+        "slot": 0,
+        "injury": null
+       },
+       {
+        "pid": "1466",
+        "name": "Travis Kelce",
+        "pos": "TE",
+        "team": "KC",
+        "pts": 11.7,
+        "proj": 11.99,
+        "slot": 3,
+        "injury": null
+       },
+       {
+        "pid": "8126",
+        "name": "Wan'Dale Robinson",
+        "pos": "WR",
+        "team": "TEN",
+        "pts": 15.7,
+        "proj": 10.82,
+        "slot": 1,
+        "injury": null
+       },
+       {
+        "pid": "11620",
+        "name": "Rome Odunze",
+        "pos": "WR",
+        "team": "CHI",
+        "pts": 12.7,
+        "proj": 10.03,
+        "slot": 5,
+        "injury": null
+       },
+       {
+        "pid": "12507",
+        "name": "Omarion Hampton",
+        "pos": "RB",
+        "team": "LAC",
+        "pts": 4.7,
+        "proj": 10.27,
+        "slot": 2,
+        "injury": null
+       }
+      ],
+      "bench": [
+       {
+        "pid": "10219",
+        "name": "Chris Rodriguez Jr.",
+        "pos": "RB",
+        "team": "JAX",
+        "pts": 12.8,
+        "proj": 6.21,
+        "injury": "Questionable"
+       },
+       {
+        "pid": "5870",
+        "name": "Daniel Jones",
+        "pos": "QB",
+        "team": "IND",
+        "pts": 9.46,
+        "proj": 12.84,
+        "injury": null
+       },
+       {
+        "pid": "8210",
+        "name": "Chig Okonkwo",
+        "pos": "TE",
+        "team": "WAS",
+        "pts": 3.2,
+        "proj": 7.82,
+        "injury": null
+       },
+       {
+        "pid": "11439",
+        "name": "Jaleel McLaughlin",
+        "pos": "RB",
+        "team": "CLE",
+        "pts": 0.0,
+        "proj": 0.27,
+        "injury": null
+       },
+       {
+        "pid": "11628",
+        "name": "Marvin Harrison Jr.",
+        "pos": "WR",
+        "team": "HOU",
+        "pts": 0.0,
+        "proj": 0.0,
+        "injury": null
+       },
+       {
+        "pid": "8205",
+        "name": "Isiah Pacheco",
+        "pos": "RB",
+        "team": "DET",
+        "pts": 0.0,
+        "proj": 0.0,
+        "injury": "IR"
+       }
+      ],
+      "bench_points": 25.46,
+      "left_on_bench": 8.1,
+      "best_swap": {
+       "gain": 8.1,
+       "in": "Chris Rodriguez Jr.",
+       "in_pts": 12.8,
+       "out": "Omarion Hampton",
+       "out_pts": 4.7,
+       "slot": "WRRB_FLEX"
+      },
+      "zeros": [],
+      "injured_starters": [],
+      "record": "3-5",
+      "delta_net": -4.94
+     },
+     "margin": 1.48,
+     "tags": [
+      "NAILBITER",
+      "UPSET",
+      "BENCHED THE WIN"
+     ]
+    },
+    {
+     "matchup_id": 4,
+     "winner": {
+      "roster_id": 1,
+      "handle": "avobttam",
+      "name": "Matt Bova",
+      "team_name": "Tuten, Scootin & Bootin",
+      "matchup_id": 4,
+      "points": 139.1,
+      "proj": 156.7,
+      "delta": -17.6,
+      "starters": [
+       {
+        "pid": "3294",
+        "name": "Dak Prescott",
+        "pos": "QB",
+        "team": "DAL",
+        "pts": 21.8,
+        "proj": 27.48,
+        "slot": 1,
+        "injury": null
+       },
+       {
+        "pid": "8228",
+        "name": "Jaylen Warren",
+        "pos": "RB",
+        "team": "PIT",
+        "pts": 21.3,
+        "proj": 14.48,
+        "slot": 1,
+        "injury": null
+       },
+       {
+        "pid": "12490",
+        "name": "Bhayshul Tuten",
+        "pos": "RB",
+        "team": "JAX",
+        "pts": 29.9,
+        "proj": 15.28,
+        "slot": 1,
+        "injury": "Questionable"
+       },
+       {
+        "pid": "8137",
+        "name": "George Pickens",
+        "pos": "WR",
+        "team": "DAL",
+        "pts": 6.8,
+        "proj": 14.69,
+        "slot": 1,
+        "injury": null
+       },
+       {
+        "pid": "8167",
+        "name": "Christian Watson",
+        "pos": "WR",
+        "team": "GB",
+        "pts": 17.3,
+        "proj": 15.98,
+        "slot": 0,
+        "injury": "Questionable"
+       },
+       {
+        "pid": "12518",
+        "name": "Tyler Warren",
+        "pos": "TE",
+        "team": "IND",
+        "pts": 5.8,
+        "proj": 10.69,
+        "slot": 1,
+        "injury": null
+       },
+       {
+        "pid": "4037",
+        "name": "Chris Godwin Jr.",
+        "pos": "WR",
+        "team": "TB",
+        "pts": 0.0,
+        "proj": 11.5,
+        "slot": 1,
+        "injury": null
+       },
+       {
+        "pid": "9488",
+        "name": "Jaxon Smith-Njigba",
+        "pos": "WR",
+        "team": "SEA",
+        "pts": 23.8,
+        "proj": 25.26,
+        "slot": 5,
+        "injury": null
+       },
+       {
+        "pid": "8151",
+        "name": "Kenneth Walker III",
+        "pos": "RB",
+        "team": "KC",
+        "pts": 12.4,
+        "proj": 21.34,
+        "slot": 3,
+        "injury": null
+       }
+      ],
+      "bench": [
+       {
+        "pid": "11625",
+        "name": "Adonai Mitchell",
+        "pos": "WR",
+        "team": "NYJ",
+        "pts": 27.2,
+        "proj": 5.65,
+        "injury": null
+       },
+       {
+        "pid": "4943",
+        "name": "Sam Darnold",
+        "pos": "QB",
+        "team": "SEA",
+        "pts": 22.52,
+        "proj": 18.84,
+        "injury": null
+       },
+       {
+        "pid": "7567",
+        "name": "Kenny Gainwell",
+        "pos": "RB",
+        "team": "TB",
+        "pts": 14.0,
+        "proj": 7.21,
+        "injury": null
+       },
+       {
+        "pid": "7600",
+        "name": "Pat Freiermuth",
+        "pos": "TE",
+        "team": "PIT",
+        "pts": 11.6,
+        "proj": 9.25,
+        "injury": null
+       },
+       {
+        "pid": "7049",
+        "name": "Jauan Jennings",
+        "pos": "WR",
+        "team": "MIN",
+        "pts": 3.1,
+        "proj": 3.39,
+        "injury": null
+       },
+       {
+        "pid": "11618",
+        "name": "Jalen McMillan",
+        "pos": "WR",
+        "team": "TB",
+        "pts": 0.0,
+        "proj": 0.0,
+        "injury": "IR"
+       },
+       {
+        "pid": "12508",
+        "name": "Jaxson Dart",
+        "pos": "QB",
+        "team": "NYG",
+        "pts": 0.0,
+        "proj": 0.0,
+        "injury": "IR"
+       }
+      ],
+      "bench_points": 78.42,
+      "left_on_bench": 40.92,
+      "best_swap": {
+       "gain": 27.2,
+       "in": "Adonai Mitchell",
+       "in_pts": 27.2,
+       "out": "Chris Godwin Jr.",
+       "out_pts": 0.0,
+       "slot": "FLEX"
+      },
+      "zeros": [
+       "Chris Godwin Jr."
+      ],
+      "injured_starters": [],
+      "record": "7-1",
+      "delta_net": -15.75
+     },
+     "loser": {
+      "roster_id": 5,
+      "handle": "MerkDaddy36",
+      "name": "Nick Merkel",
+      "team_name": "Moore Woody til it Hurts",
+      "matchup_id": 4,
+      "points": 134.1,
+      "proj": 127.34,
+      "delta": 6.76,
+      "starters": [
+       {
+        "pid": "1373",
+        "name": "Geno Smith",
+        "pos": "QB",
+        "team": "NYJ",
+        "pts": 23.0,
+        "proj": 20.67,
+        "slot": 1,
+        "injury": null
+       },
+       {
+        "pid": "8138",
+        "name": "James Cook III",
+        "pos": "RB",
+        "team": "BUF",
+        "pts": 18.1,
+        "proj": 17.71,
+        "slot": 1,
+        "injury": "Questionable"
+       },
+       {
+        "pid": "7588",
+        "name": "Javonte Williams",
+        "pos": "RB",
+        "team": "DAL",
+        "pts": 6.7,
+        "proj": 19.8,
+        "slot": 1,
+        "injury": null
+       },
+       {
+        "pid": "10232",
+        "name": "Michael Wilson",
+        "pos": "WR",
+        "team": "ARI",
+        "pts": 26.8,
+        "proj": 15.41,
+        "slot": 1,
+        "injury": "Questionable"
+       },
+       {
+        "pid": "4983",
+        "name": "DJ Moore",
+        "pos": "WR",
+        "team": "BUF",
+        "pts": 16.6,
+        "proj": 14.0,
+        "slot": 1,
+        "injury": "Questionable"
+       },
+       {
+        "pid": "5022",
+        "name": "Dallas Goedert",
+        "pos": "TE",
+        "team": "PHI",
+        "pts": 7.2,
+        "proj": 10.27,
+        "slot": 4,
+        "injury": null
+       },
+       {
+        "pid": "4866",
+        "name": "Saquon Barkley",
+        "pos": "RB",
+        "team": "PHI",
+        "pts": 12.4,
+        "proj": 13.16,
+        "slot": 4,
+        "injury": null
+       },
+       {
+        "pid": "11576",
+        "name": "Braelon Allen",
+        "pos": "RB",
+        "team": "NYJ",
+        "pts": 23.3,
+        "proj": 16.32,
+        "slot": 1,
+        "injury": null
+       }
+      ],
+      "bench": [
+       {
+        "pid": "11563",
+        "name": "Bo Nix",
+        "pos": "QB",
+        "team": "DEN",
+        "pts": 23.28,
+        "proj": 16.74,
+        "injury": null
+       },
+       {
+        "pid": "12474",
+        "name": "Woody Marks",
+        "pos": "RB",
+        "team": "HOU",
+        "pts": 0.0,
+        "proj": 0.0,
+        "injury": "Questionable"
+       },
+       {
+        "pid": "2216",
+        "name": "Mike Evans",
+        "pos": "WR",
+        "team": "SF",
+        "pts": 0.0,
+        "proj": 0.0,
+        "injury": "Out"
+       },
+       {
+        "pid": "4217",
+        "name": "George Kittle",
+        "pos": "TE",
+        "team": "SF",
+        "pts": 0.0,
+        "proj": 0.0,
+        "injury": null
+       },
+       {
+        "pid": "5859",
+        "name": "A.J. Brown",
+        "pos": "WR",
+        "team": "NE",
+        "pts": 0.0,
+        "proj": 0.0,
+        "injury": "Out"
+       },
+       {
+        "pid": "6904",
+        "name": "Jalen Hurts",
+        "pos": "QB",
+        "team": "PHI",
+        "pts": 0.0,
+        "proj": 0.0,
+        "injury": "IR"
+       },
+       {
+        "pid": "8144",
+        "name": "Chris Olave",
+        "pos": "WR",
+        "team": "NO",
+        "pts": 0.0,
+        "proj": 0.0,
+        "injury": null
+       }
+      ],
+      "bench_points": 23.28,
+      "left_on_bench": 0.28,
+      "best_swap": {
+       "gain": 0.28,
+       "in": "Bo Nix",
+       "in_pts": 23.28,
+       "out": "Geno Smith",
+       "out_pts": 23.0,
+       "slot": "QB"
+      },
+      "zeros": [],
+      "injured_starters": [],
+      "record": "3-5",
+      "delta_net": 8.61
+     },
+     "margin": 5.0,
+     "tags": []
+    },
+    {
+     "matchup_id": 5,
+     "winner": {
+      "roster_id": 4,
+      "handle": "JellyRoll6884",
+      "name": "Jack Hawkins",
+      "team_name": "DABUCKS",
+      "matchup_id": 5,
+      "points": 170.58,
+      "proj": 139.31,
+      "delta": 31.27,
+      "starters": [
+       {
+        "pid": "6770",
+        "name": "Joe Burrow",
+        "pos": "QB",
+        "team": "CIN",
+        "pts": 52.48,
+        "proj": 26.17,
+        "slot": 1,
+        "injury": null
+       },
+       {
+        "pid": "8150",
+        "name": "Kyren Williams",
+        "pos": "RB",
+        "team": "LAR",
+        "pts": 12.9,
+        "proj": 20.05,
+        "slot": 2,
+        "injury": null
+       },
+       {
+        "pid": "12495",
+        "name": "Ollie Gordon II",
+        "pos": "RB",
+        "team": "MIA",
+        "pts": 6.9,
+        "proj": 12.96,
+        "slot": 3,
+        "injury": null
+       },
+       {
+        "pid": "7564",
+        "name": "Ja'Marr Chase",
+        "pos": "WR",
+        "team": "CIN",
+        "pts": 31.1,
+        "proj": 19.77,
+        "slot": 1,
+        "injury": null
+       },
+       {
+        "pid": "11646",
+        "name": "Jalen Coker",
+        "pos": "WR",
+        "team": "CAR",
+        "pts": 9.6,
+        "proj": 15.93,
+        "slot": 0,
+        "injury": null
+       },
+       {
+        "pid": "9480",
+        "name": "Brenton Strange",
+        "pos": "TE",
+        "team": "JAX",
+        "pts": 7.5,
+        "proj": 10.02,
+        "slot": 1,
+        "injury": null
+       },
+       {
+        "pid": "13294",
+        "name": "Makai Lemon",
+        "pos": "WR",
+        "team": "PHI",
+        "pts": 11.7,
+        "proj": 9.64,
+        "slot": 4,
+        "injury": null
+       },
+       {
+        "pid": "5967",
+        "name": "Tony Pollard",
+        "pos": "RB",
+        "team": "TEN",
+        "pts": 28.7,
+        "proj": 14.27,
+        "slot": 1,
+        "injury": null
+       },
+       {
+        "pid": "13346",
+        "name": "Denzel Boston",
+        "pos": "WR",
+        "team": "CLE",
+        "pts": 9.7,
+        "proj": 10.5,
+        "slot": 1,
+        "injury": null
+       }
+      ],
+      "bench": [
+       {
+        "pid": "4046",
+        "name": "Patrick Mahomes",
+        "pos": "QB",
+        "team": "KC",
+        "pts": 31.44,
+        "proj": 20.76,
+        "injury": null
+       },
+       {
+        "pid": "7021",
+        "name": "Rico Dowdle",
+        "pos": "RB",
+        "team": "PIT",
+        "pts": 11.6,
+        "proj": 8.67,
+        "injury": null
+       },
+       {
+        "pid": "13301",
+        "name": "Antonio Williams",
+        "pos": "WR",
+        "team": "WAS",
+        "pts": 10.4,
+        "proj": 8.34,
+        "injury": null
+       },
+       {
+        "pid": "12514",
+        "name": "Emeka Egbuka",
+        "pos": "WR",
+        "team": "TB",
+        "pts": 0.0,
+        "proj": 0.0,
+        "injury": "Out"
+       },
+       {
+        "pid": "6819",
+        "name": "Michael Pittman Jr.",
+        "pos": "WR",
+        "team": "PIT",
+        "pts": 0.0,
+        "proj": 0.0,
+        "injury": "IR"
+       },
+       {
+        "pid": "8131",
+        "name": "Isaiah Likely",
+        "pos": "TE",
+        "team": "NYG",
+        "pts": 0.0,
+        "proj": 0.0,
+        "injury": null
+       }
+      ],
+      "bench_points": 53.44,
+      "left_on_bench": 5.5,
+      "best_swap": {
+       "gain": 4.7,
+       "in": "Rico Dowdle",
+       "in_pts": 11.6,
+       "out": "Ollie Gordon II",
+       "out_pts": 6.9,
+       "slot": "RB"
+      },
+      "zeros": [],
+      "injured_starters": [],
+      "record": "4-4",
+      "delta_net": 33.12
+     },
+     "loser": {
+      "roster_id": 3,
+      "handle": "Bogeyman28",
+      "name": "Austin Hendrickson",
+      "team_name": "Bogeyman ",
+      "matchup_id": 5,
+      "points": 162.14,
+      "proj": 138.59,
+      "delta": 23.55,
+      "starters": [
+       {
+        "pid": "3163",
+        "name": "Jared Goff",
+        "pos": "QB",
+        "team": "DET",
+        "pts": 12.04,
+        "proj": 18.73,
+        "slot": 1,
+        "injury": null
+       },
+       {
+        "pid": "6813",
+        "name": "Jonathan Taylor",
+        "pos": "RB",
+        "team": "IND",
+        "pts": 6.7,
+        "proj": 16.45,
+        "slot": 1,
+        "injury": null
+       },
+       {
+        "pid": "7611",
+        "name": "Rhamondre Stevenson",
+        "pos": "RB",
+        "team": "NE",
+        "pts": 12.0,
+        "proj": 15.43,
+        "slot": 3,
+        "injury": null
+       },
+       {
+        "pid": "10229",
+        "name": "Rashee Rice",
+        "pos": "WR",
+        "team": "KC",
+        "pts": 18.3,
+        "proj": 13.21,
+        "slot": 3,
+        "injury": null
+       },
+       {
+        "pid": "12519",
+        "name": "Luther Burden III",
+        "pos": "WR",
+        "team": "CHI",
+        "pts": 18.6,
+        "proj": 12.42,
+        "slot": 5,
+        "injury": null
+       },
+       {
+        "pid": "11604",
+        "name": "Brock Bowers",
+        "pos": "TE",
+        "team": "LV",
+        "pts": 28.2,
+        "proj": 17.19,
+        "slot": 1,
+        "injury": null
+       },
+       {
+        "pid": "13345",
+        "name": "Jonah Coleman",
+        "pos": "RB",
+        "team": "DEN",
+        "pts": 20.4,
+        "proj": 11.8,
+        "slot": 3,
+        "injury": null
+       },
+       {
+        "pid": "11584",
+        "name": "Bucky Irving",
+        "pos": "RB",
+        "team": "TB",
+        "pts": 21.0,
+        "proj": 16.7,
+        "slot": 1,
+        "injury": null
+       },
+       {
+        "pid": "7594",
+        "name": "Chuba Hubbard",
+        "pos": "RB",
+        "team": "CAR",
+        "pts": 24.9,
+        "proj": 16.66,
+        "slot": 0,
+        "injury": null
+       }
+      ],
+      "bench": [
+       {
+        "pid": "4199",
+        "name": "Aaron Jones Sr.",
+        "pos": "RB",
+        "team": "MIN",
+        "pts": 6.0,
+        "proj": 9.88,
+        "injury": null
+       },
+       {
+        "pid": "7571",
+        "name": "Rashod Bateman",
+        "pos": "WR",
+        "team": "BAL",
+        "pts": 3.2,
+        "proj": 5.59,
+        "injury": null
+       },
+       {
+        "pid": "13317",
+        "name": "Ted Hurst III",
+        "pos": "WR",
+        "team": "TB",
+        "pts": 0.0,
+        "proj": 7.53,
+        "injury": null
+       },
+       {
+        "pid": "7002",
+        "name": "Juwan Johnson",
+        "pos": "TE",
+        "team": "NO",
+        "pts": 0.0,
+        "proj": 0.0,
+        "injury": null
+       },
+       {
+        "pid": "8183",
+        "name": "Brock Purdy",
+        "pos": "QB",
+        "team": "SF",
+        "pts": 0.0,
+        "proj": 0.0,
+        "injury": null
+       }
+      ],
+      "bench_points": 9.2,
+      "left_on_bench": 0.0,
+      "best_swap": null,
+      "zeros": [],
+      "injured_starters": [],
+      "record": "3-5",
+      "delta_net": 25.4
+     },
+     "margin": 8.44,
+     "tags": []
+    },
+    {
+     "matchup_id": 6,
+     "winner": {
+      "roster_id": 12,
+      "handle": "jonicarter89",
+      "name": "Jon Carter",
+      "team_name": "The Fighting Jonicart89s",
+      "matchup_id": 6,
+      "points": 114.76,
+      "proj": 100.35,
+      "delta": 14.41,
+      "starters": [
+       {
+        "pid": "4984",
+        "name": "Josh Allen",
+        "pos": "QB",
+        "team": "BUF",
+        "pts": 31.56,
+        "proj": 27.1,
+        "slot": 1,
+        "injury": null
+       },
+       {
+        "pid": "6806",
+        "name": "J.K. Dobbins",
+        "pos": "RB",
+        "team": "DEN",
+        "pts": 1.3,
+        "proj": 8.73,
+        "slot": 3,
+        "injury": null
+       },
+       {
+        "pid": "12469",
+        "name": "Dylan Sampson",
+        "pos": "RB",
+        "team": "CLE",
+        "pts": 12.9,
+        "proj": 6.52,
+        "slot": 1,
+        "injury": null
+       },
+       {
+        "pid": "8148",
+        "name": "Jameson Williams",
+        "pos": "WR",
+        "team": "DET",
+        "pts": 17.0,
+        "proj": 9.76,
+        "slot": 1,
+        "injury": null
+       },
+       {
+        "pid": "11637",
+        "name": "Keon Coleman",
+        "pos": "WR",
+        "team": "BUF",
+        "pts": 1.4,
+        "proj": 8.27,
+        "slot": 1,
+        "injury": null
+       },
+       {
+        "pid": "12517",
+        "name": "Colston Loveland",
+        "pos": "TE",
+        "team": "CHI",
+        "pts": 11.5,
+        "proj": 9.73,
+        "slot": 5,
+        "injury": null
+       },
+       {
+        "pid": "5844",
+        "name": "T.J. Hockenson",
+        "pos": "TE",
+        "team": "MIN",
+        "pts": 15.8,
+        "proj": 10.91,
+        "slot": 1,
+        "injury": null
+       },
+       {
+        "pid": "13298",
+        "name": "KC Concepcion Jr.",
+        "pos": "WR",
+        "team": "CLE",
+        "pts": 6.7,
+        "proj": 10.21,
+        "slot": 1,
+        "injury": null
+       },
+       {
+        "pid": "9501",
+        "name": "DeMario Douglas",
+        "pos": "WR",
+        "team": "NE",
+        "pts": 16.6,
+        "proj": 9.12,
+        "slot": 3,
+        "injury": null
+       }
+      ],
+      "bench": [
+       {
+        "pid": "13424",
+        "name": "Seth McGowan",
+        "pos": "RB",
+        "team": "IND",
+        "pts": 2.9,
+        "proj": 4.93,
+        "injury": null
+       },
+       {
+        "pid": "12529",
+        "name": "TreVeyon Henderson",
+        "pos": "RB",
+        "team": "NE",
+        "pts": 0.0,
+        "proj": 0.0,
+        "injury": "Out"
+       },
+       {
+        "pid": "13414",
+        "name": "Kaelon Black",
+        "pos": "RB",
+        "team": "SF",
+        "pts": 0.0,
+        "proj": 0.0,
+        "injury": null
+       },
+       {
+        "pid": "4034",
+        "name": "Christian McCaffrey",
+        "pos": "RB",
+        "team": "SF",
+        "pts": 0.0,
+        "proj": 0.0,
+        "injury": "Questionable"
+       },
+       {
+        "pid": "7569",
+        "name": "Nico Collins",
+        "pos": "WR",
+        "team": "HOU",
+        "pts": 0.0,
+        "proj": 0.0,
+        "injury": null
+       },
+       {
+        "pid": "8121",
+        "name": "Romeo Doubs",
+        "pos": "WR",
+        "team": "NE",
+        "pts": 0.0,
+        "proj": 0.0,
+        "injury": "IR"
+       }
+      ],
+      "bench_points": 2.9,
+      "left_on_bench": 1.6,
+      "best_swap": {
+       "gain": 1.6,
+       "in": "Seth McGowan",
+       "in_pts": 2.9,
+       "out": "J.K. Dobbins",
+       "out_pts": 1.3,
+       "slot": "RB"
+      },
+      "zeros": [],
+      "injured_starters": [],
+      "record": "4-4",
+      "delta_net": 16.26
+     },
+     "loser": {
+      "roster_id": 7,
+      "handle": "djbogardus72",
+      "name": "Jake Bogardus",
+      "team_name": "BoKnows",
+      "matchup_id": 6,
+      "points": 79.12,
+      "proj": 96.21,
+      "delta": -17.09,
+      "starters": [
+       {
+        "pid": "6804",
+        "name": "Jordan Love",
+        "pos": "QB",
+        "team": "GB",
+        "pts": 28.52,
+        "proj": 20.2,
+        "slot": 0,
+        "injury": null
+       },
+       {
+        "pid": "9509",
+        "name": "Bijan Robinson",
+        "pos": "RB",
+        "team": "ATL",
+        "pts": 7.6,
+        "proj": 21.91,
+        "slot": 1,
+        "injury": null
+       },
+       {
+        "pid": "13287",
+        "name": "Jeremiyah Love",
+        "pos": "RB",
+        "team": "ARI",
+        "pts": 2.3,
+        "proj": 0.0,
+        "slot": 1,
+        "injury": "Out"
+       },
+       {
+        "pid": "11635",
+        "name": "Ladd McConkey",
+        "pos": "WR",
+        "team": "LAC",
+        "pts": 12.6,
+        "proj": 11.2,
+        "slot": 2,
+        "injury": null
+       },
+       {
+        "pid": "8146",
+        "name": "Garrett Wilson",
+        "pos": "WR",
+        "team": "NYJ",
+        "pts": 14.3,
+        "proj": 16.89,
+        "slot": 1,
+        "injury": null
+       },
+       {
+        "pid": "7553",
+        "name": "Kyle Pitts Sr.",
+        "pos": "TE",
+        "team": "ATL",
+        "pts": 2.6,
+        "proj": 8.12,
+        "slot": 1,
+        "injury": null
+       },
+       {
+        "pid": "5012",
+        "name": "Mark Andrews",
+        "pos": "TE",
+        "team": "BAL",
+        "pts": 4.4,
+        "proj": 8.78,
+        "slot": 1,
+        "injury": null
+       },
+       {
+        "pid": "4147",
+        "name": "Samaje Perine",
+        "pos": "RB",
+        "team": "CIN",
+        "pts": 2.9,
+        "proj": 9.11,
+        "slot": 1,
+        "injury": null
+       },
+       {
+        "pid": "4454",
+        "name": "Kendrick Bourne",
+        "pos": "WR",
+        "team": "ARI",
+        "pts": 3.9,
+        "proj": 0.0,
+        "slot": 1,
+        "injury": "Out"
+       }
+      ],
+      "bench": [
+       {
+        "pid": "5045",
+        "name": "Courtland Sutton",
+        "pos": "WR",
+        "team": "DEN",
+        "pts": 9.3,
+        "proj": 7.9,
+        "injury": null
+       },
+       {
+        "pid": "13296",
+        "name": "Caleb Douglas",
+        "pos": "WR",
+        "team": "MIA",
+        "pts": 8.3,
+        "proj": 6.77,
+        "injury": null
+       },
+       {
+        "pid": "11631",
+        "name": "Brian Thomas Jr.",
+        "pos": "WR",
+        "team": "JAX",
+        "pts": 8.2,
+        "proj": 4.09,
+        "injury": null
+       },
+       {
+        "pid": "11583",
+        "name": "Jonathon Brooks",
+        "pos": "RB",
+        "team": "CAR",
+        "pts": 0.0,
+        "proj": 0.0,
+        "injury": "IR"
+       },
+       {
+        "pid": "11632",
+        "name": "Malik Nabers",
+        "pos": "WR",
+        "team": "NYG",
+        "pts": 0.0,
+        "proj": 0.0,
+        "injury": null
+       },
+       {
+        "pid": "12534",
+        "name": "Kyle Monangai",
+        "pos": "RB",
+        "team": "CHI",
+        "pts": 0.0,
+        "proj": 0.0,
+        "injury": "Out"
+       },
+       {
+        "pid": "13417",
+        "name": "De'Zhaun Stribling",
+        "pos": "WR",
+        "team": "SF",
+        "pts": 0.0,
+        "proj": 0.0,
+        "injury": "IR"
+       }
+      ],
+      "bench_points": 25.8,
+      "left_on_bench": 17.0,
+      "best_swap": {
+       "gain": 6.4,
+       "in": "Courtland Sutton",
+       "in_pts": 9.3,
+       "out": "Samaje Perine",
+       "out_pts": 2.9,
+       "slot": "WRRB_FLEX"
+      },
+      "zeros": [],
+      "injured_starters": [
+       "Jeremiyah Love (Out)",
+       "Kendrick Bourne (Out)"
+      ],
+      "record": "3-5",
+      "delta_net": -15.24
+     },
+     "margin": 35.64,
+     "tags": []
+    }
+   ],
+   "high": "JellyRoll6884",
+   "low": "djbogardus72",
+   "bench_kings": [
+    {
+     "handle": "avobttam",
+     "name": "Matt Bova",
+     "left": 40.92,
+     "swap": {
+      "gain": 27.2,
+      "in": "Adonai Mitchell",
+      "in_pts": 27.2,
+      "out": "Chris Godwin Jr.",
+      "out_pts": 0.0,
+      "slot": "FLEX"
+     }
+    },
+    {
+     "handle": "BigOleTDs21",
+     "name": "Andrew Evans",
+     "left": 28.4,
+     "swap": {
+      "gain": 14.9,
+      "in": "Jaylen Waddle",
+      "in_pts": 14.9,
+      "out": "Tre Tucker",
+      "out_pts": 0.0,
+      "slot": "WR"
+     }
+    },
+    {
+     "handle": "djbogardus72",
+     "name": "Jake Bogardus",
+     "left": 17.0,
+     "swap": {
+      "gain": 6.4,
+      "in": "Courtland Sutton",
+      "in_pts": 9.3,
+      "out": "Samaje Perine",
+      "out_pts": 2.9,
+      "slot": "WRRB_FLEX"
+     }
+    },
+    {
+     "handle": "Mpletcher",
+     "name": "Mitch Pletcher",
+     "left": 13.5,
+     "swap": {
+      "gain": 8.8,
+      "in": "Ryan Flournoy",
+      "in_pts": 13.1,
+      "out": "Xavier Worthy",
+      "out_pts": 4.3,
+      "slot": "WRRB_FLEX"
+     }
+    },
+    {
+     "handle": "katiestout13",
+     "name": "Katie Bogardus",
+     "left": 8.1,
+     "swap": {
+      "gain": 8.1,
+      "in": "Chris Rodriguez Jr.",
+      "in_pts": 12.8,
+      "out": "Omarion Hampton",
+      "out_pts": 4.7,
+      "slot": "WRRB_FLEX"
+     }
+    }
+   ],
+   "over": [
+    {
+     "handle": "CHRISMERKELDUH",
+     "name": "Tyler Allgeier",
+     "pos": "RB",
+     "pts": 36.1,
+     "proj": 8.34
+    },
+    {
+     "handle": "JellyRoll6884",
+     "name": "Joe Burrow",
+     "pos": "QB",
+     "pts": 52.48,
+     "proj": 26.17
+    },
+    {
+     "handle": "cbova1222",
+     "name": "Tee Higgins",
+     "pos": "WR",
+     "pts": 37.5,
+     "proj": 15.96
+    },
+    {
+     "handle": "avobttam",
+     "name": "Bhayshul Tuten",
+     "pos": "RB",
+     "pts": 29.9,
+     "proj": 15.28
+    },
+    {
+     "handle": "JellyRoll6884",
+     "name": "Tony Pollard",
+     "pos": "RB",
+     "pts": 28.7,
+     "proj": 14.27
+    },
+    {
+     "handle": "cbova1222",
+     "name": "Kirk Cousins",
+     "pos": "QB",
+     "pts": 34.18,
+     "proj": 20.33
+    },
+    {
+     "handle": "BigOleTDs21",
+     "name": "D'Andre Swift",
+     "pos": "RB",
+     "pts": 27.9,
+     "proj": 14.69
+    },
+    {
+     "handle": "MJBlack",
+     "name": "Harold Fannin Jr.",
+     "pos": "TE",
+     "pts": 23.4,
+     "proj": 10.63
+    }
+   ],
+   "under": [
+    {
+     "handle": "CHRISMERKELDUH",
+     "name": "Lamar Jackson",
+     "pos": "QB",
+     "pts": 0.0,
+     "proj": 23.47
+    },
+    {
+     "handle": "MJBlack",
+     "name": "Zay Flowers",
+     "pos": "WR",
+     "pts": 0.0,
+     "proj": 18.48
+    },
+    {
+     "handle": "CHRISMERKELDUH",
+     "name": "Drake London",
+     "pos": "WR",
+     "pts": 1.8,
+     "proj": 16.46
+    },
+    {
+     "handle": "djbogardus72",
+     "name": "Bijan Robinson",
+     "pos": "RB",
+     "pts": 7.6,
+     "proj": 21.91
+    },
+    {
+     "handle": "MerkDaddy36",
+     "name": "Javonte Williams",
+     "pos": "RB",
+     "pts": 6.7,
+     "proj": 19.8
+    },
+    {
+     "handle": "avobttam",
+     "name": "Chris Godwin Jr.",
+     "pos": "WR",
+     "pts": 0.0,
+     "proj": 11.5
+    },
+    {
+     "handle": "BigOleTDs21",
+     "name": "Parker Washington",
+     "pos": "WR",
+     "pts": 3.6,
+     "proj": 14.93
+    },
+    {
+     "handle": "BigOleTDs21",
+     "name": "Tre Tucker",
+     "pos": "WR",
+     "pts": 0.0,
+     "proj": 11.14
+    }
+   ],
+   "standings": [
+    {
+     "handle": "avobttam",
+     "name": "Matt Bova",
+     "record": "7-1",
+     "pf": 1225.8
+    },
+    {
+     "handle": "MJBlack",
+     "name": "Mitch Blackwell",
+     "record": "7-1",
+     "pf": 1045.64
+    },
+    {
+     "handle": "BigOleTDs21",
+     "name": "Andrew Evans",
+     "record": "5-3",
+     "pf": 1108.34
+    },
+    {
+     "handle": "JellyRoll6884",
+     "name": "Jack Hawkins",
+     "record": "4-4",
+     "pf": 1089.72
+    },
+    {
+     "handle": "jonicarter89",
+     "name": "Jon Carter",
+     "record": "4-4",
+     "pf": 919.8
+    },
+    {
+     "handle": "cbova1222",
+     "name": "Chris Bova",
+     "record": "4-4",
+     "pf": 917.52
+    },
+    {
+     "handle": "CHRISMERKELDUH",
+     "name": "Chris Merkel",
+     "record": "4-4",
+     "pf": 909.3
+    },
+    {
+     "handle": "Bogeyman28",
+     "name": "Austin Hendrickson",
+     "record": "3-5",
+     "pf": 1091.16
+    },
+    {
+     "handle": "MerkDaddy36",
+     "name": "Nick Merkel",
+     "record": "3-5",
+     "pf": 1079.78
+    },
+    {
+     "handle": "katiestout13",
+     "name": "Katie Bogardus",
+     "record": "3-5",
+     "pf": 924.92
+    },
+    {
+     "handle": "djbogardus72",
+     "name": "Jake Bogardus",
+     "record": "3-5",
+     "pf": 844.58
+    },
+    {
+     "handle": "Mpletcher",
+     "name": "Mitch Pletcher",
+     "record": "1-7",
+     "pf": 822.36
+    }
+   ],
+   "transactions": {
+    "waivers": [
+     {
+      "player_id": "8129",
+      "player": "Dameon Pierce",
+      "pos": "RB",
+      "handle": "djbogardus72",
+      "bid": 5,
+      "bidders": 1,
+      "runner_up": null,
+      "losers": []
+     }
+    ],
+    "lost_bids": [],
+    "faab_spent": 5,
+    "free_agents": [
+     {
+      "handle": "Mpletcher",
+      "player": "Austin Ekeler",
+      "drops": [
+       "Tyjae Spears"
+      ]
+     },
+     {
+      "handle": "djbogardus72",
+      "player": "Samaje Perine",
+      "drops": [
+       "Jaydon Blue"
+      ]
+     },
+     {
+      "handle": "djbogardus72",
+      "player": "Jaydon Blue",
+      "drops": [
+       "Dameon Pierce"
+      ]
+     },
+     {
+      "handle": "Mpletcher",
+      "player": "Tyjae Spears",
+      "drops": [
+       "Roschon Johnson"
+      ]
+     },
+     {
+      "handle": "jonicarter89",
+      "player": "Seth McGowan",
+      "drops": [
+       "Jaylin Noel"
+      ]
+     },
+     {
+      "handle": "MerkDaddy36",
+      "player": "Geno Smith",
+      "drops": [
+       "Baker Mayfield"
+      ]
+     }
+    ],
+    "trades": []
+   }
+  },
+  "infinity_war": {
+   "league_id": "1400511807180828672",
+   "league_name": "Inifnity War",
+   "provisional": false,
+   "kind": "pickem",
+   "entries_total": 18,
+   "weekly_pick_limit": 8,
+   "revives_allowed": 0,
+   "payouts": {
+    "weekly": 20,
+    "first": 380,
+    "second": 160
+   },
+   "field": [
+    {
+     "game_id": "202610812",
+     "game": "CAR @ GB",
+     "winner": "GB",
+     "upset": false,
+     "fav": "GB",
+     "fav_prob": 0.633,
+     "picks": {
+      "CAR": 1,
+      "GB": 5
+     }
+    },
+    {
+     "game_id": "202610807",
+     "game": "TEN @ CIN",
+     "winner": "CIN",
+     "upset": false,
+     "fav": "CIN",
+     "fav_prob": 0.845,
+     "picks": {
+      "CIN": 18
+     }
+    },
+    {
+     "game_id": "202610809",
+     "game": "ARI @ DAL",
+     "winner": "ARI",
+     "upset": true,
+     "fav": "DAL",
+     "fav_prob": 0.731,
+     "picks": {
+      "DAL": 17
+     }
+    },
+    {
+     "game_id": "202610811",
+     "game": "MIN @ DET",
+     "winner": "DET",
+     "upset": false,
+     "fav": "DET",
+     "fav_prob": 0.615,
+     "picks": {
+      "DET": 5
+     }
+    },
+    {
+     "game_id": "202610815",
+     "game": "IND @ JAX",
+     "winner": "JAX",
+     "upset": false,
+     "fav": "JAX",
+     "fav_prob": 0.798,
+     "picks": {
+      "JAX": 18
+     }
+    },
+    {
+     "game_id": "202610828",
+     "game": "CLE @ PIT",
+     "winner": "PIT",
+     "upset": false,
+     "fav": "PIT",
+     "fav_prob": 0.633,
+     "picks": {
+      "PIT": 7,
+      "CLE": 1
+     }
+    },
+    {
+     "game_id": "202610804",
+     "game": "BAL @ BUF",
+     "winner": "BUF",
+     "upset": false,
+     "fav": "BUF",
+     "fav_prob": 0.609,
+     "picks": {
+      "BUF": 10
+     }
+    },
+    {
+     "game_id": "202610824",
+     "game": "LV @ NYJ",
+     "winner": "LV",
+     "upset": true,
+     "fav": "NYJ",
+     "fav_prob": 0.525,
+     "picks": {
+      "LV": 6
+     }
+    },
+    {
+     "game_id": "202610833",
+     "game": "ATL @ TB",
+     "winner": "TB",
+     "upset": false,
+     "fav": "TB",
+     "fav_prob": 0.555,
+     "picks": {
+      "TB": 1
+     }
+    },
+    {
+     "game_id": "202610832",
+     "game": "LAC @ LAR",
+     "winner": "LAR",
+     "upset": false,
+     "fav": "LAR",
+     "fav_prob": 0.713,
+     "picks": {
+      "LAR": 16
+     }
+    },
+    {
+     "game_id": "202610819",
+     "game": "NE @ MIA",
+     "winner": "NE",
+     "upset": false,
+     "fav": "NE",
+     "fav_prob": 0.738,
+     "picks": {
+      "NE": 17
+     }
+    },
+    {
+     "game_id": "202610810",
+     "game": "KC @ DEN",
+     "winner": "DEN",
+     "upset": true,
+     "fav": "KC",
+     "fav_prob": 0.521,
+     "picks": {
+      "KC": 3,
+      "DEN": 1
+     }
+    },
+    {
+     "game_id": "202610835",
+     "game": "PHI @ WAS",
+     "winner": "WAS",
+     "upset": false,
+     "fav": "WAS",
+     "fav_prob": 0.696,
+     "picks": {
+      "PHI": 1,
+      "WAS": 10
+     }
+    },
+    {
+     "game_id": "202610830",
+     "game": "CHI @ SEA",
+     "winner": "CHI",
+     "upset": true,
+     "fav": "SEA",
+     "fav_prob": 0.608,
+     "picks": {
+      "SEA": 5,
+      "CHI": 1
+     }
+    }
+   ],
+   "entries": [
+    {
+     "roster_id": 15,
+     "handle": "AngryWillis",
+     "name": "AngryWillis",
+     "picks": [
+      {
+       "game_id": "202610812",
+       "team": "GB",
+       "opp": "CAR",
+       "game": "CAR @ GB",
+       "outcome": "win",
+       "prob": 0.633,
+       "hidden": false,
+       "score": "CAR 19-27 GB",
+       "slot_label": "Thu 8:15 PM"
+      },
+      {
+       "game_id": "202610807",
+       "team": "CIN",
+       "opp": "TEN",
+       "game": "TEN @ CIN",
+       "outcome": "win",
+       "prob": 0.845,
+       "hidden": false,
+       "score": "TEN 36-43 CIN",
+       "slot_label": "Sun 1:00 PM"
+      },
+      {
+       "game_id": "202610809",
+       "team": "DAL",
+       "opp": "ARI",
+       "game": "ARI @ DAL",
+       "outcome": "loss",
+       "prob": 0.731,
+       "hidden": false,
+       "score": "ARI 33-30 DAL",
+       "slot_label": "Sun 1:00 PM"
+      },
+      {
+       "game_id": "202610811",
+       "team": "DET",
+       "opp": "MIN",
+       "game": "MIN @ DET",
+       "outcome": "win",
+       "prob": 0.615,
+       "hidden": false,
+       "score": "MIN 15-19 DET",
+       "slot_label": "Sun 1:00 PM"
+      },
+      {
+       "game_id": "202610815",
+       "team": "JAX",
+       "opp": "IND",
+       "game": "IND @ JAX",
+       "outcome": "win",
+       "prob": 0.798,
+       "hidden": false,
+       "score": "IND 7-42 JAX",
+       "slot_label": "Sun 1:00 PM"
+      },
+      {
+       "game_id": "202610828",
+       "team": "PIT",
+       "opp": "CLE",
+       "game": "CLE @ PIT",
+       "outcome": "win",
+       "prob": 0.633,
+       "hidden": false,
+       "score": "CLE 6-27 PIT",
+       "slot_label": "Sun 1:00 PM"
+      },
+      {
+       "game_id": "202610832",
+       "team": "LAR",
+       "opp": "LAC",
+       "game": "LAC @ LAR",
+       "outcome": "win",
+       "prob": 0.713,
+       "hidden": false,
+       "score": "LAC 9-24 LAR",
+       "slot_label": "Sun 4:05 PM"
+      },
+      {
+       "game_id": "202610819",
+       "team": "NE",
+       "opp": "MIA",
+       "game": "NE @ MIA",
+       "outcome": "win",
+       "prob": 0.738,
+       "hidden": false,
+       "score": "NE 24-19 MIA",
+       "slot_label": "Sun 4:25 PM"
+      }
+     ],
+     "no_pick": false,
+     "correct": 7,
+     "wrong": 1,
+     "pending": 0,
+     "week_points": 7.0,
+     "season_points": 44.0,
+     "lost_this_week": false,
+     "strikes_before": 0,
+     "strikes_after": 0,
+     "eliminated_now": false,
+     "tiebreaker": {
+      "type": "total_points",
+      "game_id": "202610830",
+      "game": "CHI @ SEA",
+      "guess": 49,
+      "hidden": false
+     },
+     "hidden": 0,
+     "lonely_wins": [],
+     "upset_wins": [],
+     "chalk_losses": [
+      "DAL"
+     ]
+    },
+    {
+     "roster_id": 7,
+     "handle": "Bogeyman28",
+     "name": "Bogeyman28",
+     "picks": [
+      {
+       "game_id": "202610807",
+       "team": "CIN",
+       "opp": "TEN",
+       "game": "TEN @ CIN",
+       "outcome": "win",
+       "prob": 0.845,
+       "hidden": false,
+       "score": "TEN 36-43 CIN",
+       "slot_label": "Sun 1:00 PM"
+      },
+      {
+       "game_id": "202610809",
+       "team": "DAL",
+       "opp": "ARI",
+       "game": "ARI @ DAL",
+       "outcome": "loss",
+       "prob": 0.731,
+       "hidden": false,
+       "score": "ARI 33-30 DAL",
+       "slot_label": "Sun 1:00 PM"
+      },
+      {
+       "game_id": "202610815",
+       "team": "JAX",
+       "opp": "IND",
+       "game": "IND @ JAX",
+       "outcome": "win",
+       "prob": 0.798,
+       "hidden": false,
+       "score": "IND 7-42 JAX",
+       "slot_label": "Sun 1:00 PM"
+      },
+      {
+       "game_id": "202610824",
+       "team": "LV",
+       "opp": "NYJ",
+       "game": "LV @ NYJ",
+       "outcome": "win",
+       "prob": 0.475,
+       "hidden": false,
+       "score": "LV 38-33 NYJ",
+       "slot_label": "Sun 1:00 PM"
+      },
+      {
+       "game_id": "202610833",
+       "team": "TB",
+       "opp": "ATL",
+       "game": "ATL @ TB",
+       "outcome": "win",
+       "prob": 0.555,
+       "hidden": false,
+       "score": "ATL 0-16 TB",
+       "slot_label": "Sun 1:00 PM"
+      },
+      {
+       "game_id": "202610832",
+       "team": "LAR",
+       "opp": "LAC",
+       "game": "LAC @ LAR",
+       "outcome": "win",
+       "prob": 0.713,
+       "hidden": false,
+       "score": "LAC 9-24 LAR",
+       "slot_label": "Sun 4:05 PM"
+      },
+      {
+       "game_id": "202610819",
+       "team": "NE",
+       "opp": "MIA",
+       "game": "NE @ MIA",
+       "outcome": "win",
+       "prob": 0.738,
+       "hidden": false,
+       "score": "NE 24-19 MIA",
+       "slot_label": "Sun 4:25 PM"
+      },
+      {
+       "game_id": "202610835",
+       "team": "WAS",
+       "opp": "PHI",
+       "game": "PHI @ WAS",
+       "outcome": "win",
+       "prob": 0.696,
+       "hidden": false,
+       "score": "PHI 10-27 WAS",
+       "slot_label": "Sun 8:20 PM"
+      }
+     ],
+     "no_pick": false,
+     "correct": 7,
+     "wrong": 1,
+     "pending": 0,
+     "week_points": 7.0,
+     "season_points": 41.0,
+     "lost_this_week": false,
+     "strikes_before": 0,
+     "strikes_after": 0,
+     "eliminated_now": false,
+     "tiebreaker": {
+      "type": "total_points",
+      "game_id": "202610830",
+      "game": "CHI @ SEA",
+      "guess": 48,
+      "hidden": false
+     },
+     "hidden": 0,
+     "lonely_wins": [
+      "TB"
+     ],
+     "upset_wins": [
+      "LV"
+     ],
+     "chalk_losses": [
+      "DAL"
+     ]
+    },
+    {
+     "roster_id": 4,
+     "handle": "camschnick",
+     "name": "camschnick",
+     "picks": [
+      {
+       "game_id": "202610804",
+       "team": "BUF",
+       "opp": "BAL",
+       "game": "BAL @ BUF",
+       "outcome": "win",
+       "prob": 0.609,
+       "hidden": false,
+       "score": "BAL 10-36 BUF",
+       "slot_label": "Sun 1:00 PM"
+      },
+      {
+       "game_id": "202610807",
+       "team": "CIN",
+       "opp": "TEN",
+       "game": "TEN @ CIN",
+       "outcome": "win",
+       "prob": 0.845,
+       "hidden": false,
+       "score": "TEN 36-43 CIN",
+       "slot_label": "Sun 1:00 PM"
+      },
+      {
+       "game_id": "202610809",
+       "team": "DAL",
+       "opp": "ARI",
+       "game": "ARI @ DAL",
+       "outcome": "loss",
+       "prob": 0.731,
+       "hidden": false,
+       "score": "ARI 33-30 DAL",
+       "slot_label": "Sun 1:00 PM"
+      },
+      {
+       "game_id": "202610815",
+       "team": "JAX",
+       "opp": "IND",
+       "game": "IND @ JAX",
+       "outcome": "win",
+       "prob": 0.798,
+       "hidden": false,
+       "score": "IND 7-42 JAX",
+       "slot_label": "Sun 1:00 PM"
+      },
+      {
+       "game_id": "202610828",
+       "team": "PIT",
+       "opp": "CLE",
+       "game": "CLE @ PIT",
+       "outcome": "win",
+       "prob": 0.633,
+       "hidden": false,
+       "score": "CLE 6-27 PIT",
+       "slot_label": "Sun 1:00 PM"
+      },
+      {
+       "game_id": "202610832",
+       "team": "LAR",
+       "opp": "LAC",
+       "game": "LAC @ LAR",
+       "outcome": "win",
+       "prob": 0.713,
+       "hidden": false,
+       "score": "LAC 9-24 LAR",
+       "slot_label": "Sun 4:05 PM"
+      },
+      {
+       "game_id": "202610819",
+       "team": "NE",
+       "opp": "MIA",
+       "game": "NE @ MIA",
+       "outcome": "win",
+       "prob": 0.738,
+       "hidden": false,
+       "score": "NE 24-19 MIA",
+       "slot_label": "Sun 4:25 PM"
+      },
+      {
+       "game_id": "202610835",
+       "team": "WAS",
+       "opp": "PHI",
+       "game": "PHI @ WAS",
+       "outcome": "win",
+       "prob": 0.696,
+       "hidden": false,
+       "score": "PHI 10-27 WAS",
+       "slot_label": "Sun 8:20 PM"
+      }
+     ],
+     "no_pick": false,
+     "correct": 7,
+     "wrong": 1,
+     "pending": 0,
+     "week_points": 7.0,
+     "season_points": 46.0,
+     "lost_this_week": false,
+     "strikes_before": 0,
+     "strikes_after": 0,
+     "eliminated_now": false,
+     "tiebreaker": {
+      "type": "total_points",
+      "game_id": "202610830",
+      "game": "CHI @ SEA",
+      "guess": 47,
+      "hidden": false
+     },
+     "hidden": 0,
+     "lonely_wins": [],
+     "upset_wins": [],
+     "chalk_losses": [
+      "DAL"
+     ]
+    },
+    {
+     "roster_id": 14,
+     "handle": "cbova1222",
+     "name": "cbova1222",
+     "picks": [
+      {
+       "game_id": "202610804",
+       "team": "BUF",
+       "opp": "BAL",
+       "game": "BAL @ BUF",
+       "outcome": "win",
+       "prob": 0.609,
+       "hidden": false,
+       "score": "BAL 10-36 BUF",
+       "slot_label": "Sun 1:00 PM"
+      },
+      {
+       "game_id": "202610807",
+       "team": "CIN",
+       "opp": "TEN",
+       "game": "TEN @ CIN",
+       "outcome": "win",
+       "prob": 0.845,
+       "hidden": false,
+       "score": "TEN 36-43 CIN",
+       "slot_label": "Sun 1:00 PM"
+      },
+      {
+       "game_id": "202610809",
+       "team": "DAL",
+       "opp": "ARI",
+       "game": "ARI @ DAL",
+       "outcome": "loss",
+       "prob": 0.731,
+       "hidden": false,
+       "score": "ARI 33-30 DAL",
+       "slot_label": "Sun 1:00 PM"
+      },
+      {
+       "game_id": "202610811",
+       "team": "DET",
+       "opp": "MIN",
+       "game": "MIN @ DET",
+       "outcome": "win",
+       "prob": 0.615,
+       "hidden": false,
+       "score": "MIN 15-19 DET",
+       "slot_label": "Sun 1:00 PM"
+      },
+      {
+       "game_id": "202610815",
+       "team": "JAX",
+       "opp": "IND",
+       "game": "IND @ JAX",
+       "outcome": "win",
+       "prob": 0.798,
+       "hidden": false,
+       "score": "IND 7-42 JAX",
+       "slot_label": "Sun 1:00 PM"
+      },
+      {
+       "game_id": "202610832",
+       "team": "LAR",
+       "opp": "LAC",
+       "game": "LAC @ LAR",
+       "outcome": "win",
+       "prob": 0.713,
+       "hidden": false,
+       "score": "LAC 9-24 LAR",
+       "slot_label": "Sun 4:05 PM"
+      },
+      {
+       "game_id": "202610819",
+       "team": "NE",
+       "opp": "MIA",
+       "game": "NE @ MIA",
+       "outcome": "win",
+       "prob": 0.738,
+       "hidden": false,
+       "score": "NE 24-19 MIA",
+       "slot_label": "Sun 4:25 PM"
+      },
+      {
+       "game_id": "202610835",
+       "team": "WAS",
+       "opp": "PHI",
+       "game": "PHI @ WAS",
+       "outcome": "win",
+       "prob": 0.696,
+       "hidden": false,
+       "score": "PHI 10-27 WAS",
+       "slot_label": "Sun 8:20 PM"
+      }
+     ],
+     "no_pick": false,
+     "correct": 7,
+     "wrong": 1,
+     "pending": 0,
+     "week_points": 7.0,
+     "season_points": 43.0,
+     "lost_this_week": false,
+     "strikes_before": 0,
+     "strikes_after": 0,
+     "eliminated_now": false,
+     "tiebreaker": {
+      "type": "total_points",
+      "game_id": "202610830",
+      "game": "CHI @ SEA",
+      "guess": 42,
+      "hidden": false
+     },
+     "hidden": 0,
+     "lonely_wins": [],
+     "upset_wins": [],
+     "chalk_losses": [
+      "DAL"
+     ]
+    },
+    {
+     "roster_id": 3,
+     "handle": "Cubbiesftw23",
+     "name": "Cubbiesftw23",
+     "picks": [
+      {
+       "game_id": "202610812",
+       "team": "GB",
+       "opp": "CAR",
+       "game": "CAR @ GB",
+       "outcome": "win",
+       "prob": 0.633,
+       "hidden": false,
+       "score": "CAR 19-27 GB",
+       "slot_label": "Thu 8:15 PM"
+      },
+      {
+       "game_id": "202610807",
+       "team": "CIN",
+       "opp": "TEN",
+       "game": "TEN @ CIN",
+       "outcome": "win",
+       "prob": 0.845,
+       "hidden": false,
+       "score": "TEN 36-43 CIN",
+       "slot_label": "Sun 1:00 PM"
+      },
+      {
+       "game_id": "202610809",
+       "team": "DAL",
+       "opp": "ARI",
+       "game": "ARI @ DAL",
+       "outcome": "loss",
+       "prob": 0.731,
+       "hidden": false,
+       "score": "ARI 33-30 DAL",
+       "slot_label": "Sun 1:00 PM"
+      },
+      {
+       "game_id": "202610815",
+       "team": "JAX",
+       "opp": "IND",
+       "game": "IND @ JAX",
+       "outcome": "win",
+       "prob": 0.798,
+       "hidden": false,
+       "score": "IND 7-42 JAX",
+       "slot_label": "Sun 1:00 PM"
+      },
+      {
+       "game_id": "202610824",
+       "team": "LV",
+       "opp": "NYJ",
+       "game": "LV @ NYJ",
+       "outcome": "win",
+       "prob": 0.475,
+       "hidden": false,
+       "score": "LV 38-33 NYJ",
+       "slot_label": "Sun 1:00 PM"
+      },
+      {
+       "game_id": "202610828",
+       "team": "PIT",
+       "opp": "CLE",
+       "game": "CLE @ PIT",
+       "outcome": "win",
+       "prob": 0.633,
+       "hidden": false,
+       "score": "CLE 6-27 PIT",
+       "slot_label": "Sun 1:00 PM"
+      },
+      {
+       "game_id": "202610832",
+       "team": "LAR",
+       "opp": "LAC",
+       "game": "LAC @ LAR",
+       "outcome": "win",
+       "prob": 0.713,
+       "hidden": false,
+       "score": "LAC 9-24 LAR",
+       "slot_label": "Sun 4:05 PM"
+      },
+      {
+       "game_id": "202610819",
+       "team": "NE",
+       "opp": "MIA",
+       "game": "NE @ MIA",
+       "outcome": "win",
+       "prob": 0.738,
+       "hidden": false,
+       "score": "NE 24-19 MIA",
+       "slot_label": "Sun 4:25 PM"
+      }
+     ],
+     "no_pick": false,
+     "correct": 7,
+     "wrong": 1,
+     "pending": 0,
+     "week_points": 7.0,
+     "season_points": 45.0,
+     "lost_this_week": false,
+     "strikes_before": 0,
+     "strikes_after": 0,
+     "eliminated_now": false,
+     "tiebreaker": {
+      "type": "total_points",
+      "game_id": "202610830",
+      "game": "CHI @ SEA",
+      "guess": 47,
+      "hidden": false
+     },
+     "hidden": 0,
+     "lonely_wins": [],
+     "upset_wins": [
+      "LV"
+     ],
+     "chalk_losses": [
+      "DAL"
+     ]
+    },
+    {
+     "roster_id": 13,
+     "handle": "Mpletcher",
+     "name": "Mpletcher",
+     "picks": [
+      {
+       "game_id": "202610812",
+       "team": "GB",
+       "opp": "CAR",
+       "game": "CAR @ GB",
+       "outcome": "win",
+       "prob": 0.633,
+       "hidden": false,
+       "score": "CAR 19-27 GB",
+       "slot_label": "Thu 8:15 PM"
+      },
+      {
+       "game_id": "202610804",
+       "team": "BUF",
+       "opp": "BAL",
+       "game": "BAL @ BUF",
+       "outcome": "win",
+       "prob": 0.609,
+       "hidden": false,
+       "score": "BAL 10-36 BUF",
+       "slot_label": "Sun 1:00 PM"
+      },
+      {
+       "game_id": "202610807",
+       "team": "CIN",
+       "opp": "TEN",
+       "game": "TEN @ CIN",
+       "outcome": "win",
+       "prob": 0.845,
+       "hidden": false,
+       "score": "TEN 36-43 CIN",
+       "slot_label": "Sun 1:00 PM"
+      },
+      {
+       "game_id": "202610809",
+       "team": "DAL",
+       "opp": "ARI",
+       "game": "ARI @ DAL",
+       "outcome": "loss",
+       "prob": 0.731,
+       "hidden": false,
+       "score": "ARI 33-30 DAL",
+       "slot_label": "Sun 1:00 PM"
+      },
+      {
+       "game_id": "202610815",
+       "team": "JAX",
+       "opp": "IND",
+       "game": "IND @ JAX",
+       "outcome": "win",
+       "prob": 0.798,
+       "hidden": false,
+       "score": "IND 7-42 JAX",
+       "slot_label": "Sun 1:00 PM"
+      },
+      {
+       "game_id": "202610828",
+       "team": "PIT",
+       "opp": "CLE",
+       "game": "CLE @ PIT",
+       "outcome": "win",
+       "prob": 0.633,
+       "hidden": false,
+       "score": "CLE 6-27 PIT",
+       "slot_label": "Sun 1:00 PM"
+      },
+      {
+       "game_id": "202610832",
+       "team": "LAR",
+       "opp": "LAC",
+       "game": "LAC @ LAR",
+       "outcome": "win",
+       "prob": 0.713,
+       "hidden": false,
+       "score": "LAC 9-24 LAR",
+       "slot_label": "Sun 4:05 PM"
+      },
+      {
+       "game_id": "202610835",
+       "team": "WAS",
+       "opp": "PHI",
+       "game": "PHI @ WAS",
+       "outcome": "win",
+       "prob": 0.696,
+       "hidden": false,
+       "score": "PHI 10-27 WAS",
+       "slot_label": "Sun 8:20 PM"
+      }
+     ],
+     "no_pick": false,
+     "correct": 7,
+     "wrong": 1,
+     "pending": 0,
+     "week_points": 7.0,
+     "season_points": 42.0,
+     "lost_this_week": false,
+     "strikes_before": 0,
+     "strikes_after": 0,
+     "eliminated_now": false,
+     "tiebreaker": {
+      "type": "total_points",
+      "game_id": "202610830",
+      "game": "CHI @ SEA",
+      "guess": 50,
+      "hidden": false
+     },
+     "hidden": 0,
+     "lonely_wins": [],
+     "upset_wins": [],
+     "chalk_losses": [
+      "DAL"
+     ]
+    },
+    {
+     "roster_id": 10,
+     "handle": "NastyNate725",
+     "name": "NastyNate725",
+     "picks": [
+      {
+       "game_id": "202610804",
+       "team": "BUF",
+       "opp": "BAL",
+       "game": "BAL @ BUF",
+       "outcome": "win",
+       "prob": 0.609,
+       "hidden": false,
+       "score": "BAL 10-36 BUF",
+       "slot_label": "Sun 1:00 PM"
+      },
+      {
+       "game_id": "202610807",
+       "team": "CIN",
+       "opp": "TEN",
+       "game": "TEN @ CIN",
+       "outcome": "win",
+       "prob": 0.845,
+       "hidden": false,
+       "score": "TEN 36-43 CIN",
+       "slot_label": "Sun 1:00 PM"
+      },
+      {
+       "game_id": "202610809",
+       "team": "DAL",
+       "opp": "ARI",
+       "game": "ARI @ DAL",
+       "outcome": "loss",
+       "prob": 0.731,
+       "hidden": false,
+       "score": "ARI 33-30 DAL",
+       "slot_label": "Sun 1:00 PM"
+      },
+      {
+       "game_id": "202610815",
+       "team": "JAX",
+       "opp": "IND",
+       "game": "IND @ JAX",
+       "outcome": "win",
+       "prob": 0.798,
+       "hidden": false,
+       "score": "IND 7-42 JAX",
+       "slot_label": "Sun 1:00 PM"
+      },
+      {
+       "game_id": "202610828",
+       "team": "PIT",
+       "opp": "CLE",
+       "game": "CLE @ PIT",
+       "outcome": "win",
+       "prob": 0.633,
+       "hidden": false,
+       "score": "CLE 6-27 PIT",
+       "slot_label": "Sun 1:00 PM"
+      },
+      {
+       "game_id": "202610832",
+       "team": "LAR",
+       "opp": "LAC",
+       "game": "LAC @ LAR",
+       "outcome": "win",
+       "prob": 0.713,
+       "hidden": false,
+       "score": "LAC 9-24 LAR",
+       "slot_label": "Sun 4:05 PM"
+      },
+      {
+       "game_id": "202610819",
+       "team": "NE",
+       "opp": "MIA",
+       "game": "NE @ MIA",
+       "outcome": "win",
+       "prob": 0.738,
+       "hidden": false,
+       "score": "NE 24-19 MIA",
+       "slot_label": "Sun 4:25 PM"
+      },
+      {
+       "game_id": "202610835",
+       "team": "WAS",
+       "opp": "PHI",
+       "game": "PHI @ WAS",
+       "outcome": "win",
+       "prob": 0.696,
+       "hidden": false,
+       "score": "PHI 10-27 WAS",
+       "slot_label": "Sun 8:20 PM"
+      }
+     ],
+     "no_pick": false,
+     "correct": 7,
+     "wrong": 1,
+     "pending": 0,
+     "week_points": 7.0,
+     "season_points": 43.0,
+     "lost_this_week": false,
+     "strikes_before": 0,
+     "strikes_after": 0,
+     "eliminated_now": false,
+     "tiebreaker": {
+      "type": "total_points",
+      "game_id": "202610830",
+      "game": "CHI @ SEA",
+      "guess": 48,
+      "hidden": false
+     },
+     "hidden": 0,
+     "lonely_wins": [],
+     "upset_wins": [],
+     "chalk_losses": [
+      "DAL"
+     ]
+    },
+    {
+     "roster_id": 18,
+     "handle": "steveedwards",
+     "name": "steveedwards",
+     "picks": [
+      {
+       "game_id": "202610812",
+       "team": "GB",
+       "opp": "CAR",
+       "game": "CAR @ GB",
+       "outcome": "win",
+       "prob": 0.633,
+       "hidden": false,
+       "score": "CAR 19-27 GB",
+       "slot_label": "Thu 8:15 PM"
+      },
+      {
+       "game_id": "202610804",
+       "team": "BUF",
+       "opp": "BAL",
+       "game": "BAL @ BUF",
+       "outcome": "win",
+       "prob": 0.609,
+       "hidden": false,
+       "score": "BAL 10-36 BUF",
+       "slot_label": "Sun 1:00 PM"
+      },
+      {
+       "game_id": "202610807",
+       "team": "CIN",
+       "opp": "TEN",
+       "game": "TEN @ CIN",
+       "outcome": "win",
+       "prob": 0.845,
+       "hidden": false,
+       "score": "TEN 36-43 CIN",
+       "slot_label": "Sun 1:00 PM"
+      },
+      {
+       "game_id": "202610809",
+       "team": "DAL",
+       "opp": "ARI",
+       "game": "ARI @ DAL",
+       "outcome": "loss",
+       "prob": 0.731,
+       "hidden": false,
+       "score": "ARI 33-30 DAL",
+       "slot_label": "Sun 1:00 PM"
+      },
+      {
+       "game_id": "202610815",
+       "team": "JAX",
+       "opp": "IND",
+       "game": "IND @ JAX",
+       "outcome": "win",
+       "prob": 0.798,
+       "hidden": false,
+       "score": "IND 7-42 JAX",
+       "slot_label": "Sun 1:00 PM"
+      },
+      {
+       "game_id": "202610832",
+       "team": "LAR",
+       "opp": "LAC",
+       "game": "LAC @ LAR",
+       "outcome": "win",
+       "prob": 0.713,
+       "hidden": false,
+       "score": "LAC 9-24 LAR",
+       "slot_label": "Sun 4:05 PM"
+      },
+      {
+       "game_id": "202610819",
+       "team": "NE",
+       "opp": "MIA",
+       "game": "NE @ MIA",
+       "outcome": "win",
+       "prob": 0.738,
+       "hidden": false,
+       "score": "NE 24-19 MIA",
+       "slot_label": "Sun 4:25 PM"
+      },
+      {
+       "game_id": "202610835",
+       "team": "WAS",
+       "opp": "PHI",
+       "game": "PHI @ WAS",
+       "outcome": "win",
+       "prob": 0.696,
+       "hidden": false,
+       "score": "PHI 10-27 WAS",
+       "slot_label": "Sun 8:20 PM"
+      }
+     ],
+     "no_pick": false,
+     "correct": 7,
+     "wrong": 1,
+     "pending": 0,
+     "week_points": 7.0,
+     "season_points": 40.0,
+     "lost_this_week": false,
+     "strikes_before": 0,
+     "strikes_after": 0,
+     "eliminated_now": false,
+     "tiebreaker": {
+      "type": "total_points",
+      "game_id": "202610830",
+      "game": "CHI @ SEA",
+      "guess": 52,
+      "hidden": false
+     },
+     "hidden": 0,
+     "lonely_wins": [],
+     "upset_wins": [],
+     "chalk_losses": [
+      "DAL"
+     ]
+    },
+    {
+     "roster_id": 1,
+     "handle": "avobttam",
+     "name": "avobttam",
+     "picks": [
+      {
+       "game_id": "202610807",
+       "team": "CIN",
+       "opp": "TEN",
+       "game": "TEN @ CIN",
+       "outcome": "win",
+       "prob": 0.845,
+       "hidden": false,
+       "score": "TEN 36-43 CIN",
+       "slot_label": "Sun 1:00 PM"
+      },
+      {
+       "game_id": "202610809",
+       "team": "DAL",
+       "opp": "ARI",
+       "game": "ARI @ DAL",
+       "outcome": "loss",
+       "prob": 0.731,
+       "hidden": false,
+       "score": "ARI 33-30 DAL",
+       "slot_label": "Sun 1:00 PM"
+      },
+      {
+       "game_id": "202610811",
+       "team": "DET",
+       "opp": "MIN",
+       "game": "MIN @ DET",
+       "outcome": "win",
+       "prob": 0.615,
+       "hidden": false,
+       "score": "MIN 15-19 DET",
+       "slot_label": "Sun 1:00 PM"
+      },
+      {
+       "game_id": "202610815",
+       "team": "JAX",
+       "opp": "IND",
+       "game": "IND @ JAX",
+       "outcome": "win",
+       "prob": 0.798,
+       "hidden": false,
+       "score": "IND 7-42 JAX",
+       "slot_label": "Sun 1:00 PM"
+      },
+      {
+       "game_id": "202610828",
+       "team": "PIT",
+       "opp": "CLE",
+       "game": "CLE @ PIT",
+       "outcome": "win",
+       "prob": 0.633,
+       "hidden": false,
+       "score": "CLE 6-27 PIT",
+       "slot_label": "Sun 1:00 PM"
+      },
+      {
+       "game_id": "202610832",
+       "team": "LAR",
+       "opp": "LAC",
+       "game": "LAC @ LAR",
+       "outcome": "win",
+       "prob": 0.713,
+       "hidden": false,
+       "score": "LAC 9-24 LAR",
+       "slot_label": "Sun 4:05 PM"
+      },
+      {
+       "game_id": "202610819",
+       "team": "NE",
+       "opp": "MIA",
+       "game": "NE @ MIA",
+       "outcome": "win",
+       "prob": 0.738,
+       "hidden": false,
+       "score": "NE 24-19 MIA",
+       "slot_label": "Sun 4:25 PM"
+      },
+      {
+       "game_id": "202610835",
+       "team": "PHI",
+       "opp": "WAS",
+       "game": "PHI @ WAS",
+       "outcome": "loss",
+       "prob": 0.304,
+       "hidden": false,
+       "score": "PHI 10-27 WAS",
+       "slot_label": "Sun 8:20 PM"
+      }
+     ],
+     "no_pick": false,
+     "correct": 6,
+     "wrong": 2,
+     "pending": 0,
+     "week_points": 6.0,
+     "season_points": 41.0,
+     "lost_this_week": false,
+     "strikes_before": 0,
+     "strikes_after": 0,
+     "eliminated_now": false,
+     "tiebreaker": {
+      "type": "total_points",
+      "game_id": "202610830",
+      "game": "CHI @ SEA",
+      "guess": 54,
+      "hidden": false
+     },
+     "hidden": 0,
+     "lonely_wins": [],
+     "upset_wins": [],
+     "chalk_losses": [
+      "DAL"
+     ]
+    },
+    {
+     "roster_id": 8,
+     "handle": "bjander110",
+     "name": "bjander110",
+     "picks": [
+      {
+       "game_id": "202610807",
+       "team": "CIN",
+       "opp": "TEN",
+       "game": "TEN @ CIN",
+       "outcome": "win",
+       "prob": 0.845,
+       "hidden": false,
+       "score": "TEN 36-43 CIN",
+       "slot_label": "Sun 1:00 PM"
+      },
+      {
+       "game_id": "202610809",
+       "team": "DAL",
+       "opp": "ARI",
+       "game": "ARI @ DAL",
+       "outcome": "loss",
+       "prob": 0.731,
+       "hidden": false,
+       "score": "ARI 33-30 DAL",
+       "slot_label": "Sun 1:00 PM"
+      },
+      {
+       "game_id": "202610811",
+       "team": "DET",
+       "opp": "MIN",
+       "game": "MIN @ DET",
+       "outcome": "win",
+       "prob": 0.615,
+       "hidden": false,
+       "score": "MIN 15-19 DET",
+       "slot_label": "Sun 1:00 PM"
+      },
+      {
+       "game_id": "202610815",
+       "team": "JAX",
+       "opp": "IND",
+       "game": "IND @ JAX",
+       "outcome": "win",
+       "prob": 0.798,
+       "hidden": false,
+       "score": "IND 7-42 JAX",
+       "slot_label": "Sun 1:00 PM"
+      },
+      {
+       "game_id": "202610828",
+       "team": "PIT",
+       "opp": "CLE",
+       "game": "CLE @ PIT",
+       "outcome": "win",
+       "prob": 0.633,
+       "hidden": false,
+       "score": "CLE 6-27 PIT",
+       "slot_label": "Sun 1:00 PM"
+      },
+      {
+       "game_id": "202610819",
+       "team": "NE",
+       "opp": "MIA",
+       "game": "NE @ MIA",
+       "outcome": "win",
+       "prob": 0.738,
+       "hidden": false,
+       "score": "NE 24-19 MIA",
+       "slot_label": "Sun 4:25 PM"
+      },
+      {
+       "game_id": "202610835",
+       "team": "WAS",
+       "opp": "PHI",
+       "game": "PHI @ WAS",
+       "outcome": "win",
+       "prob": 0.696,
+       "hidden": false,
+       "score": "PHI 10-27 WAS",
+       "slot_label": "Sun 8:20 PM"
+      },
+      {
+       "game_id": "202610830",
+       "team": "SEA",
+       "opp": "CHI",
+       "game": "CHI @ SEA",
+       "outcome": "loss",
+       "prob": 0.608,
+       "hidden": false,
+       "score": "CHI 34-17 SEA",
+       "slot_label": "Mon 8:15 PM"
+      }
+     ],
+     "no_pick": false,
+     "correct": 6,
+     "wrong": 2,
+     "pending": 0,
+     "week_points": 6.0,
+     "season_points": 46.0,
+     "lost_this_week": false,
+     "strikes_before": 0,
+     "strikes_after": 0,
+     "eliminated_now": false,
+     "tiebreaker": {
+      "type": "total_points",
+      "game_id": "202610830",
+      "game": "CHI @ SEA",
+      "guess": 53,
+      "hidden": false
+     },
+     "hidden": 0,
+     "lonely_wins": [],
+     "upset_wins": [],
+     "chalk_losses": [
+      "DAL"
+     ]
+    },
+    {
+     "roster_id": 16,
+     "handle": "CHRISMERKELDUH",
+     "name": "CHRISMERKELDUH",
+     "picks": [
+      {
+       "game_id": "202610804",
+       "team": "BUF",
+       "opp": "BAL",
+       "game": "BAL @ BUF",
+       "outcome": "win",
+       "prob": 0.609,
+       "hidden": false,
+       "score": "BAL 10-36 BUF",
+       "slot_label": "Sun 1:00 PM"
+      },
+      {
+       "game_id": "202610807",
+       "team": "CIN",
+       "opp": "TEN",
+       "game": "TEN @ CIN",
+       "outcome": "win",
+       "prob": 0.845,
+       "hidden": false,
+       "score": "TEN 36-43 CIN",
+       "slot_label": "Sun 1:00 PM"
+      },
+      {
+       "game_id": "202610811",
+       "team": "DET",
+       "opp": "MIN",
+       "game": "MIN @ DET",
+       "outcome": "win",
+       "prob": 0.615,
+       "hidden": false,
+       "score": "MIN 15-19 DET",
+       "slot_label": "Sun 1:00 PM"
+      },
+      {
+       "game_id": "202610815",
+       "team": "JAX",
+       "opp": "IND",
+       "game": "IND @ JAX",
+       "outcome": "win",
+       "prob": 0.798,
+       "hidden": false,
+       "score": "IND 7-42 JAX",
+       "slot_label": "Sun 1:00 PM"
+      },
+      {
+       "game_id": "202610832",
+       "team": "LAR",
+       "opp": "LAC",
+       "game": "LAC @ LAR",
+       "outcome": "win",
+       "prob": 0.713,
+       "hidden": false,
+       "score": "LAC 9-24 LAR",
+       "slot_label": "Sun 4:05 PM"
+      },
+      {
+       "game_id": "202610810",
+       "team": "KC",
+       "opp": "DEN",
+       "game": "KC @ DEN",
+       "outcome": "loss",
+       "prob": 0.521,
+       "hidden": false,
+       "score": "KC 24-28 DEN",
+       "slot_label": "Sun 4:25 PM"
+      },
+      {
+       "game_id": "202610819",
+       "team": "NE",
+       "opp": "MIA",
+       "game": "NE @ MIA",
+       "outcome": "win",
+       "prob": 0.738,
+       "hidden": false,
+       "score": "NE 24-19 MIA",
+       "slot_label": "Sun 4:25 PM"
+      },
+      {
+       "game_id": "202610830",
+       "team": "SEA",
+       "opp": "CHI",
+       "game": "CHI @ SEA",
+       "outcome": "loss",
+       "prob": 0.608,
+       "hidden": false,
+       "score": "CHI 34-17 SEA",
+       "slot_label": "Mon 8:15 PM"
+      }
+     ],
+     "no_pick": false,
+     "correct": 6,
+     "wrong": 2,
+     "pending": 0,
+     "week_points": 6.0,
+     "season_points": 45.0,
+     "lost_this_week": false,
+     "strikes_before": 0,
+     "strikes_after": 0,
+     "eliminated_now": false,
+     "tiebreaker": {
+      "type": "total_points",
+      "game_id": "202610830",
+      "game": "CHI @ SEA",
+      "guess": 51,
+      "hidden": false
+     },
+     "hidden": 0,
+     "lonely_wins": [],
+     "upset_wins": [],
+     "chalk_losses": []
+    },
+    {
+     "roster_id": 6,
+     "handle": "djbogardus72",
+     "name": "djbogardus72",
+     "picks": [
+      {
+       "game_id": "202610804",
+       "team": "BUF",
+       "opp": "BAL",
+       "game": "BAL @ BUF",
+       "outcome": "win",
+       "prob": 0.609,
+       "hidden": false,
+       "score": "BAL 10-36 BUF",
+       "slot_label": "Sun 1:00 PM"
+      },
+      {
+       "game_id": "202610807",
+       "team": "CIN",
+       "opp": "TEN",
+       "game": "TEN @ CIN",
+       "outcome": "win",
+       "prob": 0.845,
+       "hidden": false,
+       "score": "TEN 36-43 CIN",
+       "slot_label": "Sun 1:00 PM"
+      },
+      {
+       "game_id": "202610809",
+       "team": "DAL",
+       "opp": "ARI",
+       "game": "ARI @ DAL",
+       "outcome": "loss",
+       "prob": 0.731,
+       "hidden": false,
+       "score": "ARI 33-30 DAL",
+       "slot_label": "Sun 1:00 PM"
+      },
+      {
+       "game_id": "202610815",
+       "team": "JAX",
+       "opp": "IND",
+       "game": "IND @ JAX",
+       "outcome": "win",
+       "prob": 0.798,
+       "hidden": false,
+       "score": "IND 7-42 JAX",
+       "slot_label": "Sun 1:00 PM"
+      },
+      {
+       "game_id": "202610832",
+       "team": "LAR",
+       "opp": "LAC",
+       "game": "LAC @ LAR",
+       "outcome": "win",
+       "prob": 0.713,
+       "hidden": false,
+       "score": "LAC 9-24 LAR",
+       "slot_label": "Sun 4:05 PM"
+      },
+      {
+       "game_id": "202610819",
+       "team": "NE",
+       "opp": "MIA",
+       "game": "NE @ MIA",
+       "outcome": "win",
+       "prob": 0.738,
+       "hidden": false,
+       "score": "NE 24-19 MIA",
+       "slot_label": "Sun 4:25 PM"
+      },
+      {
+       "game_id": "202610835",
+       "team": "WAS",
+       "opp": "PHI",
+       "game": "PHI @ WAS",
+       "outcome": "win",
+       "prob": 0.696,
+       "hidden": false,
+       "score": "PHI 10-27 WAS",
+       "slot_label": "Sun 8:20 PM"
+      },
+      {
+       "game_id": "202610830",
+       "team": "SEA",
+       "opp": "CHI",
+       "game": "CHI @ SEA",
+       "outcome": "loss",
+       "prob": 0.608,
+       "hidden": false,
+       "score": "CHI 34-17 SEA",
+       "slot_label": "Mon 8:15 PM"
+      }
+     ],
+     "no_pick": false,
+     "correct": 6,
+     "wrong": 2,
+     "pending": 0,
+     "week_points": 6.0,
+     "season_points": 46.0,
+     "lost_this_week": false,
+     "strikes_before": 0,
+     "strikes_after": 0,
+     "eliminated_now": false,
+     "tiebreaker": {
+      "type": "total_points",
+      "game_id": "202610830",
+      "game": "CHI @ SEA",
+      "guess": 39,
+      "hidden": false
+     },
+     "hidden": 0,
+     "lonely_wins": [],
+     "upset_wins": [],
+     "chalk_losses": [
+      "DAL"
+     ]
+    },
+    {
+     "roster_id": 5,
+     "handle": "katiestout13",
+     "name": "katiestout13",
+     "picks": [
+      {
+       "game_id": "202610807",
+       "team": "CIN",
+       "opp": "TEN",
+       "game": "TEN @ CIN",
+       "outcome": "win",
+       "prob": 0.845,
+       "hidden": false,
+       "score": "TEN 36-43 CIN",
+       "slot_label": "Sun 1:00 PM"
+      },
+      {
+       "game_id": "202610809",
+       "team": "DAL",
+       "opp": "ARI",
+       "game": "ARI @ DAL",
+       "outcome": "loss",
+       "prob": 0.731,
+       "hidden": false,
+       "score": "ARI 33-30 DAL",
+       "slot_label": "Sun 1:00 PM"
+      },
+      {
+       "game_id": "202610815",
+       "team": "JAX",
+       "opp": "IND",
+       "game": "IND @ JAX",
+       "outcome": "win",
+       "prob": 0.798,
+       "hidden": false,
+       "score": "IND 7-42 JAX",
+       "slot_label": "Sun 1:00 PM"
+      },
+      {
+       "game_id": "202610824",
+       "team": "LV",
+       "opp": "NYJ",
+       "game": "LV @ NYJ",
+       "outcome": "win",
+       "prob": 0.475,
+       "hidden": false,
+       "score": "LV 38-33 NYJ",
+       "slot_label": "Sun 1:00 PM"
+      },
+      {
+       "game_id": "202610832",
+       "team": "LAR",
+       "opp": "LAC",
+       "game": "LAC @ LAR",
+       "outcome": "win",
+       "prob": 0.713,
+       "hidden": false,
+       "score": "LAC 9-24 LAR",
+       "slot_label": "Sun 4:05 PM"
+      },
+      {
+       "game_id": "202610810",
+       "team": "KC",
+       "opp": "DEN",
+       "game": "KC @ DEN",
+       "outcome": "loss",
+       "prob": 0.521,
+       "hidden": false,
+       "score": "KC 24-28 DEN",
+       "slot_label": "Sun 4:25 PM"
+      },
+      {
+       "game_id": "202610819",
+       "team": "NE",
+       "opp": "MIA",
+       "game": "NE @ MIA",
+       "outcome": "win",
+       "prob": 0.738,
+       "hidden": false,
+       "score": "NE 24-19 MIA",
+       "slot_label": "Sun 4:25 PM"
+      },
+      {
+       "game_id": "202610835",
+       "team": "WAS",
+       "opp": "PHI",
+       "game": "PHI @ WAS",
+       "outcome": "win",
+       "prob": 0.696,
+       "hidden": false,
+       "score": "PHI 10-27 WAS",
+       "slot_label": "Sun 8:20 PM"
+      }
+     ],
+     "no_pick": false,
+     "correct": 6,
+     "wrong": 2,
+     "pending": 0,
+     "week_points": 6.0,
+     "season_points": 38.0,
+     "lost_this_week": false,
+     "strikes_before": 0,
+     "strikes_after": 0,
+     "eliminated_now": false,
+     "tiebreaker": {
+      "type": "total_points",
+      "game_id": "202610830",
+      "game": "CHI @ SEA",
+      "guess": 35,
+      "hidden": false
+     },
+     "hidden": 0,
+     "lonely_wins": [],
+     "upset_wins": [
+      "LV"
+     ],
+     "chalk_losses": [
+      "DAL"
+     ]
+    },
+    {
+     "roster_id": 17,
+     "handle": "Kolisekj52",
+     "name": "Kolisekj52",
+     "picks": [
+      {
+       "game_id": "202610812",
+       "team": "GB",
+       "opp": "CAR",
+       "game": "CAR @ GB",
+       "outcome": "win",
+       "prob": 0.633,
+       "hidden": false,
+       "score": "CAR 19-27 GB",
+       "slot_label": "Thu 8:15 PM"
+      },
+      {
+       "game_id": "202610804",
+       "team": "BUF",
+       "opp": "BAL",
+       "game": "BAL @ BUF",
+       "outcome": "win",
+       "prob": 0.609,
+       "hidden": false,
+       "score": "BAL 10-36 BUF",
+       "slot_label": "Sun 1:00 PM"
+      },
+      {
+       "game_id": "202610807",
+       "team": "CIN",
+       "opp": "TEN",
+       "game": "TEN @ CIN",
+       "outcome": "win",
+       "prob": 0.845,
+       "hidden": false,
+       "score": "TEN 36-43 CIN",
+       "slot_label": "Sun 1:00 PM"
+      },
+      {
+       "game_id": "202610809",
+       "team": "DAL",
+       "opp": "ARI",
+       "game": "ARI @ DAL",
+       "outcome": "loss",
+       "prob": 0.731,
+       "hidden": false,
+       "score": "ARI 33-30 DAL",
+       "slot_label": "Sun 1:00 PM"
+      },
+      {
+       "game_id": "202610815",
+       "team": "JAX",
+       "opp": "IND",
+       "game": "IND @ JAX",
+       "outcome": "win",
+       "prob": 0.798,
+       "hidden": false,
+       "score": "IND 7-42 JAX",
+       "slot_label": "Sun 1:00 PM"
+      },
+      {
+       "game_id": "202610832",
+       "team": "LAR",
+       "opp": "LAC",
+       "game": "LAC @ LAR",
+       "outcome": "win",
+       "prob": 0.713,
+       "hidden": false,
+       "score": "LAC 9-24 LAR",
+       "slot_label": "Sun 4:05 PM"
+      },
+      {
+       "game_id": "202610819",
+       "team": "NE",
+       "opp": "MIA",
+       "game": "NE @ MIA",
+       "outcome": "win",
+       "prob": 0.738,
+       "hidden": false,
+       "score": "NE 24-19 MIA",
+       "slot_label": "Sun 4:25 PM"
+      },
+      {
+       "game_id": "202610830",
+       "team": "SEA",
+       "opp": "CHI",
+       "game": "CHI @ SEA",
+       "outcome": "loss",
+       "prob": 0.608,
+       "hidden": false,
+       "score": "CHI 34-17 SEA",
+       "slot_label": "Mon 8:15 PM"
+      }
+     ],
+     "no_pick": false,
+     "correct": 6,
+     "wrong": 2,
+     "pending": 0,
+     "week_points": 6.0,
+     "season_points": 42.0,
+     "lost_this_week": false,
+     "strikes_before": 0,
+     "strikes_after": 0,
+     "eliminated_now": false,
+     "tiebreaker": {
+      "type": "total_points",
+      "game_id": "202610830",
+      "game": "CHI @ SEA",
+      "guess": 39,
+      "hidden": false
+     },
+     "hidden": 0,
+     "lonely_wins": [],
+     "upset_wins": [],
+     "chalk_losses": [
+      "DAL"
+     ]
+    },
+    {
+     "roster_id": 11,
+     "handle": "MJBlack",
+     "name": "MJBlack",
+     "picks": [
+      {
+       "game_id": "202610807",
+       "team": "CIN",
+       "opp": "TEN",
+       "game": "TEN @ CIN",
+       "outcome": "win",
+       "prob": 0.845,
+       "hidden": false,
+       "score": "TEN 36-43 CIN",
+       "slot_label": "Sun 1:00 PM"
+      },
+      {
+       "game_id": "202610828",
+       "team": "CLE",
+       "opp": "PIT",
+       "game": "CLE @ PIT",
+       "outcome": "loss",
+       "prob": 0.367,
+       "hidden": false,
+       "score": "CLE 6-27 PIT",
+       "slot_label": "Sun 1:00 PM"
+      },
+      {
+       "game_id": "202610809",
+       "team": "DAL",
+       "opp": "ARI",
+       "game": "ARI @ DAL",
+       "outcome": "loss",
+       "prob": 0.731,
+       "hidden": false,
+       "score": "ARI 33-30 DAL",
+       "slot_label": "Sun 1:00 PM"
+      },
+      {
+       "game_id": "202610815",
+       "team": "JAX",
+       "opp": "IND",
+       "game": "IND @ JAX",
+       "outcome": "win",
+       "prob": 0.798,
+       "hidden": false,
+       "score": "IND 7-42 JAX",
+       "slot_label": "Sun 1:00 PM"
+      },
+      {
+       "game_id": "202610824",
+       "team": "LV",
+       "opp": "NYJ",
+       "game": "LV @ NYJ",
+       "outcome": "win",
+       "prob": 0.475,
+       "hidden": false,
+       "score": "LV 38-33 NYJ",
+       "slot_label": "Sun 1:00 PM"
+      },
+      {
+       "game_id": "202610832",
+       "team": "LAR",
+       "opp": "LAC",
+       "game": "LAC @ LAR",
+       "outcome": "win",
+       "prob": 0.713,
+       "hidden": false,
+       "score": "LAC 9-24 LAR",
+       "slot_label": "Sun 4:05 PM"
+      },
+      {
+       "game_id": "202610810",
+       "team": "DEN",
+       "opp": "KC",
+       "game": "KC @ DEN",
+       "outcome": "win",
+       "prob": 0.479,
+       "hidden": false,
+       "score": "KC 24-28 DEN",
+       "slot_label": "Sun 4:25 PM"
+      },
+      {
+       "game_id": "202610819",
+       "team": "NE",
+       "opp": "MIA",
+       "game": "NE @ MIA",
+       "outcome": "win",
+       "prob": 0.738,
+       "hidden": false,
+       "score": "NE 24-19 MIA",
+       "slot_label": "Sun 4:25 PM"
+      }
+     ],
+     "no_pick": false,
+     "correct": 6,
+     "wrong": 2,
+     "pending": 0,
+     "week_points": 6.0,
+     "season_points": 39.0,
+     "lost_this_week": false,
+     "strikes_before": 0,
+     "strikes_after": 0,
+     "eliminated_now": false,
+     "tiebreaker": null,
+     "hidden": 0,
+     "lonely_wins": [
+      "DEN"
+     ],
+     "upset_wins": [
+      "LV",
+      "DEN"
+     ],
+     "chalk_losses": [
+      "DAL"
+     ]
+    },
+    {
+     "roster_id": 12,
+     "handle": "msymons713",
+     "name": "msymons713",
+     "picks": [
+      {
+       "game_id": "202610804",
+       "team": "BUF",
+       "opp": "BAL",
+       "game": "BAL @ BUF",
+       "outcome": "win",
+       "prob": 0.609,
+       "hidden": false,
+       "score": "BAL 10-36 BUF",
+       "slot_label": "Sun 1:00 PM"
+      },
+      {
+       "game_id": "202610807",
+       "team": "CIN",
+       "opp": "TEN",
+       "game": "TEN @ CIN",
+       "outcome": "win",
+       "prob": 0.845,
+       "hidden": false,
+       "score": "TEN 36-43 CIN",
+       "slot_label": "Sun 1:00 PM"
+      },
+      {
+       "game_id": "202610809",
+       "team": "DAL",
+       "opp": "ARI",
+       "game": "ARI @ DAL",
+       "outcome": "loss",
+       "prob": 0.731,
+       "hidden": false,
+       "score": "ARI 33-30 DAL",
+       "slot_label": "Sun 1:00 PM"
+      },
+      {
+       "game_id": "202610815",
+       "team": "JAX",
+       "opp": "IND",
+       "game": "IND @ JAX",
+       "outcome": "win",
+       "prob": 0.798,
+       "hidden": false,
+       "score": "IND 7-42 JAX",
+       "slot_label": "Sun 1:00 PM"
+      },
+      {
+       "game_id": "202610832",
+       "team": "LAR",
+       "opp": "LAC",
+       "game": "LAC @ LAR",
+       "outcome": "win",
+       "prob": 0.713,
+       "hidden": false,
+       "score": "LAC 9-24 LAR",
+       "slot_label": "Sun 4:05 PM"
+      },
+      {
+       "game_id": "202610819",
+       "team": "NE",
+       "opp": "MIA",
+       "game": "NE @ MIA",
+       "outcome": "win",
+       "prob": 0.738,
+       "hidden": false,
+       "score": "NE 24-19 MIA",
+       "slot_label": "Sun 4:25 PM"
+      },
+      {
+       "game_id": "202610830",
+       "team": "CHI",
+       "opp": "SEA",
+       "game": "CHI @ SEA",
+       "outcome": "win",
+       "prob": 0.392,
+       "hidden": false,
+       "score": "CHI 34-17 SEA",
+       "slot_label": "Mon 8:15 PM"
+      }
+     ],
+     "no_pick": false,
+     "correct": 6,
+     "wrong": 1,
+     "pending": 0,
+     "week_points": 6.0,
+     "season_points": 42.0,
+     "lost_this_week": false,
+     "strikes_before": 0,
+     "strikes_after": 0,
+     "eliminated_now": false,
+     "tiebreaker": {
+      "type": "total_points",
+      "game_id": "202610830",
+      "game": "CHI @ SEA",
+      "guess": 44,
+      "hidden": false
+     },
+     "hidden": 0,
+     "lonely_wins": [
+      "CHI"
+     ],
+     "upset_wins": [
+      "CHI"
+     ],
+     "chalk_losses": [
+      "DAL"
+     ]
+    },
+    {
+     "roster_id": 2,
+     "handle": "NickBova",
+     "name": "NickBova",
+     "picks": [
+      {
+       "game_id": "202610812",
+       "team": "CAR",
+       "opp": "GB",
+       "game": "CAR @ GB",
+       "outcome": "loss",
+       "prob": 0.367,
+       "hidden": false,
+       "score": "CAR 19-27 GB",
+       "slot_label": "Thu 8:15 PM"
+      },
+      {
+       "game_id": "202610804",
+       "team": "BUF",
+       "opp": "BAL",
+       "game": "BAL @ BUF",
+       "outcome": "win",
+       "prob": 0.609,
+       "hidden": false,
+       "score": "BAL 10-36 BUF",
+       "slot_label": "Sun 1:00 PM"
+      },
+      {
+       "game_id": "202610807",
+       "team": "CIN",
+       "opp": "TEN",
+       "game": "TEN @ CIN",
+       "outcome": "win",
+       "prob": 0.845,
+       "hidden": false,
+       "score": "TEN 36-43 CIN",
+       "slot_label": "Sun 1:00 PM"
+      },
+      {
+       "game_id": "202610809",
+       "team": "DAL",
+       "opp": "ARI",
+       "game": "ARI @ DAL",
+       "outcome": "loss",
+       "prob": 0.731,
+       "hidden": false,
+       "score": "ARI 33-30 DAL",
+       "slot_label": "Sun 1:00 PM"
+      },
+      {
+       "game_id": "202610815",
+       "team": "JAX",
+       "opp": "IND",
+       "game": "IND @ JAX",
+       "outcome": "win",
+       "prob": 0.798,
+       "hidden": false,
+       "score": "IND 7-42 JAX",
+       "slot_label": "Sun 1:00 PM"
+      },
+      {
+       "game_id": "202610824",
+       "team": "LV",
+       "opp": "NYJ",
+       "game": "LV @ NYJ",
+       "outcome": "win",
+       "prob": 0.475,
+       "hidden": false,
+       "score": "LV 38-33 NYJ",
+       "slot_label": "Sun 1:00 PM"
+      },
+      {
+       "game_id": "202610819",
+       "team": "NE",
+       "opp": "MIA",
+       "game": "NE @ MIA",
+       "outcome": "win",
+       "prob": 0.738,
+       "hidden": false,
+       "score": "NE 24-19 MIA",
+       "slot_label": "Sun 4:25 PM"
+      },
+      {
+       "game_id": "202610835",
+       "team": "WAS",
+       "opp": "PHI",
+       "game": "PHI @ WAS",
+       "outcome": "win",
+       "prob": 0.696,
+       "hidden": false,
+       "score": "PHI 10-27 WAS",
+       "slot_label": "Sun 8:20 PM"
+      }
+     ],
+     "no_pick": false,
+     "correct": 6,
+     "wrong": 2,
+     "pending": 0,
+     "week_points": 6.0,
+     "season_points": 38.0,
+     "lost_this_week": false,
+     "strikes_before": 0,
+     "strikes_after": 0,
+     "eliminated_now": false,
+     "tiebreaker": {
+      "type": "total_points",
+      "game_id": "202610830",
+      "game": "CHI @ SEA",
+      "guess": 47,
+      "hidden": false
+     },
+     "hidden": 0,
+     "lonely_wins": [],
+     "upset_wins": [
+      "LV"
+     ],
+     "chalk_losses": [
+      "DAL"
+     ]
+    },
+    {
+     "roster_id": 9,
+     "handle": "Bustersx8",
+     "name": "Bustersx8",
+     "picks": [
+      {
+       "game_id": "202610807",
+       "team": "CIN",
+       "opp": "TEN",
+       "game": "TEN @ CIN",
+       "outcome": "win",
+       "prob": 0.845,
+       "hidden": false,
+       "score": "TEN 36-43 CIN",
+       "slot_label": "Sun 1:00 PM"
+      },
+      {
+       "game_id": "202610809",
+       "team": "DAL",
+       "opp": "ARI",
+       "game": "ARI @ DAL",
+       "outcome": "loss",
+       "prob": 0.731,
+       "hidden": false,
+       "score": "ARI 33-30 DAL",
+       "slot_label": "Sun 1:00 PM"
+      },
+      {
+       "game_id": "202610815",
+       "team": "JAX",
+       "opp": "IND",
+       "game": "IND @ JAX",
+       "outcome": "win",
+       "prob": 0.798,
+       "hidden": false,
+       "score": "IND 7-42 JAX",
+       "slot_label": "Sun 1:00 PM"
+      },
+      {
+       "game_id": "202610824",
+       "team": "LV",
+       "opp": "NYJ",
+       "game": "LV @ NYJ",
+       "outcome": "win",
+       "prob": 0.475,
+       "hidden": false,
+       "score": "LV 38-33 NYJ",
+       "slot_label": "Sun 1:00 PM"
+      },
+      {
+       "game_id": "202610832",
+       "team": "LAR",
+       "opp": "LAC",
+       "game": "LAC @ LAR",
+       "outcome": "win",
+       "prob": 0.713,
+       "hidden": false,
+       "score": "LAC 9-24 LAR",
+       "slot_label": "Sun 4:05 PM"
+      },
+      {
+       "game_id": "202610810",
+       "team": "KC",
+       "opp": "DEN",
+       "game": "KC @ DEN",
+       "outcome": "loss",
+       "prob": 0.521,
+       "hidden": false,
+       "score": "KC 24-28 DEN",
+       "slot_label": "Sun 4:25 PM"
+      },
+      {
+       "game_id": "202610819",
+       "team": "NE",
+       "opp": "MIA",
+       "game": "NE @ MIA",
+       "outcome": "win",
+       "prob": 0.738,
+       "hidden": false,
+       "score": "NE 24-19 MIA",
+       "slot_label": "Sun 4:25 PM"
+      },
+      {
+       "game_id": "202610830",
+       "team": "SEA",
+       "opp": "CHI",
+       "game": "CHI @ SEA",
+       "outcome": "loss",
+       "prob": 0.608,
+       "hidden": false,
+       "score": "CHI 34-17 SEA",
+       "slot_label": "Mon 8:15 PM"
+      }
+     ],
+     "no_pick": false,
+     "correct": 5,
+     "wrong": 3,
+     "pending": 0,
+     "week_points": 5.0,
+     "season_points": 39.0,
+     "lost_this_week": false,
+     "strikes_before": 0,
+     "strikes_after": 0,
+     "eliminated_now": false,
+     "tiebreaker": null,
+     "hidden": 0,
+     "lonely_wins": [],
+     "upset_wins": [
+      "LV"
+     ],
+     "chalk_losses": [
+      "DAL"
+     ]
+    }
+   ],
+   "winners": [],
+   "best": 7,
+   "tied": [
+    "AngryWillis",
+    "Bogeyman28",
+    "camschnick",
+    "cbova1222",
+    "Cubbiesftw23",
+    "Mpletcher",
+    "NastyNate725",
+    "steveedwards"
+   ],
+   "tiebreak": {
+    "game": "CHI @ SEA",
+    "actual": 51,
+    "guesses": [
+     {
+      "handle": "Mpletcher",
+      "guess": 50,
+      "off": 1
+     },
+     {
+      "handle": "steveedwards",
+      "guess": 52,
+      "off": 1
+     },
+     {
+      "handle": "AngryWillis",
+      "guess": 49,
+      "off": 2
+     },
+     {
+      "handle": "Bogeyman28",
+      "guess": 48,
+      "off": 3
+     },
+     {
+      "handle": "NastyNate725",
+      "guess": 48,
+      "off": 3
+     },
+     {
+      "handle": "camschnick",
+      "guess": 47,
+      "off": 4
+     },
+     {
+      "handle": "Cubbiesftw23",
+      "guess": 47,
+      "off": 4
+     },
+     {
+      "handle": "cbova1222",
+      "guess": 42,
+      "off": 9
+     }
+    ]
+   },
+   "pot": 20,
+   "pot_carried": 0,
+   "rollover": true,
+   "worst": [
+    "Bustersx8"
+   ],
+   "no_pick": [],
+   "leaderboard": [
+    {
+     "handle": "bjander110",
+     "points": 46.0
+    },
+    {
+     "handle": "camschnick",
+     "points": 46.0
+    },
+    {
+     "handle": "djbogardus72",
+     "points": 46.0
+    },
+    {
+     "handle": "CHRISMERKELDUH",
+     "points": 45.0
+    },
+    {
+     "handle": "Cubbiesftw23",
+     "points": 45.0
+    },
+    {
+     "handle": "AngryWillis",
+     "points": 44.0
+    },
+    {
+     "handle": "cbova1222",
+     "points": 43.0
+    },
+    {
+     "handle": "NastyNate725",
+     "points": 43.0
+    },
+    {
+     "handle": "Kolisekj52",
+     "points": 42.0
+    },
+    {
+     "handle": "Mpletcher",
+     "points": 42.0
+    },
+    {
+     "handle": "msymons713",
+     "points": 42.0
+    },
+    {
+     "handle": "avobttam",
+     "points": 41.0
+    },
+    {
+     "handle": "Bogeyman28",
+     "points": 41.0
+    },
+    {
+     "handle": "steveedwards",
+     "points": 40.0
+    },
+    {
+     "handle": "Bustersx8",
+     "points": 39.0
+    },
+    {
+     "handle": "MJBlack",
+     "points": 39.0
+    },
+    {
+     "handle": "katiestout13",
+     "points": 38.0
+    },
+    {
+     "handle": "NickBova",
+     "points": 38.0
+    }
+   ],
+   "upsets": [
+    {
+     "game_id": "202610809",
+     "game": "ARI @ DAL",
+     "winner": "ARI",
+     "upset": true,
+     "fav": "DAL",
+     "fav_prob": 0.731,
+     "picks": {
+      "DAL": 17
+     }
+    },
+    {
+     "game_id": "202610824",
+     "game": "LV @ NYJ",
+     "winner": "LV",
+     "upset": true,
+     "fav": "NYJ",
+     "fav_prob": 0.525,
+     "picks": {
+      "LV": 6
+     }
+    },
+    {
+     "game_id": "202610810",
+     "game": "KC @ DEN",
+     "winner": "DEN",
+     "upset": true,
+     "fav": "KC",
+     "fav_prob": 0.521,
+     "picks": {
+      "KC": 3,
+      "DEN": 1
+     }
+    },
+    {
+     "game_id": "202610830",
+     "game": "CHI @ SEA",
+     "winner": "CHI",
+     "upset": true,
+     "fav": "SEA",
+     "fav_prob": 0.608,
+     "picks": {
+      "SEA": 5,
+      "CHI": 1
+     }
+    }
+   ]
+  },
+  "deadpool": {
+   "league_id": "1400514368084451328",
+   "league_name": "Deadpool",
+   "provisional": false,
+   "kind": "survivor",
+   "entries_total": 20,
+   "weekly_pick_limit": 1,
+   "revives_allowed": 2,
+   "payouts": {},
+   "field": [
+    {
+     "game_id": "202610807",
+     "game": "TEN @ CIN",
+     "winner": "CIN",
+     "upset": false,
+     "fav": "CIN",
+     "fav_prob": 0.845,
+     "picks": {
+      "CIN": 1
+     }
+    },
+    {
+     "game_id": "202610815",
+     "game": "IND @ JAX",
+     "winner": "JAX",
+     "upset": false,
+     "fav": "JAX",
+     "fav_prob": 0.798,
+     "picks": {
+      "JAX": 1
+     }
+    },
+    {
+     "game_id": "202610819",
+     "game": "NE @ MIA",
+     "winner": "NE",
+     "upset": false,
+     "fav": "NE",
+     "fav_prob": 0.738,
+     "picks": {
+      "NE": 1
+     }
+    },
+    {
+     "game_id": "202610835",
+     "game": "PHI @ WAS",
+     "winner": "WAS",
+     "upset": false,
+     "fav": "WAS",
+     "fav_prob": 0.696,
+     "picks": {
+      "WAS": 1
+     }
+    }
+   ],
+   "entries": [
+    {
+     "roster_id": 17,
+     "handle": "AngryWillis",
+     "name": "AngryWillis",
+     "picks": [
+      {
+       "game_id": "202610815",
+       "team": "JAX",
+       "opp": "IND",
+       "game": "IND @ JAX",
+       "outcome": "win",
+       "prob": 0.798,
+       "hidden": false,
+       "score": "IND 7-42 JAX",
+       "slot_label": "Sun 1:00 PM"
+      }
+     ],
+     "no_pick": false,
+     "correct": 1,
+     "wrong": 0,
+     "pending": 0,
+     "week_points": 1.0,
+     "season_points": 8.0,
+     "lost_this_week": false,
+     "strikes_before": 0,
+     "strikes_after": 0,
+     "eliminated_now": false,
+     "tiebreaker": null,
+     "hidden": 0,
+     "lonely_wins": [
+      "JAX"
+     ],
+     "upset_wins": [],
+     "chalk_losses": []
+    },
+    {
+     "roster_id": 3,
+     "handle": "NickBova",
+     "name": "NickBova",
+     "picks": [
+      {
+       "game_id": "202610835",
+       "team": "WAS",
+       "opp": "PHI",
+       "game": "PHI @ WAS",
+       "outcome": "win",
+       "prob": 0.696,
+       "hidden": false,
+       "score": "PHI 10-27 WAS",
+       "slot_label": "Sun 8:20 PM"
+      }
+     ],
+     "no_pick": false,
+     "correct": 1,
+     "wrong": 0,
+     "pending": 0,
+     "week_points": 1.0,
+     "season_points": 7.0,
+     "lost_this_week": false,
+     "strikes_before": 1,
+     "strikes_after": 1,
+     "eliminated_now": false,
+     "tiebreaker": null,
+     "hidden": 0,
+     "lonely_wins": [
+      "WAS"
+     ],
+     "upset_wins": [],
+     "chalk_losses": []
+    },
+    {
+     "roster_id": 16,
+     "handle": "cbova1222",
+     "name": "cbova1222",
+     "picks": [
+      {
+       "game_id": "202610819",
+       "team": "NE",
+       "opp": "MIA",
+       "game": "NE @ MIA",
+       "outcome": "win",
+       "prob": 0.738,
+       "hidden": false,
+       "score": "NE 24-19 MIA",
+       "slot_label": "Sun 4:25 PM"
+      }
+     ],
+     "no_pick": false,
+     "correct": 1,
+     "wrong": 0,
+     "pending": 0,
+     "week_points": 1.0,
+     "season_points": 6.0,
+     "lost_this_week": false,
+     "strikes_before": 2,
+     "strikes_after": 2,
+     "eliminated_now": false,
+     "tiebreaker": null,
+     "hidden": 0,
+     "lonely_wins": [
+      "NE"
+     ],
+     "upset_wins": [],
+     "chalk_losses": []
+    },
+    {
+     "roster_id": 14,
+     "handle": "Mpletcher",
+     "name": "Mpletcher",
+     "picks": [
+      {
+       "game_id": "202610807",
+       "team": "CIN",
+       "opp": "TEN",
+       "game": "TEN @ CIN",
+       "outcome": "win",
+       "prob": 0.845,
+       "hidden": false,
+       "score": "TEN 36-43 CIN",
+       "slot_label": "Sun 1:00 PM"
+      }
+     ],
+     "no_pick": false,
+     "correct": 1,
+     "wrong": 0,
+     "pending": 0,
+     "week_points": 1.0,
+     "season_points": 6.0,
+     "lost_this_week": false,
+     "strikes_before": 2,
+     "strikes_after": 2,
+     "eliminated_now": false,
+     "tiebreaker": null,
+     "hidden": 0,
+     "lonely_wins": [
+      "CIN"
+     ],
+     "upset_wins": [],
+     "chalk_losses": []
+    }
+   ],
+   "died": [],
+   "no_pick": [],
+   "alive_after": 4,
+   "consensus": [
+    {
+     "team": "WAS",
+     "count": 1
+    },
+    {
+     "team": "CIN",
+     "count": 1
+    },
+    {
+     "team": "NE",
+     "count": 1
+    },
+    {
+     "team": "JAX",
+     "count": 1
+    }
+   ],
+   "killer_games": []
+  },
+  "poop": {
+   "league_id": "1392226517005635584",
+   "league_name": "Poop 2026",
+   "provisional": false,
+   "kind": "survivor",
+   "entries_total": 31,
+   "weekly_pick_limit": 1,
+   "revives_allowed": 2,
+   "payouts": {},
+   "field": [
+    {
+     "game_id": "202610807",
+     "game": "TEN @ CIN",
+     "winner": "CIN",
+     "upset": false,
+     "fav": "CIN",
+     "fav_prob": 0.845,
+     "picks": {
+      "CIN": 5
+     }
+    },
+    {
+     "game_id": "202610815",
+     "game": "IND @ JAX",
+     "winner": "JAX",
+     "upset": false,
+     "fav": "JAX",
+     "fav_prob": 0.798,
+     "picks": {
+      "JAX": 5
+     }
+    },
+    {
+     "game_id": "202610809",
+     "game": "ARI @ DAL",
+     "winner": "ARI",
+     "upset": true,
+     "fav": "DAL",
+     "fav_prob": 0.731,
+     "picks": {
+      "DAL": 1
+     }
+    },
+    {
+     "game_id": "202610832",
+     "game": "LAC @ LAR",
+     "winner": "LAR",
+     "upset": false,
+     "fav": "LAR",
+     "fav_prob": 0.713,
+     "picks": {
+      "LAR": 1
+     }
+    },
+    {
+     "game_id": "202610819",
+     "game": "NE @ MIA",
+     "winner": "NE",
+     "upset": false,
+     "fav": "NE",
+     "fav_prob": 0.738,
+     "picks": {
+      "NE": 3
+     }
+    }
+   ],
+   "entries": [
+    {
+     "roster_id": 23,
+     "handle": "AFrange",
+     "name": "AFrange",
+     "picks": [
+      {
+       "game_id": "202610832",
+       "team": "LAR",
+       "opp": "LAC",
+       "game": "LAC @ LAR",
+       "outcome": "win",
+       "prob": 0.713,
+       "hidden": false,
+       "score": "LAC 9-24 LAR",
+       "slot_label": "Sun 4:05 PM"
+      }
+     ],
+     "no_pick": false,
+     "correct": 1,
+     "wrong": 0,
+     "pending": 0,
+     "week_points": 1.0,
+     "season_points": 7.0,
+     "lost_this_week": false,
+     "strikes_before": 1,
+     "strikes_after": 1,
+     "eliminated_now": false,
+     "tiebreaker": null,
+     "hidden": 0,
+     "lonely_wins": [
+      "LAR"
+     ],
+     "upset_wins": [],
+     "chalk_losses": []
+    },
+    {
+     "roster_id": 30,
+     "handle": "CarlosDangers",
+     "name": "CarlosDangers",
+     "picks": [
+      {
+       "game_id": "202610815",
+       "team": "JAX",
+       "opp": "IND",
+       "game": "IND @ JAX",
+       "outcome": "win",
+       "prob": 0.798,
+       "hidden": false,
+       "score": "IND 7-42 JAX",
+       "slot_label": "Sun 1:00 PM"
+      }
+     ],
+     "no_pick": false,
+     "correct": 1,
+     "wrong": 0,
+     "pending": 0,
+     "week_points": 1.0,
+     "season_points": 7.0,
+     "lost_this_week": false,
+     "strikes_before": 1,
+     "strikes_after": 1,
+     "eliminated_now": false,
+     "tiebreaker": null,
+     "hidden": 0,
+     "lonely_wins": [],
+     "upset_wins": [],
+     "chalk_losses": []
+    },
+    {
+     "roster_id": 8,
+     "handle": "creckley",
+     "name": "creckley",
+     "picks": [
+      {
+       "game_id": "202610815",
+       "team": "JAX",
+       "opp": "IND",
+       "game": "IND @ JAX",
+       "outcome": "win",
+       "prob": 0.798,
+       "hidden": false,
+       "score": "IND 7-42 JAX",
+       "slot_label": "Sun 1:00 PM"
+      }
+     ],
+     "no_pick": false,
+     "correct": 1,
+     "wrong": 0,
+     "pending": 0,
+     "week_points": 1.0,
+     "season_points": 7.0,
+     "lost_this_week": false,
+     "strikes_before": 1,
+     "strikes_after": 1,
+     "eliminated_now": false,
+     "tiebreaker": null,
+     "hidden": 0,
+     "lonely_wins": [],
+     "upset_wins": [],
+     "chalk_losses": []
+    },
+    {
+     "roster_id": 13,
+     "handle": "domfan",
+     "name": "domfan",
+     "picks": [
+      {
+       "game_id": "202610815",
+       "team": "JAX",
+       "opp": "IND",
+       "game": "IND @ JAX",
+       "outcome": "win",
+       "prob": 0.798,
+       "hidden": false,
+       "score": "IND 7-42 JAX",
+       "slot_label": "Sun 1:00 PM"
+      }
+     ],
+     "no_pick": false,
+     "correct": 1,
+     "wrong": 0,
+     "pending": 0,
+     "week_points": 1.0,
+     "season_points": 7.0,
+     "lost_this_week": false,
+     "strikes_before": 1,
+     "strikes_after": 1,
+     "eliminated_now": false,
+     "tiebreaker": null,
+     "hidden": 0,
+     "lonely_wins": [],
+     "upset_wins": [],
+     "chalk_losses": []
+    },
+    {
+     "roster_id": 19,
+     "handle": "jj833041",
+     "name": "jj833041",
+     "picks": [
+      {
+       "game_id": "202610807",
+       "team": "CIN",
+       "opp": "TEN",
+       "game": "TEN @ CIN",
+       "outcome": "win",
+       "prob": 0.845,
+       "hidden": false,
+       "score": "TEN 36-43 CIN",
+       "slot_label": "Sun 1:00 PM"
+      }
+     ],
+     "no_pick": false,
+     "correct": 1,
+     "wrong": 0,
+     "pending": 0,
+     "week_points": 1.0,
+     "season_points": 7.0,
+     "lost_this_week": false,
+     "strikes_before": 1,
+     "strikes_after": 1,
+     "eliminated_now": false,
+     "tiebreaker": null,
+     "hidden": 0,
+     "lonely_wins": [],
+     "upset_wins": [],
+     "chalk_losses": []
+    },
+    {
+     "roster_id": 16,
+     "handle": "sydguthrie",
+     "name": "sydguthrie",
+     "picks": [
+      {
+       "game_id": "202610815",
+       "team": "JAX",
+       "opp": "IND",
+       "game": "IND @ JAX",
+       "outcome": "win",
+       "prob": 0.798,
+       "hidden": false,
+       "score": "IND 7-42 JAX",
+       "slot_label": "Sun 1:00 PM"
+      }
+     ],
+     "no_pick": false,
+     "correct": 1,
+     "wrong": 0,
+     "pending": 0,
+     "week_points": 1.0,
+     "season_points": 7.0,
+     "lost_this_week": false,
+     "strikes_before": 1,
+     "strikes_after": 1,
+     "eliminated_now": false,
+     "tiebreaker": null,
+     "hidden": 0,
+     "lonely_wins": [],
+     "upset_wins": [],
+     "chalk_losses": []
+    },
+    {
+     "roster_id": 7,
+     "handle": "albuchan",
+     "name": "albuchan",
+     "picks": [
+      {
+       "game_id": "202610819",
+       "team": "NE",
+       "opp": "MIA",
+       "game": "NE @ MIA",
+       "outcome": "win",
+       "prob": 0.738,
+       "hidden": false,
+       "score": "NE 24-19 MIA",
+       "slot_label": "Sun 4:25 PM"
+      }
+     ],
+     "no_pick": false,
+     "correct": 1,
+     "wrong": 0,
+     "pending": 0,
+     "week_points": 1.0,
+     "season_points": 6.0,
+     "lost_this_week": false,
+     "strikes_before": 2,
+     "strikes_after": 2,
+     "eliminated_now": false,
+     "tiebreaker": null,
+     "hidden": 0,
+     "lonely_wins": [],
+     "upset_wins": [],
+     "chalk_losses": []
+    },
+    {
+     "roster_id": 4,
+     "handle": "Elworth",
+     "name": "Elworth",
+     "picks": [
+      {
+       "game_id": "202610807",
+       "team": "CIN",
+       "opp": "TEN",
+       "game": "TEN @ CIN",
+       "outcome": "win",
+       "prob": 0.845,
+       "hidden": false,
+       "score": "TEN 36-43 CIN",
+       "slot_label": "Sun 1:00 PM"
+      }
+     ],
+     "no_pick": false,
+     "correct": 1,
+     "wrong": 0,
+     "pending": 0,
+     "week_points": 1.0,
+     "season_points": 6.0,
+     "lost_this_week": false,
+     "strikes_before": 2,
+     "strikes_after": 2,
+     "eliminated_now": false,
+     "tiebreaker": null,
+     "hidden": 0,
+     "lonely_wins": [],
+     "upset_wins": [],
+     "chalk_losses": []
+    },
+    {
+     "roster_id": 22,
+     "handle": "Intipach",
+     "name": "Intipach",
+     "picks": [
+      {
+       "game_id": "202610815",
+       "team": "JAX",
+       "opp": "IND",
+       "game": "IND @ JAX",
+       "outcome": "win",
+       "prob": 0.798,
+       "hidden": false,
+       "score": "IND 7-42 JAX",
+       "slot_label": "Sun 1:00 PM"
+      }
+     ],
+     "no_pick": false,
+     "correct": 1,
+     "wrong": 0,
+     "pending": 0,
+     "week_points": 1.0,
+     "season_points": 6.0,
+     "lost_this_week": false,
+     "strikes_before": 2,
+     "strikes_after": 2,
+     "eliminated_now": false,
+     "tiebreaker": null,
+     "hidden": 0,
+     "lonely_wins": [],
+     "upset_wins": [],
+     "chalk_losses": []
+    },
+    {
+     "roster_id": 24,
+     "handle": "Isabelle312",
+     "name": "Isabelle312",
+     "picks": [
+      {
+       "game_id": "202610819",
+       "team": "NE",
+       "opp": "MIA",
+       "game": "NE @ MIA",
+       "outcome": "win",
+       "prob": 0.738,
+       "hidden": false,
+       "score": "NE 24-19 MIA",
+       "slot_label": "Sun 4:25 PM"
+      }
+     ],
+     "no_pick": false,
+     "correct": 1,
+     "wrong": 0,
+     "pending": 0,
+     "week_points": 1.0,
+     "season_points": 6.0,
+     "lost_this_week": false,
+     "strikes_before": 2,
+     "strikes_after": 2,
+     "eliminated_now": false,
+     "tiebreaker": null,
+     "hidden": 0,
+     "lonely_wins": [],
+     "upset_wins": [],
+     "chalk_losses": []
+    },
+    {
+     "roster_id": 27,
+     "handle": "JohnDaveyNATTYCHAMP",
+     "name": "JohnDaveyNATTYCHAMP",
+     "picks": [
+      {
+       "game_id": "202610807",
+       "team": "CIN",
+       "opp": "TEN",
+       "game": "TEN @ CIN",
+       "outcome": "win",
+       "prob": 0.845,
+       "hidden": false,
+       "score": "TEN 36-43 CIN",
+       "slot_label": "Sun 1:00 PM"
+      }
+     ],
+     "no_pick": false,
+     "correct": 1,
+     "wrong": 0,
+     "pending": 0,
+     "week_points": 1.0,
+     "season_points": 6.0,
+     "lost_this_week": false,
+     "strikes_before": 2,
+     "strikes_after": 2,
+     "eliminated_now": false,
+     "tiebreaker": null,
+     "hidden": 0,
+     "lonely_wins": [],
+     "upset_wins": [],
+     "chalk_losses": []
+    },
+    {
+     "roster_id": 11,
+     "handle": "leftypapa",
+     "name": "leftypapa",
+     "picks": [
+      {
+       "game_id": "202610807",
+       "team": "CIN",
+       "opp": "TEN",
+       "game": "TEN @ CIN",
+       "outcome": "win",
+       "prob": 0.845,
+       "hidden": false,
+       "score": "TEN 36-43 CIN",
+       "slot_label": "Sun 1:00 PM"
+      }
+     ],
+     "no_pick": false,
+     "correct": 1,
+     "wrong": 0,
+     "pending": 0,
+     "week_points": 1.0,
+     "season_points": 6.0,
+     "lost_this_week": false,
+     "strikes_before": 2,
+     "strikes_after": 2,
+     "eliminated_now": false,
+     "tiebreaker": null,
+     "hidden": 0,
+     "lonely_wins": [],
+     "upset_wins": [],
+     "chalk_losses": []
+    },
+    {
+     "roster_id": 29,
+     "handle": "MichaelSeidl",
+     "name": "MichaelSeidl",
+     "picks": [
+      {
+       "game_id": "202610807",
+       "team": "CIN",
+       "opp": "TEN",
+       "game": "TEN @ CIN",
+       "outcome": "win",
+       "prob": 0.845,
+       "hidden": false,
+       "score": "TEN 36-43 CIN",
+       "slot_label": "Sun 1:00 PM"
+      }
+     ],
+     "no_pick": false,
+     "correct": 1,
+     "wrong": 0,
+     "pending": 0,
+     "week_points": 1.0,
+     "season_points": 6.0,
+     "lost_this_week": false,
+     "strikes_before": 2,
+     "strikes_after": 2,
+     "eliminated_now": false,
+     "tiebreaker": null,
+     "hidden": 0,
+     "lonely_wins": [],
+     "upset_wins": [],
+     "chalk_losses": []
+    },
+    {
+     "roster_id": 28,
+     "handle": "NickBova",
+     "name": "NickBova",
+     "picks": [
+      {
+       "game_id": "202610819",
+       "team": "NE",
+       "opp": "MIA",
+       "game": "NE @ MIA",
+       "outcome": "win",
+       "prob": 0.738,
+       "hidden": false,
+       "score": "NE 24-19 MIA",
+       "slot_label": "Sun 4:25 PM"
+      }
+     ],
+     "no_pick": false,
+     "correct": 1,
+     "wrong": 0,
+     "pending": 0,
+     "week_points": 1.0,
+     "season_points": 6.0,
+     "lost_this_week": false,
+     "strikes_before": 2,
+     "strikes_after": 2,
+     "eliminated_now": false,
+     "tiebreaker": null,
+     "hidden": 0,
+     "lonely_wins": [],
+     "upset_wins": [],
+     "chalk_losses": []
+    },
+    {
+     "roster_id": 26,
+     "handle": "aelliott2214",
+     "name": "aelliott2214",
+     "picks": [
+      {
+       "game_id": "202610809",
+       "team": "DAL",
+       "opp": "ARI",
+       "game": "ARI @ DAL",
+       "outcome": "loss",
+       "prob": 0.731,
+       "hidden": false,
+       "score": "ARI 33-30 DAL",
+       "slot_label": "Sun 1:00 PM"
+      }
+     ],
+     "no_pick": false,
+     "correct": 0,
+     "wrong": 1,
+     "pending": 0,
+     "week_points": 0.0,
+     "season_points": 5.0,
+     "lost_this_week": true,
+     "strikes_before": 2,
+     "strikes_after": 3,
+     "eliminated_now": true,
+     "tiebreaker": null,
+     "hidden": 0,
+     "lonely_wins": [],
+     "upset_wins": [],
+     "chalk_losses": [
+      "DAL"
+     ]
+    }
+   ],
+   "died": [
+    {
+     "handle": "aelliott2214",
+     "pick": {
+      "game_id": "202610809",
+      "team": "DAL",
+      "opp": "ARI",
+      "game": "ARI @ DAL",
+      "outcome": "loss",
+      "prob": 0.731,
+      "hidden": false,
+      "score": "ARI 33-30 DAL",
+      "slot_label": "Sun 1:00 PM"
+     },
+     "strikes_after": 3,
+     "eliminated_now": true
+    }
+   ],
+   "no_pick": [],
+   "alive_after": 14,
+   "consensus": [
+    {
+     "team": "CIN",
+     "count": 5
+    },
+    {
+     "team": "JAX",
+     "count": 5
+    },
+    {
+     "team": "NE",
+     "count": 3
+    },
+    {
+     "team": "LAR",
+     "count": 1
+    },
+    {
+     "team": "DAL",
+     "count": 1
+    }
+   ],
+   "killer_games": [
+    {
+     "game_id": "202610809",
+     "game": "ARI @ DAL",
+     "winner": "ARI",
+     "upset": true,
+     "fav": "DAL",
+     "fav_prob": 0.731,
+     "picks": {
+      "DAL": 1
+     }
+    }
+   ]
+  }
+ }
+}
