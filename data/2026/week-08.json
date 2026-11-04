@@ -1,7 +1,7 @@
 {
  "season": 2026,
  "week": 8,
- "generated": "2026-11-03T12:40:33-05:00",
+ "generated": "2026-11-04T06:40:35-05:00",
  "all_final": true,
  "nfl": {
   "games": [
@@ -17,9 +17,9 @@
     "kickoff": "2026-10-30T00:15:00+00:00",
     "slot": 0,
     "slot_label": "Thu 8:15 PM",
-    "fav": "GB",
-    "fav_prob": 0.633,
-    "upset": false
+    "fav": null,
+    "fav_prob": null,
+    "upset": null
    },
    {
     "game_id": "202610809",
@@ -33,9 +33,9 @@
     "kickoff": "2026-11-01T18:00:00+00:00",
     "slot": 1,
     "slot_label": "Sun 1:00 PM",
-    "fav": "DAL",
-    "fav_prob": 0.732,
-    "upset": true
+    "fav": null,
+    "fav_prob": null,
+    "upset": null
    },
    {
     "game_id": "202610833",
@@ -49,9 +49,9 @@
     "kickoff": "2026-11-01T18:00:00+00:00",
     "slot": 1,
     "slot_label": "Sun 1:00 PM",
-    "fav": "TB",
-    "fav_prob": 0.54,
-    "upset": false
+    "fav": null,
+    "fav_prob": null,
+    "upset": null
    },
    {
     "game_id": "202610804",
@@ -65,9 +65,9 @@
     "kickoff": "2026-11-01T18:00:00+00:00",
     "slot": 1,
     "slot_label": "Sun 1:00 PM",
-    "fav": "BUF",
-    "fav_prob": 0.61,
-    "upset": false
+    "fav": null,
+    "fav_prob": null,
+    "upset": null
    },
    {
     "game_id": "202610828",
@@ -81,9 +81,9 @@
     "kickoff": "2026-11-01T18:00:00+00:00",
     "slot": 1,
     "slot_label": "Sun 1:00 PM",
-    "fav": "PIT",
-    "fav_prob": 0.633,
-    "upset": false
+    "fav": null,
+    "fav_prob": null,
+    "upset": null
    },
    {
     "game_id": "202610815",
@@ -97,9 +97,9 @@
     "kickoff": "2026-11-01T18:00:00+00:00",
     "slot": 1,
     "slot_label": "Sun 1:00 PM",
-    "fav": "JAX",
-    "fav_prob": 0.798,
-    "upset": false
+    "fav": null,
+    "fav_prob": null,
+    "upset": null
    },
    {
     "game_id": "202610824",
@@ -113,9 +113,9 @@
     "kickoff": "2026-11-01T18:00:00+00:00",
     "slot": 1,
     "slot_label": "Sun 1:00 PM",
-    "fav": "NYJ",
-    "fav_prob": 0.526,
-    "upset": true
+    "fav": null,
+    "fav_prob": null,
+    "upset": null
    },
    {
     "game_id": "202610811",
@@ -129,9 +129,9 @@
     "kickoff": "2026-11-01T18:00:00+00:00",
     "slot": 1,
     "slot_label": "Sun 1:00 PM",
-    "fav": "DET",
-    "fav_prob": 0.615,
-    "upset": false
+    "fav": null,
+    "fav_prob": null,
+    "upset": null
    },
    {
     "game_id": "202610807",
@@ -145,9 +145,9 @@
     "kickoff": "2026-11-01T18:00:00+00:00",
     "slot": 1,
     "slot_label": "Sun 1:00 PM",
-    "fav": "CIN",
-    "fav_prob": 0.85,
-    "upset": false
+    "fav": null,
+    "fav_prob": null,
+    "upset": null
    },
    {
     "game_id": "202610832",
@@ -161,9 +161,9 @@
     "kickoff": "2026-11-01T21:05:00+00:00",
     "slot": 2,
     "slot_label": "Sun 4:05 PM",
-    "fav": "LAR",
-    "fav_prob": 0.722,
-    "upset": false
+    "fav": null,
+    "fav_prob": null,
+    "upset": null
    },
    {
     "game_id": "202610810",
@@ -177,9 +177,9 @@
     "kickoff": "2026-11-01T21:25:00+00:00",
     "slot": 3,
     "slot_label": "Sun 4:25 PM",
-    "fav": "KC",
-    "fav_prob": 0.504,
-    "upset": true
+    "fav": null,
+    "fav_prob": null,
+    "upset": null
    },
    {
     "game_id": "202610819",
@@ -193,9 +193,9 @@
     "kickoff": "2026-11-01T21:25:00+00:00",
     "slot": 3,
     "slot_label": "Sun 4:25 PM",
-    "fav": "NE",
-    "fav_prob": 0.752,
-    "upset": false
+    "fav": null,
+    "fav_prob": null,
+    "upset": null
    },
    {
     "game_id": "202610835",
@@ -209,9 +209,9 @@
     "kickoff": "2026-11-02T01:20:00+00:00",
     "slot": 4,
     "slot_label": "Sun 8:20 PM",
-    "fav": "WAS",
-    "fav_prob": 0.694,
-    "upset": false
+    "fav": null,
+    "fav_prob": null,
+    "upset": null
    },
    {
     "game_id": "202610830",
@@ -225,9 +225,9 @@
     "kickoff": "2026-11-03T01:15:00+00:00",
     "slot": 5,
     "slot_label": "Mon 8:15 PM",
-    "fav": "SEA",
-    "fav_prob": 0.615,
-    "upset": true
+    "fav": null,
+    "fav_prob": null,
+    "upset": null
    }
   ],
   "slots": [
@@ -290,1063 +290,6 @@
   ]
  },
  "leagues": {
-  "kings_justice": {
-   "league_id": "1383926066564837376",
-   "league_name": "\ud83e\ude93 The King's Justice",
-   "provisional": false,
-   "alive_before": 11,
-   "alive_after": 10,
-   "payouts": {
-    "weekly_high": 25,
-    "first": 350,
-    "second": 150
-   },
-   "chopped": {
-    "handle": "creckley",
-    "team_name": "creckley",
-    "points": 82.3,
-    "confirmed": true
-   },
-   "high": {
-    "handle": "avobttam",
-    "team_name": "The Executioner",
-    "points": 173.88
-   },
-   "survivor": {
-    "handle": "bstanley45",
-    "points": 82.48,
-    "margin": 0.18
-   },
-   "median": 125.86,
-   "spread": 91.58,
-   "chop_seat": [
-    {
-     "slot": 0,
-     "label": "Thu 8:15 PM",
-     "handle": "cbova1222",
-     "points": 0,
-     "left": 8,
-     "next_handle": "joefanelli90",
-     "margin": 0
-    },
-    {
-     "slot": 1,
-     "label": "Sun 1:00 PM",
-     "handle": "nelsolson",
-     "points": 43.7,
-     "left": 4,
-     "next_handle": "bstanley45",
-     "margin": 0.2
-    },
-    {
-     "slot": 2,
-     "label": "Sun 4:05 PM",
-     "handle": "bstanley45",
-     "points": 54.18,
-     "left": 2,
-     "next_handle": "nelsolson",
-     "margin": 2.12
-    },
-    {
-     "slot": 3,
-     "label": "Sun 4:25 PM",
-     "handle": "nelsolson",
-     "points": 56.3,
-     "left": 3,
-     "next_handle": "creckley",
-     "margin": 26.0
-    },
-    {
-     "slot": 4,
-     "label": "Sun 8:20 PM",
-     "handle": "nelsolson",
-     "points": 70.3,
-     "left": 2,
-     "next_handle": "creckley",
-     "margin": 12.0
-    },
-    {
-     "slot": 5,
-     "label": "Mon 8:15 PM",
-     "handle": "creckley",
-     "points": 82.3,
-     "left": 0,
-     "next_handle": "bstanley45",
-     "margin": 0.18
-    }
-   ],
-   "scoreboard": [
-    {
-     "rank": 1,
-     "roster_id": 1,
-     "handle": "avobttam",
-     "name": "avobttam",
-     "team_name": "The Executioner",
-     "points": 173.88,
-     "proj": 126.31,
-     "running": [
-      9.6,
-      139.08,
-      139.08,
-      145.98,
-      145.98,
-      173.88
-     ],
-     "left_after": [
-      7,
-      2,
-      2,
-      1,
-      1,
-      0
-     ],
-     "last_slot_players": [
-      {
-       "pid": "6790",
-       "name": "D'Andre Swift",
-       "pos": "RB",
-       "team": "CHI",
-       "pts": 27.9,
-       "proj": 14.69,
-       "slot": 5,
-       "injury": null
-      }
-     ],
-     "no_game": [],
-     "lock_in": null,
-     "chopped": false
-    },
-    {
-     "rank": 2,
-     "roster_id": 3,
-     "handle": "cbova1222",
-     "name": "cbova1222",
-     "team_name": "Danger Zone",
-     "points": 150.94,
-     "proj": 111.51,
-     "running": [
-      0,
-      117.74,
-      117.74,
-      150.94,
-      150.94,
-      150.94
-     ],
-     "left_after": [
-      8,
-      2,
-      2,
-      0,
-      0,
-      0
-     ],
-     "last_slot_players": [],
-     "no_game": [],
-     "lock_in": null,
-     "chopped": false
-    },
-    {
-     "rank": 3,
-     "roster_id": 18,
-     "handle": "joefanelli90",
-     "name": "joefanelli90",
-     "team_name": "Indiana Joe",
-     "points": 148.78,
-     "proj": 120.44,
-     "running": [
-      0,
-      141.58,
-      141.58,
-      141.58,
-      148.78,
-      148.78
-     ],
-     "left_after": [
-      8,
-      1,
-      1,
-      1,
-      0,
-      0
-     ],
-     "last_slot_players": [],
-     "no_game": [],
-     "lock_in": null,
-     "chopped": false
-    },
-    {
-     "rank": 4,
-     "roster_id": 5,
-     "handle": "CodyPowers28",
-     "name": "CodyPowers28",
-     "team_name": "Taco Corp",
-     "points": 139.26,
-     "proj": 100.92,
-     "running": [
-      0,
-      102.86,
-      116.16,
-      116.16,
-      126.56,
-      139.26
-     ],
-     "left_after": [
-      8,
-      3,
-      2,
-      2,
-      1,
-      0
-     ],
-     "last_slot_players": [
-      {
-       "pid": "11620",
-       "name": "Rome Odunze",
-       "pos": "WR",
-       "team": "CHI",
-       "pts": 12.7,
-       "proj": 10.03,
-       "slot": 5,
-       "injury": null
-      }
-     ],
-     "no_game": [],
-     "lock_in": null,
-     "chopped": false
-    },
-    {
-     "rank": 5,
-     "roster_id": 14,
-     "handle": "AllBidness",
-     "name": "AllBidness",
-     "team_name": "AllBidness",
-     "points": 137.0,
-     "proj": 111.76,
-     "running": [
-      17.3,
-      107.3,
-      107.3,
-      107.3,
-      107.3,
-      137.0
-     ],
-     "left_after": [
-      7,
-      2,
-      2,
-      2,
-      2,
-      0
-     ],
-     "last_slot_players": [
-      {
-       "pid": "9488",
-       "name": "Jaxon Smith-Njigba",
-       "pos": "WR",
-       "team": "SEA",
-       "pts": 23.8,
-       "proj": 25.26,
-       "slot": 5,
-       "injury": null
-      },
-      {
-       "pid": "9753",
-       "name": "Zach Charbonnet",
-       "pos": "RB",
-       "team": "SEA",
-       "pts": 5.9,
-       "proj": 8.09,
-       "slot": 5,
-       "injury": null
-      }
-     ],
-     "no_game": [],
-     "lock_in": null,
-     "chopped": false
-    },
-    {
-     "rank": 6,
-     "roster_id": 6,
-     "handle": "Bustersx8",
-     "name": "Bustersx8",
-     "team_name": "Bustersx8",
-     "points": 125.86,
-     "proj": 131.79,
-     "running": [
-      29.1,
-      74.4,
-      99.4,
-      125.86,
-      125.86,
-      125.86
-     ],
-     "left_after": [
-      6,
-      2,
-      1,
-      0,
-      0,
-      0
-     ],
-     "last_slot_players": [],
-     "no_game": [],
-     "lock_in": null,
-     "chopped": false
-    },
-    {
-     "rank": 7,
-     "roster_id": 4,
-     "handle": "ButtFumble06",
-     "name": "ButtFumble06",
-     "team_name": "ButtFumble06",
-     "points": 123.72,
-     "proj": 132.7,
-     "running": [
-      27.52,
-      78.12,
-      78.12,
-      110.92,
-      123.72,
-      123.72
-     ],
-     "left_after": [
-      7,
-      3,
-      3,
-      1,
-      0,
-      0
-     ],
-     "last_slot_players": [],
-     "no_game": [],
-     "lock_in": null,
-     "chopped": false
-    },
-    {
-     "rank": 8,
-     "roster_id": 11,
-     "handle": "humrich",
-     "name": "humrich",
-     "team_name": "humrich",
-     "points": 109.4,
-     "proj": 123.2,
-     "running": [
-      0,
-      72.1,
-      85.0,
-      97.0,
-      109.4,
-      109.4
-     ],
-     "left_after": [
-      8,
-      3,
-      2,
-      1,
-      0,
-      0
-     ],
-     "last_slot_players": [],
-     "no_game": [],
-     "lock_in": null,
-     "chopped": false
-    },
-    {
-     "rank": 9,
-     "roster_id": 7,
-     "handle": "nelsolson",
-     "name": "nelsolson",
-     "team_name": "Participant Banner",
-     "points": 100.4,
-     "proj": 115.87,
-     "running": [
-      24.9,
-      43.7,
-      56.3,
-      56.3,
-      70.3,
-      100.4
-     ],
-     "left_after": [
-      7,
-      4,
-      3,
-      3,
-      2,
-      0
-     ],
-     "last_slot_players": [
-      {
-       "pid": "12519",
-       "name": "Luther Burden III",
-       "pos": "WR",
-       "team": "CHI",
-       "pts": 18.6,
-       "proj": 12.42,
-       "slot": 5,
-       "injury": null
-      },
-      {
-       "pid": "12517",
-       "name": "Colston Loveland",
-       "pos": "TE",
-       "team": "CHI",
-       "pts": 11.5,
-       "proj": 9.73,
-       "slot": 5,
-       "injury": null
-      }
-     ],
-     "no_game": [],
-     "lock_in": null,
-     "chopped": false
-    },
-    {
-     "rank": 10,
-     "roster_id": 10,
-     "handle": "bstanley45",
-     "name": "bstanley45",
-     "team_name": "bstanley45",
-     "points": 82.48,
-     "proj": 113.87,
-     "running": [
-      23.2,
-      43.9,
-      54.18,
-      82.48,
-      82.48,
-      82.48
-     ],
-     "left_after": [
-      7,
-      3,
-      2,
-      0,
-      0,
-      0
-     ],
-     "last_slot_players": [],
-     "no_game": [],
-     "lock_in": null,
-     "chopped": false
-    },
-    {
-     "rank": 11,
-     "roster_id": 8,
-     "handle": "creckley",
-     "name": "creckley",
-     "team_name": "creckley",
-     "points": 82.3,
-     "proj": 110.36,
-     "running": [
-      20.9,
-      77.6,
-      82.3,
-      82.3,
-      82.3,
-      82.3
-     ],
-     "left_after": [
-      7,
-      1,
-      0,
-      0,
-      0,
-      0
-     ],
-     "last_slot_players": [],
-     "no_game": [],
-     "lock_in": null,
-     "chopped": true
-    }
-   ],
-   "top_starters": [
-    {
-     "handle": "avobttam",
-     "name": "Joe Burrow",
-     "pos": "QB",
-     "team": "CIN",
-     "pts": 49.48,
-     "slot": 1
-    },
-    {
-     "handle": "avobttam",
-     "name": "Tee Higgins",
-     "pos": "WR",
-     "team": "CIN",
-     "pts": 37.5,
-     "slot": 1
-    },
-    {
-     "handle": "AllBidness",
-     "name": "Tyler Allgeier",
-     "pos": "RB",
-     "team": "ARI",
-     "pts": 36.1,
-     "slot": 1
-    },
-    {
-     "handle": "joefanelli90",
-     "name": "Kirk Cousins",
-     "pos": "QB",
-     "team": "LV",
-     "pts": 34.18,
-     "slot": 1
-    },
-    {
-     "handle": "joefanelli90",
-     "name": "Ja'Marr Chase",
-     "pos": "WR",
-     "team": "CIN",
-     "pts": 31.1,
-     "slot": 1
-    },
-    {
-     "handle": "CodyPowers28",
-     "name": "Josh Allen",
-     "pos": "QB",
-     "team": "BUF",
-     "pts": 30.56,
-     "slot": 1
-    },
-    {
-     "handle": "CodyPowers28",
-     "name": "Bhayshul Tuten",
-     "pos": "RB",
-     "team": "JAX",
-     "pts": 29.9,
-     "slot": 1
-    },
-    {
-     "handle": "cbova1222",
-     "name": "Tony Pollard",
-     "pos": "RB",
-     "team": "TEN",
-     "pts": 28.7,
-     "slot": 1
-    }
-   ],
-   "dud_starters": [
-    {
-     "handle": "nelsolson",
-     "name": "Lamar Jackson",
-     "pos": "QB",
-     "team": "BAL",
-     "pts": 0.0,
-     "slot": 1
-    },
-    {
-     "handle": "bstanley45",
-     "name": "Tre Tucker",
-     "pos": "WR",
-     "team": "LV",
-     "pts": 0.0,
-     "slot": 1
-    },
-    {
-     "handle": "creckley",
-     "name": "Zay Flowers",
-     "pos": "WR",
-     "team": "BAL",
-     "pts": 0.0,
-     "slot": 1
-    },
-    {
-     "handle": "Bustersx8",
-     "name": "DK Metcalf",
-     "pos": "WR",
-     "team": "PIT",
-     "pts": 1.4,
-     "slot": 1
-    },
-    {
-     "handle": "creckley",
-     "name": "Drake London",
-     "pos": "WR",
-     "team": "ATL",
-     "pts": 1.8,
-     "slot": 1
-    },
-    {
-     "handle": "ButtFumble06",
-     "name": "Jordan Mason",
-     "pos": "RB",
-     "team": "MIN",
-     "pts": 2.0,
-     "slot": 1
-    },
-    {
-     "handle": "AllBidness",
-     "name": "Jeremiyah Love",
-     "pos": "RB",
-     "team": "ARI",
-     "pts": 2.3,
-     "slot": 1
-    },
-    {
-     "handle": "ButtFumble06",
-     "name": "Parker Washington",
-     "pos": "WR",
-     "team": "JAX",
-     "pts": 3.6,
-     "slot": 1
-    }
-   ],
-   "transactions": {
-    "waivers": [
-     {
-      "player_id": "5859",
-      "player": "A.J. Brown",
-      "pos": "WR",
-      "handle": "CodyPowers28",
-      "bid": 31,
-      "bidders": 7,
-      "runner_up": 16,
-      "losers": [
-       {
-        "handle": "nelsolson",
-        "bid": 16
-       },
-       {
-        "handle": "creckley",
-        "bid": 7
-       },
-       {
-        "handle": "bstanley45",
-        "bid": 4
-       },
-       {
-        "handle": "ButtFumble06",
-        "bid": 0
-       },
-       {
-        "handle": "cbova1222",
-        "bid": 0
-       },
-       {
-        "handle": "AllBidness",
-        "bid": 0
-       }
-      ]
-     },
-     {
-      "player_id": "8134",
-      "player": "Khalil Shakir",
-      "pos": "WR",
-      "handle": "creckley",
-      "bid": 7,
-      "bidders": 1,
-      "runner_up": null,
-      "losers": []
-     },
-     {
-      "player_id": "9756",
-      "player": "Jordan Addison",
-      "pos": "WR",
-      "handle": "creckley",
-      "bid": 6,
-      "bidders": 1,
-      "runner_up": null,
-      "losers": []
-     },
-     {
-      "player_id": "12499",
-      "player": "Elic Ayomanor",
-      "pos": "WR",
-      "handle": "bstanley45",
-      "bid": 3,
-      "bidders": 1,
-      "runner_up": null,
-      "losers": []
-     },
-     {
-      "player_id": "9501",
-      "player": "DeMario Douglas",
-      "pos": "WR",
-      "handle": "bstanley45",
-      "bid": 3,
-      "bidders": 1,
-      "runner_up": null,
-      "losers": []
-     },
-     {
-      "player_id": "5947",
-      "player": "Jakobi Meyers",
-      "pos": "WR",
-      "handle": "nelsolson",
-      "bid": 1,
-      "bidders": 1,
-      "runner_up": null,
-      "losers": []
-     },
-     {
-      "player_id": "11729",
-      "player": "Sione Vaki",
-      "pos": "RB",
-      "handle": "ButtFumble06",
-      "bid": 0,
-      "bidders": 1,
-      "runner_up": null,
-      "losers": []
-     },
-     {
-      "player_id": "6806",
-      "player": "J.K. Dobbins",
-      "pos": "RB",
-      "handle": "Bustersx8",
-      "bid": 0,
-      "bidders": 1,
-      "runner_up": null,
-      "losers": []
-     },
-     {
-      "player_id": "6804",
-      "player": "Jordan Love",
-      "pos": "QB",
-      "handle": "ButtFumble06",
-      "bid": 0,
-      "bidders": 1,
-      "runner_up": null,
-      "losers": []
-     },
-     {
-      "player_id": "11624",
-      "player": "Xavier Worthy",
-      "pos": "WR",
-      "handle": "AllBidness",
-      "bid": 0,
-      "bidders": 1,
-      "runner_up": null,
-      "losers": []
-     },
-     {
-      "player_id": "13301",
-      "player": "Antonio Williams",
-      "pos": "WR",
-      "handle": "CodyPowers28",
-      "bid": 0,
-      "bidders": 1,
-      "runner_up": null,
-      "losers": []
-     }
-    ],
-    "lost_bids": [
-     {
-      "player_id": "5859",
-      "player": "A.J. Brown",
-      "pos": "WR",
-      "handle": "nelsolson",
-      "bid": 16,
-      "won_by": "CodyPowers28",
-      "won_at": 31
-     },
-     {
-      "player_id": "5859",
-      "player": "A.J. Brown",
-      "pos": "WR",
-      "handle": "creckley",
-      "bid": 7,
-      "won_by": "CodyPowers28",
-      "won_at": 31
-     },
-     {
-      "player_id": "5859",
-      "player": "A.J. Brown",
-      "pos": "WR",
-      "handle": "bstanley45",
-      "bid": 4,
-      "won_by": "CodyPowers28",
-      "won_at": 31
-     },
-     {
-      "player_id": "5859",
-      "player": "A.J. Brown",
-      "pos": "WR",
-      "handle": "ButtFumble06",
-      "bid": 0,
-      "won_by": "CodyPowers28",
-      "won_at": 31
-     },
-     {
-      "player_id": "5859",
-      "player": "A.J. Brown",
-      "pos": "WR",
-      "handle": "cbova1222",
-      "bid": 0,
-      "won_by": "CodyPowers28",
-      "won_at": 31
-     },
-     {
-      "player_id": "5859",
-      "player": "A.J. Brown",
-      "pos": "WR",
-      "handle": "AllBidness",
-      "bid": 0,
-      "won_by": "CodyPowers28",
-      "won_at": 31
-     }
-    ],
-    "faab_spent": 51,
-    "free_agents": [],
-    "trades": []
-   },
-   "death": {
-    "kind": "death",
-    "confirmed": true,
-    "handle": "creckley",
-    "name": "creckley",
-    "team_name": "creckley",
-    "points": 82.3,
-    "proj": 110.36,
-    "place": 11,
-    "teams": 18,
-    "ordinal": "11th",
-    "survivor": {
-     "handle": "bstanley45",
-     "points": 82.48
-    },
-    "margin": 0.18,
-    "champion": null,
-    "lineup": [
-     {
-      "name": "Trevor Lawrence",
-      "pos": "QB",
-      "team": "JAX",
-      "pts": 25.4,
-      "proj": 22.82
-     },
-     {
-      "name": "Omarion Hampton",
-      "pos": "RB",
-      "team": "LAC",
-      "pts": 4.7,
-      "proj": 10.27
-     },
-     {
-      "name": "Rico Dowdle",
-      "pos": "RB",
-      "team": "PIT",
-      "pts": 11.6,
-      "proj": 8.67
-     },
-     {
-      "name": "Drake London",
-      "pos": "WR",
-      "team": "ATL",
-      "pts": 1.8,
-      "proj": 16.46
-     },
-     {
-      "name": "Zay Flowers",
-      "pos": "WR",
-      "team": "BAL",
-      "pts": 0.0,
-      "proj": 18.48
-     },
-     {
-      "name": "Sam LaPorta",
-      "pos": "TE",
-      "team": "DET",
-      "pts": 6.5,
-      "proj": 10.71
-     },
-     {
-      "name": "Khalil Shakir",
-      "pos": "WR",
-      "team": "BUF",
-      "pts": 11.4,
-      "proj": 9.22
-     },
-     {
-      "name": "Matthew Golden",
-      "pos": "WR",
-      "team": "GB",
-      "pts": 20.9,
-      "proj": 13.73
-     }
-    ],
-    "bench": [
-     {
-      "name": "Patrick Mahomes",
-      "pos": "QB",
-      "team": "KC",
-      "pts": 31.44,
-      "proj": 20.36
-     },
-     {
-      "name": "Jordan Addison",
-      "pos": "WR",
-      "team": "MIN",
-      "pts": 11.6,
-      "proj": 9.61
-     },
-     {
-      "name": "Courtland Sutton",
-      "pos": "WR",
-      "team": "DEN",
-      "pts": 9.3,
-      "proj": 7.9
-     },
-     {
-      "name": "RJ Harvey",
-      "pos": "RB",
-      "team": "DEN",
-      "pts": 0.0,
-      "proj": 0.0
-     }
-    ],
-    "blame": {
-     "kind": "start_sit",
-     "gain": 11.6,
-     "in": "Jordan Addison",
-     "in_pts": 11.6,
-     "out": "Zay Flowers",
-     "out_pts": 0.0,
-     "slot": "WR",
-     "out_proj": 18.48
-    },
-    "busts": [
-     {
-      "name": "Zay Flowers",
-      "pos": "WR",
-      "team": "BAL",
-      "pts": 0.0,
-      "proj": 18.48
-     },
-     {
-      "name": "Drake London",
-      "pos": "WR",
-      "team": "ATL",
-      "pts": 1.8,
-      "proj": 16.46
-     },
-     {
-      "name": "Omarion Hampton",
-      "pos": "RB",
-      "team": "LAC",
-      "pts": 4.7,
-      "proj": 10.27
-     }
-    ],
-    "zeros": [
-     "Zay Flowers"
-    ],
-    "optimal": 107.44,
-    "season_weeks": [
-     {
-      "week": 1,
-      "points": 113.9,
-      "rank": 8,
-      "alive": 18
-     },
-     {
-      "week": 2,
-      "points": 65.66,
-      "rank": 16,
-      "alive": 17
-     },
-     {
-      "week": 3,
-      "points": 105.18,
-      "rank": 10,
-      "alive": 16
-     },
-     {
-      "week": 4,
-      "points": 101.48,
-      "rank": 12,
-      "alive": 15
-     },
-     {
-      "week": 5,
-      "points": 97.14,
-      "rank": 10,
-      "alive": 14
-     },
-     {
-      "week": 6,
-      "points": 113.34,
-      "rank": 5,
-      "alive": 13
-     },
-     {
-      "week": 7,
-      "points": 102.1,
-      "rank": 8,
-      "alive": 12
-     },
-     {
-      "week": 8,
-      "points": 82.3,
-      "rank": 11,
-      "alive": 11
-     }
-    ],
-    "faab": {
-     "budget": 1000,
-     "spent": 341,
-     "left": 659,
-     "claims_won": 13,
-     "biggest": {
-      "week": 6,
-      "player": "Zay Flowers",
-      "bid": 317
-     }
-    },
-    "career": [
-     {
-      "season": 2023,
-      "place": 11,
-      "teams": 18,
-      "team_name": "Recking Crew",
-      "chopped_week": 8,
-      "place_prize": 0,
-      "weekly_highs": [
-       5
-      ],
-      "weekly_prize": 25
-     },
-     {
-      "season": 2024,
-      "place": 15,
-      "teams": 18,
-      "team_name": "Recking Crew",
-      "chopped_week": 4,
-      "place_prize": 0,
-      "weekly_highs": [],
-      "weekly_prize": 0
-     },
-     {
-      "season": 2025,
-      "place": 10,
-      "teams": 18,
-      "team_name": "Team creckley",
-      "chopped_week": 9,
-      "place_prize": 0,
-      "weekly_highs": [],
-      "weekly_prize": 0
-     },
-     {
-      "season": 2026,
-      "place": 11,
-      "teams": 18,
-      "team_name": "creckley",
-      "chopped_week": 8,
-      "place_prize": 0,
-      "weekly_highs": [],
-      "weekly_prize": 0,
-      "current": true
-     }
-    ],
-    "lifetime": {
-     "earned": 25,
-     "seasons": 4,
-     "cashes": 0,
-     "weekly_highs": 1,
-     "best_place": 10
-    }
-   }
-  },
   "two_mitchs": {
    "league_id": "1383837552376545280",
    "league_name": "2 Mitchs 1 Cup",
@@ -7559,6 +6502,1384 @@
      }
     }
    ]
+  },
+  "kings_justice": {
+   "league_id": "1383926066564837376",
+   "league_name": "\ud83e\ude93 The King's Justice",
+   "provisional": false,
+   "alive_before": 11,
+   "alive_after": 10,
+   "payouts": {
+    "weekly_high": 25,
+    "first": 350,
+    "second": 150
+   },
+   "chopped": {
+    "handle": "creckley",
+    "team_name": "creckley",
+    "points": 82.3,
+    "confirmed": true
+   },
+   "high": {
+    "handle": "avobttam",
+    "team_name": "The Executioner",
+    "points": 173.88
+   },
+   "survivor": {
+    "handle": "bstanley45",
+    "points": 82.48,
+    "margin": 0.18
+   },
+   "median": 125.86,
+   "spread": 91.58,
+   "chop_seat": [
+    {
+     "slot": 0,
+     "label": "Thu 8:15 PM",
+     "handle": "cbova1222",
+     "points": 0,
+     "left": 8,
+     "next_handle": "joefanelli90",
+     "margin": 0
+    },
+    {
+     "slot": 1,
+     "label": "Sun 1:00 PM",
+     "handle": "nelsolson",
+     "points": 43.7,
+     "left": 4,
+     "next_handle": "bstanley45",
+     "margin": 0.2
+    },
+    {
+     "slot": 2,
+     "label": "Sun 4:05 PM",
+     "handle": "bstanley45",
+     "points": 54.18,
+     "left": 2,
+     "next_handle": "nelsolson",
+     "margin": 2.12
+    },
+    {
+     "slot": 3,
+     "label": "Sun 4:25 PM",
+     "handle": "nelsolson",
+     "points": 56.3,
+     "left": 3,
+     "next_handle": "creckley",
+     "margin": 26.0
+    },
+    {
+     "slot": 4,
+     "label": "Sun 8:20 PM",
+     "handle": "nelsolson",
+     "points": 70.3,
+     "left": 2,
+     "next_handle": "creckley",
+     "margin": 12.0
+    },
+    {
+     "slot": 5,
+     "label": "Mon 8:15 PM",
+     "handle": "creckley",
+     "points": 82.3,
+     "left": 0,
+     "next_handle": "bstanley45",
+     "margin": 0.18
+    }
+   ],
+   "scoreboard": [
+    {
+     "rank": 1,
+     "roster_id": 1,
+     "handle": "avobttam",
+     "name": "avobttam",
+     "team_name": "The Executioner",
+     "points": 173.88,
+     "proj": 126.31,
+     "running": [
+      9.6,
+      139.08,
+      139.08,
+      145.98,
+      145.98,
+      173.88
+     ],
+     "left_after": [
+      7,
+      2,
+      2,
+      1,
+      1,
+      0
+     ],
+     "last_slot_players": [
+      {
+       "pid": "6790",
+       "name": "D'Andre Swift",
+       "pos": "RB",
+       "team": "CHI",
+       "pts": 27.9,
+       "proj": 14.69,
+       "slot": 5,
+       "injury": null
+      }
+     ],
+     "no_game": [],
+     "lock_in": null,
+     "chopped": false
+    },
+    {
+     "rank": 2,
+     "roster_id": 3,
+     "handle": "cbova1222",
+     "name": "cbova1222",
+     "team_name": "Danger Zone",
+     "points": 150.94,
+     "proj": 111.51,
+     "running": [
+      0,
+      117.74,
+      117.74,
+      150.94,
+      150.94,
+      150.94
+     ],
+     "left_after": [
+      8,
+      2,
+      2,
+      0,
+      0,
+      0
+     ],
+     "last_slot_players": [],
+     "no_game": [],
+     "lock_in": null,
+     "chopped": false
+    },
+    {
+     "rank": 3,
+     "roster_id": 18,
+     "handle": "joefanelli90",
+     "name": "joefanelli90",
+     "team_name": "Indiana Joe",
+     "points": 148.78,
+     "proj": 120.44,
+     "running": [
+      0,
+      141.58,
+      141.58,
+      141.58,
+      148.78,
+      148.78
+     ],
+     "left_after": [
+      8,
+      1,
+      1,
+      1,
+      0,
+      0
+     ],
+     "last_slot_players": [],
+     "no_game": [],
+     "lock_in": null,
+     "chopped": false
+    },
+    {
+     "rank": 4,
+     "roster_id": 5,
+     "handle": "CodyPowers28",
+     "name": "CodyPowers28",
+     "team_name": "Taco Corp",
+     "points": 139.26,
+     "proj": 100.92,
+     "running": [
+      0,
+      102.86,
+      116.16,
+      116.16,
+      126.56,
+      139.26
+     ],
+     "left_after": [
+      8,
+      3,
+      2,
+      2,
+      1,
+      0
+     ],
+     "last_slot_players": [
+      {
+       "pid": "11620",
+       "name": "Rome Odunze",
+       "pos": "WR",
+       "team": "CHI",
+       "pts": 12.7,
+       "proj": 10.03,
+       "slot": 5,
+       "injury": null
+      }
+     ],
+     "no_game": [],
+     "lock_in": null,
+     "chopped": false
+    },
+    {
+     "rank": 5,
+     "roster_id": 14,
+     "handle": "AllBidness",
+     "name": "AllBidness",
+     "team_name": "AllBidness",
+     "points": 137.0,
+     "proj": 111.76,
+     "running": [
+      17.3,
+      107.3,
+      107.3,
+      107.3,
+      107.3,
+      137.0
+     ],
+     "left_after": [
+      7,
+      2,
+      2,
+      2,
+      2,
+      0
+     ],
+     "last_slot_players": [
+      {
+       "pid": "9488",
+       "name": "Jaxon Smith-Njigba",
+       "pos": "WR",
+       "team": "SEA",
+       "pts": 23.8,
+       "proj": 25.26,
+       "slot": 5,
+       "injury": null
+      },
+      {
+       "pid": "9753",
+       "name": "Zach Charbonnet",
+       "pos": "RB",
+       "team": "SEA",
+       "pts": 5.9,
+       "proj": 8.09,
+       "slot": 5,
+       "injury": null
+      }
+     ],
+     "no_game": [],
+     "lock_in": null,
+     "chopped": false
+    },
+    {
+     "rank": 6,
+     "roster_id": 6,
+     "handle": "Bustersx8",
+     "name": "Bustersx8",
+     "team_name": "Bustersx8",
+     "points": 125.86,
+     "proj": 131.79,
+     "running": [
+      29.1,
+      74.4,
+      99.4,
+      125.86,
+      125.86,
+      125.86
+     ],
+     "left_after": [
+      6,
+      2,
+      1,
+      0,
+      0,
+      0
+     ],
+     "last_slot_players": [],
+     "no_game": [],
+     "lock_in": null,
+     "chopped": false
+    },
+    {
+     "rank": 7,
+     "roster_id": 4,
+     "handle": "ButtFumble06",
+     "name": "ButtFumble06",
+     "team_name": "ButtFumble06",
+     "points": 123.72,
+     "proj": 132.7,
+     "running": [
+      27.52,
+      78.12,
+      78.12,
+      110.92,
+      123.72,
+      123.72
+     ],
+     "left_after": [
+      7,
+      3,
+      3,
+      1,
+      0,
+      0
+     ],
+     "last_slot_players": [],
+     "no_game": [],
+     "lock_in": null,
+     "chopped": false
+    },
+    {
+     "rank": 8,
+     "roster_id": 11,
+     "handle": "humrich",
+     "name": "humrich",
+     "team_name": "humrich",
+     "points": 109.4,
+     "proj": 123.2,
+     "running": [
+      0,
+      72.1,
+      85.0,
+      97.0,
+      109.4,
+      109.4
+     ],
+     "left_after": [
+      8,
+      3,
+      2,
+      1,
+      0,
+      0
+     ],
+     "last_slot_players": [],
+     "no_game": [],
+     "lock_in": null,
+     "chopped": false
+    },
+    {
+     "rank": 9,
+     "roster_id": 7,
+     "handle": "nelsolson",
+     "name": "nelsolson",
+     "team_name": "Participant Banner",
+     "points": 100.4,
+     "proj": 115.87,
+     "running": [
+      24.9,
+      43.7,
+      56.3,
+      56.3,
+      70.3,
+      100.4
+     ],
+     "left_after": [
+      7,
+      4,
+      3,
+      3,
+      2,
+      0
+     ],
+     "last_slot_players": [
+      {
+       "pid": "12519",
+       "name": "Luther Burden III",
+       "pos": "WR",
+       "team": "CHI",
+       "pts": 18.6,
+       "proj": 12.42,
+       "slot": 5,
+       "injury": null
+      },
+      {
+       "pid": "12517",
+       "name": "Colston Loveland",
+       "pos": "TE",
+       "team": "CHI",
+       "pts": 11.5,
+       "proj": 9.73,
+       "slot": 5,
+       "injury": null
+      }
+     ],
+     "no_game": [],
+     "lock_in": null,
+     "chopped": false
+    },
+    {
+     "rank": 10,
+     "roster_id": 10,
+     "handle": "bstanley45",
+     "name": "bstanley45",
+     "team_name": "bstanley45",
+     "points": 82.48,
+     "proj": 113.87,
+     "running": [
+      23.2,
+      43.9,
+      54.18,
+      82.48,
+      82.48,
+      82.48
+     ],
+     "left_after": [
+      7,
+      3,
+      2,
+      0,
+      0,
+      0
+     ],
+     "last_slot_players": [],
+     "no_game": [],
+     "lock_in": null,
+     "chopped": false
+    },
+    {
+     "rank": 11,
+     "roster_id": 8,
+     "handle": "creckley",
+     "name": "creckley",
+     "team_name": "creckley",
+     "points": 82.3,
+     "proj": 110.36,
+     "running": [
+      20.9,
+      77.6,
+      82.3,
+      82.3,
+      82.3,
+      82.3
+     ],
+     "left_after": [
+      7,
+      1,
+      0,
+      0,
+      0,
+      0
+     ],
+     "last_slot_players": [],
+     "no_game": [],
+     "lock_in": null,
+     "chopped": true
+    }
+   ],
+   "top_starters": [
+    {
+     "handle": "avobttam",
+     "name": "Joe Burrow",
+     "pos": "QB",
+     "team": "CIN",
+     "pts": 49.48,
+     "slot": 1
+    },
+    {
+     "handle": "avobttam",
+     "name": "Tee Higgins",
+     "pos": "WR",
+     "team": "CIN",
+     "pts": 37.5,
+     "slot": 1
+    },
+    {
+     "handle": "AllBidness",
+     "name": "Tyler Allgeier",
+     "pos": "RB",
+     "team": "ARI",
+     "pts": 36.1,
+     "slot": 1
+    },
+    {
+     "handle": "joefanelli90",
+     "name": "Kirk Cousins",
+     "pos": "QB",
+     "team": "LV",
+     "pts": 34.18,
+     "slot": 1
+    },
+    {
+     "handle": "joefanelli90",
+     "name": "Ja'Marr Chase",
+     "pos": "WR",
+     "team": "CIN",
+     "pts": 31.1,
+     "slot": 1
+    },
+    {
+     "handle": "CodyPowers28",
+     "name": "Josh Allen",
+     "pos": "QB",
+     "team": "BUF",
+     "pts": 30.56,
+     "slot": 1
+    },
+    {
+     "handle": "CodyPowers28",
+     "name": "Bhayshul Tuten",
+     "pos": "RB",
+     "team": "JAX",
+     "pts": 29.9,
+     "slot": 1
+    },
+    {
+     "handle": "cbova1222",
+     "name": "Tony Pollard",
+     "pos": "RB",
+     "team": "TEN",
+     "pts": 28.7,
+     "slot": 1
+    }
+   ],
+   "dud_starters": [
+    {
+     "handle": "nelsolson",
+     "name": "Lamar Jackson",
+     "pos": "QB",
+     "team": "BAL",
+     "pts": 0.0,
+     "slot": 1
+    },
+    {
+     "handle": "bstanley45",
+     "name": "Tre Tucker",
+     "pos": "WR",
+     "team": "LV",
+     "pts": 0.0,
+     "slot": 1
+    },
+    {
+     "handle": "creckley",
+     "name": "Zay Flowers",
+     "pos": "WR",
+     "team": "BAL",
+     "pts": 0.0,
+     "slot": 1
+    },
+    {
+     "handle": "Bustersx8",
+     "name": "DK Metcalf",
+     "pos": "WR",
+     "team": "PIT",
+     "pts": 1.4,
+     "slot": 1
+    },
+    {
+     "handle": "creckley",
+     "name": "Drake London",
+     "pos": "WR",
+     "team": "ATL",
+     "pts": 1.8,
+     "slot": 1
+    },
+    {
+     "handle": "ButtFumble06",
+     "name": "Jordan Mason",
+     "pos": "RB",
+     "team": "MIN",
+     "pts": 2.0,
+     "slot": 1
+    },
+    {
+     "handle": "AllBidness",
+     "name": "Jeremiyah Love",
+     "pos": "RB",
+     "team": "ARI",
+     "pts": 2.3,
+     "slot": 1
+    },
+    {
+     "handle": "ButtFumble06",
+     "name": "Parker Washington",
+     "pos": "WR",
+     "team": "JAX",
+     "pts": 3.6,
+     "slot": 1
+    }
+   ],
+   "transactions": {
+    "waivers": [
+     {
+      "player_id": "12501",
+      "player": "Matthew Golden",
+      "pos": "WR",
+      "handle": "nelsolson",
+      "bid": 192,
+      "bidders": 9,
+      "runner_up": 172,
+      "losers": [
+       {
+        "handle": "humrich",
+        "bid": 172
+       },
+       {
+        "handle": "CodyPowers28",
+        "bid": 100
+       },
+       {
+        "handle": "avobttam",
+        "bid": 83
+       },
+       {
+        "handle": "joefanelli90",
+        "bid": 65
+       },
+       {
+        "handle": "bstanley45",
+        "bid": 23
+       },
+       {
+        "handle": "cbova1222",
+        "bid": 22
+       },
+       {
+        "handle": "ButtFumble06",
+        "bid": 18
+       },
+       {
+        "handle": "Bustersx8",
+        "bid": 0
+       }
+      ]
+     },
+     {
+      "player_id": "8112",
+      "player": "Drake London",
+      "pos": "WR",
+      "handle": "nelsolson",
+      "bid": 161,
+      "bidders": 7,
+      "runner_up": 142,
+      "losers": [
+       {
+        "handle": "humrich",
+        "bid": 142
+       },
+       {
+        "handle": "avobttam",
+        "bid": 80
+       },
+       {
+        "handle": "CodyPowers28",
+        "bid": 72
+       },
+       {
+        "handle": "ButtFumble06",
+        "bid": 18
+       },
+       {
+        "handle": "cbova1222",
+        "bid": 5
+       },
+       {
+        "handle": "Bustersx8",
+        "bid": 0
+       }
+      ]
+     },
+     {
+      "player_id": "5859",
+      "player": "A.J. Brown",
+      "pos": "WR",
+      "handle": "CodyPowers28",
+      "bid": 31,
+      "bidders": 7,
+      "runner_up": 16,
+      "losers": [
+       {
+        "handle": "nelsolson",
+        "bid": 16
+       },
+       {
+        "handle": "creckley",
+        "bid": 7
+       },
+       {
+        "handle": "bstanley45",
+        "bid": 4
+       },
+       {
+        "handle": "ButtFumble06",
+        "bid": 0
+       },
+       {
+        "handle": "cbova1222",
+        "bid": 0
+       },
+       {
+        "handle": "AllBidness",
+        "bid": 0
+       }
+      ]
+     },
+     {
+      "player_id": "9997",
+      "player": "Zay Flowers",
+      "pos": "WR",
+      "handle": "avobttam",
+      "bid": 30,
+      "bidders": 5,
+      "runner_up": 26,
+      "losers": [
+       {
+        "handle": "humrich",
+        "bid": 26
+       },
+       {
+        "handle": "nelsolson",
+        "bid": 5
+       },
+       {
+        "handle": "cbova1222",
+        "bid": 5
+       },
+       {
+        "handle": "Bustersx8",
+        "bid": 0
+       }
+      ]
+     },
+     {
+      "player_id": "7523",
+      "player": "Trevor Lawrence",
+      "pos": "QB",
+      "handle": "nelsolson",
+      "bid": 26,
+      "bidders": 1,
+      "runner_up": null,
+      "losers": []
+     },
+     {
+      "player_id": "8134",
+      "player": "Khalil Shakir",
+      "pos": "WR",
+      "handle": "creckley",
+      "bid": 7,
+      "bidders": 1,
+      "runner_up": null,
+      "losers": []
+     },
+     {
+      "player_id": "9756",
+      "player": "Jordan Addison",
+      "pos": "WR",
+      "handle": "creckley",
+      "bid": 6,
+      "bidders": 1,
+      "runner_up": null,
+      "losers": []
+     },
+     {
+      "player_id": "12499",
+      "player": "Elic Ayomanor",
+      "pos": "WR",
+      "handle": "bstanley45",
+      "bid": 3,
+      "bidders": 1,
+      "runner_up": null,
+      "losers": []
+     },
+     {
+      "player_id": "9501",
+      "player": "DeMario Douglas",
+      "pos": "WR",
+      "handle": "bstanley45",
+      "bid": 3,
+      "bidders": 1,
+      "runner_up": null,
+      "losers": []
+     },
+     {
+      "player_id": "10859",
+      "player": "Sam LaPorta",
+      "pos": "TE",
+      "handle": "humrich",
+      "bid": 2,
+      "bidders": 2,
+      "runner_up": 0,
+      "losers": [
+       {
+        "handle": "Bustersx8",
+        "bid": 0
+       }
+      ]
+     },
+     {
+      "player_id": "4046",
+      "player": "Patrick Mahomes",
+      "pos": "QB",
+      "handle": "nelsolson",
+      "bid": 1,
+      "bidders": 1,
+      "runner_up": null,
+      "losers": []
+     },
+     {
+      "player_id": "5947",
+      "player": "Jakobi Meyers",
+      "pos": "WR",
+      "handle": "nelsolson",
+      "bid": 1,
+      "bidders": 1,
+      "runner_up": null,
+      "losers": []
+     },
+     {
+      "player_id": "13296",
+      "player": "Caleb Douglas",
+      "pos": "WR",
+      "handle": "CodyPowers28",
+      "bid": 0,
+      "bidders": 1,
+      "runner_up": null,
+      "losers": []
+     },
+     {
+      "player_id": "11729",
+      "player": "Sione Vaki",
+      "pos": "RB",
+      "handle": "ButtFumble06",
+      "bid": 0,
+      "bidders": 1,
+      "runner_up": null,
+      "losers": []
+     },
+     {
+      "player_id": "6806",
+      "player": "J.K. Dobbins",
+      "pos": "RB",
+      "handle": "Bustersx8",
+      "bid": 0,
+      "bidders": 1,
+      "runner_up": null,
+      "losers": []
+     },
+     {
+      "player_id": "6804",
+      "player": "Jordan Love",
+      "pos": "QB",
+      "handle": "ButtFumble06",
+      "bid": 0,
+      "bidders": 1,
+      "runner_up": null,
+      "losers": []
+     },
+     {
+      "player_id": "11624",
+      "player": "Xavier Worthy",
+      "pos": "WR",
+      "handle": "AllBidness",
+      "bid": 0,
+      "bidders": 1,
+      "runner_up": null,
+      "losers": []
+     },
+     {
+      "player_id": "13301",
+      "player": "Antonio Williams",
+      "pos": "WR",
+      "handle": "CodyPowers28",
+      "bid": 0,
+      "bidders": 1,
+      "runner_up": null,
+      "losers": []
+     }
+    ],
+    "lost_bids": [
+     {
+      "player_id": "12501",
+      "player": "Matthew Golden",
+      "pos": "WR",
+      "handle": "humrich",
+      "bid": 172,
+      "won_by": "nelsolson",
+      "won_at": 192
+     },
+     {
+      "player_id": "8112",
+      "player": "Drake London",
+      "pos": "WR",
+      "handle": "humrich",
+      "bid": 142,
+      "won_by": "nelsolson",
+      "won_at": 161
+     },
+     {
+      "player_id": "12501",
+      "player": "Matthew Golden",
+      "pos": "WR",
+      "handle": "CodyPowers28",
+      "bid": 100,
+      "won_by": "nelsolson",
+      "won_at": 192
+     },
+     {
+      "player_id": "12501",
+      "player": "Matthew Golden",
+      "pos": "WR",
+      "handle": "avobttam",
+      "bid": 83,
+      "won_by": "nelsolson",
+      "won_at": 192
+     },
+     {
+      "player_id": "8112",
+      "player": "Drake London",
+      "pos": "WR",
+      "handle": "avobttam",
+      "bid": 80,
+      "won_by": "nelsolson",
+      "won_at": 161
+     },
+     {
+      "player_id": "8112",
+      "player": "Drake London",
+      "pos": "WR",
+      "handle": "CodyPowers28",
+      "bid": 72,
+      "won_by": "nelsolson",
+      "won_at": 161
+     },
+     {
+      "player_id": "12501",
+      "player": "Matthew Golden",
+      "pos": "WR",
+      "handle": "joefanelli90",
+      "bid": 65,
+      "won_by": "nelsolson",
+      "won_at": 192
+     },
+     {
+      "player_id": "9997",
+      "player": "Zay Flowers",
+      "pos": "WR",
+      "handle": "humrich",
+      "bid": 26,
+      "won_by": "avobttam",
+      "won_at": 30
+     },
+     {
+      "player_id": "12501",
+      "player": "Matthew Golden",
+      "pos": "WR",
+      "handle": "bstanley45",
+      "bid": 23,
+      "won_by": "nelsolson",
+      "won_at": 192
+     },
+     {
+      "player_id": "12501",
+      "player": "Matthew Golden",
+      "pos": "WR",
+      "handle": "cbova1222",
+      "bid": 22,
+      "won_by": "nelsolson",
+      "won_at": 192
+     },
+     {
+      "player_id": "8112",
+      "player": "Drake London",
+      "pos": "WR",
+      "handle": "ButtFumble06",
+      "bid": 18,
+      "won_by": "nelsolson",
+      "won_at": 161
+     },
+     {
+      "player_id": "12501",
+      "player": "Matthew Golden",
+      "pos": "WR",
+      "handle": "ButtFumble06",
+      "bid": 18,
+      "won_by": "nelsolson",
+      "won_at": 192
+     },
+     {
+      "player_id": "5859",
+      "player": "A.J. Brown",
+      "pos": "WR",
+      "handle": "nelsolson",
+      "bid": 16,
+      "won_by": "CodyPowers28",
+      "won_at": 31
+     },
+     {
+      "player_id": "5859",
+      "player": "A.J. Brown",
+      "pos": "WR",
+      "handle": "creckley",
+      "bid": 7,
+      "won_by": "CodyPowers28",
+      "won_at": 31
+     },
+     {
+      "player_id": "8112",
+      "player": "Drake London",
+      "pos": "WR",
+      "handle": "cbova1222",
+      "bid": 5,
+      "won_by": "nelsolson",
+      "won_at": 161
+     },
+     {
+      "player_id": "9997",
+      "player": "Zay Flowers",
+      "pos": "WR",
+      "handle": "nelsolson",
+      "bid": 5,
+      "won_by": "avobttam",
+      "won_at": 30
+     },
+     {
+      "player_id": "9997",
+      "player": "Zay Flowers",
+      "pos": "WR",
+      "handle": "cbova1222",
+      "bid": 5,
+      "won_by": "avobttam",
+      "won_at": 30
+     },
+     {
+      "player_id": "5859",
+      "player": "A.J. Brown",
+      "pos": "WR",
+      "handle": "bstanley45",
+      "bid": 4,
+      "won_by": "CodyPowers28",
+      "won_at": 31
+     },
+     {
+      "player_id": "8112",
+      "player": "Drake London",
+      "pos": "WR",
+      "handle": "Bustersx8",
+      "bid": 0,
+      "won_by": "nelsolson",
+      "won_at": 161
+     },
+     {
+      "player_id": "10859",
+      "player": "Sam LaPorta",
+      "pos": "TE",
+      "handle": "Bustersx8",
+      "bid": 0,
+      "won_by": "humrich",
+      "won_at": 2
+     },
+     {
+      "player_id": "9997",
+      "player": "Zay Flowers",
+      "pos": "WR",
+      "handle": "Bustersx8",
+      "bid": 0,
+      "won_by": "avobttam",
+      "won_at": 30
+     },
+     {
+      "player_id": "12501",
+      "player": "Matthew Golden",
+      "pos": "WR",
+      "handle": "Bustersx8",
+      "bid": 0,
+      "won_by": "nelsolson",
+      "won_at": 192
+     },
+     {
+      "player_id": "5859",
+      "player": "A.J. Brown",
+      "pos": "WR",
+      "handle": "ButtFumble06",
+      "bid": 0,
+      "won_by": "CodyPowers28",
+      "won_at": 31
+     },
+     {
+      "player_id": "5859",
+      "player": "A.J. Brown",
+      "pos": "WR",
+      "handle": "cbova1222",
+      "bid": 0,
+      "won_by": "CodyPowers28",
+      "won_at": 31
+     },
+     {
+      "player_id": "5859",
+      "player": "A.J. Brown",
+      "pos": "WR",
+      "handle": "AllBidness",
+      "bid": 0,
+      "won_by": "CodyPowers28",
+      "won_at": 31
+     }
+    ],
+    "faab_spent": 463,
+    "free_agents": [],
+    "trades": []
+   },
+   "death": {
+    "kind": "death",
+    "confirmed": true,
+    "handle": "creckley",
+    "name": "creckley",
+    "team_name": "creckley",
+    "points": 82.3,
+    "proj": 110.36,
+    "place": 11,
+    "teams": 18,
+    "ordinal": "11th",
+    "survivor": {
+     "handle": "bstanley45",
+     "points": 82.48
+    },
+    "margin": 0.18,
+    "champion": null,
+    "lineup": [
+     {
+      "name": "Trevor Lawrence",
+      "pos": "QB",
+      "team": "JAX",
+      "pts": 25.4,
+      "proj": 22.82
+     },
+     {
+      "name": "Omarion Hampton",
+      "pos": "RB",
+      "team": "LAC",
+      "pts": 4.7,
+      "proj": 10.27
+     },
+     {
+      "name": "Rico Dowdle",
+      "pos": "RB",
+      "team": "PIT",
+      "pts": 11.6,
+      "proj": 8.67
+     },
+     {
+      "name": "Drake London",
+      "pos": "WR",
+      "team": "ATL",
+      "pts": 1.8,
+      "proj": 16.46
+     },
+     {
+      "name": "Zay Flowers",
+      "pos": "WR",
+      "team": "BAL",
+      "pts": 0.0,
+      "proj": 18.48
+     },
+     {
+      "name": "Sam LaPorta",
+      "pos": "TE",
+      "team": "DET",
+      "pts": 6.5,
+      "proj": 10.71
+     },
+     {
+      "name": "Khalil Shakir",
+      "pos": "WR",
+      "team": "BUF",
+      "pts": 11.4,
+      "proj": 9.22
+     },
+     {
+      "name": "Matthew Golden",
+      "pos": "WR",
+      "team": "GB",
+      "pts": 20.9,
+      "proj": 13.73
+     }
+    ],
+    "bench": [
+     {
+      "name": "Patrick Mahomes",
+      "pos": "QB",
+      "team": "KC",
+      "pts": 31.44,
+      "proj": 20.36
+     },
+     {
+      "name": "Jordan Addison",
+      "pos": "WR",
+      "team": "MIN",
+      "pts": 11.6,
+      "proj": 9.61
+     },
+     {
+      "name": "Courtland Sutton",
+      "pos": "WR",
+      "team": "DEN",
+      "pts": 9.3,
+      "proj": 7.9
+     },
+     {
+      "name": "RJ Harvey",
+      "pos": "RB",
+      "team": "DEN",
+      "pts": 0.0,
+      "proj": 0.0
+     }
+    ],
+    "blame": {
+     "kind": "start_sit",
+     "gain": 11.6,
+     "in": "Jordan Addison",
+     "in_pts": 11.6,
+     "out": "Zay Flowers",
+     "out_pts": 0.0,
+     "slot": "WR",
+     "out_proj": 18.48
+    },
+    "busts": [
+     {
+      "name": "Zay Flowers",
+      "pos": "WR",
+      "team": "BAL",
+      "pts": 0.0,
+      "proj": 18.48
+     },
+     {
+      "name": "Drake London",
+      "pos": "WR",
+      "team": "ATL",
+      "pts": 1.8,
+      "proj": 16.46
+     },
+     {
+      "name": "Omarion Hampton",
+      "pos": "RB",
+      "team": "LAC",
+      "pts": 4.7,
+      "proj": 10.27
+     }
+    ],
+    "zeros": [
+     "Zay Flowers"
+    ],
+    "optimal": 107.44,
+    "season_weeks": [
+     {
+      "week": 1,
+      "points": 113.9,
+      "rank": 8,
+      "alive": 18
+     },
+     {
+      "week": 2,
+      "points": 65.66,
+      "rank": 16,
+      "alive": 17
+     },
+     {
+      "week": 3,
+      "points": 105.18,
+      "rank": 10,
+      "alive": 16
+     },
+     {
+      "week": 4,
+      "points": 101.48,
+      "rank": 12,
+      "alive": 15
+     },
+     {
+      "week": 5,
+      "points": 97.14,
+      "rank": 10,
+      "alive": 14
+     },
+     {
+      "week": 6,
+      "points": 113.34,
+      "rank": 5,
+      "alive": 13
+     },
+     {
+      "week": 7,
+      "points": 102.1,
+      "rank": 8,
+      "alive": 12
+     },
+     {
+      "week": 8,
+      "points": 82.3,
+      "rank": 11,
+      "alive": 11
+     }
+    ],
+    "faab": {
+     "budget": 1000,
+     "spent": 341,
+     "left": 659,
+     "claims_won": 13,
+     "biggest": {
+      "week": 6,
+      "player": "Zay Flowers",
+      "bid": 317
+     }
+    },
+    "career": [
+     {
+      "season": 2023,
+      "place": 11,
+      "teams": 18,
+      "team_name": "Recking Crew",
+      "chopped_week": 8,
+      "place_prize": 0,
+      "weekly_highs": [
+       5
+      ],
+      "weekly_prize": 25
+     },
+     {
+      "season": 2024,
+      "place": 15,
+      "teams": 18,
+      "team_name": "Recking Crew",
+      "chopped_week": 4,
+      "place_prize": 0,
+      "weekly_highs": [],
+      "weekly_prize": 0
+     },
+     {
+      "season": 2025,
+      "place": 10,
+      "teams": 18,
+      "team_name": "Team creckley",
+      "chopped_week": 9,
+      "place_prize": 0,
+      "weekly_highs": [],
+      "weekly_prize": 0
+     },
+     {
+      "season": 2026,
+      "place": 11,
+      "teams": 18,
+      "team_name": "creckley",
+      "chopped_week": 8,
+      "place_prize": 0,
+      "weekly_highs": [],
+      "weekly_prize": 0,
+      "current": true
+     }
+    ],
+    "lifetime": {
+     "earned": 25,
+     "seasons": 4,
+     "cashes": 0,
+     "weekly_highs": 1,
+     "best_place": 10
+    }
+   }
   }
  }
 }
