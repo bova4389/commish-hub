@@ -148,6 +148,22 @@ def main_for(season=None):
         out['leagues'][key]['name'] = cfg['name']
         out['leagues'][key]['kind'] = cfg['kind']
 
+    # Playoff/title odds week by week, for the "Odds through the season" chart.
+    # Only weeks that published odds (2026 starts at week 5). Two numbers per
+    # team per week keeps it a few KB, like the rest of this file.
+    for key, cfg in config['leagues'].items():
+        if not cfg.get('outlook'):
+            continue
+        hist, names = {}, {}
+        for w, d in weeks:
+            od = (((d.get('leagues') or {}).get(key) or {}).get('outlook') or {}).get('odds')
+            if not od:
+                continue
+            hist[str(w)] = {t['handle']: [t['playoff'], t['title']] for t in od['teams']}
+            names.update({t['handle']: t['name'] for t in od['teams']})
+        if hist:
+            out.setdefault('odds_history', {})[key] = {'names': names, 'weeks': hist}
+
     path = os.path.join(ROOT, 'data', str(season), 'season.json')
     with open(path + '.tmp', 'w', encoding='utf-8') as f:
         json.dump(out, f, indent=1)

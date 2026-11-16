@@ -36,7 +36,9 @@
   // rows are a block of nothing at the bottom and the shareable image is better
   // without them. The toggle says how many it is hiding, so nobody goes missing
   // silently.
-  const state = { league: null, season: null, week: null, gridMode: 'weekly', hideZero: true };
+  // oddsMode/oddsPick drive the 2 Mitchs odds chart; oddsPick null = the top three.
+  const state = { league: null, season: null, week: null, gridMode: 'weekly', hideZero: true,
+    oddsMode: 'playoff', oddsPick: null };
 
   /* ---------------------------------------------------------------- boot */
   async function boot() {
@@ -72,9 +74,22 @@
     $('#btn-close').onclick = () => { $('#overlay').hidden = true; };
     // The season cards are rebuilt on every render, so their buttons are
     // handled by delegation rather than wired one by one.
+    $('#evidence').addEventListener('pointermove', oddsHover);
+    $('#evidence').addEventListener('pointerdown', oddsHover);
+    $('#evidence').addEventListener('pointerleave', oddsLeave, true);
     $('#evidence').addEventListener('click', (e) => {
-      const b = e.target.closest('[data-save],[data-preview],[data-gmode],[data-zero],[data-copy]');
+      const b = e.target.closest('[data-save],[data-preview],[data-gmode],[data-zero],[data-copy],[data-omode],[data-oteam]');
       if (!b) return;
+      if (b.dataset.omode) {
+        if (b.dataset.omode === state.oddsMode) return;
+        state.oddsMode = b.dataset.omode;
+        return render();
+      }
+      if (b.dataset.oteam) {
+        const h = b.dataset.oteam, pk = state.oddsPick || [];
+        state.oddsPick = pk.includes(h) ? pk.filter((x) => x !== h) : pk.concat([h]).slice(-ODDS_MAX_PICK);
+        return render();
+      }
       if (b.dataset.copy) return copyText(DEATH_TEXT, b);
       if (b.dataset.zero) {
         state.hideZero = !state.hideZero;
@@ -564,7 +579,106 @@
       `<td class="num">${esc(t.record)}</td><td class="num muted">${esc(t.proj_record)}</td></tr>`).join('');
     return out + panel('Playoff odds',
       `${od.sims.toLocaleString()} simulated seasons. Each team starts its best lineup by Sleeper's projection for every remaining week, current rosters, byes and injuries included. Each game gets a realistic random swing around those projections; without it every game would go to the higher projection and every team would be 0% or 100%. Top 6 make it on wins, then points. Bye = a top-2 seed.${cal}`,
-      tbl('<th>Manager</th><th class="num">Playoffs</th><th class="num">Title</th><th class="num">Bye</th><th class="num">W-L</th><th class="num">Proj W-L</th>', odds));
+      tbl('<th>Manager</th><th class="num">Playoffs</th><th class="num">Title</th><th class="num">Bye</th><th class="num">W-L</th><th class="num">Proj W-L</th>', odds)) + oddsTrend(state.week);
+  }
+
+  /* ---- odds through the season ---------------------------------------
+     One line per team, weeks across, from season.json's `odds_history`
+     (build_season.py). The toggle above it switches Make playoffs / Win it
+     all; tapping a name highlights that team. Twelve colored lines are
+     unreadable, so every team is a gray line and up to four picked teams get
+     a color -- assigned in the order they were picked and kept while picked,
+     so a team never changes color when another is added. Defaults to the top
+     three title odds. Tap or hover the plot and the chips show that week's numbers. */
+  const ODDS_COLORS = ['#3987e5', '#d95926', '#199e70', '#c98500'];
+  const ODDS_MAX_PICK = 4;
+  let OCHART = null;   // what the pointer handler needs; one chart per render
+  function oddsTrend(through) {
+    const H = SEASON && SEASON.odds_history && SEASON.odds_history[state.league];
+    if (!H) return '';
+    const weeks = Object.keys(H.weeks).map(Number).filter((w) => w <= through).sort((a, b) => a - b);
+    if (!weeks.length) return '';
+    const mode = state.oddsMode;
+    const mi = mode === 'title' ? 1 : 0;
+    const val = (h, w) => { const t = H.weeks[String(w)][h]; return t ? t[mi] : null; };
+    const last = weeks[weeks.length - 1];
+    const lastW = H.weeks[String(last)];
+    const handles = Object.keys(H.names).filter((h) => val(h, last) != null)
+      .sort((a, b) => val(b, last) - val(a, last) || H.names[a].localeCompare(H.names[b]));
+    if (!state.oddsPick) {
+      state.oddsPick = Object.keys(lastW).sort((a, b) => lastW[b][1] - lastW[a][1]).slice(0, 3);
+    }
+    const pick = state.oddsPick.filter((h) => handles.includes(h));
+    const color = (h) => ODDS_COLORS[pick.indexOf(h)];
+
+    const W = 400, Ht = 240, L = 38, R = 18, T = 10, B = 26;
+    const top = mode === 'title'
+      ? Math.max(10, Math.ceil(Math.max(...weeks.flatMap((w) => handles.map((h) => val(h, w) || 0))) / 10) * 10)
+      : 100;
+    const x = (w) => weeks.length === 1 ? (L + W - R) / 2 : L + (W - L - R) * (weeks.indexOf(w) / (weeks.length - 1));
+    const y = (v) => T + (Ht - T - B) * (1 - v / top);
+    const step = top <= 20 ? 5 : top <= 50 ? 10 : 25;
+    let grid = '';
+    for (let v = 0; v <= top; v += step) {
+      grid += `<line x1="${L}" x2="${W - R}" y1="${y(v)}" y2="${y(v)}" class="og"/>` +
+        `<text x="${L - 6}" y="${y(v) + 4}" text-anchor="end" class="ot">${v}%</text>`;
+    }
+    const xlab = weeks.map((w) => `<text x="${x(w)}" y="${Ht - 8}" text-anchor="middle" class="ot">Wk ${w}</text>`).join('');
+    const path = (h) => weeks.filter((w) => val(h, w) != null)
+      .map((w, i) => `${i ? 'L' : 'M'}${x(w).toFixed(1)},${y(val(h, w)).toFixed(1)}`).join('');
+    const gray = handles.filter((h) => !pick.includes(h))
+      .map((h) => `<path d="${path(h)}" class="ol-gray"/>`).join('');
+    // Picked lines are drawn last so they sit on top; a panel-colored ring
+    // keeps overlapping markers apart.
+    const hot = pick.slice().reverse().map((h) => `<path d="${path(h)}" class="ol-hot" stroke="${color(h)}"/>` +
+      weeks.filter((w) => val(h, w) != null).map((w) =>
+        `<circle cx="${x(w)}" cy="${y(val(h, w))}" r="4" fill="${color(h)}" class="odot"/>`).join('')).join('');
+    OCHART = { weeks, xs: weeks.map(x), handles, names: H.names, val, color, W };
+
+    const chips = handles.map((h) => {
+      const c = color(h);
+      return `<button type="button" class="ochip ${c ? 'on' : ''}" data-oteam="${esc(h)}" aria-pressed="${c ? 'true' : 'false'}">` +
+        `<i style="background:${c || 'var(--line)'}"></i>${esc(H.names[h])} <b data-h="${esc(h)}">${val(h, last).toFixed(1)}%</b></button>`;
+    }).join('');
+    const ctl = `<div class="gctl"><div class="gtoggle" role="group" aria-label="Which odds">` +
+      [['playoff', 'Make playoffs'], ['title', 'Win it all']].map(([m, lbl]) =>
+        `<button type="button" class="gt ${mode === m ? 'on' : ''}" data-omode="${m}">${lbl}</button>`).join('') + '</div></div>';
+    const what = mode === 'title' ? 'Chance to win the title' : 'Chance to make the playoffs';
+    return panel(`Odds through the season: ${mode === 'title' ? 'title' : 'playoffs'}`,
+      `${what} after each week (odds started in week ${weeks[0]}). Every team is a gray line; tap a name to color it (up to ${ODDS_MAX_PICK}). Tap the chart and the names below show that week.`,
+      ctl + `<div class="ochart"><svg viewBox="0 0 ${W} ${Ht}" role="img" aria-label="${esc(what)} by week, every team">` +
+        grid + xlab + gray + hot + `<line class="orule" x1="0" x2="0" y1="${T}" y2="${Ht - B}" visibility="hidden"/>` +
+        `<rect x="${L}" y="0" width="${W - L - R}" height="${Ht}" fill="transparent"/></svg>` +
+        `</div><div class="oweek">Week ${last}</div><div class="olegend">${chips}</div>`);
+  }
+  // Nearest week to the pointer: a rule on the chart, and the name chips
+  // below it switch to that week's numbers. A 12-row tooltip was taller than
+  // the chart on a phone and hid the very lines it described.
+  function oddsShow(wrap, i) {
+    const w = OCHART.weeks[i], rule = wrap.querySelector('.orule');
+    if (i == null) rule.setAttribute('visibility', 'hidden');
+    else { rule.setAttribute('x1', OCHART.xs[i]); rule.setAttribute('x2', OCHART.xs[i]); rule.setAttribute('visibility', 'visible'); }
+    const wk = i == null ? OCHART.weeks[OCHART.weeks.length - 1] : w;
+    const panelEl = wrap.closest('.panel');
+    panelEl.querySelector('.oweek').textContent = `Week ${wk}`;
+    panelEl.querySelectorAll('.ochip b[data-h]').forEach((b) => {
+      const v = OCHART.val(b.dataset.h, wk);
+      b.textContent = v == null ? '–' : `${v.toFixed(1)}%`;
+    });
+  }
+  function oddsHover(e) {
+    const wrap = e.target.closest && e.target.closest('.ochart');
+    if (!wrap || !OCHART) return;
+    const r = wrap.querySelector('svg').getBoundingClientRect();
+    const px = (e.clientX - r.left) * (OCHART.W / r.width);
+    let i = 0;
+    OCHART.xs.forEach((xx, k) => { if (Math.abs(xx - px) < Math.abs(OCHART.xs[i] - px)) i = k; });
+    oddsShow(wrap, i);
+  }
+  function oddsLeave(e) {
+    const wrap = e.target.closest && e.target.closest('.ochart');
+    if (!wrap || !OCHART || e.pointerType === 'touch') return;
+    oddsShow(wrap, null);
   }
 
   /* ---------------------------------------------------------------- evidence: Infinity War */
@@ -812,6 +926,7 @@
     const S = SEASON && (SEASON.leagues || {})[state.league];
     if (S && cfg.kind === 'pickem') parts.push(...iwCards(S));
     else if (S && cfg.kind === 'chopped') parts.push(kjCard(S));
+    if (cfg.outlook) parts.push(oddsTrend(Infinity));
 
     // `waivers: true` in data/config.json is the single source of truth for
     // which leagues get this, shared with scripts/build_waivers.py. Only King's

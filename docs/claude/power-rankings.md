@@ -38,3 +38,21 @@ favorite" to the card facts. The `2-mitchs-1-cup` Tuesday task copies the same n
 - **After week 14** the seeds are real and only the bracket (weeks 15-17) is simulated: playoff %
   is 0 or 100, `calibration` is null, and the title odds are the story for that recap. From week
   15 on nothing runs (`odds_note` says the playoffs are under way).
+
+## Odds through the season — the line chart (since 11/16/2026)
+
+The **Odds through the season** panel draws one line per team, weeks across. It sits under
+Playoff odds on every 2 Mitchs week (showing weeks up to that one) and in that league's Season
+totals view (all weeks). A toggle at the top switches **Make playoffs / Win it all**.
+
+- It reads `season.json` → `odds_history.<league>` (`names`, and `weeks.<N>.<handle>` =
+  `[playoff, title]`), written by `build_season.py` from each week file's `outlook.odds`, so it
+  never loads a dozen week files. Any league with `"outlook": true` gets it, any season.
+- **Twelve colored lines can't be read**, so every team is a gray line and up to four picked teams
+  get a color (from the dataviz skill's dark categorical slots 1-4). Colors go by pick order and
+  stay put while picked. Default: the top three by title odds. The chips under the chart are the
+  legend and the picker, and show each team's number.
+- Tapping or hovering the plot moves a dashed rule to the nearest week, and the chips switch to
+  that week's numbers. A floating 12-row tooltip was taller than the chart on a phone and hid
+  the lines it described, which is why it isn't one.
+- The toggle is hidden in a saved image; the panel title says which odds it shows.
