@@ -273,7 +273,7 @@
       if (bench) out.push({ k: 'Left on bench', v: `${bench.name} · ${f2(bench.left)}` });
       const O = L.outlook;
       if (O && O.power && O.power[0]) out.push({ k: 'Power #1', v: `${O.power[0].name} · ${O.power[0].record}` });
-      const fav = O && O.odds && O.odds.in_band && [...O.odds.teams].sort((a, b) => b.title - a.title)[0];
+      const fav = O && O.odds && [...O.odds.teams].sort((a, b) => b.title - a.title)[0];
       if (fav) out.push({ k: 'Title favorite', v: `${fav.name} · ${fav.title.toFixed(1)}%` });
     } else if (kind === 'pickem') {
       const w = L.winners || [];
@@ -552,9 +552,10 @@
       tbl('<th class="num">#</th><th>Manager</th><th class="num">W-L</th><th class="num">All-play</th><th class="num">PPG</th><th class="num">Last 3</th><th class="num">Luck</th>', power));
     const od = O.odds;
     if (!od) return out + (O.odds_note ? panel('Playoff odds', esc(O.odds_note), '', { share: false }) : '');
-    if (!od.in_band) {
-      return out + panel('Playoff odds', `Held back this week: the model's calibration came out ${one(od.calibration[0])}–${one(od.calibration[1])}% against a 25–28% target, so its odds would be over- or under-confident.`, '', { share: false });
-    }
+    // Odds always publish (owner, 11/16/2026): in_band is a footnote, never a gate.
+    const cal = od.calibration
+      ? (od.in_band ? '' : ` This week's simulated swings ran ${one(od.calibration[0])}–${one(od.calibration[1])}% against a 25–28% target, so read the extremes with a grain of salt.`)
+      : ' The regular season is over, so the seeds are real and only the bracket is simulated.';
     const delta = (prev, now) => prev == null ? '' : ` <span class="sub ${now - prev >= 0.05 ? 'good' : now - prev <= -0.05 ? 'bad' : ''}">${signed(now - prev)}</span>`;
     // Playoffs and Title sit next to the name so a phone shows them without scrolling.
     const odds = od.teams.map((t) => `<tr><td>${esc(t.name)}</td>` +
@@ -562,7 +563,7 @@
       `<td class="num">${pct(t.title)}${delta(t.prev_title, t.title)}</td><td class="num muted">${pct(t.bye)}</td>` +
       `<td class="num">${esc(t.record)}</td><td class="num muted">${esc(t.proj_record)}</td></tr>`).join('');
     return out + panel('Playoff odds',
-      `${od.sims.toLocaleString()} simulated seasons. Each team starts its best lineup by Sleeper's projection for every remaining week, current rosters, byes and injuries included. Each game gets a realistic random swing around those projections; without it every game would go to the higher projection and every team would be 0% or 100%. Top 6 make it on wins, then points. Bye = a top-2 seed.`,
+      `${od.sims.toLocaleString()} simulated seasons. Each team starts its best lineup by Sleeper's projection for every remaining week, current rosters, byes and injuries included. Each game gets a realistic random swing around those projections; without it every game would go to the higher projection and every team would be 0% or 100%. Top 6 make it on wins, then points. Bye = a top-2 seed.${cal}`,
       tbl('<th>Manager</th><th class="num">Playoffs</th><th class="num">Title</th><th class="num">Bye</th><th class="num">W-L</th><th class="num">Proj W-L</th>', odds));
   }
 

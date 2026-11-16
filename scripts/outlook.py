@@ -30,9 +30,15 @@ PLAYOFF + TITLE ODDS (Monte Carlo over the rest of the season)
     wins then points for. Week 15: 3v6 and 4v5, 1 and 2 on bye. Week 16: 1 v
     the 4/5 winner, 2 v the 3/6 winner. Week 17: the final.
 
-Calibration: simulated team weekly scores must swing 25-28% (sd / mean), the
-same band as ../2-mitchs-1-cup/season_sim.py. The result carries `in_band`;
-the page and the recaps do not publish odds when it is false.
+Calibration: simulated team weekly scores should swing 25-28% (sd / mean), the
+same band as ../2-mitchs-1-cup/season_sim.py. The result carries `in_band` as a
+diagnostic only. The odds ALWAYS publish, in band or not (owner, 11/16/2026):
+they are for fun, and a slightly hot or cold swing beats an empty table. Weeks
+6-9 of 2026 were hidden by the old gate; don't bring it back.
+
+Odds run every final week from week 1 through week 14. After week 14 the seeds
+are real and only the bracket is simulated, so playoff % is 0 or 100 and the
+title odds are the story. From week 15 on (playoffs under way) nothing runs.
 """
 import argparse
 import json
@@ -291,9 +297,9 @@ def build_outlook(cfg, season, week, league, teams, calc, slot_list, sims=SIMS, 
         out['odds'] = None
         out['odds_note'] = 'Odds start in week 5, the first week they were run live.'
         return out
-    if week >= REGULAR_WEEKS:
+    if week > REGULAR_WEEKS:
         out['odds'] = None
-        out['odds_note'] = 'Regular season over; odds are not simulated once the bracket is set.'
+        out['odds_note'] = 'Playoffs under way; odds stop once the bracket starts playing.'
         return out
 
     rosters = BW.get(f'{BW.REST}/league/{lid}/rosters', cacheable=False)
@@ -328,7 +334,7 @@ def build_outlook(cfg, season, week, league, teams, calc, slot_list, sims=SIMS, 
     out['odds'] = {
         'sims': sims, 'team_cv': TEAM_CV,
         'calibration': [round(cal[0], 1), round(cal[1], 1)] if cal else None,
-        'in_band': bool(cal) and CAL_BAND[0] <= cal[0] and cal[1] <= CAL_BAND[1],
+        'in_band': bool(cal) and CAL_BAND[0] <= cal[0] and cal[1] <= CAL_BAND[1],  # diagnostic only; odds publish regardless
         'teams': rows,
     }
     return out
@@ -390,8 +396,11 @@ def report(key, o):
               f'  ppg {p["ppg"]:6.1f}  last3 {p["last3"]:6.1f}  luck {p["luck"]:+.1f}')
     od = o.get('odds')
     if od:
-        print(f'  calibration: team weekly CV {od["calibration"][0]}%-{od["calibration"][1]}% '
-              f'(target {CAL_BAND[0]:.0f}-{CAL_BAND[1]:.0f}%) -> {"OK" if od["in_band"] else "OUT OF BAND"}')
+        if od['calibration']:
+            print(f'  calibration: team weekly CV {od["calibration"][0]}%-{od["calibration"][1]}% '
+                  f'(target {CAL_BAND[0]:.0f}-{CAL_BAND[1]:.0f}%) -> {"OK" if od["in_band"] else "out of band (published anyway)"}')
+        else:
+            print('  calibration: none (no regular-season weeks left to simulate)')
         for t in od['teams']:
             print(f'    {t["name"]:<20} {t["record"]:>5} -> {t["proj_record"]:>9}  playoff {t["playoff"]:5.1f}%'
                   f'  bye {t["bye"]:5.1f}%  title {t["title"]:5.1f}%')
