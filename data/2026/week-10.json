@@ -1,7 +1,7 @@
 {
  "season": 2026,
  "week": 10,
- "generated": "2026-11-17T08:53:22-05:00",
+ "generated": "2026-11-17T14:02:49-05:00",
  "all_final": true,
  "nfl": {
   "games": [
@@ -1317,8 +1317,8 @@
      "sims": 10000,
      "team_cv": 0.17,
      "calibration": [
-      25.4,
-      28.4
+      25.5,
+      28.3
      ],
      "in_band": false,
      "teams": [
@@ -1326,15 +1326,15 @@
        "name": "Matt Bova",
        "handle": "avobttam",
        "record": "9-1",
-       "proj_record": "11.8-2.2",
-       "proj_pf": 2087.9,
+       "proj_record": "11.9-2.1",
+       "proj_pf": 2088.5,
        "playoff": 100.0,
        "bye": 99.5,
        "final": 53.6,
        "title": 30.1,
        "seed_pct": [
-        95.5,
-        4.0,
+        95.6,
+        3.9,
         0.4,
         0.1,
         0.0,
@@ -1348,18 +1348,18 @@
        "handle": "MJBlack",
        "record": "8-2",
        "proj_record": "9.8-4.2",
-       "proj_pf": 1736.8,
+       "proj_pf": 1736.7,
        "playoff": 99.7,
-       "bye": 64.9,
-       "final": 29.4,
-       "title": 10.3,
+       "bye": 65.1,
+       "final": 29.6,
+       "title": 10.1,
        "seed_pct": [
-        3.6,
-        61.4,
-        18.0,
-        9.7,
-        4.8,
-        2.2
+        3.4,
+        61.6,
+        18.4,
+        9.1,
+        4.9,
+        2.3
        ],
        "prev_playoff": 97.4,
        "prev_title": 9.8
@@ -1369,18 +1369,18 @@
        "handle": "JellyRoll6884",
        "record": "6-4",
        "proj_record": "8.1-5.9",
-       "proj_pf": 1913.3,
-       "playoff": 88.9,
-       "bye": 16.9,
-       "final": 25.0,
-       "title": 10.0,
+       "proj_pf": 1913.4,
+       "playoff": 89.1,
+       "bye": 17.1,
+       "final": 24.6,
+       "title": 10.3,
        "seed_pct": [
         0.9,
-        16.0,
-        22.3,
-        20.6,
-        16.1,
-        13.0
+        16.2,
+        22.1,
+        20.8,
+        15.9,
+        13.2
        ],
        "prev_playoff": 72.7,
        "prev_title": 8.0
@@ -1390,18 +1390,18 @@
        "handle": "Bogeyman28",
        "record": "5-5",
        "proj_record": "7.6-6.4",
-       "proj_pf": 1950.4,
-       "playoff": 80.0,
-       "bye": 6.6,
-       "final": 34.6,
-       "title": 20.0,
+       "proj_pf": 1949.1,
+       "playoff": 79.5,
+       "bye": 6.3,
+       "final": 33.8,
+       "title": 19.3,
        "seed_pct": [
         0.0,
-        6.6,
-        22.6,
-        21.3,
-        15.6,
-        13.9
+        6.3,
+        22.0,
+        21.6,
+        15.9,
+        13.8
        ],
        "prev_playoff": 70.5,
        "prev_title": 14.6
@@ -1411,18 +1411,18 @@
        "handle": "BigOleTDs21",
        "record": "5-5",
        "proj_record": "7.6-6.4",
-       "proj_pf": 1885.6,
-       "playoff": 78.1,
-       "bye": 5.6,
-       "final": 24.2,
-       "title": 13.8,
+       "proj_pf": 1885.9,
+       "playoff": 78.0,
+       "bye": 5.5,
+       "final": 24.4,
+       "title": 13.9,
        "seed_pct": [
         0.0,
-        5.6,
-        17.4,
-        19.0,
-        19.3,
-        16.8
+        5.5,
+        17.8,
+        18.9,
+        18.4,
+        17.3
        ],
        "prev_playoff": 86.0,
        "prev_title": 18.5
@@ -1432,18 +1432,18 @@
        "handle": "cbova1222",
        "record": "6-4",
        "proj_record": "7.7-6.3",
-       "proj_pf": 1632.6,
-       "playoff": 58.8,
+       "proj_pf": 1632.4,
+       "playoff": 59.1,
        "bye": 5.1,
-       "final": 10.5,
-       "title": 4.3,
+       "final": 11.2,
+       "title": 4.5,
        "seed_pct": [
         0.0,
-        5.1,
-        10.4,
+        5.0,
+        10.3,
         12.2,
-        15.8,
-        15.3
+        16.4,
+        15.0
        ],
        "prev_playoff": 39.5,
        "prev_title": 3.0
@@ -1453,18 +1453,18 @@
        "handle": "jonicarter89",
        "record": "5-5",
        "proj_record": "7.0-7.0",
-       "proj_pf": 1677.7,
-       "playoff": 41.2,
+       "proj_pf": 1677.3,
+       "playoff": 41.8,
        "bye": 1.1,
-       "final": 8.1,
-       "title": 3.8,
+       "final": 8.0,
+       "title": 3.9,
        "seed_pct": [
         0.0,
         1.1,
-        4.8,
-        8.2,
+        5.0,
+        8.3,
         12.8,
-        14.3
+        14.5
        ],
        "prev_playoff": 40.6,
        "prev_title": 4.2
@@ -1474,18 +1474,18 @@
        "handle": "MerkDaddy36",
        "record": "4-6",
        "proj_record": "6.4-7.6",
-       "proj_pf": 1865.2,
-       "playoff": 37.3,
+       "proj_pf": 1864.5,
+       "playoff": 36.8,
        "bye": 0.2,
-       "final": 11.4,
-       "title": 6.2,
+       "final": 11.5,
+       "title": 6.4,
        "seed_pct": [
         0.0,
         0.2,
-        3.2,
-        6.9,
-        10.5,
-        16.4
+        3.3,
+        6.8,
+        10.6,
+        15.9
        ],
        "prev_playoff": 56.5,
        "prev_title": 9.1
@@ -1495,18 +1495,18 @@
        "handle": "CHRISMERKELDUH",
        "record": "5-5",
        "proj_record": "6.3-7.7",
-       "proj_pf": 1618.1,
-       "playoff": 14.4,
+       "proj_pf": 1618.3,
+       "playoff": 14.1,
        "bye": 0.1,
        "final": 2.8,
-       "title": 1.1,
+       "title": 1.2,
        "seed_pct": [
         0.0,
         0.1,
-        0.8,
-        2.0,
-        4.8,
-        6.7
+        0.7,
+        2.2,
+        4.6,
+        6.5
        ],
        "prev_playoff": 28.5,
        "prev_title": 2.1
@@ -1516,18 +1516,18 @@
        "handle": "katiestout13",
        "record": "3-7",
        "proj_record": "4.6-9.4",
-       "proj_pf": 1665.4,
-       "playoff": 1.5,
+       "proj_pf": 1665.5,
+       "playoff": 1.6,
        "bye": 0.0,
-       "final": 0.5,
-       "title": 0.3,
+       "final": 0.4,
+       "title": 0.2,
        "seed_pct": [
         0.0,
         0.0,
         0.0,
         0.0,
         0.3,
-        1.1
+        1.2
        ],
        "prev_playoff": 6.2,
        "prev_title": 0.7
@@ -1541,14 +1541,14 @@
        "playoff": 0.3,
        "bye": 0.0,
        "final": 0.1,
-       "title": 0.0,
+       "title": 0.1,
        "seed_pct": [
         0.0,
         0.0,
         0.0,
         0.0,
         0.1,
-        0.2
+        0.3
        ],
        "prev_playoff": 2.1,
        "prev_title": 0.3
@@ -1558,7 +1558,7 @@
        "handle": "Mpletcher",
        "record": "1-9",
        "proj_record": "2.6-11.4",
-       "proj_pf": 1485.0,
+       "proj_pf": 1484.3,
        "playoff": 0.0,
        "bye": 0.0,
        "final": 0.0,
