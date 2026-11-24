@@ -1,7 +1,7 @@
 {
  "season": 2026,
  "week": 11,
- "generated": "2026-11-24T06:08:27-05:00",
+ "generated": "2026-11-24T15:35:24-05:00",
  "all_final": true,
  "nfl": {
   "games": [
@@ -146,7 +146,7 @@
     "slot": 2,
     "slot_label": "Sun 4:05 PM",
     "fav": "LAC",
-    "fav_prob": 0.61,
+    "fav_prob": 0.611,
     "upset": true
    },
    {
@@ -162,7 +162,7 @@
     "slot": 3,
     "slot_label": "Sun 4:25 PM",
     "fav": "JAX",
-    "fav_prob": 0.696,
+    "fav_prob": 0.707,
     "upset": true
    },
    {
@@ -178,7 +178,7 @@
     "slot": 3,
     "slot_label": "Sun 4:25 PM",
     "fav": "DEN",
-    "fav_prob": 0.821,
+    "fav_prob": 0.835,
     "upset": false
    },
    {
@@ -194,7 +194,7 @@
     "slot": 4,
     "slot_label": "Sun 8:20 PM",
     "fav": "SF",
-    "fav_prob": 0.61,
+    "fav_prob": 0.634,
     "upset": false
    },
    {
@@ -288,7 +288,7 @@
     "handle": "humrich",
     "team_name": "humrich",
     "points": 85.86,
-    "confirmed": false
+    "confirmed": true
    },
    "high": {
     "handle": "ButtFumble06",
@@ -653,7 +653,7 @@
      ],
      "no_game": [],
      "lock_in": null,
-     "chopped": false
+     "chopped": true
     }
    ],
    "top_starters": [
@@ -886,7 +886,7 @@
    },
    "death": {
     "kind": "death",
-    "confirmed": false,
+    "confirmed": true,
     "handle": "humrich",
     "name": "humrich",
     "team_name": "humrich",
@@ -978,20 +978,6 @@
       "name": "Woody Marks",
       "pos": "RB",
       "team": "HOU",
-      "pts": 0.0,
-      "proj": 0.0
-     },
-     {
-      "name": "Rhamondre Stevenson",
-      "pos": "RB",
-      "team": "NE",
-      "pts": 0.0,
-      "proj": 0.0
-     },
-     {
-      "name": "Kyren Williams",
-      "pos": "RB",
-      "team": "LAR",
       "pts": 0.0,
       "proj": 0.0
      }
@@ -1303,8 +1289,8 @@
      "sims": 10000,
      "team_cv": 0.17,
      "calibration": [
-      25.1,
-      26.2
+      25.2,
+      26.6
      ],
      "in_band": true,
      "teams": [
@@ -1313,14 +1299,14 @@
        "handle": "avobttam",
        "record": "10-1",
        "proj_record": "12.1-1.9",
-       "proj_pf": 2081.0,
+       "proj_pf": 2082.7,
        "playoff": 100.0,
        "bye": 100.0,
-       "final": 53.6,
-       "title": 30.3,
+       "final": 53.1,
+       "title": 30.0,
        "seed_pct": [
-        96.8,
-        3.2,
+        96.5,
+        3.5,
         0.0,
         0.0,
         0.0,
@@ -1333,17 +1319,17 @@
        "name": "Mitch Blackwell",
        "handle": "MJBlack",
        "record": "9-2",
-       "proj_record": "10.3-3.7",
-       "proj_pf": 1715.8,
+       "proj_record": "10.4-3.6",
+       "proj_pf": 1716.3,
        "playoff": 100.0,
-       "bye": 88.2,
-       "final": 33.5,
-       "title": 11.1,
+       "bye": 89.2,
+       "final": 34.4,
+       "title": 11.9,
        "seed_pct": [
-        3.2,
-        85.0,
-        8.6,
-        3.1,
+        3.5,
+        85.6,
+        8.0,
+        2.6,
         0.1,
         0.0
        ],
@@ -1355,18 +1341,18 @@
        "handle": "Bogeyman28",
        "record": "6-5",
        "proj_record": "7.9-6.1",
-       "proj_pf": 1946.9,
-       "playoff": 87.7,
-       "bye": 4.8,
-       "final": 36.7,
-       "title": 20.1,
+       "proj_pf": 1946.5,
+       "playoff": 88.3,
+       "bye": 4.4,
+       "final": 37.2,
+       "title": 21.7,
        "seed_pct": [
         0.0,
-        4.8,
-        37.1,
-        21.9,
-        13.3,
-        10.6
+        4.4,
+        37.3,
+        22.2,
+        13.2,
+        11.3
        ],
        "prev_playoff": 79.5,
        "prev_title": 19.3
@@ -1376,18 +1362,18 @@
        "handle": "BigOleTDs21",
        "record": "6-5",
        "proj_record": "7.7-6.3",
-       "proj_pf": 1869.4,
-       "playoff": 79.4,
-       "bye": 2.6,
-       "final": 22.8,
-       "title": 13.5,
+       "proj_pf": 1869.7,
+       "playoff": 79.6,
+       "bye": 2.4,
+       "final": 22.1,
+       "title": 12.4,
        "seed_pct": [
         0.0,
-        2.6,
-        19.8,
-        23.4,
-        17.8,
-        15.8
+        2.4,
+        19.4,
+        23.8,
+        18.0,
+        16.0
        ],
        "prev_playoff": 78.0,
        "prev_title": 13.9
@@ -1397,18 +1383,18 @@
        "handle": "JellyRoll6884",
        "record": "6-5",
        "proj_record": "7.6-6.4",
-       "proj_pf": 1868.4,
-       "playoff": 75.4,
-       "bye": 2.2,
-       "final": 21.1,
-       "title": 9.3,
+       "proj_pf": 1868.9,
+       "playoff": 75.2,
+       "bye": 2.1,
+       "final": 20.7,
+       "title": 9.0,
        "seed_pct": [
         0.0,
-        2.2,
-        15.5,
-        21.4,
-        17.6,
-        18.7
+        2.1,
+        15.6,
+        21.8,
+        17.9,
+        17.8
        ],
        "prev_playoff": 89.1,
        "prev_title": 10.3
@@ -1417,18 +1403,18 @@
        "name": "Jon Carter",
        "handle": "jonicarter89",
        "record": "6-5",
-       "proj_record": "7.6-6.4",
-       "proj_pf": 1656.1,
-       "playoff": 56.9,
-       "bye": 1.4,
-       "final": 9.5,
-       "title": 4.2,
+       "proj_record": "7.5-6.5",
+       "proj_pf": 1654.5,
+       "playoff": 55.8,
+       "bye": 1.1,
+       "final": 9.8,
+       "title": 4.3,
        "seed_pct": [
         0.0,
-        1.4,
-        9.7,
-        11.8,
-        19.0,
+        1.1,
+        10.0,
+        11.1,
+        18.4,
         15.0
        ],
        "prev_playoff": 41.8,
@@ -1439,18 +1425,18 @@
        "handle": "MerkDaddy36",
        "record": "5-6",
        "proj_record": "6.7-7.3",
-       "proj_pf": 1871.6,
-       "playoff": 47.2,
+       "proj_pf": 1870.7,
+       "playoff": 47.0,
        "bye": 0.0,
-       "final": 12.8,
+       "final": 13.4,
        "title": 7.0,
        "seed_pct": [
         0.0,
         0.0,
         5.3,
-        9.3,
-        12.6,
-        19.9
+        9.0,
+        12.3,
+        20.3
        ],
        "prev_playoff": 36.8,
        "prev_title": 6.4
@@ -1460,18 +1446,18 @@
        "handle": "cbova1222",
        "record": "6-5",
        "proj_record": "7.3-6.7",
-       "proj_pf": 1619.7,
-       "playoff": 42.4,
+       "proj_pf": 1619.1,
+       "playoff": 42.9,
        "bye": 0.7,
-       "final": 8.4,
-       "title": 3.8,
+       "final": 7.8,
+       "title": 3.3,
        "seed_pct": [
         0.0,
         0.7,
-        3.7,
-        7.2,
-        16.2,
-        14.5
+        4.0,
+        7.5,
+        16.4,
+        14.2
        ],
        "prev_playoff": 59.1,
        "prev_title": 4.5
@@ -1481,17 +1467,17 @@
        "handle": "CHRISMERKELDUH",
        "record": "5-6",
        "proj_record": "6.2-7.8",
-       "proj_pf": 1623.2,
-       "playoff": 11.0,
+       "proj_pf": 1623.4,
+       "playoff": 11.2,
        "bye": 0.0,
-       "final": 1.6,
-       "title": 0.6,
+       "final": 1.4,
+       "title": 0.5,
        "seed_pct": [
         0.0,
         0.0,
         0.3,
         1.9,
-        3.4,
+        3.6,
         5.4
        ],
        "prev_playoff": 14.1,
@@ -1502,7 +1488,7 @@
        "handle": "Mpletcher",
        "record": "1-10",
        "proj_record": "2.3-11.7",
-       "proj_pf": 1456.9,
+       "proj_pf": 1455.3,
        "playoff": 0.0,
        "bye": 0.0,
        "final": 0.0,
@@ -1522,8 +1508,8 @@
        "name": "Katie Bogardus",
        "handle": "katiestout13",
        "record": "3-8",
-       "proj_record": "4.3-9.7",
-       "proj_pf": 1661.7,
+       "proj_record": "4.2-9.8",
+       "proj_pf": 1659.7,
        "playoff": 0.0,
        "bye": 0.0,
        "final": 0.0,
@@ -1544,7 +1530,7 @@
        "handle": "djbogardus72",
        "record": "3-8",
        "proj_record": "4.0-10.0",
-       "proj_pf": 1491.6,
+       "proj_pf": 1492.6,
        "playoff": 0.0,
        "bye": 0.0,
        "final": 0.0,
@@ -3303,7 +3289,7 @@
         "team": "CLE",
         "pts": 0.0,
         "proj": 0.0,
-        "injury": null
+        "injury": "Questionable"
        },
        {
         "pid": "6819",
@@ -4143,7 +4129,7 @@
      "winner": "NYJ",
      "upset": true,
      "fav": "LAC",
-     "fav_prob": 0.61,
+     "fav_prob": 0.611,
      "picks": {
       "LAC": 1
      }
@@ -4154,7 +4140,7 @@
      "winner": "DEN",
      "upset": false,
      "fav": "DEN",
-     "fav_prob": 0.821,
+     "fav_prob": 0.835,
      "picks": {
       "DEN": 14
      }
@@ -4165,7 +4151,7 @@
      "winner": "NYG",
      "upset": true,
      "fav": "JAX",
-     "fav_prob": 0.696,
+     "fav_prob": 0.707,
      "picks": {
       "JAX": 11
      }
@@ -4176,7 +4162,7 @@
      "winner": "SF",
      "upset": false,
      "fav": "SF",
-     "fav_prob": 0.61,
+     "fav_prob": 0.634,
      "picks": {
       "SF": 3
      }
@@ -4271,7 +4257,7 @@
        "opp": "LV",
        "game": "LV @ DEN",
        "outcome": "win",
-       "prob": 0.821,
+       "prob": 0.835,
        "hidden": false,
        "score": "LV 24-38 DEN",
        "slot_label": "Sun 4:25 PM"
@@ -4282,7 +4268,7 @@
        "opp": "MIN",
        "game": "MIN @ SF",
        "outcome": "win",
-       "prob": 0.61,
+       "prob": 0.634,
        "hidden": false,
        "score": "MIN 10-35 SF",
        "slot_label": "Sun 8:20 PM"
@@ -4387,7 +4373,7 @@
        "opp": "LV",
        "game": "LV @ DEN",
        "outcome": "win",
-       "prob": 0.821,
+       "prob": 0.835,
        "hidden": false,
        "score": "LV 24-38 DEN",
        "slot_label": "Sun 4:25 PM"
@@ -4505,7 +4491,7 @@
        "opp": "LV",
        "game": "LV @ DEN",
        "outcome": "win",
-       "prob": 0.821,
+       "prob": 0.835,
        "hidden": false,
        "score": "LV 24-38 DEN",
        "slot_label": "Sun 4:25 PM"
@@ -4516,7 +4502,7 @@
        "opp": "NYG",
        "game": "JAX @ NYG",
        "outcome": "loss",
-       "prob": 0.696,
+       "prob": 0.707,
        "hidden": false,
        "score": "JAX 18-23 NYG",
        "slot_label": "Sun 4:25 PM"
@@ -4623,7 +4609,7 @@
        "opp": "LV",
        "game": "LV @ DEN",
        "outcome": "win",
-       "prob": 0.821,
+       "prob": 0.835,
        "hidden": false,
        "score": "LV 24-38 DEN",
        "slot_label": "Sun 4:25 PM"
@@ -4741,7 +4727,7 @@
        "opp": "LV",
        "game": "LV @ DEN",
        "outcome": "win",
-       "prob": 0.821,
+       "prob": 0.835,
        "hidden": false,
        "score": "LV 24-38 DEN",
        "slot_label": "Sun 4:25 PM"
@@ -4859,7 +4845,7 @@
        "opp": "LV",
        "game": "LV @ DEN",
        "outcome": "win",
-       "prob": 0.821,
+       "prob": 0.835,
        "hidden": false,
        "score": "LV 24-38 DEN",
        "slot_label": "Sun 4:25 PM"
@@ -4966,7 +4952,7 @@
        "opp": "LV",
        "game": "LV @ DEN",
        "outcome": "win",
-       "prob": 0.821,
+       "prob": 0.835,
        "hidden": false,
        "score": "LV 24-38 DEN",
        "slot_label": "Sun 4:25 PM"
@@ -4977,7 +4963,7 @@
        "opp": "NYG",
        "game": "JAX @ NYG",
        "outcome": "loss",
-       "prob": 0.696,
+       "prob": 0.707,
        "hidden": false,
        "score": "JAX 18-23 NYG",
        "slot_label": "Sun 4:25 PM"
@@ -4988,7 +4974,7 @@
        "opp": "MIN",
        "game": "MIN @ SF",
        "outcome": "win",
-       "prob": 0.61,
+       "prob": 0.634,
        "hidden": false,
        "score": "MIN 10-35 SF",
        "slot_label": "Sun 8:20 PM"
@@ -5073,7 +5059,7 @@
        "opp": "LV",
        "game": "LV @ DEN",
        "outcome": "win",
-       "prob": 0.821,
+       "prob": 0.835,
        "hidden": false,
        "score": "LV 24-38 DEN",
        "slot_label": "Sun 4:25 PM"
@@ -5084,7 +5070,7 @@
        "opp": "NYG",
        "game": "JAX @ NYG",
        "outcome": "loss",
-       "prob": 0.696,
+       "prob": 0.707,
        "hidden": false,
        "score": "JAX 18-23 NYG",
        "slot_label": "Sun 4:25 PM"
@@ -5095,7 +5081,7 @@
        "opp": "MIN",
        "game": "MIN @ SF",
        "outcome": "win",
-       "prob": 0.61,
+       "prob": 0.634,
        "hidden": false,
        "score": "MIN 10-35 SF",
        "slot_label": "Sun 8:20 PM"
@@ -5214,7 +5200,7 @@
        "opp": "LV",
        "game": "LV @ DEN",
        "outcome": "win",
-       "prob": 0.821,
+       "prob": 0.835,
        "hidden": false,
        "score": "LV 24-38 DEN",
        "slot_label": "Sun 4:25 PM"
@@ -5321,7 +5307,7 @@
        "opp": "LV",
        "game": "LV @ DEN",
        "outcome": "win",
-       "prob": 0.821,
+       "prob": 0.835,
        "hidden": false,
        "score": "LV 24-38 DEN",
        "slot_label": "Sun 4:25 PM"
@@ -5332,7 +5318,7 @@
        "opp": "NYG",
        "game": "JAX @ NYG",
        "outcome": "loss",
-       "prob": 0.696,
+       "prob": 0.707,
        "hidden": false,
        "score": "JAX 18-23 NYG",
        "slot_label": "Sun 4:25 PM"
@@ -5451,7 +5437,7 @@
        "opp": "NYG",
        "game": "JAX @ NYG",
        "outcome": "loss",
-       "prob": 0.696,
+       "prob": 0.707,
        "hidden": false,
        "score": "JAX 18-23 NYG",
        "slot_label": "Sun 4:25 PM"
@@ -5570,7 +5556,7 @@
        "opp": "NYG",
        "game": "JAX @ NYG",
        "outcome": "loss",
-       "prob": 0.696,
+       "prob": 0.707,
        "hidden": false,
        "score": "JAX 18-23 NYG",
        "slot_label": "Sun 4:25 PM"
@@ -5689,7 +5675,7 @@
        "opp": "LV",
        "game": "LV @ DEN",
        "outcome": "win",
-       "prob": 0.821,
+       "prob": 0.835,
        "hidden": false,
        "score": "LV 24-38 DEN",
        "slot_label": "Sun 4:25 PM"
@@ -5796,7 +5782,7 @@
        "opp": "LV",
        "game": "LV @ DEN",
        "outcome": "win",
-       "prob": 0.821,
+       "prob": 0.835,
        "hidden": false,
        "score": "LV 24-38 DEN",
        "slot_label": "Sun 4:25 PM"
@@ -5807,7 +5793,7 @@
        "opp": "NYG",
        "game": "JAX @ NYG",
        "outcome": "loss",
-       "prob": 0.696,
+       "prob": 0.707,
        "hidden": false,
        "score": "JAX 18-23 NYG",
        "slot_label": "Sun 4:25 PM"
@@ -5915,7 +5901,7 @@
        "opp": "LV",
        "game": "LV @ DEN",
        "outcome": "win",
-       "prob": 0.821,
+       "prob": 0.835,
        "hidden": false,
        "score": "LV 24-38 DEN",
        "slot_label": "Sun 4:25 PM"
@@ -5926,7 +5912,7 @@
        "opp": "NYG",
        "game": "JAX @ NYG",
        "outcome": "loss",
-       "prob": 0.696,
+       "prob": 0.707,
        "hidden": false,
        "score": "JAX 18-23 NYG",
        "slot_label": "Sun 4:25 PM"
@@ -6034,7 +6020,7 @@
        "opp": "NYJ",
        "game": "NYJ @ LAC",
        "outcome": "loss",
-       "prob": 0.61,
+       "prob": 0.611,
        "hidden": false,
        "score": "NYJ 27-24 LAC",
        "slot_label": "Sun 4:05 PM"
@@ -6045,7 +6031,7 @@
        "opp": "NYG",
        "game": "JAX @ NYG",
        "outcome": "loss",
-       "prob": 0.696,
+       "prob": 0.707,
        "hidden": false,
        "score": "JAX 18-23 NYG",
        "slot_label": "Sun 4:25 PM"
@@ -6164,7 +6150,7 @@
        "opp": "NYG",
        "game": "JAX @ NYG",
        "outcome": "loss",
-       "prob": 0.696,
+       "prob": 0.707,
        "hidden": false,
        "score": "JAX 18-23 NYG",
        "slot_label": "Sun 4:25 PM"
@@ -6272,7 +6258,7 @@
        "opp": "LV",
        "game": "LV @ DEN",
        "outcome": "win",
-       "prob": 0.821,
+       "prob": 0.835,
        "hidden": false,
        "score": "LV 24-38 DEN",
        "slot_label": "Sun 4:25 PM"
@@ -6283,7 +6269,7 @@
        "opp": "NYG",
        "game": "JAX @ NYG",
        "outcome": "loss",
-       "prob": 0.696,
+       "prob": 0.707,
        "hidden": false,
        "score": "JAX 18-23 NYG",
        "slot_label": "Sun 4:25 PM"
@@ -6435,7 +6421,7 @@
      "winner": "NYJ",
      "upset": true,
      "fav": "LAC",
-     "fav_prob": 0.61,
+     "fav_prob": 0.611,
      "picks": {
       "LAC": 1
      }
@@ -6446,7 +6432,7 @@
      "winner": "NYG",
      "upset": true,
      "fav": "JAX",
-     "fav_prob": 0.696,
+     "fav_prob": 0.707,
      "picks": {
       "JAX": 11
      }
@@ -6725,7 +6711,7 @@
      "winner": "DEN",
      "upset": false,
      "fav": "DEN",
-     "fav_prob": 0.821,
+     "fav_prob": 0.835,
      "picks": {
       "DEN": 3
      }
@@ -6743,7 +6729,7 @@
        "opp": "LV",
        "game": "LV @ DEN",
        "outcome": "win",
-       "prob": 0.821,
+       "prob": 0.835,
        "hidden": false,
        "score": "LV 24-38 DEN",
        "slot_label": "Sun 4:25 PM"
@@ -6776,7 +6762,7 @@
        "opp": "LV",
        "game": "LV @ DEN",
        "outcome": "win",
-       "prob": 0.821,
+       "prob": 0.835,
        "hidden": false,
        "score": "LV 24-38 DEN",
        "slot_label": "Sun 4:25 PM"
@@ -7143,7 +7129,7 @@
        "opp": "LV",
        "game": "LV @ DEN",
        "outcome": "win",
-       "prob": 0.821,
+       "prob": 0.835,
        "hidden": false,
        "score": "LV 24-38 DEN",
        "slot_label": "Sun 4:25 PM"
